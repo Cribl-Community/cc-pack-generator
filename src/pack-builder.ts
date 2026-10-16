@@ -5624,7 +5624,10 @@ export function shapeMappedEventForDisplay(
   }
   let filled = 0;
   for (const m of spec.canonicalMap) {
-    if (!m?.dest || m.literalNumber || isQuotedLiteralExpr(String(m.expr ?? ''))) continue;
+    // Constants are hidden as noise, except the OCSF class identity fields that
+    // every OCSF event must carry (the report's conformance badge looks for them).
+    const identity = m?.dest === 'class_uid' || m?.dest === 'category_uid';
+    if (!m?.dest || (!identity && (m.literalNumber || isQuotedLiteralExpr(String(m.expr ?? ''))))) continue;
     const v = readPath(e, m.dest);
     if (!isPopulated(v)) continue;
     filled++;

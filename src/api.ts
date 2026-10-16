@@ -2191,7 +2191,7 @@ function stripCtrl(e: any): any {
 async function resolvePackSampleId(workerGroup: string, packId: string, sampleName: string): Promise<string | null> {
   const data = await criblFetch<{ items: any[] }>(`/m/${workerGroup}/p/${packId}/system/samples`);
   const items = data.items || [];
-  const hit = items.find((s: any) => s.sampleName === sampleName) || items.find((s: any) => (s.sampleName || '').includes(sampleName));
+  const hit = items.find((s: any) => s.sampleName === sampleName) || items.find((s: any) => s.id === sampleName) || items.find((s: any) => (s.sampleName || '').includes(sampleName));
   return hit?.id || null;
 }
 

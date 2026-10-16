@@ -5,8 +5,8 @@
 // the generator's dependency graph.
 //
 // Link shapes (Pipeline Visualizer 1.4.0):
-//   /apps/a/cribl-pipeline-visualizer/groups/<group>/packs/<pack>
-//   /apps/a/cribl-pipeline-visualizer/groups/<group>/packs/<pack>/pipelines/<pipeline>
+//   /apps/a/cc-pipeline-visualizer/groups/<group>/packs/<pack>
+//   /apps/a/cc-pipeline-visualizer/groups/<group>/packs/<pack>/pipelines/<pipeline>
 import { getApiBase } from './sample-io';
 import { getRunMode } from './run-mode';
 
@@ -34,8 +34,8 @@ export function criblInstanceBaseUrl(): string | null {
 export function pipelineVisualizerUrl(baseUrl: string, group: string, packId: string, pipelineId?: string): string {
   const seg = (s: string) => encodeURIComponent(s);
   const path = pipelineId
-    ? `/apps/a/cribl-pipeline-visualizer/groups/${seg(group)}/packs/${seg(packId)}/pipelines/${seg(pipelineId)}`
-    : `/apps/a/cribl-pipeline-visualizer/groups/${seg(group)}/packs/${seg(packId)}`;
+    ? `/apps/a/${PIPELINE_VISUALIZER_APP_ID}/groups/${seg(group)}/packs/${seg(packId)}/pipelines/${seg(pipelineId)}`
+    : `/apps/a/${PIPELINE_VISUALIZER_APP_ID}/groups/${seg(group)}/packs/${seg(packId)}`;
   return `${baseUrl.replace(/\/+$/, '')}${path}`;
 }
 
@@ -52,7 +52,9 @@ export function pipelineVisualizerUrl(baseUrl: string, group: string, packId: st
 // list to read. The probe answers 'unknown' without a request; 'installed' and
 // 'missing' stay in the type for the day Cribl exposes the answer.
 
-export const PIPELINE_VISUALIZER_APP_ID = 'cribl-pipeline-visualizer';
+// The id the Cribl app catalog installs it under (Cribl-Community/cc-pipeline-visualizer).
+// The old private build used 'cribl-pipeline-visualizer'; orgs no longer carry it.
+export const PIPELINE_VISUALIZER_APP_ID = 'cc-pipeline-visualizer';
 
 export type VisualizerAvailability = 'installed' | 'missing' | 'unknown';
 

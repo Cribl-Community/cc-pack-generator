@@ -8339,7 +8339,17 @@ function App() {
       }
     }
 
-    const conf = evaluateFormatConformance(format, outObj);
+    // OCSF conformance is checked on the FULL event (schema fields in a JSON _raw
+    // lifted to the top), not the trimmed display copy, which omits constant
+    // fields and would flag class_uid/category_uid as missing when they're set.
+    let confObj: any = outObj;
+    if (isOcsfFormat(format) && rawOut && typeof rawOut === 'object' && typeof outObj === 'object') {
+      confObj = { ...rawOut };
+      if (typeof rawOut._raw === 'string' && rawOut._raw.trim().startsWith('{')) {
+        try { const parsed = JSON.parse(rawOut._raw); if (parsed && typeof parsed === 'object') confObj = { ...parsed, ...confObj }; } catch { /* */ }
+      }
+    }
+    const conf = evaluateFormatConformance(format, confObj);
 
     // Sample stats from per-stage measured stats.
     const finalStats = opt?.debug?.stats || map?.debug?.stats || ext?.debug?.stats;
@@ -13634,7 +13644,11 @@ fortinet_fortigate,FortiGate CEF,fgt_cef_to_ocsf,ocsf,,`}</pre>
           try {
             const outEvents = upstreamSampleEvents(await previewPipeline({
               workerGroup: group, packId: result.packId, pipelineId: result.pipelineId,
-              sourcetype: sourceFormat, destFormat: eff, sampleName: pack.sampleId,
+              sourcetype: sourceFormat, destFormat: eff,
+              // The sample's NAME (what deploy() wrote above), not its random id:
+              // previewPipeline looks samples up by name, so the id never matched
+              // and every post-processing pack lost its scoring tab.
+              sampleName: getSampleName(sourceFormat),
             }));
             const extStage: ExpStageResult = {
               stage: 'extraction', status: 'done', score: 100, band: 'good', source: 'none', reasons: [],
