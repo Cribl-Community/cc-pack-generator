@@ -893,15 +893,18 @@ export async function importGoldensFromGitHub(repo: string, branch: string, toke
   // 641 requests. 100 bodies per GraphQL call, 1 quota point each.
   const byName = new Map(keys.filter(Boolean).map((k) => [goldenKeyToFileName(k), k]));
   let docs: Map<string, any>;
+  const readErrors = new Map<string, string>();
   try {
-    docs = await ghReadPoolFiles<any>(effectiveRepo, effectiveBranch, effectiveToken, GH_FOLDER, [...byName.keys()]);
+    docs = await ghReadPoolFiles<any>(effectiveRepo, effectiveBranch, effectiveToken, GH_FOLDER, [...byName.keys()], {
+      onError: (name, reason) => readErrors.set(name, reason),
+    });
   } catch (err) {
     const reason = err instanceof Error ? err.message : 'unknown';
     return { imported: [], failed: keys.map((key) => ({ key, reason })) };
   }
   for (const [name, key] of byName) {
     const data = docs.get(name);
-    if (!data) { failed.push({ key, reason: 'Not found in shared goldens' }); continue; }
+    if (!data) { failed.push({ key, reason: readErrors.get(name) ?? 'Not found in shared goldens' }); continue; }
     try {
       // A mapping filed under `json`/`csv`/… is not knowledge to import. The
       // standalone importer refuses the same keys (golden-source-identity).

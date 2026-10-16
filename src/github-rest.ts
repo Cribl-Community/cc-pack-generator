@@ -90,12 +90,14 @@ function githubRawUrl(repo: string, branch: string, path: string): string {
   // the read would then 404 on the truncated name while the file sits at the full
   // one. repo/branch are already safe. Mirrors encContentsPath in golden-github.mjs.
   //
-  // Through the Cribl app proxy (iframe) the segment is encoded TWICE: the proxy
-  // decodes the path once before forwarding, so a single `%23` reached GitHub as
-  // a bare '#' and the read 404'd on the truncated name — "Not found in shared
-  // goldens" for every ocsf#/cim# golden in the iframe (verified live 2026-10-03:
-  // `%23` → 404, `%2523` → 200).
-  const enc = criblApiBase() ? (seg: string) => encodeURIComponent(encodeURIComponent(seg)) : encodeURIComponent;
+  // Encoded ONCE, also through the Cribl app proxy (iframe). The proxy decodes the
+  // path once before forwarding, so a `%23` reaches GitHub as a bare '#' and 404s;
+  // encoding twice (`%2523`) used to get past that (verified 2026-10-03), but the
+  // proxy now answers any `%25` with 403 "App path targets a reserved namespace"
+  // (verified 2026-10-16) — and that broke every '@' name too, which single
+  // encoding forwards fine. A '#' name therefore cannot be read through the proxy
+  // on this lane; readPublicPoolFiles reads those by blob sha instead.
+  const enc = encodeURIComponent;
   const clean = path.replace(/^\/+/, '').split('/').map(enc).join('/');
   return proxiedUrl('raw.githubusercontent.com', `/${repo}/${branch}/${clean}`);
 }
@@ -475,18 +477,61 @@ export interface PoolFile { name: string; oid: string }
  */
 async function readPublicPoolFiles<T>(
   repo: string, branch: string, folder: string, names: string[],
-  o: { onBatch?: (done: number, total: number) => void },
+  o: { onBatch?: (done: number, total: number) => void; onError?: (name: string, reason: string) => void },
 ): Promise<Map<string, T>> {
   const out = new Map<string, T>();
   let done = 0;
-  await Promise.all(names.map(async (name) => {
+  // Through the Cribl app proxy a '#' cannot be in the path at all (see
+  // githubRawUrl), so those names are read by blob sha instead: no file name in
+  // the URL. That is the unauthenticated API (60 requests/hour), so it is only
+  // used for the names that need it.
+  const viaProxy = !!criblApiBase();
+  const byBlob = viaProxy ? names.filter((n) => n.includes('#')) : [];
+  const byRaw = viaProxy ? names.filter((n) => !n.includes('#')) : names;
+  await Promise.all(byRaw.map(async (name) => {
     try {
       const r = await ghReadPublicJson<T>(repo, branch, `${folder}/${name}`);
       if (r.found && r.data) out.set(name, r.data);
-    } catch { /* one unreachable file is not the whole read */ }
+    } catch (err) {
+      // One unreachable file is not the whole read — but it is not "not found" either.
+      o.onError?.(name, err instanceof Error ? err.message : 'unreachable');
+    }
     o.onBatch?.(++done, names.length);
   }));
+  if (byBlob.length) {
+    let shas: Map<string, string> | null = null;
+    let listErr = '';
+    try { shas = await publicFolderBlobShas(repo, branch, folder); }
+    catch (err) { listErr = err instanceof Error ? err.message : 'unreachable'; }
+    for (const name of byBlob) {
+      try {
+        if (!shas) throw new Error(listErr);
+        const sha = shas.get(name);
+        if (sha) {
+          const r = await ghRestJson<T>(`/repos/${repo}/git/blobs/${sha}`, { accept: 'application/vnd.github.raw+json' });
+          if (r.found && r.data) out.set(name, r.data);
+        }
+      } catch (err) {
+        o.onError?.(name, err instanceof Error ? err.message : 'unreachable');
+      }
+      o.onBatch?.(++done, names.length);
+    }
+  }
   return out;
+}
+
+/**
+ * path (relative to `folder`) → blob sha for every file under a public folder,
+ * from the Git trees API: two unauthenticated requests, no file name in any URL.
+ * The Contents API would be one request but stops listing at 1,000 entries.
+ */
+async function publicFolderBlobShas(repo: string, branch: string, folder: string): Promise<Map<string, string>> {
+  type Tree = { tree?: Array<{ path: string; type: string; sha: string }> };
+  const root = await ghRestJson<Tree>(`/repos/${repo}/git/trees/${encodeURIComponent(branch)}`, {});
+  const sub = root.data?.tree?.find((e) => e.path === folder && e.type === 'tree');
+  if (!sub) return new Map();
+  const files = await ghRestJson<Tree>(`/repos/${repo}/git/trees/${sub.sha}?recursive=1`, {});
+  return new Map((files.data?.tree || []).filter((e) => e.type === 'blob').map((e) => [e.path, e.sha]));
 }
 
 export async function ghListPoolFiles(repo: string, branch: string, token: string, folder: string): Promise<PoolFile[]> {
@@ -512,7 +557,7 @@ export async function ghListPoolFiles(repo: string, branch: string, token: strin
  */
 export async function ghReadPoolFiles<T = unknown>(
   repo: string, branch: string, token: string, folder: string, names: string[],
-  o: { batchSize?: number; onBatch?: (done: number, total: number) => void } = {},
+  o: { batchSize?: number; onBatch?: (done: number, total: number) => void; onError?: (name: string, reason: string) => void } = {},
 ): Promise<Map<string, T>> {
   const out = new Map<string, T>();
   const safe = [...new Set(names.filter(isPoolFileName))];
