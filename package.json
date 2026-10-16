@@ -1,8 +1,8 @@
 {
   "name": "cc-pack-generator",
   "private": true,
-  "version": "1.0.299",
-  "buildNumber": 923,
+  "version": "1.0.300",
+  "buildNumber": 924,
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -33,7 +33,7 @@
   },
   "displayName": "Cribl Pack Generator",
   "description": "AI-powered wizard that creates and deploys Cribl Stream Packs. Select a sourcetype, provide sample events, pick a destination schema (OCSF, CIM, ECS, ASIM, Chronicle, CEF, JSON), and deploy a complete pipeline with parsing, noise reduction, and field mapping — all in one click.",
-  "author": "Wilfred van der Linde - fakeuser@cribl.io",
+  "author": "Wilfred van der Linde - wlinde@cribl.io",
   "license": "Apache-2.0",
   "cribl": {
     "type": "app"
