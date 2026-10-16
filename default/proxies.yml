@@ -1,0 +1,108 @@
+# AI providers
+
+# Internal Cribl AI proxy (Aperture via Tailscale)
+ai:
+  timeout: 120000
+
+api.anthropic.com:
+  timeout: 120000
+  paths:
+    allowlist:
+      - "/v1/messages"
+  headers:
+    inject:
+      x-api-key: "kv.anthropicApiKey"
+
+bedrock-runtime.us-east-1.amazonaws.com:
+  timeout: 120000
+  headers:
+    inject:
+      Authorization: "kv.bedrockAuth"
+
+bedrock-runtime.us-west-2.amazonaws.com:
+  timeout: 120000
+  headers:
+    inject:
+      Authorization: "kv.bedrockAuth"
+
+bedrock-runtime.eu-west-1.amazonaws.com:
+  timeout: 120000
+  headers:
+    inject:
+      Authorization: "kv.bedrockAuth"
+
+bedrock-runtime.eu-central-1.amazonaws.com:
+  timeout: 120000
+  headers:
+    inject:
+      Authorization: "kv.bedrockAuth"
+
+bedrock-runtime.ap-northeast-1.amazonaws.com:
+  timeout: 120000
+  headers:
+    inject:
+      Authorization: "kv.bedrockAuth"
+
+bedrock-runtime.ap-southeast-1.amazonaws.com:
+  timeout: 120000
+  headers:
+    inject:
+      Authorization: "kv.bedrockAuth"
+
+bedrock-runtime.ap-southeast-2.amazonaws.com:
+  timeout: 120000
+  headers:
+    inject:
+      Authorization: "kv.bedrockAuth"
+
+api.openai.com:
+  timeout: 120000
+  paths:
+    allowlist:
+      - "/v1/chat/completions"
+  headers:
+    inject:
+      Authorization: "'Bearer ' + kv.openaiApiKey"
+
+api.mistral.ai:
+  timeout: 120000
+  paths:
+    allowlist:
+      - "/v1/chat/completions"
+  headers:
+    inject:
+      Authorization: "'Bearer ' + kv.mistralApiKey"
+
+api.githubcopilot.com:
+  timeout: 120000
+
+# No credential is injected here on purpose. The shared goldens are read from a
+# public repository over raw.githubusercontent.com below, and publishing to it
+# happens outside the iframe — so nothing the app does inside Cribl needs a
+# GitHub credential, and there is none to leak.
+api.github.com:
+  timeout: 30000
+  paths:
+    allowlist:
+      - "/graphql"
+      - "/repos/"
+
+models.inference.ai.azure.com:
+  timeout: 120000
+  paths:
+    allowlist:
+      - "/chat/completions"
+  headers:
+    inject:
+      Authorization: "'Bearer ' + kv.azureaiApiKey"
+
+generativelanguage.googleapis.com:
+  timeout: 120000
+  headers:
+    inject:
+      x-goog-api-key: "kv.geminiApiKey"
+
+# Public sample data sources, and the public shared-golden pool: every golden the
+# app reads comes through here, unauthenticated, in both run modes.
+raw.githubusercontent.com:
+  timeout: 30000
