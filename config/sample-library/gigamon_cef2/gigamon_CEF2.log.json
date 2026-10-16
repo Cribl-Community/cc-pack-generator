@@ -1,0 +1,122 @@
+[
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_raw": "Thu Apr 17 18:23:57 2025 gs_apps_appInst0_42067dd9-42cb-0b61-91ca-2fd7b1988cb2 CEF:0|Gigamon|metadata|6.8.00|4|metadata generation|6|GigamonApplicationID=5177 dMac=00:00:00:00:00:00 sMac=00:00:00:00:00:00 src=135.192.34.74 dst=135.192.146.188 GigamonMdataIpVer=4 proto=6 spt=35995 dpt=4258 deviceInboundInterface=0 GigamonInitiatorOctets=7240991 GigamonResponderOctets=184260 GigamonInitiatorPackets=5949 GigamonResponderPackets=3066 GigamonMdataFlowStartMsec=2025:04:17 18:22:57.926 GigamonMdataFlowEndMsec=2025:04:17 18:23:57.327 GigamonMdataIntfName=0 GigamonMdataEgressIntfID=0 GigamonMdataSysUpTimeFirst=1442364 GigamonMdataSysUpTimeLast=1501765 GigamonMdataFlowEndReason=2 GigamonApplicationName=Unknown tcp GigamonFlowID=1660701694209556481 GigamonMdataSeqNum=4484",
+    "_time": 1744914237.544,
+    "__srcIpPort": "udp|38.140.51.178|23385",
+    "__syslogFail": true,
+    "host": "38.140.51.178",
+    "__inputId": "syslog:in_syslog:udp"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_raw": "Thu Apr 17 18:24:57 2025 gs_apps_appInst0_42067dd9-42cb-0b61-91ca-2fd7b1988cb2 CEF:0|Gigamon|metadata|6.8.00|4|metadata generation|6|GigamonApplicationID=5177 dMac=00:00:00:00:00:00 sMac=00:00:00:00:00:00 src=135.192.34.74 dst=135.192.146.188 GigamonMdataIpVer=4 proto=6 spt=35995 dpt=4258 deviceInboundInterface=0 GigamonInitiatorOctets=7318274 GigamonResponderOctets=181124 GigamonInitiatorPackets=5836 GigamonResponderPackets=3012 GigamonMdataFlowStartMsec=2025:04:17 18:23:57.339 GigamonMdataFlowEndMsec=2025:04:17 18:24:57.322 GigamonMdataIntfName=0 GigamonMdataEgressIntfID=0 GigamonMdataSysUpTimeFirst=1501777 GigamonMdataSysUpTimeLast=1561760 GigamonMdataFlowEndReason=2 GigamonApplicationName=Unknown tcp GigamonFlowID=1660701694209556481 GigamonMdataSeqNum=4485",
+    "_time": 1744914297.54,
+    "__srcIpPort": "udp|38.140.51.178|23385",
+    "__syslogFail": true,
+    "host": "38.140.51.178",
+    "__inputId": "syslog:in_syslog:udp"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_raw": "Thu Apr 17 18:24:57 2025 gs_apps_appInst0_42067dd9-42cb-0b61-91ca-2fd7b1988cb2 CEF:0|Gigamon|metadata|6.8.00|4|metadata generation|6|GigamonApplicationID=74 dMac=01:00:5e:00:00:16 sMac=00:50:56:86:01:5c src=192.168.1.6 dst=224.0.0.22 GigamonMdataIpVer=4 proto=2 deviceInboundInterface=0 GigamonInitiatorOctets=60 GigamonResponderOctets=0 GigamonInitiatorPackets=1 GigamonResponderPackets=0 GigamonMdataFlowStartMsec=2025:04:17 18:24:21.337 GigamonMdataFlowEndMsec=2025:04:17 18:24:21.337 GigamonMdataIntfName=0 GigamonMdataEgressIntfID=0 GigamonMdataSysUpTimeFirst=1525775 GigamonMdataSysUpTimeLast=1525775 GigamonMdataFlowEndReason=1 GigamonApplicationName=igmp GigamonFlowID=1660701694211653633 GigamonMdataSeqNum=4487",
+    "_time": 1744914297.59,
+    "__srcIpPort": "udp|38.140.51.178|23385",
+    "__syslogFail": true,
+    "host": "38.140.51.178",
+    "__inputId": "syslog:in_syslog:udp"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_raw": "Thu Apr 17 18:24:57 2025 gs_apps_appInst0_42067dd9-42cb-0b61-91ca-2fd7b1988cb2 CEF:0|Gigamon|metadata|6.8.00|4|metadata generation|6|GigamonApplicationID=74 dMac=01:00:5e:00:00:01 sMac=55:55:55:55:55:55 src=0.0.0.0 dst=224.0.0.1 GigamonMdataIpVer=4 proto=2 deviceInboundInterface=0 GigamonInitiatorOctets=60 GigamonResponderOctets=0 GigamonInitiatorPackets=1 GigamonResponderPackets=0 GigamonMdataFlowStartMsec=2025:04:17 18:24:20.890 GigamonMdataFlowEndMsec=2025:04:17 18:24:20.890 GigamonMdataIntfName=0 GigamonMdataEgressIntfID=0 GigamonMdataSysUpTimeFirst=1525328 GigamonMdataSysUpTimeLast=1525328 GigamonMdataFlowEndReason=1 GigamonApplicationName=igmp GigamonFlowID=1660701693639131137 GigamonMdataSeqNum=4486",
+    "_time": 1744914297.59,
+    "__srcIpPort": "udp|38.140.51.178|23385",
+    "__syslogFail": true,
+    "host": "38.140.51.178",
+    "__inputId": "syslog:in_syslog:udp"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_raw": "Thu Apr 17 18:25:57 2025 gs_apps_appInst0_42067dd9-42cb-0b61-91ca-2fd7b1988cb2 CEF:0|Gigamon|metadata|6.8.00|4|metadata generation|6|GigamonApplicationID=5177 dMac=00:00:00:00:00:00 sMac=00:00:00:00:00:00 src=135.192.34.74 dst=135.192.146.188 GigamonMdataIpVer=4 proto=6 spt=35995 dpt=4258 deviceInboundInterface=0 GigamonInitiatorOctets=7316291 GigamonResponderOctets=180968 GigamonInitiatorPackets=5819 GigamonResponderPackets=3010 GigamonMdataFlowStartMsec=2025:04:17 18:24:57.334 GigamonMdataFlowEndMsec=2025:04:17 18:25:57.300 GigamonMdataIntfName=0 GigamonMdataEgressIntfID=0 GigamonMdataSysUpTimeFirst=1561772 GigamonMdataSysUpTimeLast=1621738 GigamonMdataFlowEndReason=2 GigamonApplicationName=Unknown tcp GigamonFlowID=1660701694209556481 GigamonMdataSeqNum=4488",
+    "_time": 1744914357.518,
+    "__srcIpPort": "udp|38.140.51.178|23385",
+    "__syslogFail": true,
+    "host": "38.140.51.178",
+    "__inputId": "syslog:in_syslog:udp"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_raw": "Thu Apr 17 18:30:50 2025 gs_apps_appInst0_42067dd9-42cb-0b61-91ca-2fd7b1988cb2 CEF:0|Gigamon|metadata|6.8.00|4|metadata generation|6|GigamonApplicationID=74 dMac=01:00:5e:00:00:01 sMac=55:55:55:55:55:55 src=0.0.0.0 dst=224.0.0.1 GigamonMdataIpVer=4 proto=2 deviceInboundInterface=0 GigamonInitiatorOctets=60 GigamonResponderOctets=0 GigamonInitiatorPackets=1 GigamonResponderPackets=0 GigamonMdataFlowStartMsec=2025:04:17 18:30:35.893 GigamonMdataFlowEndMsec=2025:04:17 18:30:35.893 GigamonMdataIntfName=0 GigamonMdataEgressIntfID=0 GigamonMdataSysUpTimeFirst=1900331 GigamonMdataSysUpTimeLast=1900331 GigamonMdataFlowEndReason=1 GigamonApplicationName=igmp GigamonFlowID=1660701694314414081 GigamonMdataSeqNum=4536",
+    "_time": 1744914650.509,
+    "__srcIpPort": "udp|38.140.51.178|23385",
+    "__syslogFail": true,
+    "host": "38.140.51.178",
+    "__inputId": "syslog:in_syslog:udp"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_raw": "Thu Apr 17 18:30:51 2025 gs_apps_appInst0_42067dd9-42cb-0b61-91ca-2fd7b1988cb2 CEF:0|Gigamon|metadata|6.8.00|4|metadata generation|6|GigamonApplicationID=74 dMac=01:00:5e:00:00:16 sMac=00:50:56:86:01:5c src=192.168.1.6 dst=224.0.0.22 GigamonMdataIpVer=4 proto=2 deviceInboundInterface=0 GigamonInitiatorOctets=60 GigamonResponderOctets=0 GigamonInitiatorPackets=1 GigamonResponderPackets=0 GigamonMdataFlowStartMsec=2025:04:17 18:30:36.703 GigamonMdataFlowEndMsec=2025:04:17 18:30:36.703 GigamonMdataIntfName=0 GigamonMdataEgressIntfID=0 GigamonMdataSysUpTimeFirst=1901141 GigamonMdataSysUpTimeLast=1901141 GigamonMdataFlowEndReason=1 GigamonApplicationName=igmp GigamonFlowID=1660701694316511233 GigamonMdataSeqNum=4537",
+    "_time": 1744914651.514,
+    "__srcIpPort": "udp|38.140.51.178|23385",
+    "__syslogFail": true,
+    "host": "38.140.51.178",
+    "__inputId": "syslog:in_syslog:udp"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_raw": "Thu Apr 17 18:32:03 2025 gs_apps_appInst0_42067dd9-42cb-0b61-91ca-2fd7b1988cb2 CEF:0|Gigamon|metadata|6.8.00|4|metadata generation|6|GigamonApplicationID=895 dMac=00:00:00:00:00:00 sMac=00:00:00:00:00:00 src=138.141.137.189 dst=135.192.179.50 GigamonMdataIpVer=4 proto=6 spt=38808 dpt=443 deviceInboundInterface=0 GigamonInitiatorOctets=17324 GigamonResponderOctets=11216 GigamonInitiatorPackets=42 GigamonResponderPackets=30 GigamonMdataFlowStartMsec=2025:04:17 18:31:40.739 GigamonMdataFlowEndMsec=2025:04:17 18:31:48.529 GigamonMdataIntfName=0 GigamonMdataEgressIntfID=0 GigamonMdataSysUpTimeFirst=1965177 GigamonMdataSysUpTimeLast=1972967 GigamonMdataFlowEndReason=1 GigamonApplicationName=tor GigamonFlowID=1660701694318608385 GigamonMdataSeqNum=4538",
+    "_time": 1744914723.537,
+    "__srcIpPort": "udp|38.140.51.178|23385",
+    "__syslogFail": true,
+    "host": "38.140.51.178",
+    "__inputId": "syslog:in_syslog:udp"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_raw": "Thu Apr 17 18:32:42 2025 gs_apps_appInst0_42067dd9-42cb-0b61-91ca-2fd7b1988cb2 CEF:0|Gigamon|metadata|6.8.00|4|metadata generation|6|GigamonApplicationID=5177 dMac=00:00:00:00:00:00 sMac=00:00:00:00:00:00 src=135.192.34.74 dst=135.192.146.188 GigamonMdataIpVer=4 proto=6 spt=35995 dpt=4258 deviceInboundInterface=0 GigamonInitiatorOctets=6540823 GigamonResponderOctets=166998 GigamonInitiatorPackets=5392 GigamonResponderPackets=2778 GigamonMdataFlowStartMsec=2025:04:17 18:31:42.911 GigamonMdataFlowEndMsec=2025:04:17 18:32:42.288 GigamonMdataIntfName=0 GigamonMdataEgressIntfID=0 GigamonMdataSysUpTimeFirst=1967349 GigamonMdataSysUpTimeLast=2026726 GigamonMdataFlowEndReason=2 GigamonApplicationName=Unknown tcp GigamonFlowID=1660701694320705537 GigamonMdataSeqNum=4539",
+    "_time": 1744914762.506,
+    "__srcIpPort": "udp|38.140.51.178|23385",
+    "__syslogFail": true,
+    "host": "38.140.51.178",
+    "__inputId": "syslog:in_syslog:udp"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_raw": "Thu Apr 17 18:32:55 2025 gs_apps_appInst0_42067dd9-42cb-0b61-91ca-2fd7b1988cb2 CEF:0|Gigamon|metadata|6.8.00|4|metadata generation|6|GigamonApplicationID=74 dMac=01:00:5e:00:00:01 sMac=55:55:55:55:55:55 src=0.0.0.0 dst=224.0.0.1 GigamonMdataIpVer=4 proto=2 deviceInboundInterface=0 GigamonInitiatorOctets=60 GigamonResponderOctets=0 GigamonInitiatorPackets=1 GigamonResponderPackets=0 GigamonMdataFlowStartMsec=2025:04:17 18:32:40.894 GigamonMdataFlowEndMsec=2025:04:17 18:32:40.894 GigamonMdataIntfName=0 GigamonMdataEgressIntfID=0 GigamonMdataSysUpTimeFirst=2025332 GigamonMdataSysUpTimeLast=2025332 GigamonMdataFlowEndReason=1 GigamonApplicationName=igmp GigamonFlowID=1660701694322802689 GigamonMdataSeqNum=4540",
+    "_time": 1744914775.525,
+    "__srcIpPort": "udp|38.140.51.178|23385",
+    "__syslogFail": true,
+    "host": "38.140.51.178",
+    "__inputId": "syslog:in_syslog:udp"
+  }
+]

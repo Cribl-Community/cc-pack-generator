@@ -1,0 +1,48 @@
+{
+  "name": "XSIAM-Salesforce-SalesforceSnapshots",
+  "kind": "source-specific",
+  "pattern": "tag_only",
+  "sourceIdField": "__sourceIdentifier",
+  "sourceIdentifier": "addbf31a6372491e88d45934dff5b5b0",
+  "vendor": null,
+  "product": null,
+  "reshapesRaw": false,
+  "sample": null,
+  "upstream": {
+    "pack": "cribl-paloalto-xsiam",
+    "version": "2.1.1",
+    "path": "default/pipelines/XSIAM-Salesforce-SalesforceSnapshots/conf.yml",
+    "sha256": "5e38d2120d1072f7bd1b44129a0cd2ee682974390462cf8c52f958de2f3cfef6",
+    "source": "https://packs.cribl.io/packs/cribl-paloalto-xsiam"
+  },
+  "conf": {
+    "output": "default",
+    "streamtags": [],
+    "groups": {},
+    "asyncFuncTimeout": 1000,
+    "description": ""
+  },
+  "functions": [
+    {
+      "id": "comment",
+      "filter": "true",
+      "conf": {
+        "comment": "Assign the Source-Identifier from https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Documentation/Data-source-UUIDs"
+      }
+    },
+    {
+      "id": "eval",
+      "filter": "true",
+      "conf": {
+        "add": [
+          {
+            "disabled": false,
+            "name": "__sourceIdentifier",
+            "value": "'addbf31a6372491e88d45934dff5b5b0'"
+          }
+        ]
+      },
+      "description": "Assign the Source-Identifier"
+    }
+  ]
+}

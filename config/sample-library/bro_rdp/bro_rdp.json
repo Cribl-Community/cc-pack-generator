@@ -1,0 +1,122 @@
+[
+  {
+    "_raw": "#separator \\x09",
+    "_time": 1521911721.258458,
+    "sourcetype": "bro_rdp",
+    "source": "/opt/zeek/logs/current/rdp.log"
+  },
+  {
+    "_raw": "#set_separator\t,",
+    "_time": 1521911721.258458,
+    "sourcetype": "bro_rdp",
+    "source": "/opt/zeek/logs/current/rdp.log"
+  },
+  {
+    "_raw": "#empty_field\t(empty)",
+    "_time": 1521911721.258458,
+    "sourcetype": "bro_rdp",
+    "source": "/opt/zeek/logs/current/rdp.log"
+  },
+  {
+    "_raw": "#unset_field\t-",
+    "_time": 1521911721.258458,
+    "sourcetype": "bro_rdp",
+    "source": "/opt/zeek/logs/current/rdp.log"
+  },
+  {
+    "_raw": "#path\trdp",
+    "_time": 1521911721.258458,
+    "sourcetype": "bro_rdp",
+    "source": "/opt/zeek/logs/current/rdp.log"
+  },
+  {
+    "_raw": "#open\t2024-04-12-19-29-13",
+    "_time": 1521911721.258458,
+    "sourcetype": "bro_rdp",
+    "source": "/opt/zeek/logs/current/rdp.log"
+  },
+  {
+    "_raw": "#fields\tts\tuid\tid.orig_h\tid.orig_p\tid.resp_h\tid.resp_p\tcookie\tresult\tsecurity_protocol\tclient_channels\tkeyboard_layout\tclient_build\tclient_name\tclient_dig_product_id\tdesktop_width\tdesktop_height\trequested_color_depth\tcert_type\tcert_count\tcert_permanent\tencryption_level\tencryption_method",
+    "_time": 1521911721.258458,
+    "sourcetype": "bro_rdp",
+    "source": "/opt/zeek/logs/current/rdp.log"
+  },
+  {
+    "_raw": "#types\ttime\tstring\taddr\tport\taddr\tport\tstring\tstring\tstring\tvector[string]\tstring\tstring\tstring\tstring\tcount\tcount\tstring\tstring\tcount\tbool\tstring\tstring",
+    "_time": 1521911721.258458,
+    "sourcetype": "bro_rdp",
+    "source": "/opt/zeek/logs/current/rdp.log"
+  },
+  {
+    "_raw": "1521911721.258458\tCMwJl820SlYyy434c8\t10.164.94.120\t39681\t10.47.3.155\t3389\t-\tencrypted\tHYBRID\t-\t-\t-\t-\t-\t-\t-\t-\t-\t0\t-\t-\t-",
+    "_time": 1521911721.258458,
+    "sourcetype": "bro_rdp",
+    "source": "/opt/zeek/logs/current/rdp.log"
+  },
+  {
+    "_raw": "1521911721.154438\tCFDESq4Gwi4JOnWh3c\t10.164.94.120\t37569\t10.47.21.25\t3389\t-\tencrypted\tHYBRID\t-\t-\t-\t-\t-\t-\t-\t-\t-\t0\t-\t-\t-",
+    "_time": 1521911721.154438,
+    "sourcetype": "bro_rdp",
+    "source": "/opt/zeek/logs/current/rdp.log"
+  },
+  {
+    "_raw": "1521911720.723538\tCAdxCs37ONW3Si3Baj\t10.164.94.120\t34571\t10.47.8.218\t3389\t-\tencrypted\tHYBRID\t-\t-\t-\t-\t-\t-\t-\t-\t-\t0\t-\t-\t-",
+    "_time": 1521911720.723538,
+    "sourcetype": "bro_rdp",
+    "source": "/opt/zeek/logs/current/rdp.log"
+  },
+  {
+    "_raw": "1521911720.997152\tCtWwiZnlmKFdk6IV1\t10.164.94.120\t34701\t10.47.21.172\t3389\t-\tencrypted\tHYBRID\t-\t-\t-\t-\t-\t-\t-\t-\t-\t0\t-\t-\t-",
+    "_time": 1521911720.997152,
+    "sourcetype": "bro_rdp",
+    "source": "/opt/zeek/logs/current/rdp.log"
+  },
+  {
+    "_raw": "1521911721.128424\tCUNEQh2Phj3JpdGLK\t10.164.94.120\t39481\t10.47.3.10\t3389\t-\tencrypted\tHYBRID\t-\t-\t-\t-\t-\t-\t-\t-\t-\t0\t-\t-\t-",
+    "_time": 1521911721.128424,
+    "sourcetype": "bro_rdp",
+    "source": "/opt/zeek/logs/current/rdp.log"
+  },
+  {
+    "_raw": "1521911721.189813\tCRN0aC15odVD7ZhHb\t10.164.94.120\t45957\t10.47.3.150\t3389\t-\tencrypted\tHYBRID\t-\t-\t-\t-\t-\t-\t-\t-\t-\t0\t-\t-\t-",
+    "_time": 1521911721.189813,
+    "sourcetype": "bro_rdp",
+    "source": "/opt/zeek/logs/current/rdp.log"
+  },
+  {
+    "_raw": "1521911724.719201\tCyLXr04rsb8J2mO2F\t10.164.94.120\t40755\t10.47.8.208\t3389\tnessus\tSuccess\tRDP\tcliprdr\tEnglish - United States\tRDP 5.1\ttenablese\t(empty)\t1024\t768\t8bit\tRSA\t1\tT\tClient compatible\t128bit",
+    "_time": 1521911724.719201,
+    "sourcetype": "bro_rdp",
+    "source": "/opt/zeek/logs/current/rdp.log"
+  },
+  {
+    "_raw": "1521911737.299705\tC2Totn1B8PYm3teD1g\t10.164.94.120\t40711\t10.47.23.166\t3389\t-\tencrypted\tSSL\t-\t-\t-\t-\t-\t-\t-\t-\t-\t0\t-\t-\t-",
+    "_time": 1521911737.299705,
+    "sourcetype": "bro_rdp",
+    "source": "/opt/zeek/logs/current/rdp.log"
+  },
+  {
+    "_raw": "1521911780.215190\tCcBJOI1AgSOVlvxBO\t10.164.94.120\t46003\t10.47.3.142\t3389\trdp_logon_screen.nbin\tSuccess\tRDP\t-\tEnglish - United States\tRDP 5.1\tnessus\t(empty)\t640\t480\t16bit\tRSA\t1\tT\tClient compatible\t128bit",
+    "_time": 1521911780.21519,
+    "sourcetype": "bro_rdp",
+    "source": "/opt/zeek/logs/current/rdp.log"
+  },
+  {
+    "_raw": "1521911880.565330\tCt55nB3LAAyBQFmzrb\t10.128.0.241\t44524\t10.47.1.208\t3389\tnmap\t-\t-\t-\t-\t-\t-\t-\t-\t-\t-\t-\t0\t-\t-\t-",
+    "_time": 1521911880.56533,
+    "sourcetype": "bro_rdp",
+    "source": "/opt/zeek/logs/current/rdp.log"
+  },
+  {
+    "_raw": "1521912191.519027\tCGilO01wgwa6iQX6za\t10.128.0.212\t50912\t10.47.24.25\t3389\tjerrysrv\tencrypted\tHYBRID\t-\t-\t-\t-\t-\t-\t-\t-\t-\t0\t-\t-\t-",
+    "_time": 1521912191.519027,
+    "sourcetype": "bro_rdp",
+    "source": "/opt/zeek/logs/current/rdp.log"
+  },
+  {
+    "_raw": "1521912478.424784\tCTmMX21KqfOXMROrul\t10.128.0.207\t40978\t10.47.23.81\t3389\tnmap\t-\t-\t-\t-\t-\t-\t-\t-\t-\t-\t-\t0\t-\t-\t-",
+    "_time": 1521912478.424784,
+    "sourcetype": "bro_rdp",
+    "source": "/opt/zeek/logs/current/rdp.log"
+  }
+]

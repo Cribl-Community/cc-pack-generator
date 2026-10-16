@@ -1,0 +1,101 @@
+{
+  "key": "apache_access",
+  "sourcetype": "apache_access",
+  "classUid": 4002,
+  "destFormat": "ocsf#web_proxy",
+  "source": "generic",
+  "vendorNames": [
+    "apache access"
+  ],
+  "provenance": {
+    "samplePack": "vendor-samples",
+    "sampleName": "apache_access_vendor_sample",
+    "tier": "reference",
+    "sampleEvents": 14,
+    "emulated": "golden OCSF pipeline, offline emulation of scripts/build-source-ocsf-samples.mjs",
+    "rejected": []
+  },
+  "events": [
+    {
+      "src_endpoint": {
+        "ip": "127.0.0.1"
+      },
+      "http_request": {
+        "url": "/"
+      },
+      "http_response": {
+        "code": 200
+      },
+      "traffic": {
+        "bytes_out": 491
+      },
+      "metadata": {
+        "product": {
+          "name": "Security",
+          "vendor_name": "apache access"
+        },
+        "version": "1.9.0"
+      },
+      "class_uid": 4002,
+      "category_uid": 4,
+      "activity_id": 1,
+      "type_uid": 400201,
+      "severity_id": 1,
+      "time": 1482769089000
+    },
+    {
+      "src_endpoint": {
+        "ip": "::1"
+      },
+      "http_request": {
+        "url": "/"
+      },
+      "http_response": {
+        "code": 200
+      },
+      "traffic": {
+        "bytes_out": 45
+      },
+      "metadata": {
+        "product": {
+          "name": "Security",
+          "vendor_name": "apache access"
+        },
+        "version": "1.9.0"
+      },
+      "class_uid": 4002,
+      "category_uid": 4,
+      "activity_id": 1,
+      "type_uid": 400201,
+      "severity_id": 1,
+      "time": 1482761788000
+    },
+    {
+      "src_endpoint": {
+        "ip": "192.168.33.1"
+      },
+      "http_request": {
+        "url": "/"
+      },
+      "http_response": {
+        "code": 200
+      },
+      "traffic": {
+        "bytes_out": 484
+      },
+      "metadata": {
+        "product": {
+          "name": "Security",
+          "vendor_name": "apache access"
+        },
+        "version": "1.9.0"
+      },
+      "class_uid": 4002,
+      "category_uid": 4,
+      "activity_id": 1,
+      "type_uid": 400201,
+      "severity_id": 1,
+      "time": 1482769320000
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+[
+  {
+    "_raw": "{\"abx_message_id\":3333333567151178440,\"recipient\":{\"email\":\"reportphish@afos.io\",\"name\":\"Report Phish\"},\"reported_datetime\":\"2026-01-05T22:08:15Z\",\"reporter\":{\"email\":\"mscore@afos.io\",\"name\":\"mike score\"},\"subject\":\"Your Phishing Report titled \\\"Password Reset - User Instructions for Viktoria Smith\\\" has been reviewed\",\"not_analyzed_reason\":\"AI_CONVERSATION\"}",
+    "host": "ip-10-254-10-207",
+    "source": "https://api.abnormalplatform.com/v1/abuse_mailbox/not_analyzed",
+    "_time": 1767650895,
+    "cribl_breaker": [
+      "Abnormal AI API Ruleset:mailbox_not_analyzed",
+      "ndjson"
+    ],
+    "sourcetype": "abnormal:ai:abuse_not_analyzed"
+  },
+  {
+    "_raw": "{\"abx_message_id\":7777777732579095304,\"recipient\":{\"email\":\"reportphish@afos.io\",\"name\":\"Report Phish\"},\"reported_datetime\":\"2026-01-04T21:31:19Z\",\"reporter\":{\"email\":\"william.joseph.robert@afos.io\",\"name\":\"william.joseph.robert\"},\"subject\":\"Password Reset Request\",\"not_analyzed_reason\":\"PHISHING_SIMULATION\"}",
+    "host": "ip-10-254-10-207",
+    "source": "https://api.abnormalplatform.com/v1/abuse_mailbox/not_analyzed",
+    "_time": 1767562279,
+    "cribl_breaker": [
+      "Abnormal AI API Ruleset:mailbox_not_analyzed",
+      "ndjson"
+    ],
+    "sourcetype": "abnormal:ai:abuse_not_analyzed"
+  }
+]

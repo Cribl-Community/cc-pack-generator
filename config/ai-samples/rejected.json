@@ -1,0 +1,377 @@
+{
+  "version": 1,
+  "_comment": "Content fingerprints of samples judged incorrect. samples:promote refuses anything matching, so a removed sample cannot come back on the next run.",
+  "fingerprints": [
+    "100a9d6e-6769",
+    "10cb6611-6057",
+    "12b690cb-9768",
+    "13a49688-9362",
+    "15e58406-2712",
+    "17214eac-9212",
+    "1a0a883-3162",
+    "1b291f72-4456",
+    "1da36305-5231",
+    "1e48b55d-3349",
+    "2114d357-3648",
+    "25b41494-3403",
+    "2835a778-3853",
+    "29a99de4-9959",
+    "2d16f038-4281",
+    "3223b8a8-4058",
+    "3230dc40-3122",
+    "398a081c-5075",
+    "3a2b0b64-3040",
+    "3aedc345-4075",
+    "4253a93b-3034",
+    "4267eb3b-3080",
+    "4e1581c0-3641",
+    "4ec7daff-3769",
+    "5417fff5-3500",
+    "55735948-7461",
+    "55af30c-3941",
+    "5aa8e12-3150",
+    "5bdda250-3143",
+    "6069ffcb-8060",
+    "6070b3c7-3764",
+    "620d4be0-3324",
+    "62bbc68f-1496",
+    "65fa9ae7-6545",
+    "68c02d9-2572",
+    "6c10e328-8083",
+    "6dc64c20-3674",
+    "70a6a498-3656",
+    "76be6220-6593",
+    "77ffe284-2844",
+    "7def7cc4-4695",
+    "8002cf0-10850",
+    "80a9e283-3601",
+    "821a5b62-3218",
+    "83993765-2112",
+    "84856141-3488",
+    "852add82-4411",
+    "8714c40a-5307",
+    "90938b31-7440",
+    "941e1156-3079",
+    "972478d7-3437",
+    "9781f1b7-2768",
+    "98c1c033-3932",
+    "9d2bc250-2968",
+    "a1956f9b-6345",
+    "a426340a-9325",
+    "b912c3c0-4717",
+    "bd8f25e-4844",
+    "be792163-9547",
+    "bf3ac66-4018",
+    "c138cb51-7316",
+    "c22d5e4-3973",
+    "c75b5858-4942",
+    "cbd8f97c-5169",
+    "cc7fc2c8-1004",
+    "ce562ee8-4159",
+    "d170038c-3357",
+    "d3758725-21105",
+    "d56ee918-3978",
+    "e630d4c0-2835",
+    "e8687cc3-6328",
+    "eb116cd1-5152",
+    "eca015fd-3506",
+    "ed081b2c-3858",
+    "ef4dcae6-6687",
+    "f02da74-2461",
+    "f6a6307d-4938",
+    "f8f29d4d-3991",
+    "fca88128-6500",
+    "fcc3c9a-3956",
+    "feb7f8ad-7938"
+  ],
+  "notes": {
+    "e8687cc3-6328": {
+      "key": "citrix_netscaler_appfw_cef",
+      "reason": "Does not match Citrix AppFW CEF as we already hold it in citrix_waf (real Elastic fixtures): those use class ID APPFW with the violation in the Name field, version NSxx.x, and src/spt/method/request/msg/cn1/cn2/cs1-cs6/act. This sample puts the violation in the class ID, versions it 13.1-49.15, invents csNLabel pairs and violation names (APPFW_BUFOVERFLOW, APPFW_CREDSTUFF, APPFW_CMDINJ), omits act= and method=, and has no syslog envelope."
+    },
+    "13a49688-9362": {
+      "key": "corelight_ldap_search::json",
+      "reason": "Carries conn.log fields (conn_state, orig_bytes, resp_bytes, service) on every event; no real Corelight non-conn log has them (cf. the corelight_dns/http/ssl Elastic fixtures). 2 of 20 events are opcode=bind inside _path=ldap_search, with scope/deref/base_object left empty. Uses deref and object/argument from ldap.log rather than ldap_search.log's deref_aliases/filter/attributes/result_count. Root cause is the stored grounding, which demanded the conn fields — fix that or it recurs."
+    },
+    "100a9d6e-6769": {
+      "key": "corelight_ldap::json",
+      "reason": "Same defect as corelight_ldap_search: conn_state, orig_bytes and resp_bytes on every event of a non-conn log. Our real Corelight fixtures (corelight_dns/http/ssl) carry none of them. Cause was the Corelight JSON format hint in pack-builder, which named conn.log's field list for every Zeek log type; hint fixed in build 471, so a regenerated sample should be clean."
+    },
+    "be792163-9547": {
+      "key": "corelight_ocsp::json",
+      "reason": "Same conn.log bleed (conn_state, orig_bytes, resp_bytes, service, proto) on a non-conn log, plus an invented revokereason key; our real zeek_ocsp fixture has none of these. Cause was the Corelight JSON format hint in pack-builder, which named conn.log's field list for every Zeek log type; hint fixed in build 471, so a regenerated sample should be clean."
+    },
+    "5bdda250-3143": {
+      "key": "aemaccess",
+      "reason": "AEM access.log is written by Sling with the fixed format %h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-Agent}i\", and Sling's %t emits the timestamp WITHOUT brackets (SimpleDateFormat dd/MMM/yyyy:HH:mm:ss plus offset; every Adobe example agrees). This sample brackets it Apache-style and appends a duration field the format does not define — on only 2 of 3 lines, which a fixed format string cannot do, since both disagreeing lines return 200."
+    },
+    "4267eb3b-3080": {
+      "key": "aemrequest",
+      "reason": "AEM request.log is a TWO-line entry/exit format: '%t [%R] -> %m %U%q %H' then '%{end}t [%R] <- %s %{Content-Type}o %Dms', paired by a bracketed request counter (Adobe AEM 6.5 monitoring docs; Sling Request Logger). This sample is single-line NCSA combined with no counter, no ->/<- marker and no content type, and carries five fields the format does not define: client IP, user, bytes, referrer, user-agent."
+    },
+    "cc7fc2c8-1004": {
+      "key": "aemerror",
+      "reason": "The format is right (dd.MM.yyyy HH:mm:ss.SSS *LEVEL* [thread] logger message, including the unusual '[<ip> [<epoch-ms>] <METHOD> <path> HTTP/1.1]' request-thread name), but the content is not. On line 3 the embedded request-arrival epoch decodes to .335 while the log statement is stamped .309 — the request arrived 26ms after the line describing it was written, impossible at any UTC offset since offsets are whole minutes. Only 4 events besides."
+    },
+    "25b41494-3403": {
+      "key": "aemhttpdaccess",
+      "reason": "Lines 1-2 are textbook Apache combined, but line 3 appends a bare trailing number that combined does not define. LogFormat is fixed per log file, so %D or %T cannot render on one line and be absent from the other two. Duplicates apache_access regardless."
+    },
+    "5aa8e12-3150": {
+      "key": "cisco_ironport_wsa",
+      "reason": "Contradicted by the real WSA squid access logs in the SC4S corpus: every real event carries a hierarchy-retrieval field (DIRECT/host, NONE/host, DEFAULT_PARENT/host) between the username and the content type, plus an ACL tag shaped DEFAULT_CASE_184-<policy>-<policy>-... This sample omits the hierarchy field entirely, uses DEFAULT_CASE-Software_Updates-ALLOW-1-1-0, repeats the status code, and has no syslog envelope."
+    },
+    "d3758725-21105": {
+      "key": "f5_bigip_apm",
+      "reason": "F5 documents the APM line as '<msgid>:<level>: /Common/<profile>:<partition>:<session id>: <message>' and the session ID is mandatory — every F5 example carries one (/Common/generic_vpn:Common:ed37a81c:). This sample stops at the partition with nothing where the session ID belongs. Also (ST=/CN=) should be (ST=/CC=/C=), 01490500 is emitted by tmm rather than apmd, and the PRI values contradict the severity words (<134> is info, labelled notice)."
+    },
+    "620d4be0-3324": {
+      "key": "ivanti_splunkd",
+      "reason": "splunkd is Splunk's own pretrained sourcetype for the Splunk daemon log (MM-DD-YYYY HH:MM:SS.mmm +ZZZZ LEVEL Component - message), but this sample carries Ivanti Connect Secure authentication events, so name and content disagree. The ICS skeleton is close to Ivanti's documented custom filter format, yet the message IDs are wrong: AUT22673 is Logout and is used here for an auth failure, and AUT24281/ADM24327 appear nowhere in the ive.msgs code table."
+    },
+    "15e58406-2712": {
+      "key": "ivanti_top",
+      "reason": "top is a documented Splunk sourcetype carrying the *nix top process/CPU table, produced by top.sh in the Splunk Add-on for Unix and Linux; this sample carries Ivanti ICS authentication events, so name and content disagree. The layout also matches none of Ivanti's three documented export formats (Standard, WELF, W3C) — no node, sourceip, user, realm or role fields — and AUT24328/SYS31112 are absent from the ive.msgs table."
+    },
+    "9d2bc250-2968": {
+      "key": "splunk_app_soar_daemon",
+      "reason": "Splunk SOAR's real sourcetype is splunk_app_soar:daemon (colon-delimited) and its plaintext lines are syslog-style with an uppercase component and PID: 'Oct 5 22:55:18 localhost DECIDED[7177]: TID:7422: WARNING: DECIDED: rules_engine.cpp: 1503: ...', carrying a thread ID plus C++ source file and line number. The 'pid:14203 [phantom.daemon]' prefix used here is Python logging style and appears in no Splunk documentation."
+    },
+    "e630d4c0-2835": {
+      "key": "splunk_app_soar_misc_logs",
+      "reason": "Two defects. The prefix spawn.playbook:/spawn.action: does not exist — real spawn.log uses the component SPAWN3 ('2025-09-16T11:57:34.516801 PID:617974 TID:617974 : DEBUG: SPAWN3 : ...'). And splunk_app_soar:misc-logs is a catch-all monitor with the daemon log files blacklisted, so playbook and action execution content belongs to splunk_app_soar:daemon, not here."
+    },
+    "80a9e283-3601": {
+      "key": "vcenter_syslog",
+      "reason": "vCenter's documented grammar is TIMESTAMP SEVERITY THREAD-NAME OPID: '... info vpxd[10394] [Originator@6876 sub=Default opID=faf1555] [VpxLRO] -- ERROR lro-134510 -- SessionManager -- vim.SessionManager.login: vim.fault.InvalidLogin:'. This sample has no severity token, no [Originator@6876 ...] structured data and no lro-NNNN id. Line 3 also attributes hostd to a vCenter host, and hostd runs only on ESXi."
+    },
+    "eb116cd1-5152": {
+      "key": "vmware_esxlog_envoy_access",
+      "reason": "ESXi does not use Envoy's default access-log format. Real envoy-access lines (Broadcom KB 413687) read 'In(166) envoy-access[2101209]: GET /sdk/service 503 upstream_reset_before_response_started{connection_termination} UC 0 95 - 0 - - 127.0.0.1:... HTTP/1.1 ...': unquoted request line, RESPONSE_CODE_DETAILS present, and a different tail field set. This sample is the stock Envoy template with an 'Envoy:' tag; the real program tag is envoy-access[pid] and the PRI is local4.info."
+    },
+    "8714c40a-5307": {
+      "key": "trendmicro_interscan",
+      "reason": "build-529 validation [structural]: Mixed InterScan product families; ownership and event semantics are not uniform."
+    },
+    "852add82-4411": {
+      "key": "ivanti_core_mifs",
+      "reason": "build-529 validation [structural]: Events name several generic EPM modules rather than one documented Ivanti source."
+    },
+    "8002cf0-10850": {
+      "key": "ncsc_akamai_web",
+      "reason": "build-529 validation [contradicted]: Akamai evidence uses nested rules objects; flattened ruleActions/ruleMessages conflict."
+    },
+    "c22d5e4-3973": {
+      "key": "stash",
+      "reason": "build-529 validation [structural]: Bitbucket application logs are not syslog records."
+    },
+    "c138cb51-7316": {
+      "key": "aemcdn_waf",
+      "reason": "build-529 validation [contradicted]: AEM CDN evidence uses the fixed CDN schema, not this WAF-event schema."
+    },
+    "6dc64c20-3674": {
+      "key": "vmware_esxlog_clusteragent",
+      "reason": "build-529 validation [contradicted]: Clusteragent ownership and event grammar are unsupported; fdm.log is the documented HA source."
+    },
+    "a1956f9b-6345": {
+      "key": "stream_dns",
+      "reason": "build-529 validation [contradicted]: Cribl Stream DNS documentation does not describe DNS query telemetry."
+    },
+    "62bbc68f-1496": {
+      "key": "aemhttpderror",
+      "reason": "build-529 validation [contradicted]: AEM Java error records conflict with the claimed HTTPD-error source."
+    },
+    "98c1c033-3932": {
+      "key": "vmware_esxlog_cmmdstimemachinedump",
+      "reason": "build-529 validation [structural]: Explicitly mixed free text and key/value fragments."
+    },
+    "ce562ee8-4159": {
+      "key": "ivanti_sun_jvm",
+      "reason": "build-529 validation [structural]: Mixed JVM/application formats under one key."
+    },
+    "cbd8f97c-5169": {
+      "key": "vmware_esxlog_etcd",
+      "reason": "build-529 validation [structural]: etcd JSON is not an ESXi host-log source."
+    },
+    "4ec7daff-3769": {
+      "key": "vmware_esxlog_hostdcgiserver",
+      "reason": "build-529 validation [structural]: Explicitly mixed format."
+    },
+    "398a081c-5075": {
+      "key": "citrix_netscaler_appfw",
+      "reason": "build-529 validation [structural]: Explicitly mixed NetScaler formats."
+    },
+    "4e1581c0-3641": {
+      "key": "postfix_syslog",
+      "reason": "build-529 validation [structural]: Explicitly mixed Postfix message structures under the report standard."
+    },
+    "65fa9ae7-6545": {
+      "key": "cisco_estreamer_data",
+      "reason": "build-529 validation [structural]: eStreamer sample has a 40-character value in a file_sha256 field; impossible SHA-256 length."
+    },
+    "b912c3c0-4717": {
+      "key": "tenable_syslog",
+      "reason": "build-529 validation [structural]: Malformed key/value token: severity Low=High."
+    },
+    "941e1156-3079": {
+      "key": "vmware_esxlog_sut",
+      "reason": "build-529 validation [structural]: Mixes Hostd, Vpxa, sshd, and vmkernel sources."
+    },
+    "5417fff5-3500": {
+      "key": "vmware_esxlog_healthdplugins",
+      "reason": "build-529 validation [structural]: Explicitly mixed and unstable Key=value schema."
+    },
+    "4253a93b-3034": {
+      "key": "ivanti_hastatus",
+      "reason": "build-529 validation [structural]: Explicitly mixed HA message structures."
+    },
+    "1a0a883-3162": {
+      "key": "ldap_access_log",
+      "reason": "build-529 validation [structural]: Apache combined access logs conflict with declared Key=value format."
+    },
+    "55af30c-3941": {
+      "key": "vmware_esxlog_backup_check",
+      "reason": "build-529 validation [structural]: Explicitly mixed Backup.check structures."
+    },
+    "821a5b62-3218": {
+      "key": "vmware_esxlog_esxtokend",
+      "reason": "build-529 validation [structural]: Explicitly mixed esxtokend structures."
+    },
+    "9781f1b7-2768": {
+      "key": "ivanti_linux_secure",
+      "reason": "build-529 validation [structural]: Mixes sshd, sudo, logind, PAM, and dsAdminServer formats."
+    },
+    "2114d357-3648": {
+      "key": "vmware_esxlog_vmkmemstats",
+      "reason": "build-529 validation [structural]: Explicitly mixed vmkernel/memory message forms."
+    },
+    "d170038c-3357": {
+      "key": "vmware_esxlog_sandboxd",
+      "reason": "build-529 validation [structural]: Explicitly mixed sandbox formats."
+    },
+    "3223b8a8-4058": {
+      "key": "vmware_esxlog_hostd_probe",
+      "reason": "build-529 validation [structural]: Mixes Hostd records and unstructured probe text."
+    },
+    "70a6a498-3656": {
+      "key": "vmware_esxlog_vsanobserver",
+      "reason": "build-529 validation [structural]: Explicitly mixed vSAN observer formats."
+    },
+    "6069ffcb-8060": {
+      "key": "ncsc_fidelis_endpoint_audit",
+      "reason": "build-529 validation [contradicted]: Fidelis Endpoint audit output conflicts with documented CEF/LEEF framing."
+    },
+    "ef4dcae6-6687": {
+      "key": "modular_alerts_phantom_sendtophantom",
+      "reason": "build-529 validation [structural]: Catalogue marks product/key unidentified."
+    },
+    "fca88128-6500": {
+      "key": "corelight_generic_icmp_tunnels::json",
+      "reason": "build-529 validation [structural]: Generic CSV ownership conflicts with Corelight JSON key."
+    },
+    "17214eac-9212": {
+      "key": "fml_spam",
+      "reason": "build-529 validation [contradicted]: FortiMail subtype/value semantics conflict with documented spam types."
+    },
+    "90938b31-7440": {
+      "key": "fml_event",
+      "reason": "build-529 validation [contradicted]: FortiMail event subtypes conflict with documented IMAP/POP3/SMTP/webmail types."
+    },
+    "2835a778-3853": {
+      "key": "vmware_esxlog_cmmdstimemachine",
+      "reason": "build-529 validation [structural]: Explicitly mixed cmmdsTimeMachine structures."
+    },
+    "d56ee918-3978": {
+      "key": "ivanti_portal_access",
+      "reason": "build-529 validation [structural]: Mixes free text and bracketed key/value records."
+    },
+    "fcc3c9a-3956": {
+      "key": "ivanti_iostat",
+      "reason": "build-529 validation [structural]: Mixes native iostat output and unrelated key/value alerts."
+    },
+    "3a2b0b64-3040": {
+      "key": "ivanti_mdstat",
+      "reason": "build-529 validation [structural]: mdstat key/events conflict with native /proc/mdstat structure."
+    },
+    "29a99de4-9959": {
+      "key": "modular_alerts_notable",
+      "reason": "build-529 validation [structural]: Catalogue marks product/key unidentified."
+    },
+    "972478d7-3437": {
+      "key": "ivanti_core_mics",
+      "reason": "build-529 validation [structural]: Explicitly mixed formats."
+    },
+    "ed081b2c-3858": {
+      "key": "jira_security",
+      "reason": "build-529 validation [contradicted]: Jira security records conflict with documented free-form security logs."
+    },
+    "bd8f25e-4844": {
+      "key": "ivanti_elasticsearch_log",
+      "reason": "build-529 validation [structural]: Generic Elasticsearch logs are not Ivanti appliance records."
+    },
+    "2d16f038-4281": {
+      "key": "rsa_securid_syslog",
+      "reason": "build-529 validation [contradicted]: RSA SecurID documented format is positional/comma-delimited, not this KVP."
+    },
+    "10cb6611-6057": {
+      "key": "tenable_sc_assets",
+      "reason": "build-529 validation [contradicted]: Tenable.sc asset semantics conflict with documented asset records."
+    },
+    "84856141-3488": {
+      "key": "vmware_esxlog_crx_cli",
+      "reason": "build-529 validation [structural]: crx-cli ownership and schema unsupported."
+    },
+    "1e48b55d-3349": {
+      "key": "bitbucket_access_log",
+      "reason": "build-529 validation [contradicted]: Bitbucket access logs use a product-specific pipe format, not Apache combined text."
+    },
+    "1b291f72-4456": {
+      "key": "delinea_reports",
+      "reason": "build-529 validation [contradicted]: Delinea custom KVP conflicts with documented Syslog/CEF output."
+    },
+    "f8f29d4d-3991": {
+      "key": "vmware_esxlog_backup",
+      "reason": "build-529 validation [structural]: Explicitly mixes Hostd, Vpxa, and vmkernel records."
+    },
+    "1da36305-5231": {
+      "key": "fml_statistics",
+      "reason": "build-529 validation [contradicted]: FortiMail statistics must not carry the generated subtypes."
+    },
+    "68c02d9-2572": {
+      "key": "trellix_dbconnect",
+      "reason": "build-529 validation [structural]: Explicitly mixes Java prose and key/value formats."
+    },
+    "bf3ac66-4018": {
+      "key": "vmware_esxlog_configstorebackup",
+      "reason": "build-529 validation [structural]: Explicitly mixed ConfigStoreBackup formats."
+    },
+    "6070b3c7-3764": {
+      "key": "iostat",
+      "reason": "build-529 validation [structural]: Unidentified catalogue key and malformed iostat values."
+    },
+    "7def7cc4-4695": {
+      "key": "vmware_esxlog_vsananalyticsevents",
+      "reason": "build-529 validation [structural]: Explicitly mixed prose and key/value fragments."
+    },
+    "eca015fd-3506": {
+      "key": "ivanti_sentry_httpd",
+      "reason": "build-529 validation [contradicted]: Ivanti Sentry documents structured JSON, not these Apache-style lines."
+    },
+    "f6a6307d-4938": {
+      "key": "corelight_known_domains::json",
+      "reason": "build-529 validation [contradicted]: Corelight known_domains schema variant conflicts with generated fields (report: REJECT CONTRADICTED)."
+    },
+    "c75b5858-4942": {
+      "key": "corelight_corelight_overall_capture_loss::json",
+      "reason": "build-529 validation [contradicted]: Zeek capture_loss schema conflicts with added connection fields."
+    },
+    "83993765-2112": {
+      "key": "mdstat",
+      "reason": "build-529 validation [structural]: Unidentified catalogue key."
+    },
+    "f02da74-2461": {
+      "key": "vmstat",
+      "reason": "build-529 validation [structural]: Unidentified catalogue key."
+    }
+  }
+}

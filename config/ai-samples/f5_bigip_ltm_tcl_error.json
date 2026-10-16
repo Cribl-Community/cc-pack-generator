@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "key": "f5_bigip_ltm_tcl_error",
+  "sourcetype": "f5_bigip_ltm_tcl_error",
+  "events": [
+    "Jan 15 08:23:14 bigip-ltm01.prod.local notice tmm1[12456]: 01220001:5: TCL error: /Common/http_redirect_irule HTTP_REQUEST - can't read \"http_host\": no such variable while executing \"if {$http_host eq \"www.example.com\"} {\" invoked from within \"HTTP::respond 200 content $body\"",
+    "Jan 15 09:41:02 bigip-ltm02.prod.local err tmm[8821]: 01220001:3: TCL error: /Common/waf_block_rule HTTP_REQUEST - Client (203.0.113.45:54231) triggered severe error; connection aborted invoked from within \"HTTP::respond 403 content \"Forbidden\"\"",
+    "Jan 15 10:02:55 bigip-ltm01.prod.local warning tmm2[12456]: 01220001:4: TCL error: /Common/ssl_client_cert_check CLIENTSSL_HANDSHAKE - unable to verify client certificate chain for 198.51.100.22:443 invoked from within \"SSL::cert 0\"",
+    "Jan 15 11:15:30 bigip-ltm03.dmz.local notice tmm[9012]: 01220001:5: TCL error: /Common/geo_block_irule HTTP_REQUEST - geoip lookup failed for source 2001:db8:85a3::8a2e:370:7334 invoked from within \"set country [whereis [IP::client_addr] country]\"",
+    "Jan 15 12:33:47 bigip-ltm01.prod.local err tmm3[12456]: 01220001:3: TCL error: /Common/rate_limit_irule CLIENT_ACCEPT - table lookup exceeded max entries (100000) for pool /Common/pool_web01 invoked from within \"table set -subtable \"conn_limit\" [IP::client_addr] 1\"",
+    "Jan 15 13:47:19 bigip-ltm02.prod.local notice tmm[8821]: 01220001:5: TCL error: /Common/header_insert_irule HTTP_RESPONSE - undefined procedure \"insertCustomHeader\" invoked from within \"insertCustomHeader $response_data\"",
+    "Jan 15 14:02:11 bigip-ltm01.prod.local crit tmm1[12456]: 01220001:2: TCL error: /Common/apm_auth_check ACCESS_ACL_ALLOWED - session variable \"session.logon.last.username\" not found for client 10.44.12.87:38221 invoked from within \"set uname [ACCESS::session data get session.logon.last.username]\"",
+    "Jan 15 15:19:33 bigip-ltm04.dr.local warning tmm[15342]: 01220001:4: TCL error: /Common/failover_irule LB_FAILED - no members available in pool /Common/pool_app_backend, retry threshold exceeded invoked from within \"if {[LB::status pool /Common/pool_app_backend] eq \"down\"} {\"",
+    "Jan 15 16:05:48 bigip-ltm01.prod.local notice tmm2[12456]: 01220001:5: TCL error: /Common/sql_injection_filter HTTP_REQUEST - malicious pattern detected from 45.33.32.156:41290, blocking request invoked from within \"HTTP::respond 406 content \"Request Blocked\"\"",
+    "Jan 15 17:28:02 bigip-ltm03.dmz.local err tmm[9012]: 01220001:3: TCL error: /Common/cache_control_irule HTTP_RESPONSE - can't set \"cache_status\": variable is array invoked from within \"set cache_status \"HIT\"\"",
+    "Jan 15 18:44:56 bigip-ltm02.prod.local notice tmm3[8821]: 01220001:5: TCL error: /Common/xff_parser_irule HTTP_REQUEST - malformed X-Forwarded-For header from client 172.16.9.203:53412, value: \"10.0.0.1, , 192.168.1.1,\" invoked from within \"set xff_list [split $xff \",\"]\"",
+    "Jan 15 19:12:40 bigip-ltm01.prod.local warning tmm[12456]: 01220001:4: TCL error: /Common/session_persist_irule HTTP_REQUEST - persistence entry expired unexpectedly for session id a3f9c81e2b invoked from within \"persist uie $session_id 3600\"",
+    "Jan 15 20:37:15 bigip-ltm05.eastus.local notice tmm[20134]: 01220001:5: TCL error: /Common/bot_detection_irule HTTP_REQUEST - suspicious user-agent pattern from 91.198.174.192:60123 matched signature \"curl/7.*\" invoked from within \"HTTP::respond 429 content \"Too Many Requests\"\"",
+    "Jan 15 21:03:29 bigip-ltm01.prod.local err tmm1[12456]: 01220001:3: TCL error: /Common/data_group_lookup DNS_REQUEST - data group /Common/dns_blocklist not found or empty invoked from within \"class match [DNS::question name] equals /Common/dns_blocklist\"",
+    "Jan 15 22:18:07 bigip-ltm02.prod.local notice tmm2[8821]: 01220001:5: TCL error: /Common/url_rewrite_irule HTTP_REQUEST - regexp compile error in pattern \"^/api/v[0-9+/(.*)\" invoked from within \"if {[regexp {^/api/v[0-9+/(.*)} $uri matched path]} {\"",
+    "Jan 15 23:41:52 bigip-ltm04.dr.local crit tmm[15342]: 01220001:2: TCL error: /Common/oauth_token_validate ACCESS_ACL_ALLOWED - token validation service unreachable at 10.20.30.40:8443, timeout after 5000ms invoked from within \"set valid [call apm_oauth::validate_token $token]\"",
+    "Jan 16 00:09:38 bigip-ltm01.prod.local warning tmm[12456]: 01220001:4: TCL error: /Common/large_payload_check HTTP_REQUEST - request body exceeded 10485760 bytes from 203.0.113.99:47821, truncating invoked from within \"set body [HTTP::payload]\"",
+    "Jan 16 01:26:44 bigip-ltm03.dmz.local notice tmm4[9012]: 01220001:5: TCL error: /Common/legacy_snat_irule CLIENT_ACCEPT - snat pool /Common/snat_legacy exhausted, no available addresses invoked from within \"snatpool /Common/snat_legacy\"",
+    "Jan 16 02:55:03 bigip-ltm02.prod.local err tmm[8821]: 01220001:3: TCL error: /Common/admin_bypass_irule HTTP_REQUEST - unauthorized attempt to invoke admin bypass from 185.220.101.47:44982, access denied invoked from within \"if {[IP::addr [IP::client_addr] equals 10.0.0.0/8]} {\"",
+    "Jan 16 03:14:27 bigip-ltm05.eastus.local notice tmm2[20134]: 01220001:5: TCL error: /Common/health_monitor_irule MONITOR_TCP - health check script timeout for pool member 10.15.22.100:8080 after 3000ms invoked from within \"set status [call monitor::check_backend]\""
+  ],
+  "fingerprint": "dc2108f4-5138",
+  "verification": {
+    "verdict": "unverified",
+    "method": "none",
+    "eventsParsed": 0,
+    "eventsChecked": 20,
+    "fields": [],
+    "reasons": [
+      "f5_bigip_ltm_tcl_error has no parser and the events are unstructured text — nothing to verify against"
+    ],
+    "offendingEvents": [],
+    "keyEcho": null
+  },
+  "provenance": {
+    "model": "us.anthropic.claude-sonnet-5",
+    "buildNumber": 529,
+    "generatedAt": "2026-08-18T07:36:16.159Z",
+    "grounding": "KNOWN FACTS ABOUT THIS SOURCE (from sourcetype recognition — match these exactly):\n- Product: F5 BIG-IP\n- Log family: network"
+  }
+}

@@ -1,0 +1,122 @@
+[
+  {
+    "_raw": "#separator \\x09",
+    "_time": 1521911720.629574,
+    "sourcetype": "bro_notice",
+    "source": "/opt/zeek/logs/current/notice.log"
+  },
+  {
+    "_raw": "#set_separator\t,",
+    "_time": 1521911720.629574,
+    "sourcetype": "bro_notice",
+    "source": "/opt/zeek/logs/current/notice.log"
+  },
+  {
+    "_raw": "#empty_field\t(empty)",
+    "_time": 1521911720.629574,
+    "sourcetype": "bro_notice",
+    "source": "/opt/zeek/logs/current/notice.log"
+  },
+  {
+    "_raw": "#unset_field\t-",
+    "_time": 1521911720.629574,
+    "sourcetype": "bro_notice",
+    "source": "/opt/zeek/logs/current/notice.log"
+  },
+  {
+    "_raw": "#path\tnotice",
+    "_time": 1521911720.629574,
+    "sourcetype": "bro_notice",
+    "source": "/opt/zeek/logs/current/notice.log"
+  },
+  {
+    "_raw": "#open\t2024-04-12-19-29-12",
+    "_time": 1521911720.629574,
+    "sourcetype": "bro_notice",
+    "source": "/opt/zeek/logs/current/notice.log"
+  },
+  {
+    "_raw": "#fields\tts\tuid\tid.orig_h\tid.orig_p\tid.resp_h\tid.resp_p\tfuid\tfile_mime_type\tfile_desc\tproto\tnote\tmsg\tsub\tsrc\tdst\tp\tn\tpeer_descr\tactions\temail_dest\tsuppress_for\tremote_location.country_code\tremote_location.region\tremote_location.city\tremote_location.latitude\tremote_location.longitude",
+    "_time": 1521911720.629574,
+    "sourcetype": "bro_notice",
+    "source": "/opt/zeek/logs/current/notice.log"
+  },
+  {
+    "_raw": "#types\ttime\tstring\taddr\tport\taddr\tport\tstring\tstring\tstring\tenum\tenum\tstring\tstring\taddr\taddr\tport\tcount\tstring\tset[enum]\tset[string]\tinterval\tstring\tstring\tstring\tdouble\tdouble",
+    "_time": 1521911720.629574,
+    "sourcetype": "bro_notice",
+    "source": "/opt/zeek/logs/current/notice.log"
+  },
+  {
+    "_raw": "1521911720.629574\tCmC9kY1X0u9nP78KZc\t10.164.94.120\t39611\t10.47.3.200\t443\tFGP2jt4dhD3bYZ923k\t-\t-\ttcp\tSSL::Invalid_Server_Cert\tSSL certificate validation failed with (unable to get local issuer certificate)\tunstructuredName=1315656901\\\\,564d7761726520496e632e,CN=localhost.localdomain,emailAddress=ssl-certificates@vmware.com,OU=VMware ESX Server Default Certificate,O=VMware\\\\, Inc,L=Palo Alto,ST=California,C=US\t10.164.94.120\t10.47.3.200\t443\t-\t-\tNotice::ACTION_LOG\t(empty)\t3600.000000\t-\t-\t-\t-\t-",
+    "_time": 1521911720.629574,
+    "sourcetype": "bro_notice",
+    "source": "/opt/zeek/logs/current/notice.log"
+  },
+  {
+    "_raw": "1521911723.400423\tCVHA7z2oZ6BsxyvsYl\t10.47.26.160\t49161\t216.58.193.195\t443\tFRHcw81ZxQGthpwqRh\t-\t-\ttcp\tSSL::Invalid_Server_Cert\tSSL certificate validation failed with (unable to get local issuer certificate)\tCN=*.google.com,O=Google Inc,L=Mountain View,ST=California,C=US\t10.47.26.160\t216.58.193.195\t443\t-\t-\tNotice::ACTION_LOG\t(empty)\t3600.000000\t-\t-\t-\t-\t-",
+    "_time": 1521911723.400423,
+    "sourcetype": "bro_notice",
+    "source": "/opt/zeek/logs/current/notice.log"
+  },
+  {
+    "_raw": "1521911723.800012\tCcxH4d2zZbiB2Bnxlj\t10.47.2.152\t2208\t13.92.82.125\t443\tF1FfMG115RrFLsSGCe\t-\t-\ttcp\tSSL::Invalid_Server_Cert\tSSL certificate validation failed with (unable to get local issuer certificate)\tCN=shasta-ars.symantec.com,OU=IT Security,O=Symantec Corporation,L=Mountain View,ST=California,C=US\t10.47.2.152\t13.92.82.125\t443\t-\t-\tNotice::ACTION_LOG\t(empty)\t3600.000000\t-\t-\t-\t-\t-",
+    "_time": 1521911723.800012,
+    "sourcetype": "bro_notice",
+    "source": "/opt/zeek/logs/current/notice.log"
+  },
+  {
+    "_raw": "1521911723.973398\tCZsH6n28XJO4ytzyV4\t10.47.4.153\t4786\t134.71.3.16\t443\tFaJCVufQm4kek52x6\t-\t-\ttcp\tSSL::Invalid_Server_Cert\tSSL certificate validation failed with (unable to get local issuer certificate)\tCN=ise.wrccdc.org\t10.47.4.153\t134.71.3.16\t443\t-\t-\tNotice::ACTION_LOG\t(empty)\t3600.000000\t-\t-\t-\t-\t-",
+    "_time": 1521911723.973398,
+    "sourcetype": "bro_notice",
+    "source": "/opt/zeek/logs/current/notice.log"
+  },
+  {
+    "_raw": "1521911724.685906\tCHBsCQDS1auzfHpp5\t10.47.6.159\t50233\t172.217.11.78\t443\tFnq7iz2ODN6LZtNuV9\t-\t-\ttcp\tSSL::Invalid_Server_Cert\tSSL certificate validation failed with (unable to get local issuer certificate)\tCN=*.google.com,O=Google Inc,L=Mountain View,ST=California,C=US\t10.47.6.159\t172.217.11.78\t443\t-\t-\tNotice::ACTION_LOG\t(empty)\t3600.000000\t-\t-\t-\t-\t-",
+    "_time": 1521911724.685906,
+    "sourcetype": "bro_notice",
+    "source": "/opt/zeek/logs/current/notice.log"
+  },
+  {
+    "_raw": "1521911725.177168\tCi1OYK3E4P4l4xGGq1\t10.164.94.120\t45897\t10.47.3.100\t9390\tFd1Yqj3eh0F1CFU0Z6\t-\t-\ttcp\tSSL::Invalid_Server_Cert\tSSL certificate validation failed with (unable to get local issuer certificate)\temailAddress=openvassd@nougat,CN=nougat,OU=Server certificate for nougat,O=OpenVAS Users United,L=Los Angeles,C=US\t10.164.94.120\t10.47.3.100\t9390\t-\t-\tNotice::ACTION_LOG\t(empty)\t3600.000000\t-\t-\t-\t-\t-",
+    "_time": 1521911725.177168,
+    "sourcetype": "bro_notice",
+    "source": "/opt/zeek/logs/current/notice.log"
+  },
+  {
+    "_raw": "1521911725.373771\tCiP1Dm1XppvM1sWKLg\t10.47.1.208\t50093\t172.217.11.72\t443\tF7jZpi1EBrCKi6W7we\t-\t-\ttcp\tSSL::Invalid_Server_Cert\tSSL certificate validation failed with (unable to get local issuer certificate)\tCN=*.google-analytics.com,O=Google Inc,L=Mountain View,ST=California,C=US\t10.47.1.208\t172.217.11.72\t443\t-\t-\tNotice::ACTION_LOG\t(empty)\t3600.000000\t-\t-\t-\t-\t-",
+    "_time": 1521911725.373771,
+    "sourcetype": "bro_notice",
+    "source": "/opt/zeek/logs/current/notice.log"
+  },
+  {
+    "_raw": "1521911726.829686\tCS3Ctf16zmGKtOn2ua\t10.164.94.120\t41125\t10.47.3.100\t9391\tFT7qqkHqZgAOt7LT9\t-\t-\ttcp\tSSL::Invalid_Server_Cert\tSSL certificate validation failed with (unable to get local issuer certificate)\temailAddress=openvassd@nougat,CN=nougat,OU=Server certificate for nougat,O=OpenVAS Users United,L=Los Angeles,C=US\t10.164.94.120\t10.47.3.100\t9391\t-\t-\tNotice::ACTION_LOG\t(empty)\t3600.000000\t-\t-\t-\t-\t-",
+    "_time": 1521911726.829686,
+    "sourcetype": "bro_notice",
+    "source": "/opt/zeek/logs/current/notice.log"
+  },
+  {
+    "_raw": "1521911992.562663\tCZWR3X3JGoZex8wIQf\t10.128.0.241\t33392\t10.47.1.208\t25\tFaGIMh1DnDrZl4Ubb\t-\t-\ttcp\tSSL::Invalid_Server_Cert\tSSL certificate validation failed with (unable to get local issuer certificate)\tCN=Snozberry\t10.128.0.241\t10.47.1.208\t25\t-\t-\tNotice::ACTION_LOG\t(empty)\t3600.000000\t-\t-\t-\t-\t-",
+    "_time": 1521911992.562663,
+    "sourcetype": "bro_notice",
+    "source": "/opt/zeek/logs/current/notice.log"
+  },
+  {
+    "_raw": "1521912191.533279\tCGilO01wgwa6iQX6za\t10.128.0.212\t50912\t10.47.24.25\t3389\tFA02k11w9nJOFb54Nj\t-\t-\ttcp\tSSL::Invalid_Server_Cert\tSSL certificate validation failed with (unable to get local issuer certificate)\tCN=Kramer.jerry.land\t10.128.0.212\t10.47.24.25\t3389\t-\t-\tNotice::ACTION_LOG\t(empty)\t3600.000000\t-\t-\t-\t-\t-",
+    "_time": 1521912191.533279,
+    "sourcetype": "bro_notice",
+    "source": "/opt/zeek/logs/current/notice.log"
+  },
+  {
+    "_raw": "1521912431.223042\tCAb9Hr1bxAlGub1ry1\t10.47.2.156\t61467\t40.118.164.163\t443\tFZsxtY3cxWm6zvsH7\t-\t-\ttcp\tSSL::Invalid_Server_Cert\tSSL certificate validation failed with (self signed certificate in certificate chain)\tCN=login.symantec.com,OU=IT Security,O=Symantec Corporation,street=350 Ellis Street,L=Mountain View,ST=California,postalCode=94043,C=US,serialNumber=2158113,businessCategory=Private Organization,jurisdictionST=Delaware,jurisdictionC=US\t10.47.2.156\t40.118.164.163\t443\t-\t-\tNotice::ACTION_LOG\t(empty)\t3600.000000\t-\t-\t-\t-\t-",
+    "_time": 1521912431.223042,
+    "sourcetype": "bro_notice",
+    "source": "/opt/zeek/logs/current/notice.log"
+  },
+  {
+    "_raw": "1521912835.084529\tCwdYia2Yd3OOq7uj27\t10.128.0.19\t60340\t10.47.26.55\t143\tFCK6Ea2qF2oOxga6l9\t-\t-\ttcp\tSSL::Invalid_Server_Cert\tSSL certificate validation failed with (self signed certificate)\temailAddress=root@MartinvanNostrand.jerry.land,CN=MartinvanNostrand.jerry.land,OU=MartinvanNostrand.,O=Dovecot mail server\t10.128.0.19\t10.47.26.55\t143\t-\t-\tNotice::ACTION_LOG\t(empty)\t3600.000000\t-\t-\t-\t-\t-",
+    "_time": 1521912835.084529,
+    "sourcetype": "bro_notice",
+    "source": "/opt/zeek/logs/current/notice.log"
+  }
+]

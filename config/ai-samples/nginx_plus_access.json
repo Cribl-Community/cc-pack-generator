@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "key": "nginx_plus_access",
+  "sourcetype": "nginx_plus_access",
+  "events": [
+    "10.0.0.15 - alice [12/May/2024:03:14:22 +0000] \"GET /api/v2/users/12345 HTTP/1.1\" 200 1543 \"https://portal.example.com/dashboard\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36\" \"-\" rt=0.042 uct=\"0.001\" uht=\"0.038\" urt=\"0.041\" us=\"200\" ua=\"10.0.0.101:8080\"",
+    "203.0.113.45 - - [12/May/2024:03:16:05 +0000] \"POST /login HTTP/1.1\" 401 287 \"https://example.com/login\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)\" \"-\" rt=0.115 uct=\"0.002\" uht=\"0.108\" urt=\"0.113\" us=\"401\" ua=\"10.0.0.102:8080\"",
+    "192.168.1.22 - bob [12/May/2024:03:18:47 +0000] \"GET /static/css/main.css HTTP/1.1\" 304 0 \"https://example.com/home\" \"Mozilla/5.0 (X11; Linux x86_64)\" \"-\" rt=0.003 uct=\"-\" uht=\"-\" urt=\"-\" us=\"-\" ua=\"-\"",
+    "198.51.100.9 - - [12/May/2024:03:21:33 +0000] \"GET /wp-login.php HTTP/1.1\" 404 162 \"-\" \"curl/7.68.0\" \"-\" rt=0.008 uct=\"-\" uht=\"-\" urt=\"-\" us=\"-\" ua=\"-\"",
+    "10.0.0.18 - carol [12/May/2024:03:25:59 +0000] \"PUT /api/v2/orders/9981 HTTP/1.1\" 200 892 \"https://portal.example.com/orders\" \"Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X)\" \"-\" rt=0.067 uct=\"0.002\" uht=\"0.061\" urt=\"0.065\" us=\"200\" ua=\"10.0.0.103:8080\"",
+    "172.16.5.33 - - [12/May/2024:03:29:12 +0000] \"GET /api/v2/search?q=%27%20OR%201%3D1--+ HTTP/1.1\" 400 512 \"-\" \"sqlmap/1.6\" \"-\" rt=0.021 uct=\"-\" uht=\"-\" urt=\"-\" us=\"-\" ua=\"-\"",
+    "2001:db8::4f2a - dave [12/May/2024:03:32:04 +0000] \"GET /reports/annual-summary.pdf HTTP/1.1\" 200 4582991 \"https://intranet.example.com/reports\" \"Mozilla/5.0 (Windows NT 10.0)\" \"-\" rt=1.842 uct=\"0.003\" uht=\"1.801\" urt=\"1.839\" us=\"200\" ua=\"10.0.0.104:8080\"",
+    "45.33.22.156 - - [12/May/2024:03:35:41 +0000] \"GET /.env HTTP/1.1\" 404 158 \"-\" \"python-requests/2.25.1\" \"-\" rt=0.005 uct=\"-\" uht=\"-\" urt=\"-\" us=\"-\" ua=\"-\"",
+    "10.0.0.21 - eve [12/May/2024:03:39:17 +0000] \"DELETE /api/v2/sessions/44231 HTTP/1.1\" 204 0 \"https://portal.example.com/settings\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) Safari\" \"-\" rt=0.031 uct=\"0.001\" uht=\"0.028\" urt=\"0.030\" us=\"204\" ua=\"10.0.0.105:8080\"",
+    "203.0.113.88 - - [12/May/2024:03:42:50 +0000] \"GET /admin/config HTTP/1.1\" 403 220 \"-\" \"Mozilla/5.0 (Linux; Android 10)\" \"-\" rt=0.009 uct=\"-\" uht=\"-\" urt=\"-\" us=\"-\" ua=\"-\"",
+    "192.168.1.50 - frank [12/May/2024:03:46:29 +0000] \"GET /api/v2/products?category=electronics HTTP/1.1\" 200 3201 \"https://example.com/shop\" \"Mozilla/5.0 (Windows NT 6.1)\" \"-\" rt=0.055 uct=\"0.002\" uht=\"0.049\" urt=\"0.053\" us=\"200\" ua=\"10.0.0.106:8080\"",
+    "185.220.101.7 - - [12/May/2024:03:50:14 +0000] \"POST /xmlrpc.php HTTP/1.1\" 429 96 \"-\" \"Mozilla/5.0 (compatible; masscan)\" \"-\" rt=0.002 uct=\"-\" uht=\"-\" urt=\"-\" us=\"-\" ua=\"-\"",
+    "10.0.0.29 - grace [12/May/2024:03:53:38 +0000] \"GET /api/v2/notifications HTTP/1.1\" 200 671 \"https://portal.example.com/inbox\" \"Mozilla/5.0 (iPad; CPU OS 14_6)\" \"-\" rt=0.019 uct=\"0.001\" uht=\"0.016\" urt=\"0.018\" us=\"200\" ua=\"10.0.0.107:8080\"",
+    "198.51.100.200 - - [12/May/2024:03:57:22 +0000] \"GET /server-status HTTP/1.1\" 404 158 \"-\" \"Go-http-client/1.1\" \"-\" rt=0.004 uct=\"-\" uht=\"-\" urt=\"-\" us=\"-\" ua=\"-\"",
+    "10.0.0.33 - heidi [12/May/2024:04:02:11 +0000] \"POST /api/v2/upload HTTP/1.1\" 201 205 \"https://portal.example.com/media\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64)\" \"-\" rt=2.913 uct=\"0.003\" uht=\"2.870\" urt=\"2.908\" us=\"201\" ua=\"10.0.0.108:8080\"",
+    "172.16.8.14 - - [12/May/2024:04:06:45 +0000] \"GET /favicon.ico HTTP/1.1\" 200 894 \"https://example.com/\" \"Mozilla/5.0 (Windows NT 10.0)\" \"-\" rt=0.002 uct=\"0.000\" uht=\"0.002\" urt=\"0.002\" us=\"200\" ua=\"10.0.0.109:8080\"",
+    "91.214.63.20 - - [12/May/2024:04:11:03 +0000] \"GET /../../../etc/passwd HTTP/1.1\" 400 512 \"-\" \"Mozilla/5.0 (X11; Linux x86_64)\" \"-\" rt=0.011 uct=\"-\" uht=\"-\" urt=\"-\" us=\"-\" ua=\"-\"",
+    "10.0.0.40 - ivan [12/May/2024:04:15:56 +0000] \"GET /api/v2/health HTTP/1.1\" 200 45 \"-\" \"nginx-plus-healthcheck/1.0\" \"-\" rt=0.001 uct=\"0.000\" uht=\"0.001\" urt=\"0.001\" us=\"200\" ua=\"10.0.0.110:8080\"",
+    "203.0.113.5 - - [12/May/2024:04:19:31 +0000] \"GET :443 HTTP/1.1\" 400 0 \"-\" \"-\" \"-\" rt=0.001 uct=\"-\" uht=\"-\" urt=\"-\" us=\"-\" ua=\"-\"",
+    "10.0.0.55 - judy [12/May/2024:04:24:08 +0000] \"GET /api/v2/invoices/778812/download HTTP/1.1\" 502 512 \"https://portal.example.com/billing\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)\" \"-\" rt=5.021 uct=\"0.002\" uht=\"-\" urt=\"-\" us=\"502\" ua=\"10.0.0.111:8080\""
+  ],
+  "fingerprint": "63c1996d-4190",
+  "verification": {
+    "verdict": "pass",
+    "method": "structure",
+    "eventsParsed": 20,
+    "eventsChecked": 20,
+    "fields": [
+      "rt",
+      "ua",
+      "uct",
+      "uht",
+      "urt",
+      "us"
+    ],
+    "reasons": [
+      "no parser for nginx_plus_access; the events are well-formed kvp with 6 distinct keys"
+    ],
+    "offendingEvents": [],
+    "keyEcho": null
+  },
+  "provenance": {
+    "model": "us.anthropic.claude-sonnet-5",
+    "buildNumber": 528,
+    "generatedAt": "2026-08-18T06:39:16.572Z",
+    "grounding": "KNOWN FACTS ABOUT THIS SOURCE (from sourcetype recognition — match these exactly):\n- Product: NGINX NGINX\n- Log family: web"
+  }
+}

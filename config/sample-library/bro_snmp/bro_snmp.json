@@ -1,0 +1,122 @@
+[
+  {
+    "_raw": "#separator \\x09",
+    "_time": 1521911747.618446,
+    "sourcetype": "bro_snmp",
+    "source": "/opt/zeek/logs/current/snmp.log"
+  },
+  {
+    "_raw": "#set_separator\t,",
+    "_time": 1521911747.618446,
+    "sourcetype": "bro_snmp",
+    "source": "/opt/zeek/logs/current/snmp.log"
+  },
+  {
+    "_raw": "#empty_field\t(empty)",
+    "_time": 1521911747.618446,
+    "sourcetype": "bro_snmp",
+    "source": "/opt/zeek/logs/current/snmp.log"
+  },
+  {
+    "_raw": "#unset_field\t-",
+    "_time": 1521911747.618446,
+    "sourcetype": "bro_snmp",
+    "source": "/opt/zeek/logs/current/snmp.log"
+  },
+  {
+    "_raw": "#path\tsnmp",
+    "_time": 1521911747.618446,
+    "sourcetype": "bro_snmp",
+    "source": "/opt/zeek/logs/current/snmp.log"
+  },
+  {
+    "_raw": "#open\t2024-04-12-19-29-45",
+    "_time": 1521911747.618446,
+    "sourcetype": "bro_snmp",
+    "source": "/opt/zeek/logs/current/snmp.log"
+  },
+  {
+    "_raw": "#fields\tts\tuid\tid.orig_h\tid.orig_p\tid.resp_h\tid.resp_p\tduration\tversion\tcommunity\tget_requests\tget_bulk_requests\tget_responses\tset_requests\tdisplay_string\tup_since",
+    "_time": 1521911747.618446,
+    "sourcetype": "bro_snmp",
+    "source": "/opt/zeek/logs/current/snmp.log"
+  },
+  {
+    "_raw": "#types\ttime\tstring\taddr\tport\taddr\tport\tinterval\tstring\tstring\tcount\tcount\tcount\tcount\tstring\ttime",
+    "_time": 1521911747.618446,
+    "sourcetype": "bro_snmp",
+    "source": "/opt/zeek/logs/current/snmp.log"
+  },
+  {
+    "_raw": "1521911747.618446\tCP29Tx4K9UOBuKmKda\t10.47.1.152\t61459\t10.0.0.85\t161\t0.001358\t1\tinternal\t2\t0\t2\t0\t-\t-",
+    "_time": 1521911747.618446,
+    "sourcetype": "bro_snmp",
+    "source": "/opt/zeek/logs/current/snmp.log"
+  },
+  {
+    "_raw": "1521911747.620544\tCUmqtD4e7IehUMt2w6\t10.47.1.152\t61460\t10.0.0.85\t161\t0.000977\t1\tinternal\t2\t0\t2\t0\t-\t-",
+    "_time": 1521911747.620544,
+    "sourcetype": "bro_snmp",
+    "source": "/opt/zeek/logs/current/snmp.log"
+  },
+  {
+    "_raw": "1521911747.622458\tCYsLow3OQD6lD5Cnsk\t10.47.1.152\t61461\t10.0.0.85\t161\t0.256816\t1\tinternal\t0\t0\t8\t8\t-\t-",
+    "_time": 1521911747.622458,
+    "sourcetype": "bro_snmp",
+    "source": "/opt/zeek/logs/current/snmp.log"
+  },
+  {
+    "_raw": "1521911807.883200\tC8PE1S1zsOTys7qRGe\t10.47.1.152\t60111\t10.0.0.85\t161\t0.001113\t1\tinternal\t2\t0\t2\t0\t-\t-",
+    "_time": 1521911807.8832,
+    "sourcetype": "bro_snmp",
+    "source": "/opt/zeek/logs/current/snmp.log"
+  },
+  {
+    "_raw": "1521911807.885119\tCHWTwp3dCm66yvU5A5\t10.47.1.152\t60112\t10.0.0.85\t161\t0.001111\t1\tinternal\t2\t0\t2\t0\t-\t-",
+    "_time": 1521911807.885119,
+    "sourcetype": "bro_snmp",
+    "source": "/opt/zeek/logs/current/snmp.log"
+  },
+  {
+    "_raw": "1521911807.887510\tCSMckD1B9HT6MGR1Tb\t10.47.1.152\t60113\t10.0.0.85\t161\t0.207742\t1\tinternal\t0\t0\t8\t8\t-\t-",
+    "_time": 1521911807.88751,
+    "sourcetype": "bro_snmp",
+    "source": "/opt/zeek/logs/current/snmp.log"
+  },
+  {
+    "_raw": "1521911809.197817\tCHBBoe3cRcgtCufv27\t10.47.1.152\t60114\t10.0.0.85\t161\t0.001181\t1\tinternal\t2\t0\t2\t0\t-\t-",
+    "_time": 1521911809.197817,
+    "sourcetype": "bro_snmp",
+    "source": "/opt/zeek/logs/current/snmp.log"
+  },
+  {
+    "_raw": "1521911809.199766\tCYnj113B4qBf88VKB3\t10.47.1.152\t60115\t10.0.0.85\t161\t0.001101\t1\tinternal\t2\t0\t2\t0\t-\t-",
+    "_time": 1521911809.199766,
+    "sourcetype": "bro_snmp",
+    "source": "/opt/zeek/logs/current/snmp.log"
+  },
+  {
+    "_raw": "1521911809.201792\tCR9fc54dMaJiMIgbf9\t10.47.1.152\t60116\t10.0.0.85\t161\t0.206395\t1\tinternal\t0\t0\t8\t8\t-\t-",
+    "_time": 1521911809.201792,
+    "sourcetype": "bro_snmp",
+    "source": "/opt/zeek/logs/current/snmp.log"
+  },
+  {
+    "_raw": "1521911811.625748\tC8gUqo4TiZLLHydJN6\t10.47.1.150\t52720\t10.0.0.85\t161\t0.001639\t1\tpublic\t6\t0\t6\t0\t-\t-",
+    "_time": 1521911811.625748,
+    "sourcetype": "bro_snmp",
+    "source": "/opt/zeek/logs/current/snmp.log"
+  },
+  {
+    "_raw": "1521911869.411971\tCgm3feAnODoURhyqg\t10.47.1.152\t58567\t10.0.0.85\t161\t0.001227\t1\tinternal\t2\t0\t2\t0\t-\t-",
+    "_time": 1521911869.411971,
+    "sourcetype": "bro_snmp",
+    "source": "/opt/zeek/logs/current/snmp.log"
+  },
+  {
+    "_raw": "1521912587.148098\tCkOVuhgasEZaEQaL2\t10.47.1.150\t52720\t10.0.0.85\t161\t10.881041\t1\tpublic\t12\t0\t6\t0\t-\t-",
+    "_time": 1521912587.148098,
+    "sourcetype": "bro_snmp",
+    "source": "/opt/zeek/logs/current/snmp.log"
+  }
+]

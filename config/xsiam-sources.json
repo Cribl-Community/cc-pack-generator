@@ -1,0 +1,712 @@
+{
+  "_comment": "Cortex XSIAM passthrough destination — tag metadata and preserve _raw. UUIDs from cribl-paloalto-xsiam pack + https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-3.x-Documentation/Data-source-UUIDs",
+  "version": 2,
+  "sources": {
+    "alibaba_action_trail": {
+      "pattern": "tag_vendor_product",
+      "pipeline": "generic",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "af01292940d7426594d3d3e55ae17ee0",
+      "vendor": "alibaba",
+      "product": "action_trail",
+      "dataset": "alibaba_action_trail_raw",
+      "payloadFormat": "json",
+      "payloadRoot": "event",
+      "timestampField": "__time__",
+      "expectedJsonPaths": [
+        "__time__",
+        "event.eventType",
+        "event.eventId",
+        "event.eventName"
+      ],
+      "modelInputPaths": [
+        "event.acsRegion",
+        "event.sourceIpAddress",
+        "event.userIdentity.type",
+        "event.userIdentity.principalId",
+        "event.userIdentity.userName",
+        "event.userIdentity.accessKeyId",
+        "event.resourceName",
+        "event.resourceType",
+        "event.errorMessage"
+      ],
+      "aliases": ["alibaba_actiontrail", "alibaba_cloud_actiontrail", "action_trail", "actiontrail"],
+      "contentPack": "AlibabaActionTrail",
+      "parsingRule": "Packs/AlibabaActionTrail/ParsingRules/AlibabaParsingRules/AlibabaParsingRules.xif",
+      "modelingRules": [
+        "Packs/AlibabaActionTrail/ModelingRules/AlibabaModelingRules/AlibabaModelingRules.xif",
+        "Packs/AlibabaActionTrail/ModelingRules/AlibabaModelingRules_1_3/AlibabaModelingRules_1_3.xif"
+      ],
+      "modelFields": [
+        "__time__",
+        "_product",
+        "_vendor",
+        "event_acsregion",
+        "event_errormessage",
+        "event_eventid",
+        "event_eventname",
+        "event_eventtype",
+        "event_resourcename",
+        "event_resourcetype",
+        "event_sourceipaddress",
+        "event_useridentity_accesskeyid",
+        "event_useridentity_principalid",
+        "event_useridentity_type",
+        "event_useridentity_username"
+      ],
+      "contentSource": "https://github.com/demisto/content/tree/master/Packs/AlibabaActionTrail"
+    },
+    "cisco_asa": {
+      "pattern": "tag_vendor_product",
+      "pipeline": "XSIAM-Cisco-ASA-Syslog",
+      "sourceIdField": "__sourceidentifier",
+      "sourceIdentifier": "af01292940d7426594d3d3e55ae17ee0",
+      "vendor": "Cisco",
+      "product": "ASA"
+    },
+    "fortinet_fortigate": {
+      "pattern": "tag_vendor_product",
+      "pipeline": "XSIAM-Fortinet-Fortigate-Syslog",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "af01292940d7426594d3d3e55ae17ee0",
+      "vendor": "Fortinet",
+      "product": "Fortigate"
+    },
+    "checkpoint_firewall": {
+      "pattern": "cef_extract",
+      "pipeline": "XSIAM-Checkpoint-CEF",
+      "cefRegex": "/^.*?\\|(?<__vendor>.*?)\\|(?<__product>.*?)\\|/",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "af01292940d7426594d3d3e55ae17ee0"
+    },
+    "checkpoint_cef": {
+      "pattern": "cef_extract",
+      "pipeline": "XSIAM-Checkpoint-CEF",
+      "cefRegex": "/^.*?\\|(?<__vendor>.*?)\\|(?<__product>.*?)\\|/",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "af01292940d7426594d3d3e55ae17ee0"
+    },
+    "palo_alto_traffic": {
+      "pattern": "tag_vendor_product",
+      "pipeline": "generic",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "af01292940d7426594d3d3e55ae17ee0",
+      "vendor": "Palo Alto Networks",
+      "product": "PAN-OS"
+    },
+    "palo_alto_threat": {
+      "pattern": "tag_vendor_product",
+      "pipeline": "generic",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "af01292940d7426594d3d3e55ae17ee0",
+      "vendor": "Palo Alto Networks",
+      "product": "PAN-OS"
+    },
+    "okta_system": {
+      "pattern": "tag_only",
+      "pipeline": "XSIAM-OKTA",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "5faf4c1fdb8443d9920d6a54815432c1"
+    },
+    "zscaler_web": {
+      "pattern": "zscaler_wrap",
+      "pipeline": "XSIAM-Zscaler-ZIA",
+      "eventExpr": "_raw",
+      "vendor": "zscaler",
+      "product": "cloudnss",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "af01292940d7426594d3d3e55ae17ee0",
+      "serialize": {
+        "type": "json",
+        "dstField": "_raw",
+        "fields": [
+          "!_*",
+          "!cribl_breaker",
+          "sourcetype",
+          "event"
+        ],
+        "cleanFields": false,
+        "keyValueDelimiter": "="
+      }
+    },
+    "aws_cloudtrail": {
+      "pattern": "tag_only",
+      "pipeline": "XSIAM-Amazon-AWSAuditLogs",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "c19f87b6262f48259b3d5d2a2c691802"
+    },
+    "aws_vpc_flow": {
+      "pattern": "tag_only",
+      "pipeline": "XSIAM-Amazon-AWSFlowLogs",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "667083aa68544eee8b67cdd2d4cc327b"
+    },
+    "crowdstrike_falcon": {
+      "pattern": "tag_only",
+      "pipeline": "XSIAM-Crowdstrike-FalconDataReplicator",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "6cd7d60f0ff5497baecf6b9073c8000e"
+    },
+    "azure_signin": {
+      "pattern": "tag_only",
+      "pipeline": "XSIAM-Microsoft-AzureADSignins",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "f56dcfdf6bca43e793a4b6e9290e7b12"
+    },
+    "gcp_audit": {
+      "pattern": "tag_only",
+      "pipeline": "XSIAM-Google-CloudLogging",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "00a8322c85e14beabfa7ad5f3d62db73"
+    },
+    "windows_security": {
+      "pattern": "tag_only",
+      "pipeline": "microsoft-windows-events",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "63b0fbeb501e4650896e7064d3412e14"
+    },
+    "cisco_esa": {
+      "pattern": "tag_vendor_product",
+      "pipeline": "generic",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "af01292940d7426594d3d3e55ae17ee0",
+      "vendor": "Cisco",
+      "product": "Email Security Appliance"
+    },
+    "windows_powershell": {
+      "pattern": "tag_vendor_product",
+      "pipeline": "microsoft-windows-events",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "63b0fbeb501e4650896e7064d3412e14",
+      "vendor": "Microsoft",
+      "product": "PowerShell"
+    },
+    "windows_sysmon": {
+      "pattern": "tag_vendor_product",
+      "pipeline": "microsoft-windows-events",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "63b0fbeb501e4650896e7064d3412e14",
+      "vendor": "Microsoft",
+      "product": "Sysmon"
+    },
+    "linux_syslog": {
+      "pattern": "tag_vendor_product",
+      "pipeline": "generic",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "af01292940d7426594d3d3e55ae17ee0",
+      "vendor": "Linux",
+      "product": "Syslog"
+    },
+    "linux_audit": {
+      "pattern": "tag_vendor_product",
+      "pipeline": "generic",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "af01292940d7426594d3d3e55ae17ee0",
+      "vendor": "Linux",
+      "product": "Auditd"
+    },
+    "sap_audit": {
+      "pattern": "tag_vendor_product",
+      "pipeline": "generic",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "af01292940d7426594d3d3e55ae17ee0",
+      "vendor": "SAP",
+      "product": "Security Audit Log"
+    },
+    "apache_access": {
+      "pattern": "tag_vendor_product",
+      "pipeline": "generic",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "af01292940d7426594d3d3e55ae17ee0",
+      "vendor": "Apache",
+      "product": "HTTP Server"
+    },
+    "nginx_access": {
+      "pattern": "tag_vendor_product",
+      "pipeline": "generic",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "af01292940d7426594d3d3e55ae17ee0",
+      "vendor": "NGINX",
+      "product": "HTTP Server"
+    },
+    "cisco_ftd": {
+      "pattern": "tag_vendor_product",
+      "pipeline": "generic",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "af01292940d7426594d3d3e55ae17ee0",
+      "vendor": "Cisco",
+      "product": "Firepower Threat Defense"
+    },
+    "cisco_firepower": {
+      "pattern": "tag_vendor_product",
+      "pipeline": "generic",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "af01292940d7426594d3d3e55ae17ee0",
+      "vendor": "Cisco",
+      "product": "Firepower"
+    }
+  },
+  "pipelines": {
+    "XSIAM-All-CEF-Formatted-Events": {
+      "pattern": "cef_extract",
+      "pipeline": "XSIAM-All-CEF-Formatted-Events",
+      "sourceIdField": "__sourceidentifier",
+      "sourceIdentifier": "af01292940d7426594d3d3e55ae17ee0",
+      "cefRegex": "/^.*?\\|(?<__vendor>.*?)\\|(?<__product>.*?)\\|/"
+    },
+    "XSIAM-Amazon-AWSAuditLogs": {
+      "pattern": "tag_only",
+      "pipeline": "XSIAM-Amazon-AWSAuditLogs",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "c19f87b6262f48259b3d5d2a2c691802"
+    },
+    "XSIAM-Amazon-AWSEKS": {
+      "pattern": "tag_only",
+      "pipeline": "XSIAM-Amazon-AWSEKS",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "fb8a9d4922cb4095b76d71e921d2d999"
+    },
+    "XSIAM-Amazon-AWSFlowLogs": {
+      "pattern": "tag_only",
+      "pipeline": "XSIAM-Amazon-AWSFlowLogs",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "667083aa68544eee8b67cdd2d4cc327b"
+    },
+    "XSIAM-Amazon-AWSGenericLogs": {
+      "pattern": "tag_only",
+      "pipeline": "XSIAM-Amazon-AWSGenericLogs",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "0498f8a24de04b3e85102e742f6783f8"
+    },
+    "XSIAM-Amazon-AWSPromptLogs": {
+      "pattern": "tag_only",
+      "pipeline": "XSIAM-Amazon-AWSPromptLogs",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "a53edad7ef0c46ffb5037fb2e21520cb"
+    },
+    "XSIAM-Amazon-AWSRoute53Logs": {
+      "pattern": "tag_only",
+      "pipeline": "XSIAM-Amazon-AWSRoute53Logs",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "d57ae82c1e2a4d138fc34084d159b09e"
+    },
+    "XSIAM-Box-Box": {
+      "pattern": "tag_only",
+      "pipeline": "XSIAM-Box-Box",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "3ef05d14ae9349f8bbd48c8a4797334a"
+    },
+    "XSIAM-Checkpoint-CEF": {
+      "pattern": "cef_extract",
+      "pipeline": "XSIAM-Checkpoint-CEF",
+      "cefRegex": "/^.*?\\|(?<__vendor>.*?)\\|(?<__product>.*?)\\|/",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "af01292940d7426594d3d3e55ae17ee0"
+    },
+    "XSIAM-Cisco-ASA-Syslog": {
+      "pattern": "tag_vendor_product",
+      "pipeline": "XSIAM-Cisco-ASA-Syslog",
+      "sourceIdField": "__sourceidentifier",
+      "sourceIdentifier": "af01292940d7426594d3d3e55ae17ee0",
+      "vendor": "Cisco",
+      "product": "ASA"
+    },
+    "XSIAM-Crowdstrike-FalconDataReplicator": {
+      "pattern": "tag_only",
+      "pipeline": "XSIAM-Crowdstrike-FalconDataReplicator",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "6cd7d60f0ff5497baecf6b9073c8000e"
+    },
+    "XSIAM-Crowdstrike-FalconIncident": {
+      "pattern": "tag_only",
+      "pipeline": "XSIAM-Crowdstrike-FalconIncident",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "230b2b0233bf4327806af72e6e5769f3"
+    },
+    "XSIAM-Crowdstrike-Hosts": {
+      "pattern": "tag_only",
+      "pipeline": "XSIAM-Crowdstrike-Hosts",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "8b673ac8e2f34b4a8dc14c22f0e6063b"
+    },
+    "XSIAM-Dropbox-Directory": {
+      "pattern": "tag_only",
+      "pipeline": "XSIAM-Dropbox-Directory",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "e8d2c52bc9594621924fab0507264586"
+    },
+    "XSIAM-Dropbox-Events": {
+      "pattern": "tag_only",
+      "pipeline": "XSIAM-Dropbox-Events",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "a6322b2fd9e545e0a4223ba754c48fb9"
+    },
+    "XSIAM-Fortinet-Fortigate-Syslog": {
+      "pattern": "tag_vendor_product",
+      "pipeline": "XSIAM-Fortinet-Fortigate-Syslog",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "af01292940d7426594d3d3e55ae17ee0",
+      "vendor": "Fortinet",
+      "product": "Fortigate"
+    },
+    "XSIAM-Google-CloudLogging": {
+      "pattern": "tag_only",
+      "pipeline": "XSIAM-Google-CloudLogging",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "00a8322c85e14beabfa7ad5f3d62db73"
+    },
+    "XSIAM-Google-Gmail": {
+      "pattern": "tag_only",
+      "pipeline": "XSIAM-Google-Gmail",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "8607490288d1407ba82b5c5ad9dc64a0"
+    },
+    "XSIAM-Google-GsuiteReports": {
+      "pattern": "tag_only",
+      "pipeline": "XSIAM-Google-GsuiteReports",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "3ddd43030db142839568943e0a2fe785"
+    },
+    "XSIAM-Google-WorkspaceAlerts": {
+      "pattern": "tag_only",
+      "pipeline": "XSIAM-Google-WorkspaceAlerts",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "4f263650cd29475c81f2ff953cf19827"
+    },
+    "XSIAM-Google-WorkspaceApps": {
+      "pattern": "tag_only",
+      "pipeline": "XSIAM-Google-WorkspaceApps",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "5a617df8827d461db66a10d084c7b39f"
+    },
+    "XSIAM-Google-WorkspaceChromeOSDevices": {
+      "pattern": "tag_only",
+      "pipeline": "XSIAM-Google-WorkspaceChromeOSDevices",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "e82ae276e6b9442fa80920a03d2a38d6"
+    },
+    "XSIAM-Google-WorkspaceContactGroups": {
+      "pattern": "tag_only",
+      "pipeline": "XSIAM-Google-WorkspaceContactGroups",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "5a42004787064021a462bb2120160514"
+    },
+    "XSIAM-Google-WorkspaceContacts": {
+      "pattern": "tag_only",
+      "pipeline": "XSIAM-Google-WorkspaceContacts",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "d20d6cfea3e943d5a5a6bc005c429ef4"
+    },
+    "XSIAM-Google-WorkspaceDomains": {
+      "pattern": "tag_only",
+      "pipeline": "XSIAM-Google-WorkspaceDomains",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "2738e963ac3141afaad05885e060a73c"
+    },
+    "XSIAM-Google-WorkspaceGroupMembers": {
+      "pattern": "tag_only",
+      "pipeline": "XSIAM-Google-WorkspaceGroupMembers",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "8a0140fc47b643838d0fcf096773c0a1"
+    },
+    "XSIAM-Google-WorkspaceGroups": {
+      "pattern": "tag_only",
+      "pipeline": "XSIAM-Google-WorkspaceGroups",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "689ae8ef14e848e3855b81e91d8af9bc"
+    },
+    "XSIAM-Google-WorkspaceMailboxSettings": {
+      "pattern": "tag_only",
+      "pipeline": "XSIAM-Google-WorkspaceMailboxSettings",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "3c4beffadfac40a18aaf4d143a19dc27"
+    },
+    "XSIAM-Google-WorkspaceMailboxes": {
+      "pattern": "tag_only",
+      "pipeline": "XSIAM-Google-WorkspaceMailboxes",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "328796d692f343c38f07351e8c783f80"
+    },
+    "XSIAM-Google-WorkspaceMobileDevices": {
+      "pattern": "tag_only",
+      "pipeline": "XSIAM-Google-WorkspaceMobileDevices",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "149b58ec938d4d1a8568359483e50800"
+    },
+    "XSIAM-Google-WorkspaceOrganization": {
+      "pattern": "tag_only",
+      "pipeline": "XSIAM-Google-WorkspaceOrganization",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "4e342367057d46c7b38ce7d40682fd1e"
+    },
+    "XSIAM-Google-WorkspacePrivileges": {
+      "pattern": "tag_only",
+      "pipeline": "XSIAM-Google-WorkspacePrivileges",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "462ebcbfce9341ac8c006e5aa45ccf44"
+    },
+    "XSIAM-Google-WorkspaceProfiles": {
+      "pattern": "tag_only",
+      "pipeline": "XSIAM-Google-WorkspaceProfiles",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "f2aed57ff13c439eb93153ba7309fe87"
+    },
+    "XSIAM-Google-WorkspaceRoles": {
+      "pattern": "tag_only",
+      "pipeline": "XSIAM-Google-WorkspaceRoles",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "82170b42b9684b79bda124c712bcbdc0"
+    },
+    "XSIAM-Google-WorkspaceRules": {
+      "pattern": "tag_only",
+      "pipeline": "XSIAM-Google-WorkspaceRules",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "2621aaf3334a4147ae727afe84db31a9"
+    },
+    "XSIAM-Google-WorkspaceSchemas": {
+      "pattern": "tag_only",
+      "pipeline": "XSIAM-Google-WorkspaceSchemas",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "c978986a6b3846c7b6fdbe15bef14f69"
+    },
+    "XSIAM-Google-WorkspaceUsers": {
+      "pattern": "tag_only",
+      "pipeline": "XSIAM-Google-WorkspaceUsers",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "359ecd845fa54caab6ddb4b7c7a2764d"
+    },
+    "XSIAM-Google-WorkspaceUsersSendAsAliases": {
+      "pattern": "tag_only",
+      "pipeline": "XSIAM-Google-WorkspaceUsersSendAsAliases",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "3b8f9e65f8ed43f4a4e5679236691fe2"
+    },
+    "XSIAM-Microsoft-Azure": {
+      "pattern": "tag_only",
+      "pipeline": "XSIAM-Microsoft-Azure",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "fce13a1d51294f84bae4a37851503060"
+    },
+    "XSIAM-Microsoft-AzureAD": {
+      "pattern": "tag_only",
+      "pipeline": "XSIAM-Microsoft-AzureAD",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "c00d6d52e5b141a8baa8db9d9345423d"
+    },
+    "XSIAM-Microsoft-AzureADAudit": {
+      "pattern": "tag_only",
+      "pipeline": "XSIAM-Microsoft-AzureADAudit",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "0e076d5abe864bf78e8145ea9e0d749e"
+    },
+    "XSIAM-Microsoft-AzureADSignins": {
+      "pattern": "tag_only",
+      "pipeline": "XSIAM-Microsoft-AzureADSignins",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "f56dcfdf6bca43e793a4b6e9290e7b12"
+    },
+    "XSIAM-Microsoft-DHCP": {
+      "pattern": "tag_only",
+      "pipeline": "XSIAM-Microsoft-DHCP",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "b55819e8959c49728d5d98a6d87eafb6"
+    },
+    "XSIAM-Microsoft-GraphSecurityAlerts": {
+      "pattern": "tag_only",
+      "pipeline": "XSIAM-Microsoft-GraphSecurityAlerts",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "5619f2f691fc46c4b202587fdaa031c3"
+    },
+    "XSIAM-Microsoft-Office365AzureAD": {
+      "pattern": "tag_only",
+      "pipeline": "XSIAM-Microsoft-Office365AzureAD",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "e1f109f886ea42fbb96be6ec0cc597a9"
+    },
+    "XSIAM-Microsoft-Office365Contacts": {
+      "pattern": "tag_only",
+      "pipeline": "XSIAM-Microsoft-Office365Contacts",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "de1b694a6c8341958bc08c4b7c140874"
+    },
+    "XSIAM-Microsoft-Office365DLP": {
+      "pattern": "tag_only",
+      "pipeline": "XSIAM-Microsoft-Office365DLP",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "8f052782739d4b8389644cca23b994ac"
+    },
+    "XSIAM-Microsoft-Office365Devices": {
+      "pattern": "tag_only",
+      "pipeline": "XSIAM-Microsoft-Office365Devices",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "de229685f708413fad46289657ea09de"
+    },
+    "XSIAM-Microsoft-Office365Domains": {
+      "pattern": "tag_only",
+      "pipeline": "XSIAM-Microsoft-Office365Domains",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "cae29fd87b554bd9a5694afb225e8dc9"
+    },
+    "XSIAM-Microsoft-Office365ExchangeOnline": {
+      "pattern": "tag_only",
+      "pipeline": "XSIAM-Microsoft-Office365ExchangeOnline",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "dee8e85ce7db4573a8bc21b807e1d73a"
+    },
+    "XSIAM-Microsoft-Office365General": {
+      "pattern": "tag_only",
+      "pipeline": "XSIAM-Microsoft-Office365General",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "c7655e83805b4a058e66043a6715156c"
+    },
+    "XSIAM-Microsoft-Office365Groups": {
+      "pattern": "tag_only",
+      "pipeline": "XSIAM-Microsoft-Office365Groups",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "0b0499ac0d984145b201c6d674771dbf"
+    },
+    "XSIAM-Microsoft-Office365Mailboxes": {
+      "pattern": "tag_only",
+      "pipeline": "XSIAM-Microsoft-Office365Mailboxes",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "9855a03559ce4263b568671e695d1fa8"
+    },
+    "XSIAM-Microsoft-Office365Rules": {
+      "pattern": "tag_only",
+      "pipeline": "XSIAM-Microsoft-Office365Rules",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "6b925df8923d4038bf78998d1ffde77c"
+    },
+    "XSIAM-Microsoft-Office365SharepointOnline": {
+      "pattern": "tag_only",
+      "pipeline": "XSIAM-Microsoft-Office365SharepointOnline",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "3a37f519e9094a3f8c4185fa572cd111"
+    },
+    "XSIAM-Microsoft-Office365Users": {
+      "pattern": "tag_only",
+      "pipeline": "XSIAM-Microsoft-Office365Users",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "dcfb7a412e654efd868de0b8cf81766a"
+    },
+    "XSIAM-OKTA": {
+      "pattern": "tag_only",
+      "pipeline": "XSIAM-OKTA",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "5faf4c1fdb8443d9920d6a54815432c1"
+    },
+    "XSIAM-OKTA-SSO": {
+      "pattern": "tag_only",
+      "pipeline": "XSIAM-OKTA-SSO",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "5faf4c1fdb8443d9920d6a54815432c1"
+    },
+    "XSIAM-OneLogin-Events": {
+      "pattern": "tag_only",
+      "pipeline": "XSIAM-OneLogin-Events",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "22b23a3f9f1e49998645b683d5dc3a6f"
+    },
+    "XSIAM-OneLogin-OneLogin": {
+      "pattern": "tag_only",
+      "pipeline": "XSIAM-OneLogin-OneLogin",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "88cfbd3e7b974d999b10edac83995b8a"
+    },
+    "XSIAM-PaloAltoNetworks-IOTSecurityAlerts": {
+      "pattern": "tag_only",
+      "pipeline": "XSIAM-PaloAltoNetworks-IOTSecurityAlerts",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "e772949c88ec4107ad81ec38061d35c0"
+    },
+    "XSIAM-PaloAltoNetworks-IOTSecurityDevices": {
+      "pattern": "tag_only",
+      "pipeline": "XSIAM-PaloAltoNetworks-IOTSecurityDevices",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "80cee50bfc6e4ac5b34b19794b767acd"
+    },
+    "XSIAM-PingID-PingONE": {
+      "pattern": "tag_only",
+      "pipeline": "XSIAM-PingID-PingONE",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "924951a8394b4605b1725f943292ab4f"
+    },
+    "XSIAM-Prisma-Assets": {
+      "pattern": "tag_only",
+      "pipeline": "XSIAM-Prisma-Assets",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "6a61c1cba1b64cd2a977c76c41f7950d"
+    },
+    "XSIAM-Prisma-Cloud": {
+      "pattern": "tag_only",
+      "pipeline": "XSIAM-Prisma-Cloud",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "f8c3403a02fd4147862ee293bf4e74e2"
+    },
+    "XSIAM-Proofpoint-TAP": {
+      "pattern": "tag_only",
+      "pipeline": "XSIAM-Proofpoint-TAP",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "3eefce0f791e4391a3643b8cf860a361"
+    },
+    "XSIAM-Salesforce-SalesforceLogs": {
+      "pattern": "tag_only",
+      "pipeline": "XSIAM-Salesforce-SalesforceLogs",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "ab109687acd24978aabcb7ad8b5742e3"
+    },
+    "XSIAM-Salesforce-SalesforceSnapshots": {
+      "pattern": "tag_only",
+      "pipeline": "XSIAM-Salesforce-SalesforceSnapshots",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "addbf31a6372491e88d45934dff5b5b0"
+    },
+    "XSIAM-SentinelOne-DeepVisibility": {
+      "pattern": "tag_only",
+      "pipeline": "XSIAM-SentinelOne-DeepVisibility",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "b9fa55e6fa564c709358425ce0f61517"
+    },
+    "XSIAM-ServiceNow-CMDB": {
+      "pattern": "tag_only",
+      "pipeline": "XSIAM-ServiceNow-CMDB",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "8b3e767247e44471a95e563378d0b9be"
+    },
+    "XSIAM-Workday-Workday": {
+      "pattern": "tag_only",
+      "pipeline": "XSIAM-Workday-Workday",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "00d4e740702d4eb2939a87c2318513dd"
+    },
+    "XSIAM-Zscaler-ZIA": {
+      "pattern": "zscaler_wrap",
+      "pipeline": "XSIAM-Zscaler-ZIA",
+      "eventExpr": "_raw",
+      "vendor": "zscaler",
+      "product": "cloudnss",
+      "sourceIdField": "__sourceIdentifier",
+      "sourceIdentifier": "af01292940d7426594d3d3e55ae17ee0",
+      "serialize": {
+        "type": "json",
+        "dstField": "_raw",
+        "fields": [
+          "!_*",
+          "!cribl_breaker",
+          "sourcetype",
+          "event"
+        ],
+        "cleanFields": false,
+        "keyValueDelimiter": "="
+      }
+    },
+    "XSIAM-Zscaler-ZPA-Syslog": {
+      "pattern": "tag_vendor_product",
+      "pipeline": "XSIAM-Zscaler-ZPA-Syslog",
+      "sourceIdField": "__sourceidentifier",
+      "sourceIdentifier": "af01292940d7426594d3d3e55ae17ee0",
+      "vendor": "Zscaler",
+      "product": "ZPA"
+    }
+  }
+}

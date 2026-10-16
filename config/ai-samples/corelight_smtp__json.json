@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "key": "corelight_smtp::json",
+  "sourcetype": "corelight_smtp",
+  "format": "json",
+  "events": [
+    "{\"_path\":\"smtp\",\"ts\":1718015200.334455,\"uid\":\"CqW9zLm2Xp7VtYn5D\",\"id.orig_h\":\"2001:db8:abcd:12::45\",\"id.orig_p\":54210,\"id.resp_h\":\"2001:db8:abcd:1::25\",\"id.resp_p\":25,\"trans_depth\":1,\"helo\":\"mailhost6.corp.local\",\"mailfrom\":\"noreply@corp.local\",\"rcptto\":[\"alerts-team@corp.local\"],\"date\":\"Mon, 10 Jun 2024 09:00:00 +0000\",\"from\":\"System Alerts <noreply@corp.local>\",\"to\":[\"alerts-team@corp.local\"],\"subject\":\"Nightly Backup Report - SUCCESS\",\"last_reply\":\"250 2.0.0 Ok: queued as M4N5O6\",\"path\":[\"2001:db8:abcd:1::25\"],\"tls\":true,\"fuids\":[],\"is_webmail\":false}"
+  ],
+  "fingerprint": "fd9213a3-560",
+  "verification": {
+    "verdict": "pass",
+    "method": "structure",
+    "eventsParsed": 1,
+    "eventsChecked": 1,
+    "fields": [
+      "_path",
+      "date",
+      "from",
+      "fuids",
+      "helo",
+      "id.orig_h",
+      "id.orig_p",
+      "id.resp_h",
+      "id.resp_p",
+      "is_webmail",
+      "last_reply",
+      "mailfrom",
+      "path",
+      "rcptto",
+      "subject",
+      "tls",
+      "to",
+      "trans_depth",
+      "ts",
+      "uid"
+    ],
+    "reasons": [
+      "no parser for corelight_smtp; the events are well-formed json with 20 distinct keys"
+    ],
+    "offendingEvents": [],
+    "keyEcho": null
+  },
+  "provenance": {
+    "model": "us.anthropic.claude-sonnet-5",
+    "buildNumber": 529,
+    "generatedAt": "2026-08-18T07:26:00.709Z",
+    "grounding": "KNOWN FACTS ABOUT THIS SOURCE (from sourcetype recognition — match these exactly):\n- Product: Corelight Corelight (Zeek)\n- Log family: network\n- REQUIRED wire format (the user confirmed this — emit ONLY this format): Format: one compact JSON object per line. Every event carries _path (the Zeek log name, matching the sourcetype), ts as a fractional epoch, uid, and the id.orig_h/id.orig_p/id.resp_h/id.resp_p tuple. Every OTHER key must be one Zeek defines for that specific log — do not carry conn.log fields (conn_state, orig_bytes, resp_bytes, duration, history, service) into a log that is not conn."
+  }
+}

@@ -1,0 +1,7 @@
+[
+  {
+    "_raw": "<134>1 2023-08-07T02:59:59Z - dataconnector - SERVICE-LOG - CEF:0|Infoblox|Data Connector|Service Log|BloxOne-Service-Log|a7daa5b2025c4b5cde75d3dd7f5fe415/ns-dhcp:dhcp|1|InfobloxLogName=a7daa5b2025c4b5cde75d3dd7f5fe415/ns-dhcp:dhcp InfobloxPoolId=infra/pool/hobk47yhpm2e2zdp5drrsxyep33l6tdj InfobloxServiceId=infra/service/ocgkdd7tl3as5r66nwzqsipbzfckv3f7 msg=\" INFO  [kea-dhcp4.commands.140531381245824] COMMAND_RECEIVED Received command 'status-get'\"",
+    "_time": 1691377199,
+    "cribl_breaker": "Break on newlines"
+  }
+]

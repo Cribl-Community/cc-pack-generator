@@ -1,0 +1,35 @@
+[
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "__channel": "MESB:17",
+    "__FIN": true,
+    "_raw": "{\"version\": \"1\", \"id\": \"cb943799-184a-464a-8cf8-59e96bad55eb\", \"timestamp\": 1738852575, \"object\": \"API_KEY_ADDED\", \"friendlyName\": \"API key added\", \"category\": \"AUDIT\", \"description\": \"username@example.com added an API Key\", \"actor\": {\"source\": \"UI\", \"email\": \"username@example.com\", \"sourceIpAddress\": \"187.190.197.22\", \"userAgent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36\"}, \"new\": {\"name\": \"Example\", \"permissions\": \"FULL_ACCESS\"}}",
+    "host": "ip-10-250-3-86",
+    "source": "httpIn-54.170.82.242",
+    "method": "POST",
+    "path": "/",
+    "headers": {
+      "host": "default.main.example-org-0000003.cribl.cloud:20001",
+      "accept": "*/*",
+      "accept_encoding": "gzip, deflate",
+      "connection": "keep-alive",
+      "user_agent": "python-httpx/0.28.1",
+      "content_type": "application/json",
+      "x_signature": "t=1738852578,v1=0C5AA0071A93CFFF5C097C8A33343ACC0A330A97C0CF6C1515574F64D949254E",
+      "authorization": "6e4b4b4b-7375-4f64-6143-4e4c7a427978",
+      "content_length": "529",
+      "x_amzn_trace_id": "Root=1-67a4c8df-644516a07bd68ea201c94350;Parent=fba1213b801e2e73;Sampled=1;Lineage=1:c2aa6ff9:0"
+    },
+    "clientip": "54.170.82.242",
+    "__source": "httpIn-54.170.82.242",
+    "__isBroken": false,
+    "__raw": "{\"version\": \"1\", \"id\": \"cb943799-184a-464a-8cf8-59e96bad55eb\", \"timestamp\": 1738852575, \"object\": \"API_KEY_ADDED\", \"friendlyName\": \"API key added\", \"category\": \"AUDIT\", \"description\": \"username@example.com added an API Key\", \"actor\": {\"source\": \"UI\", \"email\": \"username@example.com\", \"sourceIpAddress\": \"187.190.197.22\", \"userAgent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36\"}, \"new\": {\"name\": \"Example\", \"permissions\": \"FULL_ACCESS\"}}",
+    "_time": 1738852575,
+    "cribl_breaker": "fallback",
+    "__srcIpPort": "54.170.82.242:53786",
+    "__inputId": "http_raw:push-security"
+  }
+]

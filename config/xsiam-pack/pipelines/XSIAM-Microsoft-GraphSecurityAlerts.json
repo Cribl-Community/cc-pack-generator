@@ -1,0 +1,48 @@
+{
+  "name": "XSIAM-Microsoft-GraphSecurityAlerts",
+  "kind": "source-specific",
+  "pattern": "tag_only",
+  "sourceIdField": "__sourceIdentifier",
+  "sourceIdentifier": "5619f2f691fc46c4b202587fdaa031c3",
+  "vendor": null,
+  "product": null,
+  "reshapesRaw": false,
+  "sample": null,
+  "upstream": {
+    "pack": "cribl-paloalto-xsiam",
+    "version": "2.1.1",
+    "path": "default/pipelines/XSIAM-Microsoft-GraphSecurityAlerts/conf.yml",
+    "sha256": "ef20bf9934b6ba75c382017a2ee5f09615a88d03edb2785cc0078f3fe7ee54eb",
+    "source": "https://packs.cribl.io/packs/cribl-paloalto-xsiam"
+  },
+  "conf": {
+    "output": "default",
+    "streamtags": [],
+    "groups": {},
+    "asyncFuncTimeout": 1000,
+    "description": ""
+  },
+  "functions": [
+    {
+      "id": "comment",
+      "filter": "true",
+      "conf": {
+        "comment": "Assign the Source-Identifier from https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Documentation/Data-source-UUIDs"
+      }
+    },
+    {
+      "id": "eval",
+      "filter": "true",
+      "conf": {
+        "add": [
+          {
+            "disabled": false,
+            "name": "__sourceIdentifier",
+            "value": "'5619f2f691fc46c4b202587fdaa031c3'"
+          }
+        ]
+      },
+      "description": "Assign the Source-Identifier"
+    }
+  ]
+}

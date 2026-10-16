@@ -1,0 +1,48 @@
+{
+  "name": "XSIAM-Google-WorkspaceRules",
+  "kind": "source-specific",
+  "pattern": "tag_only",
+  "sourceIdField": "__sourceIdentifier",
+  "sourceIdentifier": "2621aaf3334a4147ae727afe84db31a9",
+  "vendor": null,
+  "product": null,
+  "reshapesRaw": false,
+  "sample": null,
+  "upstream": {
+    "pack": "cribl-paloalto-xsiam",
+    "version": "2.1.1",
+    "path": "default/pipelines/XSIAM-Google-WorkspaceRules/conf.yml",
+    "sha256": "35c1c04b318a99010a6e16f717e4e24ad225b43da5423deb2f1e5c3bad4312a6",
+    "source": "https://packs.cribl.io/packs/cribl-paloalto-xsiam"
+  },
+  "conf": {
+    "output": "default",
+    "streamtags": [],
+    "groups": {},
+    "asyncFuncTimeout": 1000,
+    "description": ""
+  },
+  "functions": [
+    {
+      "id": "comment",
+      "filter": "true",
+      "conf": {
+        "comment": "Assign the Source-Identifier from https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Documentation/Data-source-UUIDs"
+      }
+    },
+    {
+      "id": "eval",
+      "filter": "true",
+      "conf": {
+        "add": [
+          {
+            "disabled": false,
+            "name": "__sourceIdentifier",
+            "value": "'2621aaf3334a4147ae727afe84db31a9'"
+          }
+        ]
+      },
+      "description": "Assign the Source-Identifier"
+    }
+  ]
+}

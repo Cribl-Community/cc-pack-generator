@@ -1,0 +1,182 @@
+[
+  {
+    "_raw": "Type=Disk\nName=\"C:\"\nDriveType=\"fixed\"\nTotalSpaceKB=83884028\nFreeSpaceKB=64632628\nFileSystem=\"NTFS\"",
+    "_time": 1621342800,
+    "source": "disk",
+    "host": "host.acme.com",
+    "sourcetype": "WinHostMon:Disk",
+    "index": "default",
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Type=Computer\nName=\"host.acme.com\"\nDomain=\"cribl.poc\"\nManufacturer=\"Xen\"\nModel=\"HVM domU\"\nStatus=\"OK\"\nSystem Type=\"x64-based PC\"",
+    "_time": 1621342800,
+    "source": "computer",
+    "host": "host.acme.com",
+    "sourcetype": "WinHostMon:Computer",
+    "index": "default",
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Type=Driver\nDeviceName=\"Audio Endpoint\"\nDeviceID=\"SWD\\MMDEVAPI\\{3.0.0.00000002}.{6C26BA7D-F0B2-4225-B422-8168C5261E45}\"\nDeviceClass=\"AUDIOENDPOINT\"\nClassGuid=\"{c166523c-fe0c-4a94-a586-f1a80cfbbf3e}\"\nInfName=\"audioendpoint.inf\"\nManufacturer=\"Microsoft\"\nDriverProviderName=\"Microsoft\"\nDriverVersion=\"10.0.14393.0\"\nDriverDate=\"20160715000000\"\nDescription=\"Audio Endpoint\"\nHardWareID=\"MMDEVAPI\\AudioEndpoints\"\nCompatID=\"GenericAudioEndpoint\"\nDriverName=\nFriendlyName=\"Remote Audio\"",
+    "_time": 1621342800,
+    "source": "driver",
+    "host": "host.acme.com",
+    "sourcetype": "WinHostMon:Driver",
+    "index": "default",
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Type=Driver\nDeviceName=\"Generic software device\"\nDeviceID=\"SWD\\SCDEVICEENUMBUS\\1\"\nDeviceClass=\"SOFTWAREDEVICE\"\nClassGuid=\nInfName=\"c_swdevice.inf\"\nManufacturer=\nDriverProviderName=\"Microsoft\"\nDriverVersion=\"10.0.14393.0\"\nDriverDate=\"20060621000000\"\nDescription=\"Generic software device\"\nHardWareID=\nCompatID=\nDriverName=\nFriendlyName=\"Microsoft Passport Container Enumeration Bus\"",
+    "_time": 1621342800,
+    "source": "driver",
+    "host": "host.acme.com",
+    "sourcetype": "WinHostMon:Driver",
+    "index": "default",
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Type=Driver\nDeviceName=\"Generic software device\"\nDeviceID=\"SWD\\SCDEVICEENUMBUS\\0\"\nDeviceClass=\"SOFTWAREDEVICE\"\nClassGuid=\nInfName=\"c_swdevice.inf\"\nManufacturer=\nDriverProviderName=\"Microsoft\"\nDriverVersion=\"10.0.14393.0\"\nDriverDate=\"20060621000000\"\nDescription=\"Generic software device\"\nHardWareID=\nCompatID=\nDriverName=\nFriendlyName=\"Smart Card Device Enumeration Bus\"",
+    "_time": 1621342800,
+    "source": "driver",
+    "host": "host.acme.com",
+    "sourcetype": "WinHostMon:Driver",
+    "index": "default",
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Type=Driver\nDeviceName=\"Local Print Queue\"\nDeviceID=\"SWD\\PRINTENUM\\{96D96094-317E-4961-9477-4F76E47AA93E}\"\nDeviceClass=\"PRINTQUEUE\"\nClassGuid=\"{1ed2bbf9-11f0-4084-b21f-ad83a8e6dcdc}\"\nInfName=\"printqueue.inf\"\nManufacturer=\"Microsoft\"\nDriverProviderName=\"Microsoft\"\nDriverVersion=\"10.0.14393.0\"\nDriverDate=\"20060621000000\"\nDescription=\"Local Print Queue\"\nHardWareID=\"PRINTENUM\\{084f01fa-e634-4d77-83ee-074817c03581}\"\nCompatID=\"GenPrintQueue\"\nDriverName=\nFriendlyName=\"Microsoft Print to PDF\"",
+    "_time": 1621342800,
+    "source": "driver",
+    "host": "host.acme.com",
+    "sourcetype": "WinHostMon:Driver",
+    "index": "default",
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Type=Driver\nDeviceName=\"Local Print Queue\"\nDeviceID=\"SWD\\PRINTENUM\\{A24F8C55-8C7A-441A-8707-2F4493BEA0CF}\"\nDeviceClass=\"PRINTQUEUE\"\nClassGuid=\"{1ed2bbf9-11f0-4084-b21f-ad83a8e6dcdc}\"\nInfName=\"printqueue.inf\"\nManufacturer=\"Microsoft\"\nDriverProviderName=\"Microsoft\"\nDriverVersion=\"10.0.14393.0\"\nDriverDate=\"20060621000000\"\nDescription=\"Local Print Queue\"\nHardWareID=\"PRINTENUM\\{0f4130dd-19c7-7ab6-99a1-980f03b2ee4e}\"\nCompatID=\"GenPrintQueue\"\nDriverName=\nFriendlyName=\"Microsoft XPS Document Writer\"",
+    "_time": 1621342800,
+    "source": "driver",
+    "host": "host.acme.com",
+    "sourcetype": "WinHostMon:Driver",
+    "index": "default",
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Type=Driver\nDeviceName=\"Local Print Queue\"\nDeviceID=\"SWD\\PRINTENUM\\PRINTQUEUES\"\nDeviceClass=\"PRINTQUEUE\"\nClassGuid=\"{1ed2bbf9-11f0-4084-b21f-ad83a8e6dcdc}\"\nInfName=\"printqueue.inf\"\nManufacturer=\"Microsoft\"\nDriverProviderName=\"Microsoft\"\nDriverVersion=\"10.0.14393.0\"\nDriverDate=\"20060621000000\"\nDescription=\"Local Print Queue\"\nHardWareID=\"PRINTENUM\\LocalPrintQueue\"\nCompatID=\"SWD\\GenericRaw\"\nDriverName=\nFriendlyName=\"Root Print Queue\"",
+    "_time": 1621342800,
+    "source": "driver",
+    "host": "host.acme.com",
+    "sourcetype": "WinHostMon:Driver",
+    "index": "default",
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Type=Driver\nDeviceName=\"Microsoft Teredo Tunneling Adapter\"\nDeviceID=\"SWD\\IP_TUNNEL_VBUS\\TEREDO_TUNNEL_DEVICE\"\nDeviceClass=\"NET\"\nClassGuid=\"{4d36e972-e325-11ce-bfc1-08002be10318}\"\nInfName=\"nettun.inf\"\nManufacturer=\"Microsoft\"\nDriverProviderName=\"Microsoft\"\nDriverVersion=\"10.0.14393.0\"\nDriverDate=\"20060621000000\"\nDescription=\"Microsoft Teredo Tunneling Adapter\"\nHardWareID=\"*TEREDO\"\nCompatID=\"SWD\\GenericRaw\"\nDriverName=\nFriendlyName=\"Teredo Tunneling Pseudo-Interface\"",
+    "_time": 1621342800,
+    "source": "driver",
+    "host": "host.acme.com",
+    "sourcetype": "WinHostMon:Driver",
+    "index": "default",
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Type=Driver\nDeviceName=\"Microsoft ISATAP Adapter\"\nDeviceID=\"SWD\\IP_TUNNEL_VBUS\\ISATAP_0\"\nDeviceClass=\"NET\"\nClassGuid=\"{4d36e972-e325-11ce-bfc1-08002be10318}\"\nInfName=\"nettun.inf\"\nManufacturer=\"Microsoft\"\nDriverProviderName=\"Microsoft\"\nDriverVersion=\"10.0.14393.0\"\nDriverDate=\"20060621000000\"\nDescription=\"Microsoft ISATAP Adapter\"\nHardWareID=\"*ISATAP\"\nCompatID=\"SWD\\GenericRaw\"\nDriverName=\nFriendlyName=\"Microsoft ISATAP Adapter\"",
+    "_time": 1621342800,
+    "source": "driver",
+    "host": "host.acme.com",
+    "sourcetype": "WinHostMon:Driver",
+    "index": "default",
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Type=Driver\nDeviceName=\"Generic software device\"\nDeviceID=\"SWD\\IP_TUNNEL_VBUS\\IP_TUNNEL_DEVICE_ROOT\"\nDeviceClass=\"SOFTWAREDEVICE\"\nClassGuid=\"{62f9c741-b25a-46ce-b54c-9bccce08b6f2}\"\nInfName=\"c_swdevice.inf\"\nManufacturer=\"Microsoft\"\nDriverProviderName=\"Microsoft\"\nDriverVersion=\"10.0.14393.0\"\nDriverDate=\"20060621000000\"\nDescription=\"Generic software device\"\nHardWareID=\"(null)\"\nCompatID=\"SWD\\GenericRaw\"\nDriverName=\nFriendlyName=\"Microsoft IPv4 IPv6 Transition Adapter Bus\"",
+    "_time": 1621342800,
+    "source": "driver",
+    "host": "host.acme.com",
+    "sourcetype": "WinHostMon:Driver",
+    "index": "default",
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Type=Driver\nDeviceName=\"Generic software device\"\nDeviceID=\"SWD\\MMDEVAPI\\MICROSOFTGSWAVETABLESYNTH\"\nDeviceClass=\"SOFTWAREDEVICE\"\nClassGuid=\nInfName=\"c_swdevice.inf\"\nManufacturer=\nDriverProviderName=\"Microsoft\"\nDriverVersion=\"10.0.14393.0\"\nDriverDate=\"20060621000000\"\nDescription=\"Generic software device\"\nHardWareID=\nCompatID=\nDriverName=\nFriendlyName=\"Microsoft GS Wavetable Synth\"",
+    "_time": 1621342800,
+    "source": "driver",
+    "host": "host.acme.com",
+    "sourcetype": "WinHostMon:Driver",
+    "index": "default",
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Type=Driver\nDeviceName=\"Generic software device\"\nDeviceID=\"SWD\\RADIO\\{3DB5895D-CC28-44B3-AD3D-6F01A782B8D2}\"\nDeviceClass=\"SOFTWAREDEVICE\"\nClassGuid=\nInfName=\"c_swdevice.inf\"\nManufacturer=\nDriverProviderName=\"Microsoft\"\nDriverVersion=\"10.0.14393.0\"\nDriverDate=\"20060621000000\"\nDescription=\"Generic software device\"\nHardWareID=\nCompatID=\nDriverName=\nFriendlyName=\"Microsoft Radio Device Enumeration Bus\"",
+    "_time": 1621342800,
+    "source": "driver",
+    "host": "host.acme.com",
+    "sourcetype": "WinHostMon:Driver",
+    "index": "default",
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Type=Driver\nDeviceName=\"Remote Desktop Device Redirector Bus\"\nDeviceID=\"ROOT\\RDPBUS\\0000\"\nDeviceClass=\"SYSTEM\"\nClassGuid=\"{4d36e97d-e325-11ce-bfc1-08002be10318}\"\nInfName=\"rdpbus.inf\"\nManufacturer=\"Microsoft\"\nDriverProviderName=\"Microsoft\"\nDriverVersion=\"10.0.14393.0\"\nDriverDate=\"20060621000000\"\nDescription=\"Remote Desktop Device Redirector Bus\"\nHardWareID=\"ROOT\\RDPBUS\"\nCompatID=\nDriverName=\nFriendlyName=",
+    "_time": 1621342800,
+    "source": "driver",
+    "host": "host.acme.com",
+    "sourcetype": "WinHostMon:Driver",
+    "index": "default",
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Type=Driver\nDeviceName=\"EC2 Windows Utility Device\"\nDeviceID=\"ROOT\\SYSTEM\\0001\"\nDeviceClass=\"SYSTEM\"\nClassGuid=\"{4d36e97d-e325-11ce-bfc1-08002be10318}\"\nInfName=\"oem12.inf\"\nManufacturer=\"Amazon Web Services, Inc.\"\nDriverProviderName=\"Amazon Web Services, Inc.\"\nDriverVersion=\"2.0.0.37\"\nDriverDate=\"20180824000000\"\nDescription=\"EC2 Windows Utility Device\"\nHardWareID=\"root\\ec2winutildriver\"\nCompatID=\nDriverName=\nFriendlyName=",
+    "_time": 1621342800,
+    "source": "driver",
+    "host": "host.acme.com",
+    "sourcetype": "WinHostMon:Driver",
+    "index": "default",
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Type=Driver\nDeviceName=\"Plug and Play Software Device Enumerator\"\nDeviceID=\"ROOT\\SYSTEM\\0000\"\nDeviceClass=\"SYSTEM\"\nClassGuid=\"{4d36e97d-e325-11ce-bfc1-08002be10318}\"\nInfName=\"swenum.inf\"\nManufacturer=\"(Standard system devices)\"\nDriverProviderName=\"Microsoft\"\nDriverVersion=\"10.0.14393.0\"\nDriverDate=\"20160715000000\"\nDescription=\"Plug and Play Software Device Enumerator\"\nHardWareID=\"ROOT\\SWENUM\"\nCompatID=\nDriverName=\nFriendlyName=",
+    "_time": 1621342800,
+    "source": "driver",
+    "host": "host.acme.com",
+    "sourcetype": "WinHostMon:Driver",
+    "index": "default",
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Type=Driver\nDeviceName=\"Microsoft System Management BIOS Driver\"\nDeviceID=\"ROOT\\MSSMBIOS\\0000\"\nDeviceClass=\"SYSTEM\"\nClassGuid=\"{4d36e97d-e325-11ce-bfc1-08002be10318}\"\nInfName=\"mssmbios.inf\"\nManufacturer=\"(Standard system devices)\"\nDriverProviderName=\"Microsoft\"\nDriverVersion=\"10.0.14393.0\"\nDriverDate=\"20060621000000\"\nDescription=\"Microsoft System Management BIOS Driver\"\nHardWareID=\"ROOT\\mssmbios\"\nCompatID=\nDriverName=\nFriendlyName=",
+    "_time": 1621342800,
+    "source": "driver",
+    "host": "host.acme.com",
+    "sourcetype": "WinHostMon:Driver",
+    "index": "default",
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Type=Driver\nDeviceName=\"NDIS Virtual Network Adapter Enumerator\"\nDeviceID=\"ROOT\\NDISVIRTUALBUS\\0000\"\nDeviceClass=\"SYSTEM\"\nClassGuid=\"{4d36e97d-e325-11ce-bfc1-08002be10318}\"\nInfName=\"ndisvirtualbus.inf\"\nManufacturer=\"Microsoft\"\nDriverProviderName=\"Microsoft\"\nDriverVersion=\"10.0.14393.0\"\nDriverDate=\"20060621000000\"\nDescription=\"NDIS Virtual Network Adapter Enumerator\"\nHardWareID=\"ROOT\\NdisVirtualBus\"\nCompatID=\nDriverName=\nFriendlyName=",
+    "_time": 1621342800,
+    "source": "driver",
+    "host": "host.acme.com",
+    "sourcetype": "WinHostMon:Driver",
+    "index": "default",
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Type=Driver\nDeviceName=\"Microsoft Basic Render Driver\"\nDeviceID=\"ROOT\\BASICRENDER\\0000\"\nDeviceClass=\"SYSTEM\"\nClassGuid=\"{4d36e97d-e325-11ce-bfc1-08002be10318}\"\nInfName=\"basicrender.inf\"\nManufacturer=\"Microsoft\"\nDriverProviderName=\"Microsoft\"\nDriverVersion=\"10.0.14393.2155\"\nDriverDate=\"20060621000000\"\nDescription=\"Microsoft Basic Render Driver\"\nHardWareID=\"ROOT\\BasicRender\"\nCompatID=\nDriverName=\nFriendlyName=",
+    "_time": 1621342800,
+    "source": "driver",
+    "host": "host.acme.com",
+    "sourcetype": "WinHostMon:Driver",
+    "index": "default",
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Type=Driver\nDeviceName=\"ACPI Fixed Feature Button\"\nDeviceID=\"ACPI\\FIXEDBUTTON\\2&DABA3FF&1\"\nDeviceClass=\"SYSTEM\"\nClassGuid=\"{4d36e97d-e325-11ce-bfc1-08002be10318}\"\nInfName=\"machine.inf\"\nManufacturer=\"(Standard system devices)\"\nDriverProviderName=\"Microsoft\"\nDriverVersion=\"10.0.14393.2155\"\nDriverDate=\"20060621000000\"\nDescription=\"ACPI Fixed Feature Button\"\nHardWareID=\"ACPI\\FixedButton\"\nCompatID=\nDriverName=\nFriendlyName=",
+    "_time": 1621342800,
+    "source": "driver",
+    "host": "host.acme.com",
+    "sourcetype": "WinHostMon:Driver",
+    "index": "default",
+    "cribl_breaker": "Break on newlines"
+  }
+]

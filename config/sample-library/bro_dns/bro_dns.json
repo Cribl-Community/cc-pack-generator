@@ -1,0 +1,122 @@
+[
+  {
+    "_raw": "#separator \\x09",
+    "_time": 1521911720.865716,
+    "sourcetype": "bro_dns",
+    "source": "/opt/zeek/logs/current/dns.log"
+  },
+  {
+    "_raw": "#set_separator\t,",
+    "_time": 1521911720.865716,
+    "sourcetype": "bro_dns",
+    "source": "/opt/zeek/logs/current/dns.log"
+  },
+  {
+    "_raw": "#empty_field\t(empty)",
+    "_time": 1521911720.865716,
+    "sourcetype": "bro_dns",
+    "source": "/opt/zeek/logs/current/dns.log"
+  },
+  {
+    "_raw": "#unset_field\t-",
+    "_time": 1521911720.865716,
+    "sourcetype": "bro_dns",
+    "source": "/opt/zeek/logs/current/dns.log"
+  },
+  {
+    "_raw": "#path\tdns",
+    "_time": 1521911720.865716,
+    "sourcetype": "bro_dns",
+    "source": "/opt/zeek/logs/current/dns.log"
+  },
+  {
+    "_raw": "#open\t2024-04-12-19-29-12",
+    "_time": 1521911720.865716,
+    "sourcetype": "bro_dns",
+    "source": "/opt/zeek/logs/current/dns.log"
+  },
+  {
+    "_raw": "#fields\tts\tuid\tid.orig_h\tid.orig_p\tid.resp_h\tid.resp_p\tproto\ttrans_id\trtt\tquery\tqclass\tqclass_name\tqtype\tqtype_name\trcode\trcode_name\tAA\tTC\tRD\tRA\tZ\tanswers\tTTLs\trejected",
+    "_time": 1521911720.865716,
+    "sourcetype": "bro_dns",
+    "source": "/opt/zeek/logs/current/dns.log"
+  },
+  {
+    "_raw": "#types\ttime\tstring\taddr\tport\taddr\tport\tenum\tcount\tinterval\tstring\tcount\tstring\tcount\tstring\tcount\tstring\tbool\tbool\tbool\tbool\tcount\tvector[string]\tvector[interval]\tbool",
+    "_time": 1521911720.865716,
+    "sourcetype": "bro_dns",
+    "source": "/opt/zeek/logs/current/dns.log"
+  },
+  {
+    "_raw": "1521911720.865716\tCqKst53mF3det3eDV9\t10.47.1.100\t41772\t10.0.0.100\t53\tudp\t36329\t0.000870\tise.wrccdc.org\t1\tC_INTERNET\t1\tA\t0\tNOERROR\tF\tF\tT\tT\t0\tise.wrccdc.cpp.edu,134.71.3.16\t2230.000000,41830.000000\tF",
+    "_time": 1521911720.865716,
+    "sourcetype": "bro_dns",
+    "source": "/opt/zeek/logs/current/dns.log"
+  },
+  {
+    "_raw": "1521911721.906768\tCjKYDl3IQaBeJyq2Q2\t10.47.25.25\t54890\t208.84.0.53\t53\tudp\t23392\t0.026852\tdownload.windowsupdate.com\t1\tC_INTERNET\t1\tA\t0\tNOERROR\tT\tF\tF\tF\t0\t2-01-3cf7-0009.cdx.cedexis.net\t3600.000000\tF",
+    "_time": 1521911721.906768,
+    "sourcetype": "bro_dns",
+    "source": "/opt/zeek/logs/current/dns.log"
+  },
+  {
+    "_raw": "1521911725.686490\tCHwyGl27gfbfQ2XtZ1\t10.47.26.25\t59095\t96.7.49.66\t53\tudp\t52065\t0.010578\tsupport.mozilla.org\t1\tC_INTERNET\t1\tA\t0\tNOERROR\tT\tF\tF\tF\t0\tprod.sumo.moz.works\t60.000000\tF",
+    "_time": 1521911725.68649,
+    "sourcetype": "bro_dns",
+    "source": "/opt/zeek/logs/current/dns.log"
+  },
+  {
+    "_raw": "1521911726.488786\tCzAtGJ2vgKHt6GZb37\t10.47.6.173\t40731\t10.10.6.1\t53\tudp\t1321\t0.000737\tdaisy.ubuntu.com\t1\tC_INTERNET\t1\tA\t0\tNOERROR\tF\tF\tT\tF\t0\t162.213.33.133,162.213.33.164\t436.000000,436.000000\tF",
+    "_time": 1521911726.488786,
+    "sourcetype": "bro_dns",
+    "source": "/opt/zeek/logs/current/dns.log"
+  },
+  {
+    "_raw": "1521911727.357641\tC3b2UG2jZeflab00Xg\t10.47.22.25\t62768\t216.239.38.10\t53\tudp\t24406\t0.037413\tadservice.google.com\t1\tC_INTERNET\t1\tA\t0\tNOERROR\tT\tF\tF\tF\t0\tpagead46.l.doubleclick.net,172.217.14.66\t300.000000,300.000000\tF",
+    "_time": 1521911727.357641,
+    "sourcetype": "bro_dns",
+    "source": "/opt/zeek/logs/current/dns.log"
+  },
+  {
+    "_raw": "1521911757.348627\tCCi8Q14ubnq7IIau96\t10.47.8.153\t34044\t10.10.8.1\t53\tudp\t12211\t0.006276\t_http._tcp.security.debian.org\t1\tC_INTERNET\t33\tSRV\t0\tNOERROR\tF\tF\tT\tT\t0\tprod.debian.map.fastly.net\t40.000000\tF",
+    "_time": 1521911757.348627,
+    "sourcetype": "bro_dns",
+    "source": "/opt/zeek/logs/current/dns.log"
+  },
+  {
+    "_raw": "1521911733.210833\tChOrD93LnNlKMCLQn9\t10.47.3.150\t137\t10.164.94.120\t137\tudp\t54792\t-\t*\t1\tC_INTERNET\t33\tNBSTAT\t-\t-\tF\tF\tF\tF\t1\t-\t-\tF",
+    "_time": 1521911733.210833,
+    "sourcetype": "bro_dns",
+    "source": "/opt/zeek/logs/current/dns.log"
+  },
+  {
+    "_raw": "1521911804.387358\tCtKXBq1L2ZDvukTtNh\t10.47.3.156\t25986\t10.10.3.1\t53\tudp\t11350\t0.005203\t78.11.217.172.in-addr.arpa\t1\tC_INTERNET\t12\tPTR\t0\tNOERROR\tF\tF\tT\tF\t0\tlax17s34-in-f14.1e100.net\t82176.000000\tF",
+    "_time": 1521911804.387358,
+    "sourcetype": "bro_dns",
+    "source": "/opt/zeek/logs/current/dns.log"
+  },
+  {
+    "_raw": "1521911851.136272\tC0FSyu33TMaXqq4vR8\t10.164.94.120\t39489\t10.47.3.142\t53\ttcp\t10\t-\tauthors.bind\t3\tC_CHAOS\t16\tTXT\t4\tNOTIMP\tF\tF\tT\tF\t0\t-\t-\tT",
+    "_time": 1521911851.136272,
+    "sourcetype": "bro_dns",
+    "source": "/opt/zeek/logs/current/dns.log"
+  },
+  {
+    "_raw": "1521911906.253901\tCDJthc2MUthDm82LLe\t10.47.23.25\t59048\t216.239.36.10\t53\tudp\t47532\t0.027545\tyoutube-ui.l.google.com\t1\tC_INTERNET\t28\tAAAA\t0\tNOERROR\tT\tF\tF\tF\t0\t2607:f8b0:4007:80d::200e\t300.000000\tF",
+    "_time": 1521911906.253901,
+    "sourcetype": "bro_dns",
+    "source": "/opt/zeek/logs/current/dns.log"
+  },
+  {
+    "_raw": "1521912082.480158\tCxRAU11IkrZysyPK81\t10.47.3.10\t63221\t10.0.0.100\t53\tudp\t21547\t0.005044\tdns.msftncsi.com\t1\tC_INTERNET\t255\t*\t0\tNOERROR\tF\tF\tT\tT\t0\tfd3e:4f5a:5b81::1,131.107.255.255\t465.000000,13.000000\tF",
+    "_time": 1521912082.480158,
+    "sourcetype": "bro_dns",
+    "source": "/opt/zeek/logs/current/dns.log"
+  },
+  {
+    "_raw": "1521912737.880329\tCCsvb44G7DRSjeDor9\t10.47.2.155\t44256\t10.10.2.1\t53\tudp\t53275\t-\t-\t-\t-\t-\t-\t3\tNXDOMAIN\tF\tF\tF\tF\t0\t-\t-\tT",
+    "_time": 1521912737.880329,
+    "sourcetype": "bro_dns",
+    "source": "/opt/zeek/logs/current/dns.log"
+  }
+]

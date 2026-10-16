@@ -1,0 +1,122 @@
+[
+  {
+    "_raw": "#separator \\x09",
+    "_time": 0,
+    "sourcetype": "bro_loaded_scripts",
+    "source": "/opt/zeek/logs/current/loaded_scripts.log"
+  },
+  {
+    "_raw": "#set_separator\t,",
+    "_time": 0,
+    "sourcetype": "bro_loaded_scripts",
+    "source": "/opt/zeek/logs/current/loaded_scripts.log"
+  },
+  {
+    "_raw": "#empty_field\t(empty)",
+    "_time": 0,
+    "sourcetype": "bro_loaded_scripts",
+    "source": "/opt/zeek/logs/current/loaded_scripts.log"
+  },
+  {
+    "_raw": "#unset_field\t-",
+    "_time": 0,
+    "sourcetype": "bro_loaded_scripts",
+    "source": "/opt/zeek/logs/current/loaded_scripts.log"
+  },
+  {
+    "_raw": "#path\tloaded_scripts",
+    "_time": 0,
+    "sourcetype": "bro_loaded_scripts",
+    "source": "/opt/zeek/logs/current/loaded_scripts.log"
+  },
+  {
+    "_raw": "#open\t2024-04-12-19-29-12",
+    "_time": 0,
+    "sourcetype": "bro_loaded_scripts",
+    "source": "/opt/zeek/logs/current/loaded_scripts.log"
+  },
+  {
+    "_raw": "#fields\tname",
+    "_time": 0,
+    "sourcetype": "bro_loaded_scripts",
+    "source": "/opt/zeek/logs/current/loaded_scripts.log"
+  },
+  {
+    "_raw": "#types\tstring",
+    "_time": 0,
+    "sourcetype": "bro_loaded_scripts",
+    "source": "/opt/zeek/logs/current/loaded_scripts.log"
+  },
+  {
+    "_raw": "/opt/zeek/share/zeek/base/init-bare.zeek",
+    "_time": 0,
+    "sourcetype": "bro_loaded_scripts",
+    "source": "/opt/zeek/logs/current/loaded_scripts.log"
+  },
+  {
+    "_raw": "  /opt/zeek/share/zeek/base/bif/const.bif.zeek",
+    "_time": 0,
+    "sourcetype": "bro_loaded_scripts",
+    "source": "/opt/zeek/logs/current/loaded_scripts.log"
+  },
+  {
+    "_raw": "  /opt/zeek/share/zeek/base/bif/types.bif.zeek",
+    "_time": 0,
+    "sourcetype": "bro_loaded_scripts",
+    "source": "/opt/zeek/logs/current/loaded_scripts.log"
+  },
+  {
+    "_raw": "  /opt/zeek/share/zeek/base/bif/zeek.bif.zeek",
+    "_time": 0,
+    "sourcetype": "bro_loaded_scripts",
+    "source": "/opt/zeek/logs/current/loaded_scripts.log"
+  },
+  {
+    "_raw": "  /opt/zeek/share/zeek/base/bif/communityid.bif.zeek",
+    "_time": 0,
+    "sourcetype": "bro_loaded_scripts",
+    "source": "/opt/zeek/logs/current/loaded_scripts.log"
+  },
+  {
+    "_raw": "  /opt/zeek/share/zeek/base/bif/stats.bif.zeek",
+    "_time": 0,
+    "sourcetype": "bro_loaded_scripts",
+    "source": "/opt/zeek/logs/current/loaded_scripts.log"
+  },
+  {
+    "_raw": "  /opt/zeek/share/zeek/base/bif/reporter.bif.zeek",
+    "_time": 0,
+    "sourcetype": "bro_loaded_scripts",
+    "source": "/opt/zeek/logs/current/loaded_scripts.log"
+  },
+  {
+    "_raw": "  /opt/zeek/share/zeek/base/bif/strings.bif.zeek",
+    "_time": 0,
+    "sourcetype": "bro_loaded_scripts",
+    "source": "/opt/zeek/logs/current/loaded_scripts.log"
+  },
+  {
+    "_raw": "  /opt/zeek/share/zeek/base/bif/option.bif.zeek",
+    "_time": 0,
+    "sourcetype": "bro_loaded_scripts",
+    "source": "/opt/zeek/logs/current/loaded_scripts.log"
+  },
+  {
+    "_raw": "  /opt/zeek/share/zeek/base/frameworks/supervisor/api.zeek",
+    "_time": 0,
+    "sourcetype": "bro_loaded_scripts",
+    "source": "/opt/zeek/logs/current/loaded_scripts.log"
+  },
+  {
+    "_raw": "  /opt/zeek/share/zeek/base/bif/supervisor.bif.zeek",
+    "_time": 0,
+    "sourcetype": "bro_loaded_scripts",
+    "source": "/opt/zeek/logs/current/loaded_scripts.log"
+  },
+  {
+    "_raw": "  /opt/zeek/share/zeek/base/bif/packet_analysis.bif.zeek",
+    "_time": 0,
+    "sourcetype": "bro_loaded_scripts",
+    "source": "/opt/zeek/logs/current/loaded_scripts.log"
+  }
+]

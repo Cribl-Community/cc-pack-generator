@@ -1,0 +1,68 @@
+[
+  {
+    "_raw": "#separator \\x09",
+    "_time": 1521911780.600725,
+    "sourcetype": "bro_capture_loss",
+    "source": "/opt/zeek/logs/current/capture_loss.log"
+  },
+  {
+    "_raw": "#set_separator\t,",
+    "_time": 1521911780.600725,
+    "sourcetype": "bro_capture_loss",
+    "source": "/opt/zeek/logs/current/capture_loss.log"
+  },
+  {
+    "_raw": "#empty_field\t(empty)",
+    "_time": 1521911780.600725,
+    "sourcetype": "bro_capture_loss",
+    "source": "/opt/zeek/logs/current/capture_loss.log"
+  },
+  {
+    "_raw": "#unset_field\t-",
+    "_time": 1521911780.600725,
+    "sourcetype": "bro_capture_loss",
+    "source": "/opt/zeek/logs/current/capture_loss.log"
+  },
+  {
+    "_raw": "#path\tcapture_loss",
+    "_time": 1521911780.600725,
+    "sourcetype": "bro_capture_loss",
+    "source": "/opt/zeek/logs/current/capture_loss.log"
+  },
+  {
+    "_raw": "#open\t2024-04-12-19-29-36",
+    "_time": 1521911780.600725,
+    "sourcetype": "bro_capture_loss",
+    "source": "/opt/zeek/logs/current/capture_loss.log"
+  },
+  {
+    "_raw": "#fields\tts\tts_delta\tpeer\tgaps\tacks\tpercent_lost",
+    "_time": 1521911780.600725,
+    "sourcetype": "bro_capture_loss",
+    "source": "/opt/zeek/logs/current/capture_loss.log"
+  },
+  {
+    "_raw": "#types\ttime\tinterval\tstring\tcount\tcount\tdouble",
+    "_time": 1521911780.600725,
+    "sourcetype": "bro_capture_loss",
+    "source": "/opt/zeek/logs/current/capture_loss.log"
+  },
+  {
+    "_raw": "1521911780.600725\t60.000000\tzeek\t254\t181765\t0.139741",
+    "_time": 1521911780.600725,
+    "sourcetype": "bro_capture_loss",
+    "source": "/opt/zeek/logs/current/capture_loss.log"
+  },
+  {
+    "_raw": "1521912680.600926\t900.000201\tzeek\t1239\t1371000\t0.090372",
+    "_time": 1521912680.600926,
+    "sourcetype": "bro_capture_loss",
+    "source": "/opt/zeek/logs/current/capture_loss.log"
+  },
+  {
+    "_raw": "1521912990.158766\t309.557840\tzeek\t826\t524895\t0.157365",
+    "_time": 1521912990.158766,
+    "sourcetype": "bro_capture_loss",
+    "source": "/opt/zeek/logs/current/capture_loss.log"
+  }
+]

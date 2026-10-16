@@ -1,0 +1,48 @@
+{
+  "name": "XSIAM-Microsoft-Office365Rules",
+  "kind": "source-specific",
+  "pattern": "tag_only",
+  "sourceIdField": "__sourceIdentifier",
+  "sourceIdentifier": "6b925df8923d4038bf78998d1ffde77c",
+  "vendor": null,
+  "product": null,
+  "reshapesRaw": false,
+  "sample": null,
+  "upstream": {
+    "pack": "cribl-paloalto-xsiam",
+    "version": "2.1.1",
+    "path": "default/pipelines/XSIAM-Microsoft-Office365Rules/conf.yml",
+    "sha256": "a277e02336a9081729678cbf715ed17cbbe18e41f34ea2c206ccf369b5324dd9",
+    "source": "https://packs.cribl.io/packs/cribl-paloalto-xsiam"
+  },
+  "conf": {
+    "output": "default",
+    "streamtags": [],
+    "groups": {},
+    "asyncFuncTimeout": 1000,
+    "description": ""
+  },
+  "functions": [
+    {
+      "id": "comment",
+      "filter": "true",
+      "conf": {
+        "comment": "Assign the Source-Identifier from https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Documentation/Data-source-UUIDs"
+      }
+    },
+    {
+      "id": "eval",
+      "filter": "true",
+      "conf": {
+        "add": [
+          {
+            "disabled": false,
+            "name": "__sourceIdentifier",
+            "value": "'6b925df8923d4038bf78998d1ffde77c'"
+          }
+        ]
+      },
+      "description": "Assign the Source-Identifier"
+    }
+  ]
+}

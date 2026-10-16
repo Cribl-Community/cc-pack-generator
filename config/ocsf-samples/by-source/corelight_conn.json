@@ -1,0 +1,71 @@
+{
+  "key": "corelight_conn",
+  "sourcetype": "corelight_conn",
+  "classUid": 4001,
+  "destFormat": "ocsf#network",
+  "source": "generic",
+  "vendorNames": [
+    "corelight conn"
+  ],
+  "provenance": {
+    "samplePack": "corelight",
+    "sampleName": "CL_Conn_300.log",
+    "tier": "reference",
+    "sampleEvents": 20,
+    "emulated": "golden OCSF pipeline, offline emulation of scripts/build-source-ocsf-samples.mjs",
+    "rejected": []
+  },
+  "events": [
+    {
+      "device": {
+        "hostname": "ip-172-16-53-100"
+      },
+      "metadata": {
+        "product": {
+          "name": "Security",
+          "vendor_name": "corelight conn"
+        },
+        "version": "1.9.0"
+      },
+      "class_uid": 4001,
+      "category_uid": 4,
+      "activity_id": 1,
+      "type_uid": 400101,
+      "severity_id": 5
+    },
+    {
+      "device": {
+        "hostname": "ip-172-16-53-100"
+      },
+      "metadata": {
+        "product": {
+          "name": "Security",
+          "vendor_name": "corelight conn"
+        },
+        "version": "1.9.0"
+      },
+      "class_uid": 4001,
+      "category_uid": 4,
+      "activity_id": 1,
+      "type_uid": 400101,
+      "severity_id": 5
+    },
+    {
+      "device": {
+        "hostname": "ip-172-16-53-100"
+      },
+      "metadata": {
+        "product": {
+          "name": "Security",
+          "vendor_name": "corelight conn"
+        },
+        "version": "1.9.0"
+      },
+      "class_uid": 4001,
+      "category_uid": 4,
+      "activity_id": 1,
+      "type_uid": 400101,
+      "severity_id": 5
+    }
+  ]
+}

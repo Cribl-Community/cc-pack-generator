@@ -1,0 +1,112 @@
+[
+  {
+    "_raw": "<165>Oct 02 2025 21:10:10: %ASA-5-750002: Local:192.0.0.6:500 Remote:216.0.0.118:500 Username:Unknown IKEv2 Received a IKE_INIT_SA request",
+    "message": "Oct 02 2025 21:10:10: %ASA-5-750002: Local:192.0.0.6:500 Remote:216.0.0.118:500 Username:mscore IKEv2 Received a IKE_INIT_SA request",
+    "severity": 5,
+    "facility": 20,
+    "host": "10.0.0.72",
+    "severityName": "notice",
+    "facilityName": "local4",
+    "_time": 1759464610,
+    "cribl_breaker": "ndjson"
+  },
+  {
+    "_raw": "<163>Oct 02 2025 21:10:10: %ASA-3-751022: Local:192.0.0.6:500 Remote:216.0.0.118:500 Username:216.0.0.118 IKEv2 Tunnel rejected: Crypto Map Policy not found for remote traffic selector 156.0.0.128/156.0.0.135/0/65535/0 local traffic selector 192.0.0.93/192.0.0.93/0/65535/0!",
+    "message": "Oct 02 2025 21:10:10: %ASA-3-751022: Local:192.0.0.6:500 Remote:216.0.0.118:500 Username:216.0.0.118 IKEv2 Tunnel rejected: Crypto Map Policy not found for remote traffic selector 156.0.0.128/156.0.0.135/0/65535/0 local traffic selector 192.0.0.93/192.0.0.93/0/65535/0!",
+    "severity": 3,
+    "facility": 20,
+    "host": "10.0.0.72",
+    "severityName": "error",
+    "facilityName": "local4",
+    "_time": 1759464610,
+    "cribl_breaker": "ndjson"
+  },
+  {
+    "_raw": "<166>Oct 02 2025 21:10:10: %ASA-6-113009: AAA retrieved default group policy (GroupPolicy_AFOS) for user = 216.0.0.118",
+    "message": "Oct 02 2025 21:10:10: %ASA-6-113009: AAA retrieved default group policy (GroupPolicy_AFOS) for user = 216.0.0.118",
+    "severity": 6,
+    "facility": 20,
+    "host": "10.0.0.72",
+    "severityName": "info",
+    "facilityName": "local4",
+    "_time": 1759464610,
+    "cribl_breaker": "ndjson"
+  },
+  {
+    "_raw": "<163>Oct 02 2025 21:10:10: %ASA-3-751008: Local:192.0.0.6:500 Remote:216.0.0.118:500 Username:216.0.0.118 IKEv2 Group=216.0.0.118, Tunnel rejected: IKEv2 not enabled in group policy",
+    "message": "Oct 02 2025 21:10:10: %ASA-3-751008: Local:192.0.0.6:500 Remote:216.0.0.118:500 Username:216.0.0.118 IKEv2 Group=216.0.0.118, Tunnel rejected: IKEv2 not enabled in group policy",
+    "severity": 3,
+    "facility": 20,
+    "host": "10.0.0.72",
+    "severityName": "error",
+    "facilityName": "local4",
+    "_time": 1759464610,
+    "cribl_breaker": "ndjson"
+  },
+  {
+    "_raw": "<165>Oct 02 2025 21:10:10: %ASA-5-750006: Local:192.0.0.6:500 Remote:216.0.0.118:500 Username:216.0.0.118 IKEv2 SA UP. Reason: New Connection Established",
+    "message": "Oct 02 2025 21:10:10: %ASA-5-750006: Local:192.0.0.6:500 Remote:216.0.0.118:500 Username:216.0.0.118 IKEv2 SA UP. Reason: New Connection Established",
+    "severity": 5,
+    "facility": 20,
+    "host": "10.0.0.72",
+    "severityName": "notice",
+    "facilityName": "local4",
+    "_time": 1759464610,
+    "cribl_breaker": "ndjson"
+  },
+  {
+    "_raw": "<165>Oct 02 2025 21:10:10: %ASA-5-750007: Local:192.0.0.6:500 Remote:216.0.0.118:500 Username:216.0.0.118 IKEv2 SA DOWN. Reason: local failure",
+    "message": "Oct 02 2025 21:10:10: %ASA-5-750007: Local:192.0.0.6:500 Remote:216.0.0.118:500 Username:216.0.0.118 IKEv2 SA DOWN. Reason: local failure",
+    "severity": 5,
+    "facility": 20,
+    "host": "10.0.0.72",
+    "severityName": "notice",
+    "facilityName": "local4",
+    "_time": 1759464610,
+    "cribl_breaker": "ndjson"
+  },
+  {
+    "_raw": "<162>Oct 02 2025 21:10:10: %ASA-2-106001: Inbound TCP connection denied from 164.0.0.91/26200 to 172.0.0.28/3146 flags SYN  on interface outside",
+    "message": "Oct 02 2025 21:10:10: %ASA-2-106001: Inbound TCP connection denied from 164.0.0.91/26200 to 172.0.0.28/3146 flags SYN  on interface outside",
+    "severity": 2,
+    "facility": 20,
+    "host": "10.0.0.72",
+    "severityName": "critical",
+    "facilityName": "local4",
+    "_time": 1759464610,
+    "cribl_breaker": "ndjson"
+  },
+  {
+    "_raw": "<162>Oct 02 2025 21:10:10: %ASA-2-106001: Inbound TCP connection denied from 164.0.0.91/26200 to 192.0.0.108/3146 flags SYN  on interface outside",
+    "message": "Oct 02 2025 21:10:10: %ASA-2-106001: Inbound TCP connection denied from 164.0.0.91/26200 to 192.0.0.108/3146 flags SYN  on interface outside",
+    "severity": 2,
+    "facility": 20,
+    "host": "10.0.0.72",
+    "severityName": "critical",
+    "facilityName": "local4",
+    "_time": 1759464610,
+    "cribl_breaker": "ndjson"
+  },
+  {
+    "_raw": "<162>Oct 02 2025 21:10:10: %ASA-2-106001: Inbound TCP connection denied from 164.0.0.91/26200 to 172.0.0.22/3146 flags SYN  on interface outside",
+    "message": "Oct 02 2025 21:10:10: %ASA-2-106001: Inbound TCP connection denied from 164.0.0.91/26200 to 172.0.0.22/3146 flags SYN  on interface outside",
+    "severity": 2,
+    "facility": 20,
+    "host": "10.0.0.72",
+    "severityName": "critical",
+    "facilityName": "local4",
+    "_time": 1759464610,
+    "cribl_breaker": "ndjson"
+  },
+  {
+    "_raw": "<162>Oct 02 2025 21:06:36: %ASA-6-302013: Built inbound TCP connection 676533810 for outside:40.0.0.195/15909 (40.0.0.195/15909) to inside:192.0.0.90/55078 (192.0.0.90/55078)",
+    "message": "Oct 02 2025 21:06:36: %ASA-6-302013: Built inbound TCP connection 676533810 for outside:40.0.0.195/15909 (40.0.0.195/15909) to inside:192.0.0.90/55078 (192.0.0.90/55078)",
+    "severity": 2,
+    "facility": 20,
+    "host": "10.0.0.72",
+    "severityName": "critical",
+    "facilityName": "local4",
+    "_time": 1759464396,
+    "cribl_breaker": "ndjson"
+  }
+]

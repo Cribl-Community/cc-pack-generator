@@ -1,0 +1,53 @@
+{
+  "name": "XSIAM-Amazon-AWSPromptLogs",
+  "kind": "source-specific",
+  "pattern": "tag_only",
+  "sourceIdField": "__sourceIdentifier",
+  "sourceIdentifier": "a53edad7ef0c46ffb5037fb2e21520cb",
+  "vendor": null,
+  "product": null,
+  "reshapesRaw": false,
+  "sample": {
+    "name": "XSIAM-Amazon-AWSPromptLogs.log",
+    "format": "json",
+    "formatLabel": "JSON",
+    "events": 3
+  },
+  "upstream": {
+    "pack": "cribl-paloalto-xsiam",
+    "version": "2.1.1",
+    "path": "default/pipelines/XSIAM-Amazon-AWSPromptLogs/conf.yml",
+    "sha256": "d508fb345477c60917c89f66e5464ae7019e6e76879294c7b068284accb1df16",
+    "source": "https://packs.cribl.io/packs/cribl-paloalto-xsiam"
+  },
+  "conf": {
+    "output": "default",
+    "streamtags": [],
+    "groups": {},
+    "asyncFuncTimeout": 1000,
+    "description": ""
+  },
+  "functions": [
+    {
+      "id": "comment",
+      "filter": "true",
+      "conf": {
+        "comment": "Assign the Source-Identifier from https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Documentation/Data-source-UUIDs"
+      }
+    },
+    {
+      "id": "eval",
+      "filter": "true",
+      "conf": {
+        "add": [
+          {
+            "disabled": false,
+            "name": "__sourceIdentifier",
+            "value": "'a53edad7ef0c46ffb5037fb2e21520cb'"
+          }
+        ]
+      },
+      "description": "Assign the Source-Identifier"
+    }
+  ]
+}

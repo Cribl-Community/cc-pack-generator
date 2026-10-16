@@ -1,0 +1,12 @@
+[
+  {
+    "_raw": "{\"businessPhones\":[\"222-333-4444\"],\"displayName\":\"Mike Score\",\"givenName\":\"Mike\",\"jobTitle\":\"Music Consultant\",\"mail\":\"mscore@afos.io\",\"mobilePhone\":\"222-333-4444\",\"officeLocation\":\"Remote\",\"preferredLanguage\":\"en-US\",\"surname\":\"Score\",\"userPrincipalName\":\"mscore@afos.io\",\"id\":\"00000000-0000-0000-0000-000000000000\"}",
+    "host": "main-cribl000000",
+    "source": "https://graph.microsoft.com/v1.0/users/",
+    "_time": 1755298997.9,
+    "cribl_breaker": [
+      "Azure Graph API Ruleset:Azure Graph API",
+      "ndjson"
+    ]
+  }
+]

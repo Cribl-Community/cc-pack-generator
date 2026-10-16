@@ -1,0 +1,8 @@
+[
+  {
+    "_raw": "<134>1 1749587373.025603549 hostxyz urls src=10.1.120.23:51039 dst=123.7.181.39:80 mac=26:23:75:58:6C:38 agent='Cloud%20Connector/3 Agentizer/3826.500.131 Darwin/24.5.0' request: GET http://www.domain.com/connecttest.txt",
+    "_time": 1749587373,
+    "host": "10.68.1.12",
+    "cribl_breaker": "ndjson"
+  }
+]

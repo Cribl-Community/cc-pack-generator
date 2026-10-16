@@ -1,0 +1,92 @@
+[
+  {
+    "_raw": "702 <13>1 2023-06-05T15:28:16-04:00 1.1.164.22 time=1685993296|hostname=MIDRBNCPMLM01|product=HTTPS - - - Inspection|action=HTTPS Bypass|ifdir=inbound|ifname=eth2-01|loguid={0x647e3750,0x44,0xda44ecc,0x27444c62}|origin=10.226.37.5|originsicname=REDACTED | user=REDACTED",
+    "_time": 1685993296,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "914 <13>1 2023-06-05T15:28:16-04:00 1.1.164.22 time=1685993296|hostname=MIDRBNCPMLM01|product=HTTPS - - - Inspection|action=Reject|ifdir=inbound|loguid={0x647e3750,0x45,0xda44ecc,0x27444c62}|origin=10.226.37.5|originsicname=REDACTED | user=REDACTED",
+    "_time": 1685993296,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "667 <13>1 2023-06-05T15:28:16-04:00 1.1.164.22 time=1685993296|hostname=MIDRBNCPMLM01|product=HTTPS - - - Inspection|action=HTTPS Bypass|ifdir=inbound|ifname=eth2-01|loguid={0x647e3750,0x46,0xda44ecc,0x27444c62}|origin=10.226.37.5|originsicname=REDACTED | user=REDACTED",
+    "_time": 1685993296,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "929 <13>1 2023-06-05T15:28:16-04:00 1.1.164.22 time=1685993296|hostname=MIDRBNCPMLM01|product=HTTPS - - - Inspection|action=Reject|ifdir=inbound|loguid={0x647e3750,0x47,0xda44ecc,0x27444c62}|origin=10.226.37.5|originsicname=REDACTED | user=REDACTED",
+    "_time": 1685993296,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "716 <13>1 2023-06-05T15:28:16-04:00 1.1.180.20 time=1685993269|hostname=MIAHCPMLM01|product=HTTPS - - - Inspection|action=HTTPS Bypass|ifdir=inbound|ifname=eth0|loguid={0x647e3750,0xe,0xab44ecc,0x249d4720}|origin=10.242.37.4|originsicname=REDACTED | user=REDACTED",
+    "_time": 1685993296,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "693 <13>1 2023-06-05T15:28:16-04:00 1.1.180.20 time=1685993269|hostname=MIAHCPMLM01|product=HTTPS - - - Inspection|action=HTTPS Bypass|ifdir=inbound|ifname=eth0|loguid={0x647e3750,0x2f,0xab44ecc,0x249d4720}|origin=10.242.37.4|originsicname=REDACTED | user=REDACTED",
+    "_time": 1685993296,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "701 <13>1 2023-06-05T15:28:16-04:00 1.1.180.20 time=1685993269|hostname=MIAHCPMLM01|product=HTTPS - - - Inspection|action=HTTPS Bypass|ifdir=inbound|ifname=eth0|loguid={0x647e3750,0x32,0xab44ecc,0x249d4720}|origin=10.242.37.4|originsicname=REDACTED | user=REDACTED",
+    "_time": 1685993296,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "684 <13>1 2023-06-05T15:28:16-04:00 1.1.180.20 time=1685993269|hostname=MIAHCPMLM01|product=HTTPS - - - Inspection|action=HTTPS Bypass|ifdir=inbound|ifname=eth0|loguid={0x647e3750,0x38,0xab44ecc,0x249d4720}|origin=10.242.37.4|originsicname=REDACTED | user=REDACTED",
+    "_time": 1685993296,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "713 <13>1 2023-06-05T15:28:16-04:00 1.1.180.20 time=1685993269|hostname=MIAHCPMLM01|product=HTTPS - - - Inspection|action=HTTPS Bypass|ifdir=inbound|ifname=eth0|loguid={0x647e3750,0x5b,0xab44ecc,0x249d4720}|origin=10.242.37.4|originsicname=REDACTED | user=REDACTED",
+    "_time": 1685993296,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "710 <13>1 2023-06-05T15:28:16-04:00 1.1.180.20 time=1685993270|hostname=MIAHCPMLM01|product=HTTPS - - - Inspection|action=HTTPS Bypass|ifdir=inbound|ifname=eth0|loguid={0x647e3750,0x71,0xab44ecc,0x249d4720}|origin=10.242.37.4|originsicname=REDACTED | user=REDACTED",
+    "_time": 1685993296,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "697 <13>1 2023-06-05T15:28:17-04:00 1.1.180.20 time=1685993270|hostname=MIAHCPMLM01|product=HTTPS - - - Inspection|action=HTTPS Bypass|ifdir=inbound|ifname=eth0|loguid={0x647e3750,0x93,0xab44ecc,0x249d4720}|origin=10.242.37.4|originsicname=REDACTED | user=REDACTED",
+    "_time": 1685993297,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "731 <13>1 2023-06-05T15:28:17-04:00 1.1.180.20 time=1685993270|hostname=MIAHCPMLM01|product=HTTPS - - - Inspection|action=HTTPS Bypass|ifdir=inbound|ifname=eth0|loguid={0x647e3750,0xb5,0xab44ecc,0x249d4720}|origin=10.242.37.4|originsicname=REDACTED | user=REDACTED",
+    "_time": 1685993297,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "723 <13>1 2023-06-05T15:28:17-04:00 1.1.180.20 time=1685993270|hostname=MIAHCPMLM01|product=HTTPS - - - Inspection|action=HTTPS Bypass|ifdir=inbound|ifname=eth0|loguid={0x647e3750,0xba,0xab44ecc,0x249d4720}|origin=10.242.37.4|originsicname=REDACTED | user=REDACTED",
+    "_time": 1685993297,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "728 <13>1 2023-06-05T15:28:17-04:00 1.1.180.20 time=1685993270|hostname=MIAHCPMLM01|product=HTTPS - - - Inspection|action=HTTPS Bypass|ifdir=inbound|ifname=eth0|loguid={0x647e3750,0xbd,0xab44ecc,0x249d4720}|origin=10.242.37.4|originsicname=REDACTED | user=REDACTED",
+    "_time": 1685993297,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "667 <13>1 2023-06-05T15:28:17-04:00 1.1.164.22 time=1685993296|hostname=MIDRBNCPMLM01|product=HTTPS - - - Inspection|action=HTTPS Bypass|ifdir=inbound|ifname=eth2-01|loguid={0x647e3750,0x4a,0xda44ecc,0x2743cc62}|origin=10.226.37.5|originsicname=REDACTED | user=REDACTED",
+    "_time": 1685993297,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "702 <13>1 2023-06-05T15:28:17-04:00 1.1.164.22 time=1685993296|hostname=MIDRBNCPMLM01|product=HTTPS - - - Inspection|action=HTTPS Bypass|ifdir=inbound|ifname=eth2-01|loguid={0x647e3750,0x4b,0xda44ecc,0x2743cc62}|origin=10.226.37.5|originsicname=REDACTED | user=REDACTED",
+    "_time": 1685993297,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "681 <13>1 2023-06-05T15:28:17-04:00 1.1.164.22 time=1685993296|hostname=MIDRBNCPMLM01|product=HTTPS - - - Inspection|action=HTTPS Bypass|ifdir=inbound|ifname=eth2-01|loguid={0x647e3750,0x4c,0xda44ecc,0x2743cc62}|origin=10.226.37.5|originsicname=REDACTED | user=REDACTED",
+    "_time": 1685993297,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "666 <13>1 2023-06-05T15:28:17-04:00 1.1.164.22 time=1685993296|hostname=MIDRBNCPMLM01|product=HTTPS - - - Inspection|action=HTTPS Bypass|ifdir=inbound|ifname=eth2-01|loguid={0x647e3750,0x56,0xda44ecc,0x2743cc62}|origin=10.226.37.5|originsicname=REDACTED | user=REDACTED",
+    "_time": 1685993297,
+    "cribl_breaker": "Break on newlines"
+  }
+]

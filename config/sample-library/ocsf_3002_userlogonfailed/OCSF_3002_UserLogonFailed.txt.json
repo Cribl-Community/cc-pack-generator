@@ -1,0 +1,32 @@
+[
+  {
+    "_raw": "{\"ContextThreadId\":\"3788252289901\",\"aip\":\"94.140.8.200\",\"LogonDomain\":\"SE-AHO-RDP\",\"event_platform\":\"Win\",\"ClientComputerName\":\"SE-AHO-RDP\",\"EventOrigin\":\"1\",\"id\":\"f6cfe1d7-20b4-11ec-ba5b-0a4e151eec7d\",\"SubStatus\":\"3221225578\",\"EffectiveTransmissionClass\":\"2\",\"timestamp\":\"1632872214866\",\"Status\":\"3221225581\",\"event_simpleName\":\"UserLogonFailed2\",\"ContextTimeStamp\":\"1632872213.142\",\"UserName\":\"demo\",\"ConfigStateHash\":\"1232159586\",\"EtwRawProcessId\":\"848\",\"ContextProcessId\":\"11597444\",\"LogonType\":\"3\",\"EtwRawThreadId\":\"2964\",\"ConfigBuild\":\"1007.3.0014304.11\",\"Entitlements\":\"15\",\"name\":\"UserLogonFailed2V2\",\"aid\":\"f5ea7013e8c24bceb5e9715f2cde8c0a\",\"RemoteAddressIP4\":\"172.16.0.10\",\"cid\":\"56879ccf959c4afc96dd17e8bb1dcbb5\"}",
+    "_time": 1684793142.267,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "{\"event_simpleName\":\"UserLogonFailed\",\"ContextTimeStamp\":\"1632872213.142\",\"UserName\":\"demo\",\"ConfigStateHash\":\"1232159586\",\"ContextProcessId\":\"11597444\",\"LogonTime\":\"\",\"ContextThreadId\":\"3788252289901\",\"aip\":\"94.140.8.200\",\"UserSid\":\"S-1-5-10\",\"ConfigBuild\":\"1007.3.0014304.11\",\"event_platform\":\"Win\",\"PasswordLastSet\":\"\",\"Entitlements\":\"15\",\"name\":\"UserLogonFailedV1\",\"EventOrigin\":\"1\",\"UserLogonFlags\":\"1\",\"id\":\"f6cfe2bd-20b4-11ec-ba5b-0a4e151eec7d\",\"EffectiveTransmissionClass\":\"2\",\"aid\":\"f5ea7013e8c24bceb5e9715f2cde8c0a\",\"timestamp\":\"1632872214866\",\"cid\":\"56879ccf959c4afc96dd17e8bb1dcbb5\"}",
+    "_time": 1632872213.142,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "{\"ContextThreadId\":\"12987642456\",\"aip\":\"219.123.132.49\",\"LogonDomain\":\"SE-MM-WIN10D\",\"event_platform\":\"Win\",\"ClientComputerName\":\"SE-MM-WIN10D\",\"EventOrigin\":\"1\",\"id\":\"f89e9328-11fb-11ec-ba82-0a863c607327\",\"SubStatus\":\"3221225578\",\"EffectiveTransmissionClass\":\"2\",\"timestamp\":\"1631253444724\",\"Status\":\"3221225581\",\"event_simpleName\":\"UserLogonFailed2\",\"RawProcessId\":\"460\",\"ContextTimeStamp\":\"1631253443.046\",\"UserName\":\"demo\",\"ConfigStateHash\":\"504363270\",\"EtwRawProcessId\":\"724\",\"ContextProcessId\":\"4304952031\",\"LogonType\":\"2\",\"EtwRawThreadId\":\"832\",\"ConfigBuild\":\"1007.3.0014210.11\",\"TargetProcessId\":\"4311636560\",\"Entitlements\":\"15\",\"name\":\"UserLogonFailed2V2\",\"aid\":\"dcc28f24da884c32b20d04128cbae4ab\",\"RemoteAddressIP4\":\"127.0.0.1\",\"cid\":\"56879ccf959c4afc96dd17e8bb1dcbb5\"}",
+    "_time": 1684793142.267,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "{\"event_simpleName\":\"UserLogonFailed\",\"ContextTimeStamp\":\"1631253443.046\",\"UserName\":\"demo\",\"ConfigStateHash\":\"504363270\",\"ContextProcessId\":\"4304952031\",\"LogonTime\":\"\",\"ContextThreadId\":\"12987642456\",\"aip\":\"219.123.132.49\",\"UserSid\":\"S-1-5-10\",\"ConfigBuild\":\"1007.3.0014210.11\",\"event_platform\":\"Win\",\"PasswordLastSet\":\"\",\"Entitlements\":\"15\",\"name\":\"UserLogonFailedV1\",\"EventOrigin\":\"1\",\"UserLogonFlags\":\"1\",\"id\":\"f89e93fb-11fb-11ec-ba82-0a863c607327\",\"EffectiveTransmissionClass\":\"2\",\"aid\":\"dcc28f24da884c32b20d04128cbae4ab\",\"timestamp\":\"1631253444724\",\"cid\":\"56879ccf959c4afc96dd17e8bb1dcbb5\"}",
+    "_time": 1631253443.046,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "{\"Status\":\"3221225581\",\"event_simpleName\":\"UserLogonFailed2\",\"ContextTimeStamp\":\"1629987810.511\",\"UserName\":\"demo1\",\"ConfigStateHash\":\"4217420003\",\"EtwRawProcessId\":\"788\",\"ContextProcessId\":\"4103923\",\"LogonType\":\"3\",\"ContextThreadId\":\"154012435965\",\"aip\":\"94.140.8.199\",\"LogonDomain\":\"SE-JOR-RDP\",\"EtwRawThreadId\":\"6300\",\"ConfigBuild\":\"1007.3.0014105.11\",\"event_platform\":\"Win\",\"ClientComputerName\":\"SE-JOR-RDP\",\"Entitlements\":\"15\",\"name\":\"UserLogonFailed2V2\",\"id\":\"3227696d-0679-11ec-b18c-02fe6b1fa7e3\",\"SubStatus\":\"3221225578\",\"EffectiveTransmissionClass\":\"2\",\"aid\":\"c331629724fb4389b4d0c84a0f648f8d\",\"RemoteAddressIP4\":\"172.16.0.10\",\"timestamp\":\"1629987814389\",\"cid\":\"56879ccf959c4afc96dd17e8bb1dcbb5\"}",
+    "_time": 1629987810.511,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "{\"event_simpleName\":\"UserLogonFailed\",\"ContextTimeStamp\":\"1629987810.511\",\"UserName\":\"demo1\",\"ConfigStateHash\":\"4217420003\",\"ContextProcessId\":\"4103923\",\"LogonTime\":\"\",\"ContextThreadId\":\"154012435965\",\"aip\":\"94.140.8.199\",\"UserSid\":\"S-1-5-10\",\"ConfigBuild\":\"1007.3.0014105.11\",\"event_platform\":\"Win\",\"PasswordLastSet\":\"\",\"Entitlements\":\"15\",\"name\":\"UserLogonFailedV1\",\"UserLogonFlags\":\"1\",\"id\":\"32276a51-0679-11ec-b18c-02fe6b1fa7e3\",\"EffectiveTransmissionClass\":\"2\",\"aid\":\"c331629724fb4389b4d0c84a0f648f8d\",\"timestamp\":\"1629987814389\",\"cid\":\"56879ccf959c4afc96dd17e8bb1dcbb5\"}",
+    "_time": 1629987810.511,
+    "cribl_breaker": "Break on newlines"
+  }
+]

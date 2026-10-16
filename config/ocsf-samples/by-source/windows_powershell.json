@@ -1,0 +1,34 @@
+{
+  "key": "windows_powershell",
+  "sourcetype": "windows_powershell",
+  "classUid": 1007,
+  "destFormat": "ocsf#endpoint",
+  "source": "microsoft",
+  "vendorNames": [
+    "Microsoft"
+  ],
+  "provenance": {
+    "samplePack": "cribl_splunk_forwarder_windows_classic_events_to_json_1-2-6",
+    "sampleName": "4103 - Microsoft-Windows-PowerShell/Operational",
+    "tier": "reference",
+    "sampleEvents": 1,
+    "emulated": "golden OCSF pipeline, offline emulation of scripts/build-source-ocsf-samples.mjs",
+    "rejected": []
+  },
+  "events": [
+    {
+      "metadata": {
+        "product": {
+          "name": "PowerShell",
+          "vendor_name": "Microsoft"
+        },
+        "version": "1.9.0"
+      },
+      "class_uid": 1007,
+      "category_uid": 1,
+      "activity_id": 1,
+      "type_uid": 100701,
+      "severity_id": 1
+    }
+  ]
+}

@@ -1,0 +1,142 @@
+[
+  {
+    "_raw": "Wed Nov 24 06:25:17 2021 -> --------------------------------------",
+    "_time": 1637763917,
+    "source": "/var/log/clamav/freshclam.log",
+    "sourcetype": "clamav:freshclam",
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Wed Nov 24 07:25:17 2021 -> Received signal: wake up",
+    "_time": 1637767517,
+    "source": "/var/log/clamav/freshclam.log",
+    "sourcetype": "clamav:freshclam",
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Wed Nov 24 07:25:17 2021 -> ClamAV update process started at Wed Nov 24 07:25:17 2021",
+    "_time": 1637767517,
+    "source": "/var/log/clamav/freshclam.log",
+    "sourcetype": "clamav:freshclam",
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Wed Nov 24 07:25:17 2021 -> daily.cld database is up-to-date (version: 00000 sigs: 0000000 f-level: 00 builder: raynman)",
+    "_time": 1637767517,
+    "source": "/var/log/clamav/freshclam.log",
+    "sourcetype": "clamav:freshclam",
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Wed Nov 24 07:25:17 2021 -> main.cld database is up-to-date (version: 00 sigs: 0000000 f-level: 00 builder: sigmgr)",
+    "_time": 1637767517,
+    "source": "/var/log/clamav/freshclam.log",
+    "sourcetype": "clamav:freshclam",
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Wed Nov 24 07:25:17 2021 -> bytecode.cld database is up-to-date (version: 000 sigs: 00 f-level: 00 builder: awillia2)",
+    "_time": 1637767517,
+    "source": "/var/log/clamav/freshclam.log",
+    "sourcetype": "clamav:freshclam",
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Wed Nov 24 07:25:17 2021 -> --------------------------------------",
+    "_time": 1637767517,
+    "source": "/var/log/clamav/freshclam.log",
+    "sourcetype": "clamav:freshclam",
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Wed Nov 24 08:25:17 2021 -> Received signal: wake up",
+    "_time": 1637771117,
+    "source": "/var/log/clamav/freshclam.log",
+    "sourcetype": "clamav:freshclam",
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Wed Nov 24 08:25:17 2021 -> ClamAV update process started at Wed Nov 24 08:25:17 2021",
+    "_time": 1637771117,
+    "source": "/var/log/clamav/freshclam.log",
+    "sourcetype": "clamav:freshclam",
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Wed Nov 24 08:25:17 2021 -> daily.cld database is up-to-date (version: 00000 sigs: 0000000 f-level: 00 builder: raynman)",
+    "_time": 1637771117,
+    "source": "/var/log/clamav/freshclam.log",
+    "sourcetype": "clamav:freshclam",
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Wed Nov 24 08:25:17 2021 -> main.cld database is up-to-date (version: 00 sigs: 0000000 f-level: 00 builder: sigmgr)",
+    "_time": 1637771117,
+    "source": "/var/log/clamav/freshclam.log",
+    "sourcetype": "clamav:freshclam",
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Wed Nov 24 08:25:17 2021 -> bytecode.cld database is up-to-date (version: 000 sigs: 00 f-level: 00 builder: awillia2)",
+    "_time": 1637771117,
+    "source": "/var/log/clamav/freshclam.log",
+    "sourcetype": "clamav:freshclam",
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Wed Nov 24 08:25:17 2021 -> --------------------------------------",
+    "_time": 1637771117,
+    "source": "/var/log/clamav/freshclam.log",
+    "sourcetype": "clamav:freshclam",
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Wed Nov 24 09:25:17 2021 -> Received signal: wake up",
+    "_time": 1637774717,
+    "source": "/var/log/clamav/freshclam.log",
+    "sourcetype": "clamav:freshclam",
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Wed Nov 24 09:25:17 2021 -> ClamAV update process started at Wed Nov 24 09:25:17 2021",
+    "_time": 1637774717,
+    "source": "/var/log/clamav/freshclam.log",
+    "sourcetype": "clamav:freshclam",
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Wed Nov 24 09:25:17 2021 -> daily.cld database is up-to-date (version: 00000 sigs: 0000000 f-level: 00 builder: raynman)",
+    "_time": 1637774717,
+    "source": "/var/log/clamav/freshclam.log",
+    "sourcetype": "clamav:freshclam",
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Wed Nov 24 09:25:17 2021 -> main.cld database is up-to-date (version: 00 sigs: 0000000 f-level: 00 builder: sigmgr)",
+    "_time": 1637774717,
+    "source": "/var/log/clamav/freshclam.log",
+    "sourcetype": "clamav:freshclam",
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Wed Nov 24 09:25:17 2021 -> bytecode.cld database is up-to-date (version: 000 sigs: 00 f-level: 00 builder: awillia2)",
+    "_time": 1637774717,
+    "source": "/var/log/clamav/freshclam.log",
+    "sourcetype": "clamav:freshclam",
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Wed Nov 24 09:25:17 2021 -> --------------------------------------",
+    "_time": 1637774717,
+    "source": "/var/log/clamav/freshclam.log",
+    "sourcetype": "clamav:freshclam",
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Wed Nov 24 10:25:17 2021 -> Received signal: wake up",
+    "_time": 1637778317,
+    "source": "/var/log/clamav/freshclam.log",
+    "sourcetype": "clamav:freshclam",
+    "cribl_breaker": "Break on newlines"
+  }
+]

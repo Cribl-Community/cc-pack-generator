@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "key": "corelight_tunnel::json",
+  "sourcetype": "corelight_tunnel",
+  "format": "json",
+  "events": [
+    "{\"_path\":\"tunnel\",\"ts\":1718012345.123456,\"uid\":\"C8vN2z4t9GfR1a3W2k\",\"id.orig_h\":\"10.0.5.21\",\"id.orig_p\":47812,\"id.resp_h\":\"203.0.113.44\",\"id.resp_p\":4789,\"tunnel_type\":\"Tunnel::VXLAN\",\"action\":\"Tunnel::DISCOVER\"}",
+    "{\"_path\":\"tunnel\",\"ts\":1718013122.884213,\"uid\":\"C1x8pQ3rT7dLm9B2vY\",\"id.orig_h\":\"192.168.1.15\",\"id.orig_p\":51023,\"id.resp_h\":\"172.16.30.5\",\"id.resp_p\":47,\"tunnel_type\":\"Tunnel::GRE\",\"action\":\"Tunnel::CLOSE\"}",
+    "{\"_path\":\"tunnel\",\"ts\":1718014567.001122,\"uid\":\"CqW3z9YtR2mN8k1Lo4\",\"id.orig_h\":\"198.51.100.9\",\"id.orig_p\":443,\"id.resp_h\":\"10.10.10.10\",\"id.resp_p\":443,\"tunnel_type\":\"Tunnel::SOCKS\",\"action\":\"Tunnel::DISCOVER\"}",
+    "{\"_path\":\"tunnel\",\"ts\":1718015998.554431,\"uid\":\"Cx7Vb2Nz9RtL3m1Q8k\",\"id.orig_h\":\"2001:db8::5f4a\",\"id.orig_p\":58231,\"id.resp_h\":\"2001:db8:1::1\",\"id.resp_p\":3544,\"tunnel_type\":\"Tunnel::TEREDO\",\"action\":\"Tunnel::EXPIRE\"}",
+    "{\"_path\":\"tunnel\",\"ts\":1718016321.774456,\"uid\":\"C9pR3k7VtN2mLQ8xB1\",\"id.orig_h\":\"10.5.5.5\",\"id.orig_p\":2152,\"id.resp_h\":\"203.0.113.201\",\"id.resp_p\":2152,\"tunnel_type\":\"Tunnel::GTPv1\",\"action\":\"Tunnel::DISCOVER\"}",
+    "{\"_path\":\"tunnel\",\"ts\":1718017789.221001,\"uid\":\"CtY8z2Vn7RmL4Q9k3B\",\"id.orig_h\":\"172.16.5.44\",\"id.orig_p\":6081,\"id.resp_h\":\"45.33.32.156\",\"id.resp_p\":6081,\"tunnel_type\":\"Tunnel::GENEVE\",\"action\":\"Tunnel::CLOSE\"}",
+    "{\"_path\":\"tunnel\",\"ts\":1718018456.998877,\"uid\":\"CmN4x8VtR2Lq9k3B7Y\",\"id.orig_h\":\"192.168.50.100\",\"id.orig_p\":80,\"id.resp_h\":\"66.220.9.55\",\"id.resp_p\":80,\"tunnel_type\":\"Tunnel::HTTP\",\"action\":\"Tunnel::DISCOVER\"}",
+    "{\"_path\":\"tunnel\",\"ts\":1718019112.331445,\"uid\":\"C7kV2n9RtL4mQ8xB3Y\",\"id.orig_h\":\"10.0.0.8\",\"id.orig_p\":5090,\"id.resp_h\":\"192.0.2.77\",\"id.resp_p\":5090,\"tunnel_type\":\"Tunnel::AYIYA\",\"action\":\"Tunnel::DISCOVER\"}",
+    "{\"_path\":\"tunnel\",\"ts\":1718019887.665442,\"uid\":\"CxL8m3VtR9NqB2k7Y4\",\"id.orig_h\":\"203.0.113.88\",\"id.orig_p\":47512,\"id.resp_h\":\"10.20.30.40\",\"id.resp_p\":4789,\"tunnel_type\":\"Tunnel::VXLAN\",\"action\":\"Tunnel::EXPIRE\"}",
+    "{\"_path\":\"tunnel\",\"ts\":1718020551.112998,\"uid\":\"CqR9x2VtL4mNB3k7Y8\",\"id.orig_h\":\"10.1.1.1\",\"id.orig_p\":0,\"id.resp_h\":\"10.1.1.254\",\"id.resp_p\":47,\"tunnel_type\":\"Tunnel::GRE\",\"action\":\"Tunnel::DISCOVER\"}",
+    "{\"_path\":\"tunnel\",\"ts\":1718021334.887223,\"uid\":\"CvB3k8NtR2mLQ9x7Y4\",\"id.orig_h\":\"192.168.2.200\",\"id.orig_p\":33221,\"id.resp_h\":\"185.220.101.45\",\"id.resp_p\":443,\"tunnel_type\":\"Tunnel::SOCKS\",\"action\":\"Tunnel::DISCOVER\"}",
+    "{\"_path\":\"tunnel\",\"ts\":1718022001.44311,\"uid\":\"CnR7x3VtL9mQ2k8B4Y\",\"id.orig_h\":\"10.0.9.15\",\"id.orig_p\":58122,\"id.resp_h\":\"91.198.174.192\",\"id.resp_p\":3544,\"tunnel_type\":\"Tunnel::TEREDO\",\"action\":\"Tunnel::DISCOVER\"}",
+    "{\"_path\":\"tunnel\",\"ts\":1718022778.556234,\"uid\":\"CzL4m8VtR2Nq9x3B7Y\",\"id.orig_h\":\"172.16.100.20\",\"id.orig_p\":2152,\"id.resp_h\":\"41.203.72.15\",\"id.resp_p\":2152,\"tunnel_type\":\"Tunnel::GTPv1\",\"action\":\"Tunnel::CLOSE\"}",
+    "{\"_path\":\"tunnel\",\"ts\":1718023445.221876,\"uid\":\"CkQ9x2VtL4mNB8R3Y7\",\"id.orig_h\":\"10.4.4.4\",\"id.orig_p\":6081,\"id.resp_h\":\"172.16.200.9\",\"id.resp_p\":6081,\"tunnel_type\":\"Tunnel::GENEVE\",\"action\":\"Tunnel::DISCOVER\"}",
+    "{\"_path\":\"tunnel\",\"ts\":1718024112.998443,\"uid\":\"CxN7m3VtR9LqB2k8Y4\",\"id.orig_h\":\"198.18.0.5\",\"id.orig_p\":41892,\"id.resp_h\":\"104.244.42.129\",\"id.resp_p\":9001,\"tunnel_type\":\"Tunnel::SOCKS\",\"action\":\"Tunnel::DISCOVER\"}",
+    "{\"_path\":\"tunnel\",\"ts\":1718024887.66511,\"uid\":\"C8vR3x9NtL4mQB2k7Y\",\"id.orig_h\":\"10.7.7.7\",\"id.orig_p\":47876,\"id.resp_h\":\"2001:4860:4860::8888\",\"id.resp_p\":4789,\"tunnel_type\":\"Tunnel::VXLAN\",\"action\":\"Tunnel::EXPIRE\"}",
+    "{\"_path\":\"tunnel\",\"ts\":1718025551.332887,\"uid\":\"CmL9x2VtR8NqB3k4Y7\",\"id.orig_h\":\"192.168.99.5\",\"id.orig_p\":0,\"id.resp_h\":\"192.168.99.254\",\"id.resp_p\":47,\"tunnel_type\":\"Tunnel::GRE\",\"action\":\"Tunnel::EXPIRE\"}",
+    "{\"_path\":\"tunnel\",\"ts\":1718026221.117654,\"uid\":\"CyB4k8VtL2mNQ9x3R7\",\"id.orig_h\":\"10.0.15.30\",\"id.orig_p\":80,\"id.resp_h\":\"93.184.216.34\",\"id.resp_p\":80,\"tunnel_type\":\"Tunnel::HTTP\",\"action\":\"Tunnel::CLOSE\"}",
+    "{\"_path\":\"tunnel\",\"ts\":1718026998.774321,\"uid\":\"C3xN8m2VtR9LqB4k7Y\",\"id.orig_h\":\"172.16.8.19\",\"id.orig_p\":55123,\"id.resp_h\":\"196.16.5.201\",\"id.resp_p\":5090,\"tunnel_type\":\"Tunnel::AYIYA\",\"action\":\"Tunnel::CLOSE\"}",
+    "{\"_path\":\"tunnel\",\"ts\":1718027665.443998,\"uid\":\"CqL2x9VtN4mRB8k3Y7\",\"id.orig_h\":\"10.2.2.2\",\"id.orig_p\":58234,\"id.resp_h\":\"216.58.211.14\",\"id.resp_p\":443,\"tunnel_type\":\"Tunnel::IP\",\"action\":\"Tunnel::DISCOVER\"}"
+  ],
+  "fingerprint": "bedd5737-4235",
+  "verification": {
+    "verdict": "pass",
+    "method": "parser-emulation",
+    "eventsParsed": 20,
+    "eventsChecked": 20,
+    "fields": [
+      "_path",
+      "action",
+      "id.orig_h",
+      "id.orig_p",
+      "id.resp_h",
+      "id.resp_p",
+      "log_time",
+      "session_id",
+      "ts",
+      "tunnel_type",
+      "uid"
+    ],
+    "reasons": [],
+    "offendingEvents": [],
+    "keyEcho": null
+  },
+  "provenance": {
+    "model": "us.anthropic.claude-sonnet-5",
+    "buildNumber": 529,
+    "generatedAt": "2026-08-18T07:31:05.793Z",
+    "grounding": "KNOWN FACTS ABOUT THIS SOURCE (from sourcetype recognition — match these exactly):\n- REQUIRED wire format (the user confirmed this — emit ONLY this format): Format: one compact JSON object per line. Every event carries _path (the Zeek log name, matching the sourcetype), ts as a fractional epoch, uid, and the id.orig_h/id.orig_p/id.resp_h/id.resp_p tuple. Every OTHER key must be one Zeek defines for that specific log — do not carry conn.log fields (conn_state, orig_bytes, resp_bytes, duration, history, service) into a log that is not conn."
+  }
+}

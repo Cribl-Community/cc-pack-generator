@@ -1,0 +1,119 @@
+{
+  "key": "fortinet_fortigate",
+  "sourcetype": "fortinet_fortigate",
+  "classUid": 4001,
+  "destFormat": "ocsf#network",
+  "source": "fortinet",
+  "vendorNames": [
+    "Fortinet"
+  ],
+  "provenance": {
+    "samplePack": "source-fixture",
+    "sampleName": "config/ocsf-samples/source-fixtures/fortinet_fortigate.log",
+    "tier": "source-fixture",
+    "sampleEvents": 30,
+    "emulated": "golden OCSF pipeline, offline emulation of scripts/build-source-ocsf-samples.mjs",
+    "rejected": []
+  },
+  "events": [
+    {
+      "time": 1780218001000,
+      "src_endpoint": {
+        "ip": "10.10.10.25",
+        "port": 0
+      },
+      "dst_endpoint": {
+        "ip": "10.10.20.15",
+        "port": 0
+      },
+      "connection_info": {
+        "protocol_name": "icmp"
+      },
+      "traffic": {
+        "bytes_in": 84,
+        "bytes_out": 84
+      },
+      "device": {
+        "hostname": "FGT-EDGE-01"
+      },
+      "metadata": {
+        "product": {
+          "name": "FortiGate",
+          "vendor_name": "Fortinet"
+        },
+        "version": "1.9.0"
+      },
+      "class_uid": 4001,
+      "category_uid": 4,
+      "activity_id": 1,
+      "type_uid": 400101,
+      "severity_id": 4
+    },
+    {
+      "time": 1780218005000,
+      "src_endpoint": {
+        "ip": "10.10.10.31",
+        "port": 51544
+      },
+      "dst_endpoint": {
+        "ip": "10.10.20.30",
+        "port": 443
+      },
+      "connection_info": {
+        "protocol_name": "tcp"
+      },
+      "traffic": {
+        "bytes_in": 9821,
+        "bytes_out": 1432
+      },
+      "device": {
+        "hostname": "FGT-EDGE-01"
+      },
+      "metadata": {
+        "product": {
+          "name": "FortiGate",
+          "vendor_name": "Fortinet"
+        },
+        "version": "1.9.0"
+      },
+      "class_uid": 4001,
+      "category_uid": 4,
+      "activity_id": 1,
+      "type_uid": 400101,
+      "severity_id": 4
+    },
+    {
+      "time": 1780218010000,
+      "src_endpoint": {
+        "ip": "10.10.10.44",
+        "port": 53821
+      },
+      "dst_endpoint": {
+        "ip": "10.10.20.53",
+        "port": 53
+      },
+      "connection_info": {
+        "protocol_name": "udp"
+      },
+      "traffic": {
+        "bytes_in": 156,
+        "bytes_out": 74
+      },
+      "device": {
+        "hostname": "FGT-EDGE-01"
+      },
+      "metadata": {
+        "product": {
+          "name": "FortiGate",
+          "vendor_name": "Fortinet"
+        },
+        "version": "1.9.0"
+      },
+      "class_uid": 4001,
+      "category_uid": 4,
+      "activity_id": 1,
+      "type_uid": 400101,
+      "severity_id": 4
+    }
+  ]
+}

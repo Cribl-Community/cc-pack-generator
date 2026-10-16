@@ -1,0 +1,7 @@
+[
+  {
+    "_raw": "Oct 12 21:28:47 gke-standard-cluster-2-pool-1-6ea9f13a-moqf 953 <142>1 2020-10-12T21:28:47.110Z stream-logfwd20-156653024-10121421-eq28-harness-16kn logforwarder - panwlogs - 1,2020-10-12T21:28:42.000000Z,007051000113358,TRAFFIC,start,10.0,2020-10-12T19:56:43.000000Z,xxx.xx.x.xx,xxx.xx.x.xx,xxx.xx.x.xx,xxx.xx.x.xx,allow-all-employees,\"xxxxx\\xxxxx o\"xxxxxxxxxx\"'\"xxxxxxxxxx\"test\",,psiphon,vsys1,ethernet4Zone-test2,partners,,,rs-logging,,371791,1,26367,21078,5556,16804,2048,tcp,allow,1230723,526649,704074,2229,2020-10-12T19:56:14.000000Z,40,any,,563731018,-9223372036854775808,BR,AU,,1237,992,unknown,0,0,0,0,,PA-VM,unknown,,,0,,0,2020-10-12T19:56:14.000000Z,GTP-U-TCI,-2522015791327477700,2295,729,1566,75fd49ee-9899-4257-94f3-54abc79faa5a,424809,0,,,,,,,dynug-1-test,xxx.xx.x.xx,X-Phone,x-profile,Note 4G,Lenovo,K6,Android v9,pan-505,596703749274,X-Phone,x-profile,MI,Xiaomi,A1,Android v9.1,pan-622,620797415366,1873cc5c-0d31,pns_default,pan-dp-77754f4,,,5050505050,LN0000001,,,session_owner-0,2020-10-12T19:56:44.728000Z,c6,122f7",
+    "_time": 1665628127,
+    "cribl_breaker": "noBreak1MB"
+  }
+]

@@ -1,0 +1,62 @@
+{
+  "key": "imperva_incapsula_waf",
+  "sourcetype": "imperva_incapsula_waf",
+  "classUid": 4002,
+  "destFormat": "ocsf#web_proxy",
+  "source": "generic",
+  "vendorNames": [
+    "imperva incapsula waf"
+  ],
+  "provenance": {
+    "samplePack": "cribl-imperva-security",
+    "sampleName": "imperva_incapsula_waf.txt",
+    "tier": "reference",
+    "sampleEvents": 20,
+    "emulated": "golden OCSF pipeline, offline emulation of scripts/build-source-ocsf-samples.mjs",
+    "rejected": []
+  },
+  "events": [
+    {
+      "metadata": {
+        "product": {
+          "name": "Security",
+          "vendor_name": "imperva incapsula waf"
+        },
+        "version": "1.9.0"
+      },
+      "class_uid": 4002,
+      "category_uid": 4,
+      "activity_id": 1,
+      "type_uid": 400201,
+      "severity_id": 1
+    },
+    {
+      "metadata": {
+        "product": {
+          "name": "Security",
+          "vendor_name": "imperva incapsula waf"
+        },
+        "version": "1.9.0"
+      },
+      "class_uid": 4002,
+      "category_uid": 4,
+      "activity_id": 1,
+      "type_uid": 400201,
+      "severity_id": 1
+    },
+    {
+      "metadata": {
+        "product": {
+          "name": "Security",
+          "vendor_name": "imperva incapsula waf"
+        },
+        "version": "1.9.0"
+      },
+      "class_uid": 4002,
+      "category_uid": 4,
+      "activity_id": 1,
+      "type_uid": 400201,
+      "severity_id": 1
+    }
+  ]
+}

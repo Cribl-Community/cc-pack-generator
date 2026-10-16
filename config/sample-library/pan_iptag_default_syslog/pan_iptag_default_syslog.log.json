@@ -1,0 +1,12 @@
+[
+  {
+    "_time": 1626825542,
+    "cribl_breaker": "Break on newlines",
+    "severity": 6,
+    "facility": 1,
+    "host": "firewall",
+    "severityName": "info",
+    "facilityName": "user",
+    "_raw": "Oct 13 20:56:15 gke-standard-cluster-2-pool-1-6ea9f13a-fnid 394 <142>1 2020-10-13T20:56:15.519Z stream-logfwd20-156653024-10121421-eq28-harness-16kn logforwarder - panwlogs - Palo Alto Networks,firewall,007099000010804,PA-VM,22229,2019-06-26T00:42:11.000000Z,1462034616,11,IPTAG,0,iptag,xxx.xx.x.xx,00000000000000000000ffffac1001b4,-9223372036854775808,18,0,0,0,false,true,false,false,false,\">C\u000fP,p5\u0016qI\u0006A!\u000e\",1,,,7743,2019-08-15T02:20:30.000000Z,1,vsys1,\"\u0000\u0000f8B\u000e@k[y\",,^\u0000\\w\u0006>#&\u0015M`5\u0018'j,5,Unregister,XMLAPI,1,XML-API,0,Unknown,,10,\"!7eaUpIG-*\u0012pz>\",\"\u00158oi^`\u000eru;)\u001c\u0014u\"xxxxxxxxxx\",\""
+  }
+]

@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "key": "ivanti_vmstat",
+  "sourcetype": "ivanti_vmstat",
+  "events": [
+    "Jan 15 03:12:07 ivanti-vpn-gw01 vmstat[2891]: INFO r=1 b=0 swpd=0 free=482112 buff=10240 cache=204800 si=0 so=0 bi=2 bo=8 in=412 cs=310 us=2 sy=1 id=97 wa=0 host_ip=10.10.4.15 zone=trust status=normal",
+    "Jan 15 03:47:22 ivanti-vpn-gw01 vmstat[2891]: INFO r=2 b=0 swpd=0 free=475900 buff=10500 cache=205100 si=0 so=0 bi=4 bo=12 in=430 cs=325 us=3 sy=1 id=95 wa=1 host_ip=10.10.4.15 zone=trust status=normal",
+    "Jan 15 04:15:53 ivanti-vpn-gw02 vmstat[3312]: WARNING r=14 b=3 swpd=51200 free=98304 buff=8192 cache=180224 si=120 so=340 bi=980 bo=1200 in=3200 cs=4100 us=45 sy=38 id=10 wa=7 host_ip=172.16.8.22 zone=dmz status=degraded msg=\"sustained high sys time - investigate process activity\"",
+    "Jan 15 04:16:01 ivanti-vpn-gw02 vmstat[3312]: CRITICAL r=32 b=9 swpd=204800 free=20480 buff=4096 cache=90112 si=890 so=1200 bi=5400 bo=6100 in=12000 cs=15800 us=71 sy=25 id=1 wa=3 host_ip=172.16.8.22 zone=dmz status=critical msg=\"possible resource exhaustion attack - correlated with 220 auth failures from 203.0.113.44\"",
+    "Jan 15 05:02:11 ivanti-vpn-gw03 vmstat[4021]: INFO r=1 b=0 swpd=0 free=610304 buff=15360 cache=250000 si=0 so=0 bi=1 bo=5 in=380 cs=290 us=1 sy=0 id=99 wa=0 host_ip=192.168.1.5 zone=trust status=normal",
+    "Jan 15 05:33:44 ivanti-vpn-gw03 vmstat[4021]: INFO r=3 b=1 swpd=0 free=598000 buff=15400 cache=251200 si=0 so=0 bi=3 bo=9 in=395 cs=300 us=2 sy=1 id=96 wa=1 host_ip=192.168.1.5 zone=trust status=normal",
+    "Jan 15 06:14:59 ivanti-vpn-gw01 vmstat[2891]: WARNING r=9 b=2 swpd=10240 free=150000 buff=9000 cache=190000 si=40 so=60 bi=700 bo=800 in=2100 cs=2600 us=30 sy=20 id=45 wa=5 host_ip=10.10.4.15 zone=trust status=degraded msg=\"memory pressure detected during SSL VPN session spike\"",
+    "Jan 15 07:01:23 ivanti-vpn-edge01 vmstat[5510]: ERROR r=0 b=0 swpd=0 free=0 buff=0 cache=0 si=0 so=0 bi=0 bo=0 in=0 cs=0 us=0 sy=0 id=0 wa=0 host_ip=2001:db8:85a3::8a2e:370:7334 zone=external status=error msg=\"stat collection failed - agent unresponsive\"",
+    "Jan 15 07:45:10 ivanti-vpn-gw02 vmstat[3312]: INFO r=2 b=0 swpd=51200 free=140000 buff=8300 cache=185000 si=5 so=8 bi=200 bo=250 in=1100 cs=1400 us=12 sy=6 id=78 wa=4 host_ip=172.16.8.22 zone=dmz status=normal",
+    "Jan 15 08:12:34 ivanti-vpn-gw04 vmstat[6120]: INFO r=1 b=0 swpd=0 free=720000 buff=20000 cache=310000 si=0 so=0 bi=1 bo=3 in=350 cs=270 us=1 sy=0 id=99 wa=0 host_ip=10.20.1.44 zone=trust status=normal",
+    "Jan 15 08:47:02 ivanti-vpn-gw04 vmstat[6120]: WARNING r=18 b=4 swpd=61440 free=55000 buff=7000 cache=140000 si=200 so=400 bi=1500 bo=1800 in=5200 cs=6300 us=52 sy=34 id=8 wa=6 host_ip=10.20.1.44 zone=trust status=degraded msg=\"unexpected surge in concurrent auth requests from 198.51.100.77\"",
+    "Jan 15 09:30:15 ivanti-vpn-gw01 vmstat[2891]: INFO r=1 b=0 swpd=0 free=490000 buff=10800 cache=206000 si=0 so=0 bi=2 bo=6 in=400 cs=305 us=2 sy=1 id=97 wa=0 host_ip=10.10.4.15 zone=trust status=normal",
+    "Jan 15 10:05:47 ivanti-vpn-gw05 vmstat[7301]: INFO r=4 b=1 swpd=2048 free=350000 buff=12000 cache=220000 si=1 so=2 bi=50 bo=75 in=900 cs=1100 us=8 sy=4 id=86 wa=2 host_ip=192.168.50.10 zone=branch status=normal",
+    "Jan 15 11:18:29 ivanti-vpn-gw05 vmstat[7301]: CRITICAL r=41 b=12 swpd=512000 free=8192 buff=1024 cache=40960 si=2100 so=2600 bi=8900 bo=9200 in=18500 cs=21000 us=88 sy=10 id=0 wa=2 host_ip=192.168.50.10 zone=branch status=critical msg=\"swap thrashing - session table near capacity, possible DoS via connection flood from 203.0.113.99\"",
+    "Jan 15 12:00:03 ivanti-vpn-gw02 vmstat[3312]: INFO r=1 b=0 swpd=51200 free=160000 buff=8500 cache=192000 si=0 so=0 bi=2 bo=5 in=410 cs=320 us=2 sy=1 id=96 wa=1 host_ip=172.16.8.22 zone=dmz status=normal",
+    "Jan 15 13:22:51 ivanti-vpn-gw06 vmstat[8442]: INFO r=2 b=0 swpd=0 free=800000 buff=25000 cache=340000 si=0 so=0 bi=3 bo=7 in=370 cs=280 us=1 sy=1 id=98 wa=0 host_ip=10.30.5.60 zone=trust status=normal",
+    "Jan 15 14:47:36 ivanti-vpn-gw06 vmstat[8442]: WARNING r=15 b=3 swpd=30720 free=90000 buff=6000 cache=150000 si=90 so=110 bi=1100 bo=1300 in=4000 cs=4900 us=48 sy=29 id=15 wa=8 host_ip=10.30.5.60 zone=trust status=degraded msg=\"elevated wa time - disk io bottleneck during log rotation with payload_size=48923011\"",
+    "Jan 15 15:30:12 ivanti-vpn-gw03 vmstat[4021]: INFO r=0 b=0 swpd=0 free=612000 buff=15600 cache=252000 si=0 so=0 bi=1 bo=4 in=385 cs=295 us=1 sy=0 id=99 wa=0 host_ip=192.168.1.5 zone=trust status=normal",
+    "Jan 15 16:58:44 ivanti-vpn-gw07 vmstat[9910]: ERROR r=6 b=2 swpd=8192 free=210000 buff=9800 cache=178000 si=15 so=20 bi=undefined bo=undefined in=1600 cs=2000 us=20 sy=15 id=60 wa=5 host_ip=203.0.113.5 zone=external status=error msg=\"malformed io stat block - possible tampered monitoring agent detected on port 4444\"",
+    "Jan 15 22:59:59 ivanti-vpn-gw01 vmstat[2891]: INFO r=1 b=0 swpd=0 free=505000 buff=11200 cache=210000 si=0 so=0 bi=2 bo=6 in=405 cs=310 us=2 sy=1 id=97 wa=0 host_ip=10.10.4.15 zone=trust status=normal"
+  ],
+  "fingerprint": "9f60a759-4831",
+  "verification": {
+    "verdict": "pass",
+    "method": "structure",
+    "eventsParsed": 20,
+    "eventsChecked": 20,
+    "fields": [
+      "b",
+      "bi",
+      "bo",
+      "buff",
+      "cache",
+      "cs",
+      "free",
+      "host_ip",
+      "id",
+      "in",
+      "msg",
+      "r",
+      "si",
+      "so",
+      "status",
+      "swpd",
+      "sy",
+      "us",
+      "wa",
+      "zone"
+    ],
+    "reasons": [
+      "no parser for ivanti_vmstat; the events are well-formed kvp with 20 distinct keys"
+    ],
+    "offendingEvents": [],
+    "keyEcho": null
+  },
+  "provenance": {
+    "model": "us.anthropic.claude-sonnet-5",
+    "buildNumber": 529,
+    "generatedAt": "2026-08-18T08:02:37.703Z",
+    "grounding": "KNOWN FACTS ABOUT THIS SOURCE (from sourcetype recognition — match these exactly):\n- Product: Ivanti Ivanti appliance\n- Log family: application"
+  }
+}

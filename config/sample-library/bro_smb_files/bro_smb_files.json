@@ -1,0 +1,122 @@
+[
+  {
+    "_raw": "#separator \\x09",
+    "_time": 1521911754.600639,
+    "sourcetype": "bro_smb_files",
+    "source": "/opt/zeek/logs/current/smb_files.log"
+  },
+  {
+    "_raw": "#set_separator\t,",
+    "_time": 1521911754.600639,
+    "sourcetype": "bro_smb_files",
+    "source": "/opt/zeek/logs/current/smb_files.log"
+  },
+  {
+    "_raw": "#empty_field\t(empty)",
+    "_time": 1521911754.600639,
+    "sourcetype": "bro_smb_files",
+    "source": "/opt/zeek/logs/current/smb_files.log"
+  },
+  {
+    "_raw": "#unset_field\t-",
+    "_time": 1521911754.600639,
+    "sourcetype": "bro_smb_files",
+    "source": "/opt/zeek/logs/current/smb_files.log"
+  },
+  {
+    "_raw": "#path\tsmb_files",
+    "_time": 1521911754.600639,
+    "sourcetype": "bro_smb_files",
+    "source": "/opt/zeek/logs/current/smb_files.log"
+  },
+  {
+    "_raw": "#open\t2024-04-12-19-29-27",
+    "_time": 1521911754.600639,
+    "sourcetype": "bro_smb_files",
+    "source": "/opt/zeek/logs/current/smb_files.log"
+  },
+  {
+    "_raw": "#fields\tts\tuid\tid.orig_h\tid.orig_p\tid.resp_h\tid.resp_p\tfuid\taction\tpath\tname\tsize\tprev_name\ttimes.modified\ttimes.accessed\ttimes.created\ttimes.changed",
+    "_time": 1521911754.600639,
+    "sourcetype": "bro_smb_files",
+    "source": "/opt/zeek/logs/current/smb_files.log"
+  },
+  {
+    "_raw": "#types\ttime\tstring\taddr\tport\taddr\tport\tstring\tenum\tstring\tstring\tcount\tstring\ttime\ttime\ttime\ttime",
+    "_time": 1521911754.600639,
+    "sourcetype": "bro_smb_files",
+    "source": "/opt/zeek/logs/current/smb_files.log"
+  },
+  {
+    "_raw": "1521911754.600639\tC6WWAQ2G8MqT1hrQHd\t10.128.0.214\t41717\t10.47.8.142\t445\t-\tSMB::FILE_OPEN\t-\t\\\\svcctl\t0\t-\t-\t-\t-\t-",
+    "_time": 1521911754.600639,
+    "sourcetype": "bro_smb_files",
+    "source": "/opt/zeek/logs/current/smb_files.log"
+  },
+  {
+    "_raw": "1521911767.337674\tCPd22l18QxvwF9MS6f\t10.128.0.214\t36333\t10.47.8.154\t445\t-\tSMB::FILE_OPEN\t-\t\\\\svcctl\t0\t-\t-\t-\t-\t-",
+    "_time": 1521911767.337674,
+    "sourcetype": "bro_smb_files",
+    "source": "/opt/zeek/logs/current/smb_files.log"
+  },
+  {
+    "_raw": "1521912164.906293\tCl81Dy1EF8qqSPFog2\t10.150.0.20\t43414\t10.47.24.25\t445\t-\tSMB::FILE_OPEN\t-\t\\\\svcctl\t0\t-\t-\t-\t-\t-",
+    "_time": 1521912164.906293,
+    "sourcetype": "bro_smb_files",
+    "source": "/opt/zeek/logs/current/smb_files.log"
+  },
+  {
+    "_raw": "1521912165.133885\tCLoAcl2ZFH62O9no0e\t10.150.0.20\t37760\t10.47.21.25\t445\t-\tSMB::FILE_OPEN\t-\t\\\\svcctl\t0\t-\t-\t-\t-\t-",
+    "_time": 1521912165.133885,
+    "sourcetype": "bro_smb_files",
+    "source": "/opt/zeek/logs/current/smb_files.log"
+  },
+  {
+    "_raw": "1521912165.527812\tC2XJv93R26N3aooPTk\t10.150.0.20\t43119\t10.47.22.25\t445\t-\tSMB::FILE_OPEN\t-\t\\\\svcctl\t0\t-\t-\t-\t-\t-",
+    "_time": 1521912165.527812,
+    "sourcetype": "bro_smb_files",
+    "source": "/opt/zeek/logs/current/smb_files.log"
+  },
+  {
+    "_raw": "1521912168.846323\tCjMntf4TeTOceFXrL8\t10.150.0.20\t39025\t10.47.24.25\t445\t-\tSMB::FILE_OPEN\t-\t\\\\svcctl\t0\t-\t-\t-\t-\t-",
+    "_time": 1521912168.846323,
+    "sourcetype": "bro_smb_files",
+    "source": "/opt/zeek/logs/current/smb_files.log"
+  },
+  {
+    "_raw": "1521912215.680290\tCF0g772wEPFoRKyYg3\t10.128.0.233\t44132\t10.47.21.82\t445\t-\tSMB::FILE_OPEN\t\\\\\\\\10.47.21.82\\\\ADMIN$\tTemp\\\\wdszAPrV.tmp\t196\t-\t1521911958.111192\t1521911951.777714\t1521911951.777714\t1521911958.111192",
+    "_time": 1521912215.68029,
+    "sourcetype": "bro_smb_files",
+    "source": "/opt/zeek/logs/current/smb_files.log"
+  },
+  {
+    "_raw": "1521912215.700462\tCF0g772wEPFoRKyYg3\t10.128.0.233\t44132\t10.47.21.82\t445\t-\tSMB::FILE_DELETE\t\\\\\\\\10.47.21.82\\\\ADMIN$\tTemp\\\\wdszAPrV.tmp\t196\t-\t1521911958.111192\t1521911951.777714\t1521911951.777714\t1521911958.111192",
+    "_time": 1521912215.700462,
+    "sourcetype": "bro_smb_files",
+    "source": "/opt/zeek/logs/current/smb_files.log"
+  },
+  {
+    "_raw": "1521912304.360742\tClOgxyCzrBO8pE4Qe\t10.164.94.120\t39947\t10.47.3.142\t445\t-\tSMB::FILE_OPEN\t-\t\\\\browser\t0\t-\t-\t-\t-\t-",
+    "_time": 1521912304.360742,
+    "sourcetype": "bro_smb_files",
+    "source": "/opt/zeek/logs/current/smb_files.log"
+  },
+  {
+    "_raw": "1521912605.045070\tC2iEQa33X6xgXoissc\t10.128.0.214\t36131\t10.47.8.19\t445\t-\tSMB::FILE_OPEN\t-\t\\\\svcctl\t0\t-\t-\t-\t-\t-",
+    "_time": 1521912605.04507,
+    "sourcetype": "bro_smb_files",
+    "source": "/opt/zeek/logs/current/smb_files.log"
+  },
+  {
+    "_raw": "1521912634.059338\tCIBk9U12qmMhGixvjd\t10.128.0.214\t37373\t10.47.8.19\t445\t-\tSMB::FILE_OPEN\t-\t\\\\svcctl\t0\t-\t-\t-\t-\t-",
+    "_time": 1521912634.059338,
+    "sourcetype": "bro_smb_files",
+    "source": "/opt/zeek/logs/current/smb_files.log"
+  },
+  {
+    "_raw": "1521912706.158534\tC6EYta3MG5Qq2x4SVh\t10.128.0.214\t48622\t10.47.8.142\t445\t-\tSMB::FILE_OPEN\t-\t\\\\svcctl\t0\t-\t-\t-\t-\t-",
+    "_time": 1521912706.158534,
+    "sourcetype": "bro_smb_files",
+    "source": "/opt/zeek/logs/current/smb_files.log"
+  }
+]

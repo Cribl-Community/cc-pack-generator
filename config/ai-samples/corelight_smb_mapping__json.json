@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "key": "corelight_smb_mapping::json",
+  "sourcetype": "corelight_smb_mapping",
+  "format": "json",
+  "events": [
+    "{\"_path\":\"smb_mapping\",\"ts\":1718012345.123456,\"uid\":\"CXWv8v3Z4XcQqj8pF1\",\"id.orig_h\":\"10.1.5.22\",\"id.orig_p\":49152,\"id.resp_h\":\"10.1.5.10\",\"id.resp_p\":445,\"path\":\"\\\\\\\\FS01\\\\Finance$\",\"service\":\"DISK\",\"native_file_system\":\"NTFS\",\"share_type\":\"DISK\"}",
+    "{\"_path\":\"smb_mapping\",\"ts\":1718012401.556789,\"uid\":\"CXWv8v3Z4XcQqj8pF2\",\"id.orig_h\":\"192.168.10.45\",\"id.orig_p\":51222,\"id.resp_h\":\"192.168.10.5\",\"id.resp_p\":445,\"path\":\"\\\\\\\\DC01\\\\NETLOGON\",\"service\":\"DISK\",\"native_file_system\":\"NTFS\",\"share_type\":\"DISK\"}",
+    "{\"_path\":\"smb_mapping\",\"ts\":1718012455.998211,\"uid\":\"CXWv8v3Z4XcQqj8pF3\",\"id.orig_h\":\"172.16.3.11\",\"id.orig_p\":57012,\"id.resp_h\":\"172.16.3.2\",\"id.resp_p\":445,\"path\":\"\\\\\\\\PRINT01\\\\IPC$\",\"service\":\"IPC\",\"native_file_system\":\"\",\"share_type\":\"PIPE\"}",
+    "{\"_path\":\"smb_mapping\",\"ts\":1718012500.3312,\"uid\":\"CXWv8v3Z4XcQqj8pF4\",\"id.orig_h\":\"203.0.113.77\",\"id.orig_p\":40921,\"id.resp_h\":\"10.1.5.10\",\"id.resp_p\":445,\"path\":\"\\\\\\\\FS01\\\\Backups\",\"service\":\"DISK\",\"native_file_system\":\"NTFS\",\"share_type\":\"DISK\"}",
+    "{\"_path\":\"smb_mapping\",\"ts\":1718012560.774312,\"uid\":\"CXWv8v3Z4XcQqj8pF5\",\"id.orig_h\":\"10.1.5.31\",\"id.orig_p\":49555,\"id.resp_h\":\"10.1.5.10\",\"id.resp_p\":445,\"path\":\"\\\\\\\\FS01\\\\HR$\",\"service\":\"DISK\",\"native_file_system\":\"NTFS\",\"share_type\":\"DISK\"}",
+    "{\"_path\":\"smb_mapping\",\"ts\":1718012600.112009,\"uid\":\"CXWv8v3Z4XcQqj8pF6\",\"id.orig_h\":\"198.51.100.23\",\"id.orig_p\":33221,\"id.resp_h\":\"10.1.5.10\",\"id.resp_p\":445,\"path\":\"\\\\\\\\FS01\\\\Public\",\"service\":\"DISK\",\"native_file_system\":\"NTFS\",\"share_type\":\"DISK\"}",
+    "{\"_path\":\"smb_mapping\",\"ts\":1718012655.889001,\"uid\":\"CXWv8v3Z4XcQqj8pF7\",\"id.orig_h\":\"10.2.1.19\",\"id.orig_p\":52011,\"id.resp_h\":\"10.2.1.4\",\"id.resp_p\":445,\"path\":\"\\\\\\\\SQL01\\\\ADMIN$\",\"service\":\"DISK\",\"native_file_system\":\"NTFS\",\"share_type\":\"DISK\"}",
+    "{\"_path\":\"smb_mapping\",\"ts\":1718012700.445667,\"uid\":\"CXWv8v3Z4XcQqj8pF8\",\"id.orig_h\":\"fe80::a4f2:e1ff:fe23:5b11\",\"id.orig_p\":51500,\"id.resp_h\":\"fe80::1\",\"id.resp_p\":445,\"path\":\"\\\\\\\\FS02\\\\Legal$\",\"service\":\"DISK\",\"native_file_system\":\"NTFS\",\"share_type\":\"DISK\"}",
+    "{\"_path\":\"smb_mapping\",\"ts\":1718012750.667123,\"uid\":\"CXWv8v3Z4XcQqj8pF9\",\"id.orig_h\":\"10.1.5.99\",\"id.orig_p\":49666,\"id.resp_h\":\"10.1.5.10\",\"id.resp_p\":445,\"path\":\"\\\\\\\\FS01\\\\C$\",\"service\":\"DISK\",\"native_file_system\":\"NTFS\",\"share_type\":\"DISK\"}",
+    "{\"_path\":\"smb_mapping\",\"ts\":1718012800.221876,\"uid\":\"CXWv8v3Z4XcQqj8pFa\",\"id.orig_h\":\"45.33.32.156\",\"id.orig_p\":60112,\"id.resp_h\":\"10.1.5.10\",\"id.resp_p\":445,\"path\":\"\\\\\\\\FS01\\\\Shared\",\"service\":\"DISK\",\"native_file_system\":\"NTFS\",\"share_type\":\"DISK\"}",
+    "{\"_path\":\"smb_mapping\",\"ts\":1718012855.334455,\"uid\":\"CXWv8v3Z4XcQqj8pFb\",\"id.orig_h\":\"192.168.1.87\",\"id.orig_p\":58211,\"id.resp_h\":\"192.168.1.5\",\"id.resp_p\":445,\"path\":\"\\\\\\\\FILESRV\\\\Users$\",\"service\":\"DISK\",\"native_file_system\":\"NTFS\",\"share_type\":\"DISK\"}",
+    "{\"_path\":\"smb_mapping\",\"ts\":1718012901.887321,\"uid\":\"CXWv8v3Z4XcQqj8pFc\",\"id.orig_h\":\"10.1.5.22\",\"id.orig_p\":49700,\"id.resp_h\":\"10.1.5.10\",\"id.resp_p\":445,\"path\":\"\\\\\\\\FS01\\\\D$\",\"service\":\"DISK\",\"native_file_system\":\"NTFS\",\"share_type\":\"DISK\"}",
+    "{\"_path\":\"smb_mapping\",\"ts\":1718012950.112456,\"uid\":\"CXWv8v3Z4XcQqj8pFd\",\"id.orig_h\":\"10.10.0.14\",\"id.orig_p\":51001,\"id.resp_h\":\"10.10.0.2\",\"id.resp_p\":445,\"path\":\"\\\\\\\\DEVSRV\\\\Repo\",\"service\":\"DISK\",\"native_file_system\":\"ReFS\",\"share_type\":\"DISK\"}",
+    "{\"_path\":\"smb_mapping\",\"ts\":1718013005.556788,\"uid\":\"CXWv8v3Z4XcQqj8pFe\",\"id.orig_h\":\"185.220.101.45\",\"id.orig_p\":40555,\"id.resp_h\":\"10.1.5.10\",\"id.resp_p\":445,\"path\":\"\\\\\\\\FS01\\\\ADMIN$\",\"service\":\"DISK\",\"native_file_system\":\"NTFS\",\"share_type\":\"DISK\"}",
+    "{\"_path\":\"smb_mapping\",\"ts\":1718013050.998321,\"uid\":\"CXWv8v3Z4XcQqj8pFf\",\"id.orig_h\":\"10.4.7.33\",\"id.orig_p\":54212,\"id.resp_h\":\"10.4.7.2\",\"id.resp_p\":445,\"path\":\"\\\\\\\\CLUSTER01\\\\Witness\",\"service\":\"DISK\",\"native_file_system\":\"NTFS\",\"share_type\":\"DISK\"}",
+    "{\"_path\":\"smb_mapping\",\"ts\":1718013100.221109,\"uid\":\"CXWv8v3Z4XcQqj8pFg\",\"id.orig_h\":\"10.1.5.22\",\"id.orig_p\":49800,\"id.resp_h\":\"10.1.5.10\",\"id.resp_p\":445,\"path\":\"\\\\\\\\FS01\\\\Finance$\\\\Q3_Reports\\\\Archive\\\\2024\\\\ExtremelyLongPathNameThatMightIndicateAutomatedScriptingOrScanningActivityAgainstShareEnumeration\",\"service\":\"DISK\",\"native_file_system\":\"NTFS\",\"share_type\":\"DISK\"}",
+    "{\"_path\":\"smb_mapping\",\"ts\":1718013155.667432,\"uid\":\"CXWv8v3Z4XcQqj8pFh\",\"id.orig_h\":\"172.16.9.12\",\"id.orig_p\":50322,\"id.resp_h\":\"172.16.9.5\",\"id.resp_p\":445,\"path\":\"\\\\\\\\WEBSRV\\\\wwwroot$\",\"service\":\"DISK\",\"native_file_system\":\"NTFS\",\"share_type\":\"DISK\"}",
+    "{\"_path\":\"smb_mapping\",\"ts\":1718013200.998777,\"uid\":\"CXWv8v3Z4XcQqj8pFi\",\"id.orig_h\":\"203.0.113.199\",\"id.orig_p\":61234,\"id.resp_h\":\"10.1.5.10\",\"id.resp_p\":445,\"path\":\"\\\\\\\\FS01\\\\IPC$\",\"service\":\"IPC\",\"native_file_system\":\"\",\"share_type\":\"PIPE\"}",
+    "{\"_path\":\"smb_mapping\",\"ts\":1718013260.334221,\"uid\":\"CXWv8v3Z4XcQqj8pFj\",\"id.orig_h\":\"10.1.5.60\",\"id.orig_p\":49999,\"id.resp_h\":\"10.1.5.10\",\"id.resp_p\":445,\"path\":\"\\\\\\\\FS01\\\\Marketing\",\"service\":\"DISK\",\"native_file_system\":\"NTFS\",\"share_type\":\"DISK\"}",
+    "{\"_path\":\"smb_mapping\",\"ts\":1718013300.556001,\"uid\":\"CXWv8v3Z4XcQqj8pFk\",\"id.orig_h\":\"66.249.66.1\",\"id.orig_p\":33445,\"id.resp_h\":\"10.1.5.10\",\"id.resp_p\":445,\"path\":\"\\\\\\\\FS01\\\\Temp$\",\"service\":\"DISK\",\"native_file_system\":\"FAT32\",\"share_type\":\"DISK\"}"
+  ],
+  "fingerprint": "9ac92119-5117",
+  "verification": {
+    "verdict": "pass",
+    "method": "structure",
+    "eventsParsed": 20,
+    "eventsChecked": 20,
+    "fields": [
+      "_path",
+      "id.orig_h",
+      "id.orig_p",
+      "id.resp_h",
+      "id.resp_p",
+      "native_file_system",
+      "path",
+      "service",
+      "share_type",
+      "ts",
+      "uid"
+    ],
+    "reasons": [
+      "no parser for corelight_smb_mapping; the events are well-formed json with 11 distinct keys"
+    ],
+    "offendingEvents": [],
+    "keyEcho": null
+  },
+  "provenance": {
+    "model": "us.anthropic.claude-sonnet-5",
+    "buildNumber": 529,
+    "generatedAt": "2026-08-18T08:51:10.314Z",
+    "grounding": "KNOWN FACTS ABOUT THIS SOURCE (from sourcetype recognition — match these exactly):\n- Product: Corelight Corelight (Zeek)\n- Log family: network\n- REQUIRED wire format (the user confirmed this — emit ONLY this format): Format: one compact JSON object per line. Every event carries _path (the Zeek log name, matching the sourcetype), ts as a fractional epoch, uid, and the id.orig_h/id.orig_p/id.resp_h/id.resp_p tuple. Every OTHER key must be one Zeek defines for that specific log — do not carry conn.log fields (conn_state, orig_bytes, resp_bytes, duration, history, service) into a log that is not conn."
+  }
+}

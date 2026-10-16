@@ -1,0 +1,72 @@
+[
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "__collectible": {
+      "fakeDiscover": true,
+      "collectorId": "island_browser_REST.in_island_browser_users",
+      "taskId": "discover",
+      "guid": "fa82a354-6df7-4dd4-835d-06e7f61f5653",
+      "id": "collect.0:0",
+      "compression": "none",
+      "collectorType": "rest",
+      "encoding": "utf8",
+      "__pageNum": 1,
+      "format": "raw"
+    },
+    "__channel": "MESB:1",
+    "host": "ip-10-254-10-195",
+    "source": "https://management.island.io/api/external/v1/users",
+    "_raw": "{\"userId\":\"auth0|0000000-81ae-42b7-8f7c-000000000000\",\"userType\":\"Browser\",\"userStatus\":\"Subscribed\",\"groups\":[],\"connectionName\":\"Authentication\",\"allowedTenantsIds\":[],\"firstName\":\"Chris\",\"lastName\":\"Jones\",\"email\":\"cJones@afos.com\",\"lastLogin\":\"2022-09-13T18:43:04.143869Z\",\"lastSeen\":\"2022-09-13T18:43:04.143869Z\",\"invitationDate\":\"2022-09-07T21:11:14.411681Z\",\"emailVerified\":true,\"userSource\":\"Email\",\"tenantId\":\"afos\",\"id\":\"00000000-38ce-4d18-bf45-000000000000\",\"createdDate\":\"2022-09-07T21:11:14.986254Z\",\"updatedDate\":\"2024-04-02T05:13:10.180899Z\"}",
+    "__collectStats": {
+      "url": "`${C.vars['island_browser_api_base_url']}/external/v1/users`",
+      "method": "get",
+      "elapsedMS": 93
+    },
+    "__source": "https://management.island.io/api/external/v1/users",
+    "__isBroken": true,
+    "__raw": "{\"userId\":\"auth0|0000000-81ae-42b7-8f7c-000000000000\",\"userType\":\"Browser\",\"userStatus\":\"Subscribed\",\"groups\":[],\"connectionName\":\"Authentication\",\"allowedTenantsIds\":[],\"firstName\":\"Chris\",\"lastName\":\"Jones\",\"email\":\"cJones@afos.com\",\"lastLogin\":\"2022-09-13T18:43:04.143869Z\",\"lastSeen\":\"2022-09-13T18:43:04.143869Z\",\"invitationDate\":\"2022-09-07T21:11:14.411681Z\",\"emailVerified\":true,\"userSource\":\"Email\",\"tenantId\":\"afos\",\"id\":\"00000000-38ce-4d18-bf45-000000000000\",\"createdDate\":\"2022-09-07T21:11:14.986254Z\",\"updatedDate\":\"2024-04-02T05:13:10.180899Z\"}",
+    "_time": 1712034790.180899,
+    "cribl_breaker": "Island Browser API Ruleset:Users",
+    "__collector_type": "cribl-island-browser.users",
+    "sourcetype": "island:browser:users",
+    "__inputId": "collection:1770172160.11705.adhoc.island_browser_REST.in_island_browser_users"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "__collectible": {
+      "fakeDiscover": true,
+      "collectorId": "island_browser_REST.in_island_browser_users",
+      "taskId": "discover",
+      "guid": "fa82a354-6df7-4dd4-835d-06e7f61f5653",
+      "id": "collect.0:0",
+      "compression": "none",
+      "collectorType": "rest",
+      "encoding": "utf8",
+      "__pageNum": 1,
+      "format": "raw"
+    },
+    "__channel": "MESB:1",
+    "host": "ip-10-254-10-195",
+    "source": "https://management.island.io/api/external/v1/users",
+    "_raw": "{\"userId\":\"auth0|0000000-a906-4a90-b2c7-000000000000\",\"userType\":\"Browser\",\"userStatus\":\"Subscribed\",\"groups\":[],\"connectionName\":\"Authentication\",\"allowedTenantsIds\":[],\"firstName\":\"Nick\",\"lastName\":\"Smithy\",\"email\":\"nick.Smithy@afos.com\",\"lastLogin\":\"2022-09-09T19:24:56.524953Z\",\"lastSeen\":\"2022-09-09T19:24:56.524953Z\",\"invitationDate\":\"2022-09-09T18:46:53.367958Z\",\"emailVerified\":true,\"userSource\":\"Email\",\"tenantId\":\"afos\",\"id\":\"00000000-3035-4b04-83df-000000000000\",\"createdDate\":\"2022-09-09T18:46:53.900124Z\",\"updatedDate\":\"2024-04-02T05:13:10.180743Z\"}",
+    "__collectStats": {
+      "url": "`${C.vars['island_browser_api_base_url']}/external/v1/users`",
+      "method": "get",
+      "elapsedMS": 93
+    },
+    "__source": "https://management.island.io/api/external/v1/users",
+    "__isBroken": true,
+    "__raw": "{\"userId\":\"auth0|0000000-a906-4a90-b2c7-000000000000\",\"userType\":\"Browser\",\"userStatus\":\"Subscribed\",\"groups\":[],\"connectionName\":\"Authentication\",\"allowedTenantsIds\":[],\"firstName\":\"Nick\",\"lastName\":\"Smithy\",\"email\":\"nick.Smithy@afos.com\",\"lastLogin\":\"2022-09-09T19:24:56.524953Z\",\"lastSeen\":\"2022-09-09T19:24:56.524953Z\",\"invitationDate\":\"2022-09-09T18:46:53.367958Z\",\"emailVerified\":true,\"userSource\":\"Email\",\"tenantId\":\"afos\",\"id\":\"00000000-3035-4b04-83df-000000000000\",\"createdDate\":\"2022-09-09T18:46:53.900124Z\",\"updatedDate\":\"2024-04-02T05:13:10.180743Z\"}",
+    "_time": 1712034790.180743,
+    "cribl_breaker": "Island Browser API Ruleset:Users",
+    "__collector_type": "cribl-island-browser.users",
+    "sourcetype": "island:browser:users",
+    "__inputId": "collection:1770172160.11705.adhoc.island_browser_REST.in_island_browser_users"
+  }
+]

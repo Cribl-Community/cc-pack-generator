@@ -1,0 +1,169 @@
+{
+  "key": "gcp_audit",
+  "sourcetype": "gcp_audit",
+  "classUid": 6003,
+  "destFormat": "ocsf#cloud_audit",
+  "source": "generic",
+  "vendorNames": [
+    "Google"
+  ],
+  "provenance": {
+    "samplePack": "vendor-samples",
+    "sampleName": "gcp_audit_vendor_sample",
+    "tier": "fallback",
+    "sampleEvents": 17,
+    "emulated": "golden OCSF pipeline, offline emulation of scripts/build-source-ocsf-samples.mjs",
+    "rejected": [
+      {
+        "tier": "reference",
+        "reason": "sample-format-mismatch",
+        "detail": "sampleMatchesSourceExpectation=mismatch"
+      }
+    ]
+  },
+  "events": [
+    {
+      "resource": {
+        "name": "projects/elastic-beats",
+        "type": "project"
+      },
+      "api": {
+        "service": {
+          "name": "cloudbilling.googleapis.com"
+        },
+        "request": {
+          "uid": "-uihnmjctwo"
+        },
+        "operation": "GetResourceBillingInfo"
+      },
+      "actor": {
+        "user": {
+          "name": "xxx@xxx.xxx"
+        }
+      },
+      "src_endpoint": {
+        "ip": "192.168.1.1"
+      },
+      "cloud": {
+        "account": {
+          "uid": "elastic-beats"
+        },
+        "provider": "GCP"
+      },
+      "metadata": {
+        "product": {
+          "name": "Google Cloud Audit Logs",
+          "vendor_name": "Google"
+        },
+        "uid": "-uihnmjctwo",
+        "version": "1.9.0"
+      },
+      "class_uid": 6003,
+      "category_uid": 6,
+      "activity_id": 2,
+      "type_uid": 600302,
+      "severity_id": 1,
+      "status_id": 1,
+      "status": "Success",
+      "time": 1576716576086
+    },
+    {
+      "resource": {
+        "name": "projects/project-id/zones/us-central1-a/instances/x-logs",
+        "type": "gce_instance"
+      },
+      "api": {
+        "service": {
+          "name": "compute.googleapis.com"
+        },
+        "request": {
+          "uid": "-w5vrlhdm7gk"
+        },
+        "operation": "v1.compute.instances.insert"
+      },
+      "actor": {
+        "user": {
+          "name": "project-id@cloudservices.gserviceaccount.com",
+          "uid": "serviceAccount:project-id@cloudservices.gserviceaccount.com"
+        }
+      },
+      "src_endpoint": {
+        "ip": "175.16.199.45"
+      },
+      "http_request": {
+        "user_agent": "Google-Deployment-Manager,gzip(gfe)"
+      },
+      "cloud": {
+        "account": {
+          "uid": "project-id"
+        },
+        "provider": "GCP"
+      },
+      "metadata": {
+        "product": {
+          "name": "Google Cloud Audit Logs",
+          "vendor_name": "Google"
+        },
+        "uid": "-w5vrlhdm7gk",
+        "version": "1.9.0"
+      },
+      "class_uid": 6003,
+      "category_uid": 6,
+      "activity_id": 1,
+      "type_uid": 600301,
+      "severity_id": 1,
+      "status_id": 1,
+      "status": "Success",
+      "time": 1732021993176
+    },
+    {
+      "resource": {
+        "name": "projects/test-project/serviceAccounts/new-service-account@test-project.iam.gserviceaccount.com",
+        "type": "service_account"
+      },
+      "api": {
+        "service": {
+          "name": "iam.googleapis.com"
+        },
+        "request": {
+          "uid": "test-user-1"
+        },
+        "operation": "google.iam.admin.v1.CreateServiceAccount"
+      },
+      "actor": {
+        "user": {
+          "name": "john.doe@elastic.co",
+          "uid": "user:john.doe@elastic.co"
+        }
+      },
+      "src_endpoint": {
+        "ip": "203.0.113.1"
+      },
+      "http_request": {
+        "user_agent": "gcloud-sdk"
+      },
+      "cloud": {
+        "account": {
+          "uid": "test-project"
+        },
+        "provider": "GCP"
+      },
+      "metadata": {
+        "product": {
+          "name": "Google Cloud Audit Logs",
+          "vendor_name": "Google"
+        },
+        "uid": "test-user-1",
+        "version": "1.9.0"
+      },
+      "class_uid": 6003,
+      "category_uid": 6,
+      "activity_id": 1,
+      "type_uid": 600301,
+      "severity_id": 1,
+      "status_id": 1,
+      "status": "Success",
+      "time": 1730887200000
+    }
+  ]
+}

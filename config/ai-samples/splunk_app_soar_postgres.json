@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "key": "splunk_app_soar_postgres",
+  "sourcetype": "splunk_app_soar_postgres",
+  "events": [
+    "2024-05-27 01:14:22.108 UTC [18422] phantom@phantom LOG:  connection received: host=10.1.5.23 port=54812",
+    "2024-05-27 01:14:22.331 UTC [18422] phantom@phantom LOG:  connection authorized: user=phantom database=phantom",
+    "2024-05-27 01:15:03.774 UTC [18422] phantom@phantom LOG:  statement: SELECT id, name, status FROM containers WHERE owner_id = 12 ORDER BY create_time DESC LIMIT 50;",
+    "2024-05-27 02:41:56.902 UTC [19087] soar_admin@phantom LOG:  duration: 452.118 ms  statement: UPDATE artifact SET cef_data = '{\"sourceAddress\":\"203.0.113.44\",\"destinationAddress\":\"10.1.5.9\"}' WHERE id = 88213;",
+    "2024-05-27 03:02:11.445 UTC [19203] phantom@phantom FATAL:  password authentication failed for user \"phantom\"",
+    "2024-05-27 03:02:11.446 UTC [19203] phantom@phantom DETAIL:  Connection matched pg_hba.conf line 92: \"host all all 172.16.4.0/24 md5\"",
+    "2024-05-27 03:44:09.221 UTC [19340] postgres@postgres LOG:  checkpoint starting: time",
+    "2024-05-27 03:44:12.897 UTC [19340] postgres@postgres LOG:  checkpoint complete: wrote 342 buffers (2.1%); 0 WAL file(s) added, 0 removed, 1 recycled; write=3.412 s, sync=0.201 s, total=3.676 s",
+    "2024-05-27 04:17:33.556 UTC [19501] replicator@phantom WARNING:  terminating connection due to administrator command",
+    "2024-05-27 04:17:33.558 UTC [19501] replicator@phantom ERROR:  canceling statement due to user request",
+    "2024-05-27 05:02:47.019 UTC [19688] app_user@phantom_audit LOG:  connection received: host=192.168.10.77 port=41220",
+    "2024-05-27 05:02:47.020 UTC [19688] app_user@phantom_audit FATAL:  no pg_hba.conf entry for host \"192.168.10.77\", user \"app_user\", database \"phantom_audit\", SSL off",
+    "2024-05-27 06:12:58.334 UTC [19755] phantom@phantom LOG:  duration: 8123.774 ms  statement: SELECT * FROM action_run ar JOIN app_run apr ON ar.app_run_id = apr.id WHERE apr.status = 'processing';",
+    "2024-05-27 06:45:02.771 UTC [19860] phantom@phantom ERROR:  deadlock detected",
+    "2024-05-27 06:45:02.772 UTC [19860] phantom@phantom DETAIL:  Process 19860 waits for ShareLock on transaction 88221; blocked by process 19755.",
+    "2024-05-27 07:23:19.998 UTC [20044] postgres@postgres LOG:  automatic vacuum of table \"phantom.public.artifact\": index scans: 2 pages: 0 removed, 1042 remain, 0 skipped due to pins",
+    "2024-05-27 08:05:41.126 UTC [20101] soar_admin@phantom LOG:  connection received: host=10.9.2.14 port=52931",
+    "2024-05-27 08:05:41.129 UTC [20101] soar_admin@phantom LOG:  connection authorized: user=soar_admin database=phantom SSL enabled (protocol=TLSv1.3, cipher=ECDHE-RSA-AES256-GCM-SHA384, bits=256)",
+    "2024-05-27 09:14:55.409 UTC [20255] phantom@phantom LOG:  statement: INSERT INTO container (label, source_data_identifier, ingest_app_id) VALUES ('Phishing Alert 4471', 'sid-98213', 41);",
+    "2024-05-27 10:02:12.887 UTC [20390] unknown_user@phantom FATAL:  role \"unknown_user\" does not exist",
+    "2024-05-27 10:44:39.115 UTC [20502] phantom@phantom WARNING:  there is already a transaction in progress",
+    "2024-05-27 11:31:07.663 UTC [20611] postgres@postgres LOG:  server process (PID 20390) exited with exit code 1",
+    "2024-05-27 12:08:52.240 UTC [20744] phantom@phantom ERROR:  duplicate key value violates unique constraint \"artifact_source_data_identifier_key\"",
+    "2024-05-27 12:08:52.241 UTC [20744] phantom@phantom DETAIL:  Key (source_data_identifier, container_id)=(sid-98213, 4471) already exists.",
+    "2024-05-27 13:22:04.512 UTC [20899] replicator@phantom LOG:  connection received: host=[2001:db8:85a3::8a2e:370:7334] port=59211",
+    "2024-05-27 13:22:04.598 UTC [20899] replicator@phantom LOG:  connection authorized: user=replicator database=phantom",
+    "2024-05-27 14:55:31.874 UTC [21044] phantom@phantom PANIC:  could not write to file \"pg_wal/000000010000000000000042\": No space left on device",
+    "2024-05-27 14:55:32.010 UTC [21044] postgres@postgres LOG:  server process (PID 21044) was terminated by signal 6: Aborted",
+    "2024-05-27 14:55:32.011 UTC [21044] postgres@postgres LOG:  terminating any other active server processes",
+    "2024-05-27 15:41:18.333 UTC [21200] soar_admin@phantom LOG:  duration: 15.203 ms  statement: DELETE FROM ph_user_session WHERE expiry < now();",
+    "2024-05-27 16:29:44.777 UTC [21367] app_user@phantom_audit LOG:  connection received: host=203.0.113.55 port=61233",
+    "2024-05-27 16:29:44.780 UTC [21367] app_user@phantom_audit LOG:  connection authorized: user=app_user database=phantom_audit",
+    "2024-05-27 17:03:09.512 UTC [21489] phantom@phantom LOG:  statement: SELECT count(*) FROM action_run WHERE status='failed' AND create_time > now() - interval '1 hour';",
+    "2024-05-27 18:12:56.204 UTC [21601] postgres@postgres LOG:  too many connections for role \"phantom\"",
+    "2024-05-27 19:47:22.918 UTC [21733] phantom@phantom LOG:  duration: 0.912 ms  statement: COMMIT;",
+    "2024-05-27 20:33:04.401 UTC [21855] soar_admin@phantom WARNING:  pg_stat_statements: entry not found for query id 3821094821094821",
+    "2024-05-27 21:15:47.663 UTC [21970] phantom@phantom LOG:  connection received: host=10.20.30.4 port=48219"
+  ],
+  "fingerprint": "6b2e01d8-4904",
+  "verification": {
+    "verdict": "unverified",
+    "method": "none",
+    "eventsParsed": 0,
+    "eventsChecked": 37,
+    "fields": [],
+    "reasons": [
+      "splunk_app_soar_postgres has no parser and the events are unstructured text — nothing to verify against"
+    ],
+    "offendingEvents": [],
+    "keyEcho": null
+  },
+  "provenance": {
+    "model": "us.anthropic.claude-sonnet-5",
+    "buildNumber": 529,
+    "generatedAt": "2026-08-18T08:14:51.989Z",
+    "grounding": "KNOWN FACTS ABOUT THIS SOURCE (from sourcetype recognition — match these exactly):\n- Product: Splunk SOAR\n- Log family: application"
+  }
+}

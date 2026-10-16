@@ -1,0 +1,7 @@
+EventLevel, EventLevelName
+0,LogAlways
+1,Critical
+2,Error
+3,Warning
+4,Informational
+5,Verbose

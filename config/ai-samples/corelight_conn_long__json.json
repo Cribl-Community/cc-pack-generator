@@ -1,0 +1,70 @@
+{
+  "version": 1,
+  "key": "corelight_conn_long::json",
+  "sourcetype": "corelight_conn_long",
+  "format": "json",
+  "events": [
+    "{\"_path\":\"conn_long\",\"ts\":1718000123.456789,\"uid\":\"CXWv8B3Tt5rZgKj2Ol\",\"id.orig_h\":\"10.1.5.23\",\"id.orig_p\":52341,\"id.resp_h\":\"93.184.216.34\",\"id.resp_p\":443,\"proto\":\"tcp\",\"service\":\"ssl\",\"duration\":12.445123,\"orig_bytes\":2048,\"resp_bytes\":184320,\"conn_state\":\"SF\",\"missed_bytes\":0,\"history\":\"ShADadFf\",\"orig_pkts\":28,\"orig_ip_bytes\":3248,\"resp_pkts\":142,\"resp_ip_bytes\":190552,\"local_orig\":true,\"local_resp\":false,\"community_id\":\"1:hT7Jj9k3vN2xQpL8rM4zYs=\"}",
+    "{\"_path\":\"conn_long\",\"ts\":1718001456.112233,\"uid\":\"CqR2xF4Uz9mNvPl6Ki\",\"id.orig_h\":\"172.16.4.88\",\"id.orig_p\":49213,\"id.resp_h\":\"10.1.1.5\",\"id.resp_p\":22,\"proto\":\"tcp\",\"service\":\"ssh\",\"duration\":845.902341,\"orig_bytes\":18234,\"resp_bytes\":92341,\"conn_state\":\"S1\",\"missed_bytes\":0,\"history\":\"ShADadfr\",\"orig_pkts\":512,\"orig_ip_bytes\":38942,\"resp_pkts\":488,\"resp_ip_bytes\":110234,\"local_orig\":true,\"local_resp\":true,\"community_id\":\"1:aB9Ck3Lm2NpQwR8sT1vXyZ=\"}",
+    "{\"_path\":\"conn_long\",\"ts\":1718003789.998877,\"uid\":\"CtY5nM8Qr3vBjKw1Oz\",\"id.orig_h\":\"203.0.113.77\",\"id.orig_p\":33221,\"id.resp_h\":\"10.1.2.9\",\"id.resp_p\":3389,\"proto\":\"tcp\",\"service\":\"\",\"duration\":0.003211,\"orig_bytes\":0,\"resp_bytes\":0,\"conn_state\":\"S0\",\"missed_bytes\":0,\"history\":\"S\",\"orig_pkts\":3,\"orig_ip_bytes\":180,\"resp_pkts\":0,\"resp_ip_bytes\":0,\"local_orig\":false,\"local_resp\":true,\"community_id\":\"1:dF3Gh7Jk9LmN2oPqRsT4uVw=\"}",
+    "{\"_path\":\"conn_long\",\"ts\":1718005012.334455,\"uid\":\"CvL9pQ2Rz4mNjKw3Ty\",\"id.orig_h\":\"192.168.1.14\",\"id.orig_p\":51345,\"id.resp_h\":\"8.8.8.8\",\"id.resp_p\":53,\"proto\":\"udp\",\"service\":\"dns\",\"duration\":0.021445,\"orig_bytes\":54,\"resp_bytes\":118,\"conn_state\":\"SF\",\"missed_bytes\":0,\"history\":\"Dd\",\"orig_pkts\":1,\"orig_ip_bytes\":82,\"resp_pkts\":1,\"resp_ip_bytes\":146,\"local_orig\":true,\"local_resp\":false,\"community_id\":\"1:zXy8Wv7Ut6SrQpO5nM3lKj=\"}",
+    "{\"_path\":\"conn_long\",\"ts\":1718006345.667788,\"uid\":\"CwK4oN9Ps2vBjLm7Rz\",\"id.orig_h\":\"2001:db8:85a3::8a2e:370:7334\",\"id.orig_p\":54021,\"id.resp_h\":\"2606:4700:4700::1111\",\"id.resp_p\":443,\"proto\":\"tcp\",\"service\":\"ssl\",\"duration\":3.221009,\"orig_bytes\":1420,\"resp_bytes\":8734,\"conn_state\":\"SF\",\"missed_bytes\":0,\"history\":\"ShADadFf\",\"orig_pkts\":14,\"orig_ip_bytes\":2140,\"resp_pkts\":18,\"resp_ip_bytes\":9932,\"local_orig\":false,\"local_resp\":false,\"community_id\":\"1:mN6oP3qR8sT1uVw4xYz9AbC=\"}",
+    "{\"_path\":\"conn_long\",\"ts\":1718007678.223344,\"uid\":\"CxR7tY3Uv5wBnKp2Oz\",\"id.orig_h\":\"10.2.3.44\",\"id.orig_p\":41123,\"id.resp_h\":\"185.220.101.45\",\"id.resp_p\":9001,\"proto\":\"tcp\",\"service\":\"\",\"duration\":9821.334512,\"orig_bytes\":423122,\"resp_bytes\":112893,\"conn_state\":\"S1\",\"missed_bytes\":128,\"history\":\"ShADadfFr\",\"orig_pkts\":4823,\"orig_ip_bytes\":523442,\"resp_pkts\":3221,\"resp_ip_bytes\":198234,\"local_orig\":true,\"local_resp\":false,\"community_id\":\"1:pQ2rS5tU8vW1xY4zA7bC0dE=\"}",
+    "{\"_path\":\"conn_long\",\"ts\":1718009011.445566,\"uid\":\"CyU8vW2xZ4mNoPq6Ry\",\"id.orig_h\":\"10.1.5.201\",\"id.orig_p\":33889,\"id.resp_h\":\"172.16.9.12\",\"id.resp_p\":445,\"proto\":\"tcp\",\"service\":\"\",\"duration\":0.089123,\"orig_bytes\":312,\"resp_bytes\":0,\"conn_state\":\"REJ\",\"missed_bytes\":0,\"history\":\"Sr\",\"orig_pkts\":2,\"orig_ip_bytes\":152,\"resp_pkts\":1,\"resp_ip_bytes\":40,\"local_orig\":true,\"local_resp\":true,\"community_id\":\"1:fG5hI8jK1lM4nO7pQ0rS3tU=\"}",
+    "{\"_path\":\"conn_long\",\"ts\":1718010344.778899,\"uid\":\"CzT9wX3yA5nOpQr7Sz\",\"id.orig_h\":\"198.51.100.23\",\"id.orig_p\":6667,\"id.resp_h\":\"10.3.1.18\",\"id.resp_p\":6667,\"proto\":\"tcp\",\"service\":\"irc\",\"duration\":45123.887234,\"orig_bytes\":892341,\"resp_bytes\":734223,\"conn_state\":\"S1\",\"missed_bytes\":0,\"history\":\"ShADadfFa\",\"orig_pkts\":12234,\"orig_ip_bytes\":1023442,\"resp_pkts\":11893,\"resp_ip_bytes\":889234,\"local_orig\":false,\"local_resp\":true,\"community_id\":\"1:vW4xY7zA0bC3dE6fG9hI2jK=\"}",
+    "{\"_path\":\"conn_long\",\"ts\":1718011677.112233,\"uid\":\"CaB2cD4eF6gHjKl8Mo\",\"id.orig_h\":\"10.1.7.33\",\"id.orig_p\":50221,\"id.resp_h\":\"151.101.65.140\",\"id.resp_p\":80,\"proto\":\"tcp\",\"service\":\"http\",\"duration\":1.223445,\"orig_bytes\":734,\"resp_bytes\":42340,\"conn_state\":\"SF\",\"missed_bytes\":0,\"history\":\"ShADadFf\",\"orig_pkts\":9,\"orig_ip_bytes\":1034,\"resp_pkts\":32,\"resp_ip_bytes\":44120,\"local_orig\":true,\"local_resp\":false,\"community_id\":\"1:lM3nO6pQ9rS2tU5vW8xY1zA=\"}",
+    "{\"_path\":\"conn_long\",\"ts\":1718013010.334455,\"uid\":\"CbC3dE5fG7hIjKm9Np\",\"id.orig_h\":\"192.168.50.100\",\"id.orig_p\":58221,\"id.resp_h\":\"10.0.0.53\",\"id.resp_p\":53,\"proto\":\"udp\",\"service\":\"dns\",\"duration\":0.005512,\"orig_bytes\":0,\"resp_bytes\":0,\"conn_state\":\"S0\",\"missed_bytes\":0,\"history\":\"D\",\"orig_pkts\":1,\"orig_ip_bytes\":68,\"resp_pkts\":0,\"resp_ip_bytes\":0,\"local_orig\":true,\"local_resp\":true,\"community_id\":\"1:qR2sT5uV8wX1yZ4aB7cD0eF=\"}",
+    "{\"_path\":\"conn_long\",\"ts\":1718014343.556677,\"uid\":\"CcD4eF6gH8iJkLm0Oq\",\"id.orig_h\":\"10.1.9.77\",\"id.orig_p\":39012,\"id.resp_h\":\"91.219.237.244\",\"id.resp_p\":8443,\"proto\":\"tcp\",\"service\":\"ssl\",\"duration\":0.998211,\"orig_bytes\":512,\"resp_bytes\":1289,\"conn_state\":\"RSTO\",\"missed_bytes\":0,\"history\":\"ShADadR\",\"orig_pkts\":6,\"orig_ip_bytes\":612,\"resp_pkts\":5,\"resp_ip_bytes\":1489,\"local_orig\":true,\"local_resp\":false,\"community_id\":\"1:xY6zA9bC2dE5fG8hI1jK4lM=\"}",
+    "{\"_path\":\"conn_long\",\"ts\":1718015676.778899,\"uid\":\"CdE5fG7hI9jKlMn1Pr\",\"id.orig_h\":\"172.16.20.5\",\"id.orig_p\":22334,\"id.resp_h\":\"10.1.1.100\",\"id.resp_p\":21,\"proto\":\"tcp\",\"service\":\"ftp\",\"duration\":312.445123,\"orig_bytes\":8923,\"resp_bytes\":3221,\"conn_state\":\"SF\",\"missed_bytes\":0,\"history\":\"ShADadfF\",\"orig_pkts\":88,\"orig_ip_bytes\":10234,\"resp_pkts\":76,\"resp_ip_bytes\":4123,\"local_orig\":true,\"local_resp\":true,\"community_id\":\"1:aB1cD4eF7gH0iJ3kL6mN9oP=\"}",
+    "{\"_path\":\"conn_long\",\"ts\":1718017009.998877,\"uid\":\"CeF6gH8iJ0kLmNo2Qs\",\"id.orig_h\":\"45.155.205.14\",\"id.orig_p\":443,\"id.resp_h\":\"10.1.3.90\",\"id.resp_p\":51234,\"proto\":\"tcp\",\"service\":\"\",\"duration\":0.001122,\"orig_bytes\":0,\"resp_bytes\":0,\"conn_state\":\"OTH\",\"missed_bytes\":0,\"history\":\"\",\"orig_pkts\":0,\"orig_ip_bytes\":0,\"resp_pkts\":0,\"resp_ip_bytes\":0,\"local_orig\":false,\"local_resp\":true,\"community_id\":\"1:cD3eF6gH9iJ2kL5mN8oP1qR=\"}",
+    "{\"_path\":\"conn_long\",\"ts\":1718018342.223344,\"uid\":\"CfG7hI9jK1lMnOp3Rt\",\"id.orig_h\":\"10.4.5.66\",\"id.orig_p\":61234,\"id.resp_h\":\"104.244.42.129\",\"id.resp_p\":443,\"proto\":\"tcp\",\"service\":\"ssl\",\"duration\":78234.112233,\"orig_bytes\":9823412,\"resp_bytes\":18234223,\"conn_state\":\"S1\",\"missed_bytes\":4096,\"history\":\"ShADadfFr\",\"orig_pkts\":89234,\"orig_ip_bytes\":11234223,\"resp_pkts\":91234,\"resp_ip_bytes\":20123442,\"local_orig\":true,\"local_resp\":false,\"community_id\":\"1:eF5gH8iJ1kL4mN7oP0qR3sT=\"}",
+    "{\"_path\":\"conn_long\",\"ts\":1718019675.445566,\"uid\":\"CgH8iJ0kL2mNoPq4Su\",\"id.orig_h\":\"10.1.2.15\",\"id.orig_p\":25,\"id.resp_h\":\"192.168.99.4\",\"id.resp_p\":41223,\"proto\":\"tcp\",\"service\":\"smtp\",\"duration\":2.334455,\"orig_bytes\":18234,\"resp_bytes\":892,\"conn_state\":\"SF\",\"missed_bytes\":0,\"history\":\"ShADadFf\",\"orig_pkts\":22,\"orig_ip_bytes\":19234,\"resp_pkts\":14,\"resp_ip_bytes\":1234,\"local_orig\":true,\"local_resp\":true,\"community_id\":\"1:gH7iJ0kL3mN6oP9qR2sT5uV=\"}",
+    "{\"_path\":\"conn_long\",\"ts\":1718021008.667788,\"uid\":\"ChI9jK1lM3nOpQr5Tv\",\"id.orig_h\":\"66.240.205.34\",\"id.orig_p\":52341,\"id.resp_h\":\"10.1.4.201\",\"id.resp_p\":22,\"proto\":\"tcp\",\"service\":\"ssh\",\"duration\":0.223445,\"orig_bytes\":1024,\"resp_bytes\":512,\"conn_state\":\"RSTR\",\"missed_bytes\":0,\"history\":\"ShADadR\",\"orig_pkts\":8,\"orig_ip_bytes\":1224,\"resp_pkts\":7,\"resp_ip_bytes\":712,\"local_orig\":false,\"local_resp\":true,\"community_id\":\"1:iJ9kL2mN5oP8qR1sT4uV7wX=\"}",
+    "{\"_path\":\"conn_long\",\"ts\":1718022341.8899,\"uid\":\"CiJ0kL2mN4oPqRs6Uw\",\"id.orig_h\":\"10.1.6.88\",\"id.orig_p\":48221,\"id.resp_h\":\"52.94.236.248\",\"id.resp_p\":443,\"proto\":\"tcp\",\"service\":\"ssl\",\"duration\":15.556677,\"orig_bytes\":3452,\"resp_bytes\":298734,\"conn_state\":\"SF\",\"missed_bytes\":0,\"history\":\"ShADadFf\",\"orig_pkts\":42,\"orig_ip_bytes\":4452,\"resp_pkts\":198,\"resp_ip_bytes\":312223,\"local_orig\":true,\"local_resp\":false,\"community_id\":\"1:kL1mN4oP7qR0sT3uV6wX9yZ=\"}",
+    "{\"_path\":\"conn_long\",\"ts\":1718023674.112233,\"uid\":\"CjK1lM3nO5pQrSt7Vx\",\"id.orig_h\":\"10.9.1.202\",\"id.orig_p\":33445,\"id.resp_h\":\"212.83.135.55\",\"id.resp_p\":22,\"proto\":\"tcp\",\"service\":\"ssh\",\"duration\":4123.223445,\"orig_bytes\":74223,\"resp_bytes\":68234,\"conn_state\":\"S1\",\"missed_bytes\":0,\"history\":\"ShADadfFr\",\"orig_pkts\":892,\"orig_ip_bytes\":84234,\"resp_pkts\":823,\"resp_ip_bytes\":78912,\"local_orig\":true,\"local_resp\":false,\"community_id\":\"1:mN3oP6qR9sT2uV5wX8yZ1aB=\"}",
+    "{\"_path\":\"conn_long\",\"ts\":1718025007.334455,\"uid\":\"CkL2mN4oP6qRsTu8Wy\",\"id.orig_h\":\"192.168.10.55\",\"id.orig_p\":137,\"id.resp_h\":\"192.168.10.255\",\"id.resp_p\":137,\"proto\":\"udp\",\"service\":\"\",\"duration\":0.334455,\"orig_bytes\":234,\"resp_bytes\":0,\"conn_state\":\"S0\",\"missed_bytes\":0,\"history\":\"D\",\"orig_pkts\":4,\"orig_ip_bytes\":314,\"resp_pkts\":0,\"resp_ip_bytes\":0,\"local_orig\":true,\"local_resp\":true,\"community_id\":\"1:oP5qR8sT1uV4wX7yZ0aB3cD=\"}",
+    "{\"_path\":\"conn_long\",\"ts\":1718026340.556677,\"uid\":\"ClM3nO5pQ7rStUv9Xz\",\"id.orig_h\":\"10.1.8.14\",\"id.orig_p\":63221,\"id.resp_h\":\"185.199.108.153\",\"id.resp_p\":443,\"proto\":\"tcp\",\"service\":\"ssl\",\"duration\":0.445123,\"orig_bytes\":892,\"resp_bytes\":41223,\"conn_state\":\"SF\",\"missed_bytes\":0,\"history\":\"ShADadFf\",\"orig_pkts\":11,\"orig_ip_bytes\":1092,\"resp_pkts\":34,\"resp_ip_bytes\":43221,\"local_orig\":true,\"local_resp\":false,\"community_id\":\"1:qR7sT0uV3wX6yZ9aB2cD5eF=\"}"
+  ],
+  "fingerprint": "b08dcd78-9050",
+  "verification": {
+    "verdict": "pass",
+    "method": "structure",
+    "eventsParsed": 20,
+    "eventsChecked": 20,
+    "fields": [
+      "_path",
+      "community_id",
+      "conn_state",
+      "duration",
+      "history",
+      "id.orig_h",
+      "id.orig_p",
+      "id.resp_h",
+      "id.resp_p",
+      "local_orig",
+      "local_resp",
+      "missed_bytes",
+      "orig_bytes",
+      "orig_ip_bytes",
+      "orig_pkts",
+      "proto",
+      "resp_bytes",
+      "resp_ip_bytes",
+      "resp_pkts",
+      "service",
+      "ts",
+      "uid"
+    ],
+    "reasons": [
+      "no parser for corelight_conn_long; the events are well-formed json with 22 distinct keys"
+    ],
+    "offendingEvents": [],
+    "keyEcho": null
+  },
+  "provenance": {
+    "model": "us.anthropic.claude-sonnet-5",
+    "buildNumber": 529,
+    "generatedAt": "2026-08-18T07:26:28.095Z",
+    "grounding": "KNOWN FACTS ABOUT THIS SOURCE (from sourcetype recognition — match these exactly):\n- Product: Corelight Corelight (Zeek)\n- Log family: network\n- REQUIRED wire format (the user confirmed this — emit ONLY this format): Format: one compact JSON object per line. Every event carries _path (the Zeek log name, matching the sourcetype), ts as a fractional epoch, uid, and the id.orig_h/id.orig_p/id.resp_h/id.resp_p tuple. Every OTHER key must be one Zeek defines for that specific log — do not carry conn.log fields (conn_state, orig_bytes, resp_bytes, duration, history, service) into a log that is not conn."
+  }
+}

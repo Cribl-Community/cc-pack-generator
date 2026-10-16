@@ -1,0 +1,37 @@
+{
+  "key": "azure_graph_alerts",
+  "sourcetype": "azure_graph_alerts",
+  "classUid": 4001,
+  "destFormat": "ocsf#network",
+  "source": "generic",
+  "vendorNames": [
+    "azure graph alerts"
+  ],
+  "provenance": {
+    "samplePack": "cribl-azure-graph-rest",
+    "sampleName": "cribl_azure_graph_alerts",
+    "tier": "reference",
+    "sampleEvents": 1,
+    "emulated": "golden OCSF pipeline, offline emulation of scripts/build-source-ocsf-samples.mjs",
+    "rejected": []
+  },
+  "events": [
+    {
+      "device": {
+        "hostname": "ip-10-255-9-218"
+      },
+      "metadata": {
+        "product": {
+          "name": "Security",
+          "vendor_name": "azure graph alerts"
+        },
+        "version": "1.9.0"
+      },
+      "class_uid": 4001,
+      "category_uid": 4,
+      "activity_id": 1,
+      "type_uid": 400101,
+      "severity_id": 1
+    }
+  ]
+}

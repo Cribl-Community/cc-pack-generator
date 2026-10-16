@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "key": "mcafee_epo_threatevents_ens_ids",
+  "sourcetype": "mcafee_epo_threatevents_ens_ids",
+  "events": [
+    "CEF:0|McAfee|ePolicy Orchestrator|5.10.0|1090|Firewall IDS Alert|7|rt=Feb 03 2025 03:12:44 src=192.168.1.45 dst=10.0.2.15 spt=51422 dpt=445 proto=TCP cat=Firewall.IntrusionDetection act=Blocked cs1=Suspicious SMB Connection Attempt cs1Label=ThreatName dvchost=WKSTN-FIN02 duser=jsmith dvc=10.0.2.15 outcome=Success",
+    "CEF:0|McAfee|ePolicy Orchestrator|5.10.0|1092|ENS IDS Port Scan Detected|8|rt=Feb 03 2025 03:14:02 src=203.0.113.77 dst=10.0.2.16 spt=443 dpt=22 proto=TCP cat=Firewall.PortScan act=Blocked cs1=Port Scan Detected cs1Label=ThreatName dvchost=SRV-DB01 duser= outcome=Success",
+    "CEF:0|McAfee|ePolicy Orchestrator|5.10.0|1090|Firewall IDS Alert|4|rt=Feb 03 2025 04:01:19 src=10.0.5.23 dst=172.16.4.9 spt=59211 dpt=3389 proto=TCP cat=Firewall.IntrusionDetection act=Allowed cs1=RDP Brute Force Attempt cs1Label=ThreatName dvchost=WKSTN-HR11 duser=mwilliams outcome=Failure",
+    "CEF:0|McAfee|ePolicy Orchestrator|5.10.0|1096|ENS IDS Signature Match|9|rt=Feb 03 2025 05:33:56 src=198.51.100.22 dst=10.0.3.44 spt=44321 dpt=80 proto=TCP cat=Firewall.SignatureMatch act=Blocked cs1=SQL Injection Attempt cs1Label=ThreatName dvchost=WEBSRV02 duser= outcome=Success",
+    "CEF:0|McAfee|ePolicy Orchestrator|5.10.0|1090|Firewall IDS Alert|3|rt=Feb 03 2025 06:12:07 src=10.0.1.10 dst=10.0.1.15 spt=137 dpt=137 proto=UDP cat=Firewall.IntrusionDetection act=Allowed cs1=NetBIOS Broadcast cs1Label=ThreatName dvchost=SRV-FILE01 duser=svc_backup outcome=Success",
+    "CEF:0|McAfee|ePolicy Orchestrator|5.10.0|1099|ENS IDS Anomaly Detection|10|rt=Feb 03 2025 07:45:31 src=45.33.32.156 dst=10.0.2.200 spt=6667 dpt=6667 proto=TCP cat=Firewall.Anomaly act=Blocked cs1=Possible Botnet C2 Communication cs1Label=ThreatName dvchost=WKSTN-IT05 duser=agupta outcome=Success",
+    "CEF:0|McAfee|ePolicy Orchestrator|5.10.0|1090|Firewall IDS Alert|6|rt=Feb 03 2025 08:22:14 src=fe80::a00:27ff:fe4e:66a1 dst=fe80::1 spt=546 dpt=547 proto=UDP cat=Firewall.IntrusionDetection act=Allowed cs1=DHCPv6 Solicit cs1Label=ThreatName dvchost=LAPTOP-ENG03 duser=tlee outcome=Success",
+    "CEF:0|McAfee|ePolicy Orchestrator|5.10.0|1093|ENS IDS Exploit Detected|9|rt=Feb 03 2025 09:05:59 src=192.168.10.88 dst=10.0.4.12 spt=59392 dpt=445 proto=TCP cat=Firewall.Exploit act=Blocked cs1=EternalBlue Exploit Attempt cs1Label=ThreatName dvchost=SRV-APP03 duser= outcome=Success",
+    "CEF:0|McAfee|ePolicy Orchestrator|5.10.0|1090|Firewall IDS Alert|2|rt=Feb 03 2025 09:47:12 src=10.0.6.5 dst=8.8.8.8 spt=53211 dpt=53 proto=UDP cat=Firewall.IntrusionDetection act=Allowed cs1=DNS Query cs1Label=ThreatName dvchost=WKSTN-SALES09 duser=rpatel outcome=Success",
+    "CEF:0|McAfee|ePolicy Orchestrator|5.10.0|1097|ENS IDS Suspicious Process Network Activity|8|rt=Feb 03 2025 10:30:47 src=10.0.2.77 dst=185.220.101.45 spt=443 dpt=8443 proto=TCP cat=Firewall.ProcessNetwork act=Blocked cs1=Unauthorized Outbound Connection from powershell.exe cs1Label=ThreatName dvchost=WKSTN-DEV14 duser=kchen outcome=Success",
+    "CEF:0|McAfee|ePolicy Orchestrator|5.10.0|1090|Firewall IDS Alert|5|rt=Feb 03 2025 11:15:33 src=172.16.2.19 dst=172.16.2.1 spt=68 dpt=67 proto=UDP cat=Firewall.IntrusionDetection act=Allowed cs1=DHCP Request cs1Label=ThreatName dvchost=SRV-NET01 duser= outcome=Success",
+    "CEF:0|McAfee|ePolicy Orchestrator|5.10.0|1098|ENS IDS DoS Attempt|9|rt=Feb 03 2025 12:03:21 src=91.198.174.192 dst=10.0.1.5 spt=443 dpt=443 proto=TCP cat=Firewall.DoS act=Blocked cs1=SYN Flood Attack cs1Label=ThreatName dvchost=SRV-WEB01 duser= outcome=Success",
+    "CEF:0|McAfee|ePolicy Orchestrator|5.10.0|1090|Firewall IDS Alert|4|rt=Feb 03 2025 13:41:08 src=10.0.9.201 dst=10.0.9.1 spt=61234 dpt=88 proto=TCP cat=Firewall.IntrusionDetection act=Allowed cs1=Kerberos Auth cs1Label=ThreatName dvchost=DC-SRV02 duser=bthomas outcome=Success",
+    "CEF:0|McAfee|ePolicy Orchestrator|5.10.0|1101|ENS IDS Ransomware Behavior Detected|10|rt=Feb 03 2025 14:22:55 src=10.0.3.88 dst=10.0.3.90 spt=445 dpt=51288 proto=TCP cat=Firewall.Ransomware act=Blocked cs1=Mass File Encryption Network Pattern cs1Label=ThreatName dvchost=SRV-FILESERVER cs2=very_large_payload_detected_size=847293KB duser=svc_fileshare outcome=Success",
+    "CEF:0|McAfee|ePolicy Orchestrator|5.10.0|1090|Firewall IDS Alert|1|rt=Feb 03 2025 15:09:37 src=10.0.7.14 dst=10.0.7.1 spt=123 dpt=123 proto=UDP cat=Firewall.IntrusionDetection act=Allowed cs1=NTP Sync cs1Label=ThreatName dvchost=WKSTN-ADMIN02 duser=administrator outcome=Success",
+    "CEF:0|McAfee|ePolicy Orchestrator|5.10.0|1094|ENS IDS ARP Spoofing Detected|7|rt=Feb 03 2025 16:48:02 src=10.0.5.99 dst=10.0.5.1 spt= dpt= proto=ARP cat=Firewall.ARPSpoof act=Blocked cs1=Duplicate MAC Address Detected cs1Label=ThreatName dvchost=WKSTN-LEGAL07 duser=jharris outcome=Success",
+    "CEF:0|McAfee|ePolicy Orchestrator|5.10.0|1090|Firewall IDS Alert|6|rt=Feb 03 2025 17:31:44 src=203.0.113.201 dst=10.0.1.5 spt=59922 dpt=21 proto=TCP cat=Firewall.IntrusionDetection act=Blocked cs1=FTP Bounce Attack Attempt cs1Label=ThreatName dvchost=SRV-FTP01 duser= outcome=Failure",
+    "CEF:0|McAfee|ePolicy Orchestrator|5.10.0|1095|ENS IDS Buffer Overflow Attempt|9|rt=Feb 03 2025 18:12:29 src=104.244.72.115 dst=10.0.2.30 spt=44890 dpt=25 proto=TCP cat=Firewall.BufferOverflow act=Blocked cs1=SMTP Buffer Overflow Exploit cs1Label=ThreatName dvchost=SRV-MAIL01 duser= outcome=Success",
+    "CEF:0|McAfee|ePolicy Orchestrator|5.10.0|1090|Firewall IDS Alert|3|rt=Feb 03 2025 19:56:18 src=192.168.100.14 dst=192.168.100.1 spt=51423 dpt=443 proto=TCP cat=Firewall.IntrusionDetection act=Allowed cs1=HTTPS Session cs1Label=ThreatName dvchost=LAPTOP-EXEC01 duser=cmartinez outcome=Success",
+    "CEF:0|McAfee|ePolicy Orchestrator|5.10.0|1100|ENS IDS Repeated Login Failure Pattern|8|rt=Feb 03 2025 21:04:53 src=10.0.4.201 dst=10.0.1.5 spt=61233 dpt=3389 proto=TCP cat=Firewall.BruteForce act=Blocked cs1=Multiple RDP Auth Failures cs1Label=ThreatName dvchost=SRV-TERM01 duser=guest outcome=Failure"
+  ],
+  "fingerprint": "bb07aa02-5842",
+  "verification": {
+    "verdict": "pass",
+    "method": "structure",
+    "eventsParsed": 20,
+    "eventsChecked": 20,
+    "fields": [
+      "act",
+      "cat",
+      "cs1",
+      "cs1label",
+      "cs2",
+      "dpt",
+      "dst",
+      "duser",
+      "dvc",
+      "dvchost",
+      "outcome",
+      "proto",
+      "rt",
+      "spt",
+      "src"
+    ],
+    "reasons": [
+      "no parser for mcafee_epo_threatevents_ens_ids; the events are well-formed cef with 15 distinct keys"
+    ],
+    "offendingEvents": [],
+    "keyEcho": null
+  },
+  "provenance": {
+    "model": "us.anthropic.claude-sonnet-5",
+    "buildNumber": 528,
+    "generatedAt": "2026-08-18T06:42:03.692Z",
+    "grounding": "KNOWN FACTS ABOUT THIS SOURCE (from sourcetype recognition — match these exactly):\n- Product: McAfee ePO\n- Log family: endpoint"
+  }
+}

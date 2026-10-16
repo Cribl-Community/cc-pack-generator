@@ -1,0 +1,122 @@
+[
+  {
+    "_raw": "#separator \\x09",
+    "_time": 1521911733.511226,
+    "sourcetype": "bro_modbus",
+    "source": "/opt/zeek/logs/current/modbus.log"
+  },
+  {
+    "_raw": "#set_separator\t,",
+    "_time": 1521911733.511226,
+    "sourcetype": "bro_modbus",
+    "source": "/opt/zeek/logs/current/modbus.log"
+  },
+  {
+    "_raw": "#empty_field\t(empty)",
+    "_time": 1521911733.511226,
+    "sourcetype": "bro_modbus",
+    "source": "/opt/zeek/logs/current/modbus.log"
+  },
+  {
+    "_raw": "#unset_field\t-",
+    "_time": 1521911733.511226,
+    "sourcetype": "bro_modbus",
+    "source": "/opt/zeek/logs/current/modbus.log"
+  },
+  {
+    "_raw": "#path\tmodbus",
+    "_time": 1521911733.511226,
+    "sourcetype": "bro_modbus",
+    "source": "/opt/zeek/logs/current/modbus.log"
+  },
+  {
+    "_raw": "#open\t2024-04-12-19-29-18",
+    "_time": 1521911733.511226,
+    "sourcetype": "bro_modbus",
+    "source": "/opt/zeek/logs/current/modbus.log"
+  },
+  {
+    "_raw": "#fields\tts\tuid\tid.orig_h\tid.orig_p\tid.resp_h\tid.resp_p\ttid\tunit\tfunc\tpdu_type\texception",
+    "_time": 1521911733.511226,
+    "sourcetype": "bro_modbus",
+    "source": "/opt/zeek/logs/current/modbus.log"
+  },
+  {
+    "_raw": "#types\ttime\tstring\taddr\tport\taddr\tport\tcount\tcount\tstring\tstring\tstring",
+    "_time": 1521911733.511226,
+    "sourcetype": "bro_modbus",
+    "source": "/opt/zeek/logs/current/modbus.log"
+  },
+  {
+    "_raw": "1521911733.511226\tCYmWSL3iXSKUncv8Zg\t10.128.0.242\t56952\t10.47.8.54\t502\t31498\t34\tunknown-100\tREQ\t-",
+    "_time": 1521911733.511226,
+    "sourcetype": "bro_modbus",
+    "source": "/opt/zeek/logs/current/modbus.log"
+  },
+  {
+    "_raw": "1521911733.912600\tCYmWSL3iXSKUncv8Zg\t10.128.0.242\t56952\t10.47.8.54\t502\t31498\t34\tunknown-100\tRESP\t-",
+    "_time": 1521911733.9126,
+    "sourcetype": "bro_modbus",
+    "source": "/opt/zeek/logs/current/modbus.log"
+  },
+  {
+    "_raw": "1521911753.983631\tCM4AJA4rX3Dcepxr37\t10.128.0.242\t56968\t10.47.8.54\t502\t31498\t34\tunknown-100\tREQ\t-",
+    "_time": 1521911753.983631,
+    "sourcetype": "bro_modbus",
+    "source": "/opt/zeek/logs/current/modbus.log"
+  },
+  {
+    "_raw": "1521911754.262807\tCM4AJA4rX3Dcepxr37\t10.128.0.242\t56968\t10.47.8.54\t502\t31498\t34\tunknown-100\tRESP\t-",
+    "_time": 1521911754.262807,
+    "sourcetype": "bro_modbus",
+    "source": "/opt/zeek/logs/current/modbus.log"
+  },
+  {
+    "_raw": "1521911758.290250\tCVSHwZ3EAFx1jnyvMj\t10.128.0.248\t59857\t10.47.8.51\t502\t2683\t32\tunknown-34\tREQ\t-",
+    "_time": 1521911758.29025,
+    "sourcetype": "bro_modbus",
+    "source": "/opt/zeek/logs/current/modbus.log"
+  },
+  {
+    "_raw": "1521911758.516639\tCVSHwZ3EAFx1jnyvMj\t10.128.0.248\t59857\t10.47.8.51\t502\t31498\t34\tunknown-100\tRESP\t-",
+    "_time": 1521911758.516639,
+    "sourcetype": "bro_modbus",
+    "source": "/opt/zeek/logs/current/modbus.log"
+  },
+  {
+    "_raw": "1521911759.675634\tC7T2Ca4RNtGifJ4iV9\t10.128.0.248\t59882\t10.47.8.52\t502\t31498\t34\tunknown-100\tRESP\t-",
+    "_time": 1521911759.675634,
+    "sourcetype": "bro_modbus",
+    "source": "/opt/zeek/logs/current/modbus.log"
+  },
+  {
+    "_raw": "1521911760.684137\tCVosZh3EF4oAYVj3ch\t10.128.0.248\t59883\t10.47.8.53\t502\t2683\t32\tunknown-34\tREQ\t-",
+    "_time": 1521911760.684137,
+    "sourcetype": "bro_modbus",
+    "source": "/opt/zeek/logs/current/modbus.log"
+  },
+  {
+    "_raw": "1521911781.685221\tCqZgpab0taO7zs0f5\t10.128.0.242\t46596\t10.47.3.54\t502\t31498\t34\tunknown-100\tREQ\t-",
+    "_time": 1521911781.685221,
+    "sourcetype": "bro_modbus",
+    "source": "/opt/zeek/logs/current/modbus.log"
+  },
+  {
+    "_raw": "1521911787.061563\tCyf0yZUg82O1T7Cv7\t10.128.0.248\t60019\t10.47.3.51\t502\t2683\t32\tunknown-34\tREQ\t-",
+    "_time": 1521911787.061563,
+    "sourcetype": "bro_modbus",
+    "source": "/opt/zeek/logs/current/modbus.log"
+  },
+  {
+    "_raw": "1521911788.214083\tCbq6vXHDXamBeVN25\t10.128.0.248\t60020\t10.47.3.52\t502\t2683\t32\tunknown-34\tREQ\t-",
+    "_time": 1521911788.214083,
+    "sourcetype": "bro_modbus",
+    "source": "/opt/zeek/logs/current/modbus.log"
+  },
+  {
+    "_raw": "1521911789.453374\tCTqKS443vsAEZBIWYf\t10.128.0.248\t60034\t10.47.3.53\t502\t2683\t32\tunknown-34\tREQ\t-",
+    "_time": 1521911789.453374,
+    "sourcetype": "bro_modbus",
+    "source": "/opt/zeek/logs/current/modbus.log"
+  }
+]

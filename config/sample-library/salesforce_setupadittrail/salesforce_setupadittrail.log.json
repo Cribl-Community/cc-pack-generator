@@ -1,0 +1,362 @@
+[
+  {
+    "_raw": "{\"attributes\":{\"type\":\"SetupAuditTrail\",\"url\":\"/services/data/v64.0/sobjects/SetupAuditTrail/MROsEdv4oRmsvgxyLb\"},\"Id\":\"JJE8RgkVIRfY4ZTEdf\",\"CreatedById\":\"chXwBd6yO3Wy0w0lZw\",\"DelegateUser\":null,\"Action\":\"createdcustomersuccessuser\",\"Display\":\"Created new Customer User John Doe\",\"Section\":\"Customer Portal\",\"CreatedDate\":\"2025-10-02T19:29:01.000+0000\"}",
+    "host": "cribl",
+    "source": "https://acme.my.salesforce.com/services/data/v64.0/query",
+    "attributes": {
+      "type": "SetupAuditTrail",
+      "url": "/services/data/v64.0/sobjects/SetupAuditTrail/MROsEdv4oRmsvgxyLb"
+    },
+    "Id": "JJE8RgkVIRfY4ZTEdf",
+    "CreatedById": "chXwBd6yO3Wy0w0lZw",
+    "DelegateUser": null,
+    "Action": "createdcustomersuccessuser",
+    "Display": "Created new Customer User John Doe",
+    "Section": "Customer Portal",
+    "CreatedDate": "2025-10-02T19:29:01.000+0000",
+    "_time": "1759433341",
+    "cribl_breaker": "ndjson"
+  },
+  {
+    "_raw": "{\"attributes\":{\"type\":\"SetupAuditTrail\",\"url\":\"/services/data/v64.0/sobjects/SetupAuditTrail/eXeKyGj4NMgmgiBKjn\"},\"Id\":\"C5z4kifnJEoipsqQ9C\",\"CreatedById\":\"fUPWfQG2FAemWOKh20\",\"DelegateUser\":null,\"Action\":\"registeredUserPhoneNumber\",\"Display\":\"For user jdoe@acme.com, the phone number +1 8888675309 was registered\",\"Section\":\"Manage Users\",\"CreatedDate\":\"2025-10-02T19:29:02.000+0000\"}",
+    "host": "cribl",
+    "source": "https://acme.my.salesforce.com/services/data/v64.0/query",
+    "attributes": {
+      "type": "SetupAuditTrail",
+      "url": "/services/data/v64.0/sobjects/SetupAuditTrail/eXeKyGj4NMgmgiBKjn"
+    },
+    "Id": "C5z4kifnJEoipsqQ9C",
+    "CreatedById": "fUPWfQG2FAemWOKh20",
+    "DelegateUser": null,
+    "Action": "registeredUserPhoneNumber",
+    "Display": "For user jdoe@acme.com, the phone number +1 8888675309 was registered",
+    "Section": "Manage Users",
+    "CreatedDate": "2025-10-02T19:29:02.000+0000",
+    "_time": "1759433342",
+    "cribl_breaker": "ndjson"
+  },
+  {
+    "_raw": "{\"attributes\":{\"type\":\"SetupAuditTrail\",\"url\":\"/services/data/v64.0/sobjects/SetupAuditTrail/KeuPORxftPn8FDkVfG\"},\"Id\":\"WGKCzwr4ad6H8c1Kfs\",\"CreatedById\":\"3bBUIDHKXPLqIZNjGs\",\"DelegateUser\":null,\"Action\":\"changedUserAdminVerifiedStatusVerified\",\"Display\":\"For user jdoe@acme.com, the Admin Trusted Mobile Number status changed to verified\",\"Section\":\"Manage Users\",\"CreatedDate\":\"2025-10-02T19:29:02.000+0000\"}",
+    "host": "cribl",
+    "source": "https://acme.my.salesforce.com/services/data/v64.0/query",
+    "attributes": {
+      "type": "SetupAuditTrail",
+      "url": "/services/data/v64.0/sobjects/SetupAuditTrail/KeuPORxftPn8FDkVfG"
+    },
+    "Id": "WGKCzwr4ad6H8c1Kfs",
+    "CreatedById": "3bBUIDHKXPLqIZNjGs",
+    "DelegateUser": null,
+    "Action": "changedUserAdminVerifiedStatusVerified",
+    "Display": "For user jdoe@acme.com, the Admin Trusted Mobile Number status changed to verified",
+    "Section": "Manage Users",
+    "CreatedDate": "2025-10-02T19:29:02.000+0000",
+    "_time": "1759433342",
+    "cribl_breaker": "ndjson"
+  },
+  {
+    "_raw": "{\"attributes\":{\"type\":\"SetupAuditTrail\",\"url\":\"/services/data/v64.0/sobjects/SetupAuditTrail/rQGjxkoQbLgRAhO9Dt\"},\"Id\":\"nNDIQ4cI3mGstnmB8B\",\"CreatedById\":\"ExCTKgzLhjA90qwWWo\",\"DelegateUser\":null,\"Action\":\"registeredUserPhoneNumber\",\"Display\":\"For user jdoe@acme.com, the phone number +1 8888675309 was registered\",\"Section\":\"Manage Users\",\"CreatedDate\":\"2025-10-02T19:29:06.000+0000\"}",
+    "host": "cribl",
+    "source": "https://acme.my.salesforce.com/services/data/v64.0/query",
+    "attributes": {
+      "type": "SetupAuditTrail",
+      "url": "/services/data/v64.0/sobjects/SetupAuditTrail/rQGjxkoQbLgRAhO9Dt"
+    },
+    "Id": "nNDIQ4cI3mGstnmB8B",
+    "CreatedById": "ExCTKgzLhjA90qwWWo",
+    "DelegateUser": null,
+    "Action": "registeredUserPhoneNumber",
+    "Display": "For user jdoe@acme.com, the phone number +1 8888675309 was registered",
+    "Section": "Manage Users",
+    "CreatedDate": "2025-10-02T19:29:06.000+0000",
+    "_time": "1759433346",
+    "cribl_breaker": "ndjson"
+  },
+  {
+    "_raw": "{\"attributes\":{\"type\":\"SetupAuditTrail\",\"url\":\"/services/data/v64.0/sobjects/SetupAuditTrail/3yF80krnPTatMOEiXp\"},\"Id\":\"Y4zQn9HnPfYD5u7TvL\",\"CreatedById\":\"cmvfiWt1EM9EoSlCFm\",\"DelegateUser\":null,\"Action\":\"changedUserAdminVerifiedStatusVerified\",\"Display\":\"For user jdoe@acme.com, the Admin Trusted Mobile Number status changed to verified\",\"Section\":\"Manage Users\",\"CreatedDate\":\"2025-10-02T19:29:06.000+0000\"}",
+    "host": "cribl",
+    "source": "https://acme.my.salesforce.com/services/data/v64.0/query",
+    "attributes": {
+      "type": "SetupAuditTrail",
+      "url": "/services/data/v64.0/sobjects/SetupAuditTrail/3yF80krnPTatMOEiXp"
+    },
+    "Id": "Y4zQn9HnPfYD5u7TvL",
+    "CreatedById": "cmvfiWt1EM9EoSlCFm",
+    "DelegateUser": null,
+    "Action": "changedUserAdminVerifiedStatusVerified",
+    "Display": "For user jdoe@acme.com, the Admin Trusted Mobile Number status changed to verified",
+    "Section": "Manage Users",
+    "CreatedDate": "2025-10-02T19:29:06.000+0000",
+    "_time": "1759433346",
+    "cribl_breaker": "ndjson"
+  },
+  {
+    "_raw": "{\"attributes\":{\"type\":\"SetupAuditTrail\",\"url\":\"/services/data/v64.0/sobjects/SetupAuditTrail/TUd2i4cHMKFsl54kXX\"},\"Id\":\"dljjULzVos7VfxnQKe\",\"CreatedById\":\"WQZFgzkLkHFYNqrj1Y\",\"DelegateUser\":null,\"Action\":\"createdcustomersuccessuser\",\"Display\":\"Created new Customer User John Doe\",\"Section\":\"Customer Portal\",\"CreatedDate\":\"2025-10-02T19:29:10.000+0000\"}",
+    "host": "cribl",
+    "source": "https://acme.my.salesforce.com/services/data/v64.0/query",
+    "attributes": {
+      "type": "SetupAuditTrail",
+      "url": "/services/data/v64.0/sobjects/SetupAuditTrail/TUd2i4cHMKFsl54kXX"
+    },
+    "Id": "dljjULzVos7VfxnQKe",
+    "CreatedById": "WQZFgzkLkHFYNqrj1Y",
+    "DelegateUser": null,
+    "Action": "createdcustomersuccessuser",
+    "Display": "Created new Customer User John Doe",
+    "Section": "Customer Portal",
+    "CreatedDate": "2025-10-02T19:29:10.000+0000",
+    "_time": "1759433350",
+    "cribl_breaker": "ndjson"
+  },
+  {
+    "_raw": "{\"attributes\":{\"type\":\"SetupAuditTrail\",\"url\":\"/services/data/v64.0/sobjects/SetupAuditTrail/tIJY2Ah2x1FddsDIxu\"},\"Id\":\"g8fy7RNaF3oM1nIkKK\",\"CreatedById\":\"uk6wxHDFvFl9cXXcZz\",\"DelegateUser\":null,\"Action\":\"registeredUserPhoneNumber\",\"Display\":\"For user jdoe@acme.com, the phone number +1 8888675309 was registered\",\"Section\":\"Manage Users\",\"CreatedDate\":\"2025-10-02T19:29:14.000+0000\"}",
+    "host": "cribl",
+    "source": "https://acme.my.salesforce.com/services/data/v64.0/query",
+    "attributes": {
+      "type": "SetupAuditTrail",
+      "url": "/services/data/v64.0/sobjects/SetupAuditTrail/tIJY2Ah2x1FddsDIxu"
+    },
+    "Id": "g8fy7RNaF3oM1nIkKK",
+    "CreatedById": "uk6wxHDFvFl9cXXcZz",
+    "DelegateUser": null,
+    "Action": "registeredUserPhoneNumber",
+    "Display": "For user jdoe@acme.com, the phone number +1 8888675309 was registered",
+    "Section": "Manage Users",
+    "CreatedDate": "2025-10-02T19:29:14.000+0000",
+    "_time": "1759433354",
+    "cribl_breaker": "ndjson"
+  },
+  {
+    "_raw": "{\"attributes\":{\"type\":\"SetupAuditTrail\",\"url\":\"/services/data/v64.0/sobjects/SetupAuditTrail/b8d45hOo2yfiYoMfH5\"},\"Id\":\"nApCysrsIOt3npWEjh\",\"CreatedById\":\"JA467xMjNpIOTgOA05\",\"DelegateUser\":null,\"Action\":\"changedUserAdminVerifiedStatusVerified\",\"Display\":\"For user jdoe@acme.com, the Admin Trusted Mobile Number status changed to verified\",\"Section\":\"Manage Users\",\"CreatedDate\":\"2025-10-02T19:29:14.000+0000\"}",
+    "host": "cribl",
+    "source": "https://acme.my.salesforce.com/services/data/v64.0/query",
+    "attributes": {
+      "type": "SetupAuditTrail",
+      "url": "/services/data/v64.0/sobjects/SetupAuditTrail/b8d45hOo2yfiYoMfH5"
+    },
+    "Id": "nApCysrsIOt3npWEjh",
+    "CreatedById": "JA467xMjNpIOTgOA05",
+    "DelegateUser": null,
+    "Action": "changedUserAdminVerifiedStatusVerified",
+    "Display": "For user jdoe@acme.com, the Admin Trusted Mobile Number status changed to verified",
+    "Section": "Manage Users",
+    "CreatedDate": "2025-10-02T19:29:14.000+0000",
+    "_time": "1759433354",
+    "cribl_breaker": "ndjson"
+  },
+  {
+    "_raw": "{\"attributes\":{\"type\":\"SetupAuditTrail\",\"url\":\"/services/data/v64.0/sobjects/SetupAuditTrail/9vEFeZCBorGFmJwMt7\"},\"Id\":\"h42NryLYacIoxsyv2X\",\"CreatedById\":\"KCdw9fdrx6gDh7eXVT\",\"DelegateUser\":null,\"Action\":\"registeredUserPhoneNumber\",\"Display\":\"For user jdoe@acme.com, the phone number +1 8888675309 was registered\",\"Section\":\"Manage Users\",\"CreatedDate\":\"2025-10-02T19:29:20.000+0000\"}",
+    "host": "cribl",
+    "source": "https://acme.my.salesforce.com/services/data/v64.0/query",
+    "attributes": {
+      "type": "SetupAuditTrail",
+      "url": "/services/data/v64.0/sobjects/SetupAuditTrail/9vEFeZCBorGFmJwMt7"
+    },
+    "Id": "h42NryLYacIoxsyv2X",
+    "CreatedById": "KCdw9fdrx6gDh7eXVT",
+    "DelegateUser": null,
+    "Action": "registeredUserPhoneNumber",
+    "Display": "For user jdoe@acme.com, the phone number +1 8888675309 was registered",
+    "Section": "Manage Users",
+    "CreatedDate": "2025-10-02T19:29:20.000+0000",
+    "_time": "1759433360",
+    "cribl_breaker": "ndjson"
+  },
+  {
+    "_raw": "{\"attributes\":{\"type\":\"SetupAuditTrail\",\"url\":\"/services/data/v64.0/sobjects/SetupAuditTrail/jjTs1oL8o1UcOS35RK\"},\"Id\":\"owiBo8d6zmesVWyJtP\",\"CreatedById\":\"VHDQdQCx1uMYG6vIzy\",\"DelegateUser\":null,\"Action\":\"changedUserAdminVerifiedStatusVerified\",\"Display\":\"For user jdoe@acme.com, the Admin Trusted Mobile Number status changed to verified\",\"Section\":\"Manage Users\",\"CreatedDate\":\"2025-10-02T19:29:20.000+0000\"}",
+    "host": "cribl",
+    "source": "https://acme.my.salesforce.com/services/data/v64.0/query",
+    "attributes": {
+      "type": "SetupAuditTrail",
+      "url": "/services/data/v64.0/sobjects/SetupAuditTrail/jjTs1oL8o1UcOS35RK"
+    },
+    "Id": "owiBo8d6zmesVWyJtP",
+    "CreatedById": "VHDQdQCx1uMYG6vIzy",
+    "DelegateUser": null,
+    "Action": "changedUserAdminVerifiedStatusVerified",
+    "Display": "For user jdoe@acme.com, the Admin Trusted Mobile Number status changed to verified",
+    "Section": "Manage Users",
+    "CreatedDate": "2025-10-02T19:29:20.000+0000",
+    "_time": "1759433360",
+    "cribl_breaker": "ndjson"
+  },
+  {
+    "_raw": "{\"attributes\":{\"type\":\"SetupAuditTrail\",\"url\":\"/services/data/v64.0/sobjects/SetupAuditTrail/06z2ogRGU8fMTpNCWm\"},\"Id\":\"uGwELqw3oaDhFv5YcI\",\"CreatedById\":\"drtQXw3s7Kv8zOdxUU\",\"DelegateUser\":null,\"Action\":\"changedUserPhoneVerifiedStatusVerified\",\"Display\":\"For user jdoe@acme.com, the User Verified Mobile Number status changed to verified\",\"Section\":\"Manage Users\",\"CreatedDate\":\"2025-10-02T19:29:20.000+0000\"}",
+    "host": "cribl",
+    "source": "https://acme.my.salesforce.com/services/data/v64.0/query",
+    "attributes": {
+      "type": "SetupAuditTrail",
+      "url": "/services/data/v64.0/sobjects/SetupAuditTrail/06z2ogRGU8fMTpNCWm"
+    },
+    "Id": "uGwELqw3oaDhFv5YcI",
+    "CreatedById": "drtQXw3s7Kv8zOdxUU",
+    "DelegateUser": null,
+    "Action": "changedUserPhoneVerifiedStatusVerified",
+    "Display": "For user jdoe@acme.com, the User Verified Mobile Number status changed to verified",
+    "Section": "Manage Users",
+    "CreatedDate": "2025-10-02T19:29:20.000+0000",
+    "_time": "1759433360",
+    "cribl_breaker": "ndjson"
+  },
+  {
+    "_raw": "{\"attributes\":{\"type\":\"SetupAuditTrail\",\"url\":\"/services/data/v64.0/sobjects/SetupAuditTrail/8cC37MhmdnPBzNkslM\"},\"Id\":\"b8StNS9Vq8U7CLa2mD\",\"CreatedById\":\"xvlNETfiXXDJPiMHzm\",\"DelegateUser\":null,\"Action\":\"changedUserPhoneVerifiedStatusVerified\",\"Display\":\"For user jdoe@acme.com, the User Verified Mobile Number status changed to verified\",\"Section\":\"Manage Users\",\"CreatedDate\":\"2025-10-02T19:29:21.000+0000\"}",
+    "host": "cribl",
+    "source": "https://acme.my.salesforce.com/services/data/v64.0/query",
+    "attributes": {
+      "type": "SetupAuditTrail",
+      "url": "/services/data/v64.0/sobjects/SetupAuditTrail/8cC37MhmdnPBzNkslM"
+    },
+    "Id": "b8StNS9Vq8U7CLa2mD",
+    "CreatedById": "xvlNETfiXXDJPiMHzm",
+    "DelegateUser": null,
+    "Action": "changedUserPhoneVerifiedStatusVerified",
+    "Display": "For user jdoe@acme.com, the User Verified Mobile Number status changed to verified",
+    "Section": "Manage Users",
+    "CreatedDate": "2025-10-02T19:29:21.000+0000",
+    "_time": "1759433361",
+    "cribl_breaker": "ndjson"
+  },
+  {
+    "_raw": "{\"attributes\":{\"type\":\"SetupAuditTrail\",\"url\":\"/services/data/v64.0/sobjects/SetupAuditTrail/eT5V8tHp63QK0xI1rQ\"},\"Id\":\"qrs2rYhOKyU5RYHXrh\",\"CreatedById\":\"tMfKoEJDkDBxiv5s3M\",\"DelegateUser\":null,\"Action\":\"changedpassword\",\"Display\":\"Set new password for user John Doe\",\"Section\":\"Manage Users\",\"CreatedDate\":\"2025-10-02T19:29:21.000+0000\"}",
+    "host": "cribl",
+    "source": "https://acme.my.salesforce.com/services/data/v64.0/query",
+    "attributes": {
+      "type": "SetupAuditTrail",
+      "url": "/services/data/v64.0/sobjects/SetupAuditTrail/eT5V8tHp63QK0xI1rQ"
+    },
+    "Id": "qrs2rYhOKyU5RYHXrh",
+    "CreatedById": "tMfKoEJDkDBxiv5s3M",
+    "DelegateUser": null,
+    "Action": "changedpassword",
+    "Display": "Set new password for user John Doe",
+    "Section": "Manage Users",
+    "CreatedDate": "2025-10-02T19:29:21.000+0000",
+    "_time": "1759433361",
+    "cribl_breaker": "ndjson"
+  },
+  {
+    "_raw": "{\"attributes\":{\"type\":\"SetupAuditTrail\",\"url\":\"/services/data/v64.0/sobjects/SetupAuditTrail/AKkcioYeNTZ2JUIN4Z\"},\"Id\":\"mJpWwXuHeW8StqPkz8\",\"CreatedById\":\"3eXZgKKs9eCxc11oMY\",\"DelegateUser\":null,\"Action\":\"changedUserPhoneVerifiedStatusVerified\",\"Display\":\"For user jdoe@acme.com, the User Verified Mobile Number status changed to verified\",\"Section\":\"Manage Users\",\"CreatedDate\":\"2025-10-02T19:29:23.000+0000\"}",
+    "host": "cribl",
+    "source": "https://acme.my.salesforce.com/services/data/v64.0/query",
+    "attributes": {
+      "type": "SetupAuditTrail",
+      "url": "/services/data/v64.0/sobjects/SetupAuditTrail/AKkcioYeNTZ2JUIN4Z"
+    },
+    "Id": "mJpWwXuHeW8StqPkz8",
+    "CreatedById": "3eXZgKKs9eCxc11oMY",
+    "DelegateUser": null,
+    "Action": "changedUserPhoneVerifiedStatusVerified",
+    "Display": "For user jdoe@acme.com, the User Verified Mobile Number status changed to verified",
+    "Section": "Manage Users",
+    "CreatedDate": "2025-10-02T19:29:23.000+0000",
+    "_time": "1759433363",
+    "cribl_breaker": "ndjson"
+  },
+  {
+    "_raw": "{\"attributes\":{\"type\":\"SetupAuditTrail\",\"url\":\"/services/data/v64.0/sobjects/SetupAuditTrail/L4lJIA9VrNkkemx9a1\"},\"Id\":\"pccczAdYFJLRqpohfD\",\"CreatedById\":\"ycBmIIMBnVGBd0q2F8\",\"DelegateUser\":null,\"Action\":\"registeredUserPhoneNumber\",\"Display\":\"For user jdoe@acme.com, the phone number +1 8888675309 was registered\",\"Section\":\"Manage Users\",\"CreatedDate\":\"2025-10-02T19:29:27.000+0000\"}",
+    "host": "cribl",
+    "source": "https://acme.my.salesforce.com/services/data/v64.0/query",
+    "attributes": {
+      "type": "SetupAuditTrail",
+      "url": "/services/data/v64.0/sobjects/SetupAuditTrail/L4lJIA9VrNkkemx9a1"
+    },
+    "Id": "pccczAdYFJLRqpohfD",
+    "CreatedById": "ycBmIIMBnVGBd0q2F8",
+    "DelegateUser": null,
+    "Action": "registeredUserPhoneNumber",
+    "Display": "For user jdoe@acme.com, the phone number +1 8888675309 was registered",
+    "Section": "Manage Users",
+    "CreatedDate": "2025-10-02T19:29:27.000+0000",
+    "_time": "1759433367",
+    "cribl_breaker": "ndjson"
+  },
+  {
+    "_raw": "{\"attributes\":{\"type\":\"SetupAuditTrail\",\"url\":\"/services/data/v64.0/sobjects/SetupAuditTrail/LiusR2KAzqtiy3iN0J\"},\"Id\":\"0RovmtPMMiSw9Fho6C\",\"CreatedById\":\"HBWyQbD6L66Uz4PqIA\",\"DelegateUser\":null,\"Action\":\"changedUserAdminVerifiedStatusVerified\",\"Display\":\"For user jdoe@acme.com, the Admin Trusted Mobile Number status changed to verified\",\"Section\":\"Manage Users\",\"CreatedDate\":\"2025-10-02T19:29:27.000+0000\"}",
+    "host": "cribl",
+    "source": "https://acme.my.salesforce.com/services/data/v64.0/query",
+    "attributes": {
+      "type": "SetupAuditTrail",
+      "url": "/services/data/v64.0/sobjects/SetupAuditTrail/LiusR2KAzqtiy3iN0J"
+    },
+    "Id": "0RovmtPMMiSw9Fho6C",
+    "CreatedById": "HBWyQbD6L66Uz4PqIA",
+    "DelegateUser": null,
+    "Action": "changedUserAdminVerifiedStatusVerified",
+    "Display": "For user jdoe@acme.com, the Admin Trusted Mobile Number status changed to verified",
+    "Section": "Manage Users",
+    "CreatedDate": "2025-10-02T19:29:27.000+0000",
+    "_time": "1759433367",
+    "cribl_breaker": "ndjson"
+  },
+  {
+    "_raw": "{\"attributes\":{\"type\":\"SetupAuditTrail\",\"url\":\"/services/data/v64.0/sobjects/SetupAuditTrail/1Ikxi2XBfNf0Tneama\"},\"Id\":\"CcysyJmVvDpbnZnEAw\",\"CreatedById\":\"Bb3c5QNdNpTIfc0yvv\",\"DelegateUser\":null,\"Action\":\"registeredUserPhoneNumber\",\"Display\":\"For user jdoe@acme.com, the phone number +1 8888675309 was registered\",\"Section\":\"Manage Users\",\"CreatedDate\":\"2025-10-02T19:29:36.000+0000\"}",
+    "host": "cribl",
+    "source": "https://acme.my.salesforce.com/services/data/v64.0/query",
+    "attributes": {
+      "type": "SetupAuditTrail",
+      "url": "/services/data/v64.0/sobjects/SetupAuditTrail/1Ikxi2XBfNf0Tneama"
+    },
+    "Id": "CcysyJmVvDpbnZnEAw",
+    "CreatedById": "Bb3c5QNdNpTIfc0yvv",
+    "DelegateUser": null,
+    "Action": "registeredUserPhoneNumber",
+    "Display": "For user jdoe@acme.com, the phone number +1 8888675309 was registered",
+    "Section": "Manage Users",
+    "CreatedDate": "2025-10-02T19:29:36.000+0000",
+    "_time": "1759433376",
+    "cribl_breaker": "ndjson"
+  },
+  {
+    "_raw": "{\"attributes\":{\"type\":\"SetupAuditTrail\",\"url\":\"/services/data/v64.0/sobjects/SetupAuditTrail/FM1FngKdp2qzQXXQpl\"},\"Id\":\"NLjrfN5a6yz2pmGwfF\",\"CreatedById\":\"y42ZUhUP1gysLKyT2p\",\"DelegateUser\":null,\"Action\":\"changedUserAdminVerifiedStatusVerified\",\"Display\":\"For user jdoe@acme.com, the Admin Trusted Mobile Number status changed to verified\",\"Section\":\"Manage Users\",\"CreatedDate\":\"2025-10-02T19:29:36.000+0000\"}",
+    "host": "cribl",
+    "source": "https://acme.my.salesforce.com/services/data/v64.0/query",
+    "attributes": {
+      "type": "SetupAuditTrail",
+      "url": "/services/data/v64.0/sobjects/SetupAuditTrail/FM1FngKdp2qzQXXQpl"
+    },
+    "Id": "NLjrfN5a6yz2pmGwfF",
+    "CreatedById": "y42ZUhUP1gysLKyT2p",
+    "DelegateUser": null,
+    "Action": "changedUserAdminVerifiedStatusVerified",
+    "Display": "For user jdoe@acme.com, the Admin Trusted Mobile Number status changed to verified",
+    "Section": "Manage Users",
+    "CreatedDate": "2025-10-02T19:29:36.000+0000",
+    "_time": "1759433376",
+    "cribl_breaker": "ndjson"
+  },
+  {
+    "_raw": "{\"attributes\":{\"type\":\"SetupAuditTrail\",\"url\":\"/services/data/v64.0/sobjects/SetupAuditTrail/a4hmfuEJssP95wTpT7\"},\"Id\":\"7o1pKvBxJG296QekxZ\",\"CreatedById\":\"m4lPrz9w118XrXTxBN\",\"DelegateUser\":null,\"Action\":\"changedUserPhoneVerifiedStatusVerified\",\"Display\":\"For user jdoe@acme.com, the User Verified Mobile Number status changed to verified\",\"Section\":\"Manage Users\",\"CreatedDate\":\"2025-10-02T19:29:42.000+0000\"}",
+    "host": "cribl",
+    "source": "https://acme.my.salesforce.com/services/data/v64.0/query",
+    "attributes": {
+      "type": "SetupAuditTrail",
+      "url": "/services/data/v64.0/sobjects/SetupAuditTrail/a4hmfuEJssP95wTpT7"
+    },
+    "Id": "7o1pKvBxJG296QekxZ",
+    "CreatedById": "m4lPrz9w118XrXTxBN",
+    "DelegateUser": null,
+    "Action": "changedUserPhoneVerifiedStatusVerified",
+    "Display": "For user jdoe@acme.com, the User Verified Mobile Number status changed to verified",
+    "Section": "Manage Users",
+    "CreatedDate": "2025-10-02T19:29:42.000+0000",
+    "_time": "1759433382",
+    "cribl_breaker": "ndjson"
+  },
+  {
+    "_raw": "{\"attributes\":{\"type\":\"SetupAuditTrail\",\"url\":\"/services/data/v64.0/sobjects/SetupAuditTrail/5aJSkd8TVcDDErDdUM\"},\"Id\":\"j7WDEN1lhq2Jl0eehu\",\"CreatedById\":\"cSx82lhyJg8DKy68So\",\"DelegateUser\":null,\"Action\":\"changedpassword\",\"Display\":\"Set new password for user John Doe\",\"Section\":\"Manage Users\",\"CreatedDate\":\"2025-10-02T19:29:42.000+0000\"}",
+    "host": "cribl",
+    "source": "https://acme.my.salesforce.com/services/data/v64.0/query",
+    "attributes": {
+      "type": "SetupAuditTrail",
+      "url": "/services/data/v64.0/sobjects/SetupAuditTrail/5aJSkd8TVcDDErDdUM"
+    },
+    "Id": "j7WDEN1lhq2Jl0eehu",
+    "CreatedById": "cSx82lhyJg8DKy68So",
+    "DelegateUser": null,
+    "Action": "changedpassword",
+    "Display": "Set new password for user John Doe",
+    "Section": "Manage Users",
+    "CreatedDate": "2025-10-02T19:29:42.000+0000",
+    "_time": "1759433382",
+    "cribl_breaker": "ndjson"
+  }
+]

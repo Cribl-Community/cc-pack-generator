@@ -1,0 +1,99 @@
+{
+  "key": "corelight_http",
+  "sourcetype": "corelight_http",
+  "classUid": 4002,
+  "destFormat": "ocsf#web_proxy",
+  "source": "generic",
+  "vendorNames": [
+    "corelight http"
+  ],
+  "provenance": {
+    "samplePack": "vendor-samples",
+    "sampleName": "corelight_http_vendor_sample",
+    "tier": "reference",
+    "sampleEvents": 11,
+    "emulated": "golden OCSF pipeline, offline emulation of scripts/build-source-ocsf-samples.mjs",
+    "rejected": []
+  },
+  "events": [
+    {
+      "src_endpoint": {
+        "ip": "10.178.98.102",
+        "port": 62995
+      },
+      "dst_endpoint": {
+        "ip": "89.160.20.156",
+        "port": 80
+      },
+      "http_request": {
+        "url": "/ocsp04-aaica02/ME4wTKADAgEAMEUwQzBBMAkGBSsOAwIaBQAEFNqvF+Za6oA4ceFRLsAWwEInjUhJBBQx6napI3Sl39T97qDBpp7GEQ4R7AIIUP1IOZZ86ns=",
+        "http_method": "GET",
+        "user_agent": "com.apple.trustd/2.0"
+      },
+      "metadata": {
+        "product": {
+          "name": "Security",
+          "vendor_name": "corelight http"
+        },
+        "version": "1.9.0"
+      },
+      "class_uid": 4002,
+      "category_uid": 4,
+      "activity_id": 1,
+      "type_uid": 400201,
+      "severity_id": 1,
+      "time": 1547687130172.944
+    },
+    {
+      "src_endpoint": {
+        "ip": "10.20.8.197",
+        "port": 35684
+      },
+      "dst_endpoint": {
+        "ip": "89.160.20.156",
+        "port": 80
+      },
+      "http_request": {
+        "url": "/ip",
+        "http_method": "GET",
+        "user_agent": "curl/7.58.0"
+      },
+      "metadata": {
+        "product": {
+          "name": "Security",
+          "vendor_name": "corelight http"
+        },
+        "version": "1.9.0"
+      },
+      "class_uid": 4002,
+      "category_uid": 4,
+      "activity_id": 1,
+      "type_uid": 400201,
+      "severity_id": 1,
+      "time": 1547707019757.479
+    },
+    {
+      "src_endpoint": {
+        "ip": "10.156.0.2",
+        "port": 57896
+      },
+      "dst_endpoint": {
+        "ip": "89.160.20.156",
+        "port": 80
+      },
+      "metadata": {
+        "product": {
+          "name": "Security",
+          "vendor_name": "corelight http"
+        },
+        "version": "1.9.0"
+      },
+      "class_uid": 4002,
+      "category_uid": 4,
+      "activity_id": 1,
+      "type_uid": 400201,
+      "severity_id": 1,
+      "time": 1617081354277.591
+    }
+  ]
+}

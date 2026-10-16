@@ -1,0 +1,82 @@
+[
+  {
+    "_raw": "[2024-01-15 00:03:12] [DEBUG] IMAP: Connecting to mail.corp.example.com:993 (SSL)",
+    "_time": 1782840220.277
+  },
+  {
+    "_raw": "[2024-01-15 00:07:44] [INFO] Successful login for jsmith@corp.example.com from 192.168.1.45 (Mozilla/5.0 Firefox/120.0)",
+    "_time": 1782840220.277
+  },
+  {
+    "_raw": "[2024-01-15 00:12:31] [WARN] Login failed for admin@corp.example.com from 185.220.101.47 - wrong password (attempt 1/5)",
+    "_time": 1782840220.277
+  },
+  {
+    "_raw": "[2024-01-15 00:13:02] [WARN] Login failed for admin@corp.example.com from 185.220.101.47 - wrong password (attempt 2/5)",
+    "_time": 1782840220.277
+  },
+  {
+    "_raw": "[2024-01-15 00:13:44] [WARN] Login failed for admin@corp.example.com from 185.220.101.47 - wrong password (attempt 3/5)",
+    "_time": 1782840220.277
+  },
+  {
+    "_raw": "[2024-01-15 00:14:11] [WARN] Login failed for admin@corp.example.com from 185.220.101.47 - wrong password (attempt 4/5)",
+    "_time": 1782840220.277
+  },
+  {
+    "_raw": "[2024-01-15 00:14:38] [ERROR] Login blocked for admin@corp.example.com from 185.220.101.47 - brute force threshold exceeded",
+    "_time": 1782840220.277
+  },
+  {
+    "_raw": "[2024-01-15 00:21:55] [INFO] User jsmith@corp.example.com logged out after 14m 11s session",
+    "_time": 1782840220.277
+  },
+  {
+    "_raw": "[2024-01-15 00:34:17] [DEBUG] Session GC: 3 expired sessions removed",
+    "_time": 1782840220.277
+  },
+  {
+    "_raw": "[2024-01-15 00:45:29] [INFO] Successful login for mwilliams@example.org from 10.10.5.22 (Mozilla/5.0 Chrome/120.0)",
+    "_time": 1782840220.277
+  },
+  {
+    "_raw": "[2024-01-15 00:52:10] [INFO] Message sent by mwilliams@example.org to finance@partner.com, size: 12847 bytes",
+    "_time": 1782840220.277
+  },
+  {
+    "_raw": "[2024-01-15 01:04:33] [WARN] IMAP connection timeout for user bthomas@example.org - server did not respond in 30s",
+    "_time": 1782840220.277
+  },
+  {
+    "_raw": "[2024-01-15 01:11:07] [INFO] Successful login for clee@example.org from 172.16.3.88 (Mozilla/5.0 Safari/17.0)",
+    "_time": 1782840220.277
+  },
+  {
+    "_raw": "[2024-01-15 01:18:44] [DEBUG] Fetching message list for clee@example.org, folder: INBOX, 247 messages",
+    "_time": 1782840220.277
+  },
+  {
+    "_raw": "[2024-01-15 01:25:09] [INFO] Attachment uploaded by clee@example.org: report_Q4.pdf (2.3MB)",
+    "_time": 1782840220.277
+  },
+  {
+    "_raw": "[2024-01-15 01:31:22] [INFO] Message sent by clee@example.org to board@company.net, size: 2418293 bytes, 1 attachment",
+    "_time": 1782840220.277
+  },
+  {
+    "_raw": "[2024-01-15 01:44:55] [WARN] Max attachment size exceeded for user dkhan@example.org - file size 28.4MB > limit 25MB",
+    "_time": 1782840220.277
+  },
+  {
+    "_raw": "[2024-01-15 01:55:18] [INFO] Successful login for sgarcia@example.org from 2001:db8:85a3::8a2e:370:7334 (Mozilla/5.0 Chrome/119.0)",
+    "_time": 1782840220.277
+  },
+  {
+    "_raw": "[2024-01-15 02:03:44] [DEBUG] SMTP: Connecting to smtp.example.org:587 (STARTTLS)",
+    "_time": 1782840220.277
+  },
+  {
+    "_raw": "[2024-01-15 02:11:29] [INFO] Message sent by sgarcia@example.org to team-all@example.org, size: 8124 bytes",
+    "_time": 1782840220.277
+  }
+]

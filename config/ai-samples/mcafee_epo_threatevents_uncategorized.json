@@ -1,0 +1,71 @@
+{
+  "version": 1,
+  "key": "mcafee_epo_threatevents_uncategorized",
+  "sourcetype": "mcafee_epo_threatevents_uncategorized",
+  "events": [
+    "CEF:0|McAfee|ePolicy Orchestrator|5.10.0|60|Detected potential malware|8|rt=Feb 14 2025 03:12:44 dvc=10.1.2.15 dvchost=WIN-EPOSRV01 src=192.168.1.55 spt=51322 dst=185.220.101.7 dpt=443 proto=TCP suser=jdoe cat=AVDetection act=Deleted fname=trojan_gen.exe filePath=C:\\\\Users\\\\jdoe\\\\Downloads\\\\trojan_gen.exe cs1=Real Protect cs1Label=DetectionMethod cn1=5900 cn1Label=SigVersion outcome=success",
+    "CEF:0|McAfee|ePolicy Orchestrator|5.10.0|36|Access Protection Rule Violated|6|rt=Feb 14 2025 04:02:19 dvc=10.1.2.16 dvchost=WIN-ENDPOINT23 src=10.1.4.88 suser=svc_backup cat=AccessProtection act=Blocked fname=powershell.exe filePath=C:\\\\Windows\\\\System32\\\\powershell.exe cs2=Prevent Execution of Scripts cs2Label=RuleName outcome=blocked",
+    "CEF:0|McAfee|ePolicy Orchestrator|5.10.0|20|On-Demand Scan Completed|2|rt=Feb 14 2025 01:00:00 dvc=10.1.2.17 dvchost=LNX-FILESERVER02 cat=ScanStatus act=Completed cn2=0 cn2Label=ThreatsFound outcome=success",
+    "CEF:0|McAfee|ePolicy Orchestrator|5.10.0|60|Detected potential malware|10|rt=Feb 14 2025 05:44:02 dvc=10.1.2.18 dvchost=WIN-HR-LAP07 src=192.168.5.101 dst=45.33.32.156 dpt=8080 proto=TCP suser=mgarcia cat=AVDetection act=Quarantined fname=Emotet.dll filePath=C:\\\\ProgramData\\\\Emotet.dll cs1=GTI cs1Label=DetectionMethod threatName=Emotet!ml outcome=success",
+    "CEF:0|McAfee|ePolicy Orchestrator|5.10.0|4|Product Update Failed|4|rt=Feb 14 2025 02:15:33 dvc=10.1.2.19 dvchost=WIN-SALES14 cat=UpdateStatus act=Failed reason=Connection timeout to update server outcome=failure",
+    "CEF:0|McAfee|ePolicy Orchestrator|5.10.0|60|Detected potential malware|7|rt=Feb 14 2025 06:33:51 dvc=172.16.8.20 dvchost=WIN-DEV-PC03 src=172.16.8.55 suser=dkim cat=AVDetection act=Cleaned fname=Ransom.LockBit.gen filePath=D:\\\\Shared\\\\invoice_2025.docm cs1=Signature cs1Label=DetectionMethod threatName=Ransom.LockBit.gen outcome=success",
+    "CEF:0|McAfee|ePolicy Orchestrator|5.10.0|36|Access Protection Rule Violated|5|rt=Feb 14 2025 07:19:08 dvc=10.1.2.21 dvchost=WIN-FIN-PC11 src=10.1.4.90 suser=rwilliams cat=AccessProtection act=Blocked fname=mimikatz.exe filePath=C:\\\\Temp\\\\mimikatz.exe cs2=Prevent Credential Theft cs2Label=RuleName outcome=blocked",
+    "CEF:0|McAfee|ePolicy Orchestrator|5.10.0|20|On-Demand Scan Completed|1|rt=Feb 14 2025 08:00:12 dvc=10.1.2.22 dvchost=MAC-DESIGN05 cat=ScanStatus act=Completed cn2=0 cn2Label=ThreatsFound outcome=success",
+    "CEF:0|McAfee|ePolicy Orchestrator|5.10.0|60|Detected potential malware|9|rt=Feb 14 2025 09:47:29 dvc=10.1.2.23 dvchost=WIN-CEO-LAP01 src=192.168.10.14 dst=203.0.113.44 dpt=445 proto=TCP suser=administrator cat=AVDetection act=AllowedAccessDenied fname=wannacry.exe filePath=C:\\\\Windows\\\\Temp\\\\wannacry.exe cs1=Behavior Blocker cs1Label=DetectionMethod threatName=WannaCry.gen!A outcome=failure",
+    "CEF:0|McAfee|ePolicy Orchestrator|5.10.0|4|Product Update Succeeded|1|rt=Feb 14 2025 10:05:00 dvc=10.1.2.24 dvchost=WIN-EPOSRV01 cat=UpdateStatus act=Succeeded cn1=5901 cn1Label=SigVersion outcome=success",
+    "CEF:0|McAfee|ePolicy Orchestrator|5.10.0|60|Detected potential malware|6|rt=Feb 14 2025 11:23:41 dvc=192.168.20.5 dvchost=WIN-MKT-PC09 src=192.168.20.44 suser=lchen cat=AVDetection act=Deleted fname=adware_installer.exe filePath=C:\\\\Users\\\\lchen\\\\AppData\\\\Local\\\\Temp\\\\adware_installer.exe cs1=Real Protect cs1Label=DetectionMethod threatName=Generic PUP.x outcome=success",
+    "CEF:0|McAfee|ePolicy Orchestrator|5.10.0|36|Access Protection Rule Violated|7|rt=Feb 14 2025 12:11:19 dvc=10.1.2.26 dvchost=WIN-LEGAL-PC02 src=10.1.4.100 suser=tsmith cat=AccessProtection act=Blocked fname=procdump.exe filePath=C:\\\\Users\\\\tsmith\\\\Downloads\\\\procdump.exe cs2=Prevent Process Dump cs2Label=RuleName outcome=blocked",
+    "CEF:0|McAfee|ePolicy Orchestrator|5.10.0|60|Detected potential malware|3|rt=Feb 14 2025 13:38:55 dvc=fe80::a1b2:c3d4:e5f6:7890 dvchost=WIN-REMOTE-VM04 src=2001:db8:85a3::8a2e:370:7334 suser=guest cat=AVDetection act=Ignored fname=eicar.com filePath=C:\\\\Temp\\\\eicar.com cs1=Signature cs1Label=DetectionMethod threatName=EICAR-Test-File outcome=success",
+    "CEF:0|McAfee|ePolicy Orchestrator|5.10.0|20|On-Demand Scan Completed|3|rt=Feb 14 2025 14:44:00 dvc=10.1.2.28 dvchost=WIN-OPS-SERVER06 cat=ScanStatus act=Completed cn2=2 cn2Label=ThreatsFound outcome=partial",
+    "CEF:0|McAfee|ePolicy Orchestrator|5.10.0|60|Detected potential malware|10|rt=Feb 14 2025 15:12:37 dvc=10.1.2.29 dvchost=WIN-ACCT-PC17 src=192.168.30.66 dst=91.219.237.244 dpt=6666 proto=TCP suser=bwhite cat=AVDetection act=Quarantined fname=Cobaltstrike_beacon.exe filePath=C:\\\\Users\\\\bwhite\\\\AppData\\\\Roaming\\\\Cobaltstrike_beacon.exe cs1=GTI cs1Label=DetectionMethod threatName=BackDoor-CobaltStrike outcome=success",
+    "CEF:0|McAfee|ePolicy Orchestrator|5.10.0|4|Product Update Failed|5|rt=Feb 14 2025 16:29:14 dvc=172.16.9.40 dvchost=WIN-QA-PC22 cat=UpdateStatus act=Failed reason=DAT signature repository unreachable outcome=failure",
+    "CEF:0|McAfee|ePolicy Orchestrator|5.10.0|60|Detected potential malware|8|rt=Feb 14 2025 17:55:03 dvc=10.1.2.31 dvchost=WIN-ENG-PC33 src=10.1.5.77 suser=ksingh cat=AVDetection act=Deleted fname=keylogger.dll filePath=C:\\\\Windows\\\\System32\\\\drivers\\\\keylogger.dll cs1=Behavior Blocker cs1Label=DetectionMethod threatName=Spyware-KeyLogger outcome=success",
+    "CEF:0|McAfee|ePolicy Orchestrator|5.10.0|36|Access Protection Rule Violated|4|rt=Feb 14 2025 19:03:48 dvc=10.1.2.32 dvchost=WIN-SUPPORT-PC08 src=10.1.6.12 suser=helpdesk1 cat=AccessProtection act=Blocked fname=psexec.exe filePath=C:\\\\Windows\\\\Temp\\\\psexec.exe cs2=Prevent Remote Execution Tools cs2Label=RuleName outcome=blocked",
+    "CEF:0|McAfee|ePolicy Orchestrator|5.10.0|60|Detected potential malware|2|rt=Feb 14 2025 21:41:26 dvc=10.1.2.33 dvchost=WIN-INTERN-PC01 src=192.168.40.19 suser=intern2 cat=AVDetection act=Cleaned fname=toolbar_bundle.exe filePath=C:\\\\Users\\\\intern2\\\\Downloads\\\\toolbar_bundle.exe cs1=Signature cs1Label=DetectionMethod threatName=Adware-Toolbar outcome=success",
+    "CEF:0|McAfee|ePolicy Orchestrator|5.10.0|20|On-Demand Scan Completed|9|rt=Feb 14 2025 23:59:58 dvc=10.1.2.34 dvchost=WIN-DC01 cat=ScanStatus act=Completed cn2=1 cn2Label=ThreatsFound src=10.1.1.5 threatName=Backdoor.Generic!fileless outcome=partial"
+  ],
+  "fingerprint": "2a00b352-6145",
+  "verification": {
+    "verdict": "pass",
+    "method": "structure",
+    "eventsParsed": 20,
+    "eventsChecked": 20,
+    "fields": [
+      "act",
+      "cat",
+      "cn1",
+      "cn1label",
+      "cn2",
+      "cn2label",
+      "cs1",
+      "cs1label",
+      "cs2",
+      "cs2label",
+      "dpt",
+      "dst",
+      "dvc",
+      "dvchost",
+      "filepath",
+      "fname",
+      "outcome",
+      "proto",
+      "reason",
+      "rt",
+      "spt",
+      "src",
+      "suser",
+      "threatname"
+    ],
+    "reasons": [
+      "no parser for mcafee_epo_threatevents_uncategorized; the events are well-formed cef with 24 distinct keys"
+    ],
+    "offendingEvents": [],
+    "keyEcho": null
+  },
+  "provenance": {
+    "model": "us.anthropic.claude-sonnet-5",
+    "buildNumber": 529,
+    "generatedAt": "2026-08-18T08:08:55.111Z",
+    "grounding": "KNOWN FACTS ABOUT THIS SOURCE (from sourcetype recognition — match these exactly):\n- Product: McAfee ePO\n- Log family: endpoint"
+  }
+}

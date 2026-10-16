@@ -1,0 +1,86 @@
+[
+  {
+    "_raw": "#separator \\x09",
+    "_time": 1521911720.600725,
+    "sourcetype": "bro_stats",
+    "source": "/opt/zeek/logs/current/stats.log"
+  },
+  {
+    "_raw": "#set_separator\t,",
+    "_time": 1521911720.600725,
+    "sourcetype": "bro_stats",
+    "source": "/opt/zeek/logs/current/stats.log"
+  },
+  {
+    "_raw": "#empty_field\t(empty)",
+    "_time": 1521911720.600725,
+    "sourcetype": "bro_stats",
+    "source": "/opt/zeek/logs/current/stats.log"
+  },
+  {
+    "_raw": "#unset_field\t-",
+    "_time": 1521911720.600725,
+    "sourcetype": "bro_stats",
+    "source": "/opt/zeek/logs/current/stats.log"
+  },
+  {
+    "_raw": "#path\tstats",
+    "_time": 1521911720.600725,
+    "sourcetype": "bro_stats",
+    "source": "/opt/zeek/logs/current/stats.log"
+  },
+  {
+    "_raw": "#open\t2024-04-12-19-29-12",
+    "_time": 1521911720.600725,
+    "sourcetype": "bro_stats",
+    "source": "/opt/zeek/logs/current/stats.log"
+  },
+  {
+    "_raw": "#fields\tts\tpeer\tmem\tpkts_proc\tbytes_recv\tpkts_dropped\tpkts_link\tpkt_lag\tpkts_filtered\tevents_proc\tevents_queued\tactive_tcp_conns\tactive_udp_conns\tactive_icmp_conns\ttcp_conns\tudp_conns\ticmp_conns\ttimers\tactive_timers\tfiles\tactive_files\tdns_requests\tactive_dns_requests\treassem_tcp_size\treassem_file_size\treassem_frag_size\treassem_unknown_size",
+    "_time": 1521911720.600725,
+    "sourcetype": "bro_stats",
+    "source": "/opt/zeek/logs/current/stats.log"
+  },
+  {
+    "_raw": "#types\ttime\tstring\tcount\tcount\tcount\tcount\tcount\tinterval\tcount\tcount\tcount\tcount\tcount\tcount\tcount\tcount\tcount\tcount\tcount\tcount\tcount\tcount\tcount\tcount\tcount\tcount\tcount",
+    "_time": 1521911720.600725,
+    "sourcetype": "bro_stats",
+    "source": "/opt/zeek/logs/current/stats.log"
+  },
+  {
+    "_raw": "1521911720.600725\tzeek\t110\t1\t1514\t-\t-\t-\t-\t522\t14\t1\t0\t0\t1\t0\t0\t49\t43\t0\t0\t0\t0\t1484\t0\t0\t0",
+    "_time": 1521911720.600725,
+    "sourcetype": "bro_stats",
+    "source": "/opt/zeek/logs/current/stats.log"
+  },
+  {
+    "_raw": "1521912020.601020\tzeek\t355\t6435396\t3052171529\t-\t-\t-\t-\t3193319\t3193323\t5818\t187\t1070\t305216\t4713\t5363\t1697807\t111566\t48608\t27\t60\t0\t58562\t51441\t0\t0",
+    "_time": 1521912020.60102,
+    "sourcetype": "bro_stats",
+    "source": "/opt/zeek/logs/current/stats.log"
+  },
+  {
+    "_raw": "1521912320.601054\tzeek\t356\t4556858\t1920355100\t-\t-\t-\t-\t2405180\t2405172\t4401\t110\t1010\t211123\t4600\t2354\t1318154\t113238\t41953\t10\t5\t0\t79783\t0\t1575\t0",
+    "_time": 1521912320.601054,
+    "sourcetype": "bro_stats",
+    "source": "/opt/zeek/logs/current/stats.log"
+  },
+  {
+    "_raw": "1521912620.601101\tzeek\t356\t8112292\t3883986246\t-\t-\t-\t-\t1960075\t1960077\t2795\t137\t648\t207754\t4666\t18757\t1231913\t100462\t29558\t26\t1\t0\t115478\t383205\t1455\t0",
+    "_time": 1521912620.601101,
+    "sourcetype": "bro_stats",
+    "source": "/opt/zeek/logs/current/stats.log"
+  },
+  {
+    "_raw": "1521912920.601137\tzeek\t356\t5467574\t3398714991\t-\t-\t-\t-\t1894242\t1894240\t4239\t146\t305\t193637\t4731\t2510\t1151781\t102556\t35115\t88\t11\t0\t430835\t0\t0\t0",
+    "_time": 1521912920.601137,
+    "sourcetype": "bro_stats",
+    "source": "/opt/zeek/logs/current/stats.log"
+  },
+  {
+    "_raw": "1521912990.158766\tzeek\t356\t861010\t337860845\t-\t-\t-\t-\t550057\t572273\t2687\t38\t634\t54739\t1130\t656\t316637\t0\t7919\t0\t0\t0\t113395\t0\t0\t0",
+    "_time": 1521912990.158766,
+    "sourcetype": "bro_stats",
+    "source": "/opt/zeek/logs/current/stats.log"
+  }
+]

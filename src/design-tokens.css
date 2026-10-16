@@ -1,0 +1,29 @@
+/* Design tokens from docs/app-redesign-mockup.html. One palette for the shell,
+   every mode screen, the dialogs and the Flow canvas (FlowDestination.css
+   aliases its --fd-* names to these). */
+:root {
+  --pg-teal: #00b8b8;
+  --pg-teal-dark: #009a9a;
+  --pg-teal-text: #006d6d;
+  --pg-teal-tint: #f0fffe;
+  --pg-teal-tint2: #e6fafa;
+  --pg-teal-wire: #8fdada;
+  --pg-page: #f5f7fa;
+  --pg-ink: #1a1a2e;
+  --pg-body: #595959;
+  --pg-muted: #737373;
+  --pg-line: #e8e8e8;
+  --pg-line2: #e3e8ee;
+  --pg-green: #52c41a;
+  --pg-red: #cf1322;
+  --pg-amber-bg: #fffbe6;
+  --pg-amber-line: #ffe58f;
+  --pg-amber-ink: #ad8b00;
+  --pg-violet: #7c3aed;
+  --pg-violet-tint: #f3efff;
+  --pg-violet-wire: #c9b8f0;
+  --pg-rail: 232px;
+  --pg-radius: 9px;
+  --pg-radius-card: 12px;
+  --pg-ring: 0 0 0 4px var(--pg-teal-tint2);
+}

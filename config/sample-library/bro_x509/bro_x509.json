@@ -1,0 +1,122 @@
+[
+  {
+    "_raw": "#separator \\x09",
+    "_time": 1521911720.624556,
+    "sourcetype": "bro_x509",
+    "source": "/opt/zeek/logs/current/x509.log"
+  },
+  {
+    "_raw": "#set_separator\t,",
+    "_time": 1521911720.624556,
+    "sourcetype": "bro_x509",
+    "source": "/opt/zeek/logs/current/x509.log"
+  },
+  {
+    "_raw": "#empty_field\t(empty)",
+    "_time": 1521911720.624556,
+    "sourcetype": "bro_x509",
+    "source": "/opt/zeek/logs/current/x509.log"
+  },
+  {
+    "_raw": "#unset_field\t-",
+    "_time": 1521911720.624556,
+    "sourcetype": "bro_x509",
+    "source": "/opt/zeek/logs/current/x509.log"
+  },
+  {
+    "_raw": "#path\tx509",
+    "_time": 1521911720.624556,
+    "sourcetype": "bro_x509",
+    "source": "/opt/zeek/logs/current/x509.log"
+  },
+  {
+    "_raw": "#open\t2024-04-12-19-29-12",
+    "_time": 1521911720.624556,
+    "sourcetype": "bro_x509",
+    "source": "/opt/zeek/logs/current/x509.log"
+  },
+  {
+    "_raw": "#fields\tts\tfingerprint\tcertificate.version\tcertificate.serial\tcertificate.subject\tcertificate.issuer\tcertificate.not_valid_before\tcertificate.not_valid_after\tcertificate.key_alg\tcertificate.sig_alg\tcertificate.key_type\tcertificate.key_length\tcertificate.exponent\tcertificate.curve\tsan.dns\tsan.uri\tsan.email\tsan.ip\tbasic_constraints.ca\tbasic_constraints.path_len\thost_cert\tclient_cert",
+    "_time": 1521911720.624556,
+    "sourcetype": "bro_x509",
+    "source": "/opt/zeek/logs/current/x509.log"
+  },
+  {
+    "_raw": "#types\ttime\tstring\tcount\tstring\tstring\tstring\ttime\ttime\tstring\tstring\tstring\tcount\tstring\tstring\tvector[string]\tvector[string]\tvector[string]\tvector[addr]\tbool\tcount\tbool\tbool",
+    "_time": 1521911720.624556,
+    "sourcetype": "bro_x509",
+    "source": "/opt/zeek/logs/current/x509.log"
+  },
+  {
+    "_raw": "1521911720.624556\tb2dafbcdbc75210672f137f27ce882ccb799887631655d4f11191d5a678e44fe\t3\tCC57FE54011E\tunstructuredName=1315656901\\\\,564d7761726520496e632e,CN=localhost.localdomain,emailAddress=ssl-certificates@vmware.com,OU=VMware ESX Server Default Certificate,O=VMware\\\\, Inc,L=Palo Alto,ST=California,C=US\tO=VMware Installer\t1315656902.000000\t1678536902.000000\trsaEncryption\tsha256WithRSAEncryption\trsa\t2048\t65537\t-\tlocalhost.localdomain\t-\t-\t-\tF\t-\tT\tF",
+    "_time": 1521911720.624556,
+    "sourcetype": "bro_x509",
+    "source": "/opt/zeek/logs/current/x509.log"
+  },
+  {
+    "_raw": "1521911720.645450\t8d59ed09ff71bfe26607f9b6b77506f2718346d2417f964cb2f720ece09ed406\t3\tCE134D09196DB6D8\temailAddress=support@paloaltonetworks.com,CN=0ed5ec94a00f5c03cd779af8bafd670a73f40ab1597ac69ffa6a6b7af7e4e099,O=Palo Alto Networks,L=Santa Clara,ST=CA,C=US\temailAddress=support@paloaltonetworks.com,CN=localhost,OU=Support,O=Palo Alto Networks,L=Santa Clara,ST=CA,C=US\t1519342578.000000\t1834702578.000000\trsaEncryption\tsha256WithRSAEncryption\trsa\t2048\t65537\t-\t0ed5ec94a00f5c03cd779af8bafd670a73f40ab1597ac69ffa6a6b7af7e4e099\t-\t-\t-\tF\t-\tT\tF",
+    "_time": 1521911720.64545,
+    "sourcetype": "bro_x509",
+    "source": "/opt/zeek/logs/current/x509.log"
+  },
+  {
+    "_raw": "1521911720.702900\t8b64b08097c05ac62a28d278d7627b7f230b78d8da722154d0efb54013623592\t3\t4876EA91DF62A14F33FD188DB1BCAD\tCN=Snozberry\tCN=Snozberry\t1521466209.000000\t1679232609.000000\trsaEncryption\tsha1WithRSAEncryption\trsa\t2048\t65537\t-\tSnozberry,Snozberry.factory.oompa.loompa\t-\t-\t-\tF\t-\tT\tF",
+    "_time": 1521911720.7029,
+    "sourcetype": "bro_x509",
+    "source": "/opt/zeek/logs/current/x509.log"
+  },
+  {
+    "_raw": "1521911720.776836\td850f88fb4874e33c4596a33b4e0e2bf6d53a7fd998f0a52cb1ad2b5b7dcfac5\t3\tF344CE69EA61BBD2\temailAddress=root@MartinvanNostrand.jerry.land,CN=MartinvanNostrand.jerry.land,OU=MartinvanNostrand.,O=Dovecot mail server\temailAddress=root@MartinvanNostrand.jerry.land,CN=MartinvanNostrand.jerry.land,OU=MartinvanNostrand.,O=Dovecot mail server\t1521354429.000000\t1552890429.000000\trsaEncryption\tsha1WithRSAEncryption\trsa\t1024\t65537\t-\t-\t-\t-\t-\tT\t-\tT\tF",
+    "_time": 1521911720.776836,
+    "sourcetype": "bro_x509",
+    "source": "/opt/zeek/logs/current/x509.log"
+  },
+  {
+    "_raw": "1521911720.814381\teb0d3f9590ad7f4828c6844c4e9fb22b2068b1fb635463ba296c9a4f45cd7382\t3\t01\temailAddress=openvassd@nougat,CN=nougat,OU=Server certificate for nougat,O=OpenVAS Users United,L=Los Angeles,C=US\temailAddress=ca@nougat,CN=nougat,OU=Certification Authority for nougat,O=OpenVAS Users United,L=Los Angeles,C=US\t1521836977.000000\t1553372977.000000\trsaEncryption\tsha256WithRSAEncryption\trsa\t4096\t65537\t-\t-\t-\topenvassd@nougat\t-\t-\t-\tT\tF",
+    "_time": 1521911720.814381,
+    "sourcetype": "bro_x509",
+    "source": "/opt/zeek/logs/current/x509.log"
+  },
+  {
+    "_raw": "1521911720.913836\t569982b2cac6ca87775a265618cf90d056e96037653f4e474b88c6f5f16f2052\t1\tEF97295FA8532CBA\tCN=www.example.com,OU=Certificate generated at installation time,O=Bitnami\tCN=www.example.com,OU=Certificate generated at installation time,O=Bitnami\t1521081382.000000\t1836441382.000000\trsaEncryption\tsha256WithRSAEncryption\trsa\t2048\t65537\t-\t-\t-\t-\t-\t-\t-\tT\tF",
+    "_time": 1521911720.913836,
+    "sourcetype": "bro_x509",
+    "source": "/opt/zeek/logs/current/x509.log"
+  },
+  {
+    "_raw": "1521911721.585012\tf4ac1f06a50f530027c4091a8fd42f4f3dddcd7be816949528a26f8eb88b6d45\t3\t-569F830C7EFE69E6025EDBA0067250C4\tO=Symantec Corporation+CN=cottoncandy-PC+L=Mountain View+OU=ESG+ST=CA+C=US\tO=Symantec Corporation+CN=cottoncandy-PC+L=Mountain View+OU=ESG+ST=CA+C=US\t1519238723.000000\t1837190723.000000\trsaEncryption\tsha256WithRSAEncryption\trsa\t2048\t65537\t-\tcottoncandy-PC,172.16.0.156,fe80:0:0:0:9d42:4c7d:e0dd:79e1,fe80:0:0:0:f970:1e0:96c4:2a96,fe80:0:0:0:0:5efe:ac10:9c\t-\t-\t172.16.0.156,fe80::9d42:4c7d:e0dd:79e1,fe80::f970:1e0:96c4:2a96,fe80::5efe:ac10:9c\t-\t-\tT\tF",
+    "_time": 1521911721.585012,
+    "sourcetype": "bro_x509",
+    "source": "/opt/zeek/logs/current/x509.log"
+  },
+  {
+    "_raw": "1521911723.393858\tf64087e30e4d0fb87b608540bb7cfd2ea060d6c6164cb1ae6e02177733ebc1bd\t3\t7AEE77D0AA874D3A\tCN=*.google.com,O=Google Inc,L=Mountain View,ST=California,C=US\tCN=Google Internet Authority G3,O=Google Trust Services,C=US\t1520453015.000000\t1527706380.000000\tid-ecPublicKey\tsha256WithRSAEncryption\tecdsa\t256\t-\tprime256v1\t*.google.com,*.android.com,*.appengine.google.com,*.cloud.google.com,*.db833953.google.cn,*.g.co,*.gcp.gvt2.com,*.google-analytics.com,*.google.ca,*.google.cl,*.google.co.in,*.google.co.jp,*.google.co.uk,*.google.com.ar,*.google.com.au,*.google.com.br,*.google.com.co,*.google.com.mx,*.google.com.tr,*.google.com.vn,*.google.de,*.google.es,*.google.fr,*.google.hu,*.google.it,*.google.nl,*.google.pl,*.google.pt,*.googleadapis.com,*.googleapis.cn,*.googlecommerce.com,*.googlevideo.com,*.gstatic.cn,*.gstatic.com,*.gvt1.com,*.gvt2.com,*.metric.gstatic.com,*.urchin.com,*.url.google.com,*.youtube-nocookie.com,*.youtube.com,*.youtubeeducation.com,*.yt.be,*.ytimg.com,android.clients.google.com,android.com,developer.android.google.cn,developers.android.google.cn,g.co,goo.gl,google-analytics.com,google.com,googlecommerce.com,source.android.google.cn,urchin.com,www.goo.gl,youtu.be,youtube.com,youtubeeducation.com,yt.be\t-\t-\t-\tF\t-\tT\tF",
+    "_time": 1521911723.393858,
+    "sourcetype": "bro_x509",
+    "source": "/opt/zeek/logs/current/x509.log"
+  },
+  {
+    "_raw": "1521911725.626617\t1dd5982d84a754ef6697f6a7eae0f449ded556824687f5c06be2c3ee027ec434\t3\t908F031C7AD05893\tCN=nessus,O=Default Company Ltd,L=Default City,ST=Maryland,C=US\tCN=nessus,O=Default Company Ltd,L=Default City,ST=Maryland,C=US\t1416534984.000000\t1511142984.000000\tid-ecPublicKey\tecdsa-with-SHA256\tecdsa\t521\t-\tsecp521r1\t-\t-\t-\t-\tT\t-\tT\tT",
+    "_time": 1521911725.626617,
+    "sourcetype": "bro_x509",
+    "source": "/opt/zeek/logs/current/x509.log"
+  },
+  {
+    "_raw": "1521911774.856443\t794655e91ff4177c11b0f3050af6cae8487108e0848de8b13de252d5d63068e6\t3\tC805D626FDCD9AC1\tOU=VMware,O=VMware,L=Palo Alto,ST=California,C=US,CN=donbot.wrccdc.cpp.edu\tOU=VMware,O=donbot,ST=California,C=US,DC=local,DC=vsphere,CN=donbot\t1508993372.000000\t1824094769.000000\trsaEncryption\tsha256WithRSAEncryption\trsa\t2048\t65537\t-\tdonbot.wrccdc.cpp.edu\t-\temail@acme.com\t10.104.255.16\t-\t-\tT\tF",
+    "_time": 1521911774.856443,
+    "sourcetype": "bro_x509",
+    "source": "/opt/zeek/logs/current/x509.log"
+  },
+  {
+    "_raw": "1521911783.296011\t872e74d79f51d36bb8215af524abce9f24f939853558a3b869dece41413176ee\t3\tF1754B9BA47D4A6C\tCN=Palo Alto Networks Device 410,O=Palo Alto Networks,C=US\tCN=Palo Alto Networks SSL CA 1,O=Palo Alto Networks,C=US\t1446758426.000000\t1767302426.000000\trsaEncryption\tsha512WithRSAEncryption\trsa\t2048\t65537\t-\t-\t-\t-\t-\tF\t-\tT\tT",
+    "_time": 1521911783.296011,
+    "sourcetype": "bro_x509",
+    "source": "/opt/zeek/logs/current/x509.log"
+  },
+  {
+    "_raw": "1521912171.110931\tbdddcac800ddad05e424830bb8622f257991014fd86d1e76ef8e262f20c8e352\t3\t689A4212DEDBD59F902F07F39ABF2CC3\tCN=download.crypto.cat,OU=Gandi Standard SSL,OU=Domain Control Validated\tCN=Gandi Standard SSL CA 2,O=Gandi,L=Paris,ST=Paris,C=FR\t1469318400.000000\t1564012799.000000\trsaEncryption\tsha256WithRSAEncryption\trsa\t3072\t65537\t-\tdownload.crypto.cat,www.download.crypto.cat\t-\t-\t-\tF\t-\tT\tF",
+    "_time": 1521912171.110931,
+    "sourcetype": "bro_x509",
+    "source": "/opt/zeek/logs/current/x509.log"
+  }
+]

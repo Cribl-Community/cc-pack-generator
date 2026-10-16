@@ -1,0 +1,226 @@
+{
+  "_comment": "App sourcetype -> the Google SecOps default-parser log type (the ingestion label Chronicle routes on). Read by src/secops-log-types.ts. The Google SecOps raw card sets __logType to `logType` and leaves _raw untouched, so Google's own parser does the UDM mapping. `googleFormat` is Google's Format column verbatim; the app wire formats it accepts are derived from it (secopsWireFormatsFromGoogle). `fit: reshape` = the app's reference sample for the source is NOT in a format Google lists (the card then recommends UDM until the user's own sample says otherwise; must carry a note). `extraFormats` = an app wire format the parser also reads that the column does not name (must carry a note). Only committed labels are stamped: an unknown log type fails the WHOLE batch with HTTP 400. Never fetch logTypes at runtime. Checked by tests/secops-log-types-test.mjs.",
+  "source": "https://docs.cloud.google.com/chronicle/docs/ingestion/parser-list/supported-default-parsers",
+  "verified": "2026-10-01",
+  "logTypes": {
+    "cisco_asa": {
+      "logType": "CISCO_ASA_FIREWALL",
+      "product": "Cisco ASA",
+      "googleFormat": "SYSLOG",
+      "updated": "2025-07-27"
+    },
+    "infoblox_dns": {
+      "logType": "INFOBLOX_DNS",
+      "product": "Infoblox DNS",
+      "googleFormat": "SYSLOG, CEF",
+      "updated": "2026-05-28"
+    },
+    "aws_vpc_v5": {
+      "logType": "AWS_VPC_FLOW",
+      "product": "AWS VPC Flow",
+      "googleFormat": "SYSLOG+JSON, JSON, CSV, SYSLOG+CSV",
+      "updated": "2026-06-05",
+      "extraFormats": [
+        "text"
+      ],
+      "note": "The native space-delimited flow line is the format Google's S3 feed ingests, so it is accepted beside the JSON and CSV forms."
+    },
+    "aws_vpc_v2": {
+      "logType": "AWS_VPC_FLOW",
+      "product": "AWS VPC Flow",
+      "googleFormat": "SYSLOG+JSON, JSON, CSV, SYSLOG+CSV",
+      "updated": "2026-06-05",
+      "extraFormats": [
+        "text"
+      ],
+      "note": "The native space-delimited flow line is the format Google's S3 feed ingests, so it is accepted beside the JSON and CSV forms."
+    },
+    "palo_alto_traffic": {
+      "logType": "PAN_FIREWALL",
+      "product": "Palo Alto Networks Firewall",
+      "googleFormat": "CSV + CEF + LEEF + JSON",
+      "updated": "2026-08-07"
+    },
+    "palo_alto_threat": {
+      "logType": "PAN_FIREWALL",
+      "product": "Palo Alto Networks Firewall",
+      "googleFormat": "CSV + CEF + LEEF + JSON",
+      "updated": "2026-08-07"
+    },
+    "palo_alto_system": {
+      "logType": "PAN_FIREWALL",
+      "product": "Palo Alto Networks Firewall",
+      "googleFormat": "CSV + CEF + LEEF + JSON",
+      "updated": "2026-08-07"
+    },
+    "windows_security": {
+      "logType": "WINEVTLOG",
+      "product": "Windows Event",
+      "googleFormat": "JSON,XML,SYSLOG+KV,SYSLOG+JSON,SYSLOG+XML",
+      "updated": "2026-07-16"
+    },
+    "windows_system": {
+      "logType": "WINEVTLOG",
+      "product": "Windows Event",
+      "googleFormat": "JSON,XML,SYSLOG+KV,SYSLOG+JSON,SYSLOG+XML",
+      "updated": "2026-07-16"
+    },
+    "windows_application": {
+      "logType": "WINEVTLOG",
+      "product": "Windows Event",
+      "googleFormat": "JSON,XML,SYSLOG+KV,SYSLOG+JSON,SYSLOG+XML",
+      "updated": "2026-07-16"
+    },
+    "windows_sysmon": {
+      "logType": "WINDOWS_SYSMON",
+      "product": "Windows Sysmon",
+      "googleFormat": "JSON, XML",
+      "updated": "2026-05-28"
+    },
+    "windows_defender": {
+      "logType": "WINDOWS_DEFENDER_AV",
+      "product": "Windows Defender AV",
+      "googleFormat": "JSON, XML",
+      "updated": "2026-04-06"
+    },
+    "windows_powershell": {
+      "logType": "POWERSHELL",
+      "product": "Microsoft PowerShell",
+      "googleFormat": "SYSLOG + JSON, XML",
+      "updated": "2026-08-04",
+      "fit": "reshape",
+      "note": "Google parses PowerShell events as JSON or XML: a key=value rendering (Snare/syslog) is not parsed. Send the XML or JSON event."
+    },
+    "juniper_srx": {
+      "logType": "JUNIPER_FIREWALL",
+      "product": "Juniper",
+      "googleFormat": "SYSLOG + KV + JSON, SYSLOG + KV",
+      "updated": "2026-04-28"
+    },
+    "sophos_xg": {
+      "logType": "SOPHOS_FIREWALL",
+      "product": "Sophos Firewall (Next Gen)",
+      "googleFormat": "KV, SYSLOG + KV",
+      "updated": "2026-06-04"
+    },
+    "sonicwall_firewall": {
+      "logType": "SONIC_FIREWALL",
+      "product": "SonicWall",
+      "googleFormat": "SYSLOG + KV",
+      "updated": "2026-07-21"
+    },
+    "linux_secure": {
+      "logType": "NIX_SYSTEM",
+      "product": "Unix system",
+      "googleFormat": "SYSLOG, JSON",
+      "updated": "2026-08-14"
+    },
+    "linux_syslog": {
+      "logType": "NIX_SYSTEM",
+      "product": "Unix system",
+      "googleFormat": "SYSLOG, JSON",
+      "updated": "2026-08-14"
+    },
+    "cisco_umbrella": {
+      "logType": "UMBRELLA_DNS",
+      "product": "Cisco Umbrella DNS",
+      "googleFormat": "CSV, JSON",
+      "updated": "2026-03-17",
+      "extraFormats": [
+        "text"
+      ],
+      "note": "Umbrella DNS logs are quoted CSV, which the app reads as text; the parser takes the CSV line as exported."
+    },
+    "okta_system": {
+      "logType": "OKTA",
+      "product": "Okta",
+      "googleFormat": "JSON",
+      "updated": "2026-07-22"
+    },
+    "o365_management_activity": {
+      "logType": "OFFICE_365",
+      "product": "Office 365",
+      "googleFormat": "JSON",
+      "updated": "2026-08-17"
+    },
+    "barracuda_cloudgen_firewall": {
+      "logType": "BARRACUDA_CLOUDGEN_FIREWALL",
+      "product": "Barracuda CloudGen Firewall",
+      "googleFormat": "Syslog",
+      "updated": "2026-04-16",
+      "fit": "reshape",
+      "note": "Google parses the CloudGen syslog text line: a JSON export is not parsed."
+    },
+    "fortinet_fortigate": {
+      "logType": "FORTINET_FIREWALL",
+      "product": "FortiGate",
+      "googleFormat": "SYSLOG+KV, CEF",
+      "updated": "2026-07-24"
+    },
+    "checkpoint_firewall": {
+      "logType": "CHECKPOINT_FIREWALL",
+      "product": "Check Point",
+      "googleFormat": "SYSLOG + KV, JSON",
+      "updated": "2026-07-14"
+    },
+    "f5_bigip": {
+      "logType": "F5_BIGIP_LTM",
+      "product": "F5 BIGIP LTM",
+      "googleFormat": "SYSLOG, KV, CSV, JSON+SYSLOG",
+      "updated": "2026-08-13"
+    },
+    "aws_cloudtrail": {
+      "logType": "AWS_CLOUDTRAIL",
+      "product": "AWS Cloudtrail",
+      "googleFormat": "JSON",
+      "updated": "2026-07-24"
+    },
+    "zeek_conn": {
+      "logType": "BRO_JSON",
+      "product": "Zeek JSON",
+      "googleFormat": "JSON",
+      "updated": "2026-06-02",
+      "note": "Google's format for Zeek is bare JSON: a syslog header in front of the object is not part of it, so strip the header before sending."
+    },
+    "corelight_conn": {
+      "logType": "CORELIGHT",
+      "product": "Corelight",
+      "googleFormat": "JSON",
+      "updated": "2026-06-01"
+    },
+    "zscaler_web": {
+      "logType": "ZSCALER_WEBPROXY",
+      "product": "Zscaler",
+      "googleFormat": "JSON",
+      "updated": "2026-06-09",
+      "fit": "reshape",
+      "note": "Google parses the NSS web feed in JSON: a key=value or CSV NSS feed is not parsed. Set the NSS feed output type to JSON."
+    },
+    "linux_audit": {
+      "logType": "AUDITD",
+      "product": "Linux Auditing System (AuditD)",
+      "googleFormat": "SYSLOG, JSON, XML, KV",
+      "updated": "2026-07-30"
+    },
+    "gcp_audit": {
+      "logType": "GCP_CLOUDAUDIT",
+      "product": "GCP Cloud Audit",
+      "googleFormat": "JSON",
+      "updated": "2026-08-04"
+    },
+    "suricata_ids": {
+      "logType": "SURICATA_EVE",
+      "product": "Suricata EVE",
+      "googleFormat": "JSON",
+      "updated": "2026-05-11"
+    },
+    "cisco_esa": {
+      "logType": "CISCO_EMAIL_SECURITY",
+      "product": "Cisco Email Security",
+      "googleFormat": "SYSLOG + KV, JSON",
+      "updated": "2026-07-08",
+      "fit": "reshape",
+      "note": "Google parses the ESA syslog key=value or JSON form: the plain text mail log is not parsed."
+    }
+  }
+}

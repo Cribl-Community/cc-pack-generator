@@ -1,0 +1,7 @@
+[
+  {
+    "_raw": "2021-09-10T06:44:09+00:00 daemon infoblox.localdomain named[17630]: info xfer-out:client 10.120.20.157#58275 (zone.com): transfer of 'zone.com/IN': AXFR started",
+    "_time": 1631256249,
+    "cribl_breaker": "Break on newlines"
+  }
+]

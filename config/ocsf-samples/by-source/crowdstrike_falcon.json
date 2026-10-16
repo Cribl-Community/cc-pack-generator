@@ -1,0 +1,62 @@
+{
+  "key": "crowdstrike_falcon",
+  "sourcetype": "crowdstrike_falcon",
+  "classUid": 1007,
+  "destFormat": "ocsf#endpoint",
+  "source": "crowdstrike",
+  "vendorNames": [
+    "Microsoft"
+  ],
+  "provenance": {
+    "samplePack": "cribl-paloalto-xsiam",
+    "sampleName": "Crowdstrike_Network.log",
+    "tier": "reference",
+    "sampleEvents": 20,
+    "emulated": "golden OCSF pipeline, offline emulation of scripts/build-source-ocsf-samples.mjs",
+    "rejected": []
+  },
+  "events": [
+    {
+      "metadata": {
+        "product": {
+          "name": "Sysmon",
+          "vendor_name": "Microsoft"
+        },
+        "version": "1.9.0"
+      },
+      "class_uid": 1007,
+      "category_uid": 1,
+      "activity_id": 1,
+      "type_uid": 100701,
+      "severity_id": 1
+    },
+    {
+      "metadata": {
+        "product": {
+          "name": "Sysmon",
+          "vendor_name": "Microsoft"
+        },
+        "version": "1.9.0"
+      },
+      "class_uid": 1007,
+      "category_uid": 1,
+      "activity_id": 1,
+      "type_uid": 100701,
+      "severity_id": 1
+    },
+    {
+      "metadata": {
+        "product": {
+          "name": "Sysmon",
+          "vendor_name": "Microsoft"
+        },
+        "version": "1.9.0"
+      },
+      "class_uid": 1007,
+      "category_uid": 1,
+      "activity_id": 1,
+      "type_uid": 100701,
+      "severity_id": 1
+    }
+  ]
+}

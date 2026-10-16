@@ -1,0 +1,64 @@
+{
+  "name": "XSIAM-Cisco-ASA-Syslog",
+  "kind": "source-specific",
+  "pattern": "tag_vendor_product",
+  "sourceIdField": "__sourceidentifier",
+  "sourceIdentifier": "af01292940d7426594d3d3e55ae17ee0",
+  "vendor": "Cisco",
+  "product": "ASA",
+  "reshapesRaw": false,
+  "sample": {
+    "name": "XSIAM-Cisco-ASA-Syslog.log",
+    "format": "syslog",
+    "formatLabel": "Syslog text",
+    "events": 1
+  },
+  "upstream": {
+    "pack": "cribl-paloalto-xsiam",
+    "version": "2.1.1",
+    "path": "default/pipelines/XSIAM-Cisco-ASA-Syslog/conf.yml",
+    "sha256": "8367119c9e88dd6f8fc9180a69afbe3cbc2ed10b195a8c6030f4ad7d6d3c5f52",
+    "source": "https://packs.cribl.io/packs/cribl-paloalto-xsiam"
+  },
+  "conf": {
+    "output": "default",
+    "streamtags": [],
+    "groups": {},
+    "asyncFuncTimeout": 1000,
+    "description": ""
+  },
+  "functions": [
+    {
+      "id": "comment",
+      "filter": "true",
+      "disabled": null,
+      "conf": {
+        "comment": "Statically assign the __sourceIdentifier, __vendor, and __product fields"
+      }
+    },
+    {
+      "id": "eval",
+      "filter": "true",
+      "disabled": null,
+      "conf": {
+        "add": [
+          {
+            "disabled": false,
+            "name": "__sourceidentifier",
+            "value": "'af01292940d7426594d3d3e55ae17ee0'"
+          },
+          {
+            "disabled": false,
+            "name": "__vendor",
+            "value": "'Cisco'"
+          },
+          {
+            "disabled": false,
+            "name": "__product",
+            "value": "'ASA'"
+          }
+        ]
+      }
+    }
+  ]
+}

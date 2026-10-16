@@ -1,0 +1,145 @@
+{
+  "_comment": "Golden lookup files extracted from professional Cribl packs. Used as references for pipeline generation — when a sourcetype needs a lookup for normalization, these are the proven patterns.",
+  "version": 1,
+  "lookups": {
+    "cisco_asa": {
+      "parsing": {
+        "file": "cisco_asa_parsing.csv",
+        "description": "Per-ASA-code regex patterns for field extraction (169 codes)",
+        "fields": ["asa_code", "regex"],
+        "usage": "Lookup by extracted ASA code → get regex for that specific message format",
+        "source_pack": "cribl-cisco-asa-cleanup"
+      },
+      "drops": {
+        "file": "cisco_asa_drops.csv",
+        "description": "ASA codes to drop (35 codes — no analytical value)",
+        "fields": ["asa_code", "comment"],
+        "source_pack": "cribl-cisco-asa-cleanup"
+      },
+      "suppress": {
+        "file": "cisco_asa_suppress.csv",
+        "description": "ASA codes to rate-limit via suppress (2 codes)",
+        "fields": ["asa_code", "comment"],
+        "source_pack": "cribl-cisco-asa-cleanup"
+      }
+    },
+    "cisco_ftd": {
+      "parsing": {
+        "file": "cisco_ftd_parsing.csv",
+        "description": "Per-FTD-code regex patterns for field extraction (168 codes)",
+        "fields": ["ftd_code", "regex"],
+        "usage": "Same pattern as ASA — lookup by code, apply regex. FTD is structurally identical to ASA.",
+        "source_pack": "cribl-cisco-ftd-cleanup"
+      }
+    },
+    "fortinet_fortigate": {
+      "protocol": {
+        "file": "ftnt_protocol_info.csv",
+        "description": "IP protocol number → transport name (100 protocols)",
+        "fields": ["proto", "transport"],
+        "usage": "Lookup proto field → get 'tcp', 'udp', 'icmp', etc.",
+        "source_pack": "cribl-fortinet-fortigate-firewall-cim-1-0-0"
+      },
+      "cim_action": {
+        "file": "ftnt_cim_action.csv",
+        "description": "FortiGate action → Splunk CIM action (28 mappings)",
+        "fields": ["ftnt_action", "action"],
+        "usage": "Lookup vendor action → CIM 'allowed'/'blocked'/'deferred'",
+        "source_pack": "cribl-fortinet-fortigate-firewall-cim-1-0-0"
+      },
+      "cim_severity": {
+        "file": "ftnt_cim_severity.csv",
+        "description": "FortiGate level → CIM severity + severity_id (14 levels)",
+        "fields": ["ftnt_level", "severity", "severity_id"],
+        "usage": "Lookup level/crlevel/apprisk → CIM severity string + numeric id",
+        "source_pack": "cribl-fortinet-fortigate-firewall-cim-1-0-0"
+      },
+      "sentinel_severity": {
+        "file": "ftnt_csl_severity.csv",
+        "description": "FortiGate level → Sentinel LogSeverity + LogSeverityLabel (14 levels)",
+        "fields": ["ftnt_level", "LogSeverity", "LogSeverityLabel"],
+        "source_pack": "cribl-fortinet-fortigate-firewall-sentinel-1-0-0"
+      },
+      "action_info": {
+        "file": "ftnt_action_info.csv",
+        "description": "FortiGate action categories (20 entries)",
+        "fields": ["action", "action_category"],
+        "source_pack": "cribl-fortinet-fortigate-firewall"
+      },
+      "event_action_info": {
+        "file": "ftnt_event_action_info.csv",
+        "description": "FortiGate event subtype action normalization (19 entries)",
+        "fields": ["action", "action_category", "description"],
+        "source_pack": "cribl-fortinet-fortigate-firewall"
+      },
+      "events_drop": {
+        "file": "ftnt_events_drop.csv",
+        "description": "FortiGate event type/subtype/eventtype → drop decision (92 entries)",
+        "fields": ["type", "subtype", "eventtype", "drop"],
+        "usage": "Lookup by type+subtype+eventtype → if drop=1 then discard event",
+        "source_pack": "cribl-exabeam-fortigate-firewall"
+      }
+    },
+    "cef_sentinel": {
+      "cef_to_commonsecuritylog": {
+        "file": "cef_to_commonsecuritylog.csv",
+        "description": "CEF extension key → CommonSecurityLog field name (137 mappings)",
+        "fields": ["cefKeyName", "CommonSecurityLogName"],
+        "usage": "Rename CEF short names to Microsoft Sentinel CommonSecurityLog schema names",
+        "source_pack": "cribl-microsoft-sentinel"
+      },
+      "fortinet_cef_mappings": {
+        "file": "fortinet_cef_field_mappings.csv",
+        "description": "FortiGate native field → CEF extension name (34 mappings)",
+        "fields": ["cefKeyName", "CommonSecurityLogName"],
+        "source_pack": "cribl-microsoft-sentinel"
+      },
+      "cisco_asa_to_commonsecuritylog": {
+        "file": "cisco_asa_to_commonsecuritylog.csv",
+        "description": "Cisco ASA syslog field → CEF/CommonSecurityLog field (32 mappings)",
+        "fields": ["cisco_field_name", "cef_field_name", "commonsecuritylog_fied_name"],
+        "source_pack": "cribl-microsoft-sentinel"
+      },
+      "sentinel_eventlevel": {
+        "file": "sentinel_eventlevel.csv",
+        "description": "Windows EventLevel number → name (6 levels)",
+        "fields": ["EventLevel", "EventLevelName"],
+        "source_pack": "cribl-microsoft-sentinel"
+      }
+    },
+    "generic": {
+      "ip_protocols": {
+        "file": "ip_protocols.csv",
+        "description": "IP protocol number → protocol name (137 protocols, IANA standard)",
+        "fields": ["protocol", "value"],
+        "usage": "Universal protocol normalization — works for any network log source",
+        "source_pack": "cribl-vpc-flow-for-security-teams"
+      },
+      "windows_event_codes": {
+        "file": "windows_event_codes.csv",
+        "description": "Windows Security Event IDs with keep/drop decision (776 codes)",
+        "fields": ["eventCode", "keep"],
+        "usage": "Lookup eventCode → keep=1 means security-relevant, keep=0 means droppable",
+        "source_pack": "cribl_exabeam_windows"
+      }
+    },
+    "postprocess_optimization": {
+      "firewall_ip_allowlist": {
+        "file": "firewall-ip-allowlist.csv",
+        "description": "Destination IPs whose traffic is routine (patch management, monitoring). Ships EMPTY — header only.",
+        "fields": ["ip"],
+        "usage": "Customer-populated allow-list, named directly by a lookup-driven OCSF optimization rule (never selected by sourcetype). An empty list makes the rule inert, which is the safe default for a drop.",
+        "source": "customer-populated — no vendor knowledge is shipped",
+        "license": "n/a (no third-party data)"
+      },
+      "dns_top_domains": {
+        "file": "dns-top-domains.csv",
+        "description": "100 globally well-known domains whose DNS queries are repetitive (search, social, cloud/CDN, dev, media, finance, e-commerce).",
+        "fields": ["domain"],
+        "usage": "Named directly by the DNS suppress-repeated-popular-domain-queries optimization rule to key its per-domain suppression window.",
+        "source": "Hand-curated by Cribl SE, 2026-09-24 — editorially selected list of widely-recognized global domains, not derived from any third-party ranked list (e.g. Tranco); no ranking methodology or snapshot id applies.",
+        "license": "n/a (no third-party data — domain names are public facts, not a licensed dataset)"
+      }
+    }
+  }
+}

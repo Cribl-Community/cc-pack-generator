@@ -1,0 +1,81 @@
+{
+  "key": "zscaler_web",
+  "sourcetype": "zscaler_web",
+  "classUid": 6003,
+  "destFormat": "ocsf#cloud_audit",
+  "source": "zscaler",
+  "vendorNames": [
+    "AWS"
+  ],
+  "provenance": {
+    "samplePack": "exabeam_pack_for_zscaler",
+    "sampleName": "zscaler_url.log",
+    "tier": "reference",
+    "sampleEvents": 20,
+    "emulated": "golden OCSF pipeline, offline emulation of scripts/build-source-ocsf-samples.mjs",
+    "rejected": []
+  },
+  "events": [
+    {
+      "cloud": {
+        "provider": "AWS"
+      },
+      "metadata": {
+        "product": {
+          "name": "Zscaler ZIA",
+          "vendor_name": "AWS"
+        },
+        "version": "1.9.0"
+      },
+      "class_uid": 6003,
+      "category_uid": 6,
+      "activity_id": 0,
+      "type_uid": 600300,
+      "severity_id": 1,
+      "status_id": 0,
+      "status": "Success"
+    },
+    {
+      "cloud": {
+        "provider": "AWS"
+      },
+      "metadata": {
+        "product": {
+          "name": "Zscaler ZIA",
+          "vendor_name": "AWS"
+        },
+        "version": "1.9.0"
+      },
+      "class_uid": 6003,
+      "category_uid": 6,
+      "activity_id": 0,
+      "type_uid": 600300,
+      "severity_id": 1,
+      "status_id": 0,
+      "status": "Success"
+    },
+    {
+      "src_endpoint": {
+        "ip": "192.168.254.13"
+      },
+      "cloud": {
+        "provider": "AWS"
+      },
+      "metadata": {
+        "product": {
+          "name": "Zscaler ZIA",
+          "vendor_name": "AWS"
+        },
+        "version": "1.9.0"
+      },
+      "class_uid": 6003,
+      "category_uid": 6,
+      "activity_id": 0,
+      "type_uid": 600300,
+      "severity_id": 1,
+      "status_id": 0,
+      "status": "Success",
+      "time": null
+    }
+  ]
+}

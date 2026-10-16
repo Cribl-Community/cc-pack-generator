@@ -1,0 +1,7 @@
+[
+  {
+    "_raw": "2021-09-01T08:15:49+00:00 daemon ib-10-35-117-12.infoblox.com named[1923]: info queries: client 10.35.117.12#55190 (1.0.0.127.in-addr.arpa): query: 1.0.0.127.in-addr.arpa IN PTR +E (10.35.117.12)",
+    "_time": 1630484149,
+    "cribl_breaker": "Break on newlines"
+  }
+]

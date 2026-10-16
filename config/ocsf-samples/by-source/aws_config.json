@@ -1,0 +1,39 @@
+{
+  "key": "aws_config",
+  "sourcetype": "aws_config",
+  "classUid": 6003,
+  "destFormat": "ocsf#cloud_audit",
+  "source": "generic",
+  "vendorNames": [
+    "AWS"
+  ],
+  "provenance": {
+    "samplePack": "vendor-samples",
+    "sampleName": "aws_config_vendor_sample",
+    "tier": "reference",
+    "sampleEvents": 1,
+    "emulated": "golden OCSF pipeline, offline emulation of scripts/build-source-ocsf-samples.mjs",
+    "rejected": []
+  },
+  "events": [
+    {
+      "cloud": {
+        "provider": "AWS"
+      },
+      "metadata": {
+        "product": {
+          "name": "CloudTrail",
+          "vendor_name": "AWS"
+        },
+        "version": "1.9.0"
+      },
+      "class_uid": 6003,
+      "category_uid": 6,
+      "activity_id": 0,
+      "type_uid": 600300,
+      "severity_id": 1,
+      "status_id": 0,
+      "status": "Success"
+    }
+  ]
+}

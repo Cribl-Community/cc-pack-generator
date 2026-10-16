@@ -1,0 +1,10 @@
+[
+  {
+    "_raw": "{\n    \"id\": \"2c9180867dde18d1017de8ea1f5c130f\",\n    \"name\": \"Vendor Creation\",\n    \"displayName\": \"Vendor Creation\",\n    \"created\": \"2021-12-23T20:09:57.340Z\",\n    \"modified\": \"2023-05-02T06:31:19.357Z\",\n    \"attribute\": \"groups\",\n    \"value\": \"VC\",\n    \"sourceSchemaObjectType\": \"group\",\n    \"schema\": \"group\",\n    \"privileged\": false,\n    \"cloudGoverned\": false,\n    \"hash\": \"22ac1f7a13c8a462c67ee74f5fcbf06a277cce50\",\n    \"description\": \"Set up new AP vendors\",\n    \"requestable\": false,\n    \"source\": {\n      \"id\": \"2c9180887de347a7017de8e75fa5570a\",\n      \"type\": \"SOURCE\",\n      \"name\": \"Finance\"\n    },\n    \"containsDataAccess\": \"false\",\n    \"pod\": \"pod01-useast1\",\n    \"org\": \"org-name\",\n    \"synced\": \"2024-11-07T16:29:06.131Z\",\n    \"_type\": \"entitlement\",\n    \"type\": \"entitlement\",\n    \"_version\": \"v2\"\n  }",
+    "_time": 1760744726.59,
+    "cribl_breaker": [
+      "Break on newlines",
+      "ndjson"
+    ]
+  }
+]

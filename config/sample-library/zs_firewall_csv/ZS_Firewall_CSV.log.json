@@ -1,0 +1,21 @@
+[
+  {
+    "_raw": "zscalernss-fw, Wed Aug 23 00:56:52 2023, noauth-protocol$@2047623.zscalerthree.net, Unauthenticated Transactions, UK1, 51687, 25463, 51687, 33598, 192.168.0.169, 162.216.150.150, 147.161.224.255, 162.216.150.150, 35.176.50.157, 0, IPSEC, Allow due to insufficient app data, No, Yes, No, TCP_ANY, tcp, TCP, Miscellaneous or Unknown, United States, 0, RDP Allow, 0, 40, 0, 0, 1, None, None, None, NA, NA",
+    "host": "ip-10-255-0-146.us-west-2.compute.internal",
+    "source": "httpIn-44.236.13.54",
+    "clientip": "44.236.13.54",
+    "method": "POST",
+    "path": "/",
+    "headers": {
+      "accept_encoding": "gzip",
+      "content_encoding": "gzip",
+      "cribl": "firewall",
+      "user_agent": "unirest-java/1.3.11",
+      "content_length": "825",
+      "host": "default.main.example-org-0000005.cribl.cloud:10080",
+      "connection": "Keep-Alive"
+    },
+    "_time": 1692752212,
+    "cribl_breaker": "fallback"
+  }
+]

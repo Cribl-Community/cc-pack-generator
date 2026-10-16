@@ -1,0 +1,1642 @@
+[
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_raw": "{\"type\":\"MODIFIED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"ad-656c676d6f-524dq.184ee00aba48a941\",\"namespace\":\"default\",\"uid\":\"3bf737c6-7880-477d-9c9a-cf777918b074\",\"resourceVersion\":\"1193387\",\"creationTimestamp\":\"2025-07-03T23:00:41Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T23:00:59Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"Pulled\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"default\",\"name\":\"ad-656c676d6f-524dq\",\"uid\":\"91d2adcc-b386-4556-8b53-b88fcbfbab94\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1193039\",\"fieldPath\":\"spec.containers{ad}\"},\"note\":\"Container image \\\"ghcr.io/open-telemetry/demo:2.0.2-ad\\\" already present on machine\",\"type\":\"Normal\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T23:00:41Z\",\"deprecatedLastTimestamp\":\"2025-07-03T23:00:59Z\",\"deprecatedCount\":3}}",
+    "host": "cribl-edge-4vdvw",
+    "__channel": "-1",
+    "type": "MODIFIED",
+    "object": {
+      "kind": "Event",
+      "apiVersion": "events.k8s.io/v1",
+      "metadata": {
+        "name": "ad-656c676d6f-524dq.184ee00aba48a941",
+        "namespace": "default",
+        "uid": "3bf737c6-7880-477d-9c9a-cf777918b074",
+        "resourceVersion": "1193387",
+        "creationTimestamp": "2025-07-03T23:00:41Z",
+        "managedFields": [
+          {
+            "manager": "kubelet",
+            "operation": "Update",
+            "apiVersion": "v1",
+            "time": "2025-07-03T23:00:59Z",
+            "fieldsType": "FieldsV1",
+            "fieldsV1": {
+              "f:count": {},
+              "f:firstTimestamp": {},
+              "f:involvedObject": {},
+              "f:lastTimestamp": {},
+              "f:message": {},
+              "f:reason": {},
+              "f:reportingComponent": {},
+              "f:reportingInstance": {},
+              "f:source": {
+                "f:component": {},
+                "f:host": {}
+              },
+              "f:type": {}
+            }
+          }
+        ]
+      },
+      "eventTime": null,
+      "reportingController": "kubelet",
+      "reportingInstance": "minikube",
+      "reason": "Pulled",
+      "regarding": {
+        "kind": "Pod",
+        "namespace": "default",
+        "name": "ad-656c676d6f-524dq",
+        "uid": "91d2adcc-b386-4556-8b53-b88fcbfbab94",
+        "apiVersion": "v1",
+        "resourceVersion": "1193039",
+        "fieldPath": "spec.containers{ad}"
+      },
+      "note": "Container image \"ghcr.io/open-telemetry/demo:2.0.2-ad\" already present on machine",
+      "type": "Normal",
+      "deprecatedSource": {
+        "component": "kubelet",
+        "host": "minikube"
+      },
+      "deprecatedFirstTimestamp": "2025-07-03T23:00:41Z",
+      "deprecatedLastTimestamp": "2025-07-03T23:00:59Z",
+      "deprecatedCount": 3
+    },
+    "__isBroken": true,
+    "__raw": "{\"type\":\"MODIFIED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"ad-656c676d6f-524dq.184ee00aba48a941\",\"namespace\":\"default\",\"uid\":\"3bf737c6-7880-477d-9c9a-cf777918b074\",\"resourceVersion\":\"1193387\",\"creationTimestamp\":\"2025-07-03T23:00:41Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T23:00:59Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"Pulled\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"default\",\"name\":\"ad-656c676d6f-524dq\",\"uid\":\"91d2adcc-b386-4556-8b53-b88fcbfbab94\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1193039\",\"fieldPath\":\"spec.containers{ad}\"},\"note\":\"Container image \\\"ghcr.io/open-telemetry/demo:2.0.2-ad\\\" already present on machine\",\"type\":\"Normal\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T23:00:41Z\",\"deprecatedLastTimestamp\":\"2025-07-03T23:00:59Z\",\"deprecatedCount\":3}}",
+    "_time": 1751583641,
+    "cribl_breaker": "k8s events",
+    "__inputId": "cribl_http:cribl-kubernetes.cribl-http-k8s",
+    "__cloned": true,
+    "__synthetic": true,
+    "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+    "__bytes": 4325,
+    "__forwardedAttrs": {
+      "__inputId": "kube_events:in_kube_events",
+      "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+      "cribl_breaker": "k8s events"
+    },
+    "__srcIpPort": "72.107.208.42:60930"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_raw": "{\"type\":\"MODIFIED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"kafka-7bdbf4d9b-jf4j2.184ee009de0dd1b0\",\"namespace\":\"default\",\"uid\":\"4c6ea6f8-fc25-47de-ae70-72d5cd9043c5\",\"resourceVersion\":\"1193389\",\"creationTimestamp\":\"2025-07-03T23:00:38Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T23:00:59Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"Pulled\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"default\",\"name\":\"kafka-7bdbf4d9b-jf4j2\",\"uid\":\"0de7dbba-f766-46d2-a6c7-391f4e7ea78c\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1192934\",\"fieldPath\":\"spec.containers{kafka}\"},\"note\":\"Container image \\\"ghcr.io/open-telemetry/demo:2.0.2-kafka\\\" already present on machine\",\"type\":\"Normal\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T23:00:38Z\",\"deprecatedLastTimestamp\":\"2025-07-03T23:00:59Z\",\"deprecatedCount\":3}}",
+    "host": "cribl-edge-4vdvw",
+    "__channel": "-1",
+    "type": "MODIFIED",
+    "object": {
+      "kind": "Event",
+      "apiVersion": "events.k8s.io/v1",
+      "metadata": {
+        "name": "kafka-7bdbf4d9b-jf4j2.184ee009de0dd1b0",
+        "namespace": "default",
+        "uid": "4c6ea6f8-fc25-47de-ae70-72d5cd9043c5",
+        "resourceVersion": "1193389",
+        "creationTimestamp": "2025-07-03T23:00:38Z",
+        "managedFields": [
+          {
+            "manager": "kubelet",
+            "operation": "Update",
+            "apiVersion": "v1",
+            "time": "2025-07-03T23:00:59Z",
+            "fieldsType": "FieldsV1",
+            "fieldsV1": {
+              "f:count": {},
+              "f:firstTimestamp": {},
+              "f:involvedObject": {},
+              "f:lastTimestamp": {},
+              "f:message": {},
+              "f:reason": {},
+              "f:reportingComponent": {},
+              "f:reportingInstance": {},
+              "f:source": {
+                "f:component": {},
+                "f:host": {}
+              },
+              "f:type": {}
+            }
+          }
+        ]
+      },
+      "eventTime": null,
+      "reportingController": "kubelet",
+      "reportingInstance": "minikube",
+      "reason": "Pulled",
+      "regarding": {
+        "kind": "Pod",
+        "namespace": "default",
+        "name": "kafka-7bdbf4d9b-jf4j2",
+        "uid": "0de7dbba-f766-46d2-a6c7-391f4e7ea78c",
+        "apiVersion": "v1",
+        "resourceVersion": "1192934",
+        "fieldPath": "spec.containers{kafka}"
+      },
+      "note": "Container image \"ghcr.io/open-telemetry/demo:2.0.2-kafka\" already present on machine",
+      "type": "Normal",
+      "deprecatedSource": {
+        "component": "kubelet",
+        "host": "minikube"
+      },
+      "deprecatedFirstTimestamp": "2025-07-03T23:00:38Z",
+      "deprecatedLastTimestamp": "2025-07-03T23:00:59Z",
+      "deprecatedCount": 3
+    },
+    "__isBroken": true,
+    "__raw": "{\"type\":\"MODIFIED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"kafka-7bdbf4d9b-jf4j2.184ee009de0dd1b0\",\"namespace\":\"default\",\"uid\":\"4c6ea6f8-fc25-47de-ae70-72d5cd9043c5\",\"resourceVersion\":\"1193389\",\"creationTimestamp\":\"2025-07-03T23:00:38Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T23:00:59Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"Pulled\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"default\",\"name\":\"kafka-7bdbf4d9b-jf4j2\",\"uid\":\"0de7dbba-f766-46d2-a6c7-391f4e7ea78c\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1192934\",\"fieldPath\":\"spec.containers{kafka}\"},\"note\":\"Container image \\\"ghcr.io/open-telemetry/demo:2.0.2-kafka\\\" already present on machine\",\"type\":\"Normal\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T23:00:38Z\",\"deprecatedLastTimestamp\":\"2025-07-03T23:00:59Z\",\"deprecatedCount\":3}}",
+    "_time": 1751583638,
+    "cribl_breaker": "k8s events",
+    "__inputId": "cribl_http:cribl-kubernetes.cribl-http-k8s",
+    "__cloned": true,
+    "__synthetic": true,
+    "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+    "__bytes": 4355,
+    "__forwardedAttrs": {
+      "__inputId": "kube_events:in_kube_events",
+      "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+      "cribl_breaker": "k8s events"
+    },
+    "__srcIpPort": "72.107.208.42:60930"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_raw": "{\"type\":\"MODIFIED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"ad-656c676d6f-524dq.184ee00ad1a8e3d2\",\"namespace\":\"default\",\"uid\":\"e06ce00b-ddbb-4b95-9482-a09cfd0bc67c\",\"resourceVersion\":\"1193390\",\"creationTimestamp\":\"2025-07-03T23:00:42Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T23:00:59Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"Created\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"default\",\"name\":\"ad-656c676d6f-524dq\",\"uid\":\"91d2adcc-b386-4556-8b53-b88fcbfbab94\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1193039\",\"fieldPath\":\"spec.containers{ad}\"},\"note\":\"Created container: ad\",\"type\":\"Normal\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T23:00:42Z\",\"deprecatedLastTimestamp\":\"2025-07-03T23:00:59Z\",\"deprecatedCount\":3}}",
+    "host": "cribl-edge-4vdvw",
+    "__channel": "-1",
+    "type": "MODIFIED",
+    "object": {
+      "kind": "Event",
+      "apiVersion": "events.k8s.io/v1",
+      "metadata": {
+        "name": "ad-656c676d6f-524dq.184ee00ad1a8e3d2",
+        "namespace": "default",
+        "uid": "e06ce00b-ddbb-4b95-9482-a09cfd0bc67c",
+        "resourceVersion": "1193390",
+        "creationTimestamp": "2025-07-03T23:00:42Z",
+        "managedFields": [
+          {
+            "manager": "kubelet",
+            "operation": "Update",
+            "apiVersion": "v1",
+            "time": "2025-07-03T23:00:59Z",
+            "fieldsType": "FieldsV1",
+            "fieldsV1": {
+              "f:count": {},
+              "f:firstTimestamp": {},
+              "f:involvedObject": {},
+              "f:lastTimestamp": {},
+              "f:message": {},
+              "f:reason": {},
+              "f:reportingComponent": {},
+              "f:reportingInstance": {},
+              "f:source": {
+                "f:component": {},
+                "f:host": {}
+              },
+              "f:type": {}
+            }
+          }
+        ]
+      },
+      "eventTime": null,
+      "reportingController": "kubelet",
+      "reportingInstance": "minikube",
+      "reason": "Created",
+      "regarding": {
+        "kind": "Pod",
+        "namespace": "default",
+        "name": "ad-656c676d6f-524dq",
+        "uid": "91d2adcc-b386-4556-8b53-b88fcbfbab94",
+        "apiVersion": "v1",
+        "resourceVersion": "1193039",
+        "fieldPath": "spec.containers{ad}"
+      },
+      "note": "Created container: ad",
+      "type": "Normal",
+      "deprecatedSource": {
+        "component": "kubelet",
+        "host": "minikube"
+      },
+      "deprecatedFirstTimestamp": "2025-07-03T23:00:42Z",
+      "deprecatedLastTimestamp": "2025-07-03T23:00:59Z",
+      "deprecatedCount": 3
+    },
+    "__isBroken": true,
+    "__raw": "{\"type\":\"MODIFIED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"ad-656c676d6f-524dq.184ee00ad1a8e3d2\",\"namespace\":\"default\",\"uid\":\"e06ce00b-ddbb-4b95-9482-a09cfd0bc67c\",\"resourceVersion\":\"1193390\",\"creationTimestamp\":\"2025-07-03T23:00:42Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T23:00:59Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"Created\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"default\",\"name\":\"ad-656c676d6f-524dq\",\"uid\":\"91d2adcc-b386-4556-8b53-b88fcbfbab94\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1193039\",\"fieldPath\":\"spec.containers{ad}\"},\"note\":\"Created container: ad\",\"type\":\"Normal\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T23:00:42Z\",\"deprecatedLastTimestamp\":\"2025-07-03T23:00:59Z\",\"deprecatedCount\":3}}",
+    "_time": 1751583642,
+    "cribl_breaker": "k8s events",
+    "__inputId": "cribl_http:cribl-kubernetes.cribl-http-k8s",
+    "__cloned": true,
+    "__synthetic": true,
+    "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+    "__bytes": 4134,
+    "__forwardedAttrs": {
+      "__inputId": "kube_events:in_kube_events",
+      "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+      "cribl_breaker": "k8s events"
+    },
+    "__srcIpPort": "72.107.208.42:60930"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_raw": "{\"type\":\"MODIFIED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"kafka-7bdbf4d9b-jf4j2.184ee009ef35e133\",\"namespace\":\"default\",\"uid\":\"c2ffa707-4d17-4c57-98fd-ef0f5893342e\",\"resourceVersion\":\"1193391\",\"creationTimestamp\":\"2025-07-03T23:00:38Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T23:00:59Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"Created\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"default\",\"name\":\"kafka-7bdbf4d9b-jf4j2\",\"uid\":\"0de7dbba-f766-46d2-a6c7-391f4e7ea78c\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1192934\",\"fieldPath\":\"spec.containers{kafka}\"},\"note\":\"Created container: kafka\",\"type\":\"Normal\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T23:00:38Z\",\"deprecatedLastTimestamp\":\"2025-07-03T23:00:59Z\",\"deprecatedCount\":3}}",
+    "host": "cribl-edge-4vdvw",
+    "__channel": "-1",
+    "type": "MODIFIED",
+    "object": {
+      "kind": "Event",
+      "apiVersion": "events.k8s.io/v1",
+      "metadata": {
+        "name": "kafka-7bdbf4d9b-jf4j2.184ee009ef35e133",
+        "namespace": "default",
+        "uid": "c2ffa707-4d17-4c57-98fd-ef0f5893342e",
+        "resourceVersion": "1193391",
+        "creationTimestamp": "2025-07-03T23:00:38Z",
+        "managedFields": [
+          {
+            "manager": "kubelet",
+            "operation": "Update",
+            "apiVersion": "v1",
+            "time": "2025-07-03T23:00:59Z",
+            "fieldsType": "FieldsV1",
+            "fieldsV1": {
+              "f:count": {},
+              "f:firstTimestamp": {},
+              "f:involvedObject": {},
+              "f:lastTimestamp": {},
+              "f:message": {},
+              "f:reason": {},
+              "f:reportingComponent": {},
+              "f:reportingInstance": {},
+              "f:source": {
+                "f:component": {},
+                "f:host": {}
+              },
+              "f:type": {}
+            }
+          }
+        ]
+      },
+      "eventTime": null,
+      "reportingController": "kubelet",
+      "reportingInstance": "minikube",
+      "reason": "Created",
+      "regarding": {
+        "kind": "Pod",
+        "namespace": "default",
+        "name": "kafka-7bdbf4d9b-jf4j2",
+        "uid": "0de7dbba-f766-46d2-a6c7-391f4e7ea78c",
+        "apiVersion": "v1",
+        "resourceVersion": "1192934",
+        "fieldPath": "spec.containers{kafka}"
+      },
+      "note": "Created container: kafka",
+      "type": "Normal",
+      "deprecatedSource": {
+        "component": "kubelet",
+        "host": "minikube"
+      },
+      "deprecatedFirstTimestamp": "2025-07-03T23:00:38Z",
+      "deprecatedLastTimestamp": "2025-07-03T23:00:59Z",
+      "deprecatedCount": 3
+    },
+    "__isBroken": true,
+    "__raw": "{\"type\":\"MODIFIED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"kafka-7bdbf4d9b-jf4j2.184ee009ef35e133\",\"namespace\":\"default\",\"uid\":\"c2ffa707-4d17-4c57-98fd-ef0f5893342e\",\"resourceVersion\":\"1193391\",\"creationTimestamp\":\"2025-07-03T23:00:38Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T23:00:59Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"Created\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"default\",\"name\":\"kafka-7bdbf4d9b-jf4j2\",\"uid\":\"0de7dbba-f766-46d2-a6c7-391f4e7ea78c\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1192934\",\"fieldPath\":\"spec.containers{kafka}\"},\"note\":\"Created container: kafka\",\"type\":\"Normal\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T23:00:38Z\",\"deprecatedLastTimestamp\":\"2025-07-03T23:00:59Z\",\"deprecatedCount\":3}}",
+    "_time": 1751583638,
+    "cribl_breaker": "k8s events",
+    "__inputId": "cribl_http:cribl-kubernetes.cribl-http-k8s",
+    "__cloned": true,
+    "__synthetic": true,
+    "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+    "__bytes": 4164,
+    "__forwardedAttrs": {
+      "__inputId": "kube_events:in_kube_events",
+      "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+      "cribl_breaker": "k8s events"
+    },
+    "__srcIpPort": "72.107.208.42:60930"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_raw": "{\"type\":\"MODIFIED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"ad-656c676d6f-524dq.184ee00b013fb027\",\"namespace\":\"default\",\"uid\":\"08045aa5-082f-405a-b67d-0c54570c7137\",\"resourceVersion\":\"1193392\",\"creationTimestamp\":\"2025-07-03T23:00:42Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T23:00:59Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"Started\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"default\",\"name\":\"ad-656c676d6f-524dq\",\"uid\":\"91d2adcc-b386-4556-8b53-b88fcbfbab94\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1193039\",\"fieldPath\":\"spec.containers{ad}\"},\"note\":\"Started container ad\",\"type\":\"Normal\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T23:00:42Z\",\"deprecatedLastTimestamp\":\"2025-07-03T23:00:59Z\",\"deprecatedCount\":3}}",
+    "host": "cribl-edge-4vdvw",
+    "__channel": "-1",
+    "type": "MODIFIED",
+    "object": {
+      "kind": "Event",
+      "apiVersion": "events.k8s.io/v1",
+      "metadata": {
+        "name": "ad-656c676d6f-524dq.184ee00b013fb027",
+        "namespace": "default",
+        "uid": "08045aa5-082f-405a-b67d-0c54570c7137",
+        "resourceVersion": "1193392",
+        "creationTimestamp": "2025-07-03T23:00:42Z",
+        "managedFields": [
+          {
+            "manager": "kubelet",
+            "operation": "Update",
+            "apiVersion": "v1",
+            "time": "2025-07-03T23:00:59Z",
+            "fieldsType": "FieldsV1",
+            "fieldsV1": {
+              "f:count": {},
+              "f:firstTimestamp": {},
+              "f:involvedObject": {},
+              "f:lastTimestamp": {},
+              "f:message": {},
+              "f:reason": {},
+              "f:reportingComponent": {},
+              "f:reportingInstance": {},
+              "f:source": {
+                "f:component": {},
+                "f:host": {}
+              },
+              "f:type": {}
+            }
+          }
+        ]
+      },
+      "eventTime": null,
+      "reportingController": "kubelet",
+      "reportingInstance": "minikube",
+      "reason": "Started",
+      "regarding": {
+        "kind": "Pod",
+        "namespace": "default",
+        "name": "ad-656c676d6f-524dq",
+        "uid": "91d2adcc-b386-4556-8b53-b88fcbfbab94",
+        "apiVersion": "v1",
+        "resourceVersion": "1193039",
+        "fieldPath": "spec.containers{ad}"
+      },
+      "note": "Started container ad",
+      "type": "Normal",
+      "deprecatedSource": {
+        "component": "kubelet",
+        "host": "minikube"
+      },
+      "deprecatedFirstTimestamp": "2025-07-03T23:00:42Z",
+      "deprecatedLastTimestamp": "2025-07-03T23:00:59Z",
+      "deprecatedCount": 3
+    },
+    "__isBroken": true,
+    "__raw": "{\"type\":\"MODIFIED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"ad-656c676d6f-524dq.184ee00b013fb027\",\"namespace\":\"default\",\"uid\":\"08045aa5-082f-405a-b67d-0c54570c7137\",\"resourceVersion\":\"1193392\",\"creationTimestamp\":\"2025-07-03T23:00:42Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T23:00:59Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"Started\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"default\",\"name\":\"ad-656c676d6f-524dq\",\"uid\":\"91d2adcc-b386-4556-8b53-b88fcbfbab94\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1193039\",\"fieldPath\":\"spec.containers{ad}\"},\"note\":\"Started container ad\",\"type\":\"Normal\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T23:00:42Z\",\"deprecatedLastTimestamp\":\"2025-07-03T23:00:59Z\",\"deprecatedCount\":3}}",
+    "_time": 1751583642,
+    "cribl_breaker": "k8s events",
+    "__inputId": "cribl_http:cribl-kubernetes.cribl-http-k8s",
+    "__cloned": true,
+    "__synthetic": true,
+    "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+    "__bytes": 4131,
+    "__forwardedAttrs": {
+      "__inputId": "kube_events:in_kube_events",
+      "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+      "cribl_breaker": "k8s events"
+    },
+    "__srcIpPort": "72.107.208.42:60930"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_raw": "{\"type\":\"MODIFIED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"kafka-7bdbf4d9b-jf4j2.184ee00a0818ad08\",\"namespace\":\"default\",\"uid\":\"0003374a-fa7f-42cc-9c97-d08064459245\",\"resourceVersion\":\"1193393\",\"creationTimestamp\":\"2025-07-03T23:00:38Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T23:00:59Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"Started\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"default\",\"name\":\"kafka-7bdbf4d9b-jf4j2\",\"uid\":\"0de7dbba-f766-46d2-a6c7-391f4e7ea78c\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1192934\",\"fieldPath\":\"spec.containers{kafka}\"},\"note\":\"Started container kafka\",\"type\":\"Normal\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T23:00:38Z\",\"deprecatedLastTimestamp\":\"2025-07-03T23:00:59Z\",\"deprecatedCount\":3}}",
+    "host": "cribl-edge-4vdvw",
+    "__channel": "-1",
+    "type": "MODIFIED",
+    "object": {
+      "kind": "Event",
+      "apiVersion": "events.k8s.io/v1",
+      "metadata": {
+        "name": "kafka-7bdbf4d9b-jf4j2.184ee00a0818ad08",
+        "namespace": "default",
+        "uid": "0003374a-fa7f-42cc-9c97-d08064459245",
+        "resourceVersion": "1193393",
+        "creationTimestamp": "2025-07-03T23:00:38Z",
+        "managedFields": [
+          {
+            "manager": "kubelet",
+            "operation": "Update",
+            "apiVersion": "v1",
+            "time": "2025-07-03T23:00:59Z",
+            "fieldsType": "FieldsV1",
+            "fieldsV1": {
+              "f:count": {},
+              "f:firstTimestamp": {},
+              "f:involvedObject": {},
+              "f:lastTimestamp": {},
+              "f:message": {},
+              "f:reason": {},
+              "f:reportingComponent": {},
+              "f:reportingInstance": {},
+              "f:source": {
+                "f:component": {},
+                "f:host": {}
+              },
+              "f:type": {}
+            }
+          }
+        ]
+      },
+      "eventTime": null,
+      "reportingController": "kubelet",
+      "reportingInstance": "minikube",
+      "reason": "Started",
+      "regarding": {
+        "kind": "Pod",
+        "namespace": "default",
+        "name": "kafka-7bdbf4d9b-jf4j2",
+        "uid": "0de7dbba-f766-46d2-a6c7-391f4e7ea78c",
+        "apiVersion": "v1",
+        "resourceVersion": "1192934",
+        "fieldPath": "spec.containers{kafka}"
+      },
+      "note": "Started container kafka",
+      "type": "Normal",
+      "deprecatedSource": {
+        "component": "kubelet",
+        "host": "minikube"
+      },
+      "deprecatedFirstTimestamp": "2025-07-03T23:00:38Z",
+      "deprecatedLastTimestamp": "2025-07-03T23:00:59Z",
+      "deprecatedCount": 3
+    },
+    "__isBroken": true,
+    "__raw": "{\"type\":\"MODIFIED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"kafka-7bdbf4d9b-jf4j2.184ee00a0818ad08\",\"namespace\":\"default\",\"uid\":\"0003374a-fa7f-42cc-9c97-d08064459245\",\"resourceVersion\":\"1193393\",\"creationTimestamp\":\"2025-07-03T23:00:38Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T23:00:59Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"Started\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"default\",\"name\":\"kafka-7bdbf4d9b-jf4j2\",\"uid\":\"0de7dbba-f766-46d2-a6c7-391f4e7ea78c\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1192934\",\"fieldPath\":\"spec.containers{kafka}\"},\"note\":\"Started container kafka\",\"type\":\"Normal\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T23:00:38Z\",\"deprecatedLastTimestamp\":\"2025-07-03T23:00:59Z\",\"deprecatedCount\":3}}",
+    "_time": 1751583638,
+    "cribl_breaker": "k8s events",
+    "__inputId": "cribl_http:cribl-kubernetes.cribl-http-k8s",
+    "__cloned": true,
+    "__synthetic": true,
+    "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+    "__bytes": 4161,
+    "__forwardedAttrs": {
+      "__inputId": "kube_events:in_kube_events",
+      "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+      "cribl_breaker": "k8s events"
+    },
+    "__srcIpPort": "72.107.208.42:60930"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_raw": "{\"type\":\"MODIFIED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"ad-656c676d6f-524dq.184ee00aba48a941\",\"namespace\":\"default\",\"uid\":\"3bf737c6-7880-477d-9c9a-cf777918b074\",\"resourceVersion\":\"1193387\",\"creationTimestamp\":\"2025-07-03T23:00:41Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T23:00:59Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"Pulled\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"default\",\"name\":\"ad-656c676d6f-524dq\",\"uid\":\"91d2adcc-b386-4556-8b53-b88fcbfbab94\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1193039\",\"fieldPath\":\"spec.containers{ad}\"},\"note\":\"Container image \\\"ghcr.io/open-telemetry/demo:2.0.2-ad\\\" already present on machine\",\"type\":\"Normal\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T23:00:41Z\",\"deprecatedLastTimestamp\":\"2025-07-03T23:00:59Z\",\"deprecatedCount\":3}}",
+    "host": "cribl-edge-wdm59",
+    "__channel": "-1",
+    "type": "MODIFIED",
+    "object": {
+      "kind": "Event",
+      "apiVersion": "events.k8s.io/v1",
+      "metadata": {
+        "name": "ad-656c676d6f-524dq.184ee00aba48a941",
+        "namespace": "default",
+        "uid": "3bf737c6-7880-477d-9c9a-cf777918b074",
+        "resourceVersion": "1193387",
+        "creationTimestamp": "2025-07-03T23:00:41Z",
+        "managedFields": [
+          {
+            "manager": "kubelet",
+            "operation": "Update",
+            "apiVersion": "v1",
+            "time": "2025-07-03T23:00:59Z",
+            "fieldsType": "FieldsV1",
+            "fieldsV1": {
+              "f:count": {},
+              "f:firstTimestamp": {},
+              "f:involvedObject": {},
+              "f:lastTimestamp": {},
+              "f:message": {},
+              "f:reason": {},
+              "f:reportingComponent": {},
+              "f:reportingInstance": {},
+              "f:source": {
+                "f:component": {},
+                "f:host": {}
+              },
+              "f:type": {}
+            }
+          }
+        ]
+      },
+      "eventTime": null,
+      "reportingController": "kubelet",
+      "reportingInstance": "minikube",
+      "reason": "Pulled",
+      "regarding": {
+        "kind": "Pod",
+        "namespace": "default",
+        "name": "ad-656c676d6f-524dq",
+        "uid": "91d2adcc-b386-4556-8b53-b88fcbfbab94",
+        "apiVersion": "v1",
+        "resourceVersion": "1193039",
+        "fieldPath": "spec.containers{ad}"
+      },
+      "note": "Container image \"ghcr.io/open-telemetry/demo:2.0.2-ad\" already present on machine",
+      "type": "Normal",
+      "deprecatedSource": {
+        "component": "kubelet",
+        "host": "minikube"
+      },
+      "deprecatedFirstTimestamp": "2025-07-03T23:00:41Z",
+      "deprecatedLastTimestamp": "2025-07-03T23:00:59Z",
+      "deprecatedCount": 3
+    },
+    "__isBroken": true,
+    "__raw": "{\"type\":\"MODIFIED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"ad-656c676d6f-524dq.184ee00aba48a941\",\"namespace\":\"default\",\"uid\":\"3bf737c6-7880-477d-9c9a-cf777918b074\",\"resourceVersion\":\"1193387\",\"creationTimestamp\":\"2025-07-03T23:00:41Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T23:00:59Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"Pulled\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"default\",\"name\":\"ad-656c676d6f-524dq\",\"uid\":\"91d2adcc-b386-4556-8b53-b88fcbfbab94\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1193039\",\"fieldPath\":\"spec.containers{ad}\"},\"note\":\"Container image \\\"ghcr.io/open-telemetry/demo:2.0.2-ad\\\" already present on machine\",\"type\":\"Normal\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T23:00:41Z\",\"deprecatedLastTimestamp\":\"2025-07-03T23:00:59Z\",\"deprecatedCount\":3}}",
+    "_time": 1751583641,
+    "cribl_breaker": "k8s events",
+    "__inputId": "cribl_http:cribl-kubernetes.cribl-http-k8s",
+    "__cloned": true,
+    "__synthetic": true,
+    "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+    "__bytes": 4325,
+    "__forwardedAttrs": {
+      "__inputId": "kube_events:in_kube_events",
+      "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+      "cribl_breaker": "k8s events"
+    },
+    "__srcIpPort": "72.107.208.42:60804"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_raw": "{\"type\":\"MODIFIED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"kafka-7bdbf4d9b-jf4j2.184ee009de0dd1b0\",\"namespace\":\"default\",\"uid\":\"4c6ea6f8-fc25-47de-ae70-72d5cd9043c5\",\"resourceVersion\":\"1193389\",\"creationTimestamp\":\"2025-07-03T23:00:38Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T23:00:59Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"Pulled\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"default\",\"name\":\"kafka-7bdbf4d9b-jf4j2\",\"uid\":\"0de7dbba-f766-46d2-a6c7-391f4e7ea78c\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1192934\",\"fieldPath\":\"spec.containers{kafka}\"},\"note\":\"Container image \\\"ghcr.io/open-telemetry/demo:2.0.2-kafka\\\" already present on machine\",\"type\":\"Normal\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T23:00:38Z\",\"deprecatedLastTimestamp\":\"2025-07-03T23:00:59Z\",\"deprecatedCount\":3}}",
+    "host": "cribl-edge-wdm59",
+    "__channel": "-1",
+    "type": "MODIFIED",
+    "object": {
+      "kind": "Event",
+      "apiVersion": "events.k8s.io/v1",
+      "metadata": {
+        "name": "kafka-7bdbf4d9b-jf4j2.184ee009de0dd1b0",
+        "namespace": "default",
+        "uid": "4c6ea6f8-fc25-47de-ae70-72d5cd9043c5",
+        "resourceVersion": "1193389",
+        "creationTimestamp": "2025-07-03T23:00:38Z",
+        "managedFields": [
+          {
+            "manager": "kubelet",
+            "operation": "Update",
+            "apiVersion": "v1",
+            "time": "2025-07-03T23:00:59Z",
+            "fieldsType": "FieldsV1",
+            "fieldsV1": {
+              "f:count": {},
+              "f:firstTimestamp": {},
+              "f:involvedObject": {},
+              "f:lastTimestamp": {},
+              "f:message": {},
+              "f:reason": {},
+              "f:reportingComponent": {},
+              "f:reportingInstance": {},
+              "f:source": {
+                "f:component": {},
+                "f:host": {}
+              },
+              "f:type": {}
+            }
+          }
+        ]
+      },
+      "eventTime": null,
+      "reportingController": "kubelet",
+      "reportingInstance": "minikube",
+      "reason": "Pulled",
+      "regarding": {
+        "kind": "Pod",
+        "namespace": "default",
+        "name": "kafka-7bdbf4d9b-jf4j2",
+        "uid": "0de7dbba-f766-46d2-a6c7-391f4e7ea78c",
+        "apiVersion": "v1",
+        "resourceVersion": "1192934",
+        "fieldPath": "spec.containers{kafka}"
+      },
+      "note": "Container image \"ghcr.io/open-telemetry/demo:2.0.2-kafka\" already present on machine",
+      "type": "Normal",
+      "deprecatedSource": {
+        "component": "kubelet",
+        "host": "minikube"
+      },
+      "deprecatedFirstTimestamp": "2025-07-03T23:00:38Z",
+      "deprecatedLastTimestamp": "2025-07-03T23:00:59Z",
+      "deprecatedCount": 3
+    },
+    "__isBroken": true,
+    "__raw": "{\"type\":\"MODIFIED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"kafka-7bdbf4d9b-jf4j2.184ee009de0dd1b0\",\"namespace\":\"default\",\"uid\":\"4c6ea6f8-fc25-47de-ae70-72d5cd9043c5\",\"resourceVersion\":\"1193389\",\"creationTimestamp\":\"2025-07-03T23:00:38Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T23:00:59Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"Pulled\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"default\",\"name\":\"kafka-7bdbf4d9b-jf4j2\",\"uid\":\"0de7dbba-f766-46d2-a6c7-391f4e7ea78c\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1192934\",\"fieldPath\":\"spec.containers{kafka}\"},\"note\":\"Container image \\\"ghcr.io/open-telemetry/demo:2.0.2-kafka\\\" already present on machine\",\"type\":\"Normal\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T23:00:38Z\",\"deprecatedLastTimestamp\":\"2025-07-03T23:00:59Z\",\"deprecatedCount\":3}}",
+    "_time": 1751583638,
+    "cribl_breaker": "k8s events",
+    "__inputId": "cribl_http:cribl-kubernetes.cribl-http-k8s",
+    "__cloned": true,
+    "__synthetic": true,
+    "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+    "__bytes": 4355,
+    "__forwardedAttrs": {
+      "__inputId": "kube_events:in_kube_events",
+      "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+      "cribl_breaker": "k8s events"
+    },
+    "__srcIpPort": "72.107.208.42:60804"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_raw": "{\"type\":\"MODIFIED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"ad-656c676d6f-524dq.184ee00ad1a8e3d2\",\"namespace\":\"default\",\"uid\":\"e06ce00b-ddbb-4b95-9482-a09cfd0bc67c\",\"resourceVersion\":\"1193390\",\"creationTimestamp\":\"2025-07-03T23:00:42Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T23:00:59Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"Created\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"default\",\"name\":\"ad-656c676d6f-524dq\",\"uid\":\"91d2adcc-b386-4556-8b53-b88fcbfbab94\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1193039\",\"fieldPath\":\"spec.containers{ad}\"},\"note\":\"Created container: ad\",\"type\":\"Normal\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T23:00:42Z\",\"deprecatedLastTimestamp\":\"2025-07-03T23:00:59Z\",\"deprecatedCount\":3}}",
+    "host": "cribl-edge-wdm59",
+    "__channel": "-1",
+    "type": "MODIFIED",
+    "object": {
+      "kind": "Event",
+      "apiVersion": "events.k8s.io/v1",
+      "metadata": {
+        "name": "ad-656c676d6f-524dq.184ee00ad1a8e3d2",
+        "namespace": "default",
+        "uid": "e06ce00b-ddbb-4b95-9482-a09cfd0bc67c",
+        "resourceVersion": "1193390",
+        "creationTimestamp": "2025-07-03T23:00:42Z",
+        "managedFields": [
+          {
+            "manager": "kubelet",
+            "operation": "Update",
+            "apiVersion": "v1",
+            "time": "2025-07-03T23:00:59Z",
+            "fieldsType": "FieldsV1",
+            "fieldsV1": {
+              "f:count": {},
+              "f:firstTimestamp": {},
+              "f:involvedObject": {},
+              "f:lastTimestamp": {},
+              "f:message": {},
+              "f:reason": {},
+              "f:reportingComponent": {},
+              "f:reportingInstance": {},
+              "f:source": {
+                "f:component": {},
+                "f:host": {}
+              },
+              "f:type": {}
+            }
+          }
+        ]
+      },
+      "eventTime": null,
+      "reportingController": "kubelet",
+      "reportingInstance": "minikube",
+      "reason": "Created",
+      "regarding": {
+        "kind": "Pod",
+        "namespace": "default",
+        "name": "ad-656c676d6f-524dq",
+        "uid": "91d2adcc-b386-4556-8b53-b88fcbfbab94",
+        "apiVersion": "v1",
+        "resourceVersion": "1193039",
+        "fieldPath": "spec.containers{ad}"
+      },
+      "note": "Created container: ad",
+      "type": "Normal",
+      "deprecatedSource": {
+        "component": "kubelet",
+        "host": "minikube"
+      },
+      "deprecatedFirstTimestamp": "2025-07-03T23:00:42Z",
+      "deprecatedLastTimestamp": "2025-07-03T23:00:59Z",
+      "deprecatedCount": 3
+    },
+    "__isBroken": true,
+    "__raw": "{\"type\":\"MODIFIED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"ad-656c676d6f-524dq.184ee00ad1a8e3d2\",\"namespace\":\"default\",\"uid\":\"e06ce00b-ddbb-4b95-9482-a09cfd0bc67c\",\"resourceVersion\":\"1193390\",\"creationTimestamp\":\"2025-07-03T23:00:42Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T23:00:59Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"Created\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"default\",\"name\":\"ad-656c676d6f-524dq\",\"uid\":\"91d2adcc-b386-4556-8b53-b88fcbfbab94\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1193039\",\"fieldPath\":\"spec.containers{ad}\"},\"note\":\"Created container: ad\",\"type\":\"Normal\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T23:00:42Z\",\"deprecatedLastTimestamp\":\"2025-07-03T23:00:59Z\",\"deprecatedCount\":3}}",
+    "_time": 1751583642,
+    "cribl_breaker": "k8s events",
+    "__inputId": "cribl_http:cribl-kubernetes.cribl-http-k8s",
+    "__cloned": true,
+    "__synthetic": true,
+    "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+    "__bytes": 4134,
+    "__forwardedAttrs": {
+      "__inputId": "kube_events:in_kube_events",
+      "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+      "cribl_breaker": "k8s events"
+    },
+    "__srcIpPort": "72.107.208.42:60804"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_raw": "{\"type\":\"MODIFIED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"kafka-7bdbf4d9b-jf4j2.184ee009ef35e133\",\"namespace\":\"default\",\"uid\":\"c2ffa707-4d17-4c57-98fd-ef0f5893342e\",\"resourceVersion\":\"1193391\",\"creationTimestamp\":\"2025-07-03T23:00:38Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T23:00:59Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"Created\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"default\",\"name\":\"kafka-7bdbf4d9b-jf4j2\",\"uid\":\"0de7dbba-f766-46d2-a6c7-391f4e7ea78c\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1192934\",\"fieldPath\":\"spec.containers{kafka}\"},\"note\":\"Created container: kafka\",\"type\":\"Normal\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T23:00:38Z\",\"deprecatedLastTimestamp\":\"2025-07-03T23:00:59Z\",\"deprecatedCount\":3}}",
+    "host": "cribl-edge-wdm59",
+    "__channel": "-1",
+    "type": "MODIFIED",
+    "object": {
+      "kind": "Event",
+      "apiVersion": "events.k8s.io/v1",
+      "metadata": {
+        "name": "kafka-7bdbf4d9b-jf4j2.184ee009ef35e133",
+        "namespace": "default",
+        "uid": "c2ffa707-4d17-4c57-98fd-ef0f5893342e",
+        "resourceVersion": "1193391",
+        "creationTimestamp": "2025-07-03T23:00:38Z",
+        "managedFields": [
+          {
+            "manager": "kubelet",
+            "operation": "Update",
+            "apiVersion": "v1",
+            "time": "2025-07-03T23:00:59Z",
+            "fieldsType": "FieldsV1",
+            "fieldsV1": {
+              "f:count": {},
+              "f:firstTimestamp": {},
+              "f:involvedObject": {},
+              "f:lastTimestamp": {},
+              "f:message": {},
+              "f:reason": {},
+              "f:reportingComponent": {},
+              "f:reportingInstance": {},
+              "f:source": {
+                "f:component": {},
+                "f:host": {}
+              },
+              "f:type": {}
+            }
+          }
+        ]
+      },
+      "eventTime": null,
+      "reportingController": "kubelet",
+      "reportingInstance": "minikube",
+      "reason": "Created",
+      "regarding": {
+        "kind": "Pod",
+        "namespace": "default",
+        "name": "kafka-7bdbf4d9b-jf4j2",
+        "uid": "0de7dbba-f766-46d2-a6c7-391f4e7ea78c",
+        "apiVersion": "v1",
+        "resourceVersion": "1192934",
+        "fieldPath": "spec.containers{kafka}"
+      },
+      "note": "Created container: kafka",
+      "type": "Normal",
+      "deprecatedSource": {
+        "component": "kubelet",
+        "host": "minikube"
+      },
+      "deprecatedFirstTimestamp": "2025-07-03T23:00:38Z",
+      "deprecatedLastTimestamp": "2025-07-03T23:00:59Z",
+      "deprecatedCount": 3
+    },
+    "__isBroken": true,
+    "__raw": "{\"type\":\"MODIFIED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"kafka-7bdbf4d9b-jf4j2.184ee009ef35e133\",\"namespace\":\"default\",\"uid\":\"c2ffa707-4d17-4c57-98fd-ef0f5893342e\",\"resourceVersion\":\"1193391\",\"creationTimestamp\":\"2025-07-03T23:00:38Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T23:00:59Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"Created\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"default\",\"name\":\"kafka-7bdbf4d9b-jf4j2\",\"uid\":\"0de7dbba-f766-46d2-a6c7-391f4e7ea78c\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1192934\",\"fieldPath\":\"spec.containers{kafka}\"},\"note\":\"Created container: kafka\",\"type\":\"Normal\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T23:00:38Z\",\"deprecatedLastTimestamp\":\"2025-07-03T23:00:59Z\",\"deprecatedCount\":3}}",
+    "_time": 1751583638,
+    "cribl_breaker": "k8s events",
+    "__inputId": "cribl_http:cribl-kubernetes.cribl-http-k8s",
+    "__cloned": true,
+    "__synthetic": true,
+    "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+    "__bytes": 4164,
+    "__forwardedAttrs": {
+      "__inputId": "kube_events:in_kube_events",
+      "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+      "cribl_breaker": "k8s events"
+    },
+    "__srcIpPort": "72.107.208.42:60804"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_raw": "{\"type\":\"MODIFIED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"ad-656c676d6f-524dq.184ee00b013fb027\",\"namespace\":\"default\",\"uid\":\"08045aa5-082f-405a-b67d-0c54570c7137\",\"resourceVersion\":\"1193392\",\"creationTimestamp\":\"2025-07-03T23:00:42Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T23:00:59Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"Started\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"default\",\"name\":\"ad-656c676d6f-524dq\",\"uid\":\"91d2adcc-b386-4556-8b53-b88fcbfbab94\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1193039\",\"fieldPath\":\"spec.containers{ad}\"},\"note\":\"Started container ad\",\"type\":\"Normal\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T23:00:42Z\",\"deprecatedLastTimestamp\":\"2025-07-03T23:00:59Z\",\"deprecatedCount\":3}}",
+    "host": "cribl-edge-wdm59",
+    "__channel": "-1",
+    "type": "MODIFIED",
+    "object": {
+      "kind": "Event",
+      "apiVersion": "events.k8s.io/v1",
+      "metadata": {
+        "name": "ad-656c676d6f-524dq.184ee00b013fb027",
+        "namespace": "default",
+        "uid": "08045aa5-082f-405a-b67d-0c54570c7137",
+        "resourceVersion": "1193392",
+        "creationTimestamp": "2025-07-03T23:00:42Z",
+        "managedFields": [
+          {
+            "manager": "kubelet",
+            "operation": "Update",
+            "apiVersion": "v1",
+            "time": "2025-07-03T23:00:59Z",
+            "fieldsType": "FieldsV1",
+            "fieldsV1": {
+              "f:count": {},
+              "f:firstTimestamp": {},
+              "f:involvedObject": {},
+              "f:lastTimestamp": {},
+              "f:message": {},
+              "f:reason": {},
+              "f:reportingComponent": {},
+              "f:reportingInstance": {},
+              "f:source": {
+                "f:component": {},
+                "f:host": {}
+              },
+              "f:type": {}
+            }
+          }
+        ]
+      },
+      "eventTime": null,
+      "reportingController": "kubelet",
+      "reportingInstance": "minikube",
+      "reason": "Started",
+      "regarding": {
+        "kind": "Pod",
+        "namespace": "default",
+        "name": "ad-656c676d6f-524dq",
+        "uid": "91d2adcc-b386-4556-8b53-b88fcbfbab94",
+        "apiVersion": "v1",
+        "resourceVersion": "1193039",
+        "fieldPath": "spec.containers{ad}"
+      },
+      "note": "Started container ad",
+      "type": "Normal",
+      "deprecatedSource": {
+        "component": "kubelet",
+        "host": "minikube"
+      },
+      "deprecatedFirstTimestamp": "2025-07-03T23:00:42Z",
+      "deprecatedLastTimestamp": "2025-07-03T23:00:59Z",
+      "deprecatedCount": 3
+    },
+    "__isBroken": true,
+    "__raw": "{\"type\":\"MODIFIED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"ad-656c676d6f-524dq.184ee00b013fb027\",\"namespace\":\"default\",\"uid\":\"08045aa5-082f-405a-b67d-0c54570c7137\",\"resourceVersion\":\"1193392\",\"creationTimestamp\":\"2025-07-03T23:00:42Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T23:00:59Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"Started\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"default\",\"name\":\"ad-656c676d6f-524dq\",\"uid\":\"91d2adcc-b386-4556-8b53-b88fcbfbab94\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1193039\",\"fieldPath\":\"spec.containers{ad}\"},\"note\":\"Started container ad\",\"type\":\"Normal\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T23:00:42Z\",\"deprecatedLastTimestamp\":\"2025-07-03T23:00:59Z\",\"deprecatedCount\":3}}",
+    "_time": 1751583642,
+    "cribl_breaker": "k8s events",
+    "__inputId": "cribl_http:cribl-kubernetes.cribl-http-k8s",
+    "__cloned": true,
+    "__synthetic": true,
+    "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+    "__bytes": 4131,
+    "__forwardedAttrs": {
+      "__inputId": "kube_events:in_kube_events",
+      "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+      "cribl_breaker": "k8s events"
+    },
+    "__srcIpPort": "72.107.208.42:60804"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_raw": "{\"type\":\"MODIFIED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"kafka-7bdbf4d9b-jf4j2.184ee00a0818ad08\",\"namespace\":\"default\",\"uid\":\"0003374a-fa7f-42cc-9c97-d08064459245\",\"resourceVersion\":\"1193393\",\"creationTimestamp\":\"2025-07-03T23:00:38Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T23:00:59Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"Started\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"default\",\"name\":\"kafka-7bdbf4d9b-jf4j2\",\"uid\":\"0de7dbba-f766-46d2-a6c7-391f4e7ea78c\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1192934\",\"fieldPath\":\"spec.containers{kafka}\"},\"note\":\"Started container kafka\",\"type\":\"Normal\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T23:00:38Z\",\"deprecatedLastTimestamp\":\"2025-07-03T23:00:59Z\",\"deprecatedCount\":3}}",
+    "host": "cribl-edge-wdm59",
+    "__channel": "-1",
+    "type": "MODIFIED",
+    "object": {
+      "kind": "Event",
+      "apiVersion": "events.k8s.io/v1",
+      "metadata": {
+        "name": "kafka-7bdbf4d9b-jf4j2.184ee00a0818ad08",
+        "namespace": "default",
+        "uid": "0003374a-fa7f-42cc-9c97-d08064459245",
+        "resourceVersion": "1193393",
+        "creationTimestamp": "2025-07-03T23:00:38Z",
+        "managedFields": [
+          {
+            "manager": "kubelet",
+            "operation": "Update",
+            "apiVersion": "v1",
+            "time": "2025-07-03T23:00:59Z",
+            "fieldsType": "FieldsV1",
+            "fieldsV1": {
+              "f:count": {},
+              "f:firstTimestamp": {},
+              "f:involvedObject": {},
+              "f:lastTimestamp": {},
+              "f:message": {},
+              "f:reason": {},
+              "f:reportingComponent": {},
+              "f:reportingInstance": {},
+              "f:source": {
+                "f:component": {},
+                "f:host": {}
+              },
+              "f:type": {}
+            }
+          }
+        ]
+      },
+      "eventTime": null,
+      "reportingController": "kubelet",
+      "reportingInstance": "minikube",
+      "reason": "Started",
+      "regarding": {
+        "kind": "Pod",
+        "namespace": "default",
+        "name": "kafka-7bdbf4d9b-jf4j2",
+        "uid": "0de7dbba-f766-46d2-a6c7-391f4e7ea78c",
+        "apiVersion": "v1",
+        "resourceVersion": "1192934",
+        "fieldPath": "spec.containers{kafka}"
+      },
+      "note": "Started container kafka",
+      "type": "Normal",
+      "deprecatedSource": {
+        "component": "kubelet",
+        "host": "minikube"
+      },
+      "deprecatedFirstTimestamp": "2025-07-03T23:00:38Z",
+      "deprecatedLastTimestamp": "2025-07-03T23:00:59Z",
+      "deprecatedCount": 3
+    },
+    "__isBroken": true,
+    "__raw": "{\"type\":\"MODIFIED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"kafka-7bdbf4d9b-jf4j2.184ee00a0818ad08\",\"namespace\":\"default\",\"uid\":\"0003374a-fa7f-42cc-9c97-d08064459245\",\"resourceVersion\":\"1193393\",\"creationTimestamp\":\"2025-07-03T23:00:38Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T23:00:59Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"Started\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"default\",\"name\":\"kafka-7bdbf4d9b-jf4j2\",\"uid\":\"0de7dbba-f766-46d2-a6c7-391f4e7ea78c\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1192934\",\"fieldPath\":\"spec.containers{kafka}\"},\"note\":\"Started container kafka\",\"type\":\"Normal\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T23:00:38Z\",\"deprecatedLastTimestamp\":\"2025-07-03T23:00:59Z\",\"deprecatedCount\":3}}",
+    "_time": 1751583638,
+    "cribl_breaker": "k8s events",
+    "__inputId": "cribl_http:cribl-kubernetes.cribl-http-k8s",
+    "__cloned": true,
+    "__synthetic": true,
+    "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+    "__bytes": 4161,
+    "__forwardedAttrs": {
+      "__inputId": "kube_events:in_kube_events",
+      "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+      "cribl_breaker": "k8s events"
+    },
+    "__srcIpPort": "72.107.208.42:60804"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_raw": "{\"type\":\"MODIFIED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"kafka-7bdbf4d9b-jf4j2.184ee00bd7ec5246\",\"namespace\":\"default\",\"uid\":\"cb0c166c-ac64-438a-bd63-d941a3181806\",\"resourceVersion\":\"1193396\",\"creationTimestamp\":\"2025-07-03T23:00:46Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T23:01:00Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"BackOff\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"default\",\"name\":\"kafka-7bdbf4d9b-jf4j2\",\"uid\":\"0de7dbba-f766-46d2-a6c7-391f4e7ea78c\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1192934\",\"fieldPath\":\"spec.containers{kafka}\"},\"note\":\"Back-off restarting failed container kafka in pod kafka-7bdbf4d9b-jf4j2_default(0de7dbba-f766-46d2-a6c7-391f4e7ea78c)\",\"type\":\"Warning\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T23:00:46Z\",\"deprecatedLastTimestamp\":\"2025-07-03T23:01:00Z\",\"deprecatedCount\":3}}",
+    "host": "cribl-edge-wdm59",
+    "__channel": "-1",
+    "type": "MODIFIED",
+    "object": {
+      "kind": "Event",
+      "apiVersion": "events.k8s.io/v1",
+      "metadata": {
+        "name": "kafka-7bdbf4d9b-jf4j2.184ee00bd7ec5246",
+        "namespace": "default",
+        "uid": "cb0c166c-ac64-438a-bd63-d941a3181806",
+        "resourceVersion": "1193396",
+        "creationTimestamp": "2025-07-03T23:00:46Z",
+        "managedFields": [
+          {
+            "manager": "kubelet",
+            "operation": "Update",
+            "apiVersion": "v1",
+            "time": "2025-07-03T23:01:00Z",
+            "fieldsType": "FieldsV1",
+            "fieldsV1": {
+              "f:count": {},
+              "f:firstTimestamp": {},
+              "f:involvedObject": {},
+              "f:lastTimestamp": {},
+              "f:message": {},
+              "f:reason": {},
+              "f:reportingComponent": {},
+              "f:reportingInstance": {},
+              "f:source": {
+                "f:component": {},
+                "f:host": {}
+              },
+              "f:type": {}
+            }
+          }
+        ]
+      },
+      "eventTime": null,
+      "reportingController": "kubelet",
+      "reportingInstance": "minikube",
+      "reason": "BackOff",
+      "regarding": {
+        "kind": "Pod",
+        "namespace": "default",
+        "name": "kafka-7bdbf4d9b-jf4j2",
+        "uid": "0de7dbba-f766-46d2-a6c7-391f4e7ea78c",
+        "apiVersion": "v1",
+        "resourceVersion": "1192934",
+        "fieldPath": "spec.containers{kafka}"
+      },
+      "note": "Back-off restarting failed container kafka in pod kafka-7bdbf4d9b-jf4j2_default(0de7dbba-f766-46d2-a6c7-391f4e7ea78c)",
+      "type": "Warning",
+      "deprecatedSource": {
+        "component": "kubelet",
+        "host": "minikube"
+      },
+      "deprecatedFirstTimestamp": "2025-07-03T23:00:46Z",
+      "deprecatedLastTimestamp": "2025-07-03T23:01:00Z",
+      "deprecatedCount": 3
+    },
+    "__isBroken": true,
+    "__raw": "{\"type\":\"MODIFIED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"kafka-7bdbf4d9b-jf4j2.184ee00bd7ec5246\",\"namespace\":\"default\",\"uid\":\"cb0c166c-ac64-438a-bd63-d941a3181806\",\"resourceVersion\":\"1193396\",\"creationTimestamp\":\"2025-07-03T23:00:46Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T23:01:00Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"BackOff\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"default\",\"name\":\"kafka-7bdbf4d9b-jf4j2\",\"uid\":\"0de7dbba-f766-46d2-a6c7-391f4e7ea78c\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1192934\",\"fieldPath\":\"spec.containers{kafka}\"},\"note\":\"Back-off restarting failed container kafka in pod kafka-7bdbf4d9b-jf4j2_default(0de7dbba-f766-46d2-a6c7-391f4e7ea78c)\",\"type\":\"Warning\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T23:00:46Z\",\"deprecatedLastTimestamp\":\"2025-07-03T23:01:00Z\",\"deprecatedCount\":3}}",
+    "_time": 1751583646,
+    "cribl_breaker": "k8s events",
+    "__inputId": "cribl_http:cribl-kubernetes.cribl-http-k8s",
+    "__cloned": true,
+    "__synthetic": true,
+    "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+    "__bytes": 4446,
+    "__forwardedAttrs": {
+      "__inputId": "kube_events:in_kube_events",
+      "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+      "cribl_breaker": "k8s events"
+    },
+    "__srcIpPort": "72.107.208.42:60804"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_raw": "{\"type\":\"MODIFIED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"ad-656c676d6f-524dq.184ee00bba9cf257\",\"namespace\":\"default\",\"uid\":\"18cadc08-6f4c-44ef-b074-a8261ca660cc\",\"resourceVersion\":\"1193398\",\"creationTimestamp\":\"2025-07-03T23:00:46Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T23:01:00Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"BackOff\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"default\",\"name\":\"ad-656c676d6f-524dq\",\"uid\":\"91d2adcc-b386-4556-8b53-b88fcbfbab94\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1193039\",\"fieldPath\":\"spec.containers{ad}\"},\"note\":\"Back-off restarting failed container ad in pod ad-656c676d6f-524dq_default(91d2adcc-b386-4556-8b53-b88fcbfbab94)\",\"type\":\"Warning\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T23:00:46Z\",\"deprecatedLastTimestamp\":\"2025-07-03T23:01:00Z\",\"deprecatedCount\":2}}",
+    "host": "cribl-edge-wdm59",
+    "__channel": "-1",
+    "type": "MODIFIED",
+    "object": {
+      "kind": "Event",
+      "apiVersion": "events.k8s.io/v1",
+      "metadata": {
+        "name": "ad-656c676d6f-524dq.184ee00bba9cf257",
+        "namespace": "default",
+        "uid": "18cadc08-6f4c-44ef-b074-a8261ca660cc",
+        "resourceVersion": "1193398",
+        "creationTimestamp": "2025-07-03T23:00:46Z",
+        "managedFields": [
+          {
+            "manager": "kubelet",
+            "operation": "Update",
+            "apiVersion": "v1",
+            "time": "2025-07-03T23:01:00Z",
+            "fieldsType": "FieldsV1",
+            "fieldsV1": {
+              "f:count": {},
+              "f:firstTimestamp": {},
+              "f:involvedObject": {},
+              "f:lastTimestamp": {},
+              "f:message": {},
+              "f:reason": {},
+              "f:reportingComponent": {},
+              "f:reportingInstance": {},
+              "f:source": {
+                "f:component": {},
+                "f:host": {}
+              },
+              "f:type": {}
+            }
+          }
+        ]
+      },
+      "eventTime": null,
+      "reportingController": "kubelet",
+      "reportingInstance": "minikube",
+      "reason": "BackOff",
+      "regarding": {
+        "kind": "Pod",
+        "namespace": "default",
+        "name": "ad-656c676d6f-524dq",
+        "uid": "91d2adcc-b386-4556-8b53-b88fcbfbab94",
+        "apiVersion": "v1",
+        "resourceVersion": "1193039",
+        "fieldPath": "spec.containers{ad}"
+      },
+      "note": "Back-off restarting failed container ad in pod ad-656c676d6f-524dq_default(91d2adcc-b386-4556-8b53-b88fcbfbab94)",
+      "type": "Warning",
+      "deprecatedSource": {
+        "component": "kubelet",
+        "host": "minikube"
+      },
+      "deprecatedFirstTimestamp": "2025-07-03T23:00:46Z",
+      "deprecatedLastTimestamp": "2025-07-03T23:01:00Z",
+      "deprecatedCount": 2
+    },
+    "__isBroken": true,
+    "__raw": "{\"type\":\"MODIFIED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"ad-656c676d6f-524dq.184ee00bba9cf257\",\"namespace\":\"default\",\"uid\":\"18cadc08-6f4c-44ef-b074-a8261ca660cc\",\"resourceVersion\":\"1193398\",\"creationTimestamp\":\"2025-07-03T23:00:46Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T23:01:00Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"BackOff\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"default\",\"name\":\"ad-656c676d6f-524dq\",\"uid\":\"91d2adcc-b386-4556-8b53-b88fcbfbab94\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1193039\",\"fieldPath\":\"spec.containers{ad}\"},\"note\":\"Back-off restarting failed container ad in pod ad-656c676d6f-524dq_default(91d2adcc-b386-4556-8b53-b88fcbfbab94)\",\"type\":\"Warning\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T23:00:46Z\",\"deprecatedLastTimestamp\":\"2025-07-03T23:01:00Z\",\"deprecatedCount\":2}}",
+    "_time": 1751583646,
+    "cribl_breaker": "k8s events",
+    "__inputId": "cribl_http:cribl-kubernetes.cribl-http-k8s",
+    "__cloned": true,
+    "__synthetic": true,
+    "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+    "__bytes": 4410,
+    "__forwardedAttrs": {
+      "__inputId": "kube_events:in_kube_events",
+      "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+      "cribl_breaker": "k8s events"
+    },
+    "__srcIpPort": "72.107.208.42:60804"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_raw": "{\"type\":\"MODIFIED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"kafka-7bdbf4d9b-jf4j2.184ee00bd7ec5246\",\"namespace\":\"default\",\"uid\":\"cb0c166c-ac64-438a-bd63-d941a3181806\",\"resourceVersion\":\"1193396\",\"creationTimestamp\":\"2025-07-03T23:00:46Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T23:01:00Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"BackOff\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"default\",\"name\":\"kafka-7bdbf4d9b-jf4j2\",\"uid\":\"0de7dbba-f766-46d2-a6c7-391f4e7ea78c\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1192934\",\"fieldPath\":\"spec.containers{kafka}\"},\"note\":\"Back-off restarting failed container kafka in pod kafka-7bdbf4d9b-jf4j2_default(0de7dbba-f766-46d2-a6c7-391f4e7ea78c)\",\"type\":\"Warning\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T23:00:46Z\",\"deprecatedLastTimestamp\":\"2025-07-03T23:01:00Z\",\"deprecatedCount\":3}}",
+    "host": "cribl-edge-4vdvw",
+    "__channel": "-1",
+    "type": "MODIFIED",
+    "object": {
+      "kind": "Event",
+      "apiVersion": "events.k8s.io/v1",
+      "metadata": {
+        "name": "kafka-7bdbf4d9b-jf4j2.184ee00bd7ec5246",
+        "namespace": "default",
+        "uid": "cb0c166c-ac64-438a-bd63-d941a3181806",
+        "resourceVersion": "1193396",
+        "creationTimestamp": "2025-07-03T23:00:46Z",
+        "managedFields": [
+          {
+            "manager": "kubelet",
+            "operation": "Update",
+            "apiVersion": "v1",
+            "time": "2025-07-03T23:01:00Z",
+            "fieldsType": "FieldsV1",
+            "fieldsV1": {
+              "f:count": {},
+              "f:firstTimestamp": {},
+              "f:involvedObject": {},
+              "f:lastTimestamp": {},
+              "f:message": {},
+              "f:reason": {},
+              "f:reportingComponent": {},
+              "f:reportingInstance": {},
+              "f:source": {
+                "f:component": {},
+                "f:host": {}
+              },
+              "f:type": {}
+            }
+          }
+        ]
+      },
+      "eventTime": null,
+      "reportingController": "kubelet",
+      "reportingInstance": "minikube",
+      "reason": "BackOff",
+      "regarding": {
+        "kind": "Pod",
+        "namespace": "default",
+        "name": "kafka-7bdbf4d9b-jf4j2",
+        "uid": "0de7dbba-f766-46d2-a6c7-391f4e7ea78c",
+        "apiVersion": "v1",
+        "resourceVersion": "1192934",
+        "fieldPath": "spec.containers{kafka}"
+      },
+      "note": "Back-off restarting failed container kafka in pod kafka-7bdbf4d9b-jf4j2_default(0de7dbba-f766-46d2-a6c7-391f4e7ea78c)",
+      "type": "Warning",
+      "deprecatedSource": {
+        "component": "kubelet",
+        "host": "minikube"
+      },
+      "deprecatedFirstTimestamp": "2025-07-03T23:00:46Z",
+      "deprecatedLastTimestamp": "2025-07-03T23:01:00Z",
+      "deprecatedCount": 3
+    },
+    "__isBroken": true,
+    "__raw": "{\"type\":\"MODIFIED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"kafka-7bdbf4d9b-jf4j2.184ee00bd7ec5246\",\"namespace\":\"default\",\"uid\":\"cb0c166c-ac64-438a-bd63-d941a3181806\",\"resourceVersion\":\"1193396\",\"creationTimestamp\":\"2025-07-03T23:00:46Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T23:01:00Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"BackOff\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"default\",\"name\":\"kafka-7bdbf4d9b-jf4j2\",\"uid\":\"0de7dbba-f766-46d2-a6c7-391f4e7ea78c\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1192934\",\"fieldPath\":\"spec.containers{kafka}\"},\"note\":\"Back-off restarting failed container kafka in pod kafka-7bdbf4d9b-jf4j2_default(0de7dbba-f766-46d2-a6c7-391f4e7ea78c)\",\"type\":\"Warning\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T23:00:46Z\",\"deprecatedLastTimestamp\":\"2025-07-03T23:01:00Z\",\"deprecatedCount\":3}}",
+    "_time": 1751583646,
+    "cribl_breaker": "k8s events",
+    "__inputId": "cribl_http:cribl-kubernetes.cribl-http-k8s",
+    "__cloned": true,
+    "__synthetic": true,
+    "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+    "__bytes": 4446,
+    "__forwardedAttrs": {
+      "__inputId": "kube_events:in_kube_events",
+      "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+      "cribl_breaker": "k8s events"
+    },
+    "__srcIpPort": "72.107.208.42:60930"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_raw": "{\"type\":\"MODIFIED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"ad-656c676d6f-524dq.184ee00bba9cf257\",\"namespace\":\"default\",\"uid\":\"18cadc08-6f4c-44ef-b074-a8261ca660cc\",\"resourceVersion\":\"1193398\",\"creationTimestamp\":\"2025-07-03T23:00:46Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T23:01:00Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"BackOff\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"default\",\"name\":\"ad-656c676d6f-524dq\",\"uid\":\"91d2adcc-b386-4556-8b53-b88fcbfbab94\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1193039\",\"fieldPath\":\"spec.containers{ad}\"},\"note\":\"Back-off restarting failed container ad in pod ad-656c676d6f-524dq_default(91d2adcc-b386-4556-8b53-b88fcbfbab94)\",\"type\":\"Warning\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T23:00:46Z\",\"deprecatedLastTimestamp\":\"2025-07-03T23:01:00Z\",\"deprecatedCount\":2}}",
+    "host": "cribl-edge-4vdvw",
+    "__channel": "-1",
+    "type": "MODIFIED",
+    "object": {
+      "kind": "Event",
+      "apiVersion": "events.k8s.io/v1",
+      "metadata": {
+        "name": "ad-656c676d6f-524dq.184ee00bba9cf257",
+        "namespace": "default",
+        "uid": "18cadc08-6f4c-44ef-b074-a8261ca660cc",
+        "resourceVersion": "1193398",
+        "creationTimestamp": "2025-07-03T23:00:46Z",
+        "managedFields": [
+          {
+            "manager": "kubelet",
+            "operation": "Update",
+            "apiVersion": "v1",
+            "time": "2025-07-03T23:01:00Z",
+            "fieldsType": "FieldsV1",
+            "fieldsV1": {
+              "f:count": {},
+              "f:firstTimestamp": {},
+              "f:involvedObject": {},
+              "f:lastTimestamp": {},
+              "f:message": {},
+              "f:reason": {},
+              "f:reportingComponent": {},
+              "f:reportingInstance": {},
+              "f:source": {
+                "f:component": {},
+                "f:host": {}
+              },
+              "f:type": {}
+            }
+          }
+        ]
+      },
+      "eventTime": null,
+      "reportingController": "kubelet",
+      "reportingInstance": "minikube",
+      "reason": "BackOff",
+      "regarding": {
+        "kind": "Pod",
+        "namespace": "default",
+        "name": "ad-656c676d6f-524dq",
+        "uid": "91d2adcc-b386-4556-8b53-b88fcbfbab94",
+        "apiVersion": "v1",
+        "resourceVersion": "1193039",
+        "fieldPath": "spec.containers{ad}"
+      },
+      "note": "Back-off restarting failed container ad in pod ad-656c676d6f-524dq_default(91d2adcc-b386-4556-8b53-b88fcbfbab94)",
+      "type": "Warning",
+      "deprecatedSource": {
+        "component": "kubelet",
+        "host": "minikube"
+      },
+      "deprecatedFirstTimestamp": "2025-07-03T23:00:46Z",
+      "deprecatedLastTimestamp": "2025-07-03T23:01:00Z",
+      "deprecatedCount": 2
+    },
+    "__isBroken": true,
+    "__raw": "{\"type\":\"MODIFIED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"ad-656c676d6f-524dq.184ee00bba9cf257\",\"namespace\":\"default\",\"uid\":\"18cadc08-6f4c-44ef-b074-a8261ca660cc\",\"resourceVersion\":\"1193398\",\"creationTimestamp\":\"2025-07-03T23:00:46Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T23:01:00Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"BackOff\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"default\",\"name\":\"ad-656c676d6f-524dq\",\"uid\":\"91d2adcc-b386-4556-8b53-b88fcbfbab94\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1193039\",\"fieldPath\":\"spec.containers{ad}\"},\"note\":\"Back-off restarting failed container ad in pod ad-656c676d6f-524dq_default(91d2adcc-b386-4556-8b53-b88fcbfbab94)\",\"type\":\"Warning\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T23:00:46Z\",\"deprecatedLastTimestamp\":\"2025-07-03T23:01:00Z\",\"deprecatedCount\":2}}",
+    "_time": 1751583646,
+    "cribl_breaker": "k8s events",
+    "__inputId": "cribl_http:cribl-kubernetes.cribl-http-k8s",
+    "__cloned": true,
+    "__synthetic": true,
+    "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+    "__bytes": 4410,
+    "__forwardedAttrs": {
+      "__inputId": "kube_events:in_kube_events",
+      "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+      "cribl_breaker": "k8s events"
+    },
+    "__srcIpPort": "72.107.208.42:60930"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_raw": "{\"type\":\"MODIFIED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"opensearch-0.184ee00a305be83c\",\"namespace\":\"default\",\"uid\":\"0a13ce09-0e8a-4033-ac8f-8dba12734ad5\",\"resourceVersion\":\"1193404\",\"creationTimestamp\":\"2025-07-03T23:00:39Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T23:01:04Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"Pulled\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"default\",\"name\":\"opensearch-0\",\"uid\":\"51ca1289-fddd-4418-909d-e7cf711e193f\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1192933\",\"fieldPath\":\"spec.containers{opensearch}\"},\"note\":\"Container image \\\"opensearchproject/opensearch:2.19.0\\\" already present on machine\",\"type\":\"Normal\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T23:00:39Z\",\"deprecatedLastTimestamp\":\"2025-07-03T23:01:04Z\",\"deprecatedCount\":3}}",
+    "host": "cribl-edge-wdm59",
+    "__channel": "-1",
+    "type": "MODIFIED",
+    "object": {
+      "kind": "Event",
+      "apiVersion": "events.k8s.io/v1",
+      "metadata": {
+        "name": "opensearch-0.184ee00a305be83c",
+        "namespace": "default",
+        "uid": "0a13ce09-0e8a-4033-ac8f-8dba12734ad5",
+        "resourceVersion": "1193404",
+        "creationTimestamp": "2025-07-03T23:00:39Z",
+        "managedFields": [
+          {
+            "manager": "kubelet",
+            "operation": "Update",
+            "apiVersion": "v1",
+            "time": "2025-07-03T23:01:04Z",
+            "fieldsType": "FieldsV1",
+            "fieldsV1": {
+              "f:count": {},
+              "f:firstTimestamp": {},
+              "f:involvedObject": {},
+              "f:lastTimestamp": {},
+              "f:message": {},
+              "f:reason": {},
+              "f:reportingComponent": {},
+              "f:reportingInstance": {},
+              "f:source": {
+                "f:component": {},
+                "f:host": {}
+              },
+              "f:type": {}
+            }
+          }
+        ]
+      },
+      "eventTime": null,
+      "reportingController": "kubelet",
+      "reportingInstance": "minikube",
+      "reason": "Pulled",
+      "regarding": {
+        "kind": "Pod",
+        "namespace": "default",
+        "name": "opensearch-0",
+        "uid": "51ca1289-fddd-4418-909d-e7cf711e193f",
+        "apiVersion": "v1",
+        "resourceVersion": "1192933",
+        "fieldPath": "spec.containers{opensearch}"
+      },
+      "note": "Container image \"opensearchproject/opensearch:2.19.0\" already present on machine",
+      "type": "Normal",
+      "deprecatedSource": {
+        "component": "kubelet",
+        "host": "minikube"
+      },
+      "deprecatedFirstTimestamp": "2025-07-03T23:00:39Z",
+      "deprecatedLastTimestamp": "2025-07-03T23:01:04Z",
+      "deprecatedCount": 3
+    },
+    "__isBroken": true,
+    "__raw": "{\"type\":\"MODIFIED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"opensearch-0.184ee00a305be83c\",\"namespace\":\"default\",\"uid\":\"0a13ce09-0e8a-4033-ac8f-8dba12734ad5\",\"resourceVersion\":\"1193404\",\"creationTimestamp\":\"2025-07-03T23:00:39Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T23:01:04Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"Pulled\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"default\",\"name\":\"opensearch-0\",\"uid\":\"51ca1289-fddd-4418-909d-e7cf711e193f\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1192933\",\"fieldPath\":\"spec.containers{opensearch}\"},\"note\":\"Container image \\\"opensearchproject/opensearch:2.19.0\\\" already present on machine\",\"type\":\"Normal\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T23:00:39Z\",\"deprecatedLastTimestamp\":\"2025-07-03T23:01:04Z\",\"deprecatedCount\":3}}",
+    "_time": 1751583639,
+    "cribl_breaker": "k8s events",
+    "__inputId": "cribl_http:cribl-kubernetes.cribl-http-k8s",
+    "__cloned": true,
+    "__synthetic": true,
+    "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+    "__bytes": 4304,
+    "__forwardedAttrs": {
+      "__inputId": "kube_events:in_kube_events",
+      "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+      "cribl_breaker": "k8s events"
+    },
+    "__srcIpPort": "72.107.208.42:60804"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_raw": "{\"type\":\"MODIFIED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"opensearch-0.184ee00a49c31fce\",\"namespace\":\"default\",\"uid\":\"f37159f4-816e-44b3-af1a-0f016b0356de\",\"resourceVersion\":\"1193406\",\"creationTimestamp\":\"2025-07-03T23:00:39Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T23:01:04Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"Created\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"default\",\"name\":\"opensearch-0\",\"uid\":\"51ca1289-fddd-4418-909d-e7cf711e193f\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1192933\",\"fieldPath\":\"spec.containers{opensearch}\"},\"note\":\"Created container: opensearch\",\"type\":\"Normal\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T23:00:39Z\",\"deprecatedLastTimestamp\":\"2025-07-03T23:01:04Z\",\"deprecatedCount\":3}}",
+    "host": "cribl-edge-wdm59",
+    "__channel": "-1",
+    "type": "MODIFIED",
+    "object": {
+      "kind": "Event",
+      "apiVersion": "events.k8s.io/v1",
+      "metadata": {
+        "name": "opensearch-0.184ee00a49c31fce",
+        "namespace": "default",
+        "uid": "f37159f4-816e-44b3-af1a-0f016b0356de",
+        "resourceVersion": "1193406",
+        "creationTimestamp": "2025-07-03T23:00:39Z",
+        "managedFields": [
+          {
+            "manager": "kubelet",
+            "operation": "Update",
+            "apiVersion": "v1",
+            "time": "2025-07-03T23:01:04Z",
+            "fieldsType": "FieldsV1",
+            "fieldsV1": {
+              "f:count": {},
+              "f:firstTimestamp": {},
+              "f:involvedObject": {},
+              "f:lastTimestamp": {},
+              "f:message": {},
+              "f:reason": {},
+              "f:reportingComponent": {},
+              "f:reportingInstance": {},
+              "f:source": {
+                "f:component": {},
+                "f:host": {}
+              },
+              "f:type": {}
+            }
+          }
+        ]
+      },
+      "eventTime": null,
+      "reportingController": "kubelet",
+      "reportingInstance": "minikube",
+      "reason": "Created",
+      "regarding": {
+        "kind": "Pod",
+        "namespace": "default",
+        "name": "opensearch-0",
+        "uid": "51ca1289-fddd-4418-909d-e7cf711e193f",
+        "apiVersion": "v1",
+        "resourceVersion": "1192933",
+        "fieldPath": "spec.containers{opensearch}"
+      },
+      "note": "Created container: opensearch",
+      "type": "Normal",
+      "deprecatedSource": {
+        "component": "kubelet",
+        "host": "minikube"
+      },
+      "deprecatedFirstTimestamp": "2025-07-03T23:00:39Z",
+      "deprecatedLastTimestamp": "2025-07-03T23:01:04Z",
+      "deprecatedCount": 3
+    },
+    "__isBroken": true,
+    "__raw": "{\"type\":\"MODIFIED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"opensearch-0.184ee00a49c31fce\",\"namespace\":\"default\",\"uid\":\"f37159f4-816e-44b3-af1a-0f016b0356de\",\"resourceVersion\":\"1193406\",\"creationTimestamp\":\"2025-07-03T23:00:39Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T23:01:04Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"Created\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"default\",\"name\":\"opensearch-0\",\"uid\":\"51ca1289-fddd-4418-909d-e7cf711e193f\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1192933\",\"fieldPath\":\"spec.containers{opensearch}\"},\"note\":\"Created container: opensearch\",\"type\":\"Normal\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T23:00:39Z\",\"deprecatedLastTimestamp\":\"2025-07-03T23:01:04Z\",\"deprecatedCount\":3}}",
+    "_time": 1751583639,
+    "cribl_breaker": "k8s events",
+    "__inputId": "cribl_http:cribl-kubernetes.cribl-http-k8s",
+    "__cloned": true,
+    "__synthetic": true,
+    "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+    "__bytes": 4140,
+    "__forwardedAttrs": {
+      "__inputId": "kube_events:in_kube_events",
+      "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+      "cribl_breaker": "k8s events"
+    },
+    "__srcIpPort": "72.107.208.42:60804"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_raw": "{\"type\":\"MODIFIED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"opensearch-0.184ee00a305be83c\",\"namespace\":\"default\",\"uid\":\"0a13ce09-0e8a-4033-ac8f-8dba12734ad5\",\"resourceVersion\":\"1193404\",\"creationTimestamp\":\"2025-07-03T23:00:39Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T23:01:04Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"Pulled\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"default\",\"name\":\"opensearch-0\",\"uid\":\"51ca1289-fddd-4418-909d-e7cf711e193f\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1192933\",\"fieldPath\":\"spec.containers{opensearch}\"},\"note\":\"Container image \\\"opensearchproject/opensearch:2.19.0\\\" already present on machine\",\"type\":\"Normal\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T23:00:39Z\",\"deprecatedLastTimestamp\":\"2025-07-03T23:01:04Z\",\"deprecatedCount\":3}}",
+    "host": "cribl-edge-4vdvw",
+    "__channel": "-1",
+    "type": "MODIFIED",
+    "object": {
+      "kind": "Event",
+      "apiVersion": "events.k8s.io/v1",
+      "metadata": {
+        "name": "opensearch-0.184ee00a305be83c",
+        "namespace": "default",
+        "uid": "0a13ce09-0e8a-4033-ac8f-8dba12734ad5",
+        "resourceVersion": "1193404",
+        "creationTimestamp": "2025-07-03T23:00:39Z",
+        "managedFields": [
+          {
+            "manager": "kubelet",
+            "operation": "Update",
+            "apiVersion": "v1",
+            "time": "2025-07-03T23:01:04Z",
+            "fieldsType": "FieldsV1",
+            "fieldsV1": {
+              "f:count": {},
+              "f:firstTimestamp": {},
+              "f:involvedObject": {},
+              "f:lastTimestamp": {},
+              "f:message": {},
+              "f:reason": {},
+              "f:reportingComponent": {},
+              "f:reportingInstance": {},
+              "f:source": {
+                "f:component": {},
+                "f:host": {}
+              },
+              "f:type": {}
+            }
+          }
+        ]
+      },
+      "eventTime": null,
+      "reportingController": "kubelet",
+      "reportingInstance": "minikube",
+      "reason": "Pulled",
+      "regarding": {
+        "kind": "Pod",
+        "namespace": "default",
+        "name": "opensearch-0",
+        "uid": "51ca1289-fddd-4418-909d-e7cf711e193f",
+        "apiVersion": "v1",
+        "resourceVersion": "1192933",
+        "fieldPath": "spec.containers{opensearch}"
+      },
+      "note": "Container image \"opensearchproject/opensearch:2.19.0\" already present on machine",
+      "type": "Normal",
+      "deprecatedSource": {
+        "component": "kubelet",
+        "host": "minikube"
+      },
+      "deprecatedFirstTimestamp": "2025-07-03T23:00:39Z",
+      "deprecatedLastTimestamp": "2025-07-03T23:01:04Z",
+      "deprecatedCount": 3
+    },
+    "__isBroken": true,
+    "__raw": "{\"type\":\"MODIFIED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"opensearch-0.184ee00a305be83c\",\"namespace\":\"default\",\"uid\":\"0a13ce09-0e8a-4033-ac8f-8dba12734ad5\",\"resourceVersion\":\"1193404\",\"creationTimestamp\":\"2025-07-03T23:00:39Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T23:01:04Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"Pulled\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"default\",\"name\":\"opensearch-0\",\"uid\":\"51ca1289-fddd-4418-909d-e7cf711e193f\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1192933\",\"fieldPath\":\"spec.containers{opensearch}\"},\"note\":\"Container image \\\"opensearchproject/opensearch:2.19.0\\\" already present on machine\",\"type\":\"Normal\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T23:00:39Z\",\"deprecatedLastTimestamp\":\"2025-07-03T23:01:04Z\",\"deprecatedCount\":3}}",
+    "_time": 1751583639,
+    "cribl_breaker": "k8s events",
+    "__inputId": "cribl_http:cribl-kubernetes.cribl-http-k8s",
+    "__cloned": true,
+    "__synthetic": true,
+    "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+    "__bytes": 4304,
+    "__forwardedAttrs": {
+      "__inputId": "kube_events:in_kube_events",
+      "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+      "cribl_breaker": "k8s events"
+    },
+    "__srcIpPort": "72.107.208.42:60930"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_raw": "{\"type\":\"MODIFIED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"opensearch-0.184ee00a49c31fce\",\"namespace\":\"default\",\"uid\":\"f37159f4-816e-44b3-af1a-0f016b0356de\",\"resourceVersion\":\"1193406\",\"creationTimestamp\":\"2025-07-03T23:00:39Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T23:01:04Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"Created\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"default\",\"name\":\"opensearch-0\",\"uid\":\"51ca1289-fddd-4418-909d-e7cf711e193f\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1192933\",\"fieldPath\":\"spec.containers{opensearch}\"},\"note\":\"Created container: opensearch\",\"type\":\"Normal\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T23:00:39Z\",\"deprecatedLastTimestamp\":\"2025-07-03T23:01:04Z\",\"deprecatedCount\":3}}",
+    "host": "cribl-edge-4vdvw",
+    "__channel": "-1",
+    "type": "MODIFIED",
+    "object": {
+      "kind": "Event",
+      "apiVersion": "events.k8s.io/v1",
+      "metadata": {
+        "name": "opensearch-0.184ee00a49c31fce",
+        "namespace": "default",
+        "uid": "f37159f4-816e-44b3-af1a-0f016b0356de",
+        "resourceVersion": "1193406",
+        "creationTimestamp": "2025-07-03T23:00:39Z",
+        "managedFields": [
+          {
+            "manager": "kubelet",
+            "operation": "Update",
+            "apiVersion": "v1",
+            "time": "2025-07-03T23:01:04Z",
+            "fieldsType": "FieldsV1",
+            "fieldsV1": {
+              "f:count": {},
+              "f:firstTimestamp": {},
+              "f:involvedObject": {},
+              "f:lastTimestamp": {},
+              "f:message": {},
+              "f:reason": {},
+              "f:reportingComponent": {},
+              "f:reportingInstance": {},
+              "f:source": {
+                "f:component": {},
+                "f:host": {}
+              },
+              "f:type": {}
+            }
+          }
+        ]
+      },
+      "eventTime": null,
+      "reportingController": "kubelet",
+      "reportingInstance": "minikube",
+      "reason": "Created",
+      "regarding": {
+        "kind": "Pod",
+        "namespace": "default",
+        "name": "opensearch-0",
+        "uid": "51ca1289-fddd-4418-909d-e7cf711e193f",
+        "apiVersion": "v1",
+        "resourceVersion": "1192933",
+        "fieldPath": "spec.containers{opensearch}"
+      },
+      "note": "Created container: opensearch",
+      "type": "Normal",
+      "deprecatedSource": {
+        "component": "kubelet",
+        "host": "minikube"
+      },
+      "deprecatedFirstTimestamp": "2025-07-03T23:00:39Z",
+      "deprecatedLastTimestamp": "2025-07-03T23:01:04Z",
+      "deprecatedCount": 3
+    },
+    "__isBroken": true,
+    "__raw": "{\"type\":\"MODIFIED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"opensearch-0.184ee00a49c31fce\",\"namespace\":\"default\",\"uid\":\"f37159f4-816e-44b3-af1a-0f016b0356de\",\"resourceVersion\":\"1193406\",\"creationTimestamp\":\"2025-07-03T23:00:39Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T23:01:04Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"Created\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"default\",\"name\":\"opensearch-0\",\"uid\":\"51ca1289-fddd-4418-909d-e7cf711e193f\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1192933\",\"fieldPath\":\"spec.containers{opensearch}\"},\"note\":\"Created container: opensearch\",\"type\":\"Normal\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T23:00:39Z\",\"deprecatedLastTimestamp\":\"2025-07-03T23:01:04Z\",\"deprecatedCount\":3}}",
+    "_time": 1751583639,
+    "cribl_breaker": "k8s events",
+    "__inputId": "cribl_http:cribl-kubernetes.cribl-http-k8s",
+    "__cloned": true,
+    "__synthetic": true,
+    "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+    "__bytes": 4140,
+    "__forwardedAttrs": {
+      "__inputId": "kube_events:in_kube_events",
+      "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+      "cribl_breaker": "k8s events"
+    },
+    "__srcIpPort": "72.107.208.42:60930"
+  }
+]

@@ -1,0 +1,80 @@
+{
+  "key": "palo_alto_system",
+  "sourcetype": "palo_alto_system",
+  "classUid": 6003,
+  "destFormat": "ocsf#cloud_audit",
+  "source": "generic",
+  "vendorNames": [
+    "AWS"
+  ],
+  "provenance": {
+    "samplePack": "fallback",
+    "sampleName": "palo_alto_system_fallback",
+    "tier": "reference",
+    "sampleEvents": 6,
+    "emulated": "golden OCSF pipeline, offline emulation of scripts/build-source-ocsf-samples.mjs",
+    "rejected": []
+  },
+  "events": [
+    {
+      "cloud": {
+        "provider": "AWS"
+      },
+      "metadata": {
+        "product": {
+          "name": "CloudTrail",
+          "vendor_name": "AWS"
+        },
+        "version": "1.9.0"
+      },
+      "class_uid": 6003,
+      "category_uid": 6,
+      "activity_id": 0,
+      "type_uid": 600300,
+      "severity_id": 1,
+      "status_id": 0,
+      "status": "Success",
+      "time": 1789452862000
+    },
+    {
+      "cloud": {
+        "provider": "AWS"
+      },
+      "metadata": {
+        "product": {
+          "name": "CloudTrail",
+          "vendor_name": "AWS"
+        },
+        "version": "1.9.0"
+      },
+      "class_uid": 6003,
+      "category_uid": 6,
+      "activity_id": 0,
+      "type_uid": 600300,
+      "severity_id": 1,
+      "status_id": 0,
+      "status": "Success",
+      "time": 1789452903000
+    },
+    {
+      "cloud": {
+        "provider": "AWS"
+      },
+      "metadata": {
+        "product": {
+          "name": "CloudTrail",
+          "vendor_name": "AWS"
+        },
+        "version": "1.9.0"
+      },
+      "class_uid": 6003,
+      "category_uid": 6,
+      "activity_id": 0,
+      "type_uid": 600300,
+      "severity_id": 1,
+      "status_id": 0,
+      "status": "Success",
+      "time": 1789453241000
+    }
+  ]
+}

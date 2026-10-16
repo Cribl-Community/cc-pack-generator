@@ -1,0 +1,46 @@
+[
+  {
+    "_raw": "{\n      \"customerId\": \"04cdmbi6\",\n      \"alertId\": \"b23a5192-bc38-40ba-b21d-3dbff83fc2e9\",\n      \"createTime\": \"2025-10-22T21:34:21.382141Z\",\n      \"startTime\": \"2025-10-22T21:34:16.623646Z\",\n      \"endTime\": \"2025-10-22T21:34:16.623646Z\",\n      \"type\": \"Data Loss Prevention\",\n      \"source\": \"Data Loss Prevention\",\n      \"data\": {\n        \"@type\": \"type.googleapis.com/google.apps.alertcenter.type.DlpRuleViolation\",\n        \"ruleViolationInfo\": {\n          \"ruleInfo\": {\n            \"resourceName\": \"policies/akajj264ao7ph26ida\",\n            \"displayName\": \"TEST DLP RULE\"\n          },\n          \"triggeringUserEmail\": \"user@acmecorp.com\",\n          \"recipients\": [\n            \"test-user@acmecorp.com\"\n          ],\n          \"resourceInfo\": {\n            \"resourceTitle\": \"DLPTEST\"\n          },\n          \"triggeredActionTypes\": [\n            \"ALERT\"\n          ]\n        }\n      },\n      \"securityInvestigationToolLink\": \"admin.google.com/ac/ac/investigate?alert=CiRiMjNhNTE5Mi1iYzM4LTQwYmEtYjIxZC0zZGJmZjgzZmMyZTk\",\n      \"metadata\": {\n        \"customerId\": \"04cdmbi6\",\n        \"alertId\": \"b23a5192-bc38-40ba-b21d-3dbff83fc2e9\",\n        \"status\": \"IN_PROGRESS\",\n        \"assignee\": \"user@acmecorp.com\",\n        \"updateTime\": \"2025-10-22T21:48:14.776095Z\",\n        \"severity\": \"HIGH\",\n        \"etag\": \"lJn0Fv23gyI=\"\n      },\n      \"updateTime\": \"2025-10-22T21:34:21.382141Z\",\n      \"etag\": \"ag51FEp5Xr8=\"\n    }",
+    "host": "ip-10-255-9-252",
+    "source": "https://alertcenter.googleapis.com/v1beta1/alerts",
+    "_time": 1761168861.382,
+    "cribl_breaker": [
+      "google_json:gws_alerts",
+      "ndjson"
+    ],
+    "sourcetype": "gws:alerts"
+  },
+  {
+    "_raw": "{\n      \"customerId\": \"04cdmbi6\",\n      \"alertId\": \"cb279aae-7c02-488a-8800-88ef0d6467f4\",\n      \"createTime\": \"2025-10-22T21:34:03.311880Z\",\n      \"startTime\": \"2025-10-22T21:34:02.930Z\",\n      \"endTime\": \"2025-10-22T21:34:02.930Z\",\n      \"type\": \"Data Loss Prevention\",\n      \"source\": \"Data Loss Prevention\",\n      \"data\": {\n        \"@type\": \"type.googleapis.com/google.apps.alertcenter.type.DlpRuleViolation\",\n        \"ruleViolationInfo\": {\n          \"ruleInfo\": {\n            \"resourceName\": \"policies/akajj264ao7ph26ida\",\n            \"displayName\": \"TEST DLP RULE\"\n          },\n          \"triggeringUserEmail\": \"user@acmecorp.com\",\n          \"recipients\": [\n            \"test-user@acmecorp.com\"\n          ],\n          \"resourceInfo\": {\n            \"resourceTitle\": \"DLPTEST\"\n          },\n          \"triggeredActionTypes\": [\n            \"ALERT\"\n          ]\n        }\n      },\n      \"securityInvestigationToolLink\": \"admin.google.com/ac/ac/investigate?alert=CiRjYjI3OWFhZS03YzAyLTQ4OGEtODgwMC04OGVmMGQ2NDY3ZjQ\",\n      \"metadata\": {\n        \"customerId\": \"04cdmbi6\",\n        \"alertId\": \"cb279aae-7c02-488a-8800-88ef0d6467f4\",\n        \"status\": \"NOT_STARTED\",\n        \"updateTime\": \"2025-10-22T21:34:03.311880Z\",\n        \"severity\": \"HIGH\",\n        \"etag\": \"_D7U7UxbQLY=\"\n      },\n      \"updateTime\": \"2025-10-22T21:34:03.311880Z\",\n      \"etag\": \"_D7U7UxbQLY=\"\n    }",
+    "host": "ip-10-255-9-252",
+    "source": "https://alertcenter.googleapis.com/v1beta1/alerts",
+    "_time": 1761168843.311,
+    "cribl_breaker": [
+      "google_json:gws_alerts",
+      "ndjson"
+    ],
+    "sourcetype": "gws:alerts"
+  },
+  {
+    "_raw": "{\n      \"customerId\": \"04cdmbi6\",\n      \"alertId\": \"b7e42ace-01d7-449c-97ed-0f8b6f671837\",\n      \"createTime\": \"2025-10-22T21:34:01.351827Z\",\n      \"startTime\": \"2025-10-22T21:34:00.730Z\",\n      \"endTime\": \"2025-10-22T21:34:00.730Z\",\n      \"type\": \"Data Loss Prevention\",\n      \"source\": \"Data Loss Prevention\",\n      \"data\": {\n        \"@type\": \"type.googleapis.com/google.apps.alertcenter.type.DlpRuleViolation\",\n        \"ruleViolationInfo\": {\n          \"ruleInfo\": {\n            \"resourceName\": \"policies/akajj264ao7ph26ida\",\n            \"displayName\": \"TEST DLP RULE\"\n          },\n          \"triggeringUserEmail\": \"user@acmecorp.com\",\n          \"resourceInfo\": {\n            \"resourceTitle\": \"DLPTEST\"\n          },\n          \"triggeredActionTypes\": [\n            \"ALERT\"\n          ]\n        }\n      },\n      \"securityInvestigationToolLink\": \"admin.google.com/ac/ac/investigate?alert=CiRiN2U0MmFjZS0wMWQ3LTQ0OWMtOTdlZC0wZjhiNmY2NzE4Mzc\",\n      \"metadata\": {\n        \"customerId\": \"04cdmbi6\",\n        \"alertId\": \"b7e42ace-01d7-449c-97ed-0f8b6f671837\",\n        \"status\": \"NOT_STARTED\",\n        \"updateTime\": \"2025-10-22T21:34:01.351827Z\",\n        \"severity\": \"HIGH\",\n        \"etag\": \"M_U3bNF09Bo=\"\n      },\n      \"updateTime\": \"2025-10-22T21:34:01.351827Z\",\n      \"etag\": \"M_U3bNF09Bo=\"\n    }",
+    "host": "ip-10-255-9-252",
+    "source": "https://alertcenter.googleapis.com/v1beta1/alerts",
+    "_time": 1761168841.351,
+    "cribl_breaker": [
+      "google_json:gws_alerts",
+      "ndjson"
+    ],
+    "sourcetype": "gws:alerts"
+  },
+  {
+    "_raw": "{\n      \"customerId\": \"04cdmbi6\",\n      \"alertId\": \"46864a2e-a5e5-4ffe-81af-ab03c40d6db7\",\n      \"createTime\": \"2024-05-30T16:52:19.826976Z\",\n      \"startTime\": \"2024-05-30T16:52:15.752133Z\",\n      \"endTime\": \"2024-05-30T16:52:15.752133Z\",\n      \"type\": \"User suspended\",\n      \"source\": \"Google identity\",\n      \"data\": {\n        \"@type\": \"type.googleapis.com/google.apps.alertcenter.type.AccountWarning\",\n        \"email\": \"solutions@acmecorp.com\",\n        \"loginDetails\": {\n          \"ipAddress\": \"73.169.53.107\"\n        }\n      },\n      \"securityInvestigationToolLink\": \"admin.google.com/ac/ac/investigate?alert=CiQ0Njg2NGEyZS1hNWU1LTRmZmUtODFhZi1hYjAzYzQwZDZkYjc\",\n      \"metadata\": {\n        \"customerId\": \"04cdmbi6\",\n        \"alertId\": \"46864a2e-a5e5-4ffe-81af-ab03c40d6db7\",\n        \"status\": \"NOT_STARTED\",\n        \"assignee\": \"user@acmecorp.com\",\n        \"updateTime\": \"2025-10-22T21:24:16.261933Z\",\n        \"severity\": \"MEDIUM\",\n        \"etag\": \"pCNXGx058PQ=\"\n      },\n      \"updateTime\": \"2024-05-30T16:52:19.826976Z\",\n      \"etag\": \"avf4heaf6ek=\"\n    }",
+    "host": "ip-10-255-9-252",
+    "source": "https://alertcenter.googleapis.com/v1beta1/alerts",
+    "_time": 1717087939.826,
+    "cribl_breaker": [
+      "google_json:gws_alerts",
+      "ndjson"
+    ],
+    "sourcetype": "gws:alerts"
+  }
+]

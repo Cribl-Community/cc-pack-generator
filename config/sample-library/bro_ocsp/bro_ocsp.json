@@ -1,0 +1,122 @@
+[
+  {
+    "_raw": "#separator \\x09",
+    "_time": 1521911723.472729,
+    "sourcetype": "bro_ocsp",
+    "source": "/opt/zeek/logs/current/ocsp.log"
+  },
+  {
+    "_raw": "#set_separator\t,",
+    "_time": 1521911723.472729,
+    "sourcetype": "bro_ocsp",
+    "source": "/opt/zeek/logs/current/ocsp.log"
+  },
+  {
+    "_raw": "#empty_field\t(empty)",
+    "_time": 1521911723.472729,
+    "sourcetype": "bro_ocsp",
+    "source": "/opt/zeek/logs/current/ocsp.log"
+  },
+  {
+    "_raw": "#unset_field\t-",
+    "_time": 1521911723.472729,
+    "sourcetype": "bro_ocsp",
+    "source": "/opt/zeek/logs/current/ocsp.log"
+  },
+  {
+    "_raw": "#path\tocsp",
+    "_time": 1521911723.472729,
+    "sourcetype": "bro_ocsp",
+    "source": "/opt/zeek/logs/current/ocsp.log"
+  },
+  {
+    "_raw": "#open\t2024-04-12-19-29-14",
+    "_time": 1521911723.472729,
+    "sourcetype": "bro_ocsp",
+    "source": "/opt/zeek/logs/current/ocsp.log"
+  },
+  {
+    "_raw": "#fields\tts\tid\thashAlgorithm\tissuerNameHash\tissuerKeyHash\tserialNumber\tcertStatus\trevoketime\trevokereason\tthisUpdate\tnextUpdate",
+    "_time": 1521911723.472729,
+    "sourcetype": "bro_ocsp",
+    "source": "/opt/zeek/logs/current/ocsp.log"
+  },
+  {
+    "_raw": "#types\ttime\tstring\tstring\tstring\tstring\tstring\tstring\ttime\tstring\ttime\ttime",
+    "_time": 1521911723.472729,
+    "sourcetype": "bro_ocsp",
+    "source": "/opt/zeek/logs/current/ocsp.log"
+  },
+  {
+    "_raw": "1521911723.472729\tFP4AUi1IYzOFBH9Qag\tsha1\t105FA67A80089DB5279F35CE830B43889EA3C70D\t0F80611C823161D52F28E78D4638B42CE1C6D9E2\t017E45A31AA50BC35053BC50F9B69BAD\tgood\t-\t-\t1521891993.000000\t1522494093.000000",
+    "_time": 1521911723.472729,
+    "sourcetype": "bro_ocsp",
+    "source": "/opt/zeek/logs/current/ocsp.log"
+  },
+  {
+    "_raw": "1521911724.179261\tFMsOOVOOlp9H64Luc\tsha1\t49F4BD8A18BF760698C5DE402D683B716AE4E686\t3DD350A5D6A0ADEEF34A600A65D321D4F8F8D60F\t08B4D5B90A94901DB83D5F8295B89CF9\tgood\t-\t-\t1521602112.000000\t1522204212.000000",
+    "_time": 1521911724.179261,
+    "sourcetype": "bro_ocsp",
+    "source": "/opt/zeek/logs/current/ocsp.log"
+  },
+  {
+    "_raw": "1521911725.466132\tFT6WN2nzrnjJRy5R1\tsha1\tF6EDB0636232819A35F68D75A09D024A11AA6CAD\t77C2B8509A677676B12DC286D083A07EA67EBA4B\t0F663A6A364C36BD\tgood\t-\t-\t1521899244.000000\t1522504044.000000",
+    "_time": 1521911725.466132,
+    "sourcetype": "bro_ocsp",
+    "source": "/opt/zeek/logs/current/ocsp.log"
+  },
+  {
+    "_raw": "1521911742.429955\tFSPMza4FB1NlrbtPKi\tsha1\tCF26F518FAC97E8F8CB342E01C2F6A109E8E5F0A\t5168FF90AF0207753CCCD9656462A212B859723B\t0AAD00F9B5C37AF9BA636F3E3DC3EA76\tgood\t-\t-\t1521800585.000000\t1522402685.000000",
+    "_time": 1521911742.429955,
+    "sourcetype": "bro_ocsp",
+    "source": "/opt/zeek/logs/current/ocsp.log"
+  },
+  {
+    "_raw": "1521911745.420521\tFgv5Y814wg7wdgk1lk\tsha1\t6FF4684D4312D24862819CC02B3D472C1D8A2FA6\tC4A7B1A47B2C71FADBE14B9075FFC41560858910\t0A0141420000015385736A0B85ECA708\tgood\t-\t-\t1521673650.000000\t1522278450.000000",
+    "_time": 1521911745.420521,
+    "sourcetype": "bro_ocsp",
+    "source": "/opt/zeek/logs/current/ocsp.log"
+  },
+  {
+    "_raw": "1521911745.592499\tFNbgKw1ESLAUOVanue\tsha1\t7EE66AE7729AB3FCF8A220646C16A12D6071085D\tA84A6A63047DDDBAE6D139B7A64565EFF3A8ECA1\t043A77F4DE8953F26873726E3C6AAEC2725A\tgood\t-\t-\t1521705600.000000\t1522310400.000000",
+    "_time": 1521911745.592499,
+    "sourcetype": "bro_ocsp",
+    "source": "/opt/zeek/logs/current/ocsp.log"
+  },
+  {
+    "_raw": "1521911746.106044\tFxZYGl1D6Zhw6SZj9b\tsha1\t12EADF46CC0880387360B65A691601CC0CB5E9E2\tA92B87E1CE24473B1BBFCF853702559D0D9458E6\t0DF92C867B618B45FA911CF5\tgood\t-\t-\t1521764645.000000\t1522110245.000000",
+    "_time": 1521911746.106044,
+    "sourcetype": "bro_ocsp",
+    "source": "/opt/zeek/logs/current/ocsp.log"
+  },
+  {
+    "_raw": "1521911748.654446\tFub4aR23yQLEJMYN4\tsha1\t7D14CA1E3E08269E1A333D0E0E6FF31361215EEA\t25F08AE14B7AD901950AEDC653F18C781FD9F3F8\t3ED5D5D0204AF3787CBBCBA45C757040\tgood\t-\t-\t1521599157.000000\t1522203957.000000",
+    "_time": 1521911748.654446,
+    "sourcetype": "bro_ocsp",
+    "source": "/opt/zeek/logs/current/ocsp.log"
+  },
+  {
+    "_raw": "1521911753.878307\tFanp6c4tP39pykqTDk\tsha1\tA87E303106E4E88565CFE952598FA6DA7C00532F\t246E2B2DD06A925151256901AA9A47A689E74020\t0295297988AA3A16DAF8B00CA8225CE8\tgood\t-\t-\t1521881460.000000\t1522483560.000000",
+    "_time": 1521911753.878307,
+    "sourcetype": "bro_ocsp",
+    "source": "/opt/zeek/logs/current/ocsp.log"
+  },
+  {
+    "_raw": "1521911757.320760\tFSpdMQ1vqhR0h6c5ll\tsha1\tB9E9B287028503F8ECA5FB42E13E0F49C72426E2\t7FD365A7C2DDECBBF03009F34339FA02AF333133\t3D78D7F9764960B2617DF4F01ECA862A\tgood\t-\t-\t1521725162.000000\t1522329962.000000",
+    "_time": 1521911757.32076,
+    "sourcetype": "bro_ocsp",
+    "source": "/opt/zeek/logs/current/ocsp.log"
+  },
+  {
+    "_raw": "1521911757.405746\tF4FTX33HRqxdrUOaT4\tsha1\t1EE8B34325DAB1F893A9EE15604DE686149FC242\t963B53F0793397AF7D83EF2E2BCCCAB7861E7266\t5BEF28E699E8A5106BEC2D1AF2EBAEBC\tgood\t-\t-\t1521878835.000000\t1522483635.000000",
+    "_time": 1521911757.405746,
+    "sourcetype": "bro_ocsp",
+    "source": "/opt/zeek/logs/current/ocsp.log"
+  },
+  {
+    "_raw": "1521911763.475910\tFG0kMf3CKxB5vIH9m7\tsha1\t33F5AAC61D66E7055D03173A4D1F3E187138850D\t59A4660652A07B95923CA394072796745BF93DD0\t0528E3FA1CFDD273EC82700FA25919C2\tgood\t-\t-\t1521900086.000000\t1522502186.000000",
+    "_time": 1521911763.47591,
+    "sourcetype": "bro_ocsp",
+    "source": "/opt/zeek/logs/current/ocsp.log"
+  }
+]

@@ -1,0 +1,76 @@
+{
+  "key": "linux_audit",
+  "sourcetype": "linux_audit",
+  "classUid": 1007,
+  "destFormat": "ocsf#endpoint",
+  "source": "linux",
+  "vendorNames": [
+    "Microsoft"
+  ],
+  "provenance": {
+    "samplePack": "vendor-samples",
+    "sampleName": "linux_audit_vendor_sample",
+    "tier": "reference",
+    "sampleEvents": 20,
+    "emulated": "golden OCSF pipeline, offline emulation of scripts/build-source-ocsf-samples.mjs",
+    "rejected": []
+  },
+  "events": [
+    {
+      "metadata": {
+        "product": {
+          "name": "Sysmon",
+          "vendor_name": "Microsoft"
+        },
+        "version": "1.9.0"
+      },
+      "class_uid": 1007,
+      "category_uid": 1,
+      "activity_id": 1,
+      "type_uid": 100701,
+      "severity_id": 1,
+      "time": 1485893834891
+    },
+    {
+      "metadata": {
+        "product": {
+          "name": "Sysmon",
+          "vendor_name": "Microsoft"
+        },
+        "version": "1.9.0"
+      },
+      "class_uid": 1007,
+      "category_uid": 1,
+      "activity_id": 1,
+      "type_uid": 100701,
+      "severity_id": 1,
+      "time": 1643025668518
+    },
+    {
+      "process": {
+        "file": {
+          "path": "/usr/sbin/groupadd"
+        },
+        "name": "/usr/sbin/groupadd",
+        "cmd_line": "/usr/sbin/groupadd",
+        "pid": 2940
+      },
+      "device": {
+        "hostname": "ubuntu-bionic"
+      },
+      "metadata": {
+        "product": {
+          "name": "Sysmon",
+          "vendor_name": "Microsoft"
+        },
+        "version": "1.9.0"
+      },
+      "class_uid": 1007,
+      "category_uid": 1,
+      "activity_id": 1,
+      "type_uid": 100701,
+      "severity_id": 1,
+      "time": 1610903553686
+    }
+  ]
+}

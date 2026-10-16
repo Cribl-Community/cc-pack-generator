@@ -1,0 +1,44 @@
+{
+  "classUid": 1007,
+  "className": "Process Activity",
+  "events": [
+    {
+      "class_uid": 1007,
+      "class_name": "Process Activity",
+      "category_uid": 1,
+      "category_name": "System Activity",
+      "activity_id": 1,
+      "activity_name": "Launch",
+      "type_uid": 100701,
+      "severity_id": 1,
+      "time": 1737021600000,
+      "process": {
+        "name": "svchost.exe",
+        "cmd_line": "svchost.exe -k netsvcs",
+        "pid": 1044
+      },
+      "actor": { "user": { "name": "NT AUTHORITY\\SYSTEM" } },
+      "device": { "hostname": "corp-ws-01" },
+      "metadata": { "version": "1.3.0", "product": { "name": "Microsoft Defender for Endpoint", "vendor_name": "Microsoft" } }
+    },
+    {
+      "class_uid": 1007,
+      "class_name": "Process Activity",
+      "category_uid": 1,
+      "category_name": "System Activity",
+      "activity_id": 1,
+      "activity_name": "Launch",
+      "type_uid": 100701,
+      "severity_id": 1,
+      "time": 1737021610000,
+      "process": {
+        "name": "custom_internal_tool.exe",
+        "cmd_line": "custom_internal_tool.exe --sync",
+        "pid": 5521
+      },
+      "actor": { "user": { "name": "CORP\\jdoe" } },
+      "device": { "hostname": "corp-ws-02" },
+      "metadata": { "version": "1.3.0", "product": { "name": "Microsoft Defender for Endpoint", "vendor_name": "Microsoft" } }
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "classUid": 4003,
+  "className": "DNS Activity",
+  "events": [
+    {
+      "class_uid": 4003,
+      "class_name": "DNS Activity",
+      "category_uid": 4,
+      "category_name": "Network Activity",
+      "activity_id": 1,
+      "activity_name": "Query",
+      "type_uid": 400301,
+      "severity_id": 1,
+      "status": "Success",
+      "status_id": 1,
+      "time": 1564734845000,
+      "duration": 180,
+      "connection_info": { "protocol_num": 17, "protocol_name": "UDP" },
+      "src_endpoint": { "ip": "10.1.1.10", "port": 64374, "interface": { "name": "internal" } },
+      "dst_endpoint": {
+        "ip": "8.8.8.8",
+        "port": 53,
+        "interface": { "name": "wan1" },
+        "geo": { "country": "United States" }
+      },
+      "metadata": {
+        "version": "1.3.0",
+        "product": { "name": "FortiGate", "vendor_name": "Fortinet" },
+        "log_name": "traffic"
+      },
+      "unmapped": {
+        "logid": "0000000013",
+        "service": "DNS",
+        "app": "DNS",
+        "sessionid": "593763"
+      }
+    },
+    {
+      "class_uid": 4003,
+      "class_name": "DNS Activity",
+      "category_uid": 4,
+      "category_name": "Network Activity",
+      "activity_id": 1,
+      "activity_name": "Query",
+      "type_uid": 400301,
+      "severity_id": 1,
+      "status": "Success",
+      "status_id": 1,
+      "time": 1737021600000,
+      "query": { "hostname": "google.com", "type": "A" },
+      "src_endpoint": { "ip": "192.168.1.50", "port": 52345 },
+      "dst_endpoint": { "ip": "192.168.1.1", "port": 53 },
+      "device": { "hostname": "corp-fw-01" },
+      "metadata": { "version": "1.3.0", "product": { "name": "Zeek", "vendor_name": "Zeek" } }
+    },
+    {
+      "class_uid": 4003,
+      "class_name": "DNS Activity",
+      "category_uid": 4,
+      "category_name": "Network Activity",
+      "activity_id": 1,
+      "activity_name": "Query",
+      "type_uid": 400301,
+      "severity_id": 1,
+      "status": "Success",
+      "status_id": 1,
+      "time": 1737021605000,
+      "query": { "hostname": "google.com", "type": "A" },
+      "src_endpoint": { "ip": "192.168.1.51", "port": 52346 },
+      "dst_endpoint": { "ip": "192.168.1.1", "port": 53 },
+      "device": { "hostname": "corp-fw-01" },
+      "metadata": { "version": "1.3.0", "product": { "name": "Zeek", "vendor_name": "Zeek" } }
+    },
+    {
+      "class_uid": 4003,
+      "class_name": "DNS Activity",
+      "category_uid": 4,
+      "category_name": "Network Activity",
+      "activity_id": 1,
+      "activity_name": "Query",
+      "type_uid": 400301,
+      "severity_id": 1,
+      "status": "Success",
+      "status_id": 1,
+      "time": 1737021610000,
+      "query": { "hostname": "www.acmecorp-internal.example", "type": "A" },
+      "src_endpoint": { "ip": "192.168.1.52", "port": 52347 },
+      "dst_endpoint": { "ip": "192.168.1.1", "port": 53 },
+      "device": { "hostname": "corp-fw-01" },
+      "metadata": { "version": "1.3.0", "product": { "name": "Zeek", "vendor_name": "Zeek" } }
+    }
+  ]
+}

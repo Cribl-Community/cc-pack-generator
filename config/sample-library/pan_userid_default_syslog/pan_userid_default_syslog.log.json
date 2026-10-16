@@ -1,0 +1,15 @@
+[
+  {
+    "_raw": "Oct 13 01:23:58 gke-standard-cluster-2-pool-1-6ea9f13a-g2z7 498 <142>1 2020-10-13T01:23:58.167Z stream-logfwd20-156653024-10121421-eq28-harness-16kn logforwarder - panwlogs - 1,2020-10-13T01:23:50.000000Z,007051000113358,USERID,login,10.0,2020-10-13T01:23:34.000000Z,vsys1,::c28:7141:ffff:0,\"xxxxx\\xxxxx o\"xxxxxxxxxx\"'\"xxxxxxxxxx\"test\",fake-data-source-95,1694498816,16777216,-1694302208,63502,60246,server_session_monitor,exchange_server,551324,-9223372036854775808,0,0,0,0,,PA-VM,1,xxxxx,2050-04-13T10:41:35.000000Z,1,64,xxxxxxxxxxxxxx,,2020-10-13T01:23:35.350000Z",
+    "_time": 1626825542,
+    "cribl_breaker": [
+      "Break on newlines",
+      "noBreak1MB"
+    ],
+    "severity": 6,
+    "facility": 1,
+    "host": "firewall",
+    "severityName": "info",
+    "facilityName": "user"
+  }
+]

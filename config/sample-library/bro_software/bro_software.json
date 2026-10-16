@@ -1,0 +1,122 @@
+[
+  {
+    "_raw": "#separator \\x09",
+    "_time": 1521911720.609736,
+    "sourcetype": "bro_software",
+    "source": "/opt/zeek/logs/current/software.log"
+  },
+  {
+    "_raw": "#set_separator\t,",
+    "_time": 1521911720.609736,
+    "sourcetype": "bro_software",
+    "source": "/opt/zeek/logs/current/software.log"
+  },
+  {
+    "_raw": "#empty_field\t(empty)",
+    "_time": 1521911720.609736,
+    "sourcetype": "bro_software",
+    "source": "/opt/zeek/logs/current/software.log"
+  },
+  {
+    "_raw": "#unset_field\t-",
+    "_time": 1521911720.609736,
+    "sourcetype": "bro_software",
+    "source": "/opt/zeek/logs/current/software.log"
+  },
+  {
+    "_raw": "#path\tsoftware",
+    "_time": 1521911720.609736,
+    "sourcetype": "bro_software",
+    "source": "/opt/zeek/logs/current/software.log"
+  },
+  {
+    "_raw": "#open\t2024-04-12-19-29-12",
+    "_time": 1521911720.609736,
+    "sourcetype": "bro_software",
+    "source": "/opt/zeek/logs/current/software.log"
+  },
+  {
+    "_raw": "#fields\tts\thost\thost_p\tsoftware_type\tname\tversion.major\tversion.minor\tversion.minor2\tversion.minor3\tversion.addl\tunparsed_version",
+    "_time": 1521911720.609736,
+    "sourcetype": "bro_software",
+    "source": "/opt/zeek/logs/current/software.log"
+  },
+  {
+    "_raw": "#types\ttime\taddr\tport\tenum\tstring\tcount\tcount\tcount\tcount\tstring\tstring",
+    "_time": 1521911720.609736,
+    "sourcetype": "bro_software",
+    "source": "/opt/zeek/logs/current/software.log"
+  },
+  {
+    "_raw": "1521911720.609736\t10.164.94.120\t-\tHTTP::BROWSER\tMSIE\t8\t0\t-\t-\t-\tMozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0)",
+    "_time": 1521911720.609736,
+    "sourcetype": "bro_software",
+    "source": "/opt/zeek/logs/current/software.log"
+  },
+  {
+    "_raw": "1521911720.721467\t10.47.8.20\t80\tHTTP::SERVER\tApache\t2\t4\t29\t-\tUnix\tApache/2.4.29 (Unix) PHP/7.2.3",
+    "_time": 1521911720.721467,
+    "sourcetype": "bro_software",
+    "source": "/opt/zeek/logs/current/software.log"
+  },
+  {
+    "_raw": "1521911721.420828\t10.128.0.231\t-\tHTTP::BROWSER\tChrome\t65\t0\t3325\t181\t-\tMozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36",
+    "_time": 1521911721.420828,
+    "sourcetype": "bro_software",
+    "source": "/opt/zeek/logs/current/software.log"
+  },
+  {
+    "_raw": "1521911721.990416\t10.47.23.55\t80\tHTTP::APPSERVER\tPHP\t5\t2\t0\t8\t+etch16\tPHP/5.2.0-8+etch16",
+    "_time": 1521911721.990416,
+    "sourcetype": "bro_software",
+    "source": "/opt/zeek/logs/current/software.log"
+  },
+  {
+    "_raw": "1521911723.161910\t10.47.23.166\t2869\tHTTP::SERVER\tMicrosoft-Windows-NT\t5\t1\t-\t-\tUPnP/1\tMicrosoft-Windows-NT/5.1 UPnP/1.0 UPnP-Device-Host/1.0 Microsoft-HTTPAPI/2.0",
+    "_time": 1521911723.16191,
+    "sourcetype": "bro_software",
+    "source": "/opt/zeek/logs/current/software.log"
+  },
+  {
+    "_raw": "1521911726.098899\t10.47.8.218\t8082\tHTTP::SERVER\tMS\t-\t-\t-\t-\tNET\tMS .NET Remoting, MS .NET CLR 4.0.30319.17929",
+    "_time": 1521911726.098899,
+    "sourcetype": "bro_software",
+    "source": "/opt/zeek/logs/current/software.log"
+  },
+  {
+    "_raw": "1521911732.685175\t10.47.3.142\t1337\tHTTP::SERVER\tIndy\t9\t0\t10\t-\t-\tIndy/9.00.10",
+    "_time": 1521911732.685175,
+    "sourcetype": "bro_software",
+    "source": "/opt/zeek/logs/current/software.log"
+  },
+  {
+    "_raw": "1521911752.311014\t10.47.21.80\t8069\tHTTP::SERVER\tWerkzeug\t0\t12\t2\t-\tPython/3\tWerkzeug/0.12.2 Python/3.6.4",
+    "_time": 1521911752.311014,
+    "sourcetype": "bro_software",
+    "source": "/opt/zeek/logs/current/software.log"
+  },
+  {
+    "_raw": "1521911800.046697\t10.47.8.50\t22\tSSH::SERVER\tOpenSSH\t7\t4\t-\t-\tp1\tOpenSSH_7.4p1 Raspbian-10+deb9u3",
+    "_time": 1521911800.046697,
+    "sourcetype": "bro_software",
+    "source": "/opt/zeek/logs/current/software.log"
+  },
+  {
+    "_raw": "1521911933.128419\t10.47.24.80\t-\tHTTP::BROWSER\tGoogle Update\t1\t3\t33\t7\twinhttp\tGoogle Update/1.3.33.7;winhttp;cup-ecdsa",
+    "_time": 1521911933.128419,
+    "sourcetype": "bro_software",
+    "source": "/opt/zeek/logs/current/software.log"
+  },
+  {
+    "_raw": "1521911995.551681\t10.47.5.153\t-\tHTTP::BROWSER\tWindows-Update-Agent\t7\t9\t9600\t16403\tClient\tWindows-Update-Agent/7.9.9600.16403 Client-Protocol/1.20",
+    "_time": 1521911995.551681,
+    "sourcetype": "bro_software",
+    "source": "/opt/zeek/logs/current/software.log"
+  },
+  {
+    "_raw": "1521912030.886301\t10.128.0.241\t-\tHTTP::BROWSER\tAnyConnect Darwin_i\t386\t3\t1\t5160\t-\tAnyConnect Darwin_i386 3.1.05160",
+    "_time": 1521912030.886301,
+    "sourcetype": "bro_software",
+    "source": "/opt/zeek/logs/current/software.log"
+  }
+]

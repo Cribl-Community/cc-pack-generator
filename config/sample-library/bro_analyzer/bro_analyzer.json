@@ -1,0 +1,122 @@
+[
+  {
+    "_raw": "#separator \\x09",
+    "_time": 1521911720.613421,
+    "sourcetype": "bro_analyzer",
+    "source": "/opt/zeek/logs/current/analyzer.log"
+  },
+  {
+    "_raw": "#set_separator\t,",
+    "_time": 1521911720.613421,
+    "sourcetype": "bro_analyzer",
+    "source": "/opt/zeek/logs/current/analyzer.log"
+  },
+  {
+    "_raw": "#empty_field\t(empty)",
+    "_time": 1521911720.613421,
+    "sourcetype": "bro_analyzer",
+    "source": "/opt/zeek/logs/current/analyzer.log"
+  },
+  {
+    "_raw": "#unset_field\t-",
+    "_time": 1521911720.613421,
+    "sourcetype": "bro_analyzer",
+    "source": "/opt/zeek/logs/current/analyzer.log"
+  },
+  {
+    "_raw": "#path\tanalyzer",
+    "_time": 1521911720.613421,
+    "sourcetype": "bro_analyzer",
+    "source": "/opt/zeek/logs/current/analyzer.log"
+  },
+  {
+    "_raw": "#open\t2024-04-12-19-29-12",
+    "_time": 1521911720.613421,
+    "sourcetype": "bro_analyzer",
+    "source": "/opt/zeek/logs/current/analyzer.log"
+  },
+  {
+    "_raw": "#fields\tts\tcause\tanalyzer_kind\tanalyzer_name\tuid\tfuid\tid.orig_h\tid.orig_p\tid.resp_h\tid.resp_p\tfailure_reason\tfailure_data",
+    "_time": 1521911720.613421,
+    "sourcetype": "bro_analyzer",
+    "source": "/opt/zeek/logs/current/analyzer.log"
+  },
+  {
+    "_raw": "#types\ttime\tstring\tstring\tstring\tstring\tstring\taddr\tport\taddr\tport\tstring\tstring",
+    "_time": 1521911720.613421,
+    "sourcetype": "bro_analyzer",
+    "source": "/opt/zeek/logs/current/analyzer.log"
+  },
+  {
+    "_raw": "1521911720.613421\tviolation\tprotocol\tRDP\tCIOuwB3kJLIhO8re94\t-\t10.164.94.120\t44749\t10.47.8.208\t3389\tBinpac exception: binpac exception: string mismatch at /usr/src/packages/BUILD/src/analyzer/protocol/rdp/rdp-protocol.pac:81: \\x0aexpected pattern: \"Cookie: mstshash\\\\=\"\\x0aactual data: \"\\x01\"\t-",
+    "_time": 1521911720.613421,
+    "sourcetype": "bro_analyzer",
+    "source": "/opt/zeek/logs/current/analyzer.log"
+  },
+  {
+    "_raw": "1521911721.007184\tviolation\tprotocol\tHTTP\tCRarNY3ZAy5SqdESRe\t-\t10.164.94.120\t33749\t10.47.3.200\t8000\tnot a http request line\t-",
+    "_time": 1521911721.007184,
+    "sourcetype": "bro_analyzer",
+    "source": "/opt/zeek/logs/current/analyzer.log"
+  },
+  {
+    "_raw": "1521911721.805007\tviolation\tprotocol\tSSL\tC18H5P2mT0bRiA2Sdk\t-\t10.164.94.120\t38041\t10.47.8.208\t25\tInvalid version in SSL client hello. Version: 821\t-",
+    "_time": 1521911721.805007,
+    "sourcetype": "bro_analyzer",
+    "source": "/opt/zeek/logs/current/analyzer.log"
+  },
+  {
+    "_raw": "1521911721.950425\tviolation\tprotocol\tSSL\tCOVD9m1ZLyBC08xpM\t-\t10.164.94.120\t35935\t10.47.8.208\t587\tInvalid version in SSL client hello. Version: 12597\t-",
+    "_time": 1521911721.950425,
+    "sourcetype": "bro_analyzer",
+    "source": "/opt/zeek/logs/current/analyzer.log"
+  },
+  {
+    "_raw": "1521911723.065544\tviolation\tprotocol\tSSL\tCpIWsK2NoumBCgobC8\t-\t10.164.94.120\t39213\t10.47.1.208\t993\tInvalid version in TLS connection. Version: 0\t-",
+    "_time": 1521911723.065544,
+    "sourcetype": "bro_analyzer",
+    "source": "/opt/zeek/logs/current/analyzer.log"
+  },
+  {
+    "_raw": "1521911754.782608\tviolation\tprotocol\tSSL\tCWPJav4woxnEx2YWJ3\t-\t10.47.8.142\t2761\t10.128.0.214\t443\tInvalid version in TLS connection. Version: 48642\t-",
+    "_time": 1521911754.782608,
+    "sourcetype": "bro_analyzer",
+    "source": "/opt/zeek/logs/current/analyzer.log"
+  },
+  {
+    "_raw": "1521911774.193266\tviolation\tprotocol\tXMPP\tC02oGuFe0jadmU9Za\t-\t10.164.94.120\t38451\t10.47.3.142\t515\tBinpac exception: binpac exception: string mismatch at /usr/src/packages/BUILD/src/analyzer/protocol/xmpp/xmpp-protocol.pac:12: \\x0aexpected pattern: \"<\"\\x0aactual data: \"\\x01\"\t-",
+    "_time": 1521911774.193266,
+    "sourcetype": "bro_analyzer",
+    "source": "/opt/zeek/logs/current/analyzer.log"
+  },
+  {
+    "_raw": "1521911809.535087\tviolation\tprotocol\tSSL\tCeDMaxHdhcx2UwdZh\t-\t10.164.94.120\t44525\t10.47.3.218\t80\tInvalid version late in TLS connection. Packet reported version: 21588\t-",
+    "_time": 1521911809.535087,
+    "sourcetype": "bro_analyzer",
+    "source": "/opt/zeek/logs/current/analyzer.log"
+  },
+  {
+    "_raw": "1521911880.562056\tviolation\tprotocol\tDCE_RPC\tCtzPiv29jZurMx3AHf\t-\t10.128.0.241\t50742\t10.47.1.208\t135\tBinpac exception: binpac exception: &enforce violation : DCE_RPC_Header:rpc_vers\t-",
+    "_time": 1521911880.562056,
+    "sourcetype": "bro_analyzer",
+    "source": "/opt/zeek/logs/current/analyzer.log"
+  },
+  {
+    "_raw": "1521912000.048455\tviolation\tprotocol\tDNP3_UDP\tCQEkwJSxn4QEb0Jq6\t-\t10.47.6.154\t12953\t10.0.0.100\t53\tbroken_checksum\t-",
+    "_time": 1521912000.048455,
+    "sourcetype": "bro_analyzer",
+    "source": "/opt/zeek/logs/current/analyzer.log"
+  },
+  {
+    "_raw": "1521912473.422827\tviolation\tprotocol\tHTTP\tCsHoJfsCc2UDhjU0l\t-\t10.128.0.207\t36058\t10.47.23.25\t139\tnot a http reply line\t-",
+    "_time": 1521912473.422827,
+    "sourcetype": "bro_analyzer",
+    "source": "/opt/zeek/logs/current/analyzer.log"
+  },
+  {
+    "_raw": "1521912834.852926\tviolation\tprotocol\tSSH\tC1mGnm48Pupi5cXNag\t-\t10.128.0.19\t60347\t10.47.26.55\t22\tBinpac exception: binpac exception: invalid index for case: SSH_Key_Exchange: 3\t-",
+    "_time": 1521912834.852926,
+    "sourcetype": "bro_analyzer",
+    "source": "/opt/zeek/logs/current/analyzer.log"
+  }
+]

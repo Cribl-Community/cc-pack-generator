@@ -1,0 +1,1824 @@
+{
+  "version": 1,
+  "build": 776,
+  "updated_at": "2026-09-24T14:50:54.173Z",
+  "generated_by": "scripts/build-source-ocsf-samples.mjs",
+  "samples": [
+    {
+      "key": "apache_access",
+      "sourcetype": "apache_access",
+      "class_uid": 4002,
+      "dest_format": "ocsf#web_proxy",
+      "source": "generic",
+      "vendor_names": [
+        "apache access"
+      ],
+      "events": 3,
+      "file": "apache_access.json"
+    },
+    {
+      "key": "apache_access",
+      "sourcetype": "apache_access",
+      "class_uid": 4002,
+      "dest_format": "ocsf#web_proxy",
+      "source": "generic",
+      "vendor_names": [
+        "apache access"
+      ],
+      "events": 3,
+      "file": "apache_access.json"
+    },
+    {
+      "key": "apache_access",
+      "sourcetype": "apache_access",
+      "class_uid": 4002,
+      "dest_format": "ocsf#web_proxy",
+      "source": "generic",
+      "vendor_names": [
+        "apache access"
+      ],
+      "events": 3,
+      "file": "apache_access.json"
+    },
+    {
+      "key": "auditd",
+      "sourcetype": "auditd",
+      "class_uid": 1007,
+      "dest_format": "ocsf#endpoint",
+      "source": "generic",
+      "vendor_names": [
+        "Microsoft"
+      ],
+      "events": 3,
+      "file": "auditd.json"
+    },
+    {
+      "key": "aws_cloudtrail",
+      "sourcetype": "aws_cloudtrail",
+      "class_uid": 3002,
+      "dest_format": "ocsf#cloud_audit",
+      "source": "generic",
+      "vendor_names": [
+        "AWS"
+      ],
+      "events": 3,
+      "file": "aws_cloudtrail.json"
+    },
+    {
+      "key": "aws_config",
+      "sourcetype": "aws_config",
+      "class_uid": 6003,
+      "dest_format": "ocsf#cloud_audit",
+      "source": "generic",
+      "vendor_names": [
+        "AWS"
+      ],
+      "events": 1,
+      "file": "aws_config.json"
+    },
+    {
+      "key": "aws_guardduty",
+      "sourcetype": "aws_guardduty",
+      "class_uid": 4001,
+      "dest_format": "ocsf#network",
+      "source": "generic",
+      "vendor_names": [
+        "aws guardduty"
+      ],
+      "events": 3,
+      "file": "aws_guardduty.json"
+    },
+    {
+      "key": "aws_vpc_v2",
+      "sourcetype": "aws_vpc_v2",
+      "class_uid": 4001,
+      "dest_format": "ocsf#network",
+      "source": "generic",
+      "vendor_names": [
+        "aws vpc v2"
+      ],
+      "events": 3,
+      "file": "aws_vpc_v2.json"
+    },
+    {
+      "key": "aws_vpc_v5",
+      "sourcetype": "aws_vpc_v5",
+      "class_uid": 4001,
+      "dest_format": "ocsf#network",
+      "source": "aws",
+      "vendor_names": [
+        "AWS"
+      ],
+      "events": 3,
+      "file": "aws_vpc_v5.json"
+    },
+    {
+      "key": "azure_graph_alerts",
+      "sourcetype": "azure_graph_alerts",
+      "class_uid": 4001,
+      "dest_format": "ocsf#network",
+      "source": "generic",
+      "vendor_names": [
+        "azure graph alerts"
+      ],
+      "events": 1,
+      "file": "azure_graph_alerts.json"
+    },
+    {
+      "key": "azure_graph_devices",
+      "sourcetype": "azure_graph_devices",
+      "class_uid": 4001,
+      "dest_format": "ocsf#network",
+      "source": "generic",
+      "vendor_names": [
+        "azure graph devices"
+      ],
+      "events": 1,
+      "file": "azure_graph_devices.json"
+    },
+    {
+      "key": "azure_graph_signins",
+      "sourcetype": "azure_graph_signins",
+      "class_uid": 3002,
+      "dest_format": "ocsf#authentication",
+      "source": "generic",
+      "vendor_names": [
+        "azure graph signins"
+      ],
+      "events": 2,
+      "file": "azure_graph_signins.json"
+    },
+    {
+      "key": "azure_graph_users",
+      "sourcetype": "azure_graph_users",
+      "class_uid": 4001,
+      "dest_format": "ocsf#network",
+      "source": "generic",
+      "vendor_names": [
+        "azure graph users"
+      ],
+      "events": 1,
+      "file": "azure_graph_users.json"
+    },
+    {
+      "key": "azure_signin",
+      "sourcetype": "azure_signin",
+      "class_uid": 3002,
+      "dest_format": "ocsf#authentication",
+      "source": "microsoft",
+      "vendor_names": [
+        "Microsoft"
+      ],
+      "events": 3,
+      "file": "azure_signin.json"
+    },
+    {
+      "key": "cef",
+      "sourcetype": "cef",
+      "class_uid": 4001,
+      "dest_format": "ocsf#network",
+      "source": "generic",
+      "vendor_names": [
+        "cef"
+      ],
+      "events": 3,
+      "file": "cef.json"
+    },
+    {
+      "key": "checkpoint_firewall",
+      "sourcetype": "checkpoint_firewall",
+      "class_uid": 4001,
+      "dest_format": "ocsf#network",
+      "source": "check_point",
+      "vendor_names": [
+        "Check Point"
+      ],
+      "events": 3,
+      "file": "checkpoint_firewall.json"
+    },
+    {
+      "key": "cisco_asa",
+      "sourcetype": "cisco_asa",
+      "class_uid": 4001,
+      "dest_format": "ocsf#network",
+      "source": "cisco",
+      "vendor_names": [
+        "Cisco"
+      ],
+      "events": 3,
+      "file": "cisco_asa.json"
+    },
+    {
+      "key": "cisco_asa",
+      "sourcetype": "cisco_asa",
+      "class_uid": 4001,
+      "dest_format": "ocsf#network",
+      "source": "cisco",
+      "vendor_names": [
+        "Cisco"
+      ],
+      "events": 3,
+      "file": "cisco_asa.json"
+    },
+    {
+      "key": "cisco_esa",
+      "sourcetype": "cisco_esa",
+      "class_uid": 4009,
+      "dest_format": "ocsf#email",
+      "source": "cisco",
+      "vendor_names": [
+        "Cisco"
+      ],
+      "events": 3,
+      "file": "cisco_esa.json"
+    },
+    {
+      "key": "cloudflare_audit",
+      "sourcetype": "cloudflare_audit",
+      "class_uid": 6003,
+      "dest_format": "ocsf#cloud_audit",
+      "source": "generic",
+      "vendor_names": [
+        "AWS"
+      ],
+      "events": 3,
+      "file": "cloudflare_audit.json"
+    },
+    {
+      "key": "corelight_conn",
+      "sourcetype": "corelight_conn",
+      "class_uid": 4001,
+      "dest_format": "ocsf#network",
+      "source": "generic",
+      "vendor_names": [
+        "corelight conn"
+      ],
+      "events": 3,
+      "file": "corelight_conn.json"
+    },
+    {
+      "key": "corelight_dns",
+      "sourcetype": "corelight_dns",
+      "class_uid": 4003,
+      "dest_format": "ocsf#dns",
+      "source": "generic",
+      "vendor_names": [
+        "corelight dns"
+      ],
+      "events": 3,
+      "file": "corelight_dns.json"
+    },
+    {
+      "key": "corelight_http",
+      "sourcetype": "corelight_http",
+      "class_uid": 4002,
+      "dest_format": "ocsf#web_proxy",
+      "source": "generic",
+      "vendor_names": [
+        "corelight http"
+      ],
+      "events": 3,
+      "file": "corelight_http.json"
+    },
+    {
+      "key": "cribl_internal_logs",
+      "sourcetype": "cribl_internal_logs",
+      "class_uid": 4001,
+      "dest_format": "ocsf#network",
+      "source": "generic",
+      "vendor_names": [
+        "cribl internal logs"
+      ],
+      "events": 3,
+      "file": "cribl_internal_logs.json"
+    },
+    {
+      "key": "crowdstrike_falcon",
+      "sourcetype": "crowdstrike_falcon",
+      "class_uid": 1007,
+      "dest_format": "ocsf#endpoint",
+      "source": "crowdstrike",
+      "vendor_names": [
+        "Microsoft"
+      ],
+      "events": 3,
+      "file": "crowdstrike_falcon.json"
+    },
+    {
+      "key": "fortinet_fortigate",
+      "sourcetype": "fortinet_fortigate",
+      "class_uid": 4001,
+      "dest_format": "ocsf#network",
+      "source": "fortinet",
+      "vendor_names": [
+        "Fortinet"
+      ],
+      "events": 3,
+      "file": "fortinet_fortigate.json"
+    },
+    {
+      "key": "gcp_audit",
+      "sourcetype": "gcp_audit",
+      "class_uid": 6003,
+      "dest_format": "ocsf#cloud_audit",
+      "source": "generic",
+      "vendor_names": [
+        "Google"
+      ],
+      "events": 3,
+      "file": "gcp_audit.json"
+    },
+    {
+      "key": "gcp_firewall",
+      "sourcetype": "gcp_firewall",
+      "class_uid": 4001,
+      "dest_format": "ocsf#network",
+      "source": "generic",
+      "vendor_names": [
+        "gcp firewall"
+      ],
+      "events": 3,
+      "file": "gcp_firewall.json"
+    },
+    {
+      "key": "gws_alerts",
+      "sourcetype": "gws_alerts",
+      "class_uid": 4001,
+      "dest_format": "ocsf#network",
+      "source": "generic",
+      "vendor_names": [
+        "gws alerts"
+      ],
+      "events": 3,
+      "file": "gws_alerts.json"
+    },
+    {
+      "key": "imperva_dam",
+      "sourcetype": "imperva_dam",
+      "class_uid": 6003,
+      "dest_format": "ocsf#cloud_audit",
+      "source": "generic",
+      "vendor_names": [
+        "AWS"
+      ],
+      "events": 3,
+      "file": "imperva_dam.json"
+    },
+    {
+      "key": "imperva_incapsula_waf",
+      "sourcetype": "imperva_incapsula_waf",
+      "class_uid": 4002,
+      "dest_format": "ocsf#web_proxy",
+      "source": "generic",
+      "vendor_names": [
+        "imperva incapsula waf"
+      ],
+      "events": 3,
+      "file": "imperva_incapsula_waf.json"
+    },
+    {
+      "key": "infoblox_dns",
+      "sourcetype": "infoblox_dns",
+      "class_uid": 4003,
+      "dest_format": "ocsf#dns",
+      "source": "generic",
+      "vendor_names": [
+        "infoblox dns"
+      ],
+      "events": 3,
+      "file": "infoblox_dns.json"
+    },
+    {
+      "key": "linux_audit",
+      "sourcetype": "linux_audit",
+      "class_uid": 1007,
+      "dest_format": "ocsf#endpoint",
+      "source": "linux",
+      "vendor_names": [
+        "Microsoft"
+      ],
+      "events": 3,
+      "file": "linux_audit.json"
+    },
+    {
+      "key": "linux_syslog",
+      "sourcetype": "linux_syslog",
+      "class_uid": 1007,
+      "dest_format": "ocsf#endpoint",
+      "source": "linux",
+      "vendor_names": [
+        "Microsoft"
+      ],
+      "events": 3,
+      "file": "linux_syslog.json"
+    },
+    {
+      "key": "nginx_access",
+      "sourcetype": "nginx_access",
+      "class_uid": 4002,
+      "dest_format": "ocsf#web_proxy",
+      "source": "generic",
+      "vendor_names": [
+        "nginx access"
+      ],
+      "events": 3,
+      "file": "nginx_access.json"
+    },
+    {
+      "key": "nginx_access",
+      "sourcetype": "nginx_access",
+      "class_uid": 4002,
+      "dest_format": "ocsf#web_proxy",
+      "source": "generic",
+      "vendor_names": [
+        "nginx access"
+      ],
+      "events": 3,
+      "file": "nginx_access.json"
+    },
+    {
+      "key": "openai_audit",
+      "sourcetype": "openai_audit",
+      "class_uid": 4001,
+      "dest_format": "ocsf#network",
+      "source": "generic",
+      "vendor_names": [
+        "openai audit"
+      ],
+      "events": 3,
+      "file": "openai_audit.json"
+    },
+    {
+      "key": "openai_completions",
+      "sourcetype": "openai_completions",
+      "class_uid": 4001,
+      "dest_format": "ocsf#network",
+      "source": "generic",
+      "vendor_names": [
+        "openai completions"
+      ],
+      "events": 3,
+      "file": "openai_completions.json"
+    },
+    {
+      "key": "openai_costs",
+      "sourcetype": "openai_costs",
+      "class_uid": 4001,
+      "dest_format": "ocsf#network",
+      "source": "generic",
+      "vendor_names": [
+        "openai costs"
+      ],
+      "events": 3,
+      "file": "openai_costs.json"
+    },
+    {
+      "key": "openai_projects",
+      "sourcetype": "openai_projects",
+      "class_uid": 4001,
+      "dest_format": "ocsf#network",
+      "source": "generic",
+      "vendor_names": [
+        "openai projects"
+      ],
+      "events": 2,
+      "file": "openai_projects.json"
+    },
+    {
+      "key": "openai_users",
+      "sourcetype": "openai_users",
+      "class_uid": 4001,
+      "dest_format": "ocsf#network",
+      "source": "generic",
+      "vendor_names": [
+        "openai users"
+      ],
+      "events": 3,
+      "file": "openai_users.json"
+    },
+    {
+      "key": "palo_alto_system",
+      "sourcetype": "palo_alto_system",
+      "class_uid": 6003,
+      "dest_format": "ocsf#cloud_audit",
+      "source": "generic",
+      "vendor_names": [
+        "AWS"
+      ],
+      "events": 3,
+      "file": "palo_alto_system.json"
+    },
+    {
+      "key": "palo_alto_threat",
+      "sourcetype": "palo_alto_threat",
+      "class_uid": 4001,
+      "dest_format": "ocsf#network",
+      "source": "palo_alto_networks",
+      "vendor_names": [
+        "Palo Alto Networks"
+      ],
+      "events": 3,
+      "file": "palo_alto_threat.json"
+    },
+    {
+      "key": "palo_alto_traffic",
+      "sourcetype": "palo_alto_traffic",
+      "class_uid": 4001,
+      "dest_format": "ocsf#network",
+      "source": "palo_alto_networks",
+      "vendor_names": [
+        "Palo Alto Networks"
+      ],
+      "events": 3,
+      "file": "palo_alto_traffic.json"
+    },
+    {
+      "key": "salesforce_loginhistory",
+      "sourcetype": "salesforce_loginhistory",
+      "class_uid": 4001,
+      "dest_format": "ocsf#network",
+      "source": "generic",
+      "vendor_names": [
+        "salesforce loginhistory"
+      ],
+      "events": 3,
+      "file": "salesforce_loginhistory.json"
+    },
+    {
+      "key": "salesforce_setupaudittrail",
+      "sourcetype": "salesforce_setupaudittrail",
+      "class_uid": 6003,
+      "dest_format": "ocsf#cloud_audit",
+      "source": "salesforce",
+      "vendor_names": [
+        "AWS"
+      ],
+      "events": 2,
+      "file": "salesforce_setupaudittrail.json"
+    },
+    {
+      "key": "sap_audit",
+      "sourcetype": "sap_audit",
+      "class_uid": 3002,
+      "dest_format": "ocsf#authentication",
+      "source": "sap",
+      "vendor_names": [
+        "SAP"
+      ],
+      "events": 3,
+      "file": "sap_audit.json"
+    },
+    {
+      "key": "slack_audit",
+      "sourcetype": "slack_audit",
+      "class_uid": 4001,
+      "dest_format": "ocsf#network",
+      "source": "generic",
+      "vendor_names": [
+        "slack audit"
+      ],
+      "events": 3,
+      "file": "slack_audit.json"
+    },
+    {
+      "key": "suricata_ids",
+      "sourcetype": "suricata_ids",
+      "class_uid": 4001,
+      "dest_format": "ocsf#network",
+      "source": "generic",
+      "vendor_names": [
+        "suricata ids"
+      ],
+      "events": 1,
+      "file": "suricata_ids.json"
+    },
+    {
+      "key": "windows_powershell",
+      "sourcetype": "windows_powershell",
+      "class_uid": 1007,
+      "dest_format": "ocsf#endpoint",
+      "source": "microsoft",
+      "vendor_names": [
+        "Microsoft"
+      ],
+      "events": 1,
+      "file": "windows_powershell.json"
+    },
+    {
+      "key": "workday_activity",
+      "sourcetype": "workday_activity",
+      "class_uid": 4001,
+      "dest_format": "ocsf#network",
+      "source": "generic",
+      "vendor_names": [
+        "workday activity"
+      ],
+      "events": 3,
+      "file": "workday_activity.json"
+    },
+    {
+      "key": "zscaler_web",
+      "sourcetype": "zscaler_web",
+      "class_uid": 6003,
+      "dest_format": "ocsf#cloud_audit",
+      "source": "zscaler",
+      "vendor_names": [
+        "AWS"
+      ],
+      "events": 3,
+      "file": "zscaler_web.json"
+    }
+  ],
+  "unmapped": [
+    {
+      "sourcetype": "access_error",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "activedirectory",
+      "reason": "no-golden-path",
+      "detail": null
+    },
+    {
+      "sourcetype": "alibaba_action_trail",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "appdynamics_security",
+      "reason": "no-golden-path",
+      "detail": null
+    },
+    {
+      "sourcetype": "aws_alb_accesslog",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "aws_asl",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "aws_cloudfront_accesslog",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "aws_cloudfront_accesslogs",
+      "reason": "no-golden-path",
+      "detail": null
+    },
+    {
+      "sourcetype": "aws_ec2",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "aws_eks_audit",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "aws_elb_accesslog",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "aws_firehose_json",
+      "reason": "no-golden-path",
+      "detail": null
+    },
+    {
+      "sourcetype": "aws_network_firewall",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "aws_nlb_accesslog",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "aws_rds_audit_mysql",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "aws_rds_audit_postgresql",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "aws_route53_public",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "aws_route53_resolver",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "aws_s3_access",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "aws_security_hub",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "aws_securityhub_finding",
+      "reason": "no-golden-path",
+      "detail": null
+    },
+    {
+      "sourcetype": "aws_waf_log_json",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "azure_graph_directory_audits",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "azure_graph_user_registration",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "azure_monitor_aad",
+      "reason": "no-golden-path",
+      "detail": null
+    },
+    {
+      "sourcetype": "azure_monitor_activity",
+      "reason": "no-golden-path",
+      "detail": null
+    },
+    {
+      "sourcetype": "azure_nsg_flowlog_json",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "bro_conn_json",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "bro_dns_json",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "bro_files_json",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "bro_http_json",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "bro_loaded_scripts_json",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "bro_ntp_json",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "bro_ocsp_json",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "bro_ssl_json",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "bro_weird_json",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "bro_x509_json",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "carbonblack_edr",
+      "reason": "no-golden-path",
+      "detail": null
+    },
+    {
+      "sourcetype": "checkpoint_firewall_rfc_5424",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "circleci",
+      "reason": "no-golden-path",
+      "detail": null
+    },
+    {
+      "sourcetype": "cisco_ai_defense",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "cisco_asa_syslog",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "cisco_cloud_security_dns",
+      "reason": "no-golden-path",
+      "detail": null
+    },
+    {
+      "sourcetype": "cisco_cloud_security_firewall",
+      "reason": "no-golden-path",
+      "detail": null
+    },
+    {
+      "sourcetype": "cisco_cloud_security_proxy",
+      "reason": "no-golden-path",
+      "detail": null
+    },
+    {
+      "sourcetype": "cisco_duo_activity",
+      "reason": "no-golden-path",
+      "detail": null
+    },
+    {
+      "sourcetype": "cisco_duo_administrator",
+      "reason": "no-golden-path",
+      "detail": null
+    },
+    {
+      "sourcetype": "cisco_estreamer",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "cisco_ftd",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "cisco_fwsm_syslog",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "cisco_fwsm_v2",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "cisco_ios",
+      "reason": "no-golden-path",
+      "detail": null
+    },
+    {
+      "sourcetype": "cisco_ips_alert",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "cisco_isovalent",
+      "reason": "no-golden-path",
+      "detail": null
+    },
+    {
+      "sourcetype": "cisco_isovalent_processconnect",
+      "reason": "no-golden-path",
+      "detail": null
+    },
+    {
+      "sourcetype": "cisco_isovalent_processexec",
+      "reason": "no-golden-path",
+      "detail": null
+    },
+    {
+      "sourcetype": "cisco_meraki",
+      "reason": "no-golden-path",
+      "detail": null
+    },
+    {
+      "sourcetype": "cisco_netflow_v9",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "cisco_nvm_flowdata_v2",
+      "reason": "no-golden-path",
+      "detail": null
+    },
+    {
+      "sourcetype": "cisco_nvm_osquery_v2",
+      "reason": "no-golden-path",
+      "detail": null
+    },
+    {
+      "sourcetype": "cisco_sdwan_access",
+      "reason": "no-golden-path",
+      "detail": null
+    },
+    {
+      "sourcetype": "cisco_sdwan_syslog",
+      "reason": "no-golden-path",
+      "detail": null
+    },
+    {
+      "sourcetype": "cisco_sfw_estreamer",
+      "reason": "no-golden-path",
+      "detail": null
+    },
+    {
+      "sourcetype": "cloudflare_access_request",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "cloudflare_firewall_event",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "cloudflare_gateway",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "cloudflare_gateway_dns",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "cloudflare_http_request",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "cloudflare_workers_trace",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "cloudflare_zero_trust_network_session",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "cloudtrail_digest",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "cloudtrail_event",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "confluent_audit",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "corelight_ldap",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "corelight_ldap_search",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "corelight_smtp_links",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "cribl_metrics",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "crowdstrike_event_streams_json",
+      "reason": "no-golden-path",
+      "detail": null
+    },
+    {
+      "sourcetype": "crowdstrike_events_sensor",
+      "reason": "no-golden-path",
+      "detail": null
+    },
+    {
+      "sourcetype": "crushftp_sessionlogs",
+      "reason": "no-golden-path",
+      "detail": null
+    },
+    {
+      "sourcetype": "duo_security",
+      "reason": "no-golden-path",
+      "detail": null
+    },
+    {
+      "sourcetype": "exabeam_cim",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "falcon_events",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "falcon_fdr",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "falcon_fdr_aidmaster",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "falcon_fdr_external_api",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "falcon_rest_alerts",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "falcon_rest_devices",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "falcon_rest_vulnerabilities",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "fortinet_fortigate_syslog",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "fortinet_fortigate_syslog_wrapped",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "gcp_audit_logs",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "gcp_vpc_flow",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "github_cloud_audit",
+      "reason": "no-golden-path",
+      "detail": null
+    },
+    {
+      "sourcetype": "gitlab_audit_log",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "gitlab_audit_streaming",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "gong_audit",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "gsuite_drive_json",
+      "reason": "no-golden-path",
+      "detail": null
+    },
+    {
+      "sourcetype": "gsuite_gmail_bigquery",
+      "reason": "no-golden-path",
+      "detail": null
+    },
+    {
+      "sourcetype": "gws_activity_reports",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "gws_reports_admin",
+      "reason": "no-golden-path",
+      "detail": null
+    },
+    {
+      "sourcetype": "gws_reports_login",
+      "reason": "no-golden-path",
+      "detail": null
+    },
+    {
+      "sourcetype": "httpevent",
+      "reason": "no-golden-path",
+      "detail": null
+    },
+    {
+      "sourcetype": "ibm_aix_audit",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "ibm_db2_audit_context",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "ibm_db2_audit_objmaint",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "ibm_db2_audit_secmaint",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "ibm_db2_audit_sysadmin",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "ibm_db2_audit_validate",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "ibm_os400_syslog",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "ibm_racf_syslog",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "iis_configuration_operational",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "infoblox_cef",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "infoblox_cef_rfc5424",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "infoblox_leef",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "infoblox_leef_rfc5424",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "infoblox_syslog",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "infoblox_syslog_bsd_nopri",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "infoblox_syslog_iso8601",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "isc_bind_query",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "ivanti_vtm_audit",
+      "reason": "no-golden-path",
+      "detail": null
+    },
+    {
+      "sourcetype": "kube_container_falco",
+      "reason": "no-golden-path",
+      "detail": null
+    },
+    {
+      "sourcetype": "linux_auditd_log",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "linux_messages_syslog",
+      "reason": "no-golden-path",
+      "detail": null
+    },
+    {
+      "sourcetype": "linux_secure",
+      "reason": "no-golden-path",
+      "detail": null
+    },
+    {
+      "sourcetype": "log4j",
+      "reason": "no-golden-path",
+      "detail": null
+    },
+    {
+      "sourcetype": "mcp_jsonrpc",
+      "reason": "no-golden-path",
+      "detail": null
+    },
+    {
+      "sourcetype": "microsoft_dhcp_syslog",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "microsoft_dns_server_eventlog",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "microsoft_iis_accesslog",
+      "reason": "no-golden-path",
+      "detail": null
+    },
+    {
+      "sourcetype": "microsoft_windows_eventlog_classic",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "ms_defender_atp_alerts",
+      "reason": "no-golden-path",
+      "detail": null
+    },
+    {
+      "sourcetype": "ms365_defender_incident_alerts",
+      "reason": "no-golden-path",
+      "detail": null
+    },
+    {
+      "sourcetype": "mscs_azure_audit",
+      "reason": "no-golden-path",
+      "detail": null
+    },
+    {
+      "sourcetype": "mscs_azure_eventhub_defender_advancedhunting",
+      "reason": "no-golden-path",
+      "detail": null
+    },
+    {
+      "sourcetype": "mysql_server_audit",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "n8n_log_streaming",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "netapp_filer_cfoa",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "netapp_filer_syslog",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "netskope_alert_json",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "netskope_event_json",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "nginx_plus_kv",
+      "reason": "no-golden-path",
+      "detail": null
+    },
+    {
+      "sourcetype": "o365_graph_api",
+      "reason": "no-golden-path",
+      "detail": null
+    },
+    {
+      "sourcetype": "o365_management_activity",
+      "reason": "no-golden-path",
+      "detail": null
+    },
+    {
+      "sourcetype": "o365_reporting_messagetrace",
+      "reason": "no-golden-path",
+      "detail": null
+    },
+    {
+      "sourcetype": "okta_system",
+      "reason": "no-golden-path",
+      "detail": null
+    },
+    {
+      "sourcetype": "okta_system_log",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "oktaim2_log",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "ollama_server",
+      "reason": "no-golden-path",
+      "detail": null
+    },
+    {
+      "sourcetype": "osquery_results",
+      "reason": "no-golden-path",
+      "detail": null
+    },
+    {
+      "sourcetype": "pan_authentication_csv",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "pan_authentication_syslog",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "pan_authentication_syslog_nopri",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "pan_config_csv",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "pan_config_syslog",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "pan_config_syslog_nopri",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "pan_correlation_csv",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "pan_correlation_syslog",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "pan_correlation_syslog_nopri",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "pan_globalprotect_csv",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "pan_globalprotect_syslog",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "pan_globalprotect_syslog_nopri",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "pan_hipmatch_csv",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "pan_hipmatch_syslog",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "pan_hipmatch_syslog_nopri",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "pan_iptag_csv",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "pan_iptag_syslog",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "pan_iptag_syslog_nopri",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "pan_system_csv",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "pan_system_syslog",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "pan_system_syslog_nopri",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "pan_threat_csv",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "pan_threat_syslog",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "pan_threat_syslog_nopri",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "pan_traffic_csv",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "pan_traffic_syslog",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "pan_traffic_syslog_nopri",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "pan_tunnel_csv",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "pan_tunnel_syslog",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "pan_tunnel_syslog_nopri",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "proofpoint_pps_log",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "proofpoint_pps_module",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "proofpoint_pps_sendmail",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "proofpoint_tap_clicks",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "proofpoint_tap_messages",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "proofpoint_tap_rfc5424",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "pwsh_installediismodules",
+      "reason": "no-golden-path",
+      "detail": null
+    },
+    {
+      "sourcetype": "pwsh_subjectinterfacepackage",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "salesforce_eventlogfile_callout",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "salesforce_eventlogfile_execution",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "salesforce_eventlogfile_restapi",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "sap_hana",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "sentinelone_cloudfunnel_v1",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "sentinelone_cloudfunnel_v2",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "snort_alert_full",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "snort_alert_syslog",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "splunkd_ui_access",
+      "reason": "no-golden-path",
+      "detail": null
+    },
+    {
+      "sourcetype": "squid_access",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "stream_http",
+      "reason": "no-golden-path",
+      "detail": null
+    },
+    {
+      "sourcetype": "stream_ip",
+      "reason": "no-golden-path",
+      "detail": null
+    },
+    {
+      "sourcetype": "stream_tcp",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "suricata",
+      "reason": "no-golden-path",
+      "detail": null
+    },
+    {
+      "sourcetype": "syncsort_zos_smf",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "syncsort_zos_smf_racf",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "syncsort_zos_syslog",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "syslog_rfc3164",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "syslog_rfc5424",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "sysmon_linux",
+      "reason": "no-golden-path",
+      "detail": null
+    },
+    {
+      "sourcetype": "terraform_enterprise_audit",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "trellix_edr_event",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "trellix_epo_device",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "trellix_epo_event",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "trellix_epo_group",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "unifi_stahtd",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "vmw_syslog",
+      "reason": "no-golden-path",
+      "detail": null
+    },
+    {
+      "sourcetype": "vmware_nsx_fabric_rfc",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "vmware_nsx_firewall_syslog",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "vmware_nsx_routing_rfc",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "vmware_nsx_system_rfc",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "windows_application",
+      "reason": "emulation-unsupported",
+      "detail": "C.Text.parseWinEvent"
+    },
+    {
+      "sourcetype": "windows_defender",
+      "reason": "emulation-unsupported",
+      "detail": "C.Text.parseWinEvent"
+    },
+    {
+      "sourcetype": "windows_dns_client",
+      "reason": "emulation-unsupported",
+      "detail": "C.Text.parseWinEvent"
+    },
+    {
+      "sourcetype": "windows_security",
+      "reason": "emulation-unsupported",
+      "detail": "C.Text.parseWinEvent"
+    },
+    {
+      "sourcetype": "windows_sysmon",
+      "reason": "emulation-unsupported",
+      "detail": "C.Text.parseWinEvent"
+    },
+    {
+      "sourcetype": "windows_system",
+      "reason": "emulation-unsupported",
+      "detail": "C.Text.parseWinEvent"
+    },
+    {
+      "sourcetype": "wordpress_activity_log",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "workday_signon",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "zeek_json",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "zeek_tsv",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "zia_alerts",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "zia_csv",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "zia_json",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "zia_tsv",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "zpa_app_connector",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "zpa_audit",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "zpa_browser_access",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "zpa_user_activity",
+      "reason": "no-sample",
+      "detail": null
+    },
+    {
+      "sourcetype": "zpa_user_status",
+      "reason": "no-sample",
+      "detail": null
+    }
+  ]
+}

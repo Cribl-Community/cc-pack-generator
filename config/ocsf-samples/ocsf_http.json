@@ -1,0 +1,7 @@
+{
+  "classUid": 4002,
+  "className": "HTTP Activity",
+  "events": [
+    { "class_uid": 4002, "class_name": "HTTP Activity", "category_uid": 4, "category_name": "Network Activity", "activity_id": 2, "activity_name": "Get", "type_uid": 400202, "type_name": "HTTP Activity: Get", "severity_id": 1, "severity": "Informational", "time": 1737021800000, "metadata": { "version": "1.3.0", "product": { "vendor_name": "Zscaler", "name": "ZIA", "version": "1" } }, "src_endpoint": { "ip": "10.0.0.9", "port": 40000 }, "dst_endpoint": { "ip": "151.101.1.69", "port": 80, "hostname": "cdn.example.net" }, "http_request": { "http_method": "GET", "url": { "text": "http://cdn.example.net/app.js" }, "user_agent": "Mozilla/5.0" }, "connection_info": { "protocol_name": "tcp" }, "device": { "hostname": "proxy-01" }, "message": "200", "status": "Success" }
+  ]
+}

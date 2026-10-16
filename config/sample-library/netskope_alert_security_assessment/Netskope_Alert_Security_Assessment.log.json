@@ -1,0 +1,31 @@
+[
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "__collectible": {
+      "id": "securityassessment",
+      "format": "raw",
+      "collectorId": "Netskope-Alerts",
+      "taskId": "discover",
+      "guid": "96254e84-c344-407e-b816-589c0e7c85f9",
+      "compression": "none",
+      "collectorType": "rest",
+      "__pageNum": 1
+    },
+    "__channel": "MESB:2039929",
+    "host": "ip-10-255-3-109.us-west-2.compute.internal",
+    "_raw": "{\"_id\": \"00cc9e2121e45879b0586cd2\", \"access_method\": \"API Connector\", \"acked\": \"true\", \"action\": \"alert\", \"activity\": \"Edit\", \"alert\": \"yes\", \"alert_name\": \"Security Audit\", \"alert_type\": \"Security Assessment\", \"app\": \"Cobra Trading\", \"appcategory\": \"Cloud Storage\", \"browser\": \"unknown\", \"category\": \"Cloud Storage\", \"cci\": 9, \"ccl\": \"poor\", \"count\": 1, \"device\": \"ZTE - N8010_CT\", \"instance_id\": \"netskope.com\", \"object\": \"uqRuvnduzqaQSGeK\", \"object_type\": \"File\", \"organization_unit\": \"netskope.local/Netskope/Active Users/US & International/Full Time\", \"os\": \"Android 10.0\", \"policy\": \"policy_ga8\", \"site\": \"Cobra Trading\", \"timestamp\": 1703658132, \"traffic_type\": \"CloudApp\", \"type\": \"nspolicy\", \"ur_normalized\": \"dte3831-am2-7379-0531t@test.netskope.com\", \"user\": \"dte3831-am2-7379-0531t@test.netskope.com\", \"userkey\": \"dte3831-am2-7379-0531t@test.netskope.com\", \"asset_object_id\": \"\", \"resource_category\": \"\", \"iaas_remediated\": \"\", \"sa_rule_severity\": \"\", \"compliance_standards\": [], \"sa_profile_name\": \"\", \"sa_profile_id\": 0, \"account_id\": \"\", \"resource_group\": \"\", \"region_id\": \"\", \"asset_id\": \"\", \"policy_id\": 0, \"sAMAccountName\": \"\", \"iaas_asset_tags\": [], \"sa_rule_name\": \"\", \"region_name\": \"\", \"account_name\": \"\", \"sa_rule_id\": \"\"}",
+    "__collectStats": {
+      "url": "`https://test.eu.goskope.com/api/v2/events/dataexport/alerts/${id}`",
+      "method": "get",
+      "elapsedMS": 5802
+    },
+    "__isBroken": true,
+    "__raw": "{\"_id\": \"00cc9e2121e45879b0586cd2\", \"access_method\": \"API Connector\", \"acked\": \"true\", \"action\": \"alert\", \"activity\": \"Edit\", \"alert\": \"yes\", \"alert_name\": \"Security Audit\", \"alert_type\": \"Security Assessment\", \"app\": \"Cobra Trading\", \"appcategory\": \"Cloud Storage\", \"browser\": \"unknown\", \"category\": \"Cloud Storage\", \"cci\": 9, \"ccl\": \"poor\", \"count\": 1, \"device\": \"ZTE - N8010_CT\", \"instance_id\": \"netskope.com\", \"object\": \"uqRuvnduzqaQSGeK\", \"object_type\": \"File\", \"organization_unit\": \"netskope.local/Netskope/Active Users/US & International/Full Time\", \"os\": \"Android 10.0\", \"policy\": \"policy_ga8\", \"site\": \"Cobra Trading\", \"timestamp\": 1703658132, \"traffic_type\": \"CloudApp\", \"type\": \"nspolicy\", \"ur_normalized\": \"dte3831-am2-7379-0531t@test.netskope.com\", \"user\": \"dte3831-am2-7379-0531t@test.netskope.com\", \"userkey\": \"dte3831-am2-7379-0531t@test.netskope.com\", \"asset_object_id\": \"\", \"resource_category\": \"\", \"iaas_remediated\": \"\", \"sa_rule_severity\": \"\", \"compliance_standards\": [], \"sa_profile_name\": \"\", \"sa_profile_id\": 0, \"account_id\": \"\", \"resource_group\": \"\", \"region_id\": \"\", \"asset_id\": \"\", \"policy_id\": 0, \"sAMAccountName\": \"\", \"iaas_asset_tags\": [], \"sa_rule_name\": \"\", \"region_name\": \"\", \"account_name\": \"\", \"sa_rule_id\": \"\"}",
+    "_time": 1716925535.695,
+    "cribl_breaker": "netskope:netskope",
+    "__inputId": "collection:1716925524.5814.adhoc.Netskope-Alerts"
+  }
+]

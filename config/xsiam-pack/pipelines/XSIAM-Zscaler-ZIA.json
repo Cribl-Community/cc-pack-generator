@@ -1,0 +1,110 @@
+{
+  "name": "XSIAM-Zscaler-ZIA",
+  "kind": "source-specific",
+  "pattern": "wrap_serialize",
+  "sourceIdField": "__sourceIdentifier",
+  "sourceIdentifier": "af01292940d7426594d3d3e55ae17ee0",
+  "vendor": "zscaler",
+  "product": "cloudnss",
+  "reshapesRaw": true,
+  "sample": {
+    "name": "XSIAM-Zscaler-ZIA-JSON.log",
+    "format": "json",
+    "formatLabel": "JSON",
+    "events": 1
+  },
+  "upstream": {
+    "pack": "cribl-paloalto-xsiam",
+    "version": "2.1.1",
+    "path": "default/pipelines/XSIAM-Zscaler-ZIA/conf.yml",
+    "sha256": "daf97eba50f3ebea9dbbd2c528bc804d300cf040622ff03f2c2fa474c101bd3b",
+    "source": "https://packs.cribl.io/packs/cribl-paloalto-xsiam"
+  },
+  "conf": {
+    "output": "default",
+    "streamtags": [],
+    "groups": {},
+    "asyncFuncTimeout": 1000,
+    "description": ""
+  },
+  "functions": [
+    {
+      "id": "eval",
+      "filter": "true",
+      "conf": {
+        "add": [
+          {
+            "disabled": true,
+            "name": "event",
+            "value": "JSON.parse(_raw)"
+          },
+          {
+            "disabled": false,
+            "name": "event",
+            "value": "_raw"
+          },
+          {
+            "disabled": false,
+            "name": "__vendor",
+            "value": "'zscaler'"
+          },
+          {
+            "disabled": false,
+            "name": "__product",
+            "value": "'cloudnss'"
+          },
+          {
+            "disabled": false,
+            "name": "__sourceIdentifier",
+            "value": "'af01292940d7426594d3d3e55ae17ee0'"
+          }
+        ]
+      }
+    },
+    {
+      "id": "serialize",
+      "filter": "true",
+      "disabled": false,
+      "conf": {
+        "type": "json",
+        "dstField": "_raw",
+        "fields": [
+          "!_*",
+          "!cribl_breaker",
+          "sourcetype",
+          "event"
+        ],
+        "cleanFields": false,
+        "keyValueDelimiter": "="
+      }
+    },
+    {
+      "id": "eval",
+      "filter": "true",
+      "disabled": false,
+      "conf": {
+        "keep": [
+          "_raw",
+          "__inputId"
+        ],
+        "remove": [
+          "*"
+        ],
+        "add": []
+      }
+    },
+    {
+      "id": "eval",
+      "filter": "true",
+      "conf": {
+        "add": [
+          {
+            "disabled": false,
+            "name": "_raw",
+            "value": "JSON.parse(_raw)"
+          }
+        ]
+      }
+    }
+  ]
+}

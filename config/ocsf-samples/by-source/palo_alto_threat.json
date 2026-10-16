@@ -1,0 +1,65 @@
+{
+  "key": "palo_alto_threat",
+  "sourcetype": "palo_alto_threat",
+  "classUid": 4001,
+  "destFormat": "ocsf#network",
+  "source": "palo_alto_networks",
+  "vendorNames": [
+    "Palo Alto Networks"
+  ],
+  "provenance": {
+    "samplePack": "cribl-palo-alto-networks",
+    "sampleName": "PAN-Threat.log",
+    "tier": "reference",
+    "sampleEvents": 10,
+    "emulated": "golden OCSF pipeline, offline emulation of scripts/build-source-ocsf-samples.mjs",
+    "rejected": []
+  },
+  "events": [
+    {
+      "metadata": {
+        "product": {
+          "name": "PAN-OS",
+          "vendor_name": "Palo Alto Networks"
+        },
+        "version": "1.9.0"
+      },
+      "class_uid": 4001,
+      "category_uid": 4,
+      "activity_id": 1,
+      "type_uid": 400101,
+      "severity_id": 1,
+      "time": null
+    },
+    {
+      "metadata": {
+        "product": {
+          "name": "PAN-OS",
+          "vendor_name": "Palo Alto Networks"
+        },
+        "version": "1.9.0"
+      },
+      "class_uid": 4001,
+      "category_uid": 4,
+      "activity_id": 1,
+      "type_uid": 400101,
+      "severity_id": 1,
+      "time": null
+    },
+    {
+      "metadata": {
+        "product": {
+          "name": "PAN-OS",
+          "vendor_name": "Palo Alto Networks"
+        },
+        "version": "1.9.0"
+      },
+      "class_uid": 4001,
+      "category_uid": 4,
+      "activity_id": 1,
+      "type_uid": 400101,
+      "severity_id": 1,
+      "time": null
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "key": "sap_audit",
+  "sourcetype": "sap_audit",
+  "classUid": 3002,
+  "destFormat": "ocsf#authentication",
+  "source": "sap",
+  "vendorNames": [
+    "SAP"
+  ],
+  "provenance": {
+    "samplePack": "source-samples",
+    "sampleName": "sap_audit_reference",
+    "tier": "reference",
+    "sampleEvents": 8,
+    "emulated": "golden OCSF pipeline, offline emulation of scripts/build-source-ocsf-samples.mjs",
+    "rejected": []
+  },
+  "events": [
+    {
+      "user": {
+        "name": "JDOE"
+      },
+      "message": "Logon failed (reason=1, type=A, method=A)",
+      "actor": {
+        "user": {
+          "name": "JDOE"
+        }
+      },
+      "src_endpoint": {
+        "ip": "188.151.167.185",
+        "hostname": "sapprd01"
+      },
+      "metadata": {
+        "product": {
+          "name": "Security Audit Log",
+          "vendor_name": "SAP"
+        },
+        "version": "1.9.0"
+      },
+      "class_uid": 3002,
+      "category_uid": 3,
+      "activity_id": 99,
+      "type_uid": 300299,
+      "severity_id": 3,
+      "status_id": 2,
+      "status": "Failure",
+      "time": 1786419753000
+    },
+    {
+      "user": {
+        "name": "MMUELLER"
+      },
+      "message": "Logon successful (type=A, method=A)",
+      "actor": {
+        "user": {
+          "name": "MMUELLER"
+        }
+      },
+      "src_endpoint": {
+        "hostname": "WS-BER-0042"
+      },
+      "metadata": {
+        "product": {
+          "name": "Security Audit Log",
+          "vendor_name": "SAP"
+        },
+        "version": "1.9.0"
+      },
+      "class_uid": 3002,
+      "category_uid": 3,
+      "activity_id": 99,
+      "type_uid": 300299,
+      "severity_id": 1,
+      "status_id": 1,
+      "status": "Success",
+      "time": 1786431945000
+    },
+    {
+      "user": {
+        "name": "ADMIN"
+      },
+      "message": "User JDOE locked after repeated logon failures",
+      "actor": {
+        "user": {
+          "name": "ADMIN"
+        }
+      },
+      "src_endpoint": {
+        "ip": "10.20.30.15",
+        "hostname": "sapprd02"
+      },
+      "metadata": {
+        "product": {
+          "name": "Security Audit Log",
+          "vendor_name": "SAP"
+        },
+        "version": "1.9.0"
+      },
+      "class_uid": 3002,
+      "category_uid": 3,
+      "activity_id": 99,
+      "type_uid": 300299,
+      "severity_id": 3,
+      "status_id": 2,
+      "status": "Failure",
+      "time": 1786439882000
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+[
+  {
+    "_raw": "{\n                \"context\": \"enrollment\",\n                \"credits\": 1,\n                \"phone\": \"+12125556707\",\n                \"telephony_id\": \"220f89ff-bff8-4466-b6cb-b7787940ce68\",\n                \"ts\": \"2023-03-21T22:34:49.466370+00:00\",\n                \"txid\": \"2f5d34d3-053f-422c-9dd4-77a5d58706b1\",\n                \"type\": \"sms\"\n            }",
+    "_time": 1759169266.533,
+    "cribl_breaker": "Duo JSON Logs"
+  },
+  {
+    "_raw": "{\n                \"context\": \"authentication\",\n                \"credits\": 2,\n                \"phone\": \"+17345551311\",\n                \"telephony_id\": \"60799fee-f08f-4ba8-971f-4e53b3473e9a\",\n                \"ts\": \"2023-01-26T20:54:12.573580+00:00\",\n                \"txid\": \"373bd5f3-1e42-4a5d-aefa-b33ae278fac8\",\n                \"type\": \"phone\"\n            }",
+    "_time": 1759169266.533,
+    "cribl_breaker": "Duo JSON Logs"
+  },
+  {
+    "_raw": "{\n                \"context\": \"administrator login\",\n                \"credits\": 0,\n                \"phone\": \"+13135559542\",\n                \"telephony_id\": \"5bf1a860-fe39-49e3-be29-217659663a74\",\n                \"ts\": \"2022-10-25T16:07:45.304526+00:00\",\n                \"txid\": \"fb0c129b-f994-4d3d-953b-c3e764272eb7\",\n                \"type\": \"sms\"\n            }",
+    "_time": 1759169266.533,
+    "cribl_breaker": "Duo JSON Logs"
+  }
+]

@@ -1,0 +1,8 @@
+{
+  "classUid": 3002,
+  "className": "Authentication",
+  "events": [
+    { "class_uid": 3002, "class_name": "Authentication", "category_uid": 3, "category_name": "Identity & Access Management", "activity_id": 1, "activity_name": "Logon", "type_uid": 300201, "type_name": "Authentication: Logon", "severity_id": 3, "severity": "Medium", "time": 1737021700000, "metadata": { "version": "1.3.0", "product": { "vendor_name": "Okta", "name": "Okta", "version": "2024.10" } }, "src_endpoint": { "ip": "203.0.113.10" }, "user": { "name": "bob" }, "actor": { "user": { "name": "bob" } }, "device": { "hostname": "idp-01" }, "status": "Failure", "message": "login failed" },
+    { "class_uid": 3002, "class_name": "Authentication", "category_uid": 3, "category_name": "Identity & Access Management", "activity_id": 2, "activity_name": "Logoff", "type_uid": 300202, "type_name": "Authentication: Logoff", "severity_id": 1, "severity": "Informational", "time": 1737021760000, "metadata": { "version": "1.3.0", "product": { "vendor_name": "Okta", "name": "Okta", "version": "2024.10" } }, "src_endpoint": { "ip": "198.51.100.23" }, "user": { "name": "carol" }, "actor": { "user": { "name": "carol" } }, "device": { "hostname": "idp-01" }, "status": "Success", "message": "logout" }
+  ]
+}

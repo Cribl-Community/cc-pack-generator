@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "key": "vmware_esxlog_vpxa",
+  "sourcetype": "vmware_esxlog_vpxa",
+  "events": [
+    "2024-05-14T03:12:41.184213Z esx01.corp.local Vpxa[2109123]: [Originator@6876 sub=Default opID=52a1f9d2 user=vpxuser] Received callback with status OK for host 10.20.5.11",
+    "2024-05-14T03:15:02.442871Z esx02.corp.local Vpxa[2110987]: [Originator@6876 sub=VpxaHalCnxHostagent opID=8891c2f0 user=-] WARNING: Lost connection to host 172.16.4.22, attempting reconnect",
+    "2024-05-14T03:18:55.098213Z esx03.corp.local Vpxa[2112004]: [Originator@6876 sub=Default opID=1023abcf user=vpxuser@10.20.5.5] User successfully authenticated via SOAP session",
+    "2024-05-14T04:02:11.552011Z esx04.corp.local Vpxa[2113399]: [Originator@6876 sub=vpxaVmomi opID=af31029b user=svc-backup] Task CreateSnapshot_Task completed successfully on vm=VM-DB-PROD-01",
+    "2024-05-14T04:05:33.771902Z esx01.corp.local Vpxa[2109123]: [Originator@6876 sub=hostdCnx opID=91a2b3c4 user=-] ERROR: Failed to establish TCP connection to hostd on port=443, retrying",
+    "2024-05-14T05:12:00.900123Z esx05.corp.local Vpxa[2115672]: [Originator@6876 sub=Default opID=b3f9d012 user=administrator@vsphere.local] Login attempt from 192.168.10.55 failed: invalid credentials",
+    "2024-05-14T05:14:20.331002Z esx05.corp.local Vpxa[2115672]: [Originator@6876 sub=Default opID=b3f9d013 user=administrator@vsphere.local] Login attempt from 192.168.10.55 succeeded after 2 retries",
+    "2024-05-14T06:01:45.120433Z esx02.corp.local Vpxa[2110987]: [Originator@6876 sub=VpxaHalServices opID=2c4d5e6f user=-] WARNING: Health status of sensor \"Power Supply 2\" changed to Critical",
+    "2024-05-14T06:22:09.663211Z esx06.corp.local Vpxa[2117811]: [Originator@6876 sub=Default opID=fa10293d user=svc-monitor] Received large event payload (size=48213 bytes) from vCenter, processing deferred",
+    "2024-05-14T07:00:00.000998Z esx03.corp.local Vpxa[2112004]: [Originator@6876 sub=Vmomi opID=3d4e5f6a user=vpxuser] VM VM-WEB-07 power state changed to poweredOn",
+    "2024-05-14T07:33:12.884001Z esx07.corp.local Vpxa[2119023]: [Originator@6876 sub=Default opID=6f7a8b9c user=-] ERROR: Certificate validation failed for host [2001:db8::5f2a], connection refused",
+    "2024-05-14T08:10:44.221765Z esx01.corp.local Vpxa[2109123]: [Originator@6876 sub=VpxaHalCnxHostagent opID=9c0d1e2f user=vpxuser] Reconnected to hostd after 3 attempts, latency=142ms",
+    "2024-05-14T08:45:19.556432Z esx08.corp.local Vpxa[2120544]: [Originator@6876 sub=Default opID=1a2b3c4d user=root] Unauthorized API call blocked: DeletePermission_Task on entity=Datacenter1",
+    "2024-05-14T09:02:03.109887Z esx04.corp.local Vpxa[2113399]: [Originator@6876 sub=vpxaVmomi opID=5e6f7a8b user=svc-backup] Task RelocateVM_Task started, target=host02.corp.local port=902",
+    "2024-05-14T09:30:55.774112Z esx09.corp.local Vpxa[2122980]: [Originator@6876 sub=Default opID=7b8c9d0e user=-] INFO: opID=7b8c9d0e completed with empty result set, tid=44021",
+    "2024-05-14T10:05:12.339087Z esx02.corp.local Vpxa[2110987]: [Originator@6876 sub=Default opID=e1f2a3b4 user=jsmith] Session token refreshed for management interface vmk0, 10.20.5.11",
+    "2024-05-14T10:47:38.902341Z esx05.corp.local Vpxa[2115672]: [Originator@6876 sub=Default opID=c9d8e7f6 user=administrator@vsphere.local] WARNING: Repeated failed login attempts detected (count=5) from 203.0.113.44",
+    "2024-05-14T11:22:14.556700Z esx06.corp.local Vpxa[2117811]: [Originator@6876 sub=VpxaHalServices opID=4f5a6b7c user=-] Storage adapter vmhba2 reported latency spike, port=3260",
+    "2024-05-14T12:05:59.001234Z esx07.corp.local Vpxa[2119023]: [Originator@6876 sub=Default opID=8d9e0f1a user=svc-orchestrator] ERROR: Task ReconfigVM_Task failed: InsufficientResourcesFault on host=esx07.corp.local",
+    "2024-05-14T13:11:47.665589Z esx03.corp.local Vpxa[2112004]: [Originator@6876 sub=Vmomi opID=0f1a2b3c user=vpxuser] Heartbeat sent to vCenter at 172.16.1.5, tid=51092, status=OK"
+  ],
+  "fingerprint": "990aceee-3745",
+  "verification": {
+    "verdict": "pass",
+    "method": "structure",
+    "eventsParsed": 20,
+    "eventsChecked": 20,
+    "fields": [
+      "entity",
+      "host",
+      "latency",
+      "opid",
+      "port",
+      "status",
+      "sub",
+      "target",
+      "tid",
+      "user",
+      "vm"
+    ],
+    "reasons": [
+      "no parser for vmware_esxlog_vpxa; the events are well-formed kvp with 11 distinct keys"
+    ],
+    "offendingEvents": [],
+    "keyEcho": null
+  },
+  "provenance": {
+    "model": "us.anthropic.claude-sonnet-5",
+    "buildNumber": 528,
+    "generatedAt": "2026-08-18T06:40:05.696Z",
+    "grounding": "KNOWN FACTS ABOUT THIS SOURCE (from sourcetype recognition — match these exactly):\n- Product: VMware ESXi host log\n- Log family: syslog"
+  }
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "_raw": "500,100GB_Group",
+    "_time": 1666497286.809,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "500,MyApp_500GB_day",
+    "_time": 1666497286.809,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "750,MyOtherApp_750GB_day",
+    "_time": 1666497286.809,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "0.000002,LowQuota_App",
+    "_time": 1666497286.809,
+    "cribl_breaker": "Break on newlines"
+  }
+]

@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "key": "vmware_esxlog_vsansystem",
+  "sourcetype": "vmware_esxlog_vsansystem",
+  "events": [
+    "2024-05-30T02:14:07.331Z esxi01.corp.local Vsansystem[2098234]: INFO: CMMDS: Node 52a1b3c4-5678-90ab-cdef-0011223344ab joined the cluster successfully",
+    "2024-05-30T03:02:51.882Z esxi-dc02.lab.local Vsansystem[2101122]: WARNING: LSOM: Disk naa.600508b1001c1234 latency exceeded threshold (45ms) on device mpx.vmhba1:C0:T2:L0",
+    "2024-05-30T04:18:22.104Z 10.20.5.14 Vsansystem[2099876]: ERROR: DOM: Object 8f3a2c1e-9d4b-4a1e-8c2d-33ff44aa5566 owner change failed, timeout waiting for quorum",
+    "2024-05-30T05:44:39.998Z esxi03.corp.local Vsansystem[2100543]: INFO: CLOM: Repair job started for policy compliance on cluster domain-c12",
+    "2024-05-30T06:12:03.412Z esxi-dc02.lab.local Vsansystem[2101987]: WARNING: RDT: Connection reset by peer 172.16.4.22:2233, retrying handshake",
+    "2024-05-30T07:33:18.775Z 192.168.10.11 Vsansystem[2098765]: ERROR: CMMDS: Authentication failure for node 10.20.5.99 - certificate validation rejected",
+    "2024-05-30T08:01:44.221Z esxi01.corp.local Vsansystem[2098234]: INFO: Health: vSAN cluster health check completed, all checks passed",
+    "2024-05-30T08:47:59.556Z esxi05.lab.local Vsansystem[2103321]: WARNING: LSOM: Disk group ssd-cache-01 approaching capacity threshold 92%",
+    "2024-05-30T09:15:11.098Z esxi02.corp.local Vsansystem[2099001]: ERROR: DOM: Component degraded on object 4a2f8e91-3c7d-4b6e-9a1f-77aa88bb0011, resync required",
+    "2024-05-30T10:02:33.664Z 172.16.8.19 Vsansystem[2104456]: INFO: CMMDS: Node fe80::250:56ff:fe12:3456 removed from cluster gracefully during maintenance mode",
+    "2024-05-30T11:29:47.203Z esxi-dc02.lab.local Vsansystem[2101122]: CRITICAL: Cluster: Network partition detected - node 10.20.5.7 unreachable for 60s",
+    "2024-05-30T12:05:15.887Z esxi04.corp.local Vsansystem[2105789]: INFO: Encryption: KMS key rotation completed successfully for cluster domain-c12",
+    "2024-05-30T13:41:29.334Z 203.0.113.44 Vsansystem[2098234]: WARNING: RDT: Unexpected connection attempt from unrecognized IP 203.0.113.44 on port 12321, rejecting",
+    "2024-05-30T14:18:52.771Z esxi03.corp.local Vsansystem[2100543]: INFO: CLOM: Rebalance operation completed for disk group naa.600508b1001c5678",
+    "2024-05-30T15:36:04.918Z esxi01.corp.local Vsansystem[2098234]: ERROR: LSOM: Disk naa.600508b1001c9999 failed with I/O error, marking unhealthy",
+    "2024-05-30T16:52:41.056Z 10.20.5.14 Vsansystem[2099876]: WARNING: DOM: Resync throttled due to high network utilization on vmk1 (98%)",
+    "2024-05-30T17:29:18.443Z esxi06.lab.local Vsansystem[2107123]: INFO: Health: iSCSI target service started on vSAN cluster domain-c15",
+    "2024-05-30T18:44:33.291Z esxi02.corp.local Vsansystem[2099001]: CRITICAL: Cluster: Multiple disk failures detected simultaneously, data at risk on object cf12ab34-5566-7788-99aa-bbccddeeff00",
+    "2024-05-30T19:11:07.665Z esxi-dc02.lab.local Vsansystem[2101122]: INFO: CMMDS: Cluster UUID 5b2c8f1a-3d4e-4f6a-9c1b-8877665544ab reconfigured with new witness host 172.16.4.50",
+    "2024-05-30T20:58:22.809Z esxi05.lab.local Vsansystem[2103321]: WARNING: Encryption: Failed to unlock disk naa.600508b1001c4321 - invalid KEK, manual intervention required"
+  ],
+  "fingerprint": "3b571a6a-3047",
+  "verification": {
+    "verdict": "unverified",
+    "method": "none",
+    "eventsParsed": 0,
+    "eventsChecked": 20,
+    "fields": [],
+    "reasons": [
+      "vmware_esxlog_vsansystem has no parser and the events are unstructured text — nothing to verify against"
+    ],
+    "offendingEvents": [],
+    "keyEcho": null
+  },
+  "provenance": {
+    "model": "us.anthropic.claude-sonnet-5",
+    "buildNumber": 528,
+    "generatedAt": "2026-08-18T06:41:00.244Z",
+    "grounding": "KNOWN FACTS ABOUT THIS SOURCE (from sourcetype recognition — match these exactly):\n- Product: VMware ESXi host log\n- Log family: syslog"
+  }
+}

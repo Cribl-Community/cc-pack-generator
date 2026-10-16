@@ -1,0 +1,178 @@
+{
+  "key": "aws_cloudtrail",
+  "sourcetype": "aws_cloudtrail",
+  "classUid": 3002,
+  "destFormat": "ocsf#cloud_audit",
+  "source": "generic",
+  "vendorNames": [
+    "AWS"
+  ],
+  "provenance": {
+    "samplePack": "source-samples",
+    "sampleName": "aws_cloudtrail_reference",
+    "tier": "fallback",
+    "sampleEvents": 54,
+    "emulated": "golden OCSF pipeline, offline emulation of scripts/build-source-ocsf-samples.mjs",
+    "rejected": [
+      {
+        "tier": "reference",
+        "reason": "sample-format-mismatch",
+        "detail": "sampleMatchesSourceExpectation=mismatch"
+      }
+    ]
+  },
+  "events": [
+    {
+      "api": {
+        "service": {
+          "name": "sts.amazonaws.com"
+        },
+        "request": {
+          "uid": "e19c7a7f-cd96-4642-9ee6-2360a7b01b12"
+        },
+        "operation": "AssumeRoleWithSAML"
+      },
+      "actor": {
+        "user": {
+          "name": "rodsoto@rodsoto.onmicrosoft.com",
+          "type": "SAMLUser",
+          "uid": "ZRu9MRAjiG9tvi1QBNfdI664G5A=:rodsoto@rodsoto.onmicrosoft.com"
+        }
+      },
+      "src_endpoint": {
+        "ip": "72.21.217.152"
+      },
+      "http_request": {
+        "user_agent": "AWS Signin, aws-internal/3 aws-sdk-java/1.11.898 Linux/4.9.230-0.1.ac.223.84.332.metal1.x86_64 OpenJDK_64-Bit_Server_VM/25.275-b01 java/1.8.0_275 kotlin/1.3.72 vendor/Oracle_Corporation"
+      },
+      "cloud": {
+        "account": {
+          "uid": "111111111111"
+        },
+        "region": "us-east-1",
+        "provider": "AWS"
+      },
+      "resource": {
+        "name": "arn:aws:iam::111111111111:role/rodonmicrotestrole",
+        "type": "AWS::IAM::Role"
+      },
+      "metadata": {
+        "product": {
+          "name": "CloudTrail",
+          "vendor_name": "AWS"
+        },
+        "uid": "b25b825d-9c9b-49d3-9ecd-290dbe8f2c29",
+        "version": "1.9.0"
+      },
+      "class_uid": 3002,
+      "category_uid": 3,
+      "activity_id": 1,
+      "type_uid": 300201,
+      "severity_id": 1,
+      "status_id": 1,
+      "status": "Success",
+      "time": 1611287056000
+    },
+    {
+      "api": {
+        "service": {
+          "name": "signin.amazonaws.com"
+        },
+        "operation": "ConsoleLogin"
+      },
+      "actor": {
+        "user": {
+          "account": {
+            "uid": "111111111111"
+          },
+          "name": "HIDDEN_DUE_TO_SECURITY_REASONS",
+          "type": "IAMUser"
+        }
+      },
+      "src_endpoint": {
+        "ip": "142.254.89.27"
+      },
+      "http_request": {
+        "user_agent": "Go-http-client/1.1"
+      },
+      "cloud": {
+        "account": {
+          "uid": "111111111111"
+        },
+        "region": "us-east-1",
+        "provider": "AWS"
+      },
+      "metadata": {
+        "product": {
+          "name": "CloudTrail",
+          "vendor_name": "AWS"
+        },
+        "uid": "9fcfb8c3-3fca-48db-85d2-7b107f9d95d0",
+        "version": "1.9.0"
+      },
+      "class_uid": 3002,
+      "category_uid": 3,
+      "activity_id": 1,
+      "type_uid": 300201,
+      "severity_id": 3,
+      "status_id": 2,
+      "status": "Failure",
+      "time": 1666211618000
+    },
+    {
+      "api": {
+        "service": {
+          "name": "s3.amazonaws.com"
+        },
+        "request": {
+          "uid": "6A7359F7A9414B02"
+        },
+        "operation": "CopyObject"
+      },
+      "actor": {
+        "user": {
+          "account": {
+            "uid": "111111111111"
+          },
+          "name": "patrick_cli",
+          "type": "IAMUser",
+          "uid": "AIDAYTOGP2RLNALZHZ6KX",
+          "credential_uid": "AKIAYTOGP2RLJ2OYSF6E"
+        }
+      },
+      "src_endpoint": {
+        "ip": "95.90.199.65"
+      },
+      "http_request": {
+        "user_agent": "[aws-cli/2.0.45 Python/3.7.4 Darwin/20.2.0 exe/x86_64 command/s3.cp]"
+      },
+      "cloud": {
+        "account": {
+          "uid": "111111111111"
+        },
+        "region": "us-west-2",
+        "provider": "AWS"
+      },
+      "resource": {
+        "name": "arn:aws:s3:::patricktestbucketencrypt/kms_aws_events_encrypted.json",
+        "type": "AWS::S3::Object"
+      },
+      "metadata": {
+        "product": {
+          "name": "CloudTrail",
+          "vendor_name": "AWS"
+        },
+        "uid": "b20d43de-175d-4443-acd7-f5f3e587ae00",
+        "version": "1.9.0"
+      },
+      "class_uid": 6003,
+      "category_uid": 6,
+      "activity_id": 99,
+      "type_uid": 600399,
+      "severity_id": 1,
+      "status_id": 1,
+      "status": "Success",
+      "time": 1610368847000
+    }
+  ]
+}

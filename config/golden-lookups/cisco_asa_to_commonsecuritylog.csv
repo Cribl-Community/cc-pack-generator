@@ -1,0 +1,33 @@
+cisco_field_name,cef_field_name,commonsecuritylog_fied_name
+action,act,DeviceAction
+asa_code,DeviceEventClassID,DeviceEventClassID
+dest_interface,deviceOutboundInterface,DeviceOutboundInterface
+dest_ip,dst,DestinationIP
+dest_port,dpt,DestinationPort
+src_interface,DeviceInboundInterface,DeviceInboundInterface
+src_ip,src,SourceIP
+src_nt_domain,sourceDnsDomain,SourceDnsDomain
+src_port,spt,SourcePort
+src_user,suser,SourceUserName
+transport,proto,Protocol
+user,suser,SourceUserName
+vendor,Device Vendor,DeviceVendor
+rule_id,,
+icmp_code,,
+icmp_type,,
+access_group,,
+bytes,in,ReceivedBytes
+dest_translated_ip,,RemoteIP
+dest_translated_port,,RemotePort
+direction,deviceDirection,CommunicationDirection
+_raw,msg,Message
+source,Host,Computer
+_time,rt,ReceiptTime
+product,Device Product,DeviceProduct
+src_translated_ip,sourceTranslatedAddress,sourceTranslatedAddress
+src_translated_port,sourceTranslatedPort,SourceTranslatedPort
+dest_translated_ip,destinationTranslatedAddress,DestinationTranslatedAddress
+dest_translated_port,destinationTranslatedPort,DestinationTranslatedPort
+reason,Reason,Reason
+serverity,Severity,LogSeverity
+facility,deviceFacility,DeviceFacility

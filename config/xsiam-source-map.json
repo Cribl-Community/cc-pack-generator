@@ -1,0 +1,254 @@
+{
+  "_notice": "Explicit sourcetype -> XSIAM knowledge map for docs/destination-specs/xsiam.md. Hand-authored, one entry per source, and every entry states the evidence that justifies it. There is deliberately NO fuzzy matching anywhere in the resolver: a source that is not here and does not hit a demisto key exactly resolves T4 and fails the build, which is the honest answer. Absence is not a bug to be papered over with a guess.",
+  "_fields": {
+    "packPipeline": "Pipeline name in config/xsiam-pack/. Resolves T1a when the mirror marks it validated (a Palo-provided sample links to it), T1c when it is a placeholder.",
+    "uuidKey": "Key in config/xsiam-uuid-catalog.json. Resolves T2 on its own, and OVERRIDES a pack pipeline's identifier when both exist (ordering rule 4 - the Palo Alto doc is king for the UUID value).",
+    "demistoKey": "Key in config/xsiam-demisto-index.json. Supplies T3 vendor/product, and any required input format its content pack asserts.",
+    "demistoPack": "Content pack name, for sources that assert a required format but ship no INGEST rule at all - the four best T1b candidates are like this.",
+    "aliases": "Additional canonical sourcetypes that resolve to this entry.",
+    "evidence": "Why this mapping is correct. Required."
+  },
+  "sources": {
+    "alibaba_action_trail": {
+      "demistoKey": "alibaba_action_trail",
+      "aliases": ["alibaba_actiontrail", "alibaba_cloud_actiontrail", "action_trail", "actiontrail"],
+      "evidence": "INGEST rule declares alibaba/action_trail -> alibaba_action_trail_raw; no pack pipeline and no dedicated UUID, so T3 is the ceiling."
+    },
+    "aruba_clearpass": {
+      "demistoKey": "aruba_networks_clearpass",
+      "aliases": ["hpe_aruba_clearpass"],
+      "evidence": "INGEST aruba_networks/clearpass, and its README asserts CEF ('forward Syslog messages in CEF format') - a T1b source with an INGEST rule as well."
+    },
+    "aws_cloudtrail": {
+      "packPipeline": "XSIAM-Amazon-AWSAuditLogs",
+      "evidence": "The UUID doc's collection method for AWS audit logs reads 'Ingest audit logs from AWS Cloud Trail'; the pipeline ships a Palo-provided JSON sample."
+    },
+    "aws_eks": {
+      "packPipeline": "XSIAM-Amazon-AWSEKS",
+      "evidence": "Dedicated pack pipeline and dedicated UUID for EKS; placeholder, no Palo sample."
+    },
+    "aws_prompt_logs": {
+      "packPipeline": "XSIAM-Amazon-AWSPromptLogs",
+      "evidence": "Dedicated pack pipeline with a Palo-provided JSON sample."
+    },
+    "aws_route53": {
+      "packPipeline": "XSIAM-Amazon-AWSRoute53Logs",
+      "uuidKey": "amazon_aws_route_53_logs",
+      "aliases": ["aws_route53_logs", "amazon_route53"],
+      "evidence": "The live ordering-rule-4 case: the doc lists (old) d57ae82c1e2a4d138fc34084d159b09e and (new) 0a7544038b444998a20e698669817e3d, and the pack pipeline still tags the OLD one. Shape from the pack, identifier from the doc."
+    },
+    "aws_vpc_flow": {
+      "packPipeline": "XSIAM-Amazon-AWSFlowLogs",
+      "aliases": ["aws_vpc_v5", "aws_vpc_v2", "aws_flow_logs"],
+      "evidence": "Dedicated pipeline for AWS flow logs with a Palo-provided sample whose format classifies as space-delimited text, matching VPC flow log records."
+    },
+    "azure_activity": {
+      "packPipeline": "XSIAM-Microsoft-Azure",
+      "uuidKey": "microsoft_azure",
+      "evidence": "Pack pipeline UUID fce13a1d51294f84bae4a37851503060 equals the doc's microsoft_azure UUID exactly; Palo-provided JSON sample."
+    },
+    "azure_ad": {
+      "packPipeline": "XSIAM-Microsoft-AzureAD",
+      "uuidKey": "microsoft_azure_ad",
+      "evidence": "Pack UUID c00d6d52e5b141a8baa8db9d9345423d equals the doc's microsoft_azure_ad UUID; Palo-provided JSON sample."
+    },
+    "azure_ad_audit": {
+      "packPipeline": "XSIAM-Microsoft-AzureADAudit",
+      "uuidKey": "microsoft_azure_ad_audit",
+      "evidence": "Pack UUID 0e076d5abe864bf78e8145ea9e0d749e equals the doc's microsoft_azure_ad_audit UUID; placeholder, no sample."
+    },
+    "azure_signin": {
+      "packPipeline": "XSIAM-Microsoft-AzureADSignins",
+      "uuidKey": "microsoft_azure_ad_sign_ins",
+      "aliases": ["azure_ad_signin", "azure_signin_logs"],
+      "evidence": "Pack UUID f56dcfdf6bca43e793a4b6e9290e7b12 equals the doc's microsoft_azure_ad_sign_ins UUID; placeholder, no sample."
+    },
+    "box": {
+      "packPipeline": "XSIAM-Box-Box",
+      "uuidKey": "box_box",
+      "demistoKey": "box_box",
+      "evidence": "All three mirrors agree on Box: pack pipeline with two Palo-provided samples (Groups and Users), doc UUID, and an INGEST rule."
+    },
+    "checkpoint_firewall": {
+      "packPipeline": "XSIAM-Checkpoint-CEF",
+      "demistoPack": "CheckpointFirewall",
+      "aliases": ["checkpoint_cef", "check_point_firewall"],
+      "evidence": "Dedicated CEF pipeline with a Palo-provided CEF sample, and the content pack asserts CEF. T1a must win over T1b here (ordering rule 1) even though the generic CEF pipeline would also match."
+    },
+    "cisco_asa": {
+      "packPipeline": "XSIAM-Cisco-ASA-Syslog",
+      "demistoKey": "cisco_asa",
+      "aliases": ["cisco_asa_syslog"],
+      "evidence": "Pack pipeline with a Palo-provided syslog sample, statically tagging Cisco/ASA. The parsing rule declares cisco/asa - same source, different case, and both yield cisco_asa_raw."
+    },
+    "cisco_meraki": {
+      "demistoKey": "cisco_meraki",
+      "evidence": "INGEST cisco/meraki with no pack pipeline and no dedicated UUID: a plain T3 resolution."
+    },
+    "cisco_stealthwatch": {
+      "demistoPack": "CiscoStealthwatch",
+      "evidence": "The ordering-rule-3 case. Its README asserts 'custom LEEF format', and it has no INGEST rule, no pack pipeline and no UUID. Because LEEF is excluded from T1b, nothing remains and it must resolve T4 - a LEEF header would otherwise extract cleanly through the CEF pipeline and produce plausible, wrong tags."
+    },
+    "crowdstrike_falcon": {
+      "packPipeline": "XSIAM-Crowdstrike-FalconDataReplicator",
+      "aliases": ["crowdstrike_fdr", "crowdstrike_falcon_data_replicator"],
+      "evidence": "FDR is the Falcon event stream; the pipeline ships a Palo-provided JSON sample. Its dedicated UUID exists ONLY in the pack - FDR is absent from the doc entirely."
+    },
+    "crowdstrike_hosts": {
+      "packPipeline": "XSIAM-Crowdstrike-Hosts",
+      "uuidKey": "crowdstrike_hosts",
+      "evidence": "Pack pipeline with a Palo-provided JSON sample, plus a doc UUID."
+    },
+    "cyberark_pta": {
+      "demistoPack": "CyberArk_Privileged_Threat_Analytics",
+      "aliases": ["cyberark_privileged_threat_analytics"],
+      "evidence": "Asserts CEF ('forward Syslog messages in CEF format') and ships NO parsing rule, so it appears in no T3 source. Exactly the T1b case: CEF format, no vendor/product needed, tags read from the header at runtime."
+    },
+    "dropbox": {
+      "packPipeline": "XSIAM-Dropbox-Events",
+      "uuidKey": "dropbox_events",
+      "evidence": "Pack pipeline and doc UUID for Dropbox events; placeholder, no sample. (Dropbox Directory is a separate pipeline and UUID.)"
+    },
+    "forcepoint": {
+      "demistoKey": "forcepoint_forcepoint_dlp",
+      "demistoPack": "Forcepoint",
+      "evidence": "The Forcepoint content pack asserts CEF for NGFW, so T1b applies before its DLP INGEST rule is considered."
+    },
+    "fortinet_fortigate": {
+      "packPipeline": "XSIAM-Fortinet-Fortigate-Syslog",
+      "demistoKey": "fortinet_fortigate",
+      "demistoPack": "FortiGate",
+      "aliases": ["fortigate", "fortinet_fortigate_syslog"],
+      "evidence": "Pack pipeline hardcodes Fortinet/Fortigate, matching the INGEST rule byte for byte, and ships a Palo-provided CEF sample. The content pack asserts CEF via 'set format cef', so a non-CEF sample must hard-fail."
+    },
+    "gcp_audit": {
+      "packPipeline": "XSIAM-Google-CloudLogging",
+      "uuidKey": "google_cloud_logging_audit_logs_flow_logs",
+      "demistoKey": "google_cloud_logging",
+      "aliases": ["gcp_cloud_logging", "google_cloud_logging"],
+      "evidence": "The doc's entry is 'Cloud Logging (audit logs/flow logs)'; the pipeline ships a Palo-provided JSON sample and the content pack declares Google/Cloud_Logging."
+    },
+    "gmail": {
+      "packPipeline": "XSIAM-Google-Gmail",
+      "uuidKey": "google_gmail",
+      "aliases": ["google_gmail"],
+      "evidence": "Pack pipeline and doc UUID for Gmail; placeholder, no sample."
+    },
+    "google_workspace_alerts": {
+      "packPipeline": "XSIAM-Google-WorkspaceAlerts",
+      "uuidKey": "google_workspace_alerts",
+      "evidence": "Pack pipeline and doc UUID agree. Only the Workspace feeds the doc names individually are mapped - the pack's 16 Workspace pipelines are otherwise too fine-grained to assign a sourcetype to without guessing."
+    },
+    "microsoft_defender": {
+      "packPipeline": "XSIAM_Microsoft_Defender_via_EventHub",
+      "uuidKey": "microsoft_defender",
+      "aliases": ["microsoft_365_defender", "defender_eventhub"],
+      "evidence": "Pack pipeline with a Palo-provided JSON sample. It splits an Event Hub batch into records, so it both reshapes _raw legitimately and REQUIRES the pack's EventHub breaker ruleset."
+    },
+    "microsoft_dhcp": {
+      "packPipeline": "XSIAM-Microsoft-DHCP",
+      "uuidKey": "microsoft_dhcp",
+      "demistoKey": "microsoft_dhcp",
+      "evidence": "All three mirrors carry DHCP; pipeline is a placeholder with no sample."
+    },
+    "office365": {
+      "packPipeline": "XSIAM-Microsoft-Office365General",
+      "uuidKey": "microsoft_office_365_general",
+      "aliases": ["o365", "microsoft_office365", "office_365"],
+      "evidence": "The general Office 365 feed. The pack ships 12 further Office 365 pipelines for specific feeds (DLP, Exchange, SharePoint...) with their own UUIDs; those need their own sourcetypes and are deliberately unmapped rather than folded in here."
+    },
+    "okta_system": {
+      "packPipeline": "XSIAM-OKTA-SSO",
+      "uuidKey": "okta_sso",
+      "demistoKey": "okta_sso",
+      "aliases": ["okta", "okta_system_log", "okta_sso"],
+      "evidence": "The doc's okta_sso entry targets okta_sso_raw - the dataset the pack README uses as its worked XQL example - and the pipeline ships a Palo-provided JSON sample."
+    },
+    "onelogin": {
+      "packPipeline": "XSIAM-OneLogin-Events",
+      "uuidKey": "onelogin_events",
+      "evidence": "Pack pipeline and doc UUID for OneLogin events; placeholder, no sample."
+    },
+    "pingone": {
+      "packPipeline": "XSIAM-PingID-PingONE",
+      "uuidKey": "pingid_pingone",
+      "aliases": ["pingid", "ping_identity"],
+      "evidence": "Pack pipeline and doc UUID agree; placeholder, no sample."
+    },
+    "prisma_cloud": {
+      "packPipeline": "XSIAM-Prisma-Cloud",
+      "demistoKey": "prisma_cloud",
+      "evidence": "Pack pipeline carries a dedicated UUID the doc does not list, and the content pack declares prisma/cloud. Placeholder, no sample."
+    },
+    "proofpoint_tap": {
+      "packPipeline": "XSIAM-Proofpoint-TAP",
+      "uuidKey": "proofpoint_tap",
+      "demistoKey": "proofpoint_tap",
+      "aliases": ["proofpoint"],
+      "evidence": "All three mirrors carry Proofpoint TAP; the INGEST rule declares Proofpoint/Tap. Placeholder, no sample."
+    },
+    "salesforce": {
+      "packPipeline": "XSIAM-Salesforce-SalesforceLogs",
+      "uuidKey": "salesforce_salesforce_logs",
+      "aliases": ["salesforce_logs", "salesforce_eventlogfile"],
+      "evidence": "Doc entry salesforce_salesforce_logs targets salesforce_eventlogfile_raw and notes the schema is dynamic. Placeholder, no sample."
+    },
+    "sentinelone_deep_visibility": {
+      "packPipeline": "XSIAM-SentinelOne-DeepVisibility",
+      "aliases": ["sentinelone", "sentinel_one"],
+      "evidence": "Pack pipeline with a Palo-provided JSON sample; its dedicated UUID is one the doc does not list."
+    },
+    "servicenow_cmdb": {
+      "packPipeline": "XSIAM-ServiceNow-CMDB",
+      "aliases": ["servicenow"],
+      "evidence": "Pack pipeline with a Palo-provided JSON sample. The doc's dataset is a template (servicenow_cmdb_<table name>_raw), so the concrete dataset depends on the table."
+    },
+    "silverfort": {
+      "demistoKey": "silverfort_admin_console",
+      "evidence": "INGEST silverfort/admin_console and its README asserts CEF, so T1b applies before T3."
+    },
+    "txone_stellarone": {
+      "demistoKey": "txone_networks_stellarone",
+      "aliases": ["txone"],
+      "evidence": "INGEST TXOne Networks/StellarOne; README asserts CEF ('forwards ... in Syslog CEF format')."
+    },
+    "txone_stellarone_legacy_mode": {
+      "demistoKey": "txone_networks_stellarone_legacy_mode",
+      "aliases": ["txone_networks_stellarone_legacy_mode"],
+      "evidence": "INGEST TXOne Networks/StellarOne (Legacy Mode); the same TXOne README asserts Syslog CEF for the content pack."
+    },
+    "txone_stellarprotect": {
+      "demistoKey": "txone_networks_stellarprotect",
+      "aliases": ["txone_networks_stellarprotect"],
+      "evidence": "INGEST TXOne Networks/StellarProtect; the same TXOne README asserts Syslog CEF for the content pack."
+    },
+    "txone_stellarprotect_legacy_mode": {
+      "demistoKey": "txone_networks_stellarprotect_legacy_mode",
+      "aliases": ["txone_networks_stellarprotect_legacy_mode"],
+      "evidence": "INGEST TXOne Networks/StellarProtect (Legacy Mode); the same TXOne README asserts Syslog CEF for the content pack."
+    },
+    "windows_security": {
+      "uuidKey": "microsoft_windows_event_logs",
+      "demistoKey": "microsoft_windows",
+      "aliases": ["windows_event_log", "microsoft_windows_eventlog_classic"],
+      "evidence": "The T2 case, and the only one: Microsoft Windows Event Logs has a dedicated UUID (63b0fbeb501e4650896e7064d3412e14) in the doc and NO pack pipeline. The dedicated UUID must win over the demisto INGEST rule, or out-of-the-box analytics never run."
+    },
+    "workday": {
+      "packPipeline": "XSIAM-Workday-Workday",
+      "uuidKey": "workday_workday",
+      "demistoKey": "workday_activity",
+      "evidence": "Pack pipeline and doc UUID agree. Workday is the source documented under a bare paragraph rather than a heading in the UUID doc, which the catalog sync handles explicitly."
+    },
+    "zscaler_web": {
+      "packPipeline": "XSIAM-Zscaler-ZIA",
+      "demistoKey": "zscaler_cloudnss",
+      "aliases": ["zscaler_zia", "zscaler_nss", "zia"],
+      "evidence": "The pipeline statically tags zscaler/cloudnss, matching the INGEST rule byte for byte including its lowercase, and ships a Palo-provided JSON sample. It also rewrites _raw by design (JSON envelope), so it is exempt from the byte-identity check."
+    },
+    "zscaler_zpa": {
+      "packPipeline": "XSIAM-Zscaler-ZPA-Syslog",
+      "aliases": ["zscaler_private_access", "zpa"],
+      "evidence": "Pack pipeline tags Zscaler/ZPA, values that exist ONLY here - the content repo has no ZPA parsing rule. Its Palo-provided sample classifies as LEEF despite the pipeline name, so the required input format is LEEF, not syslog."
+    }
+  }
+}

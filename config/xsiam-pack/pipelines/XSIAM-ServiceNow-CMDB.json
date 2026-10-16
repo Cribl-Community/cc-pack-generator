@@ -1,0 +1,53 @@
+{
+  "name": "XSIAM-ServiceNow-CMDB",
+  "kind": "source-specific",
+  "pattern": "tag_only",
+  "sourceIdField": "__sourceIdentifier",
+  "sourceIdentifier": "8b3e767247e44471a95e563378d0b9be",
+  "vendor": null,
+  "product": null,
+  "reshapesRaw": false,
+  "sample": {
+    "name": "XSIAM-ServiceNow-CMDB.log",
+    "format": "json",
+    "formatLabel": "JSON",
+    "events": 1
+  },
+  "upstream": {
+    "pack": "cribl-paloalto-xsiam",
+    "version": "2.1.1",
+    "path": "default/pipelines/XSIAM-ServiceNow-CMDB/conf.yml",
+    "sha256": "17b0d9b603c08184db8ac82dbcccf9add2ecda74ae66f4919434ca5ca38084d6",
+    "source": "https://packs.cribl.io/packs/cribl-paloalto-xsiam"
+  },
+  "conf": {
+    "output": "default",
+    "streamtags": [],
+    "groups": {},
+    "asyncFuncTimeout": 1000,
+    "description": ""
+  },
+  "functions": [
+    {
+      "id": "comment",
+      "filter": "true",
+      "conf": {
+        "comment": "Assign the Source-Identifier from https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Documentation/Data-source-UUIDs"
+      }
+    },
+    {
+      "id": "eval",
+      "filter": "true",
+      "conf": {
+        "add": [
+          {
+            "disabled": false,
+            "name": "__sourceIdentifier",
+            "value": "'8b3e767247e44471a95e563378d0b9be'"
+          }
+        ]
+      },
+      "description": "Assign the Source-Identifier"
+    }
+  ]
+}

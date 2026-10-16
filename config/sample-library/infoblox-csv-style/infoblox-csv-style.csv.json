@@ -1,0 +1,67 @@
+[
+  {
+    "_raw": "Timestamp,Facility,Level,Server,Message",
+    "_time": 1766078867.152,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "2025-12-17 10:30:57 GMT,daemon,INFO,named[12063],client @0x7f6450935968 172.17.24.236#55680 (googlemail.l.google.com): query: googlemail.l.google.com IN HTTPS +E(0)D (172.17.24.101)",
+    "_time": 1765967457,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "2025-12-17 10:30:57 GMT,daemon,INFO,named[12063],client @0x7f644d919968 172.17.24.235#56835 (googlemail.l.google.com): query: googlemail.l.google.com IN HTTPS +E(0)D (172.17.24.101)",
+    "_time": 1765967457,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "2025-12-17 10:30:57 GMT,daemon,INFO,named[12063],client @0x7f644d919968 10.10.10.102#25796 (103.10.10.10.in-addr.arpa): query: 103.10.10.10.in-addr.arpa IN PTR +E(0) (172.17.24.101)",
+    "_time": 1765967457,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "2025-12-17 10:30:57 GMT,daemon,INFO,named[12063],client @0x7f644d919968 10.10.10.101#61464 (103.10.10.10.in-addr.arpa): query: 103.10.10.10.in-addr.arpa IN PTR +E(0) (172.17.24.101)",
+    "_time": 1765967457,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "2025-12-17 10:30:57 GMT,daemon,INFO,named[12063],client @0x7f644f8f5168 10.10.10.103#50942 (abchost.domain.com): query: abchost.domain.com IN A +E(0) (172.17.24.101)",
+    "_time": 1765967457,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "2025-12-17 10:30:57 GMT,daemon,INFO,named[12063],client @0x7f644a85f968 10.10.10.103#63172 (defhost.domain.com): query: defhost.domain.com IN AAAA +E(0) (172.17.24.101)",
+    "_time": 1765967457,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "2025-12-17 10:30:57 GMT,daemon,INFO,named[12063],client @0x7f646d8cb968 10.10.10.103#12994 (abchost.domain.com): query: abchost.domain.com IN AAAA +E(0) (172.17.24.101)",
+    "_time": 1765967457,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "2025-12-17 10:30:57 GMT,daemon,INFO,named[12063],client @0x7f64529d6168 10.10.10.103#23093 (defhost.domain.com): query: defhost.domain.com IN A +E(0) (172.17.24.101)",
+    "_time": 1765967457,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "2025-12-17 10:30:57 GMT,daemon,INFO,named[12063],client @0x7f644d919968 10.20.16.11#56787 (ghihost.domain.com): query: ghihost.domain.com IN A +E(0)D (172.17.24.101)",
+    "_time": 1765967457,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "2025-12-17 10:30:57 GMT,daemon,INFO,named[12063],client @0x7f64529d6168 172.17.2.221#41114 (xyzhost.domain.com): query: xyzhost.domain.com IN A + (172.17.24.101)",
+    "_time": 1765967457,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "2025-12-17 10:30:57 GMT,daemon,INFO,named[12063],client @0x7f646d8cb968 172.17.24.235#56172 (ssl.domain.com): query: ssl.domain.com IN A +E(0)D (172.17.24.101)",
+    "_time": 1765967457,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "2025-12-17 10:30:57 GMT,daemon,INFO,named[12063],client @0x7f64529d6168 172.17.24.236#55803 (ssl.domain.com): query: ssl.domain.com IN A +E(0)D (172.17.24.101)",
+    "_time": 1765967457,
+    "cribl_breaker": "Break on newlines"
+  }
+]

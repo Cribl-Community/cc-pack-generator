@@ -1,0 +1,122 @@
+[
+  {
+    "_raw": "#separator \\x09",
+    "_time": 1521911754.475076,
+    "sourcetype": "bro_pe",
+    "source": "/opt/zeek/logs/current/pe.log"
+  },
+  {
+    "_raw": "#set_separator\t,",
+    "_time": 1521911754.475076,
+    "sourcetype": "bro_pe",
+    "source": "/opt/zeek/logs/current/pe.log"
+  },
+  {
+    "_raw": "#empty_field\t(empty)",
+    "_time": 1521911754.475076,
+    "sourcetype": "bro_pe",
+    "source": "/opt/zeek/logs/current/pe.log"
+  },
+  {
+    "_raw": "#unset_field\t-",
+    "_time": 1521911754.475076,
+    "sourcetype": "bro_pe",
+    "source": "/opt/zeek/logs/current/pe.log"
+  },
+  {
+    "_raw": "#path\tpe",
+    "_time": 1521911754.475076,
+    "sourcetype": "bro_pe",
+    "source": "/opt/zeek/logs/current/pe.log"
+  },
+  {
+    "_raw": "#open\t2024-04-12-19-29-27",
+    "_time": 1521911754.475076,
+    "sourcetype": "bro_pe",
+    "source": "/opt/zeek/logs/current/pe.log"
+  },
+  {
+    "_raw": "#fields\tts\tid\tmachine\tcompile_ts\tos\tsubsystem\tis_exe\tis_64bit\tuses_aslr\tuses_dep\tuses_code_integrity\tuses_seh\thas_import_table\thas_export_table\thas_cert_table\thas_debug_data\tsection_names",
+    "_time": 1521911754.475076,
+    "sourcetype": "bro_pe",
+    "source": "/opt/zeek/logs/current/pe.log"
+  },
+  {
+    "_raw": "#types\ttime\tstring\tstring\ttime\tstring\tstring\tbool\tbool\tbool\tbool\tbool\tbool\tbool\tbool\tbool\tbool\tvector[string]",
+    "_time": 1521911754.475076,
+    "sourcetype": "bro_pe",
+    "source": "/opt/zeek/logs/current/pe.log"
+  },
+  {
+    "_raw": "1521911754.475076\tF0xzjz3rr4CCtVDBJc\tI386\t1278971178.000000\tWindows 95 or NT 4.0\tWINDOWS_GUI\tT\tF\tF\tF\tF\tT\tT\tF\tF\tF\t.text,.data,.rdata,.bss,.idata",
+    "_time": 1521911754.475076,
+    "sourcetype": "bro_pe",
+    "source": "/opt/zeek/logs/current/pe.log"
+  },
+  {
+    "_raw": "1521911977.127059\tFl73YO3cTWT2KHyK8k\tAMD64\t1297324984.000000\tWindows 7 or Server 2008 R2\tWINDOWS_GUI\tT\tT\tT\tT\tF\tT\tT\tT\tT\tT\t.text,.data,.pdata,.rsrc,.reloc",
+    "_time": 1521911977.127059,
+    "sourcetype": "bro_pe",
+    "source": "/opt/zeek/logs/current/pe.log"
+  },
+  {
+    "_raw": "1521911977.068955\tFdGGu71I4vCKMV7ja\tAMD64\t1290246306.000000\tWindows 7 or Server 2008 R2\tWINDOWS_GUI\tT\tT\tT\tT\tF\tT\tT\tF\tT\tT\t.text,.data,.pdata,.rsrc,.reloc",
+    "_time": 1521911977.068955,
+    "sourcetype": "bro_pe",
+    "source": "/opt/zeek/logs/current/pe.log"
+  },
+  {
+    "_raw": "1521911976.940920\tFQFHqb1X3FFyqYwWpd\tAMD64\t1290246300.000000\tWindows 7 or Server 2008 R2\tWINDOWS_GUI\tT\tT\tT\tF\tF\tT\tT\tF\tT\tT\t.text,.data,.pdata,.rsrc,.reloc",
+    "_time": 1521911976.94092,
+    "sourcetype": "bro_pe",
+    "source": "/opt/zeek/logs/current/pe.log"
+  },
+  {
+    "_raw": "1521912164.488254\tFznA0o1pbDyXo6BOe5\tI386\t1278971178.000000\tWindows 95 or NT 4.0\tWINDOWS_GUI\tT\tF\tF\tF\tF\tT\tT\tF\tF\tF\t.text,.data,.rdata,.bss,.idata",
+    "_time": 1521912164.488254,
+    "sourcetype": "bro_pe",
+    "source": "/opt/zeek/logs/current/pe.log"
+  },
+  {
+    "_raw": "1521912164.455516\tFr502N3TQDvtxnpBj6\tI386\t1278971178.000000\tWindows 95 or NT 4.0\tWINDOWS_GUI\tT\tF\tF\tF\tF\tT\tT\tF\tF\tF\t.text,.data,.rdata,.bss,.idata",
+    "_time": 1521912164.455516,
+    "sourcetype": "bro_pe",
+    "source": "/opt/zeek/logs/current/pe.log"
+  },
+  {
+    "_raw": "1521912164.799554\tFH69o9154XHi81qh0b\tI386\t1278971178.000000\tWindows 95 or NT 4.0\tWINDOWS_GUI\tT\tF\tF\tF\tF\tT\tT\tF\tF\tF\t.text,.data,.rdata,.bss,.idata",
+    "_time": 1521912164.799554,
+    "sourcetype": "bro_pe",
+    "source": "/opt/zeek/logs/current/pe.log"
+  },
+  {
+    "_raw": "1521912168.644903\tFznA0o1pbDyXo6BOe5\tI386\t1278971178.000000\tWindows 95 or NT 4.0\tWINDOWS_GUI\tT\tF\tF\tF\tF\tT\tT\tF\tF\tF\t.text,.data,.rdata,.bss,.idata",
+    "_time": 1521912168.644903,
+    "sourcetype": "bro_pe",
+    "source": "/opt/zeek/logs/current/pe.log"
+  },
+  {
+    "_raw": "1521912212.400229\tFK5igWCGyaYUxDmCh\tI386\t1244468931.000000\tWindows 95 or NT 4.0\tWINDOWS_GUI\tT\tF\tF\tF\tF\tT\tT\tF\tF\tT\t.text,.rdata,.data,.rsrc",
+    "_time": 1521912212.400229,
+    "sourcetype": "bro_pe",
+    "source": "/opt/zeek/logs/current/pe.log"
+  },
+  {
+    "_raw": "1521912212.767219\tFhkFI24FtNBFrR5Pf9\tI386\t1244468931.000000\tWindows 95 or NT 4.0\tWINDOWS_GUI\tT\tF\tF\tF\tF\tT\tT\tF\tF\tT\t.text,.rdata,.data,.rsrc",
+    "_time": 1521912212.767219,
+    "sourcetype": "bro_pe",
+    "source": "/opt/zeek/logs/current/pe.log"
+  },
+  {
+    "_raw": "1521912649.112839\tFtOkptIVTLU4nRQw7\tAMD64\t1521749706.000000\tWindows 10\tWINDOWS_GUI\tT\tT\tT\tT\tF\tT\tT\tF\tT\tT\t.text,.rdata,.data,.pdata,.rsrc,.reloc",
+    "_time": 1521912649.112839,
+    "sourcetype": "bro_pe",
+    "source": "/opt/zeek/logs/current/pe.log"
+  },
+  {
+    "_raw": "1521912688.822477\tFKi4pl3VUe06kRwwOk\tI386\t1244468931.000000\tWindows 95 or NT 4.0\tWINDOWS_GUI\tT\tF\tF\tF\tF\tT\tT\tF\tF\tT\t.text,.rdata,.data,.rsrc",
+    "_time": 1521912688.822477,
+    "sourcetype": "bro_pe",
+    "source": "/opt/zeek/logs/current/pe.log"
+  }
+]

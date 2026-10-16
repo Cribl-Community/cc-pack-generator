@@ -1,0 +1,37 @@
+{
+  "_notice": "Mirrored verbatim from the Cribl Pack Dispensary. Do not edit these files by hand: they are replayed byte-for-byte into generated packs, and any local change is silently undone by the next `npm run sync:xsiam-pack`. Fix upstream, or override in the resolver.",
+  "upstream": {
+    "pack": "cribl-paloalto-xsiam",
+    "version": "2.1.1",
+    "path": "default/breakers.yml",
+    "sha256": "3a998718cdc5b6f6f6cd05549ce5d42393b776715d1f2ae33c522ec58ba17914",
+    "source": "https://packs.cribl.io/packs/cribl-paloalto-xsiam"
+  },
+  "rulesets": {
+    "EventHub": {
+      "lib": "custom",
+      "minRawLength": 256,
+      "rules": [
+        {
+          "condition": "true",
+          "type": "json_array",
+          "timestampAnchorRegex": "/^/",
+          "timestamp": {
+            "type": "auto",
+            "length": 150
+          },
+          "timestampTimezone": "local",
+          "timestampEarliest": "-420weeks",
+          "timestampLatest": "+1week",
+          "maxEventBytes": 5000000,
+          "disabled": false,
+          "parserEnabled": false,
+          "shouldUseDataRaw": false,
+          "jsonExtractAll": false,
+          "eventBreakerRegex": "/[\\n\\r]+(?!\\s)/",
+          "name": "EventHub"
+        }
+      ]
+    }
+  }
+}

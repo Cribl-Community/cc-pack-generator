@@ -1,0 +1,122 @@
+[
+  {
+    "_raw": "#separator \\x09",
+    "_time": 1521911720.609736,
+    "sourcetype": "bro_http",
+    "source": "/opt/zeek/logs/current/http.log"
+  },
+  {
+    "_raw": "#set_separator\t,",
+    "_time": 1521911720.609736,
+    "sourcetype": "bro_http",
+    "source": "/opt/zeek/logs/current/http.log"
+  },
+  {
+    "_raw": "#empty_field\t(empty)",
+    "_time": 1521911720.609736,
+    "sourcetype": "bro_http",
+    "source": "/opt/zeek/logs/current/http.log"
+  },
+  {
+    "_raw": "#unset_field\t-",
+    "_time": 1521911720.609736,
+    "sourcetype": "bro_http",
+    "source": "/opt/zeek/logs/current/http.log"
+  },
+  {
+    "_raw": "#path\thttp",
+    "_time": 1521911720.609736,
+    "sourcetype": "bro_http",
+    "source": "/opt/zeek/logs/current/http.log"
+  },
+  {
+    "_raw": "#open\t2024-04-12-19-29-12",
+    "_time": 1521911720.609736,
+    "sourcetype": "bro_http",
+    "source": "/opt/zeek/logs/current/http.log"
+  },
+  {
+    "_raw": "#fields\tts\tuid\tid.orig_h\tid.orig_p\tid.resp_h\tid.resp_p\ttrans_depth\tmethod\thost\turi\treferrer\tversion\tuser_agent\torigin\trequest_body_len\tresponse_body_len\tstatus_code\tstatus_msg\tinfo_code\tinfo_msg\ttags\tusername\tpassword\tproxied\torig_fuids\torig_filenames\torig_mime_types\tresp_fuids\tresp_filenames\tresp_mime_types",
+    "_time": 1521911720.609736,
+    "sourcetype": "bro_http",
+    "source": "/opt/zeek/logs/current/http.log"
+  },
+  {
+    "_raw": "#types\ttime\tstring\taddr\tport\taddr\tport\tcount\tstring\tstring\tstring\tstring\tstring\tstring\tstring\tcount\tcount\tcount\tstring\tcount\tstring\tset[enum]\tstring\tstring\tset[string]\tvector[string]\tvector[string]\tvector[string]\tvector[string]\tvector[string]\tvector[string]",
+    "_time": 1521911720.609736,
+    "sourcetype": "bro_http",
+    "source": "/opt/zeek/logs/current/http.log"
+  },
+  {
+    "_raw": "1521911720.609736\tCWocsz4DZqCwMcqpI2\t10.164.94.120\t36729\t10.47.3.200\t80\t1\tGET\t10.47.3.200\t/chassis/config/GeneralChassisConfig.html\t-\t1.1\tMozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0)\t-\t0\t56\t301\tMoved Permanently\t-\t-\t(empty)\t-\t-\t-\t-\t-\t-\tFclSbzdCJ36qMN2C4\t-\ttext/html",
+    "_time": 1521911720.609736,
+    "sourcetype": "bro_http",
+    "source": "/opt/zeek/logs/current/http.log"
+  },
+  {
+    "_raw": "1521911720.742313\tCpqrBm1vxL5tIWPlIi\t10.164.94.120\t40387\t10.47.27.80\t8080\t1\tPUT\t10.47.27.80:8080\t/sIYER7VY2Ocu\t-\t1.1\tMozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0)\t-\t16\t1245\t404\tNot Found\t-\t-\t(empty)\t-\t-\t-\tFulQtr2mf9iXEtNgZ8\t-\ttext/plain\tFUgrGL3SVCyZPqmRM6\t-\ttext/html",
+    "_time": 1521911720.742313,
+    "sourcetype": "bro_http",
+    "source": "/opt/zeek/logs/current/http.log"
+  },
+  {
+    "_raw": "1521911750.688469\tCrEXfP02kEmoJrP49\t10.0.0.208\t36666\t10.47.2.20\t80\t2\tPOST\t10.47.2.20\t/dolibarr/htdocs/index.php?mainmenu=home\thttp://10.47.2.20/dolibarr/htdocs/index.php\t1.1\tMozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36\thttp://10.47.2.20\t325\t7552\t200\tOK\t-\t-\t(empty)\t-\t-\t-\tFPiWsH3MzKsMYoij87\t-\ttext/plain\tFxIIQZ3zZAbWawTw43\t-\ttext/html",
+    "_time": 1521911750.688469,
+    "sourcetype": "bro_http",
+    "source": "/opt/zeek/logs/current/http.log"
+  },
+  {
+    "_raw": "1521911849.536122\tCZbiId4TVyvYKr37ff\t10.164.94.120\t34349\t10.47.8.218\t8082\t1\tPOST\t10.47.8.218:8082\t/flex2gateway/http\t-\t1.1\tMozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0)\t-\t865\t106\t500\tServer encountered an internal error. To get more info turn on customErrors in the server's config file.\t100\tContinue\t(empty)\t-\t-\t-\tFb9Uk437phi7Ni8Vfk\t-\tapplication/xml\tFpZEZz28XRSN8y1aoh\t-\ttext/plain",
+    "_time": 1521911849.536122,
+    "sourcetype": "bro_http",
+    "source": "/opt/zeek/logs/current/http.log"
+  },
+  {
+    "_raw": "1521911884.477982\tCWRePg4cr1GyWaRFW3\t10.47.6.161\t60074\t13.107.21.200\t80\t5\tPOST\twww.bing.com\t/rewardsapp/ncheader?ver=8_01_0_000000&IID=SERP.5030&IG=CFA875C9B6DE424AB4EDBCEC77B2C1F8\thttp://www.bing.com/search?q=network+name+cannot+be+found&src=IE-TopResult&FORM=IETR02&conversationid=\t1.1\tMozilla/5.0 (Windows NT 6.3; WOW64; Trident/7.0; rv:11.0) like Gecko\t-\t4\t128\t200\tOK\t-\t-\t(empty)\t-\t-\t-\tF1ghTf2lJYiYkaLTAg\t-\t-\tFTZrRg2WwOwnEr0mHj\t-\tapplication/javascript",
+    "_time": 1521911884.477982,
+    "sourcetype": "bro_http",
+    "source": "/opt/zeek/logs/current/http.log"
+  },
+  {
+    "_raw": "1521911886.227048\tCSFe1IRXeLeIKxCBl\t10.47.1.208\t47827\t72.21.91.29\t80\t4\tPOST\tocsp.digicert.com\t/\t-\t1.1\tMozilla/5.0 (Windows NT 6.0; WOW64; rv:52.0) Gecko/20100101 Firefox/52.0\t-\t83\t471\t200\tOK\t-\t-\t(empty)\t-\t-\t-\tFvgqdU1pEPm6VCftzd\t-\tapplication/ocsp-request\tFmKssK2UYRoayYaYc4\t-\tapplication/ocsp-response",
+    "_time": 1521911886.227048,
+    "sourcetype": "bro_http",
+    "source": "/opt/zeek/logs/current/http.log"
+  },
+  {
+    "_raw": "1521911950.231112\tCK4DmmpI1twms8mr1\t10.128.0.241\t59608\t10.47.1.208\t443\t1\tPOST\t10.47.1.208\t/?-d+allow_url_include=1+-d+auto_prepend_file=php://input\t-\t-\tMozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)\t-\t52\t0\t-\t-\t-\t-\t(empty)\t-\t-\t-\tFFXxYsfpj8IFMIBk\t-\ttext/x-php\t-\t-\t-",
+    "_time": 1521911950.231112,
+    "sourcetype": "bro_http",
+    "source": "/opt/zeek/logs/current/http.log"
+  },
+  {
+    "_raw": "1521912092.738609\tCnnY023TuQp6N9eUU9\t10.128.0.19\t58719\t10.47.27.186\t80\t3\tPOST\t10.47.27.186\t/wordpress/wp-admin/admin-ajax.php\thttp://10.47.27.186/wordpress/wp-admin/theme-editor.php?file=header.php&theme=simona&scrollto=0\t1.1\tMozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36\thttp://10.47.27.186\t32\t402\t200\tOK\t-\t-\t(empty)\t-\t-\t-\tF2g6sK2cb7hTq74uf1\t-\ttext/plain\tFht4pC3LSJ7bbcnuH1\t-\ttext/json",
+    "_time": 1521912092.738609,
+    "sourcetype": "bro_http",
+    "source": "/opt/zeek/logs/current/http.log"
+  },
+  {
+    "_raw": "1521912289.292022\tCIUpQp138QJMvCLPYd\t10.128.0.231\t6522\t10.47.25.80\t80\t2\tPOST\t10.47.25.80\t/website/translations\thttp://10.47.25.80/web/login\t1.1\tMozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36\thttp://10.47.25.80\t81\t271\t200\tOK\t-\t-\t(empty)\t-\t-\t-\tFMo2vi2G4tKJZOwUP7\t-\ttext/json\tFsZMet14hAeggryG5i\t-\ttext/json",
+    "_time": 1521912289.292022,
+    "sourcetype": "bro_http",
+    "source": "/opt/zeek/logs/current/http.log"
+  },
+  {
+    "_raw": "1521912477.420423\tCuLCqa4Fmj7DT9Swoa\t10.128.0.207\t53790\t10.47.23.65\t5000\t1\t-\t-\t-\t-\t1.0\t-\t-\t0\t110\t408\tRequest Time-out\t-\t-\t(empty)\t-\t-\t-\t-\t-\t-\tFUW7w41sJXcJI4CgKh\t-\ttext/html",
+    "_time": 1521912477.420423,
+    "sourcetype": "bro_http",
+    "source": "/opt/zeek/logs/current/http.log"
+  },
+  {
+    "_raw": "1521912896.880625\tCcnPFqsQ7Yhcvysh4\t10.128.0.223\t14281\t10.47.7.30\t80\t7\tPOST\t10.47.7.30\t/roller/roller_j_security_check\thttp://10.47.7.30/roller/roller-ui/login.rol?error=true\t1.1\tMozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 Edge/16.16299\t-\t51\t0\t302\tFound\t-\t-\t(empty)\t-\t-\t-\tF0v9343iIXw970cfF1\t-\ttext/plain\t-\t-\t-",
+    "_time": 1521912896.880625,
+    "sourcetype": "bro_http",
+    "source": "/opt/zeek/logs/current/http.log"
+  },
+  {
+    "_raw": "1521912978.049214\tCq0QZG3rT9z4gqN60g\t10.47.5.152\t50074\t198.189.255.217\t80\t6\tGET\tstatic.sfdict.com\t/audio/lunawav/M00/M0062900.ogg\thttp://www.thesaurus.com/browse/maintain?s=t\t1.1\tMozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36\t-\t0\t9437\t206\tPartial Content\t-\t-\t(empty)\t-\t-\t-\t-\t-\t-\tF4LSna2orwOrQEWSE2\t-\tapplication/ogg",
+    "_time": 1521912978.049214,
+    "sourcetype": "bro_http",
+    "source": "/opt/zeek/logs/current/http.log"
+  }
+]

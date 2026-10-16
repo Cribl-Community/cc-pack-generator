@@ -1,0 +1,58 @@
+{
+  "key": "azure_graph_signins",
+  "sourcetype": "azure_graph_signins",
+  "classUid": 3002,
+  "destFormat": "ocsf#authentication",
+  "source": "generic",
+  "vendorNames": [
+    "azure graph signins"
+  ],
+  "provenance": {
+    "samplePack": "cribl-azure-graph-rest",
+    "sampleName": "cribl_azure_graph_signins",
+    "tier": "reference",
+    "sampleEvents": 2,
+    "emulated": "golden OCSF pipeline, offline emulation of scripts/build-source-ocsf-samples.mjs",
+    "rejected": []
+  },
+  "events": [
+    {
+      "src_endpoint": {
+        "hostname": "main-cribl000000"
+      },
+      "metadata": {
+        "product": {
+          "name": "Security",
+          "vendor_name": "azure graph signins"
+        },
+        "version": "1.9.0"
+      },
+      "class_uid": 3002,
+      "category_uid": 3,
+      "activity_id": 0,
+      "type_uid": 300200,
+      "severity_id": 1,
+      "status_id": 0,
+      "status": "Unknown"
+    },
+    {
+      "src_endpoint": {
+        "hostname": "main-cribl000000"
+      },
+      "metadata": {
+        "product": {
+          "name": "Security",
+          "vendor_name": "azure graph signins"
+        },
+        "version": "1.9.0"
+      },
+      "class_uid": 3002,
+      "category_uid": 3,
+      "activity_id": 0,
+      "type_uid": 300200,
+      "severity_id": 1,
+      "status_id": 0,
+      "status": "Unknown"
+    }
+  ]
+}

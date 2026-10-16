@@ -1,0 +1,289 @@
+{
+  "classUid": 3002,
+  "className": "Authentication",
+  "source": "OCSF Schema project \u2014 ocsf/examples (Apache-2.0), mappings/markdown/Microsoft/Windows Events/{4624,4625} (Splunk Attack Range dataset)",
+  "events": [
+    {
+      "activity_id": 1,
+      "activity_name": "Logon",
+      "actor": {
+        "process": {
+          "file": {
+            "name": "services.exe",
+            "parent_folder": "C:\\Windows\\System32",
+            "path": "C:\\Windows\\System32\\services.exe",
+            "type": "Regular File",
+            "type_id": 1
+          },
+          "pid": 848
+        },
+        "session": {
+          "uid": "0x3E7"
+        },
+        "user": {
+          "account_type": "Windows Account",
+          "account_type_id": 2,
+          "domain": "ATTACKRANGE",
+          "name": "WIN-DC-725$",
+          "uid": "NT AUTHORITY\\SYSTEM"
+        }
+      },
+      "auth_protocol": "Other",
+      "auth_protocol_id": 99,
+      "category_name": "Audit Activity",
+      "category_uid": 3,
+      "class_name": "Authentication",
+      "class_uid": 3002,
+      "device": {
+        "hostname": "win-dc-725.attackrange.local",
+        "os": {
+          "name": "Windows",
+          "type": "Windows",
+          "type_id": 100
+        },
+        "type": "Unknown",
+        "type_id": 0
+      },
+      "dst_endpoint": {
+        "hostname": "win-dc-725.attackrange.local"
+      },
+      "logon_process": {
+        "name": "Advapi  ",
+        "pid": -1
+      },
+      "logon_type": "OS Service",
+      "logon_type_id": 5,
+      "message": "An account was successfully logged on.",
+      "metadata": {
+        "original_time": "03/12/2021 10:48:14 AM",
+        "product": {
+          "feature": {
+            "name": "Security"
+          },
+          "name": "Microsoft Windows",
+          "vendor_name": "Microsoft"
+        },
+        "profiles": [
+          "host"
+        ],
+        "uid": "ce139867-ced1-4742-9bb0-ad1926b8bbe1",
+        "version": "1.0.0-rc.2"
+      },
+      "session": {
+        "uid": "0x3E7",
+        "uuid": "{00000000-0000-0000-0000-000000000000}"
+      },
+      "severity": "Informational",
+      "severity_id": 1,
+      "src_endpoint": {
+        "ip": "-",
+        "name": "-",
+        "port": 0
+      },
+      "status": "Success",
+      "status_id": 1,
+      "time": 1615564094000,
+      "type_name": "Authentication: Logon",
+      "type_uid": 300201,
+      "unmapped": {
+        "Detailed Authentication Information": {
+          "Key Length": "0",
+          "Package Name (NTLM only)": "-",
+          "Transited Services": "-"
+        },
+        "EventCode": "4624",
+        "EventType": "0",
+        "Impersonation Level": "Impersonation",
+        "Logon Information": {
+          "Elevated Token": "Yes",
+          "Restricted Admin Mode": "-",
+          "Virtual Account": "No"
+        },
+        "New Logon": {
+          "Linked Logon ID": "0x0",
+          "Network Account Domain": "-",
+          "Network Account Name": "-"
+        },
+        "OpCode": "Info",
+        "RecordNumber": "257879",
+        "SourceName": "Microsoft Windows security auditing.",
+        "TaskCategory": "Logon"
+      },
+      "user": {
+        "account_type": "Windows Account",
+        "account_type_id": 2,
+        "domain": "NT AUTHORITY",
+        "name": "SYSTEM",
+        "uid": "NT AUTHORITY\\SYSTEM"
+      }
+    },
+    {
+      "activity_id": 1,
+      "activity_name": "Logon",
+      "actor": {
+        "process": {
+          "file": {
+            "name": "-",
+            "path": "-",
+            "type": "Regular File",
+            "type_id": 1
+          },
+          "pid": 0
+        },
+        "session": {
+          "uid": "0x0"
+        },
+        "user": {
+          "account_type": "Windows Account",
+          "account_type_id": 2,
+          "domain": "-",
+          "name": "-",
+          "uid": "NULL SID"
+        }
+      },
+      "auth_protocol": "NTLM",
+      "auth_protocol_id": 1,
+      "category_name": "Audit Activity",
+      "category_uid": 3,
+      "class_name": "Authentication",
+      "class_uid": 3002,
+      "device": {
+        "hostname": "EC2AMAZ-6KJ2BPP",
+        "os": {
+          "name": "Windows",
+          "type": "Windows",
+          "type_id": 100
+        },
+        "type": "Unknown",
+        "type_id": 0
+      },
+      "dst_endpoint": {
+        "hostname": "EC2AMAZ-6KJ2BPP"
+      },
+      "logon_process": {
+        "name": "NtLmSsp ",
+        "pid": -1
+      },
+      "logon_type": "Network",
+      "logon_type_id": 3,
+      "message": "An account failed to log on.",
+      "metadata": {
+        "original_time": "10/08/2020 12:41:47 PM",
+        "product": {
+          "feature": {
+            "name": "Security"
+          },
+          "name": "Microsoft Windows",
+          "vendor_name": "Microsoft"
+        },
+        "profiles": [
+          "host"
+        ],
+        "uid": "a738d6e6-4ebd-49bb-805e-45d0604a1bef",
+        "version": "1.0.0-rc.2"
+      },
+      "severity": "Informational",
+      "severity_id": 1,
+      "src_endpoint": {
+        "ip": "-",
+        "name": "EC2AMAZ-6KJ2BPP",
+        "port": 0
+      },
+      "status": "0xC000006D",
+      "status_detail": "Unknown user name or bad password.",
+      "status_id": 2,
+      "time": 1602175307000,
+      "type_name": "Authentication: Logon",
+      "type_uid": 300201,
+      "unmapped": {
+        "Detailed Authentication Information": {
+          "Key Length": "0",
+          "Package Name (NTLM only)": "-",
+          "Transited Services": "-"
+        },
+        "EventCode": "4625",
+        "EventType": "0",
+        "Failure Information": {
+          "Sub Status": "0xC000006A"
+        },
+        "OpCode": "Info",
+        "RecordNumber": "223742",
+        "SourceName": "Microsoft Windows security auditing.",
+        "TaskCategory": "Logon"
+      },
+      "user": {
+        "account_type": "Windows Account",
+        "account_type_id": 2,
+        "domain": "EC2AMAZ-6KJ2BPP",
+        "name": "Administrator",
+        "uid": "NULL SID"
+      }
+    },
+    {
+      "activity_id": 2,
+      "activity_name": "Logoff",
+      "actor": {
+        "session": {
+          "uid": "0x3e4f2a1"
+        },
+        "user": {
+          "account_type": "Windows Account",
+          "account_type_id": 2,
+          "domain": "EC2AMAZ-6KJ2BPP",
+          "name": "Administrator",
+          "uid": "S-1-5-21-1234567890-1234567890-1234567890-500"
+        }
+      },
+      "category_name": "Audit Activity",
+      "category_uid": 3,
+      "class_name": "Authentication",
+      "class_uid": 3002,
+      "device": {
+        "hostname": "EC2AMAZ-6KJ2BPP",
+        "os": {
+          "name": "Windows",
+          "type": "Windows",
+          "type_id": 100
+        },
+        "type": "Unknown",
+        "type_id": 0
+      },
+      "dst_endpoint": {
+        "hostname": "EC2AMAZ-6KJ2BPP"
+      },
+      "logon_type": "Network",
+      "logon_type_id": 3,
+      "message": "An account was logged off.",
+      "metadata": {
+        "original_time": "10/08/2020 12:45:02 PM",
+        "product": {
+          "feature": {
+            "name": "Security"
+          },
+          "name": "Microsoft Windows",
+          "vendor_name": "Microsoft"
+        },
+        "profiles": [
+          "host"
+        ],
+        "uid": "b849e7f7-5fce-4abc-916f-56e1715c2c30",
+        "version": "1.0.0-rc.2"
+      },
+      "severity": "Informational",
+      "severity_id": 1,
+      "status": "Success",
+      "status_id": 1,
+      "time": 1602175502000,
+      "type_name": "Authentication: Logoff",
+      "type_uid": 300202,
+      "unmapped": {
+        "EventCode": "4634",
+        "EventType": "0",
+        "OpCode": "Info",
+        "RecordNumber": "223799",
+        "SourceName": "Microsoft Windows security auditing.",
+        "TaskCategory": "Logoff"
+      }
+    }
+  ]
+}

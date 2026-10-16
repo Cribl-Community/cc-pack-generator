@@ -1,0 +1,89 @@
+{
+  "name": "XSIAM_Microsoft_Defender_via_EventHub",
+  "kind": "source-specific",
+  "pattern": "wrap_serialize",
+  "sourceIdField": "__sourceIdentifier",
+  "sourceIdentifier": "ce9e8cf36e0742c38aa89787a256855f",
+  "vendor": null,
+  "product": null,
+  "reshapesRaw": true,
+  "sample": {
+    "name": "XSIAM_Microsoft_Defender_via_EventHub.log",
+    "format": "json",
+    "formatLabel": "JSON",
+    "events": 1
+  },
+  "upstream": {
+    "pack": "cribl-paloalto-xsiam",
+    "version": "2.1.1",
+    "path": "default/pipelines/XSIAM_Microsoft_Defender_via_EventHub/conf.yml",
+    "sha256": "c60a2e72efc57d0f0987819fe1c3bc4d6da9774854924b9d99ab74020fe5b577",
+    "source": "https://packs.cribl.io/packs/cribl-paloalto-xsiam"
+  },
+  "conf": {
+    "output": "default",
+    "streamtags": [],
+    "groups": {},
+    "asyncFuncTimeout": 1000,
+    "description": ""
+  },
+  "functions": [
+    {
+      "id": "comment",
+      "filter": "true",
+      "conf": {
+        "comment": "The Cribl Stream Event Hubs source tile does not event break events so we need to do that in this pipeline.  The original event being sent to this pipeline has the _time and records[] fields by themselves and they are not wrapped in a _raw field.  We need to unroll the records into multiple events and get them into a JSON Object formatted _raw field."
+      }
+    },
+    {
+      "id": "eval",
+      "filter": "true",
+      "disabled": false,
+      "conf": {
+        "add": [
+          {
+            "disabled": false,
+            "name": "_raw",
+            "value": "JSON.parse(_raw)"
+          }
+        ],
+        "keep": []
+      }
+    },
+    {
+      "id": "unroll",
+      "filter": "true",
+      "disabled": true,
+      "conf": {
+        "srcExpr": "_raw.records",
+        "dstField": "_raw"
+      }
+    },
+    {
+      "id": "comment",
+      "filter": "true",
+      "conf": {
+        "comment": "Assign the Source-Identifier from https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Documentation/Data-source-UUIDs"
+      }
+    },
+    {
+      "id": "eval",
+      "filter": "true",
+      "disabled": true,
+      "conf": {
+        "add": [
+          {
+            "disabled": false,
+            "name": "__sourceIdentifier",
+            "value": "'ce9e8cf36e0742c38aa89787a256855f'"
+          }
+        ],
+        "remove": [
+          "records"
+        ],
+        "keep": []
+      },
+      "description": "Assign the Source-Identifier"
+    }
+  ]
+}

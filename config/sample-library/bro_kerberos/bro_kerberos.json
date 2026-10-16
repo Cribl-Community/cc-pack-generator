@@ -1,0 +1,116 @@
+[
+  {
+    "_raw": "#separator \\x09",
+    "_time": 1521911885.713879,
+    "sourcetype": "bro_kerberos",
+    "source": "/opt/zeek/logs/current/kerberos.log"
+  },
+  {
+    "_raw": "#set_separator\t,",
+    "_time": 1521911885.713879,
+    "sourcetype": "bro_kerberos",
+    "source": "/opt/zeek/logs/current/kerberos.log"
+  },
+  {
+    "_raw": "#empty_field\t(empty)",
+    "_time": 1521911885.713879,
+    "sourcetype": "bro_kerberos",
+    "source": "/opt/zeek/logs/current/kerberos.log"
+  },
+  {
+    "_raw": "#unset_field\t-",
+    "_time": 1521911885.713879,
+    "sourcetype": "bro_kerberos",
+    "source": "/opt/zeek/logs/current/kerberos.log"
+  },
+  {
+    "_raw": "#path\tkerberos",
+    "_time": 1521911885.713879,
+    "sourcetype": "bro_kerberos",
+    "source": "/opt/zeek/logs/current/kerberos.log"
+  },
+  {
+    "_raw": "#open\t2024-04-12-19-30-05",
+    "_time": 1521911885.713879,
+    "sourcetype": "bro_kerberos",
+    "source": "/opt/zeek/logs/current/kerberos.log"
+  },
+  {
+    "_raw": "#fields\tts\tuid\tid.orig_h\tid.orig_p\tid.resp_h\tid.resp_p\trequest_type\tclient\tservice\tsuccess\terror_msg\tfrom\ttill\tcipher\tforwardable\trenewable\tclient_cert_subject\tclient_cert_fuid\tserver_cert_subject\tserver_cert_fuid",
+    "_time": 1521911885.713879,
+    "sourcetype": "bro_kerberos",
+    "source": "/opt/zeek/logs/current/kerberos.log"
+  },
+  {
+    "_raw": "#types\ttime\tstring\taddr\tport\taddr\tport\tstring\tstring\tstring\tbool\tstring\ttime\ttime\tstring\tbool\tbool\tstring\tstring\tstring\tstring",
+    "_time": 1521911885.713879,
+    "sourcetype": "bro_kerberos",
+    "source": "/opt/zeek/logs/current/kerberos.log"
+  },
+  {
+    "_raw": "1521911885.713879\tCiB1v61O1fMDWoHN2\t10.128.0.241\t58444\t10.47.1.208\t808\tAS\t/NM\tkrbtgt/NM\t-\t-\t-\t0.000000\t-\tT\tT\t-\t-\t-\t-",
+    "_time": 1521911885.713879,
+    "sourcetype": "bro_kerberos",
+    "source": "/opt/zeek/logs/current/kerberos.log"
+  },
+  {
+    "_raw": "1521911890.609901\tC1pbVk4x7zmkCy0P23\t10.128.0.241\t56824\t10.47.1.208\t445\tAS\t/NM\tkrbtgt/NM\t-\t-\t-\t0.000000\t-\tT\tT\t-\t-\t-\t-",
+    "_time": 1521911890.609901,
+    "sourcetype": "bro_kerberos",
+    "source": "/opt/zeek/logs/current/kerberos.log"
+  },
+  {
+    "_raw": "1521911890.611969\tCEj0sS2biDEHPNTnQ4\t10.128.0.241\t57304\t10.47.1.208\t139\tAS\t/NM\tkrbtgt/NM\t-\t-\t-\t0.000000\t-\tT\tT\t-\t-\t-\t-",
+    "_time": 1521911890.611969,
+    "sourcetype": "bro_kerberos",
+    "source": "/opt/zeek/logs/current/kerberos.log"
+  },
+  {
+    "_raw": "1521911903.116112\tCvuMxUb7V20DBTy4\t10.128.0.241\t40076\t10.47.1.208\t995\tAS\t/NM\tkrbtgt/NM\t-\t-\t-\t0.000000\t-\tT\tT\t-\t-\t-\t-",
+    "_time": 1521911903.116112,
+    "sourcetype": "bro_kerberos",
+    "source": "/opt/zeek/logs/current/kerberos.log"
+  },
+  {
+    "_raw": "1521911903.116199\tCqxQV6jqCiNQdTQ19\t10.128.0.241\t44138\t10.47.1.208\t993\tAS\t/NM\tkrbtgt/NM\t-\t-\t-\t0.000000\t-\tT\tT\t-\t-\t-\t-",
+    "_time": 1521911903.116199,
+    "sourcetype": "bro_kerberos",
+    "source": "/opt/zeek/logs/current/kerberos.log"
+  },
+  {
+    "_raw": "1521911903.136564\tCOgrE8RnKZ5iZi6G5\t10.128.0.241\t44764\t10.47.1.208\t3389\tAS\t/NM\tkrbtgt/NM\t-\t-\t-\t0.000000\t-\tT\tT\t-\t-\t-\t-",
+    "_time": 1521911903.136564,
+    "sourcetype": "bro_kerberos",
+    "source": "/opt/zeek/logs/current/kerberos.log"
+  },
+  {
+    "_raw": "1521911913.107116\tCKXWMb4EhoEm5Ip8x\t10.128.0.241\t46114\t10.47.1.208\t6005\tAS\t/NM\tkrbtgt/NM\t-\t-\t-\t0.000000\t-\tT\tT\t-\t-\t-\t-",
+    "_time": 1521911913.107116,
+    "sourcetype": "bro_kerberos",
+    "source": "/opt/zeek/logs/current/kerberos.log"
+  },
+  {
+    "_raw": "1521911913.108469\tCt9sYsJ01lkSo31sf\t10.128.0.241\t51328\t10.47.1.208\t6006\tAS\t/NM\tkrbtgt/NM\t-\t-\t-\t0.000000\t-\tT\tT\t-\t-\t-\t-",
+    "_time": 1521911913.108469,
+    "sourcetype": "bro_kerberos",
+    "source": "/opt/zeek/logs/current/kerberos.log"
+  },
+  {
+    "_raw": "1521911913.108567\tCdnYmsUCDaduIMyQ7\t10.128.0.241\t39456\t10.47.1.208\t6007\tAS\t/NM\tkrbtgt/NM\t-\t-\t-\t0.000000\t-\tT\tT\t-\t-\t-\t-",
+    "_time": 1521911913.108567,
+    "sourcetype": "bro_kerberos",
+    "source": "/opt/zeek/logs/current/kerberos.log"
+  },
+  {
+    "_raw": "1521911913.143296\tC73dAg3TNyg3aTgjEk\t10.128.0.241\t51118\t10.47.1.208\t135\tAS\t/NM\tkrbtgt/NM\t-\t-\t-\t0.000000\t-\tT\tT\t-\t-\t-\t-",
+    "_time": 1521911913.143296,
+    "sourcetype": "bro_kerberos",
+    "source": "/opt/zeek/logs/current/kerberos.log"
+  },
+  {
+    "_raw": "1521912473.434453\tCSPQFyC6A6IZOEXi\t10.128.0.207\t36120\t10.47.23.25\t88\tAS\t/NM\tkrbtgt/NM\tF\tKDC_ERR_WRONG_REALM\t-\t0.000000\t-\tT\tT\t-\t-\t-\t-",
+    "_time": 1521912473.434453,
+    "sourcetype": "bro_kerberos",
+    "source": "/opt/zeek/logs/current/kerberos.log"
+  }
+]

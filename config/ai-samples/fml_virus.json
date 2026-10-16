@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "key": "fml_virus",
+  "sourcetype": "fml_virus",
+  "events": [
+    "date=2024-06-01 time=03:14:22 device_id=FE100D3Z17000123 log_id=0102000001 type=\"virus\" subtype=\"infected\" pri=warning session_id=\"a1b2c3d4e5f6\" client_name=\"203.0.113.45\" from=\"billing@paypa1-secure.com\" to=\"jsmith@corpmail.com\" msg=\"Virus found in message\" virus=\"W32/Emotet.gen\" file=\"invoice_0912.doc\" action=\"quarantined\" direction=\"incoming\" policy=\"Default_AV_Policy\" scanner=\"AVEngine\"",
+    "date=2024-06-01 time=05:47:09 device_id=FE100D3Z17000123 log_id=0102000002 type=\"virus\" subtype=\"infected\" pri=critical session_id=\"f9e8d7c6b5a4\" client_name=\"10.20.30.5\" from=\"internal_user@company.com\" to=\"partner@vendor.net\" msg=\"Outbound infected attachment blocked\" virus=\"Trojan.Generic.KDV\" file=\"report_final.exe\" action=\"rejected\" direction=\"outgoing\" policy=\"Outbound_Strict\" scanner=\"AVEngine\"",
+    "date=2024-06-01 time=07:02:55 device_id=FE100D3Z17000124 log_id=0102000003 type=\"virus\" subtype=\"clean\" pri=information session_id=\"0011223344ff\" client_name=\"172.16.5.20\" from=\"newsletter@marketingco.com\" to=\"staff@company.com\" msg=\"Message scanned clean\" virus=\"\" file=\"promo.pdf\" action=\"delivered\" direction=\"incoming\" policy=\"Default_AV_Policy\" scanner=\"AVEngine\"",
+    "date=2024-06-01 time=08:15:37 device_id=FE100D3Z17000123 log_id=0102000004 type=\"virus\" subtype=\"infected\" pri=warning session_id=\"99887766aabb\" client_name=\"198.51.100.22\" from=\"support@dhl-tracking-alerts.com\" to=\"operations@company.com\" msg=\"Phishing/malware attachment detected\" virus=\"HTML/Phish.GenAI\" file=\"DHL_Shipment_Notice.html\" action=\"quarantined\" direction=\"incoming\" policy=\"Default_AV_Policy\" scanner=\"AVEngine\"",
+    "date=2024-06-01 time=09:33:12 device_id=FE100D3Z17000125 log_id=0102000005 type=\"virus\" subtype=\"infected\" pri=error session_id=\"deadbeef1234\" client_name=\"2001:db8:85a3::8a2e:370:7334\" from=\"unknown@sketchy-domain.ru\" to=\"finance@company.com\" msg=\"Virus detected, quarantine failed - disk full\" virus=\"Ransom.LockBit.gen\" file=\"salary_update_2024.zip\" action=\"delivery_failed\" direction=\"incoming\" policy=\"Default_AV_Policy\" scanner=\"AVEngine\"",
+    "date=2024-06-01 time=10:05:48 device_id=FE100D3Z17000123 log_id=0102000006 type=\"virus\" subtype=\"clean\" pri=information session_id=\"0a0b0c0d0e0f\" client_name=\"192.168.10.14\" from=\"admin@company.com\" to=\"allstaff@company.com\" msg=\"Attachment scanned, no threats found\" virus=\"\" file=\"Q2_meeting_notes.docx\" action=\"delivered\" direction=\"internal\" policy=\"Internal_Relay\" scanner=\"AVEngine\"",
+    "date=2024-06-01 time=11:22:03 device_id=FE100D3Z17000123 log_id=0102000007 type=\"virus\" subtype=\"infected\" pri=warning session_id=\"112233445566\" client_name=\"45.33.32.156\" from=\"promo@luckywinner-rewards.biz\" to=\"jdoe@company.com\" msg=\"Macro-embedded document blocked\" virus=\"W97M/Downloader.gen\" file=\"claim_form.docm\" action=\"quarantined\" direction=\"incoming\" policy=\"Default_AV_Policy\" scanner=\"AVEngine\"",
+    "date=2024-06-01 time=12:47:19 device_id=FE100D3Z17000124 log_id=0102000008 type=\"virus\" subtype=\"infected\" pri=critical session_id=\"bbccddeeff00\" client_name=\"10.1.1.200\" from=\"hr@company.com\" to=\"candidates@external-hr-vendor.com\" msg=\"Large attachment flagged as suspicious, oversized scan\" virus=\"Suspicious.LargePayload\" file=\"resume_batch_export.zip\" action=\"quarantined\" direction=\"outgoing\" policy=\"Outbound_Strict\" scanner=\"AVEngine\" filesize=\"524288000\"",
+    "date=2024-06-01 time=13:59:41 device_id=FE100D3Z17000125 log_id=0102000009 type=\"virus\" subtype=\"infected\" pri=warning session_id=\"ff11ee22dd33\" client_name=\"203.0.113.88\" from=\"ceo.office@company-secure-mail.com\" to=\"cfo@company.com\" msg=\"Business email compromise attempt with malicious link\" virus=\"Phish/BEC.Link\" file=\"\" action=\"rejected\" direction=\"incoming\" policy=\"Anti_Phish_Policy\" scanner=\"AVEngine\"",
+    "date=2024-06-01 time=15:11:26 device_id=FE100D3Z17000123 log_id=0102000010 type=\"virus\" subtype=\"clean\" pri=information session_id=\"a1a1a1a1a1a1\" client_name=\"172.16.8.9\" from=\"reports@internal-tool.company.com\" to=\"analytics@company.com\" msg=\"Scheduled report delivered clean\" virus=\"\" file=\"weekly_metrics.csv\" action=\"delivered\" direction=\"internal\" policy=\"Internal_Relay\" scanner=\"AVEngine\"",
+    "date=2024-06-01 time=16:38:54 device_id=FE100D3Z17000123 log_id=0102000011 type=\"virus\" subtype=\"infected\" pri=error session_id=\"cafebabe0001\" client_name=\"89.248.165.74\" from=\"delivery@fedex-alerts-notice.info\" to=\"warehouse@company.com\" msg=\"Zero-day heuristic match, sandbox analysis triggered\" virus=\"Heur/Suspicious.ZeroDay\" file=\"tracking_update.iso\" action=\"quarantined\" direction=\"incoming\" policy=\"Sandbox_Policy\" scanner=\"AVEngine+Sandbox\"",
+    "date=2024-06-01 time=17:02:07 device_id=FE100D3Z17000126 log_id=0102000012 type=\"virus\" subtype=\"infected\" pri=warning session_id=\"1234abcd5678\" client_name=\"192.168.1.55\" from=\"jsmith@company.com\" to=\"external.contact@othercorp.com\" msg=\"Outbound message contains known malware signature - relay blocked\" virus=\"W32/AutoRun.Worm\" file=\"usb_backup_tool.exe\" action=\"rejected\" direction=\"outgoing\" policy=\"Outbound_Strict\" scanner=\"AVEngine\"",
+    "date=2024-06-01 time=18:20:33 device_id=FE100D3Z17000123 log_id=0102000013 type=\"virus\" subtype=\"infected\" pri=critical session_id=\"deadc0de9999\" client_name=\"185.220.101.45\" from=\"invoice@accounting-dept-secure.com\" to=\"ap@company.com\" msg=\"Multiple engine detections, high confidence malware\" virus=\"Emotet.C2.Loader\" file=\"Invoice_845621.xlsm\" action=\"quarantined\" direction=\"incoming\" policy=\"Default_AV_Policy\" scanner=\"AVEngine\"",
+    "date=2024-06-01 time=19:44:15 device_id=FE100D3Z17000124 log_id=0102000014 type=\"virus\" subtype=\"clean\" pri=information session_id=\"112358132134\" client_name=\"10.5.5.5\" from=\"noreply@company.com\" to=\"all-employees@company.com\" msg=\"Bulk internal notification scanned\" virus=\"\" file=\"\" action=\"delivered\" direction=\"internal\" policy=\"Internal_Relay\" scanner=\"AVEngine\"",
+    "date=2024-06-01 time=20:58:02 device_id=FE100D3Z17000125 log_id=0102000015 type=\"virus\" subtype=\"infected\" pri=warning session_id=\"9988776655aa\" client_name=\"203.0.113.199\" from=\"support@microsoft-security-team.net\" to=\"itdesk@company.com\" msg=\"Credential harvesting page linked in message\" virus=\"Phish/CredHarvest\" file=\"verify_account.html\" action=\"quarantined\" direction=\"incoming\" policy=\"Anti_Phish_Policy\" scanner=\"AVEngine\"",
+    "date=2024-06-01 time=21:33:49 device_id=FE100D3Z17000123 log_id=0102000016 type=\"virus\" subtype=\"infected\" pri=error session_id=\"0f1e2d3c4b5a\" client_name=\"66.249.93.12\" from=\"unknown_sender@gmail.com\" to=\"ceo@company.com\" msg=\"Password-protected archive, scan incomplete\" virus=\"Unscanned.Encrypted.Archive\" file=\"confidential_docs.7z\" action=\"quarantined\" direction=\"incoming\" policy=\"Default_AV_Policy\" scanner=\"AVEngine\"",
+    "date=2024-06-01 time=22:09:27 device_id=FE100D3Z17000126 log_id=0102000017 type=\"virus\" subtype=\"infected\" pri=critical session_id=\"a9b8c7d6e5f4\" client_name=\"172.16.99.201\" from=\"dev-ops@company.com\" to=\"devteam@company.com\" msg=\"Test virus signature EICAR detected during internal testing\" virus=\"EICAR-Test-File\" file=\"eicar_test.com\" action=\"quarantined\" direction=\"internal\" policy=\"Internal_Relay\" scanner=\"AVEngine\"",
+    "date=2024-06-01 time=23:41:16 device_id=FE100D3Z17000123 log_id=0102000018 type=\"virus\" subtype=\"infected\" pri=warning session_id=\"5544332211ff\" client_name=\"103.21.244.0\" from=\"lottery.winner@intl-prizes.com\" to=\"mkim@company.com\" msg=\"Advance-fee fraud email with malicious redirect\" virus=\"Phish/Scam.Redirect\" file=\"\" action=\"rejected\" direction=\"incoming\" policy=\"Anti_Phish_Policy\" scanner=\"AVEngine\"",
+    "date=2024-06-02 time=01:16:38 device_id=FE100D3Z17000124 log_id=0102000019 type=\"virus\" subtype=\"clean\" pri=information session_id=\"0000ffff1111\" client_name=\"10.10.10.10\" from=\"cron@company.com\" to=\"sysadmin@company.com\" msg=\"Automated system report - no threats\" virus=\"\" file=\"system_health.log\" action=\"delivered\" direction=\"internal\" policy=\"Internal_Relay\" scanner=\"AVEngine\"",
+    "date=2024-06-02 time=02:52:04 device_id=FE100D3Z17000125 log_id=0102000020 type=\"virus\" subtype=\"infected\" pri=critical session_id=\"6677889900aa\" client_name=\"192.0.2.150\" from=\"update@windows-critical-patch.net\" to=\"allstaff@company.com\" msg=\"Mass-mailing worm signature detected, high volume from single sender\" virus=\"Worm/MassMailer.Gen\" file=\"critical_update.scr\" action=\"quarantined\" direction=\"incoming\" policy=\"Default_AV_Policy\" scanner=\"AVEngine\" volume_flag=\"true\""
+  ],
+  "fingerprint": "c65bdcb8-8346",
+  "verification": {
+    "verdict": "pass",
+    "method": "structure",
+    "eventsParsed": 20,
+    "eventsChecked": 20,
+    "fields": [
+      "action",
+      "client_name",
+      "date",
+      "device_id",
+      "direction",
+      "file",
+      "filesize",
+      "from",
+      "log_id",
+      "msg",
+      "policy",
+      "pri",
+      "scanner",
+      "session_id",
+      "subtype",
+      "time",
+      "to",
+      "type",
+      "virus",
+      "volume_flag"
+    ],
+    "reasons": [
+      "no parser for fml_virus; the events are well-formed kvp with 20 distinct keys"
+    ],
+    "offendingEvents": [],
+    "keyEcho": null
+  },
+  "provenance": {
+    "model": "us.anthropic.claude-sonnet-5",
+    "buildNumber": 529,
+    "generatedAt": "2026-08-18T09:18:20.036Z",
+    "grounding": "KNOWN FACTS ABOUT THIS SOURCE (from sourcetype recognition — match these exactly):\n- Product: Fortinet FortiMail\n- Log family: email"
+  }
+}

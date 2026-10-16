@@ -1,0 +1,250 @@
+[
+  {
+    "_time": 1687452287.915,
+    "cribl_breaker": "azure-audit-logs:azure-audit-logs",
+    "host": "ip-12-255-20-26.us-west-2.compute.internal",
+    "_raw": "{\"@odata.context\":\"https://graph.microsoft.com/v1.0/$metadata#auditLogs/signIns\",\"value\":[{\"id\":\"873c4e25-926b-4bde-a9f1-1e389d018500\",\"createdDateTime\":\"2023-06-22T15:01:26Z\",\"userDisplayName\":\"Joey Bag of Donuts IT Admin\",\"userPrincipalName\":\"joeybagofdonuts@joeybagofdonuts.onmicrosoft.com\",\"userId\":\"1233950f-e639-4b0b-b195-71c3531e33ab\",\"appId\":\"7dadcef8-456d-4611-2480-4fff72b8b9e2\",\"appDisplayName\":\"Microsoft Account Controls V2\",\"ipAddress\":\"35.84.240.155\",\"clientAppUsed\":\"Browser\",\"correlationId\":\"2cf19656-25b2-4ee3-a520-402966963daf\",\"conditionalAccessStatus\":\"notApplied\",\"isInteractive\":true,\"riskDetail\":\"hidden\",\"riskLevelAggregated\":\"hidden\",\"riskLevelDuringSignIn\":\"hidden\",\"riskState\":\"none\",\"riskEventTypes\":[],\"riskEventTypes_v2\":[],\"resourceDisplayName\":\"Microsoft Graph\",\"resourceId\":\"00000003-0000-0000-e000-000000000000\",\"status\":{\"errorCode\":0,\"failureReason\":\"Other.\",\"additionalDetails\":\"MFA requirement satisfied by claim in the token\"},\"deviceDetail\":{\"deviceId\":\"\",\"displayName\":\"\",\"operatingSystem\":\"MacOs\",\"browser\":\"Edge 114.0.1823\",\"isCompliant\":false,\"isManaged\":false,\"trustType\":\"\"},\"location\":{\"city\":\"San Francisco\",\"state\":\"California\",\"countryOrRegion\":\"US\",\"geoCoordinates\":{\"altitude\":null,\"latitude\":37.7749,\"longitude\":122.4194}},\"appliedConditionalAccessPolicies\":[]},{\"id\":\"873c4e25-926b-4bde-a9f1-1e389d018500\",\"createdDateTime\":\"2023-06-22T15:01:22Z\",\"userDisplayName\":\"Joey Bag of Donuts IT Admin\",\"userPrincipalName\":\"joeybagofdonuts@joeybagofdonuts.onmicrosoft.com\",\"userId\":\"1233950f-e639-4b0b-b195-71c3531e33ab\",\"appId\":\"ee172b19-4412-433f-8f21-5c13cb6fd407\",\"appDisplayName\":\"Microsoft 365 Support Service\",\"ipAddress\":\"32.84.140.151\",\"clientAppUsed\":\"Browser\",\"correlationId\":\"6bd211af-79eb-45ba-a5cf-43e38cd1b34e\",\"conditionalAccessStatus\":\"notApplied\",\"isInteractive\":true,\"riskDetail\":\"hidden\",\"riskLevelAggregated\":\"hidden\",\"riskLevelDuringSignIn\":\"hidden\",\"riskState\":\"none\",\"riskEventTypes\":[],\"riskEventTypes_v2\":[],\"resourceDisplayName\":\"Microsoft Graph\",\"resourceId\":\"00000003-0000-0000-e000-000000000000\",\"status\":{\"errorCode\":0,\"failureReason\":\"Other.\",\"additionalDetails\":\"MFA requirement satisfied by claim in the token\"},\"deviceDetail\":{\"deviceId\":\"\",\"displayName\":\"\",\"operatingSystem\":\"MacOs\",\"browser\":\"Edge 114.0.1823\",\"isCompliant\":false,\"isManaged\":false,\"trustType\":\"\"},\"location\":{\"city\":\"San Francisco\",\"state\":\"California\",\"countryOrRegion\":\"US\",\"geoCoordinates\":{\"altitude\":null,\"latitude\":37.7749,\"longitude\":122.4194}},\"appliedConditionalAccessPolicies\":[]},{\"id\":\"fbea1b5d-593d-47ed-a2d4-659ba4a79c00\",\"createdDateTime\":\"2023-06-22T14:45:08Z\",\"userDisplayName\":\"John Smith\",\"userPrincipalName\":\"johnsmith@joeybagofdonuts.onmicrosoft.com\",\"userId\":\"9f7de796-8727-3e41-ab01-f3e8f9ab4413\",\"appId\":\"00000002-0000-0ef1-cb00-000000000000\",\"appDisplayName\":\"Office 365 Exchange Online\",\"ipAddress\":\"67.183.58.7\",\"clientAppUsed\":\"Browser\",\"correlationId\":\"52c21dce-f308-ac07-f6b0-1965e1c176bd\",\"conditionalAccessStatus\":\"notApplied\",\"isInteractive\":true,\"riskDetail\":\"hidden\",\"riskLevelAggregated\":\"hidden\",\"riskLevelDuringSignIn\":\"hidden\",\"riskState\":\"none\",\"riskEventTypes\":[],\"riskEventTypes_v2\":[],\"resourceDisplayName\":\"Office 365 Exchange Online\",\"resourceId\":\"00000002-0000-0ef1-ce00-000000000000\",\"status\":{\"errorCode\":0,\"failureReason\":\"Other.\",\"additionalDetails\":\"MFA requirement satisfied by claim in the token\"},\"deviceDetail\":{\"deviceId\":\"\",\"displayName\":\"\",\"operatingSystem\":\"MacOs\",\"browser\":\"Chrome 114.0.0\",\"isCompliant\":false,\"isManaged\":false,\"trustType\":\"\"},\"location\":{\"city\":\"Seattle\",\"state\":\"Washington\",\"countryOrRegion\":\"US\",\"geoCoordinates\":{\"altitude\":null,\"latitude\":47.6062,\"longitude\":122.3321}},\"appliedConditionalAccessPolicies\":[]},{\"id\":\"fbea1b5d-593d-47ed-a2d4-659ba4a79c00\",\"createdDateTime\":\"2023-06-22T14:26:16Z\",\"userDisplayName\":\"John Smith\",\"userPrincipalName\":\"johnsmith@joeybagofdonuts.onmicrosoft.com\",\"userId\":\"9f7dc796-8747-4e46-ab01-f3e8f9aa4413\",\"appId\":\"c34b4083-3bb0-49c1-b47d-274e53cbdf3c\",\"appDisplayName\":\"Azure Portal\",\"ipAddress\":\"67.183.58.7\",\"clientAppUsed\":\"Browser\",\"correlationId\":\"53bc1a67-46f1-4902-b7ec-4cf777a7f9a3\",\"conditionalAccessStatus\":\"notApplied\",\"isInteractive\":true,\"riskDetail\":\"hidden\",\"riskLevelAggregated\":\"hidden\",\"riskLevelDuringSignIn\":\"hidden\",\"riskState\":\"none\",\"riskEventTypes\":[],\"riskEventTypes_v2\":[],\"resourceDisplayName\":\"Windows Azure Service Management API\",\"resourceId\":\"797f4846-ba00-4fd7-ba43-dac1f8f63013\",\"status\":{\"errorCode\":0,\"failureReason\":\"Other.\",\"additionalDetails\":\"MFA requirement satisfied by claim in the token\"},\"deviceDetail\":{\"deviceId\":\"\",\"displayName\":\"\",\"operatingSystem\":\"MacOs\",\"browser\":\"Chrome 114.0.0\",\"isCompliant\":false,\"isManaged\":false,\"trustType\":\"\"},\"location\":{\"city\":\"Kansas City\",\"state\":\"Missouri\",\"countryOrRegion\":\"US\",\"geoCoordinates\":{\"altitude\":null,\"latitude\":39.21315,\"longitude\":-94.58256}},\"appliedConditionalAccessPolicies\":[]},{\"id\":\"fbee1b4d-593d-47ed-a2d4-659ba4a79c00\",\"createdDateTime\":\"2023-06-22T14:21:20Z\",\"userDisplayName\":\"Jim Bob\",\"userPrincipalName\":\"jimbob@joeybagofdonuts.onmicrosoft.com\",\"userId\":\"9f7dc793-8747-4e46-ab01-f3e8f9aa4413\",\"appId\":\"c34b4083-3bb0-49c1-b47d-274e53cbdf3c\",\"appDisplayName\":\"Microsoft Azure CLI\",\"ipAddress\":\"64.222.244.0\",\"clientAppUsed\":\"Mobile Apps and Desktop clients\",\"correlationId\":\"22e27280-2123-432a-2a31-e1309b1228fb\",\"conditionalAccessStatus\":\"notApplied\",\"isInteractive\":true,\"riskDetail\":\"hidden\",\"riskLevelAggregated\":\"hidden\",\"riskLevelDuringSignIn\":\"hidden\",\"riskState\":\"none\",\"riskEventTypes\":[],\"riskEventTypes_v2\":[],\"resourceDisplayName\":\"Windows Azure Service Management API\",\"resourceId\":\"792f346-ba00-4fd7-ba23-dec1f8f43013\",\"status\":{\"errorCode\":0,\"failureReason\":\"Other.\",\"additionalDetails\":\"MFA completed in Azure AD\"},\"deviceDetail\":{\"deviceId\":\"\",\"displayName\":\"\",\"operatingSystem\":\"MacOs\",\"browser\":\"Chrome 114.0.0\",\"isCompliant\":false,\"isManaged\":false,\"trustType\":\"\"},\"location\":{\"city\":\"Augusta\",\"state\":\"Maine\",\"countryOrRegion\":\"US\",\"geoCoordinates\":{\"altitude\":null,\"latitude\":44.3106,\"longitude\":69.7795}},\"appliedConditionalAccessPolicies\":[]}]}",
+    "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#auditLogs/signIns",
+    "value": [
+      {
+        "id": "873c4e25-926b-4bde-a9f1-1e389d018500",
+        "createdDateTime": "2023-06-22T15:01:26Z",
+        "userDisplayName": "Joey Bag of Donuts IT Admin",
+        "userPrincipalName": "joeybagofdonuts@joeybagofdonuts.onmicrosoft.com",
+        "userId": "1233950f-e639-4b0b-b195-71c3531e33ab",
+        "appId": "7dadcef2-456d-2611-2280-4fff72b8b9e2",
+        "appDisplayName": "Microsoft Account Controls V2",
+        "ipAddress": "35.84.240.155",
+        "clientAppUsed": "Browser",
+        "correlationId": "2cf19626-22b2-4ee3-a520-402966963daf",
+        "conditionalAccessStatus": "notApplied",
+        "isInteractive": true,
+        "riskDetail": "hidden",
+        "riskLevelAggregated": "hidden",
+        "riskLevelDuringSignIn": "hidden",
+        "riskState": "none",
+        "riskEventTypes": [],
+        "riskEventTypes_v2": [],
+        "resourceDisplayName": "Microsoft Graph",
+        "resourceId": "00000003-0000-0000-e000-000000000000",
+        "status": {
+          "errorCode": 0,
+          "failureReason": "Other.",
+          "additionalDetails": "MFA requirement satisfied by claim in the token"
+        },
+        "deviceDetail": {
+          "deviceId": "",
+          "displayName": "",
+          "operatingSystem": "MacOs",
+          "browser": "Edge 114.0.1823",
+          "isCompliant": false,
+          "isManaged": false,
+          "trustType": ""
+        },
+        "location": {
+          "city": "San Francisco",
+          "state": "California",
+          "countryOrRegion": "US",
+          "geoCoordinates": {
+            "altitude": null,
+            "latitude": 37.7749,
+            "longitude": 122.4194
+          }
+        },
+        "appliedConditionalAccessPolicies": []
+      },
+      {
+        "id": "873c4e25-926b-4bde-a9f1-1e389d018500",
+        "createdDateTime": "2023-06-22T15:01:22Z",
+        "userDisplayName": "Joey Bag of Donuts IT Admin",
+        "userPrincipalName": "joeybagofdonuts@joeybagofdonuts.onmicrosoft.com",
+        "userId": "1233950f-e639-4b0b-b195-71c3531e33ab",
+        "appId": "ee172b19-4412-433f-8f21-5c13cb6fd407",
+        "appDisplayName": "Microsoft 365 Support Service",
+        "ipAddress": "32.84.140.151",
+        "clientAppUsed": "Browser",
+        "correlationId": "6bd211af-79eb-45ba-a5cf-43e38cd1b34e",
+        "conditionalAccessStatus": "notApplied",
+        "isInteractive": true,
+        "riskDetail": "hidden",
+        "riskLevelAggregated": "hidden",
+        "riskLevelDuringSignIn": "hidden",
+        "riskState": "none",
+        "riskEventTypes": [],
+        "riskEventTypes_v2": [],
+        "resourceDisplayName": "Microsoft Graph",
+        "resourceId": "00000003-0000-0000-e000-000000000000",
+        "status": {
+          "errorCode": 0,
+          "failureReason": "Other.",
+          "additionalDetails": "MFA requirement satisfied by claim in the token"
+        },
+        "deviceDetail": {
+          "deviceId": "",
+          "displayName": "",
+          "operatingSystem": "MacOs",
+          "browser": "Edge 114.0.1823",
+          "isCompliant": false,
+          "isManaged": false,
+          "trustType": ""
+        },
+        "location": {
+          "city": "San Francisco",
+          "state": "California",
+          "countryOrRegion": "US",
+          "geoCoordinates": {
+            "altitude": null,
+            "latitude": 37.7749,
+            "longitude": 122.4194
+          }
+        },
+        "appliedConditionalAccessPolicies": []
+      },
+      {
+        "id": "fbea1b5d-593d-47ed-a2d4-659ba4a79c00",
+        "createdDateTime": "2023-06-22T14:45:08Z",
+        "userDisplayName": "John Smith",
+        "userPrincipalName": "johnsmith@joeybagofdonuts.onmicrosoft.com",
+        "userId": "9f7de796-8727-3e41-ab01-f3e8f9ab4413",
+        "appId": "00000002-0000-0ef1-cb00-000000000000",
+        "appDisplayName": "Office 365 Exchange Online",
+        "ipAddress": "67.183.58.7",
+        "clientAppUsed": "Browser",
+        "correlationId": "52c21dce-f308-ac07-f6b0-1965e1c176bd",
+        "conditionalAccessStatus": "notApplied",
+        "isInteractive": true,
+        "riskDetail": "hidden",
+        "riskLevelAggregated": "hidden",
+        "riskLevelDuringSignIn": "hidden",
+        "riskState": "none",
+        "riskEventTypes": [],
+        "riskEventTypes_v2": [],
+        "resourceDisplayName": "Office 365 Exchange Online",
+        "resourceId": "00000002-0000-0ef1-ce00-000000000000",
+        "status": {
+          "errorCode": 0,
+          "failureReason": "Other.",
+          "additionalDetails": "MFA requirement satisfied by claim in the token"
+        },
+        "deviceDetail": {
+          "deviceId": "",
+          "displayName": "",
+          "operatingSystem": "MacOs",
+          "browser": "Chrome 114.0.0",
+          "isCompliant": false,
+          "isManaged": false,
+          "trustType": ""
+        },
+        "location": {
+          "city": "Seattle",
+          "state": "Washington",
+          "countryOrRegion": "US",
+          "geoCoordinates": {
+            "altitude": null,
+            "latitude": 47.6062,
+            "longitude": 122.3321
+          }
+        },
+        "appliedConditionalAccessPolicies": []
+      },
+      {
+        "id": "fbea1b5d-593d-47ed-a2d4-659ba4a79c00",
+        "createdDateTime": "2023-06-22T14:26:16Z",
+        "userDisplayName": "John Smith",
+        "userPrincipalName": "johnsmith@joeybagofdonuts.onmicrosoft.com",
+        "userId": "9f7dc796-8747-4e46-ab01-f3e8f9aa4413",
+        "appId": "c34b4083-3bb0-49c1-b47d-274e53cbdf3c",
+        "appDisplayName": "Azure Portal",
+        "ipAddress": "67.183.58.7",
+        "clientAppUsed": "Browser",
+        "correlationId": "53bc1a67-46f1-4902-b7ec-4cf777a7f9a3",
+        "conditionalAccessStatus": "notApplied",
+        "isInteractive": true,
+        "riskDetail": "hidden",
+        "riskLevelAggregated": "hidden",
+        "riskLevelDuringSignIn": "hidden",
+        "riskState": "none",
+        "riskEventTypes": [],
+        "riskEventTypes_v2": [],
+        "resourceDisplayName": "Windows Azure Service Management API",
+        "resourceId": "797f4846-ba00-4fd7-ba43-dac1f8f63013",
+        "status": {
+          "errorCode": 0,
+          "failureReason": "Other.",
+          "additionalDetails": "MFA requirement satisfied by claim in the token"
+        },
+        "deviceDetail": {
+          "deviceId": "",
+          "displayName": "",
+          "operatingSystem": "MacOs",
+          "browser": "Chrome 114.0.0",
+          "isCompliant": false,
+          "isManaged": false,
+          "trustType": ""
+        },
+        "location": {
+          "city": "Kansas City",
+          "state": "Missouri",
+          "countryOrRegion": "US",
+          "geoCoordinates": {
+            "altitude": null,
+            "latitude": 39.21315,
+            "longitude": -94.58256
+          }
+        },
+        "appliedConditionalAccessPolicies": []
+      },
+      {
+        "id": "fbee1b4d-593d-47ed-a2d4-659ba4a79c00",
+        "createdDateTime": "2023-06-22T14:21:20Z",
+        "userDisplayName": "Jim Bob",
+        "userPrincipalName": "jimbob@joeybagofdonuts.onmicrosoft.com",
+        "userId": "9f7dc793-8747-4e46-ab01-f3e8f9aa4413",
+        "appId": "c34b4083-3bb0-49c1-b47d-274e53cbdf3c",
+        "appDisplayName": "Microsoft Azure CLI",
+        "ipAddress": "64.222.244.0",
+        "clientAppUsed": "Mobile Apps and Desktop clients",
+        "correlationId": "22e27280-2123-432a-2a31-e1309b1228fb",
+        "conditionalAccessStatus": "notApplied",
+        "isInteractive": true,
+        "riskDetail": "hidden",
+        "riskLevelAggregated": "hidden",
+        "riskLevelDuringSignIn": "hidden",
+        "riskState": "none",
+        "riskEventTypes": [],
+        "riskEventTypes_v2": [],
+        "resourceDisplayName": "Windows Azure Service Management API",
+        "resourceId": "792f346-ba00-4fd7-ba23-dec1f8f43013",
+        "status": {
+          "errorCode": 0,
+          "failureReason": "Other.",
+          "additionalDetails": "MFA completed in Azure AD"
+        },
+        "deviceDetail": {
+          "deviceId": "",
+          "displayName": "",
+          "operatingSystem": "MacOs",
+          "browser": "Chrome 114.0.0",
+          "isCompliant": false,
+          "isManaged": false,
+          "trustType": ""
+        },
+        "location": {
+          "city": "Augusta",
+          "state": "Maine",
+          "countryOrRegion": "US",
+          "geoCoordinates": {
+            "altitude": null,
+            "latitude": 44.3106,
+            "longitude": 69.7795
+          }
+        },
+        "appliedConditionalAccessPolicies": []
+      }
+    ],
+    "cribl_pipe": [
+      "azure-audit-log-scrubbing",
+      "temp-rewrap-azure"
+    ]
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "message": "User 'user' logout",
+    "severity": 6,
+    "facility": 23,
+    "host": "router_hostname",
+    "appname": "mgd",
+    "procid": "41550",
+    "msgid": "UI_LOGOUT_EVENT",
+    "structuredData": "[junos@2636.1.1.1.2.136 username=\"user\"]",
+    "severityName": "info",
+    "facilityName": "local7",
+    "_time": 1690700003.746,
+    "_raw": "<190>1 2023-07-30T06:53:23.746Z router_hostname mgd 41550 UI_LOGOUT_EVENT [junos@2636.1.1.1.2.136 username=\"user\"] User 'user' logout",
+    "__srcIpPort": "udp|192.168.1.1|514",
+    "__inputId": "syslog:syslog:udp"
+  }
+]

@@ -1,0 +1,122 @@
+[
+  {
+    "_raw": "#separator \\x09",
+    "_time": 1521911725.733635,
+    "sourcetype": "bro_ntp",
+    "source": "/opt/zeek/logs/current/ntp.log"
+  },
+  {
+    "_raw": "#set_separator\t,",
+    "_time": 1521911725.733635,
+    "sourcetype": "bro_ntp",
+    "source": "/opt/zeek/logs/current/ntp.log"
+  },
+  {
+    "_raw": "#empty_field\t(empty)",
+    "_time": 1521911725.733635,
+    "sourcetype": "bro_ntp",
+    "source": "/opt/zeek/logs/current/ntp.log"
+  },
+  {
+    "_raw": "#unset_field\t-",
+    "_time": 1521911725.733635,
+    "sourcetype": "bro_ntp",
+    "source": "/opt/zeek/logs/current/ntp.log"
+  },
+  {
+    "_raw": "#path\tntp",
+    "_time": 1521911725.733635,
+    "sourcetype": "bro_ntp",
+    "source": "/opt/zeek/logs/current/ntp.log"
+  },
+  {
+    "_raw": "#open\t2024-04-12-19-29-15",
+    "_time": 1521911725.733635,
+    "sourcetype": "bro_ntp",
+    "source": "/opt/zeek/logs/current/ntp.log"
+  },
+  {
+    "_raw": "#fields\tts\tuid\tid.orig_h\tid.orig_p\tid.resp_h\tid.resp_p\tversion\tmode\tstratum\tpoll\tprecision\troot_delay\troot_disp\tref_id\tref_time\torg_time\trec_time\txmt_time\tnum_exts",
+    "_time": 1521911725.733635,
+    "sourcetype": "bro_ntp",
+    "source": "/opt/zeek/logs/current/ntp.log"
+  },
+  {
+    "_raw": "#types\ttime\tstring\taddr\tport\taddr\tport\tcount\tcount\tcount\tinterval\tinterval\tinterval\tinterval\tstring\ttime\ttime\ttime\ttime\tcount",
+    "_time": 1521911725.733635,
+    "sourcetype": "bro_ntp",
+    "source": "/opt/zeek/logs/current/ntp.log"
+  },
+  {
+    "_raw": "1521911725.733635\tCVeuQCCVAileo7FX2\t10.47.3.50\t52184\t41.231.53.4\t123\t4\t3\t0\t1.000000\t1.000000\t0.000000\t0.000000\t\\x00\\x00\\x00\\x00\t0.000000\t0.000000\t0.000000\t1521911713.139938\t0",
+    "_time": 1521911725.733635,
+    "sourcetype": "bro_ntp",
+    "source": "/opt/zeek/logs/current/ntp.log"
+  },
+  {
+    "_raw": "1521911744.374565\tCLrsrA2BTIJsqdpzz7\t10.47.6.100\t123\t83.162.149.224\t123\t4\t3\t3\t1024.000000\t0.000000\t0.142700\t-0.085938\t83.162.149.224\t1521856154.154677\t1521856155.037254\t1521856155.110346\t1521911744.387256\t0",
+    "_time": 1521911744.374565,
+    "sourcetype": "bro_ntp",
+    "source": "/opt/zeek/logs/current/ntp.log"
+  },
+  {
+    "_raw": "1521911750.072280\tCGeJLC4urbObg0BfGc\t10.47.3.100\t123\t72.87.88.202\t123\t4\t3\t3\t1024.000000\t0.000000\t0.078400\t1.827362\t209.133.217.165\t1521856189.421444\t1521856234.115685\t1521856234.159700\t1521911750.077155\t0",
+    "_time": 1521911750.07228,
+    "sourcetype": "bro_ntp",
+    "source": "/opt/zeek/logs/current/ntp.log"
+  },
+  {
+    "_raw": "1521911756.932695\tCu17t2APgRieZEhmh\t10.47.1.100\t123\t36.3.117.150\t123\t4\t3\t3\t1024.000000\t0.000000\t0.069778\t0.246307\t108.61.73.243\t1521856207.209845\t1521855755.172733\t1521855755.229702\t1521911758.790324\t0",
+    "_time": 1521911756.932695,
+    "sourcetype": "bro_ntp",
+    "source": "/opt/zeek/logs/current/ntp.log"
+  },
+  {
+    "_raw": "1521911762.983952\tCeYjxd4u7ZXI8Pevkd\t10.47.1.30\t123\t138.68.46.177\t123\t4\t3\t2\t1024.000000\t0.000000\t0.058594\t-0.154343\t69.89.207.99\t1521856186.057849\t1521855915.000920\t1521855915.010539\t1521911763.000299\t0",
+    "_time": 1521911762.983952,
+    "sourcetype": "bro_ntp",
+    "source": "/opt/zeek/logs/current/ntp.log"
+  },
+  {
+    "_raw": "1521911833.991858\tCdNKww19u12PcSG9fk\t10.47.3.3\t123\t10.0.0.101\t123\t4\t4\t2\t128.000000\t0.000000\t0.000366\t0.047379\t134.71.246.167\t1521909773.425202\t1521911833.996372\t1521911833.996938\t1521911833.996996\t0",
+    "_time": 1521911833.991858,
+    "sourcetype": "bro_ntp",
+    "source": "/opt/zeek/logs/current/ntp.log"
+  },
+  {
+    "_raw": "1521911969.163750\tCvDGwW1rwd8dRW5CDa\t10.47.4.100\t123\t129.250.35.251\t123\t4\t3\t2\t1024.000000\t0.000000\t0.155029\t0.333511\t131.188.3.221\t1521855971.275708\t1521855982.720969\t1521855982.719434\t1521911970.506615\t0",
+    "_time": 1521911969.16375,
+    "sourcetype": "bro_ntp",
+    "source": "/opt/zeek/logs/current/ntp.log"
+  },
+  {
+    "_raw": "1521912044.116456\tCz4lVF2bvwhhvsCEkl\t10.47.2.100\t123\t172.98.193.44\t123\t4\t3\t3\t1024.000000\t0.000000\t0.092590\t0.311798\t108.61.229.248\t1521856226.010527\t1521855986.775479\t1521855986.802170\t1521912045.836229\t0",
+    "_time": 1521912044.116456,
+    "sourcetype": "bro_ntp",
+    "source": "/opt/zeek/logs/current/ntp.log"
+  },
+  {
+    "_raw": "1521912078.003047\tCFVAlC3XiJxiOpta8g\t10.47.1.18\t123\t134.71.246.167\t123\t4\t3\t3\t1024.000000\t0.000000\t0.001190\t0.067413\t10.0.0.101\t1521910521.007998\t1521856189.008431\t1521856189.010088\t1521912078.007111\t0",
+    "_time": 1521912078.003047,
+    "sourcetype": "bro_ntp",
+    "source": "/opt/zeek/logs/current/ntp.log"
+  },
+  {
+    "_raw": "1521912112.198656\tCNRPme2UojcWYg1f12\t10.47.6.200\t123\t62.75.236.38\t123\t4\t3\t3\t1024.000000\t0.000001\t0.171677\t0.930023\t62.75.236.38\t1521856228.286268\t1521856228.074040\t1521856228.286268\t1521912139.714394\t0",
+    "_time": 1521912112.198656,
+    "sourcetype": "bro_ntp",
+    "source": "/opt/zeek/logs/current/ntp.log"
+  },
+  {
+    "_raw": "1521912158.628723\tCXRXNv387t9DOoLvfc\t10.47.8.100\t123\t85.197.153.193\t123\t4\t3\t2\t1024.000000\t0.000000\t0.177704\t-0.000732\t85.197.153.193\t1521856185.221596\t1521856185.763513\t1521856185.850073\t1521912158.671947\t0",
+    "_time": 1521912158.628723,
+    "sourcetype": "bro_ntp",
+    "source": "/opt/zeek/logs/current/ntp.log"
+  },
+  {
+    "_raw": "1521912372.286913\tCI693T2gXjwrRw1O2\t10.47.2.10\t123\t152.2.133.53\t123\t3\t1\t3\t32768.000000\t0.000000\t0.063110\t16.000000\t216.229.4.66\t1521911744.506203\t0.000000\t0.000000\t1521912371.381210\t0",
+    "_time": 1521912372.286913,
+    "sourcetype": "bro_ntp",
+    "source": "/opt/zeek/logs/current/ntp.log"
+  }
+]

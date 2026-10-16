@@ -1,0 +1,102 @@
+[
+  {
+    "_raw": "id=firewall sn=C0ABCDE12345 time=\"2023-07-05 01:32:20\" fw=10.10.9.34 pri=5 c=512 m=1233 msg=\"Unhandled link-local or multicast IPv6 packet dropped\" n=1252740 srcV6=cdab::de66:1020:50e2:b90c src=:5353:X0 dstV6=1023::fb dst=:5353 srcMac=10:20:24:31:1e:a1 dstMac=33:33:00:00:00:fb proto=udp/5353",
+    "_time": 1688535140,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "id=firewall sn=C0ABCDE12345 time=\"2023-07-05 01:32:14\" fw=10.10.9.34 pri=6 c=512 m=597 msg=\"ICMP packet allowed\" app=34 n=23252698 src=10.10.9.34::X1 dst=123.10.26.180::X1 srcMac=c0:ea:e4:0b:9b:90 proto=icmp type=0 icmpCode=0",
+    "_time": 1688535134,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "id=firewall sn=C0ABCDE12345 time=\"2023-07-05 01:32:12\" fw=10.10.9.34 pri=6 c=1024 m=537 msg=\"Connection Closed\" n=84756681 src=192.168.159.148:53661:X0 dst=192.168.52.175:7680:X1 proto=tcp/7680 sent=260 spkt=5 cdur=47166 vpnpolicy=\"Cisco-ASA\"",
+    "_time": 1688535132,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "id=firewall sn=C0ABCDE12345 time=\"2023-07-05 01:31:38\" fw=10.10.9.34 pri=5 c=64 m=36 msg=\"TCP connection dropped\" n=13156013 src=110.20.146.195:50617:X1 dst=10.10.9.34:8004:X1 srcMac=f4:0f:90:25:00:10 dstMac=c0:ea:e4:12:34:56 proto=tcp/8004",
+    "_time": 1688535098,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "id=firewall sn=C0ABCDE12345 time=\"2023-07-05 01:31:27\" fw=10.10.9.34 pri=6 c=512 m=602 msg=\"DNS packet allowed\" app=2 n=17304309 src=10.24.254.57:53:X1 dst=192.168.159.148:50950:X0 srcMac=f4:0f:90:25:00:10 dstMac=c0:ea:e4:12:34:56 proto=udp/50950",
+    "_time": 1688535087,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "id=firewall sn=C0ABCDE12345 time=\"2023-07-05 01:31:09\" fw=10.10.9.34 pri=6 c=1024 m=537 msg=\"Connection Closed\" n=84756439 src=120.50.10.212:61331:X1 dst=10.10.9.34:5985:X1 proto=tcp/5985",
+    "_time": 1688535069,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "id=firewall sn=C0ABCDE12345 time=\"2023-07-05 01:31:09\" fw=10.10.9.34 pri=6 c=512 m=597 msg=\"ICMP packet allowed\" n=23252637 src=60.22.170.119::X1 dst=10.10.9.34::X1 srcMac=f4:0f:90:25:00:10 dstMac=c0:ea:e4:12:34:56 proto=icmp type=8 icmpCode=0",
+    "_time": 1688535069,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "id=firewall sn=C0ABCDE12345 time=\"2023-07-05 01:31:03\" fw=10.10.9.34 pri=7 c=512 m=46 msg=\"Broadcast packet dropped\" n=643301 src=192.168.159.148:138:X0 dst=192.168.159.255:138 srcMac=10:20:24:30:a0:c2 dstMac=ff:ff:ff:ff:ff:ff proto=udp/netbios-dgm",
+    "_time": 1688535063,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "id=firewall sn=C0ABCDE12345 time=\"2023-07-05 01:31:00\" fw=10.10.9.34 pri=5 c=0 m=760 msg=\"TCP handshake violation detected; TCP connection dropped\" n=19115891 src=192.168.19.56:51080:X1 dst=192.168.159.106:7680:X0 dstMac=10:20:24:31:1e:a1 proto=tcp/7680 note=\"Handshake Timeout\"",
+    "_time": 1688535060,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "id=firewall sn=C0ABCDE12345 time=\"2023-07-05 01:30:33\" fw=10.10.9.34 pri=5 c=64 m=36 msg=\"TCP connection dropped\" n=13156005 src=125.21.138.230:4348:X1 dst=10.10.9.34:8988:X1 srcMac=f4:0f:90:25:00:10 dstMac=c0:ea:e4:12:34:56 proto=tcp/8988",
+    "_time": 1688535033,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "id=firewall sn=C0ABCDE12345 time=\"2023-07-05 01:30:18\" fw=10.10.9.34 pri=5 c=512 m=1233 msg=\"Unhandled link-local or multicast IPv6 packet dropped\" n=1252679 srcV6=cdab::de66:1020:50e2:b90c src=:5353:X0 dstV6=1023::fb dst=:5353 srcMac=10:20:24:31:1e:a1 dstMac=33:33:00:00:00:fb proto=udp/5353",
+    "_time": 1688535018,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "id=firewall sn=C0ABCDE12345 time=\"2023-07-05 01:30:17\" fw=10.10.9.34 pri=5 c=128 m=37 msg=\"UDP packet dropped\" n=3137668 src=192.168.159.106:5353:X0 dst=224.0.0.251:5353 srcMac=10:20:24:31:1e:a1 dstMac=01:00:5e:00:00:fb proto=udp/5353",
+    "_time": 1688535017,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "id=firewall sn=C0ABCDE12345 time=\"2023-07-05 01:30:06\" fw=10.10.9.34 pri=6 c=1024 m=537 msg=\"Connection Closed\" app=14 n=84756204 src=192.168.159.76:52628:X0 dst=10.24.254.57:389:X1 srcMac=d8:9e:f3:2c:6d:0b proto=tcp/389 sent=2769 rcvd=847 spkt=9 rpkt=7 cdur=1433 vpnpolicy=\"Cisco-ASA\"",
+    "_time": 1688535006,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "id=firewall sn=C0ABCDE12345 time=\"2023-07-05 01:29:23\" fw=10.10.9.34 pri=6 c=262144 m=98 msg=\"Connection Opened\" app=2 n=71960059 src=192.168.159.106:59710:X0 dst=10.24.254.57:53:X1 proto=udp/dns sent=70",
+    "_time": 1688534963,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "id=firewall sn=C0ABCDE12345 time=\"2023-07-05 01:29:15\" fw=10.10.9.34 pri=6 c=512 m=602 msg=\"DNS packet allowed\" app=2 n=17304059 src=10.24.254.57:53:X1 dst=192.168.159.106:51186:X0 srcMac=f4:0f:90:25:00:10 dstMac=c0:ea:e4:12:34:56 proto=udp/51186",
+    "_time": 1688534955,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "id=firewall sn=C0ABCDE12345 time=\"2023-07-05 01:29:05\" fw=10.10.9.34 pri=6 c=512 m=597 msg=\"ICMP packet allowed\" n=23252583 src=10.10.9.34::X1 dst=16.170.201.47::X1 srcMac=c0:ea:e4:0b:9b:90 proto=icmp type=0 icmpCode=0",
+    "_time": 1688534945,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "id=firewall sn=C0ABCDE12345 time=\"2023-07-05 01:29:04\" fw=10.10.9.34 pri=5 c=64 m=36 msg=\"TCP connection dropped\" n=13155989 src=89.248.165.109:36254:X1 dst=10.10.9.34:16934:X1 srcMac=f4:0f:90:25:00:10 dstMac=c0:ea:e4:12:34:56 proto=tcp/16934",
+    "_time": 1688534944,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "id=firewall sn=C0ABCDE12345 time=\"2023-07-05 01:28:15\" fw=10.10.9.34 pri=5 c=512 m=1233 msg=\"Unhandled link-local or multicast IPv6 packet dropped\" n=1252616 srcV6=cdab::de66:1020:50e2:b90c src=:5353:X0 dstV6=1023::fb dst=:5353 srcMac=10:20:24:31:1e:a1 dstMac=33:33:00:00:00:fb proto=udp/5353",
+    "_time": 1688534895,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "id=firewall sn=C0ABCDE12345 time=\"2023-07-05 01:28:02\" fw=10.10.9.34 pri=6 c=262144 m=98 msg=\"Connection Opened\" app=2 n=71959617 src=192.168.159.106:55241:X0 dst=10.24.254.57:53:X1 proto=udp/dns sent=70",
+    "_time": 1688534882,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "id=firewall sn=C0ABCDE12345 time=\"2023-07-05 01:27:56\" fw=10.10.9.34 pri=5 c=0 m=760 msg=\"TCP handshake violation detected; TCP connection dropped\" n=19115843 src=192.168.84.51:59511:X1 dst=192.168.159.76:7680:X0 dstMac=d8:9e:f3:2c:6d:0b proto=tcp/7680 note=\"Handshake Timeout\"",
+    "_time": 1688534876,
+    "cribl_breaker": "Break on newlines"
+  }
+]

@@ -1,0 +1,122 @@
+[
+  {
+    "_raw": "#separator \\x09",
+    "_time": 1521911720.600843,
+    "sourcetype": "bro_weird",
+    "source": "/opt/zeek/logs/current/weird.log"
+  },
+  {
+    "_raw": "#set_separator\t,",
+    "_time": 1521911720.600843,
+    "sourcetype": "bro_weird",
+    "source": "/opt/zeek/logs/current/weird.log"
+  },
+  {
+    "_raw": "#empty_field\t(empty)",
+    "_time": 1521911720.600843,
+    "sourcetype": "bro_weird",
+    "source": "/opt/zeek/logs/current/weird.log"
+  },
+  {
+    "_raw": "#unset_field\t-",
+    "_time": 1521911720.600843,
+    "sourcetype": "bro_weird",
+    "source": "/opt/zeek/logs/current/weird.log"
+  },
+  {
+    "_raw": "#path\tweird",
+    "_time": 1521911720.600843,
+    "sourcetype": "bro_weird",
+    "source": "/opt/zeek/logs/current/weird.log"
+  },
+  {
+    "_raw": "#open\t2024-04-12-19-29-12",
+    "_time": 1521911720.600843,
+    "sourcetype": "bro_weird",
+    "source": "/opt/zeek/logs/current/weird.log"
+  },
+  {
+    "_raw": "#fields\tts\tuid\tid.orig_h\tid.orig_p\tid.resp_h\tid.resp_p\tname\taddl\tnotice\tpeer\tsource",
+    "_time": 1521911720.600843,
+    "sourcetype": "bro_weird",
+    "source": "/opt/zeek/logs/current/weird.log"
+  },
+  {
+    "_raw": "#types\ttime\tstring\taddr\tport\taddr\tport\tstring\tstring\tbool\tstring\tstring",
+    "_time": 1521911720.600843,
+    "sourcetype": "bro_weird",
+    "source": "/opt/zeek/logs/current/weird.log"
+  },
+  {
+    "_raw": "1521911720.600843\tCsPzgh4tp5lHBTnsrf\t10.47.1.152\t49562\t23.217.103.245\t80\tTCP_ack_underflow_or_misorder\t-\tF\tzeek\tTCP",
+    "_time": 1521911720.600843,
+    "sourcetype": "bro_weird",
+    "source": "/opt/zeek/logs/current/weird.log"
+  },
+  {
+    "_raw": "1521911720.742818\tCIHehQ1QzFYgvDcQG9\t10.47.8.100\t5900\t10.129.53.65\t58485\tconnection_originator_SYN_ack\t-\tF\tzeek\tTCP",
+    "_time": 1521911720.742818,
+    "sourcetype": "bro_weird",
+    "source": "/opt/zeek/logs/current/weird.log"
+  },
+  {
+    "_raw": "1521911723.415005\tCVHA7z2oZ6BsxyvsYl\t10.47.26.160\t49161\t216.58.193.195\t443\twindow_recision\t-\tF\tzeek\t-",
+    "_time": 1521911723.415005,
+    "sourcetype": "bro_weird",
+    "source": "/opt/zeek/logs/current/weird.log"
+  },
+  {
+    "_raw": "1521911723.480548\t-\t10.164.94.120\t0\t10.47.24.82\t0\tinvalid_inner_IP_version\t-\tF\tzeek\tIPTUNNEL",
+    "_time": 1521911723.480548,
+    "sourcetype": "bro_weird",
+    "source": "/opt/zeek/logs/current/weird.log"
+  },
+  {
+    "_raw": "1521911725.420027\tC5TN5RUrFDys1dGC2\t10.164.94.120\t43655\t10.47.21.80\t8080\tunknown_HTTP_method\tSecure\tF\tzeek\t-",
+    "_time": 1521911725.420027,
+    "sourcetype": "bro_weird",
+    "source": "/opt/zeek/logs/current/weird.log"
+  },
+  {
+    "_raw": "1521911727.158066\tCVBGr1RQUcVZsyUXa\t10.47.24.81\t60394\t10.128.0.238\t60004\tpossible_split_routing\t-\tF\tzeek\t-",
+    "_time": 1521911727.158066,
+    "sourcetype": "bro_weird",
+    "source": "/opt/zeek/logs/current/weird.log"
+  },
+  {
+    "_raw": "1521911758.469090\tCZBjkl2sJ8NRphaPmc\t10.128.0.238\t60004\t10.47.24.81\t50513\tinappropriate_FIN\t-\tF\tzeek\tTCP",
+    "_time": 1521911758.46909,
+    "sourcetype": "bro_weird",
+    "source": "/opt/zeek/logs/current/weird.log"
+  },
+  {
+    "_raw": "1521911769.473812\tCRIa0u11ZGVgdTJcz1\t10.164.94.120\t42543\t10.47.8.151\t5800\tline_terminated_with_single_CR\t-\tF\tzeek\tCONTENTLINE",
+    "_time": 1521911769.473812,
+    "sourcetype": "bro_weird",
+    "source": "/opt/zeek/logs/current/weird.log"
+  },
+  {
+    "_raw": "1521911880.651796\tCCQk2I3gShMFJIEiZc\t10.128.0.241\t58384\t10.47.1.208\t808\tinvalid_http_09_request_method\tOPTIONS\tF\tzeek\tHTTP",
+    "_time": 1521911880.651796,
+    "sourcetype": "bro_weird",
+    "source": "/opt/zeek/logs/current/weird.log"
+  },
+  {
+    "_raw": "1521912000.048455\tCQEkwJSxn4QEb0Jq6\t10.47.6.154\t12953\t10.0.0.100\t53\tdnp3_corrupt_header_checksum\t-\tF\tzeek\tDNP3_UDP",
+    "_time": 1521912000.048455,
+    "sourcetype": "bro_weird",
+    "source": "/opt/zeek/logs/current/weird.log"
+  },
+  {
+    "_raw": "1521912650.632231\t-\t-\t-\t-\t-\tx509_cert_parse_error\tF1ffKd1RVWiQDgnD36\tF\tzeek\t-",
+    "_time": 1521912650.632231,
+    "sourcetype": "bro_weird",
+    "source": "/opt/zeek/logs/current/weird.log"
+  },
+  {
+    "_raw": "1521912834.852469\tC1mGnm48Pupi5cXNag\t10.128.0.19\t60347\t10.47.26.55\t22\tSSH_version_mismatch\tSSH-2.0-OpenSSH_4.3p2 Debian-9etch3 vs SSH-1.5-NmapNSE_1.0\tF\tzeek\t-",
+    "_time": 1521912834.852469,
+    "sourcetype": "bro_weird",
+    "source": "/opt/zeek/logs/current/weird.log"
+  }
+]

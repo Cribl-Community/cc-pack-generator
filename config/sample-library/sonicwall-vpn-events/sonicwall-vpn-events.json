@@ -1,0 +1,102 @@
+[
+  {
+    "_raw": "id=firewall sn=C0ABCDE12345 time=\"2023-07-05 00:50:59\" fw=10.10.9.34 pri=6 c=16 m=945 msg=\"IKEv2 Initiator: Send CREATE_CHILD_SA Request\" n=19388 src=10.10.9.34:500:X1 dst=78.45.231.114:500 note=\"VPN Policy: A; IPsec SA Rekey Request\"",
+    "_time": 1688532659,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "id=firewall sn=C0EAE40B9B90 time=\"2023-07-05 00:48:09\" fw=10.10.9.34 pri=6 c=16 m=945 msg=\"IKEv2 Initiator: Send CREATE_CHILD_SA Request\" n=19387 src=10.10.9.34:500:X1 dst=192.123.65.158:500 note=\"VPN Policy: Random ASA; IPsec SA Rekey Request\"",
+    "_time": 1688532489,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "id=firewall sn=C0EAE40B9B90 time=\"2023-07-05 00:48:09\" fw=10.10.9.34 pri=6 c=16 m=944 msg=\"IKEv2 Accept IPsec SA Proposal\" n=19267 src=192.123.65.158:500:X1 dst=10.10.9.34:500 note=\"VPN Policy: Random ASA; ESP; AES_CBC-256; HMAC_SHA512_256; Sequence Number 32-bit\"",
+    "_time": 1688532489,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "id=firewall sn=C0EAE40B9B90 time=\"2023-07-04 23:59:49\" fw=10.10.9.34 pri=6 c=16 m=1016 msg=\"IKEv2 Received delete IPsec SA response\" n=6410 src=78.45.231.114:500:X1 dst=10.10.9.34:500 note=\"VPN Policy: Headquarters AS; SPI: 0x43e962f9\"",
+    "_time": 1688529589,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "id=firewall sn=C0EAE40B9B90 time=\"2023-07-04 23:59:38\" fw=10.10.9.34 pri=6 c=16 m=945 msg=\"IKEv2 Initiator: Send CREATE_CHILD_SA Request\" n=19386 src=10.10.9.34:500:X1 dst=78.45.231.114:500 note=\"VPN Policy: Headquarters AS; IPsec SA Rekey Request\"",
+    "_time": 1688529578,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "id=firewall sn=C0EAE40B9B90 time=\"2023-07-04 23:55:19\" fw=10.10.9.34 pri=6 c=16 m=950 msg=\"IKEv2 Received delete IPsec SA Request\" n=12263 src=192.123.65.158:500:X1 dst=10.10.9.34:500 note=\"VPN Policy: Random ASA; SPI: 0x10574e51 \"",
+    "_time": 1688529319,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "id=firewall sn=C0EAE40B9B90 time=\"2023-07-04 23:55:18\" fw=10.10.9.34 pri=6 c=16 m=945 msg=\"IKEv2 Initiator: Send CREATE_CHILD_SA Request\" n=19385 src=10.10.9.34:500:X1 dst=192.123.65.158:500 note=\"VPN Policy: Random ASA; IPsec SA Rekey Request\"",
+    "_time": 1688529318,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "id=firewall sn=C0EAE40B9B90 time=\"2023-07-04 23:45:45\" fw=10.10.9.34 pri=6 c=16 m=939 msg=\"IKEv2 Responder: Received IKE_SA_INIT Request\" n=14617 src=56.142.125.214:60319 dst=10.10.9.34:500 note=\"\"",
+    "_time": 1688528745,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "id=firewall sn=C0EAE40B9B90 time=\"2023-07-04 23:45:45\" fw=10.10.9.34 pri=6 c=16 m=355 msg=\"IKE Responder: Received Main Mode Request (Phase 1)\" n=1073 src=162.142.125.214:43907 dst=10.10.9.34:500 proto=udp/500",
+    "_time": 1688528745,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "id=firewall sn=C0EAE40B9B90 time=\"2023-07-04 23:45:45\" fw=10.10.9.34 pri=3 c=512 m=616 msg=\"Payload processing failed\" n=1073 src=162.142.125.214:43907 dst=10.10.9.34:500 note=\"Payload Type: SA\"",
+    "_time": 1688528745,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "id=firewall sn=C0EAE40B9B90 time=\"2023-07-04 23:24:15\" fw=10.10.9.34 pri=6 c=16 m=939 msg=\"IKEv2 Responder: Received IKE_SA_INIT Request\" n=14615 src=64.227.106.112:40633 dst=10.10.9.34:4500 note=\"\"",
+    "_time": 1688527455,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "id=firewall sn=C0EAE40B9B90 time=\"2023-07-04 23:06:43\" fw=10.10.9.34 pri=6 c=16 m=950 msg=\"IKEv2 Received delete IPsec SA Request\" n=12262 src=78.45.231.114:500:X1 dst=10.10.9.34:500 note=\"VPN Policy: Headquarters AS; SPI: 0xcca062f9 \"",
+    "_time": 1688526403,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "id=firewall sn=C0EAE40B9B90 time=\"2023-07-04 23:06:38\" fw=10.10.9.34 pri=6 c=16 m=944 msg=\"IKEv2 Accept IPsec SA Proposal\" n=19264 src=78.45.231.114:500:X1 dst=10.10.9.34:500 note=\"VPN Policy: Headquarters AS; ESP; AES_CBC-256; HMAC_SHA512_256; Sequence Number 32-bit\"",
+    "_time": 1688526398,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "id=firewall sn=C0EAE40B9B90 time=\"2023-07-04 22:15:48\" fw=10.10.9.34 pri=6 c=16 m=949 msg=\"IKEv2 Send delete IPsec SA Request\" n=6414 src=10.10.9.34:500:X1 dst=78.45.231.114:500 note=\"VPN Policy: Headquarters AS; SPI: 0x58c362f9\"",
+    "_time": 1688523348,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "id=firewall sn=C0EAE40B9B90 time=\"2023-07-04 22:15:37\" fw=10.10.9.34 pri=6 c=16 m=944 msg=\"IKEv2 Accept IPsec SA Proposal\" n=19262 src=78.45.231.114:500:X1 dst=10.10.9.34:500 note=\"VPN Policy: Headquarters AS; ESP; AES_CBC-256; HMAC_SHA512_256; Sequence Number 32-bit\"",
+    "_time": 1688523337,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "id=firewall sn=C0EAE40B9B90 time=\"2023-07-04 22:10:02\" fw=10.10.9.34 pri=6 c=16 m=1014 msg=\"IKEv2 Send delete IPsec SA response\" n=12273 src=10.10.9.34:500:X1 dst=192.123.65.158:500 note=\"VPN Policy: Random ASA; SPI: 0xe02d4e51\"",
+    "_time": 1688523002,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "id=firewall sn=C0EAE40B9B90 time=\"2023-07-04 22:10:02\" fw=10.10.9.34 pri=6 c=16 m=944 msg=\"IKEv2 Accept IPsec SA Proposal\" n=19261 src=192.123.65.158:500:X1 dst=10.10.9.34:500 note=\"VPN Policy: Random ASA; ESP; AES_CBC-256; HMAC_SHA512_256; Sequence Number 32-bit\"",
+    "_time": 1688523002,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "id=firewall sn=C0EAE40B9B90 time=\"2023-07-04 21:24:05\" fw=10.10.9.34 pri=6 c=16 m=949 msg=\"IKEv2 Send delete IPsec SA Request\" n=6413 src=10.10.9.34:500:X1 dst=78.45.231.114:500 note=\"VPN Policy: Headquarters AS; SPI: 0x88fbe2f9\"",
+    "_time": 1688520245,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "id=firewall sn=C0EAE40B9B90 time=\"2023-07-04 21:24:05\" fw=10.10.9.34 pri=6 c=16 m=1016 msg=\"IKEv2 Received delete IPsec SA response\" n=6408 src=78.45.231.114:500:X1 dst=10.10.9.34:500 note=\"VPN Policy: Headquarters AS; SPI: 0x88fbe2f9\"",
+    "_time": 1688520245,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "id=firewall sn=C0EAE40B9B90 time=\"2023-07-04 21:23:54\" fw=10.10.9.34 pri=6 c=16 m=944 msg=\"IKEv2 Accept IPsec SA Proposal\" n=19260 src=78.45.231.114:500:X1 dst=10.10.9.34:500 note=\"VPN Policy: Headquarters AS; ESP; AES_CBC-256; HMAC_SHA512_256; Sequence Number 32-bit\"",
+    "_time": 1688520234,
+    "cribl_breaker": "Break on newlines"
+  }
+]

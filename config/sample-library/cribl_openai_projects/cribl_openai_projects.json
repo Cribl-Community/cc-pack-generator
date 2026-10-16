@@ -1,0 +1,22 @@
+[
+  {
+    "_raw": "{\n      \"object\": \"organization.project\",\n      \"id\": \"proj_srN6lHLnKo5rN7l7aqwlBsKn\",\n      \"name\": \"Default project\",\n      \"created_at\": 1721414463,\n      \"archived_at\": null,\n      \"status\": \"active\"\n    }",
+    "host": "ip-10-255-9-252",
+    "source": "https://api.openai.com/v1/organization/projects",
+    "_time": 1721414463,
+    "cribl_breaker": [
+      "OpenAI API Ruleset:other_logs",
+      "ndjson"
+    ]
+  },
+  {
+    "_raw": "{\n      \"object\": \"organization.project\",\n      \"id\": \"proj_aabR3lVvwrXsubDm4h7hQ3Dl\",\n      \"name\": \"SDET\",\n      \"created_at\": 1742852060,\n      \"archived_at\": null,\n      \"status\": \"active\"\n    }",
+    "host": "ip-10-255-9-252",
+    "source": "https://api.openai.com/v1/organization/projects",
+    "_time": 1742852060,
+    "cribl_breaker": [
+      "OpenAI API Ruleset:other_logs",
+      "ndjson"
+    ]
+  }
+]

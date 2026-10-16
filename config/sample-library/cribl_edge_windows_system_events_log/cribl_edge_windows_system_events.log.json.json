@@ -1,0 +1,142 @@
+[
+  {
+    "_time": 1692468002.42,
+    "cribl_breaker": "windows event logs",
+    "_raw": "{\"Id\":7036,\"Version\":0,\"Qualifiers\":16384,\"Level\":4,\"Task\":0,\"Opcode\":0,\"Keywords\":-9187343239835811840,\"RecordId\":69345,\"ProviderName\":\"Service Control Manager\",\"ProviderId\":\"555908d1-a6d7-4695-8e1e-26931d2012f4\",\"LogName\":\"System\",\"ProcessId\":832,\"ThreadId\":3632,\"MachineName\":\"EC2AMAZ-O91G7M3\",\"UserId\":null,\"TimeCreated\":\"\\/Date(1692468002420)\\/\",\"ActivityId\":null,\"RelatedActivityId\":null,\"ContainerLog\":\"System\",\"MatchedQueryIds\":[],\"Bookmark\":{},\"LevelDisplayName\":\"Information\",\"OpcodeDisplayName\":null,\"TaskDisplayName\":null,\"KeywordsDisplayNames\":[\"Classic\"],\"Properties\":[{\"Value\":\"Network Setup Service\"},{\"Value\":\"stopped\"},{\"Value\":\"78 0 101 0 116 0 83 0 101 0 116 0 117 0 112 0 83 0 118 0 99 0 47 0 49 0 0 0\"}],\"Message\":\"The Network Setup Service service entered the stopped state.\"}",
+    "source": "System",
+    "host": "EC2AMAZ-O91G7M3"
+  },
+  {
+    "_time": 1692469432.248,
+    "cribl_breaker": "windows event logs",
+    "_raw": "{\"Id\":7036,\"Version\":0,\"Qualifiers\":16384,\"Level\":4,\"Task\":0,\"Opcode\":0,\"Keywords\":-9187343239835811840,\"RecordId\":69346,\"ProviderName\":\"Service Control Manager\",\"ProviderId\":\"555908d1-a6d7-4695-8e1e-26931d2012f4\",\"LogName\":\"System\",\"ProcessId\":832,\"ThreadId\":6744,\"MachineName\":\"EC2AMAZ-O91G7M3\",\"UserId\":null,\"TimeCreated\":\"\\/Date(1692469432248)\\/\",\"ActivityId\":null,\"RelatedActivityId\":null,\"ContainerLog\":\"System\",\"MatchedQueryIds\":[],\"Bookmark\":{},\"LevelDisplayName\":\"Information\",\"OpcodeDisplayName\":null,\"TaskDisplayName\":null,\"KeywordsDisplayNames\":[\"Classic\"],\"Properties\":[{\"Value\":\"Windows Modules Installer\"},{\"Value\":\"running\"},{\"Value\":\"84 0 114 0 117 0 115 0 116 0 101 0 100 0 73 0 110 0 115 0 116 0 97 0 108 0 108 0 101 0 114 0 47 0 52 0 0 0\"}],\"Message\":\"The Windows Modules Installer service entered the running state.\"}",
+    "source": "System",
+    "host": "EC2AMAZ-O91G7M3"
+  },
+  {
+    "_time": 1692469435.982,
+    "cribl_breaker": "windows event logs",
+    "_raw": "{\"Id\":7036,\"Version\":0,\"Qualifiers\":16384,\"Level\":4,\"Task\":0,\"Opcode\":0,\"Keywords\":-9187343239835811840,\"RecordId\":69347,\"ProviderName\":\"Service Control Manager\",\"ProviderId\":\"555908d1-a6d7-4695-8e1e-26931d2012f4\",\"LogName\":\"System\",\"ProcessId\":832,\"ThreadId\":6744,\"MachineName\":\"EC2AMAZ-O91G7M3\",\"UserId\":null,\"TimeCreated\":\"\\/Date(1692469435982)\\/\",\"ActivityId\":null,\"RelatedActivityId\":null,\"ContainerLog\":\"System\",\"MatchedQueryIds\":[],\"Bookmark\":{},\"LevelDisplayName\":\"Information\",\"OpcodeDisplayName\":null,\"TaskDisplayName\":null,\"KeywordsDisplayNames\":[\"Classic\"],\"Properties\":[{\"Value\":\"AppX Deployment Service (AppXSVC)\"},{\"Value\":\"running\"},{\"Value\":\"65 0 112 0 112 0 88 0 83 0 118 0 99 0 47 0 52 0 0 0\"}],\"Message\":\"The AppX Deployment Service (AppXSVC) service entered the running state.\"}",
+    "source": "System",
+    "host": "EC2AMAZ-O91G7M3"
+  },
+  {
+    "_time": 1692469436.935,
+    "cribl_breaker": "windows event logs",
+    "_raw": "{\"Id\":7036,\"Version\":0,\"Qualifiers\":16384,\"Level\":4,\"Task\":0,\"Opcode\":0,\"Keywords\":-9187343239835811840,\"RecordId\":69348,\"ProviderName\":\"Service Control Manager\",\"ProviderId\":\"555908d1-a6d7-4695-8e1e-26931d2012f4\",\"LogName\":\"System\",\"ProcessId\":832,\"ThreadId\":6744,\"MachineName\":\"EC2AMAZ-O91G7M3\",\"UserId\":null,\"TimeCreated\":\"\\/Date(1692469436935)\\/\",\"ActivityId\":null,\"RelatedActivityId\":null,\"ContainerLog\":\"System\",\"MatchedQueryIds\":[],\"Bookmark\":{},\"LevelDisplayName\":\"Information\",\"OpcodeDisplayName\":null,\"TaskDisplayName\":null,\"KeywordsDisplayNames\":[\"Classic\"],\"Properties\":[{\"Value\":\"Software Protection\"},{\"Value\":\"running\"},{\"Value\":\"115 0 112 0 112 0 115 0 118 0 99 0 47 0 52 0 0 0\"}],\"Message\":\"The Software Protection service entered the running state.\"}",
+    "source": "System",
+    "host": "EC2AMAZ-O91G7M3"
+  },
+  {
+    "_time": 1692469467.468,
+    "cribl_breaker": "windows event logs",
+    "_raw": "{\"Id\":7036,\"Version\":0,\"Qualifiers\":16384,\"Level\":4,\"Task\":0,\"Opcode\":0,\"Keywords\":-9187343239835811840,\"RecordId\":69349,\"ProviderName\":\"Service Control Manager\",\"ProviderId\":\"555908d1-a6d7-4695-8e1e-26931d2012f4\",\"LogName\":\"System\",\"ProcessId\":832,\"ThreadId\":7120,\"MachineName\":\"EC2AMAZ-O91G7M3\",\"UserId\":null,\"TimeCreated\":\"\\/Date(1692469467468)\\/\",\"ActivityId\":null,\"RelatedActivityId\":null,\"ContainerLog\":\"System\",\"MatchedQueryIds\":[],\"Bookmark\":{},\"LevelDisplayName\":\"Information\",\"OpcodeDisplayName\":null,\"TaskDisplayName\":null,\"KeywordsDisplayNames\":[\"Classic\"],\"Properties\":[{\"Value\":\"Software Protection\"},{\"Value\":\"stopped\"},{\"Value\":\"115 0 112 0 112 0 115 0 118 0 99 0 47 0 49 0 0 0\"}],\"Message\":\"The Software Protection service entered the stopped state.\"}",
+    "source": "System",
+    "host": "EC2AMAZ-O91G7M3"
+  },
+  {
+    "_time": 1692469555.069,
+    "cribl_breaker": "windows event logs",
+    "_raw": "{\"Id\":7036,\"Version\":0,\"Qualifiers\":16384,\"Level\":4,\"Task\":0,\"Opcode\":0,\"Keywords\":-9187343239835811840,\"RecordId\":69350,\"ProviderName\":\"Service Control Manager\",\"ProviderId\":\"555908d1-a6d7-4695-8e1e-26931d2012f4\",\"LogName\":\"System\",\"ProcessId\":832,\"ThreadId\":6744,\"MachineName\":\"EC2AMAZ-O91G7M3\",\"UserId\":null,\"TimeCreated\":\"\\/Date(1692469555069)\\/\",\"ActivityId\":null,\"RelatedActivityId\":null,\"ContainerLog\":\"System\",\"MatchedQueryIds\":[],\"Bookmark\":{},\"LevelDisplayName\":\"Information\",\"OpcodeDisplayName\":null,\"TaskDisplayName\":null,\"KeywordsDisplayNames\":[\"Classic\"],\"Properties\":[{\"Value\":\"Windows Modules Installer\"},{\"Value\":\"stopped\"},{\"Value\":\"84 0 114 0 117 0 115 0 116 0 101 0 100 0 73 0 110 0 115 0 116 0 97 0 108 0 108 0 101 0 114 0 47 0 49 0 0 0\"}],\"Message\":\"The Windows Modules Installer service entered the stopped state.\"}",
+    "source": "System",
+    "host": "EC2AMAZ-O91G7M3"
+  },
+  {
+    "_time": 1692469736.134,
+    "cribl_breaker": "windows event logs",
+    "_raw": "{\"Id\":7036,\"Version\":0,\"Qualifiers\":16384,\"Level\":4,\"Task\":0,\"Opcode\":0,\"Keywords\":-9187343239835811840,\"RecordId\":69351,\"ProviderName\":\"Service Control Manager\",\"ProviderId\":\"555908d1-a6d7-4695-8e1e-26931d2012f4\",\"LogName\":\"System\",\"ProcessId\":832,\"ThreadId\":6744,\"MachineName\":\"EC2AMAZ-O91G7M3\",\"UserId\":null,\"TimeCreated\":\"\\/Date(1692469736134)\\/\",\"ActivityId\":null,\"RelatedActivityId\":null,\"ContainerLog\":\"System\",\"MatchedQueryIds\":[],\"Bookmark\":{},\"LevelDisplayName\":\"Information\",\"OpcodeDisplayName\":null,\"TaskDisplayName\":null,\"KeywordsDisplayNames\":[\"Classic\"],\"Properties\":[{\"Value\":\"AppX Deployment Service (AppXSVC)\"},{\"Value\":\"stopped\"},{\"Value\":\"65 0 112 0 112 0 88 0 83 0 118 0 99 0 47 0 49 0 0 0\"}],\"Message\":\"The AppX Deployment Service (AppXSVC) service entered the stopped state.\"}",
+    "source": "System",
+    "host": "EC2AMAZ-O91G7M3"
+  },
+  {
+    "_time": 1692471423.103,
+    "cribl_breaker": "windows event logs",
+    "_raw": "{\"Id\":7036,\"Version\":0,\"Qualifiers\":16384,\"Level\":4,\"Task\":0,\"Opcode\":0,\"Keywords\":-9187343239835811840,\"RecordId\":69352,\"ProviderName\":\"Service Control Manager\",\"ProviderId\":\"555908d1-a6d7-4695-8e1e-26931d2012f4\",\"LogName\":\"System\",\"ProcessId\":832,\"ThreadId\":2804,\"MachineName\":\"EC2AMAZ-O91G7M3\",\"UserId\":null,\"TimeCreated\":\"\\/Date(1692471423103)\\/\",\"ActivityId\":null,\"RelatedActivityId\":null,\"ContainerLog\":\"System\",\"MatchedQueryIds\":[],\"Bookmark\":{},\"LevelDisplayName\":\"Information\",\"OpcodeDisplayName\":null,\"TaskDisplayName\":null,\"KeywordsDisplayNames\":[\"Classic\"],\"Properties\":[{\"Value\":\"Network Setup Service\"},{\"Value\":\"running\"},{\"Value\":\"78 0 101 0 116 0 83 0 101 0 116 0 117 0 112 0 83 0 118 0 99 0 47 0 52 0 0 0\"}],\"Message\":\"The Network Setup Service service entered the running state.\"}",
+    "source": "System",
+    "host": "EC2AMAZ-O91G7M3"
+  },
+  {
+    "_time": 1692471602.369,
+    "cribl_breaker": "windows event logs",
+    "_raw": "{\"Id\":7036,\"Version\":0,\"Qualifiers\":16384,\"Level\":4,\"Task\":0,\"Opcode\":0,\"Keywords\":-9187343239835811840,\"RecordId\":69353,\"ProviderName\":\"Service Control Manager\",\"ProviderId\":\"555908d1-a6d7-4695-8e1e-26931d2012f4\",\"LogName\":\"System\",\"ProcessId\":832,\"ThreadId\":1012,\"MachineName\":\"EC2AMAZ-O91G7M3\",\"UserId\":null,\"TimeCreated\":\"\\/Date(1692471602369)\\/\",\"ActivityId\":null,\"RelatedActivityId\":null,\"ContainerLog\":\"System\",\"MatchedQueryIds\":[],\"Bookmark\":{},\"LevelDisplayName\":\"Information\",\"OpcodeDisplayName\":null,\"TaskDisplayName\":null,\"KeywordsDisplayNames\":[\"Classic\"],\"Properties\":[{\"Value\":\"Network Setup Service\"},{\"Value\":\"stopped\"},{\"Value\":\"78 0 101 0 116 0 83 0 101 0 116 0 117 0 112 0 83 0 118 0 99 0 47 0 49 0 0 0\"}],\"Message\":\"The Network Setup Service service entered the stopped state.\"}",
+    "source": "System",
+    "host": "EC2AMAZ-O91G7M3"
+  },
+  {
+    "_time": 1692472568.622,
+    "cribl_breaker": "windows event logs",
+    "_raw": "{\"Id\":7036,\"Version\":0,\"Qualifiers\":16384,\"Level\":4,\"Task\":0,\"Opcode\":0,\"Keywords\":-9187343239835811840,\"RecordId\":69354,\"ProviderName\":\"Service Control Manager\",\"ProviderId\":\"555908d1-a6d7-4695-8e1e-26931d2012f4\",\"LogName\":\"System\",\"ProcessId\":832,\"ThreadId\":4420,\"MachineName\":\"EC2AMAZ-O91G7M3\",\"UserId\":null,\"TimeCreated\":\"\\/Date(1692472568622)\\/\",\"ActivityId\":null,\"RelatedActivityId\":null,\"ContainerLog\":\"System\",\"MatchedQueryIds\":[],\"Bookmark\":{},\"LevelDisplayName\":\"Information\",\"OpcodeDisplayName\":null,\"TaskDisplayName\":null,\"KeywordsDisplayNames\":[\"Classic\"],\"Properties\":[{\"Value\":\"Software Protection\"},{\"Value\":\"running\"},{\"Value\":\"115 0 112 0 112 0 115 0 118 0 99 0 47 0 52 0 0 0\"}],\"Message\":\"The Software Protection service entered the running state.\"}",
+    "source": "System",
+    "host": "EC2AMAZ-O91G7M3"
+  },
+  {
+    "_time": 1692472599.282,
+    "cribl_breaker": "windows event logs",
+    "_raw": "{\"Id\":7036,\"Version\":0,\"Qualifiers\":16384,\"Level\":4,\"Task\":0,\"Opcode\":0,\"Keywords\":-9187343239835811840,\"RecordId\":69355,\"ProviderName\":\"Service Control Manager\",\"ProviderId\":\"555908d1-a6d7-4695-8e1e-26931d2012f4\",\"LogName\":\"System\",\"ProcessId\":832,\"ThreadId\":4420,\"MachineName\":\"EC2AMAZ-O91G7M3\",\"UserId\":null,\"TimeCreated\":\"\\/Date(1692472599282)\\/\",\"ActivityId\":null,\"RelatedActivityId\":null,\"ContainerLog\":\"System\",\"MatchedQueryIds\":[],\"Bookmark\":{},\"LevelDisplayName\":\"Information\",\"OpcodeDisplayName\":null,\"TaskDisplayName\":null,\"KeywordsDisplayNames\":[\"Classic\"],\"Properties\":[{\"Value\":\"Software Protection\"},{\"Value\":\"stopped\"},{\"Value\":\"115 0 112 0 112 0 115 0 118 0 99 0 47 0 49 0 0 0\"}],\"Message\":\"The Software Protection service entered the stopped state.\"}",
+    "source": "System",
+    "host": "EC2AMAZ-O91G7M3"
+  },
+  {
+    "_time": 1692473724.746,
+    "cribl_breaker": "windows event logs",
+    "_raw": "{\"Id\":7036,\"Version\":0,\"Qualifiers\":16384,\"Level\":4,\"Task\":0,\"Opcode\":0,\"Keywords\":-9187343239835811840,\"RecordId\":69356,\"ProviderName\":\"Service Control Manager\",\"ProviderId\":\"555908d1-a6d7-4695-8e1e-26931d2012f4\",\"LogName\":\"System\",\"ProcessId\":832,\"ThreadId\":732,\"MachineName\":\"EC2AMAZ-O91G7M3\",\"UserId\":null,\"TimeCreated\":\"\\/Date(1692473724746)\\/\",\"ActivityId\":null,\"RelatedActivityId\":null,\"ContainerLog\":\"System\",\"MatchedQueryIds\":[],\"Bookmark\":{},\"LevelDisplayName\":\"Information\",\"OpcodeDisplayName\":null,\"TaskDisplayName\":null,\"KeywordsDisplayNames\":[\"Classic\"],\"Properties\":[{\"Value\":\"Windows Update\"},{\"Value\":\"running\"},{\"Value\":\"119 0 117 0 97 0 117 0 115 0 101 0 114 0 118 0 47 0 52 0 0 0\"}],\"Message\":\"The Windows Update service entered the running state.\"}",
+    "source": "System",
+    "host": "EC2AMAZ-O91G7M3"
+  },
+  {
+    "_time": 1692474326.777,
+    "cribl_breaker": "windows event logs",
+    "_raw": "{\"Id\":7036,\"Version\":0,\"Qualifiers\":16384,\"Level\":4,\"Task\":0,\"Opcode\":0,\"Keywords\":-9187343239835811840,\"RecordId\":69357,\"ProviderName\":\"Service Control Manager\",\"ProviderId\":\"555908d1-a6d7-4695-8e1e-26931d2012f4\",\"LogName\":\"System\",\"ProcessId\":832,\"ThreadId\":7136,\"MachineName\":\"EC2AMAZ-O91G7M3\",\"UserId\":null,\"TimeCreated\":\"\\/Date(1692474326777)\\/\",\"ActivityId\":null,\"RelatedActivityId\":null,\"ContainerLog\":\"System\",\"MatchedQueryIds\":[],\"Bookmark\":{},\"LevelDisplayName\":\"Information\",\"OpcodeDisplayName\":null,\"TaskDisplayName\":null,\"KeywordsDisplayNames\":[\"Classic\"],\"Properties\":[{\"Value\":\"Windows Update\"},{\"Value\":\"stopped\"},{\"Value\":\"119 0 117 0 97 0 117 0 115 0 101 0 114 0 118 0 47 0 49 0 0 0\"}],\"Message\":\"The Windows Update service entered the stopped state.\"}",
+    "source": "System",
+    "host": "EC2AMAZ-O91G7M3"
+  },
+  {
+    "_time": 1692475023.067,
+    "cribl_breaker": "windows event logs",
+    "_raw": "{\"Id\":7036,\"Version\":0,\"Qualifiers\":16384,\"Level\":4,\"Task\":0,\"Opcode\":0,\"Keywords\":-9187343239835811840,\"RecordId\":69358,\"ProviderName\":\"Service Control Manager\",\"ProviderId\":\"555908d1-a6d7-4695-8e1e-26931d2012f4\",\"LogName\":\"System\",\"ProcessId\":832,\"ThreadId\":6776,\"MachineName\":\"EC2AMAZ-O91G7M3\",\"UserId\":null,\"TimeCreated\":\"\\/Date(1692475023067)\\/\",\"ActivityId\":null,\"RelatedActivityId\":null,\"ContainerLog\":\"System\",\"MatchedQueryIds\":[],\"Bookmark\":{},\"LevelDisplayName\":\"Information\",\"OpcodeDisplayName\":null,\"TaskDisplayName\":null,\"KeywordsDisplayNames\":[\"Classic\"],\"Properties\":[{\"Value\":\"Network Setup Service\"},{\"Value\":\"running\"},{\"Value\":\"78 0 101 0 116 0 83 0 101 0 116 0 117 0 112 0 83 0 118 0 99 0 47 0 52 0 0 0\"}],\"Message\":\"The Network Setup Service service entered the running state.\"}",
+    "source": "System",
+    "host": "EC2AMAZ-O91G7M3"
+  },
+  {
+    "_time": 1692475202.333,
+    "cribl_breaker": "windows event logs",
+    "_raw": "{\"Id\":7036,\"Version\":0,\"Qualifiers\":16384,\"Level\":4,\"Task\":0,\"Opcode\":0,\"Keywords\":-9187343239835811840,\"RecordId\":69359,\"ProviderName\":\"Service Control Manager\",\"ProviderId\":\"555908d1-a6d7-4695-8e1e-26931d2012f4\",\"LogName\":\"System\",\"ProcessId\":832,\"ThreadId\":6496,\"MachineName\":\"EC2AMAZ-O91G7M3\",\"UserId\":null,\"TimeCreated\":\"\\/Date(1692475202333)\\/\",\"ActivityId\":null,\"RelatedActivityId\":null,\"ContainerLog\":\"System\",\"MatchedQueryIds\":[],\"Bookmark\":{},\"LevelDisplayName\":\"Information\",\"OpcodeDisplayName\":null,\"TaskDisplayName\":null,\"KeywordsDisplayNames\":[\"Classic\"],\"Properties\":[{\"Value\":\"Network Setup Service\"},{\"Value\":\"stopped\"},{\"Value\":\"78 0 101 0 116 0 83 0 101 0 116 0 117 0 112 0 83 0 118 0 99 0 47 0 49 0 0 0\"}],\"Message\":\"The Network Setup Service service entered the stopped state.\"}",
+    "source": "System",
+    "host": "EC2AMAZ-O91G7M3"
+  },
+  {
+    "_time": 1692475628.213,
+    "cribl_breaker": "windows event logs",
+    "_raw": "{\"Id\":7036,\"Version\":0,\"Qualifiers\":16384,\"Level\":4,\"Task\":0,\"Opcode\":0,\"Keywords\":-9187343239835811840,\"RecordId\":69360,\"ProviderName\":\"Service Control Manager\",\"ProviderId\":\"555908d1-a6d7-4695-8e1e-26931d2012f4\",\"LogName\":\"System\",\"ProcessId\":832,\"ThreadId\":4480,\"MachineName\":\"EC2AMAZ-O91G7M3\",\"UserId\":null,\"TimeCreated\":\"\\/Date(1692475628213)\\/\",\"ActivityId\":null,\"RelatedActivityId\":null,\"ContainerLog\":\"System\",\"MatchedQueryIds\":[],\"Bookmark\":{},\"LevelDisplayName\":\"Information\",\"OpcodeDisplayName\":null,\"TaskDisplayName\":null,\"KeywordsDisplayNames\":[\"Classic\"],\"Properties\":[{\"Value\":\"Software Protection\"},{\"Value\":\"running\"},{\"Value\":\"115 0 112 0 112 0 115 0 118 0 99 0 47 0 52 0 0 0\"}],\"Message\":\"The Software Protection service entered the running state.\"}",
+    "source": "System",
+    "host": "EC2AMAZ-O91G7M3"
+  },
+  {
+    "_time": 1692475658.637,
+    "cribl_breaker": "windows event logs",
+    "_raw": "{\"Id\":7036,\"Version\":0,\"Qualifiers\":16384,\"Level\":4,\"Task\":0,\"Opcode\":0,\"Keywords\":-9187343239835811840,\"RecordId\":69361,\"ProviderName\":\"Service Control Manager\",\"ProviderId\":\"555908d1-a6d7-4695-8e1e-26931d2012f4\",\"LogName\":\"System\",\"ProcessId\":832,\"ThreadId\":7092,\"MachineName\":\"EC2AMAZ-O91G7M3\",\"UserId\":null,\"TimeCreated\":\"\\/Date(1692475658637)\\/\",\"ActivityId\":null,\"RelatedActivityId\":null,\"ContainerLog\":\"System\",\"MatchedQueryIds\":[],\"Bookmark\":{},\"LevelDisplayName\":\"Information\",\"OpcodeDisplayName\":null,\"TaskDisplayName\":null,\"KeywordsDisplayNames\":[\"Classic\"],\"Properties\":[{\"Value\":\"Software Protection\"},{\"Value\":\"stopped\"},{\"Value\":\"115 0 112 0 112 0 115 0 118 0 99 0 47 0 49 0 0 0\"}],\"Message\":\"The Software Protection service entered the stopped state.\"}",
+    "source": "System",
+    "host": "EC2AMAZ-O91G7M3"
+  },
+  {
+    "_time": 1692478623.015,
+    "cribl_breaker": "windows event logs",
+    "_raw": "{\"Id\":7036,\"Version\":0,\"Qualifiers\":16384,\"Level\":4,\"Task\":0,\"Opcode\":0,\"Keywords\":-9187343239835811840,\"RecordId\":69362,\"ProviderName\":\"Service Control Manager\",\"ProviderId\":\"555908d1-a6d7-4695-8e1e-26931d2012f4\",\"LogName\":\"System\",\"ProcessId\":832,\"ThreadId\":3960,\"MachineName\":\"EC2AMAZ-O91G7M3\",\"UserId\":null,\"TimeCreated\":\"\\/Date(1692478623015)\\/\",\"ActivityId\":null,\"RelatedActivityId\":null,\"ContainerLog\":\"System\",\"MatchedQueryIds\":[],\"Bookmark\":{},\"LevelDisplayName\":\"Information\",\"OpcodeDisplayName\":null,\"TaskDisplayName\":null,\"KeywordsDisplayNames\":[\"Classic\"],\"Properties\":[{\"Value\":\"Network Setup Service\"},{\"Value\":\"running\"},{\"Value\":\"78 0 101 0 116 0 83 0 101 0 116 0 117 0 112 0 83 0 118 0 99 0 47 0 52 0 0 0\"}],\"Message\":\"The Network Setup Service service entered the running state.\"}",
+    "source": "System",
+    "host": "EC2AMAZ-O91G7M3"
+  },
+  {
+    "_time": 1692478802.311,
+    "cribl_breaker": "windows event logs",
+    "_raw": "{\"Id\":7036,\"Version\":0,\"Qualifiers\":16384,\"Level\":4,\"Task\":0,\"Opcode\":0,\"Keywords\":-9187343239835811840,\"RecordId\":69363,\"ProviderName\":\"Service Control Manager\",\"ProviderId\":\"555908d1-a6d7-4695-8e1e-26931d2012f4\",\"LogName\":\"System\",\"ProcessId\":832,\"ThreadId\":5296,\"MachineName\":\"EC2AMAZ-O91G7M3\",\"UserId\":null,\"TimeCreated\":\"\\/Date(1692478802311)\\/\",\"ActivityId\":null,\"RelatedActivityId\":null,\"ContainerLog\":\"System\",\"MatchedQueryIds\":[],\"Bookmark\":{},\"LevelDisplayName\":\"Information\",\"OpcodeDisplayName\":null,\"TaskDisplayName\":null,\"KeywordsDisplayNames\":[\"Classic\"],\"Properties\":[{\"Value\":\"Network Setup Service\"},{\"Value\":\"stopped\"},{\"Value\":\"78 0 101 0 116 0 83 0 101 0 116 0 117 0 112 0 83 0 118 0 99 0 47 0 49 0 0 0\"}],\"Message\":\"The Network Setup Service service entered the stopped state.\"}",
+    "source": "System",
+    "host": "EC2AMAZ-O91G7M3"
+  },
+  {
+    "_time": 1692481486.1,
+    "cribl_breaker": "windows event logs",
+    "_raw": "{\"Id\":7036,\"Version\":0,\"Qualifiers\":16384,\"Level\":4,\"Task\":0,\"Opcode\":0,\"Keywords\":-9187343239835811840,\"RecordId\":69364,\"ProviderName\":\"Service Control Manager\",\"ProviderId\":\"555908d1-a6d7-4695-8e1e-26931d2012f4\",\"LogName\":\"System\",\"ProcessId\":832,\"ThreadId\":6188,\"MachineName\":\"EC2AMAZ-O91G7M3\",\"UserId\":null,\"TimeCreated\":\"\\/Date(1692481486100)\\/\",\"ActivityId\":null,\"RelatedActivityId\":null,\"ContainerLog\":\"System\",\"MatchedQueryIds\":[],\"Bookmark\":{},\"LevelDisplayName\":\"Information\",\"OpcodeDisplayName\":null,\"TaskDisplayName\":null,\"KeywordsDisplayNames\":[\"Classic\"],\"Properties\":[{\"Value\":\"AppX Deployment Service (AppXSVC)\"},{\"Value\":\"running\"},{\"Value\":\"65 0 112 0 112 0 88 0 83 0 118 0 99 0 47 0 52 0 0 0\"}],\"Message\":\"The AppX Deployment Service (AppXSVC) service entered the running state.\"}",
+    "source": "System",
+    "host": "EC2AMAZ-O91G7M3"
+  }
+]

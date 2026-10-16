@@ -1,0 +1,122 @@
+[
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_raw": "{\"cipher\":\"TLS_AES_256_GCM_SHA384\",\"client_curve_num\":[29,23,30,25,24],\"client_ec_point_format\":[0,1,2],\"client_extension\":[0,11,10,13172,16,22,23,49,13,43,45,51,21],\"client_version\":\"TLS1.2\",\"client_version_num\":771,\"community_id\":\"1:72494e6f2a8a0b2943195eca9493c519551f4096\",\"curve\":\"[unknown (0)]\",\"established\":true,\"id.ip_ver\":\"ipv4\",\"id.orig_h\":\"10.232.100.150\",\"id.orig_p\":57325,\"id.resp_h\":\"20.42.65.91\",\"id.resp_p\":443,\"ja3\":\"f436b9416f37d134cadd04886327d3e8\",\"ja3s\":\"15af977ce25de452b96affa2addb1036\",\"ja4\":\"t13d3113h1_e8f1e7e78f70_1b3407e2c936\",\"ja4s\":\"t130200_1302_a56c5b993250\",\"local_orig\":true,\"local_resp\":false,\"metadata_type\":\"metadata_ssl\",\"orig_hostname\":\"jump-station5\",\"orig_huid\":\"TwTDQXl5\",\"orig_sluid\":\"GFl-IwPF\",\"sensor_uid\":\"e02dp8xu\",\"server_extensions\":[43,51],\"server_name\":\"us-v20.events.data.microsoft.com\",\"ts\":1769736470159,\"uid\":\"sNs.MurAe02dp8xu\",\"version\":\"TLS1.3\",\"version_num\":772}",
+    "_time": 1769736961.561,
+    "__srcIpPort": "tcp|66.172.48.228|21991",
+    "__syslogFail": true,
+    "host": "66.172.48.228",
+    "__inputId": "syslog:vectra_stream_in:tcp"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_raw": "{\"cipher\":\"TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256\",\"client_curve_num\":[29,23,24],\"client_ec_point_format\":[0],\"client_extension\":[0,10,11,13,35,23,65281],\"client_version\":\"TLS1.2\",\"client_version_num\":771,\"community_id\":\"1:c980410a96c078273301f2e11ddccfe535c2711d\",\"curve\":\"secp256r1\",\"established\":true,\"id.ip_ver\":\"ipv4\",\"id.orig_h\":\"192.168.199.99\",\"id.orig_p\":53110,\"id.resp_h\":\"18.204.85.51\",\"id.resp_p\":443,\"issuer\":\"/C=US/O=DigiCert Inc/CN=DigiCert TLS RSA SHA256 2020 CA1\",\"ja3\":\"3b5074b1b5d032e5620f69f9f700ff0e\",\"ja3s\":\"2ab44dd8c27bdce434a961463587356a\",\"ja4\":\"t12d210700_76e208dd3e22_2dae41c691ec\",\"ja4s\":\"t120500_c02f_6471ab80eb72\",\"local_orig\":true,\"local_resp\":false,\"metadata_type\":\"metadata_ssl\",\"orig_hostname\":\"fabien-pc\",\"orig_huid\":\"TwTDQXl6\",\"orig_sluid\":\"GFl-6pew\",\"sensor_uid\":\"e02dp8xu\",\"server_extensions\":[0,11,65281,35,23],\"server_name\":\"ioc-gw-prod-us-1b.sentinelone.net\",\"subject\":\"/C=US/ST=California/L=Mountain View/O=Sentinelone, Inc./CN=*.sentinelone.net\",\"ts\":1769736483639,\"uid\":\"rhg0q8o1e02dp8xu\",\"version\":\"TLS1.2\",\"version_num\":771}",
+    "_time": 1769736967.562,
+    "__srcIpPort": "tcp|66.172.48.228|21991",
+    "__syslogFail": true,
+    "host": "66.172.48.228",
+    "__inputId": "syslog:vectra_stream_in:tcp"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_raw": "{\"cipher\":\"TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256\",\"client_curve_num\":[29,23,24],\"client_ec_point_format\":[0],\"client_extension\":[0,10,11,13,35,23,65281],\"client_version\":\"TLS1.2\",\"client_version_num\":771,\"community_id\":\"1:c980410a96c078273301f2e11ddccfe535c2711d\",\"curve\":\"secp256r1\",\"established\":true,\"id.ip_ver\":\"ipv4\",\"id.orig_h\":\"192.168.199.99\",\"id.orig_p\":53110,\"id.resp_h\":\"18.204.85.51\",\"id.resp_p\":443,\"issuer\":\"/C=US/O=DigiCert Inc/CN=DigiCert TLS RSA SHA256 2020 CA1\",\"ja3\":\"3b5074b1b5d032e5620f69f9f700ff0e\",\"ja3s\":\"2ab44dd8c27bdce434a961463587356a\",\"ja4\":\"t12d210700_76e208dd3e22_2dae41c691ec\",\"ja4s\":\"t120500_c02f_6471ab80eb72\",\"local_orig\":true,\"local_resp\":false,\"metadata_type\":\"metadata_ssl\",\"orig_hostname\":\"fabien-pc\",\"orig_huid\":\"TwTDQXl6\",\"orig_sluid\":\"GFl-6pew\",\"sensor_uid\":\"e02dp8xu\",\"server_extensions\":[0,11,65281,35,23],\"server_name\":\"ioc-gw-prod-us-1b.sentinelone.net\",\"subject\":\"/C=US/ST=California/L=Mountain View/O=Sentinelone, Inc./CN=*.sentinelone.net\",\"ts\":1769736488703,\"uid\":\"rhg0q8o1e02dp8xu\",\"version\":\"TLS1.2\",\"version_num\":771}",
+    "_time": 1769736973.563,
+    "__srcIpPort": "tcp|66.172.48.228|21991",
+    "__syslogFail": true,
+    "host": "66.172.48.228",
+    "__inputId": "syslog:vectra_stream_in:tcp"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_raw": "{\"cipher\":\"TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384\",\"client_curve_num\":[29,23,24],\"client_ec_point_format\":[0],\"client_extension\":[0,5,10,11,13,35,16,23,65281],\"client_version\":\"TLS1.2\",\"client_version_num\":771,\"community_id\":\"1:f4fb8124fe448c3314fa26a24f7107efe670362d\",\"curve\":\"secp384r1\",\"established\":true,\"id.ip_ver\":\"ipv4\",\"id.orig_h\":\"192.168.150.100\",\"id.orig_p\":62099,\"id.resp_h\":\"20.189.173.7\",\"id.resp_p\":443,\"issuer\":\"/C=US/ST=Washington/L=Redmond/O=Microsoft Corporation/CN=Microsoft Secure Server CA 2011\",\"ja3\":\"28a2c9bd18a11de089ef85a160da29e4\",\"ja3s\":\"2fe9b0e731d3d41b2b84e8e1d6186836\",\"ja4\":\"t12d1909h2_d83cc789557e_7af1ed941c26\",\"ja4s\":\"t1204h2_c030_b252f78b95f6\",\"local_orig\":true,\"local_resp\":false,\"metadata_type\":\"metadata_ssl\",\"next_protocol\":\"h2\",\"orig_hostname\":\"Piper-desktop\",\"orig_huid\":\"TwTDQXl7\",\"orig_sluid\":\"GFl-aN4Z\",\"sensor_uid\":\"e02dp8xu\",\"server_extensions\":[16,23,65281,0],\"server_name\":\"v20.events.data.microsoft.com\",\"subject\":\"/C=US/ST=WA/L=Redmond/O=Microsoft/OU=WSE/CN=*.events.data.microsoft.com\",\"ts\":1769736502327,\"uid\":\"ssw0luJve02dp8xu\",\"version\":\"TLS1.2\",\"version_num\":771}",
+    "_time": 1769736987.566,
+    "__srcIpPort": "tcp|66.172.48.228|21991",
+    "__syslogFail": true,
+    "host": "66.172.48.228",
+    "__inputId": "syslog:vectra_stream_in:tcp"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_raw": "{\"cipher\":\"TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384\",\"client_curve_num\":[29,23,24],\"client_ec_point_format\":[0],\"client_extension\":[0,5,10,11,13,35,16,23,65281],\"client_version\":\"TLS1.2\",\"client_version_num\":771,\"community_id\":\"1:f4fb8124fe448c3314fa26a24f7107efe670362d\",\"curve\":\"secp384r1\",\"established\":true,\"id.ip_ver\":\"ipv4\",\"id.orig_h\":\"192.168.150.100\",\"id.orig_p\":62099,\"id.resp_h\":\"20.189.173.7\",\"id.resp_p\":443,\"issuer\":\"/C=US/ST=Washington/L=Redmond/O=Microsoft Corporation/CN=Microsoft Secure Server CA 2011\",\"ja3\":\"28a2c9bd18a11de089ef85a160da29e4\",\"ja3s\":\"2fe9b0e731d3d41b2b84e8e1d6186836\",\"ja4\":\"t12d1909h2_d83cc789557e_7af1ed941c26\",\"ja4s\":\"t1204h2_c030_b252f78b95f6\",\"local_orig\":true,\"local_resp\":false,\"metadata_type\":\"metadata_ssl\",\"next_protocol\":\"h2\",\"orig_hostname\":\"Piper-desktop\",\"orig_huid\":\"TwTDQXl7\",\"orig_sluid\":\"GFl-aN4Z\",\"sensor_uid\":\"e02dp8xu\",\"server_extensions\":[16,23,65281,0],\"server_name\":\"v20.events.data.microsoft.com\",\"subject\":\"/C=US/ST=WA/L=Redmond/O=Microsoft/OU=WSE/CN=*.events.data.microsoft.com\",\"ts\":1769736502327,\"uid\":\"ssw0luJve02dp8xu\",\"version\":\"TLS1.2\",\"version_num\":771}",
+    "_time": 1769736995.568,
+    "__srcIpPort": "tcp|66.172.48.228|21991",
+    "__syslogFail": true,
+    "host": "66.172.48.228",
+    "__inputId": "syslog:vectra_stream_in:tcp"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_raw": "{\"cipher\":\"TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384\",\"client_curve_num\":[29,23,24],\"client_ec_point_format\":[0],\"client_extension\":[0,5,10,11,13,35,23,65281],\"client_version\":\"TLS1.2\",\"client_version_num\":771,\"community_id\":\"1:2a93d7c9cbb5313be72589b0b5b6e882381c2a21\",\"curve\":\"[unknown (29)]\",\"established\":true,\"id.ip_ver\":\"ipv4\",\"id.orig_h\":\"10.232.100.150\",\"id.orig_p\":57326,\"id.resp_h\":\"64.236.29.116\",\"id.resp_p\":443,\"issuer\":\"/C=US/ST=Washington/L=Redmond/O=Microsoft Corporation/CN=Microsoft Secure Server CA 2011\",\"ja3\":\"d0ec4b50a944b182fc10ff51f883ccf7\",\"ja3s\":\"b653c251b0ee54c3088fe7bb997cf59d\",\"ja4\":\"t12d280800_bbd4f008d9b2_16bbda4055b2\",\"ja4s\":\"t120400_c030_eaf502adc2b6\",\"local_orig\":true,\"local_resp\":false,\"metadata_type\":\"metadata_ssl\",\"orig_hostname\":\"jump-station5\",\"orig_huid\":\"TwTDQXl5\",\"orig_sluid\":\"GFl-IwPF\",\"sensor_uid\":\"e02dp8xu\",\"server_extensions\":[65281,0,11,23],\"server_name\":\"winatp-gw-cus.microsoft.com\",\"subject\":\"/CN=winatp-gw.microsoft.com\",\"ts\":1769736507211,\"uid\":\"sxQ-CnpOe02dp8xu\",\"version\":\"TLS1.2\",\"version_num\":771}",
+    "_time": 1769737001.569,
+    "__srcIpPort": "tcp|66.172.48.228|21991",
+    "__syslogFail": true,
+    "host": "66.172.48.228",
+    "__inputId": "syslog:vectra_stream_in:tcp"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_raw": "{\"cipher\":\"TLS_AES_256_GCM_SHA384\",\"client_curve_num\":[29,23,30,25,24],\"client_ec_point_format\":[0,1,2],\"client_extension\":[0,11,10,13172,16,22,23,49,13,43,45,51,21],\"client_version\":\"TLS1.2\",\"client_version_num\":771,\"community_id\":\"1:4017d0f7a17c7227184f621b717dd82629dcc0af\",\"curve\":\"[unknown (0)]\",\"established\":true,\"id.ip_ver\":\"ipv4\",\"id.orig_h\":\"10.232.100.150\",\"id.orig_p\":57329,\"id.resp_h\":\"20.42.65.91\",\"id.resp_p\":443,\"ja3\":\"f436b9416f37d134cadd04886327d3e8\",\"ja3s\":\"15af977ce25de452b96affa2addb1036\",\"ja4\":\"t13d3113h1_e8f1e7e78f70_1b3407e2c936\",\"ja4s\":\"t130200_1302_a56c5b993250\",\"local_orig\":true,\"local_resp\":false,\"metadata_type\":\"metadata_ssl\",\"orig_hostname\":\"jump-station5\",\"orig_huid\":\"TwTDQXl5\",\"orig_sluid\":\"GFl-IwPF\",\"sensor_uid\":\"e02dp8xu\",\"server_extensions\":[43,51],\"server_name\":\"us-v20.events.data.microsoft.com\",\"ts\":1769736518530,\"uid\":\"t62.jEbKe02dp8xu\",\"version\":\"TLS1.3\",\"version_num\":772}",
+    "_time": 1769737007.571,
+    "__srcIpPort": "tcp|66.172.48.228|21991",
+    "__syslogFail": true,
+    "host": "66.172.48.228",
+    "__inputId": "syslog:vectra_stream_in:tcp"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_raw": "{\"cipher\":\"TLS_AES_256_GCM_SHA384\",\"client_curve_num\":[29,23,30,25,24],\"client_ec_point_format\":[0,1,2],\"client_extension\":[0,11,10,13172,16,22,23,49,13,43,45,51,21],\"client_version\":\"TLS1.2\",\"client_version_num\":771,\"community_id\":\"1:b74bc08987dd9a0f38cb456dec3537e599879360\",\"curve\":\"[unknown (0)]\",\"established\":true,\"id.ip_ver\":\"ipv4\",\"id.orig_h\":\"10.232.100.150\",\"id.orig_p\":57332,\"id.resp_h\":\"13.89.179.13\",\"id.resp_p\":443,\"ja3\":\"f436b9416f37d134cadd04886327d3e8\",\"ja3s\":\"15af977ce25de452b96affa2addb1036\",\"ja4\":\"t13d3113h1_e8f1e7e78f70_1b3407e2c936\",\"ja4s\":\"t130200_1302_a56c5b993250\",\"local_orig\":true,\"local_resp\":false,\"metadata_type\":\"metadata_ssl\",\"orig_hostname\":\"jump-station5\",\"orig_huid\":\"TwTDQXl5\",\"orig_sluid\":\"GFl-IwPF\",\"sensor_uid\":\"e02dp8xu\",\"server_extensions\":[43,51],\"server_name\":\"us-v20.events.data.microsoft.com\",\"ts\":1769736533108,\"uid\":\"tK21f72Oe02dp8xu\",\"version\":\"TLS1.3\",\"version_num\":772}",
+    "_time": 1769737019.574,
+    "__srcIpPort": "tcp|66.172.48.228|21991",
+    "__syslogFail": true,
+    "host": "66.172.48.228",
+    "__inputId": "syslog:vectra_stream_in:tcp"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_raw": "{\"cipher\":\"TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384\",\"client_curve_num\":[29,23,24],\"client_ec_point_format\":[0],\"client_extension\":[0,5,10,11,13,35,16,23,65281],\"client_version\":\"TLS1.2\",\"client_version_num\":771,\"community_id\":\"1:817f83b60e1bf11d4bdb63ff4b26a9066b823683\",\"curve\":\"secp384r1\",\"established\":true,\"id.ip_ver\":\"ipv4\",\"id.orig_h\":\"192.168.150.100\",\"id.orig_p\":62103,\"id.resp_h\":\"52.182.143.213\",\"id.resp_p\":443,\"issuer\":\"/C=US/ST=Washington/L=Redmond/O=Microsoft Corporation/CN=Microsoft Secure Server CA 2011\",\"ja3\":\"28a2c9bd18a11de089ef85a160da29e4\",\"ja3s\":\"2fe9b0e731d3d41b2b84e8e1d6186836\",\"ja4\":\"t12d1909h2_d83cc789557e_7af1ed941c26\",\"ja4s\":\"t1204h2_c030_b252f78b95f6\",\"local_orig\":true,\"local_resp\":false,\"metadata_type\":\"metadata_ssl\",\"next_protocol\":\"h2\",\"orig_hostname\":\"Piper-desktop\",\"orig_huid\":\"TwTDQXl7\",\"orig_sluid\":\"GFl-aN4Z\",\"sensor_uid\":\"e02dp8xu\",\"server_extensions\":[16,23,65281,0],\"server_name\":\"us-v20.events.data.microsoft.com\",\"subject\":\"/C=US/ST=WA/L=Redmond/O=Microsoft/OU=WSE/CN=*.events.data.microsoft.com\",\"ts\":1769736616364,\"uid\":\"tdQ.7k0ee02dp8xu\",\"version\":\"TLS1.2\",\"version_num\":771}",
+    "_time": 1769737097.589,
+    "__srcIpPort": "tcp|66.172.48.228|21991",
+    "__syslogFail": true,
+    "host": "66.172.48.228",
+    "__inputId": "syslog:vectra_stream_in:tcp"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_raw": "{\"cipher\":\"TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384\",\"client_curve_num\":[29,23,24],\"client_ec_point_format\":[0],\"client_extension\":[0,5,10,11,13,35,16,23,65281],\"client_version\":\"TLS1.2\",\"client_version_num\":771,\"community_id\":\"1:010990fc3e6280ac1fa965f2494dc1d4e29657fc\",\"curve\":\"[unknown (0)]\",\"established\":true,\"id.ip_ver\":\"ipv4\",\"id.orig_h\":\"192.168.150.100\",\"id.orig_p\":62100,\"id.resp_h\":\"20.190.151.6\",\"id.resp_p\":443,\"issuer\":\"/C=US/O=DigiCert Inc/CN=DigiCert SHA2 Secure Server CA\",\"ja3\":\"28a2c9bd18a11de089ef85a160da29e4\",\"ja3s\":\"7d8fd34fdb13a7fff30d5a52846b6c4c\",\"ja4\":\"t12d1909h2_d83cc789557e_7af1ed941c26\",\"ja4s\":\"t120400_c030_4e8089b08790\",\"local_orig\":true,\"local_resp\":false,\"metadata_type\":\"metadata_ssl\",\"orig_hostname\":\"Piper-desktop\",\"orig_huid\":\"TwTDQXl7\",\"orig_sluid\":\"GFl-aN4Z\",\"sensor_uid\":\"e02dp8xu\",\"server_extensions\":[5,23,65281,0],\"server_name\":\"login.live.com\",\"subject\":\"/C=US/ST=Washington/L=Redmond/O=Microsoft Corporation/CN=login.live.com\",\"ts\":1769736624808,\"uid\":\"tFk.VQpqe02dp8xu\",\"version\":\"TLS1.2\",\"version_num\":771}",
+    "_time": 1769737103.59,
+    "__srcIpPort": "tcp|66.172.48.228|21991",
+    "__syslogFail": true,
+    "host": "66.172.48.228",
+    "__inputId": "syslog:vectra_stream_in:tcp"
+  }
+]

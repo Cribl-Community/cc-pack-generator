@@ -1,0 +1,2919 @@
+{
+  "_notice": "Mirrored from demisto/content by `npm run sync:xsiam-content`. Tiers T3 and T3m of the XSIAM chain (docs/destination-specs/xsiam.md): T3 vendor and product are quoted verbatim from each content pack's INGEST rule, and the required input format only where a README asserts one. T3m covers datasets that exist only in a MODELING rule, where vendor and product are split out of the dataset name and each entry records which evidence permitted the split.",
+  "_contentSource": "https://github.com/demisto/content/tree/master/Packs",
+  "_commit": "57e0c168ae25aacced400db476a595eef17d0869",
+  "_syncedAt": "2026-09-18T12:14:32.789Z",
+  "counts": {
+    "sources": 157,
+    "vendors": 86,
+    "packsWithXsiamBlock": 162,
+    "packsWithRequiredFormat": 8,
+    "sourcesWithRequiredFormat": 7,
+    "modelSources": 73,
+    "modelSourcesUnsplit": 66
+  },
+  "warnings": [],
+  "formatsByPack": {
+    "checkpointfirewall": {
+      "contentPack": "CheckpointFirewall",
+      "requiredInputFormat": "cef",
+      "evidence": "forward Syslog messages in CEF format"
+    },
+    "ciscostealthwatch": {
+      "contentPack": "CiscoStealthwatch",
+      "requiredInputFormat": "leef",
+      "evidence": "forward Syslog messages in custom LEEF format"
+    },
+    "cyberark_privileged_threat_analytics": {
+      "contentPack": "CyberArk_Privileged_Threat_Analytics",
+      "requiredInputFormat": "cef",
+      "evidence": "forward Syslog messages in CEF format"
+    },
+    "forcepoint": {
+      "contentPack": "Forcepoint",
+      "requiredInputFormat": "cef",
+      "evidence": "forward Syslog messages in CEF format"
+    },
+    "fortigate": {
+      "contentPack": "FortiGate",
+      "requiredInputFormat": "cef",
+      "evidence": "set format cef"
+    },
+    "hpearubaclearpass": {
+      "contentPack": "HPEArubaClearPass",
+      "requiredInputFormat": "cef",
+      "evidence": "forward Syslog messages in CEF format"
+    },
+    "silverfort": {
+      "contentPack": "Silverfort",
+      "requiredInputFormat": "cef",
+      "evidence": "forward Syslog messages in CEF format"
+    },
+    "txonestellarone": {
+      "contentPack": "TXOneStellarOne",
+      "requiredInputFormat": "cef",
+      "evidence": "forwards audit, system, console, and agent security events in Syslog CEF format"
+    }
+  },
+  "sources": {
+    "absolute_secure_endpoint": {
+      "vendor": "absolute",
+      "product": "secure_endpoint",
+      "dataset": "absolute_secure_endpoint_raw",
+      "contentPack": "Absolute",
+      "parsingRule": "Packs/Absolute/ParsingRules/Absolute/Absolute.xif",
+      "aliases": [
+        "absolute",
+        "secure_endpoint"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "akamai_guardicore": {
+      "vendor": "Akamai",
+      "product": "GuardiCore",
+      "dataset": "akamai_guardicore_raw",
+      "contentPack": "GuardiCore",
+      "parsingRule": "Packs/GuardiCore/ParsingRules/GuardiCore/GuardiCore.xif",
+      "aliases": [
+        "guardicore",
+        "guardicore"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "akamai_waf": {
+      "vendor": "Akamai",
+      "product": "WAF",
+      "dataset": "akamai_waf_raw",
+      "contentPack": "Akamai_SIEM",
+      "parsingRule": "Packs/Akamai_SIEM/ParsingRules/Akamai_WAF_ParsingRules/Akamai_WAF_ParsingRules.xif",
+      "aliases": [
+        "akamai_siem",
+        "waf"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "alibaba_action_trail": {
+      "vendor": "alibaba",
+      "product": "action_trail",
+      "dataset": "alibaba_action_trail_raw",
+      "contentPack": "AlibabaActionTrail",
+      "parsingRule": "Packs/AlibabaActionTrail/ParsingRules/AlibabaParsingRules/AlibabaParsingRules.xif",
+      "aliases": [
+        "alibabaactiontrail",
+        "action_trail"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "amazon_aws": {
+      "vendor": "amazon",
+      "product": "aws",
+      "dataset": "amazon_aws_raw",
+      "contentPack": "AWS-CloudTrail",
+      "parsingRule": "Packs/AWS-CloudTrail/ParsingRules/AWSCloudTrail/AWSCloudTrail.xif",
+      "aliases": [
+        "aws_cloudtrail",
+        "aws"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "apache_httpd": {
+      "vendor": "apache",
+      "product": "httpd",
+      "dataset": "apache_httpd_raw",
+      "contentPack": "ApacheWebServer",
+      "parsingRule": "Packs/ApacheWebServer/ParsingRules/ApacheWebServerParsingRules/ApacheWebServerParsingRules.xif",
+      "aliases": [
+        "apachewebserver",
+        "httpd"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "apache_tomcat": {
+      "vendor": "apache",
+      "product": "tomcat",
+      "dataset": "apache_tomcat_raw",
+      "contentPack": "ApacheTomcat",
+      "parsingRule": "Packs/ApacheTomcat/ParsingRules/ApacheTomcatParsingRules/ApacheTomcatParsingRules.xif",
+      "aliases": [
+        "apachetomcat",
+        "tomcat"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "arista_switch": {
+      "vendor": "arista",
+      "product": "switch",
+      "dataset": "arista_switch_raw",
+      "contentPack": "AristaSwitch",
+      "parsingRule": "Packs/AristaSwitch/ParsingRules/AristaSwitch/AristaSwitch.xif",
+      "aliases": [
+        "aristaswitch",
+        "switch"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "armis_security": {
+      "vendor": "armis",
+      "product": "security",
+      "dataset": "armis_security_raw",
+      "contentPack": "Armis",
+      "parsingRule": "Packs/Armis/ParsingRules/Armis/Armis.xif",
+      "aliases": [
+        "armis",
+        "security"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "aruba_networks_clearpass": {
+      "vendor": "aruba_networks",
+      "product": "clearpass",
+      "dataset": "aruba_networks_clearpass_raw",
+      "contentPack": "HPEArubaClearPass",
+      "parsingRule": "Packs/HPEArubaClearPass/ParsingRules/HPEArubaClearPass/HPEArubaClearPass.xif",
+      "aliases": [
+        "hpearubaclearpass",
+        "clearpass"
+      ],
+      "requiredInputFormat": "cef",
+      "requiredInputFormatEvidence": "forward Syslog messages in CEF format"
+    },
+    "atlassian_bitbucket": {
+      "vendor": "atlassian",
+      "product": "bitbucket",
+      "dataset": "atlassian_bitbucket_raw",
+      "contentPack": "Bitbucket",
+      "parsingRule": "Packs/Bitbucket/ParsingRules/Bitbucket/Bitbucket.xif",
+      "aliases": [
+        "bitbucket",
+        "bitbucket"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "atlassian_confluence": {
+      "vendor": "atlassian",
+      "product": "confluence",
+      "dataset": "atlassian_confluence_raw",
+      "contentPack": "AtlassianConfluenceCloud",
+      "parsingRule": "Packs/AtlassianConfluenceCloud/ParsingRules/AtlassianConfluenceCloud/AtlassianConfluenceCloud.xif",
+      "aliases": [
+        "atlassianconfluencecloud",
+        "confluence"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "atlassian_jira": {
+      "vendor": "atlassian",
+      "product": "jira",
+      "dataset": "atlassian_jira_raw",
+      "contentPack": "JiraDataCenter",
+      "parsingRule": "Packs/JiraDataCenter/ParsingRules/JiraDataCenter/JiraDataCenter.xif",
+      "aliases": [
+        "jira",
+        "jiradatacenter"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "aws_elb": {
+      "vendor": "aws",
+      "product": "elb",
+      "dataset": "aws_elb_raw",
+      "contentPack": "AWS_ELB",
+      "parsingRule": "Packs/AWS_ELB/ParsingRules/AWS_ELB/AWS_ELB.xif",
+      "aliases": [
+        "elb"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "aws_guardduty": {
+      "vendor": "aws",
+      "product": "guardduty",
+      "dataset": "aws_guardduty_raw",
+      "contentPack": "AWS-GuardDuty",
+      "parsingRule": "Packs/AWS-GuardDuty/ParsingRules/AWS-GuardDuty/AWS-GuardDuty.xif",
+      "aliases": [
+        "guardduty"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "aws_waf": {
+      "vendor": "aws",
+      "product": "waf",
+      "dataset": "aws_waf_raw",
+      "contentPack": "AWS_WAF",
+      "parsingRule": "Packs/AWS_WAF/ParsingRules/AWS_WAF/AWS_WAF.xif",
+      "aliases": [
+        "waf"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "barracuda_cgfw": {
+      "vendor": "barracuda",
+      "product": "cgfw",
+      "dataset": "barracuda_cgfw_raw",
+      "contentPack": "Barracuda_Cloudgen_Firewall",
+      "parsingRule": "Packs/Barracuda_Cloudgen_Firewall/ParsingRules/Barracuda_Cloudgen_FirewallParsingRules/Barracuda_Cloudgen_FirewallParsingRules.xif",
+      "aliases": [
+        "barracuda_cloudgen_firewall",
+        "cgfw"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "barracuda_email_protection": {
+      "vendor": "barracuda",
+      "product": "email_protection",
+      "dataset": "barracuda_email_protection_raw",
+      "contentPack": "BarracudaEmailProtection",
+      "parsingRule": "Packs/BarracudaEmailProtection/ParsingRules/BarracudaEmailProtection/BarracudaEmailProtection.xif",
+      "aliases": [
+        "barracudaemailprotection",
+        "email_protection"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "barracuda_waf": {
+      "vendor": "barracuda",
+      "product": "waf",
+      "dataset": "barracuda_waf_raw",
+      "contentPack": "BarracudaWAF",
+      "parsingRule": "Packs/BarracudaWAF/ParsingRules/BarracudaWAFParsingRules/BarracudaWAFParsingRules.xif",
+      "aliases": [
+        "barracudawaf",
+        "waf"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "beyondtrust_passwordsafe": {
+      "vendor": "beyondtrust",
+      "product": "passwordsafe",
+      "dataset": "beyondtrust_passwordsafe_raw",
+      "contentPack": "BeyondTrust_Password_Safe",
+      "parsingRule": "Packs/BeyondTrust_Password_Safe/ParsingRules/BeyondTrust_Password_Safe/BeyondTrust_Password_Safe.xif",
+      "aliases": [
+        "beyondtrust_password_safe",
+        "passwordsafe"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "beyondtrust_pra": {
+      "vendor": "beyondtrust",
+      "product": "pra",
+      "dataset": "beyondtrust_pra_raw",
+      "contentPack": "BeyondTrustPrivilegedRemoteAccess",
+      "parsingRule": "Packs/BeyondTrustPrivilegedRemoteAccess/ParsingRules/BeyondTrustPrivilegedRemoteAccess/BeyondTrustPrivilegedRemoteAccess.xif",
+      "aliases": [
+        "beyondtrustprivilegedremoteaccess",
+        "pra"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "beyondtrust_remote_support": {
+      "vendor": "beyondtrust",
+      "product": "remote_support",
+      "dataset": "beyondtrust_remote_support_raw",
+      "contentPack": "BeyondTrustRemoteSupport",
+      "parsingRule": "Packs/BeyondTrustRemoteSupport/ParsingRules/BeyondTrustRemoteSupport/BeyondTrustRemoteSupport.xif",
+      "aliases": [
+        "beyondtrustremotesupport",
+        "remote_support"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "bluecat_address_manager": {
+      "vendor": "bluecat",
+      "product": "address_manager",
+      "dataset": "bluecat_address_manager_raw",
+      "contentPack": "BluecatAddressManager",
+      "parsingRule": "Packs/BluecatAddressManager/ParsingRules/BluecatAddressManager_1_3/BluecatAddressManager_1_3.xif",
+      "aliases": [
+        "bluecataddressmanager",
+        "address_manager"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "box_box": {
+      "vendor": "box",
+      "product": "box",
+      "dataset": "box_box_raw",
+      "contentPack": "Box",
+      "parsingRule": "Packs/Box/ParsingRules/BoxEventCollectorParsingRules/BoxEventCollectorParsingRules.xif",
+      "aliases": [
+        "box",
+        "box"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "brocade_switch": {
+      "vendor": "brocade",
+      "product": "switch",
+      "dataset": "brocade_switch_raw",
+      "contentPack": "BrocadeSwitch",
+      "parsingRule": "Packs/BrocadeSwitch/ParsingRules/BrocadeSwitch/BrocadeSwitch.xif",
+      "aliases": [
+        "brocadeswitch",
+        "switch"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "cisco_asa": {
+      "vendor": "cisco",
+      "product": "asa",
+      "dataset": "cisco_asa_raw",
+      "contentPack": "CiscoASA",
+      "parsingRule": "Packs/CiscoASA/ParsingRules/CiscoASA/CiscoASA.xif",
+      "aliases": [
+        "ciscoasa",
+        "asa"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "cisco_asr": {
+      "vendor": "cisco",
+      "product": "asr",
+      "dataset": "cisco_asr_raw",
+      "contentPack": "CiscoASR",
+      "parsingRule": "Packs/CiscoASR/ParsingRules/CiscoASR/CiscoASR.xif",
+      "aliases": [
+        "ciscoasr",
+        "asr"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "cisco_catalyst": {
+      "vendor": "cisco",
+      "product": "catalyst",
+      "dataset": "cisco_catalyst_raw",
+      "contentPack": "CiscoCatalyst",
+      "parsingRule": "Packs/CiscoCatalyst/ParsingRules/CiscoCatalyst/CiscoCatalyst.xif",
+      "aliases": [
+        "ciscocatalyst",
+        "catalyst"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "cisco_ise": {
+      "vendor": "cisco",
+      "product": "ise",
+      "dataset": "cisco_ise_raw",
+      "contentPack": "cisco-ise",
+      "parsingRule": "Packs/cisco-ise/ParsingRules/cisco-ise/cisco-ise.xif",
+      "aliases": [
+        "ise"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "cisco_isr": {
+      "vendor": "cisco",
+      "product": "isr",
+      "dataset": "cisco_isr_raw",
+      "contentPack": "CiscoISR",
+      "parsingRule": "Packs/CiscoISR/ParsingRules/CiscoISR/CiscoISR.xif",
+      "aliases": [
+        "ciscoisr",
+        "isr"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "cisco_meraki": {
+      "vendor": "cisco",
+      "product": "meraki",
+      "dataset": "cisco_meraki_raw",
+      "contentPack": "cisco-meraki",
+      "parsingRule": "Packs/cisco-meraki/ParsingRules/CiscoMerakiParsingRules/CiscoMerakiParsingRules.xif",
+      "aliases": [
+        "meraki"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "cisco_nexus": {
+      "vendor": "cisco",
+      "product": "nexus",
+      "dataset": "cisco_nexus_raw",
+      "contentPack": "CiscoNexus",
+      "parsingRule": "Packs/CiscoNexus/ParsingRules/CiscoNexus_1_3/CiscoNexus_1_3.xif",
+      "aliases": [
+        "cisconexus",
+        "nexus"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "cisco_sma": {
+      "vendor": "cisco",
+      "product": "sma",
+      "dataset": "cisco_sma_raw",
+      "contentPack": "CiscoSMA",
+      "parsingRule": "Packs/CiscoSMA/ParsingRules/CiscoSMA/CiscoSMA.xif",
+      "aliases": [
+        "ciscosma",
+        "sma"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "cisco_ucm": {
+      "vendor": "cisco",
+      "product": "ucm",
+      "dataset": "cisco_ucm_raw",
+      "contentPack": "CiscoUCM",
+      "parsingRule": "Packs/CiscoUCM/ParsingRules/CiscoUCM/CiscoUCM.xif",
+      "aliases": [
+        "ciscoucm",
+        "ucm"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "cisco_umbrella": {
+      "vendor": "cisco",
+      "product": "umbrella",
+      "dataset": "cisco_umbrella_raw",
+      "contentPack": "Cisco-umbrella-cloud-security",
+      "parsingRule": "Packs/Cisco-umbrella-cloud-security/ParsingRules/Cisco-umbrella-cloud-security/Cisco-umbrella-cloud-security.xif",
+      "aliases": [
+        "cisco_umbrella_cloud_security",
+        "umbrella"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "cisco_wlc": {
+      "vendor": "cisco",
+      "product": "wlc",
+      "dataset": "cisco_wlc_raw",
+      "contentPack": "Cisco_Wireless_LAN_Controller",
+      "parsingRule": "Packs/Cisco_Wireless_LAN_Controller/ParsingRules/Cisco_Wireless_LAN_Controller/Cisco_Wireless_LAN_Controller.xif",
+      "aliases": [
+        "cisco_wireless_lan_controller",
+        "wlc"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "citrix_adc": {
+      "vendor": "citrix",
+      "product": "adc",
+      "dataset": "citrix_adc_raw",
+      "contentPack": "CitrixADC",
+      "parsingRule": "Packs/CitrixADC/ParsingRules/CitrixADC_1_3/CitrixADC_1_3.xif",
+      "aliases": [
+        "citrixadc",
+        "adc"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "clearswift_dlp": {
+      "vendor": "clearswift",
+      "product": "dlp",
+      "dataset": "clearswift_dlp_raw",
+      "contentPack": "ClearswiftDLP",
+      "parsingRule": "Packs/ClearswiftDLP/ParsingRules/ClearswiftDLP/ClearswiftDLP.xif",
+      "aliases": [
+        "clearswiftdlp",
+        "dlp"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "cloudflare_waf": {
+      "vendor": "cloudflare",
+      "product": "waf",
+      "dataset": "cloudflare_waf_raw",
+      "contentPack": "CloudflareWAF",
+      "parsingRule": "Packs/CloudflareWAF/ParsingRules/CloudflareWAF/CloudflareWAF.xif",
+      "aliases": [
+        "cloudflarewaf",
+        "waf"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "commvault_backupsolution": {
+      "vendor": "commvault",
+      "product": "backupsolution",
+      "dataset": "commvault_backupsolution_raw",
+      "contentPack": "CommvaultBackupSolutions",
+      "parsingRule": "Packs/CommvaultBackupSolutions/ParsingRules/CommvaultBackupSolutions.xif",
+      "aliases": [
+        "commvaultbackupsolutions",
+        "backupsolution"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "corelight_zeek": {
+      "vendor": "corelight",
+      "product": "zeek",
+      "dataset": "corelight_zeek_raw",
+      "contentPack": "CorelightZeek",
+      "parsingRule": "Packs/CorelightZeek/ParsingRules/CorelightZeek/CorelightZeek.xif",
+      "aliases": [
+        "corelightzeek",
+        "zeek"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "cyber_ark_vault": {
+      "vendor": "cyber-ark",
+      "product": "vault",
+      "dataset": "cyber_ark_vault_raw",
+      "contentPack": "CyberArkEPV",
+      "parsingRule": "Packs/CyberArkEPV/ParsingRules/CyberArkEPV/CyberArkEPV.xif",
+      "aliases": [
+        "cyberarkepv",
+        "vault"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "cyberark_identity": {
+      "vendor": "cyberark",
+      "product": "identity",
+      "dataset": "cyberark_identity_raw",
+      "contentPack": "CyberArkIdentity",
+      "parsingRule": "Packs/CyberArkIdentity/ParsingRules/CyberArkIdentityParsingRules/CyberArkIdentityParsingRules.xif",
+      "aliases": [
+        "cyberarkidentity",
+        "identity"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "dell_emc_unity": {
+      "vendor": "dell",
+      "product": "emc_unity",
+      "dataset": "dell_emc_unity_raw",
+      "contentPack": "DellEMCUnity",
+      "parsingRule": "Packs/DellEMCUnity/ParsingRules/DellEMCUnity/DellEMCUnity.xif",
+      "aliases": [
+        "dellemcunity",
+        "emc_unity",
+        "unity"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "f5_apm": {
+      "vendor": "f5",
+      "product": "apm",
+      "dataset": "f5_apm_raw",
+      "contentPack": "F5APM",
+      "parsingRule": "Packs/F5APM/ParsingRules/F5APM/F5APM.xif",
+      "aliases": [
+        "f5apm",
+        "apm"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "f5_ltm": {
+      "vendor": "f5",
+      "product": "ltm",
+      "dataset": "f5_ltm_raw",
+      "contentPack": "F5LTM",
+      "parsingRule": "Packs/F5LTM/ParsingRules/F5LTMParsingRules/F5LTMParsingRules.xif",
+      "aliases": [
+        "f5ltm",
+        "ltm"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "f5_waf": {
+      "vendor": "f5",
+      "product": "waf",
+      "dataset": "f5_waf_raw",
+      "contentPack": "F5BigIPAWAF",
+      "parsingRule": "Packs/F5BigIPAWAF/ParsingRules/F5BigIPAWAF/F5BigIPAWAF.xif",
+      "aliases": [
+        "f5bigipawaf",
+        "waf"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "fireeye_hx": {
+      "vendor": "FireEye",
+      "product": "HX",
+      "dataset": "FireEye_HX_raw",
+      "contentPack": "FireEyeHX",
+      "parsingRule": "Packs/FireEyeHX/ParsingRules/FireEyeHX/FireEyeHX.xif",
+      "aliases": [
+        "fireeyehx",
+        "hx"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "fireeye_mps": {
+      "vendor": "fireeye",
+      "product": "mps",
+      "dataset": "fireeye_mps_raw",
+      "contentPack": "FireEyeNX",
+      "parsingRule": "Packs/FireEyeNX/ParsingRules/FireEyeNX/FireEyeNX.xif",
+      "aliases": [
+        "fireeyenx",
+        "mps"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "forcepoint_forcepoint_dlp": {
+      "vendor": "Forcepoint",
+      "product": "Forcepoint DLP",
+      "dataset": "forcepoint_forcepoint_dlp_raw",
+      "contentPack": "ForcepointDLP",
+      "parsingRule": "Packs/ForcepointDLP/ParsingRules/ForcepointDLP/ForcepointDLP.xif",
+      "aliases": [
+        "forcepointdlp",
+        "forcepoint_dlp"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "fortinet_fortigate": {
+      "vendor": "Fortinet",
+      "product": "Fortigate",
+      "dataset": "fortinet_fortigate_raw",
+      "contentPack": "FortiGate",
+      "parsingRule": "Packs/FortiGate/ParsingRules/FortiGate/FortiGate.xif",
+      "aliases": [
+        "fortigate",
+        "fortigate"
+      ],
+      "requiredInputFormat": "cef",
+      "requiredInputFormatEvidence": "set format cef"
+    },
+    "fortinet_fortimail": {
+      "vendor": "fortinet",
+      "product": "fortimail",
+      "dataset": "fortinet_fortimail_raw",
+      "contentPack": "Fortimail",
+      "parsingRule": "Packs/Fortimail/ParsingRules/Fortimail/Fortimail.xif",
+      "aliases": [
+        "fortimail",
+        "fortimail"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "fortinet_fortimanager": {
+      "vendor": "fortinet",
+      "product": "fortimanager",
+      "dataset": "fortinet_fortimanager_raw",
+      "contentPack": "FortiManager",
+      "parsingRule": "Packs/FortiManager/ParsingRules/FortiManager/FortiManager.xif",
+      "aliases": [
+        "fortimanager",
+        "fortimanager"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "fortinet_fortiweb": {
+      "vendor": "fortinet",
+      "product": "fortiweb",
+      "dataset": "fortinet_fortiweb_raw",
+      "contentPack": "FortinetFortiwebVM",
+      "parsingRule": "Packs/FortinetFortiwebVM/ParsingRules/FortinetFortiwebVM/FortinetFortiwebVM.xif",
+      "aliases": [
+        "fortinetfortiwebvm",
+        "fortiweb"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "github_github_audit": {
+      "vendor": "Github",
+      "product": "github-audit",
+      "dataset": "github_github_audit_raw",
+      "contentPack": "GitHub",
+      "parsingRule": "Packs/GitHub/ParsingRules/GitHub_ParsingRules/GitHub_ParsingRules.xif",
+      "aliases": [
+        "github",
+        "github_audit"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "gitlab_gitlab": {
+      "vendor": "gitlab",
+      "product": "gitlab",
+      "dataset": "gitlab_gitlab_raw",
+      "contentPack": "GitLab",
+      "parsingRule": "Packs/GitLab/ParsingRules/GitLab/GitLab.xif",
+      "aliases": [
+        "gitlab",
+        "gitlab"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "google_cloud_logging": {
+      "vendor": "Google",
+      "product": "Cloud_Logging",
+      "dataset": "google_cloud_logging_raw",
+      "contentPack": "GoogleCloudLogging",
+      "parsingRule": "Packs/GoogleCloudLogging/ParsingRules/GoogleCloudLogging/GoogleCloudLogging.xif",
+      "aliases": [
+        "cloud_logging",
+        "googlecloudlogging"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "google_dns": {
+      "vendor": "Google",
+      "product": "DNS",
+      "dataset": "google_dns_raw",
+      "contentPack": "GoogleCloudLogging",
+      "parsingRule": "Packs/GoogleCloudLogging/ParsingRules/GoogleCloudLogging/GoogleCloudLogging.xif",
+      "aliases": [
+        "googlecloudlogging",
+        "dns"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "google_scc": {
+      "vendor": "Google",
+      "product": "SCC",
+      "dataset": "google_scc_raw",
+      "contentPack": "GoogleCloudSCC",
+      "parsingRule": "Packs/GoogleCloudSCC/ParsingRules/GoogleCloudSCC/GoogleCloudSCC.xif",
+      "aliases": [
+        "googlecloudscc",
+        "scc"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "google_workspace_chrome": {
+      "vendor": "Google",
+      "product": "Workspace_Chrome",
+      "dataset": "google_workspace_chrome_raw",
+      "contentPack": "GoogleChrome",
+      "parsingRule": "Packs/GoogleChrome/ParsingRules/GoogleChrome/GoogleChrome.xif",
+      "aliases": [
+        "googlechrome",
+        "workspace_chrome"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "google_workspace_drive": {
+      "vendor": "google_workspace",
+      "product": "drive",
+      "dataset": "google_workspace_drive_raw",
+      "contentPack": "GoogleDrive",
+      "parsingRule": "Packs/GoogleDrive/ParsingRules/GoogleDrive/GoogleDrive.xif",
+      "aliases": [
+        "googledrive",
+        "drive"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "hashicorp_vault": {
+      "vendor": "hashicorp",
+      "product": "vault",
+      "dataset": "hashicorp_vault_raw",
+      "contentPack": "HashiCorp-Vault",
+      "parsingRule": "Packs/HashiCorp-Vault/ParsingRules/HashiCorpVault/HashiCorpVault.xif",
+      "aliases": [
+        "vault"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "hello_world": {
+      "vendor": "hello",
+      "product": "world",
+      "dataset": "hello_world_raw",
+      "contentPack": "HelloWorld",
+      "parsingRule": "Packs/HelloWorld/ParsingRules/HelloWorld/HelloWorld.xif",
+      "aliases": [
+        "helloworld",
+        "world"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "huawei_fw": {
+      "vendor": "huawei",
+      "product": "fw",
+      "dataset": "huawei_fw_raw",
+      "contentPack": "HuaweiFW",
+      "parsingRule": "Packs/HuaweiFW/ParsingRules/HuaweiFW/HuaweiFW.xif",
+      "aliases": [
+        "huaweifw",
+        "fw"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "huawei_network_devices": {
+      "vendor": "huawei",
+      "product": "network_devices",
+      "dataset": "huawei_network_devices_raw",
+      "contentPack": "HuaweiNetworkDevices",
+      "parsingRule": "Packs/HuaweiNetworkDevices/ParsingRules/HuaweiNetworkDevices/HuaweiNetworkDevices.xif",
+      "aliases": [
+        "huaweinetworkdevices",
+        "network_devices"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "ibm_ldap": {
+      "vendor": "ibm",
+      "product": "ldap",
+      "dataset": "ibm_ldap_raw",
+      "contentPack": "IBMDirectoryServer",
+      "parsingRule": "Packs/IBMDirectoryServer/ParsingRules/IBMDirectoryServer/IBMDirectoryServer.xif",
+      "aliases": [
+        "ibmdirectoryserver",
+        "ldap"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "ibm_security_verify": {
+      "vendor": "ibm",
+      "product": "security verify",
+      "dataset": "ibm_security_verify_raw",
+      "contentPack": "IBMSecurityVerify",
+      "parsingRule": "Packs/IBMSecurityVerify/ParsingRules/IBM_Security_Verify_ParsingRules/IBM_Security_Verify_ParsingRules.xif",
+      "aliases": [
+        "ibmsecurityverify",
+        "security_verify"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "iis_iis": {
+      "vendor": "iis",
+      "product": "iis",
+      "dataset": "iis_iis_raw",
+      "contentPack": "MicrosoftIISWebServer",
+      "parsingRule": "Packs/MicrosoftIISWebServer/ParsingRules/MicrosoftIISWebServer/MicrosoftIISWebServer.xif",
+      "aliases": [
+        "microsoftiiswebserver",
+        "iis"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "imperva_inc_securesphere": {
+      "vendor": "imperva_inc_",
+      "product": "securesphere",
+      "dataset": "imperva_inc__securesphere_raw",
+      "contentPack": "Imperva_WAF",
+      "parsingRule": "Packs/Imperva_WAF/ParsingRules/Imperva_WAF.xif",
+      "aliases": [
+        "imperva_waf",
+        "securesphere"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "infoblox_infoblox": {
+      "vendor": "infoblox",
+      "product": "infoblox",
+      "dataset": "infoblox_infoblox_raw",
+      "contentPack": "Infoblox",
+      "parsingRule": "Packs/Infoblox/ParsingRules/InfobloxParsingRules/InfobloxParsingRules.xif",
+      "aliases": [
+        "infoblox",
+        "infoblox"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "ivanti_connect_secure": {
+      "vendor": "ivanti",
+      "product": "connect_secure",
+      "dataset": "ivanti_connect_secure_raw",
+      "contentPack": "IvantiConnectSecure",
+      "parsingRule": "Packs/IvantiConnectSecure/ParsingRules/IvantiConnectSecure/IvantiConnectSecure.xif",
+      "aliases": [
+        "ivanticonnectsecure",
+        "connect_secure"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "ivanti_vtm": {
+      "vendor": "ivanti",
+      "product": "vtm",
+      "dataset": "ivanti_vtm_raw",
+      "contentPack": "IvantiPulseSecureVTM",
+      "parsingRule": "Packs/IvantiPulseSecureVTM/ParsingRules/IvantiPulseSecureVTM/IvantiPulseSecureVTM.xif",
+      "aliases": [
+        "ivantipulsesecurevtm",
+        "vtm"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "jamf_pro": {
+      "vendor": "jamf",
+      "product": "pro",
+      "dataset": "jamf_pro_raw",
+      "contentPack": "jamf",
+      "parsingRule": "Packs/jamf/ParsingRules/jamf/jamf.xif",
+      "aliases": [
+        "jamf",
+        "pro"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "juniper_srx": {
+      "vendor": "juniper",
+      "product": "srx",
+      "dataset": "juniper_srx_raw",
+      "contentPack": "JuniperSRX",
+      "parsingRule": "Packs/JuniperSRX/ParsingRules/JuniperSRX/JuniperSRX.xif",
+      "aliases": [
+        "junipersrx",
+        "srx"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "kiteworks_kiteworks": {
+      "vendor": "kiteworks",
+      "product": "kiteworks",
+      "dataset": "kiteworks_kiteworks_raw",
+      "contentPack": "Kiteworks",
+      "parsingRule": "Packs/Kiteworks/ParsingRules/Kiteworks/Kiteworks.xif",
+      "aliases": [
+        "kiteworks",
+        "kiteworks"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "kubernetes_kubernetes": {
+      "vendor": "kubernetes",
+      "product": "kubernetes",
+      "dataset": "kubernetes_kubernetes_raw",
+      "contentPack": "Kubernetes",
+      "parsingRule": "Packs/Kubernetes/ParsingRules/Kubernetes/Kubernetes.xif",
+      "aliases": [
+        "kubernetes",
+        "kubernetes"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "lanels2_netbox": {
+      "vendor": "LanelS2",
+      "product": "NetBox",
+      "dataset": "lanels2_netbox_raw",
+      "contentPack": "LenelS2NetBox",
+      "parsingRule": "Packs/LenelS2NetBox/ParsingRules/LenelS2NetBox/LenelS2NetBox.xif",
+      "aliases": [
+        "lenels2netbox",
+        "netbox"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "linux_linux": {
+      "vendor": "linux",
+      "product": "linux",
+      "dataset": "linux_linux_raw",
+      "contentPack": "LinuxEventsCollection",
+      "parsingRule": "Packs/LinuxEventsCollection/ParsingRules/LinuxEventsCollectionParsingRules/LinuxEventsCollectionParsingRules.xif",
+      "aliases": [
+        "linuxeventscollection",
+        "linux"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "manageengine_admanager": {
+      "vendor": "manageengine",
+      "product": "admanager",
+      "dataset": "manageengine_admanager_raw",
+      "contentPack": "ManageEngine-ADManager",
+      "parsingRule": "Packs/ManageEngine-ADManager/ParsingRules/ManageEngine-ADManager/ManageEngine-ADManager.xif",
+      "aliases": [
+        "admanager"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "manageengine_adssp": {
+      "vendor": "manageengine",
+      "product": "adssp",
+      "dataset": "manageengine_adssp_raw",
+      "contentPack": "ManageEngine-ADSelfServicePlus",
+      "parsingRule": "Packs/ManageEngine-ADSelfServicePlus/ParsingRules/ManageEngine-ADSelfServicePlus/ManageEngine-ADSelfServicePlus.xif",
+      "aliases": [
+        "manageengine_adselfserviceplus",
+        "adssp"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "mcafee_epo": {
+      "vendor": "McAfee",
+      "product": "ePO",
+      "dataset": "mcafee_epo_raw",
+      "contentPack": "epo",
+      "parsingRule": "Packs/epo/ParsingRules/McAfeeEpo/McAfeeEpo.xif",
+      "aliases": [
+        "epo",
+        "epo"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "mcafee_nsm": {
+      "vendor": "McAfee",
+      "product": "NSM",
+      "dataset": "mcafee_nsm_raw",
+      "contentPack": "McAfeeNSM",
+      "parsingRule": "Packs/McAfeeNSM/ParsingRules/McAfeeNSM/McAfeeNSM.xif",
+      "aliases": [
+        "mcafeensm",
+        "nsm"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "mcafee_webgateway": {
+      "vendor": "mcafee",
+      "product": "webgateway",
+      "dataset": "mcafee_webgateway_raw",
+      "contentPack": "McAfeeWebGateway",
+      "parsingRule": "Packs/McAfeeWebGateway/ParsingRules/McAfeeWebGateway/McAfeeWebGateway.xif",
+      "aliases": [
+        "mcafeewebgateway",
+        "webgateway"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "microsoft_365_defender": {
+      "vendor": "Microsoft 365",
+      "product": "Defender",
+      "dataset": "microsoft_365_defender_raw",
+      "contentPack": "MicrosoftDefenderAdvancedThreatProtection",
+      "parsingRule": "Packs/MicrosoftDefenderAdvancedThreatProtection/ParsingRules/MicrosoftDefenderAdvancedThreatProtection/MicrosoftDefenderAdvancedThreatProtection.xif",
+      "aliases": [
+        "microsoftdefenderadvancedthreatprotection",
+        "defender"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "microsoft_defender_cloud_apps": {
+      "vendor": "Microsoft",
+      "product": "defender_cloud_apps",
+      "dataset": "microsoft_defender_cloud_apps_raw",
+      "contentPack": "MicrosoftCloudAppSecurity",
+      "parsingRule": "Packs/MicrosoftCloudAppSecurity/ParsingRules/MicrosoftCloudAppSecurity/MicrosoftCloudAppSecurity.xif",
+      "aliases": [
+        "microsoftcloudappsecurity",
+        "defender_cloud_apps"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "microsoft_defender_for_cloud": {
+      "vendor": "microsoft",
+      "product": "defender_for_cloud",
+      "dataset": "microsoft_defender_for_cloud_raw",
+      "contentPack": "AzureSecurityCenter",
+      "parsingRule": "Packs/AzureSecurityCenter/ParsingRules/AzureSecurityCenter/AzureSecurityCenter.xif",
+      "aliases": [
+        "azuresecuritycenter",
+        "defender_for_cloud"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "microsoft_dhcp": {
+      "vendor": "microsoft",
+      "product": "DHCP",
+      "dataset": "microsoft_dhcp_raw",
+      "contentPack": "MicrosoftDHCP",
+      "parsingRule": "Packs/MicrosoftDHCP/ParsingRules/MicrosoftDHCP/MicrosoftDHCP.xif",
+      "aliases": [
+        "microsoftdhcp",
+        "dhcp"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "microsoft_windows": {
+      "vendor": "microsoft",
+      "product": "windows",
+      "dataset": "microsoft_sysmon_raw",
+      "contentPack": "MicrosoftWindowsSysmon",
+      "parsingRule": "Packs/MicrosoftWindowsSysmon/ParsingRules/MicrosoftWindowsSysmon/MicrosoftWindowsSysmon.xif",
+      "aliases": [
+        "microsoftadfs",
+        "microsoftcore",
+        "microsoftdns",
+        "microsoftwindowsamsi",
+        "microsoftwindowsevents",
+        "microsoftwindowssysmon",
+        "windows"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "mimecast_mimecast": {
+      "vendor": "mimecast",
+      "product": "mimecast",
+      "dataset": "mimecast_mimecast_raw",
+      "contentPack": "Mimecast",
+      "parsingRule": "Packs/Mimecast/ParsingRules/MimecastParsingRules/MimecastParsingRules.xif",
+      "aliases": [
+        "mimecast",
+        "mimecast"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "msft_azure": {
+      "vendor": "msft",
+      "product": "azure",
+      "dataset": "msft_azure_raw",
+      "contentPack": "MicrosoftEntraID",
+      "parsingRule": "Packs/MicrosoftEntraID/ParsingRules/MicrosoftEntraID/MicrosoftEntraID.xif",
+      "aliases": [
+        "azure",
+        "azureappservice",
+        "azuredevops",
+        "azureeventshub",
+        "azurefirewall",
+        "azureflowlogs",
+        "azurekubernetesservices",
+        "azurewaf",
+        "microsoftentraid"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "msft_azure_ad": {
+      "vendor": "msft",
+      "product": "Azure AD",
+      "dataset": "msft_azure_ad_raw",
+      "contentPack": "MicrosoftEntraID",
+      "parsingRule": "Packs/MicrosoftEntraID/ParsingRules/MicrosoftEntraID/MicrosoftEntraID.xif",
+      "aliases": [
+        "microsoftentraid",
+        "azure_ad"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "msft_azure_ad_audit": {
+      "vendor": "msft",
+      "product": "Azure AD Audit",
+      "dataset": "msft_azure_ad_audit_raw",
+      "contentPack": "MicrosoftEntraID",
+      "parsingRule": "Packs/MicrosoftEntraID/ParsingRules/MicrosoftEntraID/MicrosoftEntraID.xif",
+      "aliases": [
+        "microsoftentraid",
+        "azure_ad_audit"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "msft_exchange": {
+      "vendor": "msft",
+      "product": "exchange",
+      "dataset": "msft_exchange_raw",
+      "contentPack": "MicrosoftExchangeServer",
+      "parsingRule": "Packs/MicrosoftExchangeServer/ParsingRules/MicrosoftExchangeServerParsingRules/MicrosoftExchangeServerParsingRules.xif",
+      "aliases": [
+        "microsoftexchangeserver",
+        "exchange"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "msft_graph_security_alerts": {
+      "vendor": "msft",
+      "product": "Graph Security Alerts",
+      "dataset": "msft_graph_security_alerts_raw",
+      "contentPack": "MicrosoftGraphSecurity",
+      "parsingRule": "Packs/MicrosoftGraphSecurity/ParsingRules/MicrosoftGraphSecurity/MicrosoftGraphSecurity.xif",
+      "aliases": [
+        "microsoftgraphsecurity",
+        "graph_security_alerts"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "msft_intune": {
+      "vendor": "MSFT",
+      "product": "Intune",
+      "dataset": "msft_intune_raw",
+      "contentPack": "MicrosoftIntune",
+      "parsingRule": "Packs/MicrosoftIntune/ParsingRules/MicrosoftIntuneParsingRules/MicrosoftIntuneParsingRules.xif",
+      "aliases": [
+        "microsoftintune",
+        "intune"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "msft_nps": {
+      "vendor": "msft",
+      "product": "nps",
+      "dataset": "msft_nps_raw",
+      "contentPack": "MicrosoftNPS",
+      "parsingRule": "Packs/MicrosoftNPS/ParsingRules/MicrosoftNPSParsingRules/MicrosoftNPSParsingRules.xif",
+      "aliases": [
+        "microsoftnps",
+        "nps"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "msft_o365_azure_ad": {
+      "vendor": "msft",
+      "product": "O365 Azure AD",
+      "dataset": "msft_o365_azure_ad_raw",
+      "contentPack": "Office365",
+      "parsingRule": "Packs/Office365/ParsingRules/Office365/Office365.xif",
+      "aliases": [
+        "office365",
+        "o365_azure_ad"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "msft_o365_dlp": {
+      "vendor": "msft",
+      "product": "O365 DLP",
+      "dataset": "msft_o365_dlp_raw",
+      "contentPack": "Office365",
+      "parsingRule": "Packs/Office365/ParsingRules/Office365/Office365.xif",
+      "aliases": [
+        "office365",
+        "o365_dlp"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "msft_o365_emails": {
+      "vendor": "msft",
+      "product": "o365_emails",
+      "dataset": "msft_o365_emails_raw",
+      "contentPack": "Office365",
+      "parsingRule": "Packs/Office365/ParsingRules/Office365/Office365.xif",
+      "aliases": [
+        "office365",
+        "o365_emails"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "msft_o365_exchange_online": {
+      "vendor": "msft",
+      "product": "O365 Exchange Online",
+      "dataset": "msft_o365_exchange_online_raw",
+      "contentPack": "Office365",
+      "parsingRule": "Packs/Office365/ParsingRules/Office365/Office365.xif",
+      "aliases": [
+        "office365",
+        "o365_exchange_online"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "msft_o365_general": {
+      "vendor": "msft",
+      "product": "O365 General",
+      "dataset": "msft_o365_general_raw",
+      "contentPack": "Office365",
+      "parsingRule": "Packs/Office365/ParsingRules/Office365/Office365.xif",
+      "aliases": [
+        "office365",
+        "o365_general"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "msft_o365_sharepoint_online": {
+      "vendor": "msft",
+      "product": "O365 Sharepoint Online",
+      "dataset": "msft_o365_sharepoint_online_raw",
+      "contentPack": "Office365",
+      "parsingRule": "Packs/Office365/ParsingRules/Office365/Office365.xif",
+      "aliases": [
+        "office365",
+        "o365_sharepoint_online"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "msft_wsus": {
+      "vendor": "MSFT",
+      "product": "WSUS",
+      "dataset": "msft_wsus_raw",
+      "contentPack": "MicrosoftWSUS",
+      "parsingRule": "Packs/MicrosoftWSUS/ParsingRules/MicrosoftWSUS/MicrosoftWSUS.xif",
+      "aliases": [
+        "microsoftwsus",
+        "wsus"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "mysql_enterprise": {
+      "vendor": "mysql",
+      "product": "enterprise",
+      "dataset": "mysql_enterprise_raw",
+      "contentPack": "MySQLEnterprise",
+      "parsingRule": "Packs/MySQLEnterprise/ParsingRules/MySQLEnterprise/MySQLEnterprise.xif",
+      "aliases": [
+        "mysqlenterprise",
+        "enterprise"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "nasuni_file_services": {
+      "vendor": "nasuni",
+      "product": "file_services",
+      "dataset": "nasuni_file_services_raw",
+      "contentPack": "NasuniFileServices",
+      "parsingRule": "Packs/NasuniFileServices/ParsingRules/NasuniFileServices/NasuniFileServices.xif",
+      "aliases": [
+        "nasunifileservices",
+        "file_services"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "netmotion_vpn": {
+      "vendor": "netmotion",
+      "product": "vpn",
+      "dataset": "netmotion_vpn_raw",
+      "contentPack": "NetmotionVPN",
+      "parsingRule": "Packs/NetmotionVPN/ParsingRules/NetmotionVPN/NetmotionVPN.xif",
+      "aliases": [
+        "netmotionvpn",
+        "vpn"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "nginx_nginx": {
+      "vendor": "nginx",
+      "product": "nginx",
+      "dataset": "nginx_nginx_raw",
+      "contentPack": "NGINXWebServer",
+      "parsingRule": "Packs/NGINXWebServer/ParsingRules/NGINXWebServerParsingRules/NGINXWebServerParsingRules.xif",
+      "aliases": [
+        "nginxwebserver",
+        "nginx"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "nvidia_doca_argus": {
+      "vendor": "nvidia",
+      "product": "doca_argus",
+      "dataset": "nvidia_doca_argus_raw",
+      "contentPack": "NVIDIA_DOCA_Argus",
+      "parsingRule": "Packs/NVIDIA_DOCA_Argus/ParsingRules/NVIDIA_DOCA_Argus/NVIDIA_DOCA_Argus.xif",
+      "aliases": [
+        "doca_argus"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "okta_oag": {
+      "vendor": "okta",
+      "product": "oag",
+      "dataset": "okta_oag_raw",
+      "contentPack": "OktaOAG",
+      "parsingRule": "Packs/OktaOAG/ParsingRules/OktaOAGParsingRules/OktaOAGParsingRules.xif",
+      "aliases": [
+        "oktaoag",
+        "oag"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "okta_okta": {
+      "vendor": "okta",
+      "product": "okta",
+      "dataset": "okta_okta_raw",
+      "contentPack": "Okta",
+      "parsingRule": "Packs/Okta/ParsingRules/Okta/Okta.xif",
+      "aliases": [
+        "okta",
+        "okta"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "okta_sso": {
+      "vendor": "okta",
+      "product": "sso",
+      "dataset": "okta_sso_raw",
+      "contentPack": "Okta",
+      "parsingRule": "Packs/Okta/ParsingRules/Okta/Okta.xif",
+      "aliases": [
+        "okta",
+        "sso"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "oracle_db": {
+      "vendor": "oracle",
+      "product": "db",
+      "dataset": "oracle_db_raw",
+      "contentPack": "Oracle",
+      "parsingRule": "Packs/Oracle/ParsingRules/Oracle/Oracle.xif",
+      "aliases": [
+        "oracle",
+        "db"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "oracle_oam": {
+      "vendor": "oracle",
+      "product": "oam",
+      "dataset": "oracle_oam_raw",
+      "contentPack": "Oracle_IAM",
+      "parsingRule": "Packs/Oracle_IAM/ParsingRules/Oracle_IAM/Oracle_IAM.xif",
+      "aliases": [
+        "oracle_iam",
+        "oam"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "paloaltonetworks_saassecurity": {
+      "vendor": "paloaltonetworks",
+      "product": "saassecurity",
+      "dataset": "paloaltonetworks_saassecurity_raw",
+      "contentPack": "PrismaSaasSecurity",
+      "parsingRule": "Packs/PrismaSaasSecurity/ParsingRules/PrismaSaasSecurity/PrismaSaasSecurity.xif",
+      "aliases": [
+        "prismasaassecurity",
+        "saassecurity"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "prisma_cloud": {
+      "vendor": "prisma",
+      "product": "cloud",
+      "dataset": "prisma_cloud_raw",
+      "contentPack": "PrismaCloud",
+      "parsingRule": "Packs/PrismaCloud/ParsingRules/PrismaCloud/PrismaCloud.xif",
+      "aliases": [
+        "prismacloud",
+        "cloud"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "prisma_cloud_compute": {
+      "vendor": "prisma",
+      "product": "cloud_compute",
+      "dataset": "prisma_cloud_compute_raw",
+      "contentPack": "PrismaCloudCompute",
+      "parsingRule": "Packs/PrismaCloudCompute/ParsingRules/PrismaCloudCompute/PrismaCloudCompute.xif",
+      "aliases": [
+        "prismacloudcompute",
+        "cloud_compute"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "proofpoint_casb": {
+      "vendor": "proofpoint",
+      "product": "casb",
+      "dataset": "proofpoint_casb_raw",
+      "contentPack": "ProofpointCasb",
+      "parsingRule": "Packs/ProofpointCasb/ParsingRules/ProofpointCasb/ProofpointCasb.xif",
+      "aliases": [
+        "proofpointcasb",
+        "casb"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "proofpoint_email_security": {
+      "vendor": "proofpoint",
+      "product": "email_security",
+      "dataset": "proofpoint_email_security_raw",
+      "contentPack": "ProofpointEmailSecurity",
+      "parsingRule": "Packs/ProofpointEmailSecurity/ParsingRules/ProofpointEmailSecurity/ProofpointEmailSecurity.xif",
+      "aliases": [
+        "proofpointemailsecurity",
+        "email_security"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "proofpoint_ps": {
+      "vendor": "proofpoint",
+      "product": "ps",
+      "dataset": "proofpoint_ps_raw",
+      "contentPack": "ProofpointServerProtection",
+      "parsingRule": "Packs/ProofpointServerProtection/ParsingRules/ProofpointServerProtection/ProofpointServerProtection.xif",
+      "aliases": [
+        "proofpointserverprotection",
+        "ps"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "proofpoint_tap": {
+      "vendor": "Proofpoint",
+      "product": "Tap",
+      "dataset": "proofpoint_tap_raw",
+      "contentPack": "ProofpointTAP",
+      "parsingRule": "Packs/ProofpointTAP/ParsingRules/ProofpointTAP/ProofpointTAP.xif",
+      "aliases": [
+        "proofpointtap",
+        "tap"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "proofpoint_threat_response": {
+      "vendor": "proofpoint",
+      "product": "threat_response",
+      "dataset": "proofpoint_threat_response_raw",
+      "contentPack": "ProofpointThreatResponse",
+      "parsingRule": "Packs/ProofpointThreatResponse/ParsingRules/ProofpointThreatResponse/ProofpointThreatResponse.xif",
+      "aliases": [
+        "proofpointthreatresponse",
+        "threat_response"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "radware_access_logs": {
+      "vendor": "radware",
+      "product": "access_logs",
+      "dataset": "radware_access_logs_raw",
+      "contentPack": "RadwareCloudServices",
+      "parsingRule": "Packs/RadwareCloudServices/ParsingRules/RadwareCloudServices/RadwareCloudServices.xif",
+      "aliases": [
+        "radwarecloudservices",
+        "access_logs"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "radware_appwall": {
+      "vendor": "radware",
+      "product": "appwall",
+      "dataset": "radware_appwall_raw",
+      "contentPack": "RadwareCloudServices",
+      "parsingRule": "Packs/RadwareCloudServices/ParsingRules/RadwareCloudServices/RadwareCloudServices.xif",
+      "aliases": [
+        "radwarecloudservices",
+        "appwall"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "reblaze_waf": {
+      "vendor": "reblaze",
+      "product": "waf",
+      "dataset": "reblaze_waf_raw",
+      "contentPack": "ReblazeWAF",
+      "parsingRule": "Packs/ReblazeWAF/ParsingRules/ReblazeWAF/ReblazeWAF.xif",
+      "aliases": [
+        "reblazewaf",
+        "waf"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "riverbed_flow_gateways": {
+      "vendor": "riverbed",
+      "product": "flow_gateways",
+      "dataset": "riverbed_flow_gateways_raw",
+      "contentPack": "RiverbedFlowGateways",
+      "parsingRule": "Packs/RiverbedFlowGateways/ParsingRules/RiverbedFlowGateways/RiverbedFlowGateways.xif",
+      "aliases": [
+        "riverbedflowgateways",
+        "flow_gateways"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "safenet_trusted_access": {
+      "vendor": "safenet",
+      "product": "trusted_access",
+      "dataset": "safenet_trusted_access_raw",
+      "contentPack": "SafeNet_Trusted_Access",
+      "parsingRule": "Packs/SafeNet_Trusted_Access/ParsingRules/SafeNetTrustedAccessParsingRules/SafeNetTrustedAccessParsingRules.xif",
+      "aliases": [
+        "trusted_access"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "salesforce_audit": {
+      "vendor": "salesforce",
+      "product": "audit",
+      "dataset": "salesforce_audit_raw",
+      "contentPack": "Salesforce",
+      "parsingRule": "Packs/Salesforce/ParsingRules/SalesforceParsingRules/SalesforceParsingRules.xif",
+      "aliases": [
+        "salesforce",
+        "audit"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "salesforce_eventlogfile": {
+      "vendor": "salesforce",
+      "product": "eventlogfile",
+      "dataset": "salesforce_eventlogfile_raw",
+      "contentPack": "Salesforce",
+      "parsingRule": "Packs/Salesforce/ParsingRules/SalesforceParsingRules/SalesforceParsingRules.xif",
+      "aliases": [
+        "salesforce",
+        "eventlogfile"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "salesforce_login": {
+      "vendor": "salesforce",
+      "product": "login",
+      "dataset": "salesforce_login_raw",
+      "contentPack": "Salesforce",
+      "parsingRule": "Packs/Salesforce/ParsingRules/SalesforceParsingRules/SalesforceParsingRules.xif",
+      "aliases": [
+        "salesforce",
+        "login"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "salesforce_realtime": {
+      "vendor": "salesforce",
+      "product": "realtime",
+      "dataset": "salesforce_realtime_raw",
+      "contentPack": "Salesforce",
+      "parsingRule": "Packs/Salesforce/ParsingRules/SalesforceParsingRules/SalesforceParsingRules.xif",
+      "aliases": [
+        "salesforce",
+        "realtime"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "secureauth_idp": {
+      "vendor": "secureauth",
+      "product": "idp",
+      "dataset": "secureauth_idp_raw",
+      "contentPack": "SecureAuthIdentityPlatform",
+      "parsingRule": "Packs/SecureAuthIdentityPlatform/ParsingRules/SecureAuthIdentityPlatform/SecureAuthIdentityPlatform.xif",
+      "aliases": [
+        "secureauthidentityplatform",
+        "idp"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "semperis_dsp": {
+      "vendor": "semperis",
+      "product": "dsp",
+      "dataset": "semperis_dsp_raw",
+      "contentPack": "SemperisDSP",
+      "parsingRule": "Packs/SemperisDSP/ParsingRules/SemperisDSP/SemperisDSP.xif",
+      "aliases": [
+        "semperisdsp",
+        "dsp"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "siemens_sipass": {
+      "vendor": "siemens",
+      "product": "sipass",
+      "dataset": "siemens_sipass_raw",
+      "contentPack": "Siemens_SiPass",
+      "parsingRule": "Packs/Siemens_SiPass/ParsingRules/Siemens_SiPass/Siemens_SiPass.xif",
+      "aliases": [
+        "sipass"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "silverfort_admin_console": {
+      "vendor": "silverfort",
+      "product": "admin_console",
+      "dataset": "silverfort_admin_console_raw",
+      "contentPack": "Silverfort",
+      "parsingRule": "Packs/Silverfort/ParsingRules/Silverfort/Silverfort.xif",
+      "aliases": [
+        "silverfort",
+        "admin_console"
+      ],
+      "requiredInputFormat": "cef",
+      "requiredInputFormatEvidence": "forward Syslog messages in CEF format"
+    },
+    "slack_slack": {
+      "vendor": "slack",
+      "product": "slack",
+      "dataset": "slack_slack_raw",
+      "contentPack": "Slack",
+      "parsingRule": "Packs/Slack/ParsingRules/SlackParsingRules/SlackParsingRules.xif",
+      "aliases": [
+        "slack",
+        "slack"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "sonicwall_ns": {
+      "vendor": "sonicwall",
+      "product": "ns",
+      "dataset": "sonicwall_ns_raw",
+      "contentPack": "SonicWallNSv",
+      "parsingRule": "Packs/SonicWallNSv/ParsingRules/SonicWallNSvParsingRules/SonicWallNSvParsingRules.xif",
+      "aliases": [
+        "sonicwallnsv",
+        "ns"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "squid_squid": {
+      "vendor": "squid",
+      "product": "squid",
+      "dataset": "squid_squid_raw",
+      "contentPack": "Squid",
+      "parsingRule": "Packs/Squid/ParsingRules/Squid/Squid.xif",
+      "aliases": [
+        "squid",
+        "squid"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "symantec_bluecoatproxysg": {
+      "vendor": "symantec",
+      "product": "bluecoatproxysg",
+      "dataset": "symantec_bluecoatproxysg_raw",
+      "contentPack": "SymantecBlueCoatProxySG",
+      "parsingRule": "Packs/SymantecBlueCoatProxySG/ParsingRules/SymantecBlueCoatProxySG/SymantecBlueCoatProxySG.xif",
+      "aliases": [
+        "symantecbluecoatproxysg",
+        "bluecoatproxysg"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "symantec_ep": {
+      "vendor": "symantec",
+      "product": "ep",
+      "dataset": "symantec_ep_raw",
+      "contentPack": "SymantecEndpointProtection",
+      "parsingRule": "Packs/SymantecEndpointProtection/ParsingRules/SymantecEndpointProtection/SymantecEndpointProtection.xif",
+      "aliases": [
+        "symantecendpointprotection",
+        "ep"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "symantec_swg": {
+      "vendor": "symantec",
+      "product": "swg",
+      "dataset": "symantec_swg_raw",
+      "contentPack": "SymantecCloudSecureWebGateway",
+      "parsingRule": "Packs/SymantecCloudSecureWebGateway/ParsingRules/SymantecCloudSecureWebGateway/SymantecCloudSecureWebGateway.xif",
+      "aliases": [
+        "symanteccloudsecurewebgateway",
+        "swg"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "synopsys_coverity": {
+      "vendor": "synopsys",
+      "product": "coverity",
+      "dataset": "synopsys_coverity_raw",
+      "contentPack": "SynopsysCoverity",
+      "parsingRule": "Packs/SynopsysCoverity/ParsingRules/SynopsysCoverity/SynopsysCoverity.xif",
+      "aliases": [
+        "synopsyscoverity",
+        "coverity"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "tableau_log": {
+      "vendor": "tableau",
+      "product": "log",
+      "dataset": "tableau_log_raw",
+      "contentPack": "Tableau",
+      "parsingRule": "Packs/Tableau/ParsingRules/Tableau/Tableau.xif",
+      "aliases": [
+        "tableau",
+        "log"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "tanium_integrity_monitor": {
+      "vendor": "tanium",
+      "product": "integrity_monitor",
+      "dataset": "tanium_integrity_monitor_raw",
+      "contentPack": "Tanium",
+      "parsingRule": "Packs/Tanium/ParsingRules/Tanium/Tanium.xif",
+      "aliases": [
+        "tanium",
+        "integrity_monitor"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "tanium_threat_response": {
+      "vendor": "tanium",
+      "product": "threat_response",
+      "dataset": "tanium_threat_response_raw",
+      "contentPack": "TaniumThreatResponse",
+      "parsingRule": "Packs/TaniumThreatResponse/ParsingRules/TaniumThreatResponse/TaniumThreatResponse.xif",
+      "aliases": [
+        "taniumthreatresponse",
+        "threat_response"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "tigera_calico": {
+      "vendor": "tigera",
+      "product": "calico",
+      "dataset": "tigera_calico_raw",
+      "contentPack": "TigeraCalico",
+      "parsingRule": "Packs/TigeraCalico/ParsingRules/TigeraCalico/TigeraCalico.xif",
+      "aliases": [
+        "tigeracalico",
+        "calico"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "trellix_epo": {
+      "vendor": "trellix",
+      "product": "epo",
+      "dataset": "trellix_epo_raw",
+      "contentPack": "Trellix_ePO",
+      "parsingRule": "Packs/Trellix_ePO/ParsingRules/Trellix_ePO/Trellix_ePO.xif",
+      "aliases": [
+        "epo"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "trendmicro_iwss": {
+      "vendor": "trendmicro",
+      "product": "iwss",
+      "dataset": "trendmicro_iwss_raw",
+      "contentPack": "TrendMicroInterScanWebSecurity",
+      "parsingRule": "Packs/TrendMicroInterScanWebSecurity/ParsingRules/TrendMicroIWSS/TrendMicroIWSS.xif",
+      "aliases": [
+        "trendmicrointerscanwebsecurity",
+        "iwss"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "txone_networks_stellarone": {
+      "vendor": "TXOne Networks",
+      "product": "StellarOne",
+      "dataset": "txone_networks_stellarone_raw",
+      "contentPack": "TXOneStellarOne",
+      "parsingRule": "Packs/TXOneStellarOne/ParsingRules/TXOneStellarOne/TXOneStellarOne.xif",
+      "aliases": [
+        "stellarone",
+        "txonestellarone"
+      ],
+      "requiredInputFormat": "cef",
+      "requiredInputFormatEvidence": "forwards audit, system, console, and agent security events in Syslog CEF format"
+    },
+    "txone_networks_stellarone_legacy_mode": {
+      "vendor": "TXOne Networks",
+      "product": "StellarOne (Legacy Mode)",
+      "dataset": "txone_networks_stellarone_legacy_mode__raw",
+      "contentPack": "TXOneStellarOne",
+      "parsingRule": "Packs/TXOneStellarOne/ParsingRules/TXOneStellarOne/TXOneStellarOne.xif",
+      "aliases": [
+        "stellarone_legacy_mode",
+        "txonestellarone"
+      ],
+      "requiredInputFormat": "cef",
+      "requiredInputFormatEvidence": "forwards audit, system, console, and agent security events in Syslog CEF format"
+    },
+    "txone_networks_stellarprotect": {
+      "vendor": "TXOne Networks",
+      "product": "StellarProtect",
+      "dataset": "txone_networks_stellarprotect_raw",
+      "contentPack": "TXOneStellarOne",
+      "parsingRule": "Packs/TXOneStellarOne/ParsingRules/TXOneStellarOne/TXOneStellarOne.xif",
+      "aliases": [
+        "stellarprotect",
+        "txonestellarone"
+      ],
+      "requiredInputFormat": "cef",
+      "requiredInputFormatEvidence": "forwards audit, system, console, and agent security events in Syslog CEF format"
+    },
+    "txone_networks_stellarprotect_legacy_mode": {
+      "vendor": "TXOne Networks",
+      "product": "StellarProtect (Legacy Mode)",
+      "dataset": "txone_networks_stellarprotect_legacy_mode__raw",
+      "contentPack": "TXOneStellarOne",
+      "parsingRule": "Packs/TXOneStellarOne/ParsingRules/TXOneStellarOne/TXOneStellarOne.xif",
+      "aliases": [
+        "stellarprotect_legacy_mode",
+        "txonestellarone"
+      ],
+      "requiredInputFormat": "cef",
+      "requiredInputFormatEvidence": "forwards audit, system, console, and agent security events in Syslog CEF format"
+    },
+    "unix_auditd": {
+      "vendor": "unix",
+      "product": "auditd",
+      "dataset": "unix_auditd_raw",
+      "contentPack": "Auditd",
+      "parsingRule": "Packs/Auditd/ParsingRules/Auditd/Auditd.xif",
+      "aliases": [
+        "auditd",
+        "auditd"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "vmware_esxi": {
+      "vendor": "VMware",
+      "product": "ESXi",
+      "dataset": "vmware_esxi_raw",
+      "contentPack": "VMwareESXi",
+      "parsingRule": "Packs/VMwareESXi/ParsingRules/VMwareESXiParsingRules/VMwareESXiParsingRules.xif",
+      "aliases": [
+        "vmwareesxi",
+        "esxi"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "vmware_nsx": {
+      "vendor": "vmware",
+      "product": "nsx",
+      "dataset": "vmware_nsx_raw",
+      "contentPack": "VMWareNSX",
+      "parsingRule": "Packs/VMWareNSX/ParsingRules/VMWareNSX/VMWareNSX.xif",
+      "aliases": [
+        "vmwarensx",
+        "nsx"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "vmware_vcenter": {
+      "vendor": "vmware",
+      "product": "vcenter",
+      "dataset": "vmware_vcenter_raw",
+      "contentPack": "VMwareVCenter",
+      "parsingRule": "Packs/VMwareVCenter/ParsingRules/VMwareVcenterParsingRules/VMwareVcenterParsingRules.xif",
+      "aliases": [
+        "vmwarevcenter",
+        "vcenter"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "workday_activity": {
+      "vendor": "workday",
+      "product": "activity",
+      "dataset": "workday_activity_raw",
+      "contentPack": "Workday",
+      "parsingRule": "Packs/Workday/ParsingRules/WorkdayParsingRules/WorkdayParsingRules.xif",
+      "aliases": [
+        "workday",
+        "activity"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    },
+    "zscaler_cloudnss": {
+      "vendor": "zscaler",
+      "product": "cloudnss",
+      "dataset": "zscaler_cloudnss_raw",
+      "contentPack": "Zscaler",
+      "parsingRule": "Packs/Zscaler/ParsingRules/ZscalerZIA/ZscalerZIA.xif",
+      "aliases": [
+        "zscaler",
+        "cloudnss"
+      ],
+      "requiredInputFormat": null,
+      "requiredInputFormatEvidence": null
+    }
+  },
+  "modelSources": {
+    "1password_1password": {
+      "vendor": "1password",
+      "product": "1password",
+      "dataset": "1password_1password_raw",
+      "contentPack": "OnePassword",
+      "modelingRules": [
+        "Packs/OnePassword/ModelingRules/OnePassword/OnePassword.xif"
+      ],
+      "splitEvidence": "doubled-name"
+    },
+    "appsentinels_appsentinels": {
+      "vendor": "appsentinels",
+      "product": "appsentinels",
+      "dataset": "appsentinels_appsentinels_raw",
+      "contentPack": "AppSentinelsAi",
+      "modelingRules": [
+        "Packs/AppSentinelsAi/ModelingRules/AppSentinelsAi/AppSentinelsAi.xif"
+      ],
+      "splitEvidence": "doubled-name"
+    },
+    "armis_security_activities": {
+      "vendor": "armis",
+      "product": "security_activities",
+      "dataset": "armis_security_activities_raw",
+      "contentPack": "Armis",
+      "modelingRules": [
+        "Packs/Armis/ModelingRules/ArmisModelingRules/ArmisModelingRules.xif"
+      ],
+      "splitEvidence": "sibling-ingest"
+    },
+    "armis_security_devices": {
+      "vendor": "armis",
+      "product": "security_devices",
+      "dataset": "armis_security_devices_raw",
+      "contentPack": "Armis",
+      "modelingRules": [
+        "Packs/Armis/ModelingRules/ArmisModelingRules/ArmisModelingRules.xif"
+      ],
+      "splitEvidence": "sibling-ingest"
+    },
+    "aws_security_hub": {
+      "vendor": "aws",
+      "product": "security_hub",
+      "dataset": "aws_security_hub_raw",
+      "contentPack": "AWS-SecurityHub",
+      "modelingRules": [
+        "Packs/AWS-SecurityHub/ModelingRules/AWSSecurityHubModelingRules/AWSSecurityHubModelingRules.xif"
+      ],
+      "splitEvidence": "ingest-lexicon"
+    },
+    "beyondtrust_epm": {
+      "vendor": "beyondtrust",
+      "product": "epm",
+      "dataset": "beyondtrust_epm_raw",
+      "contentPack": "BeyondTrustEPM",
+      "modelingRules": [
+        "Packs/BeyondTrustEPM/ModelingRules/BeyondTrustEPM/BeyondTrustEPM.xif"
+      ],
+      "splitEvidence": "ingest-lexicon"
+    },
+    "bitsight_bitsight": {
+      "vendor": "bitsight",
+      "product": "bitsight",
+      "dataset": "bitsight_bitsight_raw",
+      "contentPack": "BitSight",
+      "modelingRules": [
+        "Packs/BitSight/ModelingRules/BitSight/BitSight.xif"
+      ],
+      "splitEvidence": "doubled-name"
+    },
+    "celonis_celonis": {
+      "vendor": "celonis",
+      "product": "celonis",
+      "dataset": "celonis_celonis_raw",
+      "contentPack": "Celonis",
+      "modelingRules": [
+        "Packs/Celonis/ModelingRules/Celonis/Celonis.xif"
+      ],
+      "splitEvidence": "doubled-name"
+    },
+    "cisco_appdynamics": {
+      "vendor": "cisco",
+      "product": "appdynamics",
+      "dataset": "cisco_appdynamics_raw",
+      "contentPack": "CiscoAppDynamics",
+      "modelingRules": [
+        "Packs/CiscoAppDynamics/ModelingRules/CiscoAppDynamics/CiscoAppDynamics.xif"
+      ],
+      "splitEvidence": "ingest-lexicon"
+    },
+    "cisco_esa": {
+      "vendor": "cisco",
+      "product": "esa",
+      "dataset": "cisco_esa_raw",
+      "contentPack": "IronPort",
+      "modelingRules": [
+        "Packs/IronPort/ModelingRules/IronPort_1_3/IronPort_1_3.xif"
+      ],
+      "splitEvidence": "ingest-lexicon"
+    },
+    "cisco_firepower": {
+      "vendor": "cisco",
+      "product": "firepower",
+      "dataset": "cisco_firepower_raw",
+      "contentPack": "CiscoFirepower",
+      "modelingRules": [
+        "Packs/CiscoFirepower/ModelingRules/CiscoFirepower_1_3/CiscoFirepower_1_3.xif",
+        "Packs/CiscoFirepower/ModelingRules/CiscoFirepower_2_11/CiscoFirepower_2_11.xif"
+      ],
+      "splitEvidence": "ingest-lexicon"
+    },
+    "cisco_secure_endpoint": {
+      "vendor": "cisco",
+      "product": "secure_endpoint",
+      "dataset": "cisco_secure_endpoint_raw",
+      "contentPack": "AMP",
+      "modelingRules": [
+        "Packs/AMP/ModelingRules/AMP/AMP.xif"
+      ],
+      "splitEvidence": "ingest-lexicon"
+    },
+    "cisco_thousandeyes": {
+      "vendor": "cisco",
+      "product": "thousandeyes",
+      "dataset": "cisco_thousandeyes_raw",
+      "contentPack": "CiscoThousandEyes",
+      "modelingRules": [
+        "Packs/CiscoThousandEyes/ModelingRules/CiscoThousandEyes/CiscoThousandEyes.xif"
+      ],
+      "splitEvidence": "ingest-lexicon"
+    },
+    "cisco_webex": {
+      "vendor": "cisco",
+      "product": "webex",
+      "dataset": "cisco_webex_raw",
+      "contentPack": "CiscoSpark",
+      "modelingRules": [
+        "Packs/CiscoSpark/ModelingRules/CiscoWebex/CiscoWebex.xif"
+      ],
+      "splitEvidence": "ingest-lexicon"
+    },
+    "citrix_cloud": {
+      "vendor": "citrix",
+      "product": "cloud",
+      "dataset": "citrix_cloud_raw",
+      "contentPack": "Citrix",
+      "modelingRules": [
+        "Packs/Citrix/ModelingRules/Citrix/Citrix.xif"
+      ],
+      "splitEvidence": "ingest-lexicon"
+    },
+    "citrix_daas": {
+      "vendor": "citrix",
+      "product": "daas",
+      "dataset": "citrix_daas_raw",
+      "contentPack": "Citrix",
+      "modelingRules": [
+        "Packs/Citrix/ModelingRules/Citrix/Citrix.xif"
+      ],
+      "splitEvidence": "ingest-lexicon"
+    },
+    "cloudflare_zerotrust": {
+      "vendor": "cloudflare",
+      "product": "zerotrust",
+      "dataset": "cloudflare_zerotrust_raw",
+      "contentPack": "CloudflareZeroTrust",
+      "modelingRules": [
+        "Packs/CloudflareZeroTrust/ModelingRules/CloudflareZeroTrust/CloudflareZeroTrust.xif"
+      ],
+      "splitEvidence": "ingest-lexicon"
+    },
+    "code42_code42": {
+      "vendor": "code42",
+      "product": "code42",
+      "dataset": "code42_code42_raw",
+      "contentPack": "Code42",
+      "modelingRules": [
+        "Packs/Code42/ModelingRules/Code42/Code42.xif"
+      ],
+      "splitEvidence": "doubled-name"
+    },
+    "cyberark_epm": {
+      "vendor": "cyberark",
+      "product": "epm",
+      "dataset": "cyberark_epm_raw",
+      "contentPack": "CyberArkEPM",
+      "modelingRules": [
+        "Packs/CyberArkEPM/ModelingRules/CyberArkEPM/CyberArkEPM.xif"
+      ],
+      "splitEvidence": "ingest-lexicon"
+    },
+    "cyberark_isp": {
+      "vendor": "cyberark",
+      "product": "isp",
+      "dataset": "cyberark_isp_raw",
+      "contentPack": "CyberArkPAS",
+      "modelingRules": [
+        "Packs/CyberArkPAS/ModelingRules/CyberArkISP/CyberArkISP.xif"
+      ],
+      "splitEvidence": "ingest-lexicon"
+    },
+    "cyberark_pta": {
+      "vendor": "cyberark",
+      "product": "pta",
+      "dataset": "cyberark_pta_raw",
+      "contentPack": "CyberArk_Privileged_Threat_Analytics",
+      "modelingRules": [
+        "Packs/CyberArk_Privileged_Threat_Analytics/ModelingRules/CyberArk_Privileged_Threat_Analytics/CyberArk_Privileged_Threat_Analytics.xif"
+      ],
+      "splitEvidence": "ingest-lexicon"
+    },
+    "darktrace_darktrace": {
+      "vendor": "darktrace",
+      "product": "darktrace",
+      "dataset": "darktrace_darktrace_raw",
+      "contentPack": "Darktrace",
+      "modelingRules": [
+        "Packs/Darktrace/ModelingRules/DarktraceEventCollector/DarktraceEventCollector.xif"
+      ],
+      "splitEvidence": "doubled-name"
+    },
+    "docusign_docusign": {
+      "vendor": "docusign",
+      "product": "docusign",
+      "dataset": "docusign_docusign_raw",
+      "contentPack": "Docusign",
+      "modelingRules": [
+        "Packs/Docusign/ModelingRules/Docusign/Docusign.xif"
+      ],
+      "splitEvidence": "doubled-name"
+    },
+    "dropbox_dropbox": {
+      "vendor": "dropbox",
+      "product": "dropbox",
+      "dataset": "dropbox_dropbox_raw",
+      "contentPack": "Dropbox",
+      "modelingRules": [
+        "Packs/Dropbox/ModelingRules/DropboxEventCollector/DropboxEventCollector.xif",
+        "Packs/Dropbox/ModelingRules/DropboxEventCollector_1_3/DropboxEventCollector_1_3.xif"
+      ],
+      "splitEvidence": "doubled-name"
+    },
+    "druva_druva": {
+      "vendor": "druva",
+      "product": "druva",
+      "dataset": "druva_druva_raw",
+      "contentPack": "Druva",
+      "modelingRules": [
+        "Packs/Druva/ModelingRules/Druva/Druva.xif"
+      ],
+      "splitEvidence": "doubled-name"
+    },
+    "duo_duo": {
+      "vendor": "duo",
+      "product": "duo",
+      "dataset": "duo_duo_raw",
+      "contentPack": "DuoAdminApi",
+      "modelingRules": [
+        "Packs/DuoAdminApi/ModelingRules/DuoModelingRule/DuoModelingRule.xif",
+        "Packs/DuoAdminApi/ModelingRules/DuoModelingRule_1_3/DuoModelingRule_1_3.xif",
+        "Packs/DuoAdminApi/ModelingRules/DuoModelingRule_2_0/DuoModelingRule_2_0.xif",
+        "Packs/DuoAdminApi/ModelingRules/DuoModelingRule_2_11/DuoModelingRule_2_11.xif"
+      ],
+      "splitEvidence": "doubled-name"
+    },
+    "f5_asm": {
+      "vendor": "f5",
+      "product": "asm",
+      "dataset": "f5_asm_raw",
+      "contentPack": "F5ASM",
+      "modelingRules": [
+        "Packs/F5ASM/ModelingRules/F5ASMModelingRules/F5ASMModelingRules.xif",
+        "Packs/F5ASM/ModelingRules/F5ASMModelingRules_1_3/F5ASMModelingRules_1_3.xif"
+      ],
+      "splitEvidence": "ingest-lexicon"
+    },
+    "fireeye_etp": {
+      "vendor": "fireeye",
+      "product": "etp",
+      "dataset": "fireeye_etp_raw",
+      "contentPack": "FireEyeETP",
+      "modelingRules": [
+        "Packs/FireEyeETP/ModelingRules/FireEyeETPEventCollectorModelingRules/FireEyeETPEventCollectorModelingRules.xif"
+      ],
+      "splitEvidence": "ingest-lexicon"
+    },
+    "fireeye_hx_audit": {
+      "vendor": "fireeye",
+      "product": "hx_audit",
+      "dataset": "fireeye_hx_audit_raw",
+      "contentPack": "FireEyeHX",
+      "modelingRules": [
+        "Packs/FireEyeHX/ModelingRules/FireEyeHXModelingRules/FireEyeHXModelingRules.xif"
+      ],
+      "splitEvidence": "sibling-ingest"
+    },
+    "forcepoint_email_security": {
+      "vendor": "forcepoint",
+      "product": "email_security",
+      "dataset": "forcepoint_email_security_raw",
+      "contentPack": "ForcepointEmailSecurity",
+      "modelingRules": [
+        "Packs/ForcepointEmailSecurity/ModelingRules/ForcepointEmailSecurity/ForcepointEmailSecurity.xif"
+      ],
+      "splitEvidence": "ingest-lexicon"
+    },
+    "forcepoint_firewall": {
+      "vendor": "forcepoint",
+      "product": "firewall",
+      "dataset": "forcepoint_firewall_raw",
+      "contentPack": "Forcepoint",
+      "modelingRules": [
+        "Packs/Forcepoint/ModelingRules/Forcepoint/Forcepoint.xif"
+      ],
+      "splitEvidence": "ingest-lexicon"
+    },
+    "forcepoint_security": {
+      "vendor": "forcepoint",
+      "product": "security",
+      "dataset": "forcepoint_security_raw",
+      "contentPack": "ForcepointSWG",
+      "modelingRules": [
+        "Packs/ForcepointSWG/ModelingRules/ForcepointSWG_1_3/ForcepointSWG_1_3.xif"
+      ],
+      "splitEvidence": "ingest-lexicon"
+    },
+    "google_apigee": {
+      "vendor": "google",
+      "product": "apigee",
+      "dataset": "google_apigee_raw",
+      "contentPack": "GoogleApigee",
+      "modelingRules": [
+        "Packs/GoogleApigee/ModelingRules/GoogleApigee/GoogleApigee.xif"
+      ],
+      "splitEvidence": "ingest-lexicon"
+    },
+    "halcyon_halcyon": {
+      "vendor": "halcyon",
+      "product": "halcyon",
+      "dataset": "halcyon_halcyon_raw",
+      "contentPack": "Halcyon",
+      "modelingRules": [
+        "Packs/Halcyon/ModelingRules/Halcyon/Halcyon.xif"
+      ],
+      "splitEvidence": "doubled-name"
+    },
+    "ibm_aix": {
+      "vendor": "ibm",
+      "product": "aix",
+      "dataset": "ibm_aix_raw",
+      "contentPack": "IBM_AIX",
+      "modelingRules": [
+        "Packs/IBM_AIX/ModelingRules/IBM_AIX/IBM_AIX.xif"
+      ],
+      "splitEvidence": "ingest-lexicon"
+    },
+    "ibm_guardium": {
+      "vendor": "ibm",
+      "product": "guardium",
+      "dataset": "ibm_guardium_raw",
+      "contentPack": "IBMGuardium",
+      "modelingRules": [
+        "Packs/IBMGuardium/ModelingRules/IBMGuardium/IBMGuardium.xif"
+      ],
+      "splitEvidence": "ingest-lexicon"
+    },
+    "ibm_guardium_dsc": {
+      "vendor": "ibm",
+      "product": "guardium_dsc",
+      "dataset": "ibm_guardium_dsc_raw",
+      "contentPack": "IBMGuardium",
+      "modelingRules": [
+        "Packs/IBMGuardium/ModelingRules/IBMGuardium/IBMGuardium.xif"
+      ],
+      "splitEvidence": "ingest-lexicon"
+    },
+    "ibm_maas360_security": {
+      "vendor": "ibm",
+      "product": "maas360_security",
+      "dataset": "ibm_maas360_security_raw",
+      "contentPack": "IBMMaaS360Security",
+      "modelingRules": [
+        "Packs/IBMMaaS360Security/ModelingRules/IBMMaaS360Security/IBMMaaS360Security.xif",
+        "Packs/IBMMaaS360Security/ModelingRules/IBMMaaS360Security_2_11/IBMMaaS360Security_2_11.xif"
+      ],
+      "splitEvidence": "ingest-lexicon"
+    },
+    "ibm_storagescale": {
+      "vendor": "ibm",
+      "product": "storagescale",
+      "dataset": "ibm_storagescale_raw",
+      "contentPack": "IBMStorageScale",
+      "modelingRules": [
+        "Packs/IBMStorageScale/ModelingRules/IBMStorageScale/IBMStorageScale.xif"
+      ],
+      "splitEvidence": "ingest-lexicon"
+    },
+    "illusive_illusive": {
+      "vendor": "illusive",
+      "product": "illusive",
+      "dataset": "illusive_illusive_raw",
+      "contentPack": "IllusiveNetworks",
+      "modelingRules": [
+        "Packs/IllusiveNetworks/ModelingRules/IllusiveNetworks/IllusiveNetworks.xif",
+        "Packs/IllusiveNetworks/ModelingRules/IllusiveNetworks_1_3/IllusiveNetworks_1_3.xif"
+      ],
+      "splitEvidence": "doubled-name"
+    },
+    "infoblox_bloxone_threat_defense": {
+      "vendor": "infoblox",
+      "product": "bloxone_threat_defense",
+      "dataset": "infoblox_bloxone_threat_defense_raw",
+      "contentPack": "InfobloxBloxOne",
+      "modelingRules": [
+        "Packs/InfobloxBloxOne/ModelingRules/InfobloxBloxOneThreatDefense/InfobloxBloxOneThreatDefense.xif"
+      ],
+      "splitEvidence": "ingest-lexicon"
+    },
+    "ironscales_ironscales": {
+      "vendor": "ironscales",
+      "product": "ironscales",
+      "dataset": "ironscales_ironscales_raw",
+      "contentPack": "IronscalesEventCollector",
+      "modelingRules": [
+        "Packs/IronscalesEventCollector/ModelingRules/IronscalesModelingRules/IronscalesModelingRules.xif"
+      ],
+      "splitEvidence": "doubled-name"
+    },
+    "jamf_protect": {
+      "vendor": "jamf",
+      "product": "protect",
+      "dataset": "jamf_protect_raw",
+      "contentPack": "JamfProtect",
+      "modelingRules": [
+        "Packs/JamfProtect/ModelingRules/JamfProtect/JamfProtect.xif"
+      ],
+      "splitEvidence": "ingest-lexicon"
+    },
+    "manageengine_adauditplus": {
+      "vendor": "manageengine",
+      "product": "adauditplus",
+      "dataset": "manageengine_adauditplus_raw",
+      "contentPack": "ManageEngine-ADAudit",
+      "modelingRules": [
+        "Packs/ManageEngine-ADAudit/ModelingRules/ManageEngine-ADAudit_1_3/ManageEngine-ADAudit_1_3.xif"
+      ],
+      "splitEvidence": "ingest-lexicon"
+    },
+    "mcafee_database_security": {
+      "vendor": "mcafee",
+      "product": "database_security",
+      "dataset": "mcafee_database_security_raw",
+      "contentPack": "McAfeeDatabaseSecurity",
+      "modelingRules": [
+        "Packs/McAfeeDatabaseSecurity/ModelingRules/McAfeeDatabaseSecurity/McAfeeDatabaseSecurity.xif"
+      ],
+      "splitEvidence": "ingest-lexicon"
+    },
+    "microsoft_ata": {
+      "vendor": "microsoft",
+      "product": "ata",
+      "dataset": "microsoft_ata_raw",
+      "contentPack": "MicrosoftAdvancedThreatAnalytics",
+      "modelingRules": [
+        "Packs/MicrosoftAdvancedThreatAnalytics/ModelingRules/MicrosoftAdvancedThreatAnalytics/MicrosoftAdvancedThreatAnalytics.xif"
+      ],
+      "splitEvidence": "ingest-lexicon"
+    },
+    "microsoft_azure_atp": {
+      "vendor": "microsoft",
+      "product": "azure_atp",
+      "dataset": "microsoft_azure_atp_raw",
+      "contentPack": "MicrosoftDefenderforIdentity",
+      "modelingRules": [
+        "Packs/MicrosoftDefenderforIdentity/ModelingRules/MicrosoftDefenderforIdentity/MicrosoftDefenderforIdentity.xif"
+      ],
+      "splitEvidence": "ingest-lexicon"
+    },
+    "monday_monday": {
+      "vendor": "monday",
+      "product": "monday",
+      "dataset": "monday_monday_raw",
+      "contentPack": "Monday",
+      "modelingRules": [
+        "Packs/Monday/ModelingRules/Monday/Monday.xif"
+      ],
+      "splitEvidence": "doubled-name"
+    },
+    "msft_adfs": {
+      "vendor": "msft",
+      "product": "adfs",
+      "dataset": "msft_adfs_raw",
+      "contentPack": "MicrosoftADFS",
+      "modelingRules": [
+        "Packs/MicrosoftADFS/ModelingRules/MicrosoftADFS/MicrosoftADFS.xif"
+      ],
+      "splitEvidence": "ingest-lexicon"
+    },
+    "msft_ecm": {
+      "vendor": "msft",
+      "product": "ecm",
+      "dataset": "msft_ecm_raw",
+      "contentPack": "MicrosoftECM",
+      "modelingRules": [
+        "Packs/MicrosoftECM/ModelingRules/MicrosoftECM/MicrosoftECM.xif",
+        "Packs/MicrosoftECM/ModelingRules/MicrosoftECM_1_3/MicrosoftECM_1_3.xif"
+      ],
+      "splitEvidence": "ingest-lexicon"
+    },
+    "msft_radius": {
+      "vendor": "msft",
+      "product": "radius",
+      "dataset": "msft_radius_raw",
+      "contentPack": "MicrosoftNPS",
+      "modelingRules": [
+        "Packs/MicrosoftNPS/ModelingRules/MicrosoftNPS/MicrosoftNPS.xif"
+      ],
+      "splitEvidence": "sibling-ingest"
+    },
+    "netskope_netskope": {
+      "vendor": "netskope",
+      "product": "netskope",
+      "dataset": "netskope_netskope_raw",
+      "contentPack": "Netskope",
+      "modelingRules": [
+        "Packs/Netskope/ModelingRules/NetskopeEventCollector/NetskopeEventCollector.xif",
+        "Packs/Netskope/ModelingRules/NetskopeEventCollector_1_3/NetskopeEventCollector_1_3.xif"
+      ],
+      "splitEvidence": "doubled-name"
+    },
+    "observeit_observeit": {
+      "vendor": "observeit",
+      "product": "observeit",
+      "dataset": "observeit_observeit_raw",
+      "contentPack": "ProofpointObserveIT",
+      "modelingRules": [
+        "Packs/ProofpointObserveIT/ModelingRules/ProofpointObserveIT/ProofpointObserveIT.xif"
+      ],
+      "splitEvidence": "doubled-name"
+    },
+    "okta_asa": {
+      "vendor": "okta",
+      "product": "asa",
+      "dataset": "okta_asa_raw",
+      "contentPack": "OktaASA",
+      "modelingRules": [
+        "Packs/OktaASA/ModelingRules/OktaASA/OktaASA.xif"
+      ],
+      "splitEvidence": "ingest-lexicon"
+    },
+    "okta_auth0": {
+      "vendor": "okta",
+      "product": "auth0",
+      "dataset": "okta_auth0_raw",
+      "contentPack": "OktaAuth0",
+      "modelingRules": [
+        "Packs/OktaAuth0/ModelingRules/OktaAuth0ModelingRules/OktaAuth0ModelingRules.xif"
+      ],
+      "splitEvidence": "ingest-lexicon"
+    },
+    "oracle_cloud_infrastructure": {
+      "vendor": "oracle",
+      "product": "cloud_infrastructure",
+      "dataset": "oracle_cloud_infrastructure_raw",
+      "contentPack": "OracleCloudInfrastructure",
+      "modelingRules": [
+        "Packs/OracleCloudInfrastructure/ModelingRules/OracleCloudInfrastructureModelingRules/OracleCloudInfrastructureModelingRules.xif"
+      ],
+      "splitEvidence": "ingest-lexicon"
+    },
+    "portnox_portnox": {
+      "vendor": "portnox",
+      "product": "portnox",
+      "dataset": "portnox_portnox_raw",
+      "contentPack": "Portnox",
+      "modelingRules": [
+        "Packs/Portnox/ModelingRules/Portnox_1_3/Portnox_1_3.xif"
+      ],
+      "splitEvidence": "doubled-name"
+    },
+    "proofpoint_isolation": {
+      "vendor": "proofpoint",
+      "product": "isolation",
+      "dataset": "proofpoint_isolation_raw",
+      "contentPack": "ProofpointIsolation",
+      "modelingRules": [
+        "Packs/ProofpointIsolation/ModelingRules/ProofpointIsolation/ProofpointIsolation.xif"
+      ],
+      "splitEvidence": "ingest-lexicon"
+    },
+    "qualys_qualys": {
+      "vendor": "qualys",
+      "product": "qualys",
+      "dataset": "qualys_qualys_raw",
+      "contentPack": "qualys",
+      "modelingRules": [
+        "Packs/qualys/ModelingRules/QualysModelingRules/QualysModelingRules.xif"
+      ],
+      "splitEvidence": "doubled-name"
+    },
+    "radware_cloud_ddos": {
+      "vendor": "radware",
+      "product": "cloud_ddos",
+      "dataset": "radware_cloud_ddos_raw",
+      "contentPack": "RadwareCloudDDoSProtectionServices",
+      "modelingRules": [
+        "Packs/RadwareCloudDDoSProtectionServices/ModelingRules/RadwareCloudDDoSProtectionServices/RadwareCloudDDoSProtectionServices.xif"
+      ],
+      "splitEvidence": "ingest-lexicon"
+    },
+    "runzero_runzero": {
+      "vendor": "runzero",
+      "product": "runzero",
+      "dataset": "runzero_runzero_raw",
+      "contentPack": "RunZero",
+      "modelingRules": [
+        "Packs/RunZero/ModelingRules/RunZeroModelingRules/RunZeroModelingRules.xif"
+      ],
+      "splitEvidence": "doubled-name"
+    },
+    "salesforce_event_audit": {
+      "vendor": "salesforce",
+      "product": "event_audit",
+      "dataset": "salesforce_event_audit_raw",
+      "contentPack": "Salesforce",
+      "modelingRules": [
+        "Packs/Salesforce/ModelingRules/SalesforceModelingRule/SalesforceModelingRule.xif"
+      ],
+      "splitEvidence": "sibling-ingest"
+    },
+    "servicenow_servicenow": {
+      "vendor": "servicenow",
+      "product": "servicenow",
+      "dataset": "servicenow_servicenow_raw",
+      "contentPack": "ServiceNow",
+      "modelingRules": [
+        "Packs/ServiceNow/ModelingRules/ServiceNow/ServiceNow.xif"
+      ],
+      "splitEvidence": "doubled-name"
+    },
+    "symantec_cloud_soc": {
+      "vendor": "symantec",
+      "product": "cloud_soc",
+      "dataset": "symantec_cloud_soc_raw",
+      "contentPack": "SymantecCloudSOC",
+      "modelingRules": [
+        "Packs/SymantecCloudSOC/ModelingRules/SymantecCloudSOCModelingRules/SymantecCloudSOCModelingRules.xif"
+      ],
+      "splitEvidence": "ingest-lexicon"
+    },
+    "symantec_dlp": {
+      "vendor": "symantec",
+      "product": "dlp",
+      "dataset": "symantec_dlp_raw",
+      "contentPack": "SymantecDLP",
+      "modelingRules": [
+        "Packs/SymantecDLP/ModelingRules/SymantecDLP/SymantecDLP.xif",
+        "Packs/SymantecDLP/ModelingRules/SymantecDLP_2_11/SymantecDLP_2_11.xif"
+      ],
+      "splitEvidence": "ingest-lexicon"
+    },
+    "symantec_endpoint_security": {
+      "vendor": "symantec",
+      "product": "endpoint_security",
+      "dataset": "symantec_endpoint_security_raw",
+      "contentPack": "SymantecEndpointSecurity",
+      "modelingRules": [
+        "Packs/SymantecEndpointSecurity/ModelingRules/SymantecEndpointSecurity/SymantecEndpointSecurity.xif"
+      ],
+      "splitEvidence": "ingest-lexicon"
+    },
+    "vectra_vectra": {
+      "vendor": "vectra",
+      "product": "vectra",
+      "dataset": "vectra_vectra_raw",
+      "contentPack": "Vectra_AI",
+      "modelingRules": [
+        "Packs/Vectra_AI/ModelingRules/Vectra_AIEventCollector_1_3/Vectra_AIEventCollector_1_3.xif"
+      ],
+      "splitEvidence": "doubled-name"
+    },
+    "vmware_carbon_black_cloud": {
+      "vendor": "vmware",
+      "product": "carbon_black_cloud",
+      "dataset": "vmware_carbon_black_cloud_raw",
+      "contentPack": "CarbonBlackDefense",
+      "modelingRules": [
+        "Packs/CarbonBlackDefense/ModelingRules/CarbonBlackDefense/CarbonBlackDefense.xif",
+        "Packs/CarbonBlackDefense/ModelingRules/CarbonBlackDefense_2_11/CarbonBlackDefense_2_11.xif"
+      ],
+      "splitEvidence": "ingest-lexicon"
+    },
+    "workday_signon": {
+      "vendor": "workday",
+      "product": "signon",
+      "dataset": "workday_signon_raw",
+      "contentPack": "Workday",
+      "modelingRules": [
+        "Packs/Workday/ModelingRules/WorkdayEventCollector/WorkdayEventCollector.xif"
+      ],
+      "splitEvidence": "sibling-ingest"
+    },
+    "zoom_zoom": {
+      "vendor": "zoom",
+      "product": "zoom",
+      "dataset": "zoom_zoom_raw",
+      "contentPack": "Zoom",
+      "modelingRules": [
+        "Packs/Zoom/ModelingRules/Zoom/Zoom.xif"
+      ],
+      "splitEvidence": "doubled-name"
+    },
+    "zscaler_nssfwlog": {
+      "vendor": "zscaler",
+      "product": "nssfwlog",
+      "dataset": "zscaler_nssfwlog_raw",
+      "contentPack": "Zscaler",
+      "modelingRules": [
+        "Packs/Zscaler/ModelingRules/ZscalerModelingRule_1_3/ZscalerModelingRule_1_3.xif",
+        "Packs/Zscaler/ModelingRules/ZscalerModelingRule_2_11/ZscalerModelingRule_2_11.xif"
+      ],
+      "splitEvidence": "sibling-ingest"
+    },
+    "zscaler_nssweblog": {
+      "vendor": "zscaler",
+      "product": "nssweblog",
+      "dataset": "zscaler_nssweblog_raw",
+      "contentPack": "Zscaler",
+      "modelingRules": [
+        "Packs/Zscaler/ModelingRules/ZscalerModelingRule/ZscalerModelingRule.xif",
+        "Packs/Zscaler/ModelingRules/ZscalerModelingRule_1_3/ZscalerModelingRule_1_3.xif",
+        "Packs/Zscaler/ModelingRules/ZscalerModelingRule_2_11/ZscalerModelingRule_2_11.xif"
+      ],
+      "splitEvidence": "sibling-ingest"
+    },
+    "zscaler_zpa": {
+      "vendor": "zscaler",
+      "product": "zpa",
+      "dataset": "zscaler_zpa_raw",
+      "contentPack": "ZscalerZPA",
+      "modelingRules": [
+        "Packs/ZscalerZPA/ModelingRules/ZscalerZPA/ZscalerZPA.xif",
+        "Packs/ZscalerZPA/ModelingRules/ZscalerZPA_1_3/ZscalerZPA_1_3.xif"
+      ],
+      "splitEvidence": "ingest-lexicon"
+    }
+  },
+  "modelSourcesUnsplit": [
+    "abnormal_security_email_protection_raw",
+    "admin_by_request_raw",
+    "anthropic_claude_raw",
+    "apple_macos_raw",
+    "aruba_central_raw",
+    "avaya_communication_manager_raw",
+    "bitwarden_password_manager_raw",
+    "bloodhound_enterprise_raw",
+    "check_point_application_control_raw",
+    "check_point_identity_awareness_raw",
+    "check_point_smartdefense_raw",
+    "check_point_url_filtering_raw",
+    "check_point_vpn_1_firewall_1_raw",
+    "claroty_ctd_raw",
+    "cohesity_helios_raw",
+    "cybelangel_platform_raw",
+    "cyfirma_decyfir_raw",
+    "digital_guardian_arc_raw",
+    "dragos_platform_raw",
+    "exabeam_threat_center_raw",
+    "extrahop_revealx_raw",
+    "forescout_technologies_counteract_raw",
+    "genesys_cloud_raw",
+    "genetec_security_center_raw",
+    "gitguardian_enterprise_raw",
+    "hpe_switch_raw",
+    "imanage_threat_raw",
+    "incapsula_siemintegration_raw",
+    "keeper_security_raw",
+    "knowbe4_kmsat_raw",
+    "lancope_stealthwatch_raw",
+    "lenels2_netbox_raw",
+    "lookout_mobile_endpoint_security_raw",
+    "manage_engine_raw",
+    "menlo_security_ip_raw",
+    "mongodb_atlas_raw",
+    "netbox_irm_raw",
+    "onelogin_iam_raw",
+    "onemodel_raw",
+    "openai_admin_audit_raw",
+    "openai_chatgpt_compliance_raw",
+    "orca_security_raw",
+    "qualys_assets_raw",
+    "recorded_future_intelligence_cloud_raw",
+    "reliaquest_greymatter_drp_raw",
+    "retarus_secure_email_gateway_raw",
+    "rsa_securid_raw",
+    "sailpoint_identitynow_raw",
+    "saviynt_eic_raw",
+    "sentinelone_xdr_raw",
+    "shodan_banner_raw",
+    "teamviewer_tensor_raw",
+    "tenable_io_raw",
+    "tenable_io_vulnerabilities_raw",
+    "thinkst_canary_raw",
+    "thycotic_alm_raw",
+    "thycotic_software_secret_server_raw",
+    "tippingpoint_unityone_raw",
+    "trend_micro_deep_security_agent_raw",
+    "trend_micro_deep_security_manager_raw",
+    "trend_micro_email_security_raw",
+    "trend_micro_vision_one_raw",
+    "ubiquiti_unifi_raw",
+    "watchguard_xtm_raw",
+    "withsecure_endpoint_protection_raw",
+    "zeronetworks_segment_raw"
+  ]
+}

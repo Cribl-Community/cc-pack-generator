@@ -1,0 +1,60 @@
+{
+  "name": "XSIAM-All-CEF-Formatted-Events",
+  "kind": "generic",
+  "pattern": "cef_extract",
+  "sourceIdField": "__sourceidentifier",
+  "sourceIdentifier": "af01292940d7426594d3d3e55ae17ee0",
+  "vendor": null,
+  "product": null,
+  "reshapesRaw": false,
+  "sample": null,
+  "upstream": {
+    "pack": "cribl-paloalto-xsiam",
+    "version": "2.1.1",
+    "path": "default/pipelines/XSIAM-All-CEF-Formatted-Events/conf.yml",
+    "sha256": "5e28d6f8ccc2012cd5b66f51cc4fc43daacd1ca7c8576562cf4d007461ead620",
+    "source": "https://packs.cribl.io/packs/cribl-paloalto-xsiam"
+  },
+  "conf": {
+    "output": "default",
+    "streamtags": [],
+    "groups": {},
+    "asyncFuncTimeout": 1000,
+    "description": ""
+  },
+  "functions": [
+    {
+      "id": "comment",
+      "filter": "true",
+      "disabled": null,
+      "conf": {
+        "comment": "Assign the Source-Identifier and regex extract the vendor/product"
+      }
+    },
+    {
+      "id": "eval",
+      "filter": "true",
+      "disabled": null,
+      "conf": {
+        "add": [
+          {
+            "disabled": false,
+            "name": "__sourceidentifier",
+            "value": "'af01292940d7426594d3d3e55ae17ee0'"
+          }
+        ]
+      }
+    },
+    {
+      "id": "regex_extract",
+      "filter": "true",
+      "disabled": null,
+      "conf": {
+        "source": "_raw",
+        "iterations": 100,
+        "overwrite": false,
+        "regex": "/^.*?\\|(?<__vendor>.*?)\\|(?<__product>.*?)\\|/"
+      }
+    }
+  ]
+}

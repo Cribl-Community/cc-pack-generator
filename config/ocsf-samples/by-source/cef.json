@@ -1,0 +1,116 @@
+{
+  "key": "cef",
+  "sourcetype": "cef",
+  "classUid": 4001,
+  "destFormat": "ocsf#network",
+  "source": "generic",
+  "vendorNames": [
+    "cef"
+  ],
+  "provenance": {
+    "samplePack": "fallback",
+    "sampleName": "cef_fallback",
+    "tier": "fallback",
+    "sampleEvents": 5,
+    "emulated": "golden OCSF pipeline, offline emulation of scripts/build-source-ocsf-samples.mjs",
+    "rejected": [
+      {
+        "tier": "reference",
+        "reason": "sample-format-mismatch",
+        "detail": "sampleMatchesSourceExpectation=mismatch"
+      }
+    ]
+  },
+  "events": [
+    {
+      "src_endpoint": {
+        "ip": "10.1.1.15",
+        "port": 52341
+      },
+      "dst_endpoint": {
+        "ip": "8.8.8.8",
+        "port": 443
+      },
+      "connection_info": {
+        "protocol_name": "TCP"
+      },
+      "traffic": {
+        "bytes_in": 2048,
+        "bytes_out": 10240
+      },
+      "actor": {
+        "user": {
+          "name": "jdoe"
+        }
+      },
+      "device": {
+        "hostname": "fw01.acme.local"
+      },
+      "metadata": {
+        "product": {
+          "name": "Security",
+          "vendor_name": "cef"
+        },
+        "version": "1.9.0"
+      },
+      "class_uid": 4001,
+      "category_uid": 4,
+      "activity_id": 1,
+      "type_uid": 400101,
+      "severity_id": 4,
+      "time": 1736692502000
+    },
+    {
+      "src_endpoint": {
+        "ip": "198.51.100.7"
+      },
+      "actor": {
+        "user": {
+          "name": "alice"
+        }
+      },
+      "metadata": {
+        "product": {
+          "name": "Security",
+          "vendor_name": "cef"
+        },
+        "version": "1.9.0"
+      },
+      "class_uid": 4001,
+      "category_uid": 4,
+      "activity_id": 1,
+      "type_uid": 400101,
+      "severity_id": 4,
+      "time": 1736692510000
+    },
+    {
+      "src_endpoint": {
+        "ip": "10.1.2.44",
+        "port": 49213
+      },
+      "dst_endpoint": {
+        "ip": "203.0.113.99",
+        "port": 443
+      },
+      "connection_info": {
+        "protocol_name": "TCP"
+      },
+      "device": {
+        "hostname": "ids02.acme.local"
+      },
+      "metadata": {
+        "product": {
+          "name": "Security",
+          "vendor_name": "cef"
+        },
+        "version": "1.9.0"
+      },
+      "class_uid": 4001,
+      "category_uid": 4,
+      "activity_id": 1,
+      "type_uid": 400101,
+      "severity_id": 6,
+      "time": 1736692515000
+    }
+  ]
+}

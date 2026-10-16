@@ -1,0 +1,1 @@
+[{"_raw":"Apr 17 2020 14:00:31 SNL-ASA-VPN-A01 : %ASA-4-106023: Deny icmp src Inside:10.123.123.123 dst Outside:10.123.123.123 (type 11, code 0) by access-group \"Inside_access_in\" [0x0, 0x0]","_time":1587150031,"cribl_breaker":"Break on newlines"}]

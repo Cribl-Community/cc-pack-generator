@@ -1,0 +1,1637 @@
+[
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_raw": "{\"type\":\"ADDED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"details-v1-9c87b9ff7-n646p.184edfcf7fb132f2\",\"namespace\":\"bookinfo\",\"uid\":\"9bb4a48c-06e8-4e4c-ae17-bc2df05ab436\",\"resourceVersion\":\"1191456\",\"creationTimestamp\":\"2025-07-03T22:56:31Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T22:56:31Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"SandboxChanged\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"bookinfo\",\"name\":\"details-v1-9c87b9ff7-n646p\",\"uid\":\"bc0c7ed9-172a-4e81-8058-d3f36f5c35a9\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1034062\"},\"note\":\"Pod sandbox changed, it will be killed and re-created.\",\"type\":\"Normal\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T22:56:27Z\",\"deprecatedLastTimestamp\":\"2025-07-03T22:56:27Z\",\"deprecatedCount\":1}}",
+    "host": "cribl-edge-4vdvw",
+    "__channel": "-1",
+    "type": "ADDED",
+    "object": {
+      "kind": "Event",
+      "apiVersion": "events.k8s.io/v1",
+      "metadata": {
+        "name": "details-v1-9c87b9ff7-n646p.184edfcf7fb132f2",
+        "namespace": "bookinfo",
+        "uid": "9bb4a48c-06e8-4e4c-ae17-bc2df05ab436",
+        "resourceVersion": "1191456",
+        "creationTimestamp": "2025-07-03T22:56:31Z",
+        "managedFields": [
+          {
+            "manager": "kubelet",
+            "operation": "Update",
+            "apiVersion": "v1",
+            "time": "2025-07-03T22:56:31Z",
+            "fieldsType": "FieldsV1",
+            "fieldsV1": {
+              "f:count": {},
+              "f:firstTimestamp": {},
+              "f:involvedObject": {},
+              "f:lastTimestamp": {},
+              "f:message": {},
+              "f:reason": {},
+              "f:reportingComponent": {},
+              "f:reportingInstance": {},
+              "f:source": {
+                "f:component": {},
+                "f:host": {}
+              },
+              "f:type": {}
+            }
+          }
+        ]
+      },
+      "eventTime": null,
+      "reportingController": "kubelet",
+      "reportingInstance": "minikube",
+      "reason": "SandboxChanged",
+      "regarding": {
+        "kind": "Pod",
+        "namespace": "bookinfo",
+        "name": "details-v1-9c87b9ff7-n646p",
+        "uid": "bc0c7ed9-172a-4e81-8058-d3f36f5c35a9",
+        "apiVersion": "v1",
+        "resourceVersion": "1034062"
+      },
+      "note": "Pod sandbox changed, it will be killed and re-created.",
+      "type": "Normal",
+      "deprecatedSource": {
+        "component": "kubelet",
+        "host": "minikube"
+      },
+      "deprecatedFirstTimestamp": "2025-07-03T22:56:27Z",
+      "deprecatedLastTimestamp": "2025-07-03T22:56:27Z",
+      "deprecatedCount": 1
+    },
+    "__isBroken": true,
+    "__raw": "{\"type\":\"ADDED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"details-v1-9c87b9ff7-n646p.184edfcf7fb132f2\",\"namespace\":\"bookinfo\",\"uid\":\"9bb4a48c-06e8-4e4c-ae17-bc2df05ab436\",\"resourceVersion\":\"1191456\",\"creationTimestamp\":\"2025-07-03T22:56:31Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T22:56:31Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"SandboxChanged\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"bookinfo\",\"name\":\"details-v1-9c87b9ff7-n646p\",\"uid\":\"bc0c7ed9-172a-4e81-8058-d3f36f5c35a9\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1034062\"},\"note\":\"Pod sandbox changed, it will be killed and re-created.\",\"type\":\"Normal\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T22:56:27Z\",\"deprecatedLastTimestamp\":\"2025-07-03T22:56:27Z\",\"deprecatedCount\":1}}",
+    "_time": 1751583391,
+    "cribl_breaker": "k8s events",
+    "__inputId": "cribl_http:cribl-kubernetes.cribl-http-k8s",
+    "__cloned": true,
+    "__synthetic": true,
+    "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+    "__bytes": 4183,
+    "__forwardedAttrs": {
+      "__inputId": "kube_events:in_kube_events",
+      "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+      "cribl_breaker": "k8s events"
+    },
+    "__srcIpPort": "72.107.208.42:60588"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_raw": "{\"type\":\"ADDED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"details-v1-9c87b9ff7-n646p.184edfd031db79e9\",\"namespace\":\"bookinfo\",\"uid\":\"c73636f5-5996-4a45-886b-e5fe45cd1507\",\"resourceVersion\":\"1191643\",\"creationTimestamp\":\"2025-07-03T22:56:33Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T22:56:33Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"Pulled\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"bookinfo\",\"name\":\"details-v1-9c87b9ff7-n646p\",\"uid\":\"bc0c7ed9-172a-4e81-8058-d3f36f5c35a9\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1034062\",\"fieldPath\":\"spec.containers{details}\"},\"note\":\"Container image \\\"docker.io/istio/examples-bookinfo-details-v1:1.16.4\\\" already present on machine\",\"type\":\"Normal\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T22:56:30Z\",\"deprecatedLastTimestamp\":\"2025-07-03T22:56:30Z\",\"deprecatedCount\":1}}",
+    "host": "cribl-edge-4vdvw",
+    "__channel": "-1",
+    "type": "ADDED",
+    "object": {
+      "kind": "Event",
+      "apiVersion": "events.k8s.io/v1",
+      "metadata": {
+        "name": "details-v1-9c87b9ff7-n646p.184edfd031db79e9",
+        "namespace": "bookinfo",
+        "uid": "c73636f5-5996-4a45-886b-e5fe45cd1507",
+        "resourceVersion": "1191643",
+        "creationTimestamp": "2025-07-03T22:56:33Z",
+        "managedFields": [
+          {
+            "manager": "kubelet",
+            "operation": "Update",
+            "apiVersion": "v1",
+            "time": "2025-07-03T22:56:33Z",
+            "fieldsType": "FieldsV1",
+            "fieldsV1": {
+              "f:count": {},
+              "f:firstTimestamp": {},
+              "f:involvedObject": {},
+              "f:lastTimestamp": {},
+              "f:message": {},
+              "f:reason": {},
+              "f:reportingComponent": {},
+              "f:reportingInstance": {},
+              "f:source": {
+                "f:component": {},
+                "f:host": {}
+              },
+              "f:type": {}
+            }
+          }
+        ]
+      },
+      "eventTime": null,
+      "reportingController": "kubelet",
+      "reportingInstance": "minikube",
+      "reason": "Pulled",
+      "regarding": {
+        "kind": "Pod",
+        "namespace": "bookinfo",
+        "name": "details-v1-9c87b9ff7-n646p",
+        "uid": "bc0c7ed9-172a-4e81-8058-d3f36f5c35a9",
+        "apiVersion": "v1",
+        "resourceVersion": "1034062",
+        "fieldPath": "spec.containers{details}"
+      },
+      "note": "Container image \"docker.io/istio/examples-bookinfo-details-v1:1.16.4\" already present on machine",
+      "type": "Normal",
+      "deprecatedSource": {
+        "component": "kubelet",
+        "host": "minikube"
+      },
+      "deprecatedFirstTimestamp": "2025-07-03T22:56:30Z",
+      "deprecatedLastTimestamp": "2025-07-03T22:56:30Z",
+      "deprecatedCount": 1
+    },
+    "__isBroken": true,
+    "__raw": "{\"type\":\"ADDED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"details-v1-9c87b9ff7-n646p.184edfd031db79e9\",\"namespace\":\"bookinfo\",\"uid\":\"c73636f5-5996-4a45-886b-e5fe45cd1507\",\"resourceVersion\":\"1191643\",\"creationTimestamp\":\"2025-07-03T22:56:33Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T22:56:33Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"Pulled\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"bookinfo\",\"name\":\"details-v1-9c87b9ff7-n646p\",\"uid\":\"bc0c7ed9-172a-4e81-8058-d3f36f5c35a9\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1034062\",\"fieldPath\":\"spec.containers{details}\"},\"note\":\"Container image \\\"docker.io/istio/examples-bookinfo-details-v1:1.16.4\\\" already present on machine\",\"type\":\"Normal\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T22:56:30Z\",\"deprecatedLastTimestamp\":\"2025-07-03T22:56:30Z\",\"deprecatedCount\":1}}",
+    "_time": 1751583393,
+    "cribl_breaker": "k8s events",
+    "__inputId": "cribl_http:cribl-kubernetes.cribl-http-k8s",
+    "__cloned": true,
+    "__synthetic": true,
+    "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+    "__bytes": 4424,
+    "__forwardedAttrs": {
+      "__inputId": "kube_events:in_kube_events",
+      "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+      "cribl_breaker": "k8s events"
+    },
+    "__srcIpPort": "72.107.208.42:60588"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_raw": "{\"type\":\"ADDED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"details-v1-9c87b9ff7-n646p.184edfd0844da37c\",\"namespace\":\"bookinfo\",\"uid\":\"e753f05d-f2f8-454b-a7f9-332c8b41b7d2\",\"resourceVersion\":\"1191684\",\"creationTimestamp\":\"2025-07-03T22:56:34Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T22:56:34Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"Created\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"bookinfo\",\"name\":\"details-v1-9c87b9ff7-n646p\",\"uid\":\"bc0c7ed9-172a-4e81-8058-d3f36f5c35a9\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1034062\",\"fieldPath\":\"spec.containers{details}\"},\"note\":\"Created container: details\",\"type\":\"Normal\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T22:56:31Z\",\"deprecatedLastTimestamp\":\"2025-07-03T22:56:31Z\",\"deprecatedCount\":1}}",
+    "host": "cribl-edge-4vdvw",
+    "__channel": "-1",
+    "type": "ADDED",
+    "object": {
+      "kind": "Event",
+      "apiVersion": "events.k8s.io/v1",
+      "metadata": {
+        "name": "details-v1-9c87b9ff7-n646p.184edfd0844da37c",
+        "namespace": "bookinfo",
+        "uid": "e753f05d-f2f8-454b-a7f9-332c8b41b7d2",
+        "resourceVersion": "1191684",
+        "creationTimestamp": "2025-07-03T22:56:34Z",
+        "managedFields": [
+          {
+            "manager": "kubelet",
+            "operation": "Update",
+            "apiVersion": "v1",
+            "time": "2025-07-03T22:56:34Z",
+            "fieldsType": "FieldsV1",
+            "fieldsV1": {
+              "f:count": {},
+              "f:firstTimestamp": {},
+              "f:involvedObject": {},
+              "f:lastTimestamp": {},
+              "f:message": {},
+              "f:reason": {},
+              "f:reportingComponent": {},
+              "f:reportingInstance": {},
+              "f:source": {
+                "f:component": {},
+                "f:host": {}
+              },
+              "f:type": {}
+            }
+          }
+        ]
+      },
+      "eventTime": null,
+      "reportingController": "kubelet",
+      "reportingInstance": "minikube",
+      "reason": "Created",
+      "regarding": {
+        "kind": "Pod",
+        "namespace": "bookinfo",
+        "name": "details-v1-9c87b9ff7-n646p",
+        "uid": "bc0c7ed9-172a-4e81-8058-d3f36f5c35a9",
+        "apiVersion": "v1",
+        "resourceVersion": "1034062",
+        "fieldPath": "spec.containers{details}"
+      },
+      "note": "Created container: details",
+      "type": "Normal",
+      "deprecatedSource": {
+        "component": "kubelet",
+        "host": "minikube"
+      },
+      "deprecatedFirstTimestamp": "2025-07-03T22:56:31Z",
+      "deprecatedLastTimestamp": "2025-07-03T22:56:31Z",
+      "deprecatedCount": 1
+    },
+    "__isBroken": true,
+    "__raw": "{\"type\":\"ADDED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"details-v1-9c87b9ff7-n646p.184edfd0844da37c\",\"namespace\":\"bookinfo\",\"uid\":\"e753f05d-f2f8-454b-a7f9-332c8b41b7d2\",\"resourceVersion\":\"1191684\",\"creationTimestamp\":\"2025-07-03T22:56:34Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T22:56:34Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"Created\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"bookinfo\",\"name\":\"details-v1-9c87b9ff7-n646p\",\"uid\":\"bc0c7ed9-172a-4e81-8058-d3f36f5c35a9\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1034062\",\"fieldPath\":\"spec.containers{details}\"},\"note\":\"Created container: details\",\"type\":\"Normal\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T22:56:31Z\",\"deprecatedLastTimestamp\":\"2025-07-03T22:56:31Z\",\"deprecatedCount\":1}}",
+    "_time": 1751583394,
+    "cribl_breaker": "k8s events",
+    "__inputId": "cribl_http:cribl-kubernetes.cribl-http-k8s",
+    "__cloned": true,
+    "__synthetic": true,
+    "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+    "__bytes": 4203,
+    "__forwardedAttrs": {
+      "__inputId": "kube_events:in_kube_events",
+      "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+      "cribl_breaker": "k8s events"
+    },
+    "__srcIpPort": "72.107.208.42:60588"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_raw": "{\"type\":\"ADDED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"details-v1-9c87b9ff7-n646p.184edfd101a6710c\",\"namespace\":\"bookinfo\",\"uid\":\"fa9d91d4-1927-42b8-a67a-41e63647d0a6\",\"resourceVersion\":\"1191755\",\"creationTimestamp\":\"2025-07-03T22:56:37Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T22:56:37Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"Started\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"bookinfo\",\"name\":\"details-v1-9c87b9ff7-n646p\",\"uid\":\"bc0c7ed9-172a-4e81-8058-d3f36f5c35a9\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1034062\",\"fieldPath\":\"spec.containers{details}\"},\"note\":\"Started container details\",\"type\":\"Normal\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T22:56:33Z\",\"deprecatedLastTimestamp\":\"2025-07-03T22:56:33Z\",\"deprecatedCount\":1}}",
+    "host": "cribl-edge-4vdvw",
+    "__channel": "-1",
+    "type": "ADDED",
+    "object": {
+      "kind": "Event",
+      "apiVersion": "events.k8s.io/v1",
+      "metadata": {
+        "name": "details-v1-9c87b9ff7-n646p.184edfd101a6710c",
+        "namespace": "bookinfo",
+        "uid": "fa9d91d4-1927-42b8-a67a-41e63647d0a6",
+        "resourceVersion": "1191755",
+        "creationTimestamp": "2025-07-03T22:56:37Z",
+        "managedFields": [
+          {
+            "manager": "kubelet",
+            "operation": "Update",
+            "apiVersion": "v1",
+            "time": "2025-07-03T22:56:37Z",
+            "fieldsType": "FieldsV1",
+            "fieldsV1": {
+              "f:count": {},
+              "f:firstTimestamp": {},
+              "f:involvedObject": {},
+              "f:lastTimestamp": {},
+              "f:message": {},
+              "f:reason": {},
+              "f:reportingComponent": {},
+              "f:reportingInstance": {},
+              "f:source": {
+                "f:component": {},
+                "f:host": {}
+              },
+              "f:type": {}
+            }
+          }
+        ]
+      },
+      "eventTime": null,
+      "reportingController": "kubelet",
+      "reportingInstance": "minikube",
+      "reason": "Started",
+      "regarding": {
+        "kind": "Pod",
+        "namespace": "bookinfo",
+        "name": "details-v1-9c87b9ff7-n646p",
+        "uid": "bc0c7ed9-172a-4e81-8058-d3f36f5c35a9",
+        "apiVersion": "v1",
+        "resourceVersion": "1034062",
+        "fieldPath": "spec.containers{details}"
+      },
+      "note": "Started container details",
+      "type": "Normal",
+      "deprecatedSource": {
+        "component": "kubelet",
+        "host": "minikube"
+      },
+      "deprecatedFirstTimestamp": "2025-07-03T22:56:33Z",
+      "deprecatedLastTimestamp": "2025-07-03T22:56:33Z",
+      "deprecatedCount": 1
+    },
+    "__isBroken": true,
+    "__raw": "{\"type\":\"ADDED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"details-v1-9c87b9ff7-n646p.184edfd101a6710c\",\"namespace\":\"bookinfo\",\"uid\":\"fa9d91d4-1927-42b8-a67a-41e63647d0a6\",\"resourceVersion\":\"1191755\",\"creationTimestamp\":\"2025-07-03T22:56:37Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T22:56:37Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"Started\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"bookinfo\",\"name\":\"details-v1-9c87b9ff7-n646p\",\"uid\":\"bc0c7ed9-172a-4e81-8058-d3f36f5c35a9\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1034062\",\"fieldPath\":\"spec.containers{details}\"},\"note\":\"Started container details\",\"type\":\"Normal\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T22:56:33Z\",\"deprecatedLastTimestamp\":\"2025-07-03T22:56:33Z\",\"deprecatedCount\":1}}",
+    "_time": 1751583397,
+    "cribl_breaker": "k8s events",
+    "__inputId": "cribl_http:cribl-kubernetes.cribl-http-k8s",
+    "__cloned": true,
+    "__synthetic": true,
+    "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+    "__bytes": 4200,
+    "__forwardedAttrs": {
+      "__inputId": "kube_events:in_kube_events",
+      "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+      "cribl_breaker": "k8s events"
+    },
+    "__srcIpPort": "72.107.208.42:60588"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_raw": "{\"type\":\"ADDED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"productpage-v1-76bbd54865-ddh22.184edfcf7fc1046d\",\"namespace\":\"bookinfo\",\"uid\":\"e62b609f-7681-408f-9e20-bc109a568ef7\",\"resourceVersion\":\"1191459\",\"creationTimestamp\":\"2025-07-03T22:56:31Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T22:56:31Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"SandboxChanged\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"bookinfo\",\"name\":\"productpage-v1-76bbd54865-ddh22\",\"uid\":\"d4667c5c-8457-4c23-9a60-c1da2aa10111\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1033950\"},\"note\":\"Pod sandbox changed, it will be killed and re-created.\",\"type\":\"Normal\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T22:56:27Z\",\"deprecatedLastTimestamp\":\"2025-07-03T22:56:27Z\",\"deprecatedCount\":1}}",
+    "host": "cribl-edge-4vdvw",
+    "__channel": "-1",
+    "type": "ADDED",
+    "object": {
+      "kind": "Event",
+      "apiVersion": "events.k8s.io/v1",
+      "metadata": {
+        "name": "productpage-v1-76bbd54865-ddh22.184edfcf7fc1046d",
+        "namespace": "bookinfo",
+        "uid": "e62b609f-7681-408f-9e20-bc109a568ef7",
+        "resourceVersion": "1191459",
+        "creationTimestamp": "2025-07-03T22:56:31Z",
+        "managedFields": [
+          {
+            "manager": "kubelet",
+            "operation": "Update",
+            "apiVersion": "v1",
+            "time": "2025-07-03T22:56:31Z",
+            "fieldsType": "FieldsV1",
+            "fieldsV1": {
+              "f:count": {},
+              "f:firstTimestamp": {},
+              "f:involvedObject": {},
+              "f:lastTimestamp": {},
+              "f:message": {},
+              "f:reason": {},
+              "f:reportingComponent": {},
+              "f:reportingInstance": {},
+              "f:source": {
+                "f:component": {},
+                "f:host": {}
+              },
+              "f:type": {}
+            }
+          }
+        ]
+      },
+      "eventTime": null,
+      "reportingController": "kubelet",
+      "reportingInstance": "minikube",
+      "reason": "SandboxChanged",
+      "regarding": {
+        "kind": "Pod",
+        "namespace": "bookinfo",
+        "name": "productpage-v1-76bbd54865-ddh22",
+        "uid": "d4667c5c-8457-4c23-9a60-c1da2aa10111",
+        "apiVersion": "v1",
+        "resourceVersion": "1033950"
+      },
+      "note": "Pod sandbox changed, it will be killed and re-created.",
+      "type": "Normal",
+      "deprecatedSource": {
+        "component": "kubelet",
+        "host": "minikube"
+      },
+      "deprecatedFirstTimestamp": "2025-07-03T22:56:27Z",
+      "deprecatedLastTimestamp": "2025-07-03T22:56:27Z",
+      "deprecatedCount": 1
+    },
+    "__isBroken": true,
+    "__raw": "{\"type\":\"ADDED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"productpage-v1-76bbd54865-ddh22.184edfcf7fc1046d\",\"namespace\":\"bookinfo\",\"uid\":\"e62b609f-7681-408f-9e20-bc109a568ef7\",\"resourceVersion\":\"1191459\",\"creationTimestamp\":\"2025-07-03T22:56:31Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T22:56:31Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"SandboxChanged\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"bookinfo\",\"name\":\"productpage-v1-76bbd54865-ddh22\",\"uid\":\"d4667c5c-8457-4c23-9a60-c1da2aa10111\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1033950\"},\"note\":\"Pod sandbox changed, it will be killed and re-created.\",\"type\":\"Normal\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T22:56:27Z\",\"deprecatedLastTimestamp\":\"2025-07-03T22:56:27Z\",\"deprecatedCount\":1}}",
+    "_time": 1751583391,
+    "cribl_breaker": "k8s events",
+    "__inputId": "cribl_http:cribl-kubernetes.cribl-http-k8s",
+    "__cloned": true,
+    "__synthetic": true,
+    "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+    "__bytes": 4213,
+    "__forwardedAttrs": {
+      "__inputId": "kube_events:in_kube_events",
+      "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+      "cribl_breaker": "k8s events"
+    },
+    "__srcIpPort": "72.107.208.42:60588"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_raw": "{\"type\":\"ADDED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"productpage-v1-76bbd54865-ddh22.184edfd072f1d4e6\",\"namespace\":\"bookinfo\",\"uid\":\"959265bb-27db-4164-8904-9d0d4ac8364a\",\"resourceVersion\":\"1191680\",\"creationTimestamp\":\"2025-07-03T22:56:34Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T22:56:34Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"Pulled\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"bookinfo\",\"name\":\"productpage-v1-76bbd54865-ddh22\",\"uid\":\"d4667c5c-8457-4c23-9a60-c1da2aa10111\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1033950\",\"fieldPath\":\"spec.containers{productpage}\"},\"note\":\"Container image \\\"docker.io/istio/examples-bookinfo-productpage-v1:1.16.4\\\" already present on machine\",\"type\":\"Normal\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T22:56:31Z\",\"deprecatedLastTimestamp\":\"2025-07-03T22:56:31Z\",\"deprecatedCount\":1}}",
+    "host": "cribl-edge-4vdvw",
+    "__channel": "-1",
+    "type": "ADDED",
+    "object": {
+      "kind": "Event",
+      "apiVersion": "events.k8s.io/v1",
+      "metadata": {
+        "name": "productpage-v1-76bbd54865-ddh22.184edfd072f1d4e6",
+        "namespace": "bookinfo",
+        "uid": "959265bb-27db-4164-8904-9d0d4ac8364a",
+        "resourceVersion": "1191680",
+        "creationTimestamp": "2025-07-03T22:56:34Z",
+        "managedFields": [
+          {
+            "manager": "kubelet",
+            "operation": "Update",
+            "apiVersion": "v1",
+            "time": "2025-07-03T22:56:34Z",
+            "fieldsType": "FieldsV1",
+            "fieldsV1": {
+              "f:count": {},
+              "f:firstTimestamp": {},
+              "f:involvedObject": {},
+              "f:lastTimestamp": {},
+              "f:message": {},
+              "f:reason": {},
+              "f:reportingComponent": {},
+              "f:reportingInstance": {},
+              "f:source": {
+                "f:component": {},
+                "f:host": {}
+              },
+              "f:type": {}
+            }
+          }
+        ]
+      },
+      "eventTime": null,
+      "reportingController": "kubelet",
+      "reportingInstance": "minikube",
+      "reason": "Pulled",
+      "regarding": {
+        "kind": "Pod",
+        "namespace": "bookinfo",
+        "name": "productpage-v1-76bbd54865-ddh22",
+        "uid": "d4667c5c-8457-4c23-9a60-c1da2aa10111",
+        "apiVersion": "v1",
+        "resourceVersion": "1033950",
+        "fieldPath": "spec.containers{productpage}"
+      },
+      "note": "Container image \"docker.io/istio/examples-bookinfo-productpage-v1:1.16.4\" already present on machine",
+      "type": "Normal",
+      "deprecatedSource": {
+        "component": "kubelet",
+        "host": "minikube"
+      },
+      "deprecatedFirstTimestamp": "2025-07-03T22:56:31Z",
+      "deprecatedLastTimestamp": "2025-07-03T22:56:31Z",
+      "deprecatedCount": 1
+    },
+    "__isBroken": true,
+    "__raw": "{\"type\":\"ADDED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"productpage-v1-76bbd54865-ddh22.184edfd072f1d4e6\",\"namespace\":\"bookinfo\",\"uid\":\"959265bb-27db-4164-8904-9d0d4ac8364a\",\"resourceVersion\":\"1191680\",\"creationTimestamp\":\"2025-07-03T22:56:34Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T22:56:34Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"Pulled\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"bookinfo\",\"name\":\"productpage-v1-76bbd54865-ddh22\",\"uid\":\"d4667c5c-8457-4c23-9a60-c1da2aa10111\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1033950\",\"fieldPath\":\"spec.containers{productpage}\"},\"note\":\"Container image \\\"docker.io/istio/examples-bookinfo-productpage-v1:1.16.4\\\" already present on machine\",\"type\":\"Normal\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T22:56:31Z\",\"deprecatedLastTimestamp\":\"2025-07-03T22:56:31Z\",\"deprecatedCount\":1}}",
+    "_time": 1751583394,
+    "cribl_breaker": "k8s events",
+    "__inputId": "cribl_http:cribl-kubernetes.cribl-http-k8s",
+    "__cloned": true,
+    "__synthetic": true,
+    "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+    "__bytes": 4478,
+    "__forwardedAttrs": {
+      "__inputId": "kube_events:in_kube_events",
+      "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+      "cribl_breaker": "k8s events"
+    },
+    "__srcIpPort": "72.107.208.42:60588"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_raw": "{\"type\":\"ADDED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"productpage-v1-76bbd54865-ddh22.184edfd0c0429c66\",\"namespace\":\"bookinfo\",\"uid\":\"e8ea79fa-94f3-49ef-89cf-fd2c4b5ca9cc\",\"resourceVersion\":\"1191711\",\"creationTimestamp\":\"2025-07-03T22:56:35Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T22:56:35Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"Created\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"bookinfo\",\"name\":\"productpage-v1-76bbd54865-ddh22\",\"uid\":\"d4667c5c-8457-4c23-9a60-c1da2aa10111\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1033950\",\"fieldPath\":\"spec.containers{productpage}\"},\"note\":\"Created container: productpage\",\"type\":\"Normal\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T22:56:32Z\",\"deprecatedLastTimestamp\":\"2025-07-03T22:56:32Z\",\"deprecatedCount\":1}}",
+    "host": "cribl-edge-4vdvw",
+    "__channel": "-1",
+    "type": "ADDED",
+    "object": {
+      "kind": "Event",
+      "apiVersion": "events.k8s.io/v1",
+      "metadata": {
+        "name": "productpage-v1-76bbd54865-ddh22.184edfd0c0429c66",
+        "namespace": "bookinfo",
+        "uid": "e8ea79fa-94f3-49ef-89cf-fd2c4b5ca9cc",
+        "resourceVersion": "1191711",
+        "creationTimestamp": "2025-07-03T22:56:35Z",
+        "managedFields": [
+          {
+            "manager": "kubelet",
+            "operation": "Update",
+            "apiVersion": "v1",
+            "time": "2025-07-03T22:56:35Z",
+            "fieldsType": "FieldsV1",
+            "fieldsV1": {
+              "f:count": {},
+              "f:firstTimestamp": {},
+              "f:involvedObject": {},
+              "f:lastTimestamp": {},
+              "f:message": {},
+              "f:reason": {},
+              "f:reportingComponent": {},
+              "f:reportingInstance": {},
+              "f:source": {
+                "f:component": {},
+                "f:host": {}
+              },
+              "f:type": {}
+            }
+          }
+        ]
+      },
+      "eventTime": null,
+      "reportingController": "kubelet",
+      "reportingInstance": "minikube",
+      "reason": "Created",
+      "regarding": {
+        "kind": "Pod",
+        "namespace": "bookinfo",
+        "name": "productpage-v1-76bbd54865-ddh22",
+        "uid": "d4667c5c-8457-4c23-9a60-c1da2aa10111",
+        "apiVersion": "v1",
+        "resourceVersion": "1033950",
+        "fieldPath": "spec.containers{productpage}"
+      },
+      "note": "Created container: productpage",
+      "type": "Normal",
+      "deprecatedSource": {
+        "component": "kubelet",
+        "host": "minikube"
+      },
+      "deprecatedFirstTimestamp": "2025-07-03T22:56:32Z",
+      "deprecatedLastTimestamp": "2025-07-03T22:56:32Z",
+      "deprecatedCount": 1
+    },
+    "__isBroken": true,
+    "__raw": "{\"type\":\"ADDED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"productpage-v1-76bbd54865-ddh22.184edfd0c0429c66\",\"namespace\":\"bookinfo\",\"uid\":\"e8ea79fa-94f3-49ef-89cf-fd2c4b5ca9cc\",\"resourceVersion\":\"1191711\",\"creationTimestamp\":\"2025-07-03T22:56:35Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T22:56:35Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"Created\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"bookinfo\",\"name\":\"productpage-v1-76bbd54865-ddh22\",\"uid\":\"d4667c5c-8457-4c23-9a60-c1da2aa10111\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1033950\",\"fieldPath\":\"spec.containers{productpage}\"},\"note\":\"Created container: productpage\",\"type\":\"Normal\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T22:56:32Z\",\"deprecatedLastTimestamp\":\"2025-07-03T22:56:32Z\",\"deprecatedCount\":1}}",
+    "_time": 1751583395,
+    "cribl_breaker": "k8s events",
+    "__inputId": "cribl_http:cribl-kubernetes.cribl-http-k8s",
+    "__cloned": true,
+    "__synthetic": true,
+    "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+    "__bytes": 4257,
+    "__forwardedAttrs": {
+      "__inputId": "kube_events:in_kube_events",
+      "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+      "cribl_breaker": "k8s events"
+    },
+    "__srcIpPort": "72.107.208.42:60588"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_raw": "{\"type\":\"ADDED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"productpage-v1-76bbd54865-ddh22.184edfd113f57da7\",\"namespace\":\"bookinfo\",\"uid\":\"4de5dbd4-4886-455f-bf6a-4a17936ff1e9\",\"resourceVersion\":\"1191770\",\"creationTimestamp\":\"2025-07-03T22:56:37Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T22:56:37Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"Started\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"bookinfo\",\"name\":\"productpage-v1-76bbd54865-ddh22\",\"uid\":\"d4667c5c-8457-4c23-9a60-c1da2aa10111\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1033950\",\"fieldPath\":\"spec.containers{productpage}\"},\"note\":\"Started container productpage\",\"type\":\"Normal\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T22:56:34Z\",\"deprecatedLastTimestamp\":\"2025-07-03T22:56:34Z\",\"deprecatedCount\":1}}",
+    "host": "cribl-edge-4vdvw",
+    "__channel": "-1",
+    "type": "ADDED",
+    "object": {
+      "kind": "Event",
+      "apiVersion": "events.k8s.io/v1",
+      "metadata": {
+        "name": "productpage-v1-76bbd54865-ddh22.184edfd113f57da7",
+        "namespace": "bookinfo",
+        "uid": "4de5dbd4-4886-455f-bf6a-4a17936ff1e9",
+        "resourceVersion": "1191770",
+        "creationTimestamp": "2025-07-03T22:56:37Z",
+        "managedFields": [
+          {
+            "manager": "kubelet",
+            "operation": "Update",
+            "apiVersion": "v1",
+            "time": "2025-07-03T22:56:37Z",
+            "fieldsType": "FieldsV1",
+            "fieldsV1": {
+              "f:count": {},
+              "f:firstTimestamp": {},
+              "f:involvedObject": {},
+              "f:lastTimestamp": {},
+              "f:message": {},
+              "f:reason": {},
+              "f:reportingComponent": {},
+              "f:reportingInstance": {},
+              "f:source": {
+                "f:component": {},
+                "f:host": {}
+              },
+              "f:type": {}
+            }
+          }
+        ]
+      },
+      "eventTime": null,
+      "reportingController": "kubelet",
+      "reportingInstance": "minikube",
+      "reason": "Started",
+      "regarding": {
+        "kind": "Pod",
+        "namespace": "bookinfo",
+        "name": "productpage-v1-76bbd54865-ddh22",
+        "uid": "d4667c5c-8457-4c23-9a60-c1da2aa10111",
+        "apiVersion": "v1",
+        "resourceVersion": "1033950",
+        "fieldPath": "spec.containers{productpage}"
+      },
+      "note": "Started container productpage",
+      "type": "Normal",
+      "deprecatedSource": {
+        "component": "kubelet",
+        "host": "minikube"
+      },
+      "deprecatedFirstTimestamp": "2025-07-03T22:56:34Z",
+      "deprecatedLastTimestamp": "2025-07-03T22:56:34Z",
+      "deprecatedCount": 1
+    },
+    "__isBroken": true,
+    "__raw": "{\"type\":\"ADDED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"productpage-v1-76bbd54865-ddh22.184edfd113f57da7\",\"namespace\":\"bookinfo\",\"uid\":\"4de5dbd4-4886-455f-bf6a-4a17936ff1e9\",\"resourceVersion\":\"1191770\",\"creationTimestamp\":\"2025-07-03T22:56:37Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T22:56:37Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"Started\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"bookinfo\",\"name\":\"productpage-v1-76bbd54865-ddh22\",\"uid\":\"d4667c5c-8457-4c23-9a60-c1da2aa10111\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1033950\",\"fieldPath\":\"spec.containers{productpage}\"},\"note\":\"Started container productpage\",\"type\":\"Normal\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T22:56:34Z\",\"deprecatedLastTimestamp\":\"2025-07-03T22:56:34Z\",\"deprecatedCount\":1}}",
+    "_time": 1751583397,
+    "cribl_breaker": "k8s events",
+    "__inputId": "cribl_http:cribl-kubernetes.cribl-http-k8s",
+    "__cloned": true,
+    "__synthetic": true,
+    "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+    "__bytes": 4254,
+    "__forwardedAttrs": {
+      "__inputId": "kube_events:in_kube_events",
+      "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+      "cribl_breaker": "k8s events"
+    },
+    "__srcIpPort": "72.107.208.42:60588"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_raw": "{\"type\":\"ADDED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"ratings-v1-69b6b5fccc-f42dn.184edfcf7fc3f0a3\",\"namespace\":\"bookinfo\",\"uid\":\"5b49e7a2-875f-46ed-aa70-e1a4a7a3628b\",\"resourceVersion\":\"1191461\",\"creationTimestamp\":\"2025-07-03T22:56:31Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T22:56:31Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"SandboxChanged\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"bookinfo\",\"name\":\"ratings-v1-69b6b5fccc-f42dn\",\"uid\":\"5a4d3d9d-28c9-4af6-8905-13f71d9d0887\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1033945\"},\"note\":\"Pod sandbox changed, it will be killed and re-created.\",\"type\":\"Normal\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T22:56:27Z\",\"deprecatedLastTimestamp\":\"2025-07-03T22:56:27Z\",\"deprecatedCount\":1}}",
+    "host": "cribl-edge-4vdvw",
+    "__channel": "-1",
+    "type": "ADDED",
+    "object": {
+      "kind": "Event",
+      "apiVersion": "events.k8s.io/v1",
+      "metadata": {
+        "name": "ratings-v1-69b6b5fccc-f42dn.184edfcf7fc3f0a3",
+        "namespace": "bookinfo",
+        "uid": "5b49e7a2-875f-46ed-aa70-e1a4a7a3628b",
+        "resourceVersion": "1191461",
+        "creationTimestamp": "2025-07-03T22:56:31Z",
+        "managedFields": [
+          {
+            "manager": "kubelet",
+            "operation": "Update",
+            "apiVersion": "v1",
+            "time": "2025-07-03T22:56:31Z",
+            "fieldsType": "FieldsV1",
+            "fieldsV1": {
+              "f:count": {},
+              "f:firstTimestamp": {},
+              "f:involvedObject": {},
+              "f:lastTimestamp": {},
+              "f:message": {},
+              "f:reason": {},
+              "f:reportingComponent": {},
+              "f:reportingInstance": {},
+              "f:source": {
+                "f:component": {},
+                "f:host": {}
+              },
+              "f:type": {}
+            }
+          }
+        ]
+      },
+      "eventTime": null,
+      "reportingController": "kubelet",
+      "reportingInstance": "minikube",
+      "reason": "SandboxChanged",
+      "regarding": {
+        "kind": "Pod",
+        "namespace": "bookinfo",
+        "name": "ratings-v1-69b6b5fccc-f42dn",
+        "uid": "5a4d3d9d-28c9-4af6-8905-13f71d9d0887",
+        "apiVersion": "v1",
+        "resourceVersion": "1033945"
+      },
+      "note": "Pod sandbox changed, it will be killed and re-created.",
+      "type": "Normal",
+      "deprecatedSource": {
+        "component": "kubelet",
+        "host": "minikube"
+      },
+      "deprecatedFirstTimestamp": "2025-07-03T22:56:27Z",
+      "deprecatedLastTimestamp": "2025-07-03T22:56:27Z",
+      "deprecatedCount": 1
+    },
+    "__isBroken": true,
+    "__raw": "{\"type\":\"ADDED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"ratings-v1-69b6b5fccc-f42dn.184edfcf7fc3f0a3\",\"namespace\":\"bookinfo\",\"uid\":\"5b49e7a2-875f-46ed-aa70-e1a4a7a3628b\",\"resourceVersion\":\"1191461\",\"creationTimestamp\":\"2025-07-03T22:56:31Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T22:56:31Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"SandboxChanged\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"bookinfo\",\"name\":\"ratings-v1-69b6b5fccc-f42dn\",\"uid\":\"5a4d3d9d-28c9-4af6-8905-13f71d9d0887\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1033945\"},\"note\":\"Pod sandbox changed, it will be killed and re-created.\",\"type\":\"Normal\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T22:56:27Z\",\"deprecatedLastTimestamp\":\"2025-07-03T22:56:27Z\",\"deprecatedCount\":1}}",
+    "_time": 1751583391,
+    "cribl_breaker": "k8s events",
+    "__inputId": "cribl_http:cribl-kubernetes.cribl-http-k8s",
+    "__cloned": true,
+    "__synthetic": true,
+    "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+    "__bytes": 4189,
+    "__forwardedAttrs": {
+      "__inputId": "kube_events:in_kube_events",
+      "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+      "cribl_breaker": "k8s events"
+    },
+    "__srcIpPort": "72.107.208.42:60588"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_raw": "{\"type\":\"ADDED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"ratings-v1-69b6b5fccc-f42dn.184edfd02590c832\",\"namespace\":\"bookinfo\",\"uid\":\"cb6796ac-f820-4b1b-b6b7-3e47c3af9f1a\",\"resourceVersion\":\"1191609\",\"creationTimestamp\":\"2025-07-03T22:56:33Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T22:56:33Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"Pulled\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"bookinfo\",\"name\":\"ratings-v1-69b6b5fccc-f42dn\",\"uid\":\"5a4d3d9d-28c9-4af6-8905-13f71d9d0887\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1033945\",\"fieldPath\":\"spec.containers{ratings}\"},\"note\":\"Container image \\\"docker.io/istio/examples-bookinfo-ratings-v1:1.16.4\\\" already present on machine\",\"type\":\"Normal\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T22:56:30Z\",\"deprecatedLastTimestamp\":\"2025-07-03T22:56:30Z\",\"deprecatedCount\":1}}",
+    "host": "cribl-edge-4vdvw",
+    "__channel": "-1",
+    "type": "ADDED",
+    "object": {
+      "kind": "Event",
+      "apiVersion": "events.k8s.io/v1",
+      "metadata": {
+        "name": "ratings-v1-69b6b5fccc-f42dn.184edfd02590c832",
+        "namespace": "bookinfo",
+        "uid": "cb6796ac-f820-4b1b-b6b7-3e47c3af9f1a",
+        "resourceVersion": "1191609",
+        "creationTimestamp": "2025-07-03T22:56:33Z",
+        "managedFields": [
+          {
+            "manager": "kubelet",
+            "operation": "Update",
+            "apiVersion": "v1",
+            "time": "2025-07-03T22:56:33Z",
+            "fieldsType": "FieldsV1",
+            "fieldsV1": {
+              "f:count": {},
+              "f:firstTimestamp": {},
+              "f:involvedObject": {},
+              "f:lastTimestamp": {},
+              "f:message": {},
+              "f:reason": {},
+              "f:reportingComponent": {},
+              "f:reportingInstance": {},
+              "f:source": {
+                "f:component": {},
+                "f:host": {}
+              },
+              "f:type": {}
+            }
+          }
+        ]
+      },
+      "eventTime": null,
+      "reportingController": "kubelet",
+      "reportingInstance": "minikube",
+      "reason": "Pulled",
+      "regarding": {
+        "kind": "Pod",
+        "namespace": "bookinfo",
+        "name": "ratings-v1-69b6b5fccc-f42dn",
+        "uid": "5a4d3d9d-28c9-4af6-8905-13f71d9d0887",
+        "apiVersion": "v1",
+        "resourceVersion": "1033945",
+        "fieldPath": "spec.containers{ratings}"
+      },
+      "note": "Container image \"docker.io/istio/examples-bookinfo-ratings-v1:1.16.4\" already present on machine",
+      "type": "Normal",
+      "deprecatedSource": {
+        "component": "kubelet",
+        "host": "minikube"
+      },
+      "deprecatedFirstTimestamp": "2025-07-03T22:56:30Z",
+      "deprecatedLastTimestamp": "2025-07-03T22:56:30Z",
+      "deprecatedCount": 1
+    },
+    "__isBroken": true,
+    "__raw": "{\"type\":\"ADDED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"ratings-v1-69b6b5fccc-f42dn.184edfd02590c832\",\"namespace\":\"bookinfo\",\"uid\":\"cb6796ac-f820-4b1b-b6b7-3e47c3af9f1a\",\"resourceVersion\":\"1191609\",\"creationTimestamp\":\"2025-07-03T22:56:33Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T22:56:33Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"Pulled\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"bookinfo\",\"name\":\"ratings-v1-69b6b5fccc-f42dn\",\"uid\":\"5a4d3d9d-28c9-4af6-8905-13f71d9d0887\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1033945\",\"fieldPath\":\"spec.containers{ratings}\"},\"note\":\"Container image \\\"docker.io/istio/examples-bookinfo-ratings-v1:1.16.4\\\" already present on machine\",\"type\":\"Normal\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T22:56:30Z\",\"deprecatedLastTimestamp\":\"2025-07-03T22:56:30Z\",\"deprecatedCount\":1}}",
+    "_time": 1751583393,
+    "cribl_breaker": "k8s events",
+    "__inputId": "cribl_http:cribl-kubernetes.cribl-http-k8s",
+    "__cloned": true,
+    "__synthetic": true,
+    "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+    "__bytes": 4430,
+    "__forwardedAttrs": {
+      "__inputId": "kube_events:in_kube_events",
+      "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+      "cribl_breaker": "k8s events"
+    },
+    "__srcIpPort": "72.107.208.42:60588"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_raw": "{\"type\":\"ADDED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"ratings-v1-69b6b5fccc-f42dn.184edfd054aa2806\",\"namespace\":\"bookinfo\",\"uid\":\"869a74ff-2863-4504-b471-96fff74c38e9\",\"resourceVersion\":\"1191664\",\"creationTimestamp\":\"2025-07-03T22:56:33Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T22:56:33Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"Created\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"bookinfo\",\"name\":\"ratings-v1-69b6b5fccc-f42dn\",\"uid\":\"5a4d3d9d-28c9-4af6-8905-13f71d9d0887\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1033945\",\"fieldPath\":\"spec.containers{ratings}\"},\"note\":\"Created container: ratings\",\"type\":\"Normal\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T22:56:30Z\",\"deprecatedLastTimestamp\":\"2025-07-03T22:56:30Z\",\"deprecatedCount\":1}}",
+    "host": "cribl-edge-4vdvw",
+    "__channel": "-1",
+    "type": "ADDED",
+    "object": {
+      "kind": "Event",
+      "apiVersion": "events.k8s.io/v1",
+      "metadata": {
+        "name": "ratings-v1-69b6b5fccc-f42dn.184edfd054aa2806",
+        "namespace": "bookinfo",
+        "uid": "869a74ff-2863-4504-b471-96fff74c38e9",
+        "resourceVersion": "1191664",
+        "creationTimestamp": "2025-07-03T22:56:33Z",
+        "managedFields": [
+          {
+            "manager": "kubelet",
+            "operation": "Update",
+            "apiVersion": "v1",
+            "time": "2025-07-03T22:56:33Z",
+            "fieldsType": "FieldsV1",
+            "fieldsV1": {
+              "f:count": {},
+              "f:firstTimestamp": {},
+              "f:involvedObject": {},
+              "f:lastTimestamp": {},
+              "f:message": {},
+              "f:reason": {},
+              "f:reportingComponent": {},
+              "f:reportingInstance": {},
+              "f:source": {
+                "f:component": {},
+                "f:host": {}
+              },
+              "f:type": {}
+            }
+          }
+        ]
+      },
+      "eventTime": null,
+      "reportingController": "kubelet",
+      "reportingInstance": "minikube",
+      "reason": "Created",
+      "regarding": {
+        "kind": "Pod",
+        "namespace": "bookinfo",
+        "name": "ratings-v1-69b6b5fccc-f42dn",
+        "uid": "5a4d3d9d-28c9-4af6-8905-13f71d9d0887",
+        "apiVersion": "v1",
+        "resourceVersion": "1033945",
+        "fieldPath": "spec.containers{ratings}"
+      },
+      "note": "Created container: ratings",
+      "type": "Normal",
+      "deprecatedSource": {
+        "component": "kubelet",
+        "host": "minikube"
+      },
+      "deprecatedFirstTimestamp": "2025-07-03T22:56:30Z",
+      "deprecatedLastTimestamp": "2025-07-03T22:56:30Z",
+      "deprecatedCount": 1
+    },
+    "__isBroken": true,
+    "__raw": "{\"type\":\"ADDED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"ratings-v1-69b6b5fccc-f42dn.184edfd054aa2806\",\"namespace\":\"bookinfo\",\"uid\":\"869a74ff-2863-4504-b471-96fff74c38e9\",\"resourceVersion\":\"1191664\",\"creationTimestamp\":\"2025-07-03T22:56:33Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T22:56:33Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"Created\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"bookinfo\",\"name\":\"ratings-v1-69b6b5fccc-f42dn\",\"uid\":\"5a4d3d9d-28c9-4af6-8905-13f71d9d0887\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1033945\",\"fieldPath\":\"spec.containers{ratings}\"},\"note\":\"Created container: ratings\",\"type\":\"Normal\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T22:56:30Z\",\"deprecatedLastTimestamp\":\"2025-07-03T22:56:30Z\",\"deprecatedCount\":1}}",
+    "_time": 1751583393,
+    "cribl_breaker": "k8s events",
+    "__inputId": "cribl_http:cribl-kubernetes.cribl-http-k8s",
+    "__cloned": true,
+    "__synthetic": true,
+    "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+    "__bytes": 4209,
+    "__forwardedAttrs": {
+      "__inputId": "kube_events:in_kube_events",
+      "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+      "cribl_breaker": "k8s events"
+    },
+    "__srcIpPort": "72.107.208.42:60588"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_raw": "{\"type\":\"ADDED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"ratings-v1-69b6b5fccc-f42dn.184edfd0c043fb4f\",\"namespace\":\"bookinfo\",\"uid\":\"18cdb3a8-2d97-4cd5-a3a6-b671dc5d0a90\",\"resourceVersion\":\"1191712\",\"creationTimestamp\":\"2025-07-03T22:56:35Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T22:56:35Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"Started\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"bookinfo\",\"name\":\"ratings-v1-69b6b5fccc-f42dn\",\"uid\":\"5a4d3d9d-28c9-4af6-8905-13f71d9d0887\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1033945\",\"fieldPath\":\"spec.containers{ratings}\"},\"note\":\"Started container ratings\",\"type\":\"Normal\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T22:56:32Z\",\"deprecatedLastTimestamp\":\"2025-07-03T22:56:32Z\",\"deprecatedCount\":1}}",
+    "host": "cribl-edge-4vdvw",
+    "__channel": "-1",
+    "type": "ADDED",
+    "object": {
+      "kind": "Event",
+      "apiVersion": "events.k8s.io/v1",
+      "metadata": {
+        "name": "ratings-v1-69b6b5fccc-f42dn.184edfd0c043fb4f",
+        "namespace": "bookinfo",
+        "uid": "18cdb3a8-2d97-4cd5-a3a6-b671dc5d0a90",
+        "resourceVersion": "1191712",
+        "creationTimestamp": "2025-07-03T22:56:35Z",
+        "managedFields": [
+          {
+            "manager": "kubelet",
+            "operation": "Update",
+            "apiVersion": "v1",
+            "time": "2025-07-03T22:56:35Z",
+            "fieldsType": "FieldsV1",
+            "fieldsV1": {
+              "f:count": {},
+              "f:firstTimestamp": {},
+              "f:involvedObject": {},
+              "f:lastTimestamp": {},
+              "f:message": {},
+              "f:reason": {},
+              "f:reportingComponent": {},
+              "f:reportingInstance": {},
+              "f:source": {
+                "f:component": {},
+                "f:host": {}
+              },
+              "f:type": {}
+            }
+          }
+        ]
+      },
+      "eventTime": null,
+      "reportingController": "kubelet",
+      "reportingInstance": "minikube",
+      "reason": "Started",
+      "regarding": {
+        "kind": "Pod",
+        "namespace": "bookinfo",
+        "name": "ratings-v1-69b6b5fccc-f42dn",
+        "uid": "5a4d3d9d-28c9-4af6-8905-13f71d9d0887",
+        "apiVersion": "v1",
+        "resourceVersion": "1033945",
+        "fieldPath": "spec.containers{ratings}"
+      },
+      "note": "Started container ratings",
+      "type": "Normal",
+      "deprecatedSource": {
+        "component": "kubelet",
+        "host": "minikube"
+      },
+      "deprecatedFirstTimestamp": "2025-07-03T22:56:32Z",
+      "deprecatedLastTimestamp": "2025-07-03T22:56:32Z",
+      "deprecatedCount": 1
+    },
+    "__isBroken": true,
+    "__raw": "{\"type\":\"ADDED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"ratings-v1-69b6b5fccc-f42dn.184edfd0c043fb4f\",\"namespace\":\"bookinfo\",\"uid\":\"18cdb3a8-2d97-4cd5-a3a6-b671dc5d0a90\",\"resourceVersion\":\"1191712\",\"creationTimestamp\":\"2025-07-03T22:56:35Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T22:56:35Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"Started\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"bookinfo\",\"name\":\"ratings-v1-69b6b5fccc-f42dn\",\"uid\":\"5a4d3d9d-28c9-4af6-8905-13f71d9d0887\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1033945\",\"fieldPath\":\"spec.containers{ratings}\"},\"note\":\"Started container ratings\",\"type\":\"Normal\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T22:56:32Z\",\"deprecatedLastTimestamp\":\"2025-07-03T22:56:32Z\",\"deprecatedCount\":1}}",
+    "_time": 1751583395,
+    "cribl_breaker": "k8s events",
+    "__inputId": "cribl_http:cribl-kubernetes.cribl-http-k8s",
+    "__cloned": true,
+    "__synthetic": true,
+    "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+    "__bytes": 4206,
+    "__forwardedAttrs": {
+      "__inputId": "kube_events:in_kube_events",
+      "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+      "cribl_breaker": "k8s events"
+    },
+    "__srcIpPort": "72.107.208.42:60588"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_raw": "{\"type\":\"ADDED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"reviews-v1-6c7945f447-pfrjg.184edfcf8425c59a\",\"namespace\":\"bookinfo\",\"uid\":\"c1bb3d7d-856f-422b-a156-eabb533c6022\",\"resourceVersion\":\"1191463\",\"creationTimestamp\":\"2025-07-03T22:56:31Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T22:56:31Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"SandboxChanged\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"bookinfo\",\"name\":\"reviews-v1-6c7945f447-pfrjg\",\"uid\":\"7fd27989-5f23-476d-8ab6-4c0e33c4ee82\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1033964\"},\"note\":\"Pod sandbox changed, it will be killed and re-created.\",\"type\":\"Normal\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T22:56:27Z\",\"deprecatedLastTimestamp\":\"2025-07-03T22:56:27Z\",\"deprecatedCount\":1}}",
+    "host": "cribl-edge-4vdvw",
+    "__channel": "-1",
+    "type": "ADDED",
+    "object": {
+      "kind": "Event",
+      "apiVersion": "events.k8s.io/v1",
+      "metadata": {
+        "name": "reviews-v1-6c7945f447-pfrjg.184edfcf8425c59a",
+        "namespace": "bookinfo",
+        "uid": "c1bb3d7d-856f-422b-a156-eabb533c6022",
+        "resourceVersion": "1191463",
+        "creationTimestamp": "2025-07-03T22:56:31Z",
+        "managedFields": [
+          {
+            "manager": "kubelet",
+            "operation": "Update",
+            "apiVersion": "v1",
+            "time": "2025-07-03T22:56:31Z",
+            "fieldsType": "FieldsV1",
+            "fieldsV1": {
+              "f:count": {},
+              "f:firstTimestamp": {},
+              "f:involvedObject": {},
+              "f:lastTimestamp": {},
+              "f:message": {},
+              "f:reason": {},
+              "f:reportingComponent": {},
+              "f:reportingInstance": {},
+              "f:source": {
+                "f:component": {},
+                "f:host": {}
+              },
+              "f:type": {}
+            }
+          }
+        ]
+      },
+      "eventTime": null,
+      "reportingController": "kubelet",
+      "reportingInstance": "minikube",
+      "reason": "SandboxChanged",
+      "regarding": {
+        "kind": "Pod",
+        "namespace": "bookinfo",
+        "name": "reviews-v1-6c7945f447-pfrjg",
+        "uid": "7fd27989-5f23-476d-8ab6-4c0e33c4ee82",
+        "apiVersion": "v1",
+        "resourceVersion": "1033964"
+      },
+      "note": "Pod sandbox changed, it will be killed and re-created.",
+      "type": "Normal",
+      "deprecatedSource": {
+        "component": "kubelet",
+        "host": "minikube"
+      },
+      "deprecatedFirstTimestamp": "2025-07-03T22:56:27Z",
+      "deprecatedLastTimestamp": "2025-07-03T22:56:27Z",
+      "deprecatedCount": 1
+    },
+    "__isBroken": true,
+    "__raw": "{\"type\":\"ADDED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"reviews-v1-6c7945f447-pfrjg.184edfcf8425c59a\",\"namespace\":\"bookinfo\",\"uid\":\"c1bb3d7d-856f-422b-a156-eabb533c6022\",\"resourceVersion\":\"1191463\",\"creationTimestamp\":\"2025-07-03T22:56:31Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T22:56:31Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"SandboxChanged\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"bookinfo\",\"name\":\"reviews-v1-6c7945f447-pfrjg\",\"uid\":\"7fd27989-5f23-476d-8ab6-4c0e33c4ee82\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1033964\"},\"note\":\"Pod sandbox changed, it will be killed and re-created.\",\"type\":\"Normal\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T22:56:27Z\",\"deprecatedLastTimestamp\":\"2025-07-03T22:56:27Z\",\"deprecatedCount\":1}}",
+    "_time": 1751583391,
+    "cribl_breaker": "k8s events",
+    "__inputId": "cribl_http:cribl-kubernetes.cribl-http-k8s",
+    "__cloned": true,
+    "__synthetic": true,
+    "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+    "__bytes": 4189,
+    "__forwardedAttrs": {
+      "__inputId": "kube_events:in_kube_events",
+      "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+      "cribl_breaker": "k8s events"
+    },
+    "__srcIpPort": "72.107.208.42:60588"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_raw": "{\"type\":\"ADDED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"reviews-v1-6c7945f447-pfrjg.184edfd060793705\",\"namespace\":\"bookinfo\",\"uid\":\"d69d6882-f1a5-49da-b5f7-026cdf86df6d\",\"resourceVersion\":\"1191670\",\"creationTimestamp\":\"2025-07-03T22:56:33Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T22:56:33Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"Pulled\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"bookinfo\",\"name\":\"reviews-v1-6c7945f447-pfrjg\",\"uid\":\"7fd27989-5f23-476d-8ab6-4c0e33c4ee82\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1033964\",\"fieldPath\":\"spec.containers{reviews}\"},\"note\":\"Container image \\\"docker.io/istio/examples-bookinfo-reviews-v1:1.16.4\\\" already present on machine\",\"type\":\"Normal\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T22:56:31Z\",\"deprecatedLastTimestamp\":\"2025-07-03T22:56:31Z\",\"deprecatedCount\":1}}",
+    "host": "cribl-edge-4vdvw",
+    "__channel": "-1",
+    "type": "ADDED",
+    "object": {
+      "kind": "Event",
+      "apiVersion": "events.k8s.io/v1",
+      "metadata": {
+        "name": "reviews-v1-6c7945f447-pfrjg.184edfd060793705",
+        "namespace": "bookinfo",
+        "uid": "d69d6882-f1a5-49da-b5f7-026cdf86df6d",
+        "resourceVersion": "1191670",
+        "creationTimestamp": "2025-07-03T22:56:33Z",
+        "managedFields": [
+          {
+            "manager": "kubelet",
+            "operation": "Update",
+            "apiVersion": "v1",
+            "time": "2025-07-03T22:56:33Z",
+            "fieldsType": "FieldsV1",
+            "fieldsV1": {
+              "f:count": {},
+              "f:firstTimestamp": {},
+              "f:involvedObject": {},
+              "f:lastTimestamp": {},
+              "f:message": {},
+              "f:reason": {},
+              "f:reportingComponent": {},
+              "f:reportingInstance": {},
+              "f:source": {
+                "f:component": {},
+                "f:host": {}
+              },
+              "f:type": {}
+            }
+          }
+        ]
+      },
+      "eventTime": null,
+      "reportingController": "kubelet",
+      "reportingInstance": "minikube",
+      "reason": "Pulled",
+      "regarding": {
+        "kind": "Pod",
+        "namespace": "bookinfo",
+        "name": "reviews-v1-6c7945f447-pfrjg",
+        "uid": "7fd27989-5f23-476d-8ab6-4c0e33c4ee82",
+        "apiVersion": "v1",
+        "resourceVersion": "1033964",
+        "fieldPath": "spec.containers{reviews}"
+      },
+      "note": "Container image \"docker.io/istio/examples-bookinfo-reviews-v1:1.16.4\" already present on machine",
+      "type": "Normal",
+      "deprecatedSource": {
+        "component": "kubelet",
+        "host": "minikube"
+      },
+      "deprecatedFirstTimestamp": "2025-07-03T22:56:31Z",
+      "deprecatedLastTimestamp": "2025-07-03T22:56:31Z",
+      "deprecatedCount": 1
+    },
+    "__isBroken": true,
+    "__raw": "{\"type\":\"ADDED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"reviews-v1-6c7945f447-pfrjg.184edfd060793705\",\"namespace\":\"bookinfo\",\"uid\":\"d69d6882-f1a5-49da-b5f7-026cdf86df6d\",\"resourceVersion\":\"1191670\",\"creationTimestamp\":\"2025-07-03T22:56:33Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T22:56:33Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"Pulled\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"bookinfo\",\"name\":\"reviews-v1-6c7945f447-pfrjg\",\"uid\":\"7fd27989-5f23-476d-8ab6-4c0e33c4ee82\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1033964\",\"fieldPath\":\"spec.containers{reviews}\"},\"note\":\"Container image \\\"docker.io/istio/examples-bookinfo-reviews-v1:1.16.4\\\" already present on machine\",\"type\":\"Normal\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T22:56:31Z\",\"deprecatedLastTimestamp\":\"2025-07-03T22:56:31Z\",\"deprecatedCount\":1}}",
+    "_time": 1751583393,
+    "cribl_breaker": "k8s events",
+    "__inputId": "cribl_http:cribl-kubernetes.cribl-http-k8s",
+    "__cloned": true,
+    "__synthetic": true,
+    "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+    "__bytes": 4430,
+    "__forwardedAttrs": {
+      "__inputId": "kube_events:in_kube_events",
+      "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+      "cribl_breaker": "k8s events"
+    },
+    "__srcIpPort": "72.107.208.42:60588"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_raw": "{\"type\":\"ADDED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"reviews-v1-6c7945f447-pfrjg.184edfd09d14072d\",\"namespace\":\"bookinfo\",\"uid\":\"92ae49f3-9a1a-4f4c-9527-470b5eee97c0\",\"resourceVersion\":\"1191695\",\"creationTimestamp\":\"2025-07-03T22:56:35Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T22:56:35Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"Created\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"bookinfo\",\"name\":\"reviews-v1-6c7945f447-pfrjg\",\"uid\":\"7fd27989-5f23-476d-8ab6-4c0e33c4ee82\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1033964\",\"fieldPath\":\"spec.containers{reviews}\"},\"note\":\"Created container: reviews\",\"type\":\"Normal\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T22:56:32Z\",\"deprecatedLastTimestamp\":\"2025-07-03T22:56:32Z\",\"deprecatedCount\":1}}",
+    "host": "cribl-edge-4vdvw",
+    "__channel": "-1",
+    "type": "ADDED",
+    "object": {
+      "kind": "Event",
+      "apiVersion": "events.k8s.io/v1",
+      "metadata": {
+        "name": "reviews-v1-6c7945f447-pfrjg.184edfd09d14072d",
+        "namespace": "bookinfo",
+        "uid": "92ae49f3-9a1a-4f4c-9527-470b5eee97c0",
+        "resourceVersion": "1191695",
+        "creationTimestamp": "2025-07-03T22:56:35Z",
+        "managedFields": [
+          {
+            "manager": "kubelet",
+            "operation": "Update",
+            "apiVersion": "v1",
+            "time": "2025-07-03T22:56:35Z",
+            "fieldsType": "FieldsV1",
+            "fieldsV1": {
+              "f:count": {},
+              "f:firstTimestamp": {},
+              "f:involvedObject": {},
+              "f:lastTimestamp": {},
+              "f:message": {},
+              "f:reason": {},
+              "f:reportingComponent": {},
+              "f:reportingInstance": {},
+              "f:source": {
+                "f:component": {},
+                "f:host": {}
+              },
+              "f:type": {}
+            }
+          }
+        ]
+      },
+      "eventTime": null,
+      "reportingController": "kubelet",
+      "reportingInstance": "minikube",
+      "reason": "Created",
+      "regarding": {
+        "kind": "Pod",
+        "namespace": "bookinfo",
+        "name": "reviews-v1-6c7945f447-pfrjg",
+        "uid": "7fd27989-5f23-476d-8ab6-4c0e33c4ee82",
+        "apiVersion": "v1",
+        "resourceVersion": "1033964",
+        "fieldPath": "spec.containers{reviews}"
+      },
+      "note": "Created container: reviews",
+      "type": "Normal",
+      "deprecatedSource": {
+        "component": "kubelet",
+        "host": "minikube"
+      },
+      "deprecatedFirstTimestamp": "2025-07-03T22:56:32Z",
+      "deprecatedLastTimestamp": "2025-07-03T22:56:32Z",
+      "deprecatedCount": 1
+    },
+    "__isBroken": true,
+    "__raw": "{\"type\":\"ADDED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"reviews-v1-6c7945f447-pfrjg.184edfd09d14072d\",\"namespace\":\"bookinfo\",\"uid\":\"92ae49f3-9a1a-4f4c-9527-470b5eee97c0\",\"resourceVersion\":\"1191695\",\"creationTimestamp\":\"2025-07-03T22:56:35Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T22:56:35Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"Created\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"bookinfo\",\"name\":\"reviews-v1-6c7945f447-pfrjg\",\"uid\":\"7fd27989-5f23-476d-8ab6-4c0e33c4ee82\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1033964\",\"fieldPath\":\"spec.containers{reviews}\"},\"note\":\"Created container: reviews\",\"type\":\"Normal\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T22:56:32Z\",\"deprecatedLastTimestamp\":\"2025-07-03T22:56:32Z\",\"deprecatedCount\":1}}",
+    "_time": 1751583395,
+    "cribl_breaker": "k8s events",
+    "__inputId": "cribl_http:cribl-kubernetes.cribl-http-k8s",
+    "__cloned": true,
+    "__synthetic": true,
+    "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+    "__bytes": 4209,
+    "__forwardedAttrs": {
+      "__inputId": "kube_events:in_kube_events",
+      "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+      "cribl_breaker": "k8s events"
+    },
+    "__srcIpPort": "72.107.208.42:60588"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_raw": "{\"type\":\"ADDED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"reviews-v1-6c7945f447-pfrjg.184edfd113b42f10\",\"namespace\":\"bookinfo\",\"uid\":\"7632dd80-5b91-4ebf-81e3-6d745544507a\",\"resourceVersion\":\"1191766\",\"creationTimestamp\":\"2025-07-03T22:56:37Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T22:56:37Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"Started\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"bookinfo\",\"name\":\"reviews-v1-6c7945f447-pfrjg\",\"uid\":\"7fd27989-5f23-476d-8ab6-4c0e33c4ee82\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1033964\",\"fieldPath\":\"spec.containers{reviews}\"},\"note\":\"Started container reviews\",\"type\":\"Normal\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T22:56:34Z\",\"deprecatedLastTimestamp\":\"2025-07-03T22:56:34Z\",\"deprecatedCount\":1}}",
+    "host": "cribl-edge-4vdvw",
+    "__channel": "-1",
+    "type": "ADDED",
+    "object": {
+      "kind": "Event",
+      "apiVersion": "events.k8s.io/v1",
+      "metadata": {
+        "name": "reviews-v1-6c7945f447-pfrjg.184edfd113b42f10",
+        "namespace": "bookinfo",
+        "uid": "7632dd80-5b91-4ebf-81e3-6d745544507a",
+        "resourceVersion": "1191766",
+        "creationTimestamp": "2025-07-03T22:56:37Z",
+        "managedFields": [
+          {
+            "manager": "kubelet",
+            "operation": "Update",
+            "apiVersion": "v1",
+            "time": "2025-07-03T22:56:37Z",
+            "fieldsType": "FieldsV1",
+            "fieldsV1": {
+              "f:count": {},
+              "f:firstTimestamp": {},
+              "f:involvedObject": {},
+              "f:lastTimestamp": {},
+              "f:message": {},
+              "f:reason": {},
+              "f:reportingComponent": {},
+              "f:reportingInstance": {},
+              "f:source": {
+                "f:component": {},
+                "f:host": {}
+              },
+              "f:type": {}
+            }
+          }
+        ]
+      },
+      "eventTime": null,
+      "reportingController": "kubelet",
+      "reportingInstance": "minikube",
+      "reason": "Started",
+      "regarding": {
+        "kind": "Pod",
+        "namespace": "bookinfo",
+        "name": "reviews-v1-6c7945f447-pfrjg",
+        "uid": "7fd27989-5f23-476d-8ab6-4c0e33c4ee82",
+        "apiVersion": "v1",
+        "resourceVersion": "1033964",
+        "fieldPath": "spec.containers{reviews}"
+      },
+      "note": "Started container reviews",
+      "type": "Normal",
+      "deprecatedSource": {
+        "component": "kubelet",
+        "host": "minikube"
+      },
+      "deprecatedFirstTimestamp": "2025-07-03T22:56:34Z",
+      "deprecatedLastTimestamp": "2025-07-03T22:56:34Z",
+      "deprecatedCount": 1
+    },
+    "__isBroken": true,
+    "__raw": "{\"type\":\"ADDED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"reviews-v1-6c7945f447-pfrjg.184edfd113b42f10\",\"namespace\":\"bookinfo\",\"uid\":\"7632dd80-5b91-4ebf-81e3-6d745544507a\",\"resourceVersion\":\"1191766\",\"creationTimestamp\":\"2025-07-03T22:56:37Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T22:56:37Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"Started\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"bookinfo\",\"name\":\"reviews-v1-6c7945f447-pfrjg\",\"uid\":\"7fd27989-5f23-476d-8ab6-4c0e33c4ee82\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1033964\",\"fieldPath\":\"spec.containers{reviews}\"},\"note\":\"Started container reviews\",\"type\":\"Normal\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T22:56:34Z\",\"deprecatedLastTimestamp\":\"2025-07-03T22:56:34Z\",\"deprecatedCount\":1}}",
+    "_time": 1751583397,
+    "cribl_breaker": "k8s events",
+    "__inputId": "cribl_http:cribl-kubernetes.cribl-http-k8s",
+    "__cloned": true,
+    "__synthetic": true,
+    "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+    "__bytes": 4206,
+    "__forwardedAttrs": {
+      "__inputId": "kube_events:in_kube_events",
+      "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+      "cribl_breaker": "k8s events"
+    },
+    "__srcIpPort": "72.107.208.42:60588"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_raw": "{\"type\":\"ADDED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"reviews-v2-849c756d5-xx8qc.184edfcf7fa1c661\",\"namespace\":\"bookinfo\",\"uid\":\"09941751-f40f-404b-ab33-1431862d728d\",\"resourceVersion\":\"1191454\",\"creationTimestamp\":\"2025-07-03T22:56:30Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T22:56:30Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"SandboxChanged\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"bookinfo\",\"name\":\"reviews-v2-849c756d5-xx8qc\",\"uid\":\"9e6cd3f5-e8a0-42d8-a9f2-f5e39fb7789b\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1034054\"},\"note\":\"Pod sandbox changed, it will be killed and re-created.\",\"type\":\"Normal\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T22:56:27Z\",\"deprecatedLastTimestamp\":\"2025-07-03T22:56:27Z\",\"deprecatedCount\":1}}",
+    "host": "cribl-edge-4vdvw",
+    "__channel": "-1",
+    "type": "ADDED",
+    "object": {
+      "kind": "Event",
+      "apiVersion": "events.k8s.io/v1",
+      "metadata": {
+        "name": "reviews-v2-849c756d5-xx8qc.184edfcf7fa1c661",
+        "namespace": "bookinfo",
+        "uid": "09941751-f40f-404b-ab33-1431862d728d",
+        "resourceVersion": "1191454",
+        "creationTimestamp": "2025-07-03T22:56:30Z",
+        "managedFields": [
+          {
+            "manager": "kubelet",
+            "operation": "Update",
+            "apiVersion": "v1",
+            "time": "2025-07-03T22:56:30Z",
+            "fieldsType": "FieldsV1",
+            "fieldsV1": {
+              "f:count": {},
+              "f:firstTimestamp": {},
+              "f:involvedObject": {},
+              "f:lastTimestamp": {},
+              "f:message": {},
+              "f:reason": {},
+              "f:reportingComponent": {},
+              "f:reportingInstance": {},
+              "f:source": {
+                "f:component": {},
+                "f:host": {}
+              },
+              "f:type": {}
+            }
+          }
+        ]
+      },
+      "eventTime": null,
+      "reportingController": "kubelet",
+      "reportingInstance": "minikube",
+      "reason": "SandboxChanged",
+      "regarding": {
+        "kind": "Pod",
+        "namespace": "bookinfo",
+        "name": "reviews-v2-849c756d5-xx8qc",
+        "uid": "9e6cd3f5-e8a0-42d8-a9f2-f5e39fb7789b",
+        "apiVersion": "v1",
+        "resourceVersion": "1034054"
+      },
+      "note": "Pod sandbox changed, it will be killed and re-created.",
+      "type": "Normal",
+      "deprecatedSource": {
+        "component": "kubelet",
+        "host": "minikube"
+      },
+      "deprecatedFirstTimestamp": "2025-07-03T22:56:27Z",
+      "deprecatedLastTimestamp": "2025-07-03T22:56:27Z",
+      "deprecatedCount": 1
+    },
+    "__isBroken": true,
+    "__raw": "{\"type\":\"ADDED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"reviews-v2-849c756d5-xx8qc.184edfcf7fa1c661\",\"namespace\":\"bookinfo\",\"uid\":\"09941751-f40f-404b-ab33-1431862d728d\",\"resourceVersion\":\"1191454\",\"creationTimestamp\":\"2025-07-03T22:56:30Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T22:56:30Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"SandboxChanged\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"bookinfo\",\"name\":\"reviews-v2-849c756d5-xx8qc\",\"uid\":\"9e6cd3f5-e8a0-42d8-a9f2-f5e39fb7789b\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1034054\"},\"note\":\"Pod sandbox changed, it will be killed and re-created.\",\"type\":\"Normal\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T22:56:27Z\",\"deprecatedLastTimestamp\":\"2025-07-03T22:56:27Z\",\"deprecatedCount\":1}}",
+    "_time": 1751583390,
+    "cribl_breaker": "k8s events",
+    "__inputId": "cribl_http:cribl-kubernetes.cribl-http-k8s",
+    "__cloned": true,
+    "__synthetic": true,
+    "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+    "__bytes": 4183,
+    "__forwardedAttrs": {
+      "__inputId": "kube_events:in_kube_events",
+      "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+      "cribl_breaker": "k8s events"
+    },
+    "__srcIpPort": "72.107.208.42:60588"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_raw": "{\"type\":\"ADDED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"reviews-v2-849c756d5-xx8qc.184edfd03d11906c\",\"namespace\":\"bookinfo\",\"uid\":\"b2f92f4f-1842-438d-ad91-442edbebf8f1\",\"resourceVersion\":\"1191651\",\"creationTimestamp\":\"2025-07-03T22:56:33Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T22:56:33Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"Pulled\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"bookinfo\",\"name\":\"reviews-v2-849c756d5-xx8qc\",\"uid\":\"9e6cd3f5-e8a0-42d8-a9f2-f5e39fb7789b\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1034054\",\"fieldPath\":\"spec.containers{reviews}\"},\"note\":\"Container image \\\"docker.io/istio/examples-bookinfo-reviews-v2:1.16.4\\\" already present on machine\",\"type\":\"Normal\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T22:56:30Z\",\"deprecatedLastTimestamp\":\"2025-07-03T22:56:30Z\",\"deprecatedCount\":1}}",
+    "host": "cribl-edge-4vdvw",
+    "__channel": "-1",
+    "type": "ADDED",
+    "object": {
+      "kind": "Event",
+      "apiVersion": "events.k8s.io/v1",
+      "metadata": {
+        "name": "reviews-v2-849c756d5-xx8qc.184edfd03d11906c",
+        "namespace": "bookinfo",
+        "uid": "b2f92f4f-1842-438d-ad91-442edbebf8f1",
+        "resourceVersion": "1191651",
+        "creationTimestamp": "2025-07-03T22:56:33Z",
+        "managedFields": [
+          {
+            "manager": "kubelet",
+            "operation": "Update",
+            "apiVersion": "v1",
+            "time": "2025-07-03T22:56:33Z",
+            "fieldsType": "FieldsV1",
+            "fieldsV1": {
+              "f:count": {},
+              "f:firstTimestamp": {},
+              "f:involvedObject": {},
+              "f:lastTimestamp": {},
+              "f:message": {},
+              "f:reason": {},
+              "f:reportingComponent": {},
+              "f:reportingInstance": {},
+              "f:source": {
+                "f:component": {},
+                "f:host": {}
+              },
+              "f:type": {}
+            }
+          }
+        ]
+      },
+      "eventTime": null,
+      "reportingController": "kubelet",
+      "reportingInstance": "minikube",
+      "reason": "Pulled",
+      "regarding": {
+        "kind": "Pod",
+        "namespace": "bookinfo",
+        "name": "reviews-v2-849c756d5-xx8qc",
+        "uid": "9e6cd3f5-e8a0-42d8-a9f2-f5e39fb7789b",
+        "apiVersion": "v1",
+        "resourceVersion": "1034054",
+        "fieldPath": "spec.containers{reviews}"
+      },
+      "note": "Container image \"docker.io/istio/examples-bookinfo-reviews-v2:1.16.4\" already present on machine",
+      "type": "Normal",
+      "deprecatedSource": {
+        "component": "kubelet",
+        "host": "minikube"
+      },
+      "deprecatedFirstTimestamp": "2025-07-03T22:56:30Z",
+      "deprecatedLastTimestamp": "2025-07-03T22:56:30Z",
+      "deprecatedCount": 1
+    },
+    "__isBroken": true,
+    "__raw": "{\"type\":\"ADDED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"reviews-v2-849c756d5-xx8qc.184edfd03d11906c\",\"namespace\":\"bookinfo\",\"uid\":\"b2f92f4f-1842-438d-ad91-442edbebf8f1\",\"resourceVersion\":\"1191651\",\"creationTimestamp\":\"2025-07-03T22:56:33Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T22:56:33Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"Pulled\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"bookinfo\",\"name\":\"reviews-v2-849c756d5-xx8qc\",\"uid\":\"9e6cd3f5-e8a0-42d8-a9f2-f5e39fb7789b\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1034054\",\"fieldPath\":\"spec.containers{reviews}\"},\"note\":\"Container image \\\"docker.io/istio/examples-bookinfo-reviews-v2:1.16.4\\\" already present on machine\",\"type\":\"Normal\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T22:56:30Z\",\"deprecatedLastTimestamp\":\"2025-07-03T22:56:30Z\",\"deprecatedCount\":1}}",
+    "_time": 1751583393,
+    "cribl_breaker": "k8s events",
+    "__inputId": "cribl_http:cribl-kubernetes.cribl-http-k8s",
+    "__cloned": true,
+    "__synthetic": true,
+    "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+    "__bytes": 4424,
+    "__forwardedAttrs": {
+      "__inputId": "kube_events:in_kube_events",
+      "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+      "cribl_breaker": "k8s events"
+    },
+    "__srcIpPort": "72.107.208.42:60588"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_raw": "{\"type\":\"ADDED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"reviews-v2-849c756d5-xx8qc.184edfd08451682a\",\"namespace\":\"bookinfo\",\"uid\":\"c544c9f3-2c8d-4e14-9cc3-d9ae797739bb\",\"resourceVersion\":\"1191685\",\"creationTimestamp\":\"2025-07-03T22:56:34Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T22:56:34Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"Created\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"bookinfo\",\"name\":\"reviews-v2-849c756d5-xx8qc\",\"uid\":\"9e6cd3f5-e8a0-42d8-a9f2-f5e39fb7789b\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1034054\",\"fieldPath\":\"spec.containers{reviews}\"},\"note\":\"Created container: reviews\",\"type\":\"Normal\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T22:56:31Z\",\"deprecatedLastTimestamp\":\"2025-07-03T22:56:31Z\",\"deprecatedCount\":1}}",
+    "host": "cribl-edge-4vdvw",
+    "__channel": "-1",
+    "type": "ADDED",
+    "object": {
+      "kind": "Event",
+      "apiVersion": "events.k8s.io/v1",
+      "metadata": {
+        "name": "reviews-v2-849c756d5-xx8qc.184edfd08451682a",
+        "namespace": "bookinfo",
+        "uid": "c544c9f3-2c8d-4e14-9cc3-d9ae797739bb",
+        "resourceVersion": "1191685",
+        "creationTimestamp": "2025-07-03T22:56:34Z",
+        "managedFields": [
+          {
+            "manager": "kubelet",
+            "operation": "Update",
+            "apiVersion": "v1",
+            "time": "2025-07-03T22:56:34Z",
+            "fieldsType": "FieldsV1",
+            "fieldsV1": {
+              "f:count": {},
+              "f:firstTimestamp": {},
+              "f:involvedObject": {},
+              "f:lastTimestamp": {},
+              "f:message": {},
+              "f:reason": {},
+              "f:reportingComponent": {},
+              "f:reportingInstance": {},
+              "f:source": {
+                "f:component": {},
+                "f:host": {}
+              },
+              "f:type": {}
+            }
+          }
+        ]
+      },
+      "eventTime": null,
+      "reportingController": "kubelet",
+      "reportingInstance": "minikube",
+      "reason": "Created",
+      "regarding": {
+        "kind": "Pod",
+        "namespace": "bookinfo",
+        "name": "reviews-v2-849c756d5-xx8qc",
+        "uid": "9e6cd3f5-e8a0-42d8-a9f2-f5e39fb7789b",
+        "apiVersion": "v1",
+        "resourceVersion": "1034054",
+        "fieldPath": "spec.containers{reviews}"
+      },
+      "note": "Created container: reviews",
+      "type": "Normal",
+      "deprecatedSource": {
+        "component": "kubelet",
+        "host": "minikube"
+      },
+      "deprecatedFirstTimestamp": "2025-07-03T22:56:31Z",
+      "deprecatedLastTimestamp": "2025-07-03T22:56:31Z",
+      "deprecatedCount": 1
+    },
+    "__isBroken": true,
+    "__raw": "{\"type\":\"ADDED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"reviews-v2-849c756d5-xx8qc.184edfd08451682a\",\"namespace\":\"bookinfo\",\"uid\":\"c544c9f3-2c8d-4e14-9cc3-d9ae797739bb\",\"resourceVersion\":\"1191685\",\"creationTimestamp\":\"2025-07-03T22:56:34Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T22:56:34Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"Created\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"bookinfo\",\"name\":\"reviews-v2-849c756d5-xx8qc\",\"uid\":\"9e6cd3f5-e8a0-42d8-a9f2-f5e39fb7789b\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1034054\",\"fieldPath\":\"spec.containers{reviews}\"},\"note\":\"Created container: reviews\",\"type\":\"Normal\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T22:56:31Z\",\"deprecatedLastTimestamp\":\"2025-07-03T22:56:31Z\",\"deprecatedCount\":1}}",
+    "_time": 1751583394,
+    "cribl_breaker": "k8s events",
+    "__inputId": "cribl_http:cribl-kubernetes.cribl-http-k8s",
+    "__cloned": true,
+    "__synthetic": true,
+    "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+    "__bytes": 4203,
+    "__forwardedAttrs": {
+      "__inputId": "kube_events:in_kube_events",
+      "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+      "cribl_breaker": "k8s events"
+    },
+    "__srcIpPort": "72.107.208.42:60588"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_raw": "{\"type\":\"ADDED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"reviews-v2-849c756d5-xx8qc.184edfd0e9eda718\",\"namespace\":\"bookinfo\",\"uid\":\"d28a0c61-fe68-429f-9749-40779e4d127a\",\"resourceVersion\":\"1191734\",\"creationTimestamp\":\"2025-07-03T22:56:36Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T22:56:36Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"Started\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"bookinfo\",\"name\":\"reviews-v2-849c756d5-xx8qc\",\"uid\":\"9e6cd3f5-e8a0-42d8-a9f2-f5e39fb7789b\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1034054\",\"fieldPath\":\"spec.containers{reviews}\"},\"note\":\"Started container reviews\",\"type\":\"Normal\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T22:56:33Z\",\"deprecatedLastTimestamp\":\"2025-07-03T22:56:33Z\",\"deprecatedCount\":1}}",
+    "host": "cribl-edge-4vdvw",
+    "__channel": "-1",
+    "type": "ADDED",
+    "object": {
+      "kind": "Event",
+      "apiVersion": "events.k8s.io/v1",
+      "metadata": {
+        "name": "reviews-v2-849c756d5-xx8qc.184edfd0e9eda718",
+        "namespace": "bookinfo",
+        "uid": "d28a0c61-fe68-429f-9749-40779e4d127a",
+        "resourceVersion": "1191734",
+        "creationTimestamp": "2025-07-03T22:56:36Z",
+        "managedFields": [
+          {
+            "manager": "kubelet",
+            "operation": "Update",
+            "apiVersion": "v1",
+            "time": "2025-07-03T22:56:36Z",
+            "fieldsType": "FieldsV1",
+            "fieldsV1": {
+              "f:count": {},
+              "f:firstTimestamp": {},
+              "f:involvedObject": {},
+              "f:lastTimestamp": {},
+              "f:message": {},
+              "f:reason": {},
+              "f:reportingComponent": {},
+              "f:reportingInstance": {},
+              "f:source": {
+                "f:component": {},
+                "f:host": {}
+              },
+              "f:type": {}
+            }
+          }
+        ]
+      },
+      "eventTime": null,
+      "reportingController": "kubelet",
+      "reportingInstance": "minikube",
+      "reason": "Started",
+      "regarding": {
+        "kind": "Pod",
+        "namespace": "bookinfo",
+        "name": "reviews-v2-849c756d5-xx8qc",
+        "uid": "9e6cd3f5-e8a0-42d8-a9f2-f5e39fb7789b",
+        "apiVersion": "v1",
+        "resourceVersion": "1034054",
+        "fieldPath": "spec.containers{reviews}"
+      },
+      "note": "Started container reviews",
+      "type": "Normal",
+      "deprecatedSource": {
+        "component": "kubelet",
+        "host": "minikube"
+      },
+      "deprecatedFirstTimestamp": "2025-07-03T22:56:33Z",
+      "deprecatedLastTimestamp": "2025-07-03T22:56:33Z",
+      "deprecatedCount": 1
+    },
+    "__isBroken": true,
+    "__raw": "{\"type\":\"ADDED\",\"object\":{\"kind\":\"Event\",\"apiVersion\":\"events.k8s.io/v1\",\"metadata\":{\"name\":\"reviews-v2-849c756d5-xx8qc.184edfd0e9eda718\",\"namespace\":\"bookinfo\",\"uid\":\"d28a0c61-fe68-429f-9749-40779e4d127a\",\"resourceVersion\":\"1191734\",\"creationTimestamp\":\"2025-07-03T22:56:36Z\",\"managedFields\":[{\"manager\":\"kubelet\",\"operation\":\"Update\",\"apiVersion\":\"v1\",\"time\":\"2025-07-03T22:56:36Z\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:count\":{},\"f:firstTimestamp\":{},\"f:involvedObject\":{},\"f:lastTimestamp\":{},\"f:message\":{},\"f:reason\":{},\"f:reportingComponent\":{},\"f:reportingInstance\":{},\"f:source\":{\"f:component\":{},\"f:host\":{}},\"f:type\":{}}}]},\"eventTime\":null,\"reportingController\":\"kubelet\",\"reportingInstance\":\"minikube\",\"reason\":\"Started\",\"regarding\":{\"kind\":\"Pod\",\"namespace\":\"bookinfo\",\"name\":\"reviews-v2-849c756d5-xx8qc\",\"uid\":\"9e6cd3f5-e8a0-42d8-a9f2-f5e39fb7789b\",\"apiVersion\":\"v1\",\"resourceVersion\":\"1034054\",\"fieldPath\":\"spec.containers{reviews}\"},\"note\":\"Started container reviews\",\"type\":\"Normal\",\"deprecatedSource\":{\"component\":\"kubelet\",\"host\":\"minikube\"},\"deprecatedFirstTimestamp\":\"2025-07-03T22:56:33Z\",\"deprecatedLastTimestamp\":\"2025-07-03T22:56:33Z\",\"deprecatedCount\":1}}",
+    "_time": 1751583396,
+    "cribl_breaker": "k8s events",
+    "__inputId": "cribl_http:cribl-kubernetes.cribl-http-k8s",
+    "__cloned": true,
+    "__synthetic": true,
+    "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+    "__bytes": 4200,
+    "__forwardedAttrs": {
+      "__inputId": "kube_events:in_kube_events",
+      "__outputId": "cribl_http:cribl-http-pack-dev-dmorton",
+      "cribl_breaker": "k8s events"
+    },
+    "__srcIpPort": "72.107.208.42:60588"
+  }
+]

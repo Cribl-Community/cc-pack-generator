@@ -1,0 +1,4 @@
+Mirrored verbatim from the Cribl Pack Dispensary. Do not edit these files by hand: they are replayed byte-for-byte into generated packs, and any local change is silently undone by the next `npm run sync:xsiam-pack`. Fix upstream, or override in the resolver.
+
+Upstream: https://packs.cribl.io/packs/cribl-paloalto-xsiam
+Download: https://packs.cribl.io/dl/cribl-paloalto-xsiam/latest/cribl-paloalto-xsiam-latest.crbl

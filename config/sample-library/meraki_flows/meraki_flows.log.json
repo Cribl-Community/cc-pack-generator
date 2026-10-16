@@ -1,0 +1,8 @@
+[
+  {
+    "_raw": "<134>1 1749587373.010831345 hostxyz flows allow src=10.8.120.19 dst=10.43.3.4 mac=A8:7E:EA:5B:8F:92 protocol=udp sport=61736 dport=53",
+    "_time": 1749587373,
+    "host": "10.8.3.157",
+    "cribl_breaker": "ndjson"
+  }
+]

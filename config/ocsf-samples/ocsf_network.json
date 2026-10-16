@@ -1,0 +1,8 @@
+{
+  "classUid": 4001,
+  "className": "Network Activity",
+  "events": [
+    { "class_uid": 4001, "class_name": "Network Activity", "category_uid": 4, "category_name": "Network Activity", "activity_id": 6, "activity_name": "Traffic", "type_uid": 400106, "type_name": "Network Activity: Traffic", "severity_id": 1, "severity": "Informational", "time": 1737021600000, "metadata": { "version": "1.3.0", "product": { "vendor_name": "Palo Alto Networks", "name": "PAN-OS", "version": "10.2" } }, "src_endpoint": { "ip": "10.0.0.5", "port": 51514, "mac": "00:11:22:33:44:55", "hostname": "host-a" }, "dst_endpoint": { "ip": "93.184.216.34", "port": 443, "hostname": "example.com" }, "connection_info": { "protocol_name": "tcp", "direction": "Outbound" }, "traffic": { "bytes_in": 4096, "bytes_out": 1024 }, "actor": { "user": { "name": "alice" } }, "device": { "hostname": "fw-01", "ip": "10.0.0.1", "uid": "FW-0001" }, "message": "allow", "status": "Success", "duration": 3200 },
+    { "class_uid": 4001, "class_name": "Network Activity", "category_uid": 4, "category_name": "Network Activity", "activity_id": 1, "activity_name": "Open", "type_uid": 400101, "type_name": "Network Activity: Open", "severity_id": 3, "severity": "Medium", "time": 1737021605000, "metadata": { "version": "1.3.0", "product": { "vendor_name": "Palo Alto Networks", "name": "PAN-OS", "version": "10.2" } }, "src_endpoint": { "ip": "172.16.4.9", "port": 44012 }, "dst_endpoint": { "ip": "8.8.8.8", "port": 53 }, "connection_info": { "protocol_name": "udp" }, "traffic": { "bytes_in": 220, "bytes_out": 74 }, "device": { "hostname": "fw-01", "ip": "10.0.0.1" }, "message": "deny", "status": "Failure" }
+  ]
+}

@@ -1,0 +1,122 @@
+[
+  {
+    "_raw": "#separator \\x09",
+    "_time": 1521911721.789543,
+    "sourcetype": "bro_smtp",
+    "source": "/opt/zeek/logs/current/smtp.log"
+  },
+  {
+    "_raw": "#set_separator\t,",
+    "_time": 1521911721.789543,
+    "sourcetype": "bro_smtp",
+    "source": "/opt/zeek/logs/current/smtp.log"
+  },
+  {
+    "_raw": "#empty_field\t(empty)",
+    "_time": 1521911721.789543,
+    "sourcetype": "bro_smtp",
+    "source": "/opt/zeek/logs/current/smtp.log"
+  },
+  {
+    "_raw": "#unset_field\t-",
+    "_time": 1521911721.789543,
+    "sourcetype": "bro_smtp",
+    "source": "/opt/zeek/logs/current/smtp.log"
+  },
+  {
+    "_raw": "#path\tsmtp",
+    "_time": 1521911721.789543,
+    "sourcetype": "bro_smtp",
+    "source": "/opt/zeek/logs/current/smtp.log"
+  },
+  {
+    "_raw": "#open\t2024-04-12-19-29-15",
+    "_time": 1521911721.789543,
+    "sourcetype": "bro_smtp",
+    "source": "/opt/zeek/logs/current/smtp.log"
+  },
+  {
+    "_raw": "#fields\tts\tuid\tid.orig_h\tid.orig_p\tid.resp_h\tid.resp_p\ttrans_depth\thelo\tmailfrom\trcptto\tdate\tfrom\tto\tcc\treply_to\tmsg_id\tin_reply_to\tsubject\tx_originating_ip\tfirst_received\tsecond_received\tlast_reply\tpath\tuser_agent\ttls\tfuids\tis_webmail",
+    "_time": 1521911721.789543,
+    "sourcetype": "bro_smtp",
+    "source": "/opt/zeek/logs/current/smtp.log"
+  },
+  {
+    "_raw": "#types\ttime\tstring\taddr\tport\taddr\tport\tcount\tstring\tstring\tset[string]\tstring\tstring\tset[string]\tset[string]\tstring\tstring\tstring\tstring\taddr\tstring\tstring\tstring\tvector[addr]\tstring\tbool\tvector[string]\tbool",
+    "_time": 1521911721.789543,
+    "sourcetype": "bro_smtp",
+    "source": "/opt/zeek/logs/current/smtp.log"
+  },
+  {
+    "_raw": "1521911721.789543\tC18H5P2mT0bRiA2Sdk\t10.164.94.120\t38041\t10.47.8.208\t25\t1\t10.164.94.120\t-\t-\t-\t-\t-\t-\t-\t-\t-\t-\t-\t-\t-\t220 2.0.0 SMTP server ready\t10.47.8.208,10.164.94.120\t-\tT\t(empty)\tF",
+    "_time": 1521911721.789543,
+    "sourcetype": "bro_smtp",
+    "source": "/opt/zeek/logs/current/smtp.log"
+  },
+  {
+    "_raw": "1521911721.810528\tCpgczE4LAmjG0Qa2K\t10.164.94.120\t46299\t10.47.8.208\t25\t1\t10.164.94.120\t-\t-\t-\t-\t-\t-\t-\t-\t-\t-\t-\t-\t-\t220 2.0.0 SMTP server ready\t10.47.8.208,10.164.94.120\t-\tT\t(empty)\tF",
+    "_time": 1521911721.810528,
+    "sourcetype": "bro_smtp",
+    "source": "/opt/zeek/logs/current/smtp.log"
+  },
+  {
+    "_raw": "1521911721.832530\tCXVzosVRUhGvoZSTi\t10.164.94.120\t39033\t10.47.8.208\t25\t1\t10.164.94.120\t-\t-\t-\t-\t-\t-\t-\t-\t-\t-\t-\t-\t-\t220 2.0.0 SMTP server ready\t10.47.8.208,10.164.94.120\t-\tT\t(empty)\tF",
+    "_time": 1521911721.83253,
+    "sourcetype": "bro_smtp",
+    "source": "/opt/zeek/logs/current/smtp.log"
+  },
+  {
+    "_raw": "1521911991.300258\tCLMlEPxZnXrtSWZZd\t10.128.0.241\t33408\t10.47.1.208\t25\t1\texample.com\t-\t-\t-\t-\t-\t-\t-\t-\t-\t-\t-\t-\t-\t220 2.0.0 SMTP server ready\t10.47.1.208,10.128.0.241\t-\tT\t(empty)\tF",
+    "_time": 1521911991.300258,
+    "sourcetype": "bro_smtp",
+    "source": "/opt/zeek/logs/current/smtp.log"
+  },
+  {
+    "_raw": "1521911991.292693\tCZWR3X3JGoZex8wIQf\t10.128.0.241\t33392\t10.47.1.208\t25\t1\tnmap.scanme.org\t-\t-\t-\t-\t-\t-\t-\t-\t-\t-\t-\t-\t-\t220 2.0.0 SMTP server ready\t10.47.1.208,10.128.0.241\t-\tT\t(empty)\tF",
+    "_time": 1521911991.292693,
+    "sourcetype": "bro_smtp",
+    "source": "/opt/zeek/logs/current/smtp.log"
+  },
+  {
+    "_raw": "1521912292.178596\tCKLfGY1LHSobF0HGe\t10.164.94.120\t39087\t10.47.1.208\t25\t1\t-\tnessus49048747@hotmail.com\t-\t-\t-\t-\t-\t-\t-\t-\t-\t-\t-\t-\t503 5.5.2 Send hello first\t10.47.1.208,10.164.94.120\t-\tF\t(empty)\tF",
+    "_time": 1521912292.178596,
+    "sourcetype": "bro_smtp",
+    "source": "/opt/zeek/logs/current/smtp.log"
+  },
+  {
+    "_raw": "1521912311.472665\tCz0Mki2p7kg1YWFpX2\t10.164.94.120\t35453\t10.47.1.208\t25\t1\thotmail.com\tnessus49048747@hotmail.com\t-\t-\t-\t-\t-\t-\t-\t-\t-\t-\t-\t-\t501 5.1.7 Invalid address\t10.47.1.208,10.164.94.120\t-\tF\t(empty)\tF",
+    "_time": 1521912311.472665,
+    "sourcetype": "bro_smtp",
+    "source": "/opt/zeek/logs/current/smtp.log"
+  },
+  {
+    "_raw": "1521912317.546321\tCNZe8j2pyhNlPhwYrd\t10.164.94.120\t33325\t10.47.1.208\t25\t1\thotmail.com\tnessus1157527943@invalid1562458422.org\t-\t-\t-\t-\t-\t-\t-\t-\t-\t-\t-\t-\t530 5.7.1 Client was not authenticated\t10.47.1.208,10.164.94.120\t-\tF\t(empty)\tF",
+    "_time": 1521912317.546321,
+    "sourcetype": "bro_smtp",
+    "source": "/opt/zeek/logs/current/smtp.log"
+  },
+  {
+    "_raw": "1521912414.868694\tCL1pgYeczdR26ebtg\t10.164.94.120\t36987\t10.47.1.208\t587\t1\thotmail.com\tnessus1865506255@invalid295404690.org\t-\t-\t-\t-\t-\t-\t-\t-\t-\t-\t-\t-\t530 5.7.1 Client was not authenticated\t10.47.1.208,10.164.94.120\t-\tF\t(empty)\tF",
+    "_time": 1521912414.868694,
+    "sourcetype": "bro_smtp",
+    "source": "/opt/zeek/logs/current/smtp.log"
+  },
+  {
+    "_raw": "1521912420.942884\tC8WyqbWzqy3VlDQTc\t10.164.94.120\t45815\t10.47.1.208\t587\t1\thotmail.com\tnessus1665256405@hotmail.com\t(empty)\t-\t-\t-\t-\t-\t-\t-\t-\t-\t-\t-\t530 5.7.1 Client was not authenticated\t10.47.1.208,10.164.94.120\t-\tF\t(empty)\tF",
+    "_time": 1521912420.942884,
+    "sourcetype": "bro_smtp",
+    "source": "/opt/zeek/logs/current/smtp.log"
+  },
+  {
+    "_raw": "1521912428.010921\tCi4FIT1IaluupE3anc\t10.164.94.120\t34913\t10.47.1.208\t587\t1\thotmail.com\tnessus1665256405@hotmail.com\t(empty)\t-\t-\t-\t-\t-\t-\t-\t-\t-\t-\t-\t421 4.4.2 Message submission rate for this client has exceeded the configured limit\t10.47.1.208,10.164.94.120\t-\tF\t(empty)\tF",
+    "_time": 1521912428.010921,
+    "sourcetype": "bro_smtp",
+    "source": "/opt/zeek/logs/current/smtp.log"
+  },
+  {
+    "_raw": "1521912436.069333\tCUFg192OjmUS0ZwyH6\t10.164.94.120\t36403\t10.47.1.208\t587\t1\thotmail.com\tnessus1665256405@hotmail.com\t-\t-\t-\t-\t-\t-\t-\t-\t-\t-\t-\t-\t250 Snozberry.factory.oompa.loompa Hello [10.164.94.120]\t10.47.1.208,10.164.94.120\t-\tF\t(empty)\tF",
+    "_time": 1521912436.069333,
+    "sourcetype": "bro_smtp",
+    "source": "/opt/zeek/logs/current/smtp.log"
+  }
+]

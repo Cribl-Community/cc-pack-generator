@@ -1,0 +1,74 @@
+{
+  "key": "cribl_internal_logs",
+  "sourcetype": "cribl_internal_logs",
+  "classUid": 4001,
+  "destFormat": "ocsf#network",
+  "source": "generic",
+  "vendorNames": [
+    "cribl internal logs"
+  ],
+  "provenance": {
+    "samplePack": "cc-criblvision-for-splunk",
+    "sampleName": "cribl_internal_logs.log",
+    "tier": "reference",
+    "sampleEvents": 20,
+    "emulated": "golden OCSF pipeline, offline emulation of scripts/build-source-ocsf-samples.mjs",
+    "rejected": []
+  },
+  "events": [
+    {
+      "time": "2024-08-28T02:22:05.271Z",
+      "device": {
+        "hostname": "worker_02"
+      },
+      "metadata": {
+        "product": {
+          "name": "Security",
+          "vendor_name": "cribl internal logs"
+        },
+        "version": "1.9.0"
+      },
+      "class_uid": 4001,
+      "category_uid": 4,
+      "activity_id": 1,
+      "type_uid": 400101,
+      "severity_id": 1
+    },
+    {
+      "time": "2024-08-28T02:22:05.278Z",
+      "device": {
+        "hostname": "worker_01"
+      },
+      "metadata": {
+        "product": {
+          "name": "Security",
+          "vendor_name": "cribl internal logs"
+        },
+        "version": "1.9.0"
+      },
+      "class_uid": 4001,
+      "category_uid": 4,
+      "activity_id": 1,
+      "type_uid": 400101,
+      "severity_id": 1
+    },
+    {
+      "time": "2024-08-28T02:22:05.289Z",
+      "device": {
+        "hostname": "worker_01"
+      },
+      "metadata": {
+        "product": {
+          "name": "Security",
+          "vendor_name": "cribl internal logs"
+        },
+        "version": "1.9.0"
+      },
+      "class_uid": 4001,
+      "category_uid": 4,
+      "activity_id": 1,
+      "type_uid": 400101,
+      "severity_id": 1
+    }
+  ]
+}

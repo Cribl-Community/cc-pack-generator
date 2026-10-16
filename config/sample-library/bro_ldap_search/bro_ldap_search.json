@@ -1,0 +1,56 @@
+[
+  {
+    "_raw": "#separator \\x09",
+    "_time": 1521912473.422018,
+    "sourcetype": "bro_ldap_search",
+    "source": "/opt/zeek/logs/current/ldap_search.log"
+  },
+  {
+    "_raw": "#set_separator\t,",
+    "_time": 1521912473.422018,
+    "sourcetype": "bro_ldap_search",
+    "source": "/opt/zeek/logs/current/ldap_search.log"
+  },
+  {
+    "_raw": "#empty_field\t(empty)",
+    "_time": 1521912473.422018,
+    "sourcetype": "bro_ldap_search",
+    "source": "/opt/zeek/logs/current/ldap_search.log"
+  },
+  {
+    "_raw": "#unset_field\t-",
+    "_time": 1521912473.422018,
+    "sourcetype": "bro_ldap_search",
+    "source": "/opt/zeek/logs/current/ldap_search.log"
+  },
+  {
+    "_raw": "#path\tldap_search",
+    "_time": 1521912473.422018,
+    "sourcetype": "bro_ldap_search",
+    "source": "/opt/zeek/logs/current/ldap_search.log"
+  },
+  {
+    "_raw": "#open\t2024-04-12-19-32-22",
+    "_time": 1521912473.422018,
+    "sourcetype": "bro_ldap_search",
+    "source": "/opt/zeek/logs/current/ldap_search.log"
+  },
+  {
+    "_raw": "#fields\tts\tuid\tid.orig_h\tid.orig_p\tid.resp_h\tid.resp_p\tmessage_id\tscope\tderef_aliases\tbase_object\tresult_count\tresult\tdiagnostic_message\tfilter\tattributes",
+    "_time": 1521912473.422018,
+    "sourcetype": "bro_ldap_search",
+    "source": "/opt/zeek/logs/current/ldap_search.log"
+  },
+  {
+    "_raw": "#types\ttime\tstring\taddr\tport\taddr\tport\tint\tstring\tstring\tstring\tcount\tstring\tstring\tstring\tvector[string]",
+    "_time": 1521912473.422018,
+    "sourcetype": "bro_ldap_search",
+    "source": "/opt/zeek/logs/current/ldap_search.log"
+  },
+  {
+    "_raw": "1521912473.422018\tCF5klN1gDGXhNXrm49\t10.128.0.207\t57764\t10.47.23.25\t389\t7\tbase\tnever\t-\t1\tsuccess\t-\t(objectClass=*)\t-",
+    "_time": 1521912473.422018,
+    "sourcetype": "bro_ldap_search",
+    "source": "/opt/zeek/logs/current/ldap_search.log"
+  }
+]

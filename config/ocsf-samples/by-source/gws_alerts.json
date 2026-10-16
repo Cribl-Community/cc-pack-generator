@@ -1,0 +1,71 @@
+{
+  "key": "gws_alerts",
+  "sourcetype": "gws_alerts",
+  "classUid": 4001,
+  "destFormat": "ocsf#network",
+  "source": "generic",
+  "vendorNames": [
+    "gws alerts"
+  ],
+  "provenance": {
+    "samplePack": "cribl-google-workspace-rest-io",
+    "sampleName": "cribl_gws_alerts.log",
+    "tier": "reference",
+    "sampleEvents": 4,
+    "emulated": "golden OCSF pipeline, offline emulation of scripts/build-source-ocsf-samples.mjs",
+    "rejected": []
+  },
+  "events": [
+    {
+      "device": {
+        "hostname": "ip-10-255-9-252"
+      },
+      "metadata": {
+        "product": {
+          "name": "Security",
+          "vendor_name": "gws alerts"
+        },
+        "version": "1.9.0"
+      },
+      "class_uid": 4001,
+      "category_uid": 4,
+      "activity_id": 1,
+      "type_uid": 400101,
+      "severity_id": 1
+    },
+    {
+      "device": {
+        "hostname": "ip-10-255-9-252"
+      },
+      "metadata": {
+        "product": {
+          "name": "Security",
+          "vendor_name": "gws alerts"
+        },
+        "version": "1.9.0"
+      },
+      "class_uid": 4001,
+      "category_uid": 4,
+      "activity_id": 1,
+      "type_uid": 400101,
+      "severity_id": 1
+    },
+    {
+      "device": {
+        "hostname": "ip-10-255-9-252"
+      },
+      "metadata": {
+        "product": {
+          "name": "Security",
+          "vendor_name": "gws alerts"
+        },
+        "version": "1.9.0"
+      },
+      "class_uid": 4001,
+      "category_uid": 4,
+      "activity_id": 1,
+      "type_uid": 400101,
+      "severity_id": 1
+    }
+  ]
+}

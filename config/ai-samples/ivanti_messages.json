@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "key": "ivanti_messages",
+  "sourcetype": "ivanti_messages",
+  "events": [
+    "May 12 03:14:07 ivanti-ics01 ive: 2024-05-12 03:14:07 [AUT] auth[21044]: - Info - AUT22673 - Primary authentication successful for jsmith/Users-Auth from 10.42.11.23",
+    "May 12 03:16:52 ivanti-ics01 ive: 2024-05-12 03:16:52 [AUT] auth[21044]: - Warning - AUT31517 - Primary authentication failed for jsmith/Users-Auth from 203.0.113.45, reason: invalid password",
+    "May 12 04:02:19 ivanti-vpn02 ive: 2024-05-12 04:02:19 [NWC] network[8891]: - Info - NWC24326 - VPN tunnel established for user rgupta from 198.51.100.77, session id 8f3ac21e",
+    "May 12 04:05:44 ivanti-vpn02 ive: 2024-05-12 04:05:44 [NWC] network[8891]: - Info - NWC24329 - VPN tunnel terminated for user rgupta, duration 00:03:25, bytes tx=184320 rx=98304",
+    "May 12 05:11:03 ivanti-gateway-dc1 ive: 2024-05-12 05:11:03 [ADM] admin[3021]: - Notice - ADM40012 - Administrator admin_paul modified role mapping policy \"Contractors-Restricted\"",
+    "May 12 05:47:38 ivanti-gateway-dc1 ive: 2024-05-12 05:47:38 [SEC] security[9042]: - Critical - SEC50091 - Possible brute force attack detected: 27 failed logins for account svc_backup from 45.33.32.156 within 60 seconds",
+    "May 12 06:20:15 ivanti-ics01 ive: 2024-05-12 06:20:15 [SYS] system[100]: - Info - SYS10001 - System started successfully, build 22.6R2.1",
+    "May 12 06:55:29 ivanti-ics01 ive: 2024-05-12 06:55:29 [AUT] auth[21044]: - Info - AUT22673 - Primary authentication successful for mchen/Employees from 172.16.4.88",
+    "May 12 07:32:41 ivanti-vpn02 ive: 2024-05-12 07:32:41 [HCK] hostchecker[5512]: - Warning - HCK33087 - Host Checker policy \"Corp-AV-Required\" failed for user tlee from 10.88.0.14, antivirus signature outdated",
+    "May 12 08:10:57 ivanti-gateway-dc1 ive: 2024-05-12 08:10:57 [ADM] admin[3021]: - Error - ADM40099 - Failed login attempt to admin console for account root from 91.198.174.192, invalid credentials",
+    "May 12 09:05:12 ivanti-ics01 ive: 2024-05-12 09:05:12 [SEC] security[9042]: - Critical - SEC50100 - Malware signature detected in uploaded file \"invoice.exe\" from user kbrooks, session blocked",
+    "May 12 10:14:33 ivanti-vpn02 ive: 2024-05-12 10:14:33 [NWC] network[8891]: - Info - NWC24326 - VPN tunnel established for user dwilliams from [2001:db8:85a3::8a2e:370:7334], session id ab19f0d3",
+    "May 12 11:47:02 ivanti-gateway-dc1 ive: 2024-05-12 11:47:02 [SYS] system[100]: - Warning - SYS10077 - Disk usage on /data reached 88%, cleanup recommended",
+    "May 12 12:33:19 ivanti-ics01 ive: 2024-05-12 12:33:19 [AUT] auth[21044]: - Info - AUT22673 - Secondary authentication successful for jsmith/Users-Auth via RADIUS from 10.42.11.23",
+    "May 12 13:02:47 ivanti-vpn02 ive: 2024-05-12 13:02:47 [SEC] security[9042]: - Warning - SEC50044 - Session hijack detection triggered for session id 8f3ac21e, source IP mismatch 198.51.100.77 vs 198.51.100.201",
+    "May 12 14:18:56 ivanti-gateway-dc1 ive: 2024-05-12 14:18:56 [ADM] admin[3021]: - Notice - ADM40015 - Certificate \"ivanti-vpn02.corp.local\" will expire in 15 days",
+    "May 12 15:44:31 ivanti-ics01 ive: 2024-05-12 15:44:31 [NWC] network[8891]: - Error - NWC24399 - Failed to establish VPN tunnel for user unknown_user from 185.220.101.33, license limit exceeded",
+    "May 12 16:09:12 ivanti-vpn02 ive: 2024-05-12 16:09:12 [AUT] auth[21044]: - Info - AUT22673 - Primary authentication successful for asharma/Partners from 172.16.9.201",
+    "May 12 17:26:48 ivanti-ics01 ive: 2024-05-12 17:26:48 [SEC] security[9042]: - Critical - SEC50133 - Configuration export attempted by unauthorized role \"Guest-Contractor\" from 10.0.5.14, access denied",
+    "May 12 22:59:03 ivanti-gateway-dc1 ive: 2024-05-12 22:59:03 [SYS] system[100]: - Info - SYS10005 - Scheduled backup completed successfully, size=4.3GB, duration=00:07:12"
+  ],
+  "fingerprint": "1022463-3637",
+  "verification": {
+    "verdict": "unverified",
+    "method": "none",
+    "eventsParsed": 0,
+    "eventsChecked": 20,
+    "fields": [],
+    "reasons": [
+      "ivanti_messages has no parser and the events are unstructured text — nothing to verify against"
+    ],
+    "offendingEvents": [],
+    "keyEcho": null
+  },
+  "provenance": {
+    "model": "us.anthropic.claude-sonnet-5",
+    "buildNumber": 529,
+    "generatedAt": "2026-08-18T07:11:51.599Z",
+    "grounding": "KNOWN FACTS ABOUT THIS SOURCE (from sourcetype recognition — match these exactly):\n- Product: Ivanti Ivanti appliance\n- Log family: application"
+  }
+}

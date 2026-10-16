@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "samples": [
+    {
+      "key": "access_error::text",
+      "sourcetype": "access_error",
+      "format": "text",
+      "events": 99,
+      "fingerprint": "87fb284-16092",
+      "sanitisedAt": "2026-09-18T10:51:24.658Z",
+      "verdict": "pass",
+      "method": "parser-emulation"
+    },
+    {
+      "key": "checkpoint_firewall_cef::cef",
+      "sourcetype": "checkpoint_firewall_cef",
+      "format": "cef",
+      "events": 134,
+      "fingerprint": "6c9025aa-73930",
+      "sanitisedAt": "2026-09-29T12:58:49.486Z",
+      "verdict": "pass",
+      "method": "parser-emulation"
+    },
+    {
+      "key": "fortinet_fortigate_cef::cef",
+      "sourcetype": "fortinet_fortigate_cef",
+      "format": "cef",
+      "events": 1,
+      "fingerprint": "e98e3ab7-1135",
+      "sanitisedAt": "2026-09-29T12:59:39.448Z",
+      "verdict": "pass",
+      "method": "parser-emulation"
+    },
+    {
+      "key": "linux_syslog::syslog",
+      "sourcetype": "linux_syslog",
+      "format": "syslog",
+      "events": 15,
+      "fingerprint": "53433e07-2469",
+      "sanitisedAt": "2026-08-27T13:27:21.056Z",
+      "verdict": "pass",
+      "method": "parser-emulation"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "name": "XSIAM-SentinelOne-DeepVisibility",
+  "kind": "source-specific",
+  "pattern": "tag_only",
+  "sourceIdField": "__sourceIdentifier",
+  "sourceIdentifier": "b9fa55e6fa564c709358425ce0f61517",
+  "vendor": null,
+  "product": null,
+  "reshapesRaw": false,
+  "sample": {
+    "name": "XSIAM-SentinelOne-DeepVisibility.log",
+    "format": "json",
+    "formatLabel": "JSON",
+    "events": 1
+  },
+  "upstream": {
+    "pack": "cribl-paloalto-xsiam",
+    "version": "2.1.1",
+    "path": "default/pipelines/XSIAM-SentinelOne-DeepVisibility/conf.yml",
+    "sha256": "5ddf347a43c9e6dec9f63c17d348d03166c2e7ce58f894f39324aa3daf69ae5a",
+    "source": "https://packs.cribl.io/packs/cribl-paloalto-xsiam"
+  },
+  "conf": {
+    "output": "default",
+    "streamtags": [],
+    "groups": {},
+    "asyncFuncTimeout": 1000,
+    "description": ""
+  },
+  "functions": [
+    {
+      "id": "comment",
+      "filter": "true",
+      "conf": {
+        "comment": "Assign the Source-Identifier from https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Documentation/Data-source-UUIDs"
+      }
+    },
+    {
+      "id": "eval",
+      "filter": "true",
+      "conf": {
+        "add": [
+          {
+            "disabled": false,
+            "name": "__sourceIdentifier",
+            "value": "'b9fa55e6fa564c709358425ce0f61517'"
+          }
+        ]
+      },
+      "description": "Assign the Source-Identifier"
+    }
+  ]
+}

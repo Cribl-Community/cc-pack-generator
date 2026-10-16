@@ -1,0 +1,1612 @@
+[
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_raw": "{\"Id\":4798,\"Version\":0,\"Qualifiers\":null,\"Level\":0,\"Task\":13824,\"Opcode\":0,\"Keywords\":-9214364837600034816,\"RecordId\":154868,\"ProviderName\":\"Microsoft-Windows-Security-Auditing\",\"ProviderId\":\"54849625-5478-4994-a5ba-3e3b0328c30d\",\"LogName\":\"Security\",\"ProcessId\":836,\"ThreadId\":4740,\"MachineName\":\"EC2AMAZ-EFUIE9P\",\"UserId\":null,\"TimeCreated\":\"\\/Date(1680910578903)\\/\",\"ActivityId\":\"96f0aeab-6634-0001-87af-f0963466d901\",\"RelatedActivityId\":null,\"ContainerLog\":\"Security\",\"MatchedQueryIds\":[],\"Bookmark\":{},\"LevelDisplayName\":\"Information\",\"OpcodeDisplayName\":\"Info\",\"TaskDisplayName\":\"User Account Management\",\"KeywordsDisplayNames\":[\"Audit Success\"],\"Properties\":[{\"Value\":\"KevinB\"},{\"Value\":\"EC2AMAZ-EFUIE9P\"},{\"Value\":\"S-1-5-21-4073093101-1709838126-2283403042-1011\"},{\"Value\":\"S-1-5-21-4073093101-1709838126-2283403042-500\"},{\"Value\":\"Administrator\"},{\"Value\":\"EC2AMAZ-EFUIE9P\"},{\"Value\":1629888},{\"Value\":5860},{\"Value\":\"C:\\\\Windows\\\\System32\\\\SystemSettingsAdminFlows.exe\"}],\"Message\":\"A user\\u0027s local group membership was enumerated.\\r\\n\\r\\nSubject:\\r\\n\\tSecurity ID:\\t\\tS-1-5-21-4073093101-1709838126-2283403042-500\\r\\n\\tAccount Name:\\t\\tAdministrator\\r\\n\\tAccount Domain:\\t\\tEC2AMAZ-EFUIE9P\\r\\n\\tLogon ID:\\t\\t0x18DEC0\\r\\n\\r\\nUser:\\r\\n\\tSecurity ID:\\t\\tS-1-5-21-4073093101-1709838126-2283403042-1011\\r\\n\\tAccount Name:\\t\\tKevinB\\r\\n\\tAccount Domain:\\t\\tEC2AMAZ-EFUIE9P\\r\\n\\r\\nProcess Information:\\r\\n\\tProcess ID:\\t\\t0x16e4\\r\\n\\tProcess Name:\\t\\tC:\\\\Windows\\\\System32\\\\SystemSettingsAdminFlows.exe\"}",
+    "source": "Security",
+    "host": "EC2AMAZ-EFUIE9P",
+    "__source": "Security",
+    "__channel": "Security",
+    "__isBroken": true,
+    "__raw": "{\"Id\":4798,\"Version\":0,\"Qualifiers\":null,\"Level\":0,\"Task\":13824,\"Opcode\":0,\"Keywords\":-9214364837600034816,\"RecordId\":154868,\"ProviderName\":\"Microsoft-Windows-Security-Auditing\",\"ProviderId\":\"54849625-5478-4994-a5ba-3e3b0328c30d\",\"LogName\":\"Security\",\"ProcessId\":836,\"ThreadId\":4740,\"MachineName\":\"EC2AMAZ-EFUIE9P\",\"UserId\":null,\"TimeCreated\":\"\\/Date(1680910578903)\\/\",\"ActivityId\":\"96f0aeab-6634-0001-87af-f0963466d901\",\"RelatedActivityId\":null,\"ContainerLog\":\"Security\",\"MatchedQueryIds\":[],\"Bookmark\":{},\"LevelDisplayName\":\"Information\",\"OpcodeDisplayName\":\"Info\",\"TaskDisplayName\":\"User Account Management\",\"KeywordsDisplayNames\":[\"Audit Success\"],\"Properties\":[{\"Value\":\"KevinB\"},{\"Value\":\"EC2AMAZ-EFUIE9P\"},{\"Value\":\"S-1-5-21-4073093101-1709838126-2283403042-1011\"},{\"Value\":\"S-1-5-21-4073093101-1709838126-2283403042-500\"},{\"Value\":\"Administrator\"},{\"Value\":\"EC2AMAZ-EFUIE9P\"},{\"Value\":1629888},{\"Value\":5860},{\"Value\":\"C:\\\\Windows\\\\System32\\\\SystemSettingsAdminFlows.exe\"}],\"Message\":\"A user\\u0027s local group membership was enumerated.\\r\\n\\r\\nSubject:\\r\\n\\tSecurity ID:\\t\\tS-1-5-21-4073093101-1709838126-2283403042-500\\r\\n\\tAccount Name:\\t\\tAdministrator\\r\\n\\tAccount Domain:\\t\\tEC2AMAZ-EFUIE9P\\r\\n\\tLogon ID:\\t\\t0x18DEC0\\r\\n\\r\\nUser:\\r\\n\\tSecurity ID:\\t\\tS-1-5-21-4073093101-1709838126-2283403042-1011\\r\\n\\tAccount Name:\\t\\tKevinB\\r\\n\\tAccount Domain:\\t\\tEC2AMAZ-EFUIE9P\\r\\n\\r\\nProcess Information:\\r\\n\\tProcess ID:\\t\\t0x16e4\\r\\n\\tProcess Name:\\t\\tC:\\\\Windows\\\\System32\\\\SystemSettingsAdminFlows.exe\"}",
+    "_time": 1680910578.903,
+    "cribl_breaker": "windows event logs",
+    "__inputId": "win_event_logs:in_win_event_logs",
+    "__metadata": {
+      "timestamp": 1680910330.846,
+      "cribl": {
+        "version": "4.1.0-6979aea9",
+        "mode": "managed-edge",
+        "group": "default_fleet",
+        "config_version": "06c994f"
+      },
+      "os": {
+        "arch": "x64",
+        "cpu_count": 2,
+        "cpu_speed_mhz": 2300,
+        "cpu_type": "Intel(R) Xeon(R) CPU E5-2686 v4 @ 2.30GHz",
+        "gid": -1,
+        "homedir": "C:\\Windows\\system32\\config\\systemprofile",
+        "hostname": "EC2AMAZ-EFUIE9P",
+        "interfaces": {
+          "Ethernet 2": [
+            {
+              "address": "fe80::46a0:4d4e:b104:f6a6",
+              "netmask": "ffff:ffff:ffff:ffff::",
+              "family": "IPv6",
+              "mac": "0a:ff:94:01:93:0d",
+              "internal": false,
+              "cidr": "fe80::46a0:4d4e:b104:f6a6/64",
+              "scopeid": 7
+            },
+            {
+              "address": "172.31.15.42",
+              "netmask": "255.255.240.0",
+              "family": "IPv4",
+              "mac": "0a:ff:94:01:93:0d",
+              "internal": false,
+              "cidr": "172.31.15.42/20"
+            }
+          ],
+          "Loopback Pseudo-Interface 1": [
+            {
+              "address": "::1",
+              "netmask": "ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff",
+              "family": "IPv6",
+              "mac": "00:00:00:00:00:00",
+              "internal": true,
+              "cidr": "::1/128",
+              "scopeid": 0
+            },
+            {
+              "address": "127.0.0.1",
+              "netmask": "255.0.0.0",
+              "family": "IPv4",
+              "mac": "00:00:00:00:00:00",
+              "internal": true,
+              "cidr": "127.0.0.1/8"
+            }
+          ]
+        },
+        "memory": 4294557696,
+        "os_id": "windows",
+        "os_name": "Microsoft Windows Server 2022 Datacenter",
+        "os_version": "10.0.20348",
+        "os_version_id": "20348",
+        "platform": "win32",
+        "release": "10.0.20348",
+        "timezone": "UTC",
+        "timezone_offset": "+00:00",
+        "uid": -1,
+        "username": "SYSTEM"
+      },
+      "aws": {
+        "version": 2,
+        "identity": {
+          "accountId": "243602015558",
+          "architecture": "x86_64",
+          "availabilityZone": "us-west-2c",
+          "billingProducts": [
+            "bp-6ba54002"
+          ],
+          "devpayProductCodes": null,
+          "marketplaceProductCodes": null,
+          "imageId": "ami-0b8508d946afbf024",
+          "instanceId": "i-0a9ff344dd6ca2604",
+          "instanceType": "t2.medium",
+          "kernelId": null,
+          "pendingTime": "2023-03-27T14:36:27Z",
+          "privateIp": "172.31.15.42",
+          "ramdiskId": null,
+          "region": "us-west-2",
+          "version": "2017-09-30"
+        },
+        "public_ipv4": "18.237.42.35",
+        "hostname": "ec2-18-237-42-35.us-west-2.compute.amazonaws.com",
+        "security_groups": [
+          "launch-wizard-355"
+        ]
+      },
+      "env": {
+        "ALLUSERSPROFILE": "C:\\ProgramData",
+        "APPDATA": "C:\\Windows\\system32\\config\\systemprofile\\AppData\\Roaming",
+        "AWS_EXECUTION_ENV": "EC2",
+        "AzureMonAgentClientLocation": "C:\\Packages\\Plugins\\Microsoft.Azure.Monitor.AzureMonitorWindowsAgent\\1.12.1.0\\Monitoring\\Agent",
+        "CommonProgramFiles": "C:\\Program Files\\Common Files",
+        "CommonProgramFiles(x86)": "C:\\Program Files (x86)\\Common Files",
+        "CommonProgramW6432": "C:\\Program Files\\Common Files",
+        "COMPUTERNAME": "EC2AMAZ-EFUIE9P",
+        "ComSpec": "C:\\Windows\\system32\\cmd.exe",
+        "CRIBL_CONF_DIR": "C:\\ProgramData\\Cribl",
+        "CRIBL_EDGE_FS_ROOT": "\\",
+        "CRIBL_HOME": "C:\\ProgramData\\Cribl",
+        "CRIBL_INSTANCE_HOME": "C:\\ProgramData\\Cribl",
+        "CRIBL_INTERACTIVE": "0",
+        "CRIBL_ROLE": "WORKER",
+        "CRIBL_VOLUME_DIR": "C:\\ProgramData\\Cribl",
+        "CRIBL_WORKER_DIST_MODE": "managed-edge",
+        "CRIBL_WORKER_ID": "0",
+        "CRIBL_WORKER_LABEL": "w0",
+        "DriverData": "C:\\Windows\\System32\\Drivers\\DriverData",
+        "EC2LAUNCH_TELEMETRY": "1",
+        "IDENTITY_ENDPOINT": "http://localhost:40342/metadata/identity/oauth2/token",
+        "IMDS_ENDPOINT": "http://localhost:40342",
+        "LOCALAPPDATA": "C:\\Windows\\system32\\config\\systemprofile\\AppData\\Local",
+        "NODE_OPTIONS": "--max-old-space-size=1024 --no-warnings --no-deprecation",
+        "NUMBER_OF_PROCESSORS": "2",
+        "OS": "Windows_NT",
+        "Path": "C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\Amazon\\cfn-bootstrap\\;C:\\Program Files\\AzureConnectedMachineAgent\\;C:\\Windows\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps",
+        "PATHEXT": ".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC",
+        "PROCESSOR_ARCHITECTURE": "AMD64",
+        "PROCESSOR_IDENTIFIER": "Intel64 Family 6 Model 79 Stepping 1, GenuineIntel",
+        "PROCESSOR_LEVEL": "6",
+        "PROCESSOR_REVISION": "4f01",
+        "ProgramData": "C:\\ProgramData",
+        "ProgramFiles": "C:\\Program Files",
+        "ProgramFiles(x86)": "C:\\Program Files (x86)",
+        "ProgramW6432": "C:\\Program Files",
+        "PSModulePath": "C:\\Program Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules;C:\\Program Files (x86)\\AWS Tools\\PowerShell\\",
+        "PUBLIC": "C:\\Users\\Public",
+        "SystemDrive": "C:",
+        "SystemRoot": "C:\\Windows",
+        "TEMP": "C:\\Windows\\TEMP",
+        "TMP": "C:\\Windows\\TEMP",
+        "USERDOMAIN": "WORKGROUP",
+        "USERNAME": "EC2AMAZ-EFUIE9P$",
+        "USERPROFILE": "C:\\Windows\\system32\\config\\systemprofile",
+        "windir": "C:\\Windows"
+      }
+    }
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_raw": "{\"Id\":4798,\"Version\":0,\"Qualifiers\":null,\"Level\":0,\"Task\":13824,\"Opcode\":0,\"Keywords\":-9214364837600034816,\"RecordId\":154869,\"ProviderName\":\"Microsoft-Windows-Security-Auditing\",\"ProviderId\":\"54849625-5478-4994-a5ba-3e3b0328c30d\",\"LogName\":\"Security\",\"ProcessId\":836,\"ThreadId\":4740,\"MachineName\":\"EC2AMAZ-EFUIE9P\",\"UserId\":null,\"TimeCreated\":\"\\/Date(1680910578904)\\/\",\"ActivityId\":\"96f0aeab-6634-0001-87af-f0963466d901\",\"RelatedActivityId\":null,\"ContainerLog\":\"Security\",\"MatchedQueryIds\":[],\"Bookmark\":{},\"LevelDisplayName\":\"Information\",\"OpcodeDisplayName\":\"Info\",\"TaskDisplayName\":\"User Account Management\",\"KeywordsDisplayNames\":[\"Audit Success\"],\"Properties\":[{\"Value\":\"Kevin\"},{\"Value\":\"EC2AMAZ-EFUIE9P\"},{\"Value\":\"S-1-5-21-4073093101-1709838126-2283403042-1013\"},{\"Value\":\"S-1-5-21-4073093101-1709838126-2283403042-500\"},{\"Value\":\"Administrator\"},{\"Value\":\"EC2AMAZ-EFUIE9P\"},{\"Value\":1629888},{\"Value\":5860},{\"Value\":\"C:\\\\Windows\\\\System32\\\\SystemSettingsAdminFlows.exe\"}],\"Message\":\"A user\\u0027s local group membership was enumerated.\\r\\n\\r\\nSubject:\\r\\n\\tSecurity ID:\\t\\tS-1-5-21-4073093101-1709838126-2283403042-500\\r\\n\\tAccount Name:\\t\\tAdministrator\\r\\n\\tAccount Domain:\\t\\tEC2AMAZ-EFUIE9P\\r\\n\\tLogon ID:\\t\\t0x18DEC0\\r\\n\\r\\nUser:\\r\\n\\tSecurity ID:\\t\\tS-1-5-21-4073093101-1709838126-2283403042-1013\\r\\n\\tAccount Name:\\t\\tKevin\\r\\n\\tAccount Domain:\\t\\tEC2AMAZ-EFUIE9P\\r\\n\\r\\nProcess Information:\\r\\n\\tProcess ID:\\t\\t0x16e4\\r\\n\\tProcess Name:\\t\\tC:\\\\Windows\\\\System32\\\\SystemSettingsAdminFlows.exe\"}",
+    "source": "Security",
+    "host": "EC2AMAZ-EFUIE9P",
+    "__source": "Security",
+    "__channel": "Security",
+    "__isBroken": true,
+    "__raw": "{\"Id\":4798,\"Version\":0,\"Qualifiers\":null,\"Level\":0,\"Task\":13824,\"Opcode\":0,\"Keywords\":-9214364837600034816,\"RecordId\":154869,\"ProviderName\":\"Microsoft-Windows-Security-Auditing\",\"ProviderId\":\"54849625-5478-4994-a5ba-3e3b0328c30d\",\"LogName\":\"Security\",\"ProcessId\":836,\"ThreadId\":4740,\"MachineName\":\"EC2AMAZ-EFUIE9P\",\"UserId\":null,\"TimeCreated\":\"\\/Date(1680910578904)\\/\",\"ActivityId\":\"96f0aeab-6634-0001-87af-f0963466d901\",\"RelatedActivityId\":null,\"ContainerLog\":\"Security\",\"MatchedQueryIds\":[],\"Bookmark\":{},\"LevelDisplayName\":\"Information\",\"OpcodeDisplayName\":\"Info\",\"TaskDisplayName\":\"User Account Management\",\"KeywordsDisplayNames\":[\"Audit Success\"],\"Properties\":[{\"Value\":\"Kevin\"},{\"Value\":\"EC2AMAZ-EFUIE9P\"},{\"Value\":\"S-1-5-21-4073093101-1709838126-2283403042-1013\"},{\"Value\":\"S-1-5-21-4073093101-1709838126-2283403042-500\"},{\"Value\":\"Administrator\"},{\"Value\":\"EC2AMAZ-EFUIE9P\"},{\"Value\":1629888},{\"Value\":5860},{\"Value\":\"C:\\\\Windows\\\\System32\\\\SystemSettingsAdminFlows.exe\"}],\"Message\":\"A user\\u0027s local group membership was enumerated.\\r\\n\\r\\nSubject:\\r\\n\\tSecurity ID:\\t\\tS-1-5-21-4073093101-1709838126-2283403042-500\\r\\n\\tAccount Name:\\t\\tAdministrator\\r\\n\\tAccount Domain:\\t\\tEC2AMAZ-EFUIE9P\\r\\n\\tLogon ID:\\t\\t0x18DEC0\\r\\n\\r\\nUser:\\r\\n\\tSecurity ID:\\t\\tS-1-5-21-4073093101-1709838126-2283403042-1013\\r\\n\\tAccount Name:\\t\\tKevin\\r\\n\\tAccount Domain:\\t\\tEC2AMAZ-EFUIE9P\\r\\n\\r\\nProcess Information:\\r\\n\\tProcess ID:\\t\\t0x16e4\\r\\n\\tProcess Name:\\t\\tC:\\\\Windows\\\\System32\\\\SystemSettingsAdminFlows.exe\"}",
+    "_time": 1680910578.904,
+    "cribl_breaker": "windows event logs",
+    "__inputId": "win_event_logs:in_win_event_logs",
+    "__metadata": {
+      "timestamp": 1680910330.846,
+      "cribl": {
+        "version": "4.1.0-6979aea9",
+        "mode": "managed-edge",
+        "group": "default_fleet",
+        "config_version": "06c994f"
+      },
+      "os": {
+        "arch": "x64",
+        "cpu_count": 2,
+        "cpu_speed_mhz": 2300,
+        "cpu_type": "Intel(R) Xeon(R) CPU E5-2686 v4 @ 2.30GHz",
+        "gid": -1,
+        "homedir": "C:\\Windows\\system32\\config\\systemprofile",
+        "hostname": "EC2AMAZ-EFUIE9P",
+        "interfaces": {
+          "Ethernet 2": [
+            {
+              "address": "fe80::46a0:4d4e:b104:f6a6",
+              "netmask": "ffff:ffff:ffff:ffff::",
+              "family": "IPv6",
+              "mac": "0a:ff:94:01:93:0d",
+              "internal": false,
+              "cidr": "fe80::46a0:4d4e:b104:f6a6/64",
+              "scopeid": 7
+            },
+            {
+              "address": "172.31.15.42",
+              "netmask": "255.255.240.0",
+              "family": "IPv4",
+              "mac": "0a:ff:94:01:93:0d",
+              "internal": false,
+              "cidr": "172.31.15.42/20"
+            }
+          ],
+          "Loopback Pseudo-Interface 1": [
+            {
+              "address": "::1",
+              "netmask": "ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff",
+              "family": "IPv6",
+              "mac": "00:00:00:00:00:00",
+              "internal": true,
+              "cidr": "::1/128",
+              "scopeid": 0
+            },
+            {
+              "address": "127.0.0.1",
+              "netmask": "255.0.0.0",
+              "family": "IPv4",
+              "mac": "00:00:00:00:00:00",
+              "internal": true,
+              "cidr": "127.0.0.1/8"
+            }
+          ]
+        },
+        "memory": 4294557696,
+        "os_id": "windows",
+        "os_name": "Microsoft Windows Server 2022 Datacenter",
+        "os_version": "10.0.20348",
+        "os_version_id": "20348",
+        "platform": "win32",
+        "release": "10.0.20348",
+        "timezone": "UTC",
+        "timezone_offset": "+00:00",
+        "uid": -1,
+        "username": "SYSTEM"
+      },
+      "aws": {
+        "version": 2,
+        "identity": {
+          "accountId": "243602015558",
+          "architecture": "x86_64",
+          "availabilityZone": "us-west-2c",
+          "billingProducts": [
+            "bp-6ba54002"
+          ],
+          "devpayProductCodes": null,
+          "marketplaceProductCodes": null,
+          "imageId": "ami-0b8508d946afbf024",
+          "instanceId": "i-0a9ff344dd6ca2604",
+          "instanceType": "t2.medium",
+          "kernelId": null,
+          "pendingTime": "2023-03-27T14:36:27Z",
+          "privateIp": "172.31.15.42",
+          "ramdiskId": null,
+          "region": "us-west-2",
+          "version": "2017-09-30"
+        },
+        "public_ipv4": "18.237.42.35",
+        "hostname": "ec2-18-237-42-35.us-west-2.compute.amazonaws.com",
+        "security_groups": [
+          "launch-wizard-355"
+        ]
+      },
+      "env": {
+        "ALLUSERSPROFILE": "C:\\ProgramData",
+        "APPDATA": "C:\\Windows\\system32\\config\\systemprofile\\AppData\\Roaming",
+        "AWS_EXECUTION_ENV": "EC2",
+        "AzureMonAgentClientLocation": "C:\\Packages\\Plugins\\Microsoft.Azure.Monitor.AzureMonitorWindowsAgent\\1.12.1.0\\Monitoring\\Agent",
+        "CommonProgramFiles": "C:\\Program Files\\Common Files",
+        "CommonProgramFiles(x86)": "C:\\Program Files (x86)\\Common Files",
+        "CommonProgramW6432": "C:\\Program Files\\Common Files",
+        "COMPUTERNAME": "EC2AMAZ-EFUIE9P",
+        "ComSpec": "C:\\Windows\\system32\\cmd.exe",
+        "CRIBL_CONF_DIR": "C:\\ProgramData\\Cribl",
+        "CRIBL_EDGE_FS_ROOT": "\\",
+        "CRIBL_HOME": "C:\\ProgramData\\Cribl",
+        "CRIBL_INSTANCE_HOME": "C:\\ProgramData\\Cribl",
+        "CRIBL_INTERACTIVE": "0",
+        "CRIBL_ROLE": "WORKER",
+        "CRIBL_VOLUME_DIR": "C:\\ProgramData\\Cribl",
+        "CRIBL_WORKER_DIST_MODE": "managed-edge",
+        "CRIBL_WORKER_ID": "0",
+        "CRIBL_WORKER_LABEL": "w0",
+        "DriverData": "C:\\Windows\\System32\\Drivers\\DriverData",
+        "EC2LAUNCH_TELEMETRY": "1",
+        "IDENTITY_ENDPOINT": "http://localhost:40342/metadata/identity/oauth2/token",
+        "IMDS_ENDPOINT": "http://localhost:40342",
+        "LOCALAPPDATA": "C:\\Windows\\system32\\config\\systemprofile\\AppData\\Local",
+        "NODE_OPTIONS": "--max-old-space-size=1024 --no-warnings --no-deprecation",
+        "NUMBER_OF_PROCESSORS": "2",
+        "OS": "Windows_NT",
+        "Path": "C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\Amazon\\cfn-bootstrap\\;C:\\Program Files\\AzureConnectedMachineAgent\\;C:\\Windows\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps",
+        "PATHEXT": ".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC",
+        "PROCESSOR_ARCHITECTURE": "AMD64",
+        "PROCESSOR_IDENTIFIER": "Intel64 Family 6 Model 79 Stepping 1, GenuineIntel",
+        "PROCESSOR_LEVEL": "6",
+        "PROCESSOR_REVISION": "4f01",
+        "ProgramData": "C:\\ProgramData",
+        "ProgramFiles": "C:\\Program Files",
+        "ProgramFiles(x86)": "C:\\Program Files (x86)",
+        "ProgramW6432": "C:\\Program Files",
+        "PSModulePath": "C:\\Program Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules;C:\\Program Files (x86)\\AWS Tools\\PowerShell\\",
+        "PUBLIC": "C:\\Users\\Public",
+        "SystemDrive": "C:",
+        "SystemRoot": "C:\\Windows",
+        "TEMP": "C:\\Windows\\TEMP",
+        "TMP": "C:\\Windows\\TEMP",
+        "USERDOMAIN": "WORKGROUP",
+        "USERNAME": "EC2AMAZ-EFUIE9P$",
+        "USERPROFILE": "C:\\Windows\\system32\\config\\systemprofile",
+        "windir": "C:\\Windows"
+      }
+    }
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_raw": "{\"Id\":4798,\"Version\":0,\"Qualifiers\":null,\"Level\":0,\"Task\":13824,\"Opcode\":0,\"Keywords\":-9214364837600034816,\"RecordId\":154870,\"ProviderName\":\"Microsoft-Windows-Security-Auditing\",\"ProviderId\":\"54849625-5478-4994-a5ba-3e3b0328c30d\",\"LogName\":\"Security\",\"ProcessId\":836,\"ThreadId\":4740,\"MachineName\":\"EC2AMAZ-EFUIE9P\",\"UserId\":null,\"TimeCreated\":\"\\/Date(1680910578915)\\/\",\"ActivityId\":\"96f0aeab-6634-0001-87af-f0963466d901\",\"RelatedActivityId\":null,\"ContainerLog\":\"Security\",\"MatchedQueryIds\":[],\"Bookmark\":{},\"LevelDisplayName\":\"Information\",\"OpcodeDisplayName\":\"Info\",\"TaskDisplayName\":\"User Account Management\",\"KeywordsDisplayNames\":[\"Audit Success\"],\"Properties\":[{\"Value\":\"Guest\"},{\"Value\":\"EC2AMAZ-EFUIE9P\"},{\"Value\":\"S-1-5-21-4073093101-1709838126-2283403042-501\"},{\"Value\":\"S-1-5-21-4073093101-1709838126-2283403042-500\"},{\"Value\":\"Administrator\"},{\"Value\":\"EC2AMAZ-EFUIE9P\"},{\"Value\":1629888},{\"Value\":5860},{\"Value\":\"C:\\\\Windows\\\\System32\\\\SystemSettingsAdminFlows.exe\"}],\"Message\":\"A user\\u0027s local group membership was enumerated.\\r\\n\\r\\nSubject:\\r\\n\\tSecurity ID:\\t\\tS-1-5-21-4073093101-1709838126-2283403042-500\\r\\n\\tAccount Name:\\t\\tAdministrator\\r\\n\\tAccount Domain:\\t\\tEC2AMAZ-EFUIE9P\\r\\n\\tLogon ID:\\t\\t0x18DEC0\\r\\n\\r\\nUser:\\r\\n\\tSecurity ID:\\t\\tS-1-5-21-4073093101-1709838126-2283403042-501\\r\\n\\tAccount Name:\\t\\tGuest\\r\\n\\tAccount Domain:\\t\\tEC2AMAZ-EFUIE9P\\r\\n\\r\\nProcess Information:\\r\\n\\tProcess ID:\\t\\t0x16e4\\r\\n\\tProcess Name:\\t\\tC:\\\\Windows\\\\System32\\\\SystemSettingsAdminFlows.exe\"}",
+    "source": "Security",
+    "host": "EC2AMAZ-EFUIE9P",
+    "__source": "Security",
+    "__channel": "Security",
+    "__isBroken": true,
+    "__raw": "{\"Id\":4798,\"Version\":0,\"Qualifiers\":null,\"Level\":0,\"Task\":13824,\"Opcode\":0,\"Keywords\":-9214364837600034816,\"RecordId\":154870,\"ProviderName\":\"Microsoft-Windows-Security-Auditing\",\"ProviderId\":\"54849625-5478-4994-a5ba-3e3b0328c30d\",\"LogName\":\"Security\",\"ProcessId\":836,\"ThreadId\":4740,\"MachineName\":\"EC2AMAZ-EFUIE9P\",\"UserId\":null,\"TimeCreated\":\"\\/Date(1680910578915)\\/\",\"ActivityId\":\"96f0aeab-6634-0001-87af-f0963466d901\",\"RelatedActivityId\":null,\"ContainerLog\":\"Security\",\"MatchedQueryIds\":[],\"Bookmark\":{},\"LevelDisplayName\":\"Information\",\"OpcodeDisplayName\":\"Info\",\"TaskDisplayName\":\"User Account Management\",\"KeywordsDisplayNames\":[\"Audit Success\"],\"Properties\":[{\"Value\":\"Guest\"},{\"Value\":\"EC2AMAZ-EFUIE9P\"},{\"Value\":\"S-1-5-21-4073093101-1709838126-2283403042-501\"},{\"Value\":\"S-1-5-21-4073093101-1709838126-2283403042-500\"},{\"Value\":\"Administrator\"},{\"Value\":\"EC2AMAZ-EFUIE9P\"},{\"Value\":1629888},{\"Value\":5860},{\"Value\":\"C:\\\\Windows\\\\System32\\\\SystemSettingsAdminFlows.exe\"}],\"Message\":\"A user\\u0027s local group membership was enumerated.\\r\\n\\r\\nSubject:\\r\\n\\tSecurity ID:\\t\\tS-1-5-21-4073093101-1709838126-2283403042-500\\r\\n\\tAccount Name:\\t\\tAdministrator\\r\\n\\tAccount Domain:\\t\\tEC2AMAZ-EFUIE9P\\r\\n\\tLogon ID:\\t\\t0x18DEC0\\r\\n\\r\\nUser:\\r\\n\\tSecurity ID:\\t\\tS-1-5-21-4073093101-1709838126-2283403042-501\\r\\n\\tAccount Name:\\t\\tGuest\\r\\n\\tAccount Domain:\\t\\tEC2AMAZ-EFUIE9P\\r\\n\\r\\nProcess Information:\\r\\n\\tProcess ID:\\t\\t0x16e4\\r\\n\\tProcess Name:\\t\\tC:\\\\Windows\\\\System32\\\\SystemSettingsAdminFlows.exe\"}",
+    "_time": 1680910578.915,
+    "cribl_breaker": "windows event logs",
+    "__inputId": "win_event_logs:in_win_event_logs",
+    "__metadata": {
+      "timestamp": 1680910330.846,
+      "cribl": {
+        "version": "4.1.0-6979aea9",
+        "mode": "managed-edge",
+        "group": "default_fleet",
+        "config_version": "06c994f"
+      },
+      "os": {
+        "arch": "x64",
+        "cpu_count": 2,
+        "cpu_speed_mhz": 2300,
+        "cpu_type": "Intel(R) Xeon(R) CPU E5-2686 v4 @ 2.30GHz",
+        "gid": -1,
+        "homedir": "C:\\Windows\\system32\\config\\systemprofile",
+        "hostname": "EC2AMAZ-EFUIE9P",
+        "interfaces": {
+          "Ethernet 2": [
+            {
+              "address": "fe80::46a0:4d4e:b104:f6a6",
+              "netmask": "ffff:ffff:ffff:ffff::",
+              "family": "IPv6",
+              "mac": "0a:ff:94:01:93:0d",
+              "internal": false,
+              "cidr": "fe80::46a0:4d4e:b104:f6a6/64",
+              "scopeid": 7
+            },
+            {
+              "address": "172.31.15.42",
+              "netmask": "255.255.240.0",
+              "family": "IPv4",
+              "mac": "0a:ff:94:01:93:0d",
+              "internal": false,
+              "cidr": "172.31.15.42/20"
+            }
+          ],
+          "Loopback Pseudo-Interface 1": [
+            {
+              "address": "::1",
+              "netmask": "ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff",
+              "family": "IPv6",
+              "mac": "00:00:00:00:00:00",
+              "internal": true,
+              "cidr": "::1/128",
+              "scopeid": 0
+            },
+            {
+              "address": "127.0.0.1",
+              "netmask": "255.0.0.0",
+              "family": "IPv4",
+              "mac": "00:00:00:00:00:00",
+              "internal": true,
+              "cidr": "127.0.0.1/8"
+            }
+          ]
+        },
+        "memory": 4294557696,
+        "os_id": "windows",
+        "os_name": "Microsoft Windows Server 2022 Datacenter",
+        "os_version": "10.0.20348",
+        "os_version_id": "20348",
+        "platform": "win32",
+        "release": "10.0.20348",
+        "timezone": "UTC",
+        "timezone_offset": "+00:00",
+        "uid": -1,
+        "username": "SYSTEM"
+      },
+      "aws": {
+        "version": 2,
+        "identity": {
+          "accountId": "243602015558",
+          "architecture": "x86_64",
+          "availabilityZone": "us-west-2c",
+          "billingProducts": [
+            "bp-6ba54002"
+          ],
+          "devpayProductCodes": null,
+          "marketplaceProductCodes": null,
+          "imageId": "ami-0b8508d946afbf024",
+          "instanceId": "i-0a9ff344dd6ca2604",
+          "instanceType": "t2.medium",
+          "kernelId": null,
+          "pendingTime": "2023-03-27T14:36:27Z",
+          "privateIp": "172.31.15.42",
+          "ramdiskId": null,
+          "region": "us-west-2",
+          "version": "2017-09-30"
+        },
+        "public_ipv4": "18.237.42.35",
+        "hostname": "ec2-18-237-42-35.us-west-2.compute.amazonaws.com",
+        "security_groups": [
+          "launch-wizard-355"
+        ]
+      },
+      "env": {
+        "ALLUSERSPROFILE": "C:\\ProgramData",
+        "APPDATA": "C:\\Windows\\system32\\config\\systemprofile\\AppData\\Roaming",
+        "AWS_EXECUTION_ENV": "EC2",
+        "AzureMonAgentClientLocation": "C:\\Packages\\Plugins\\Microsoft.Azure.Monitor.AzureMonitorWindowsAgent\\1.12.1.0\\Monitoring\\Agent",
+        "CommonProgramFiles": "C:\\Program Files\\Common Files",
+        "CommonProgramFiles(x86)": "C:\\Program Files (x86)\\Common Files",
+        "CommonProgramW6432": "C:\\Program Files\\Common Files",
+        "COMPUTERNAME": "EC2AMAZ-EFUIE9P",
+        "ComSpec": "C:\\Windows\\system32\\cmd.exe",
+        "CRIBL_CONF_DIR": "C:\\ProgramData\\Cribl",
+        "CRIBL_EDGE_FS_ROOT": "\\",
+        "CRIBL_HOME": "C:\\ProgramData\\Cribl",
+        "CRIBL_INSTANCE_HOME": "C:\\ProgramData\\Cribl",
+        "CRIBL_INTERACTIVE": "0",
+        "CRIBL_ROLE": "WORKER",
+        "CRIBL_VOLUME_DIR": "C:\\ProgramData\\Cribl",
+        "CRIBL_WORKER_DIST_MODE": "managed-edge",
+        "CRIBL_WORKER_ID": "0",
+        "CRIBL_WORKER_LABEL": "w0",
+        "DriverData": "C:\\Windows\\System32\\Drivers\\DriverData",
+        "EC2LAUNCH_TELEMETRY": "1",
+        "IDENTITY_ENDPOINT": "http://localhost:40342/metadata/identity/oauth2/token",
+        "IMDS_ENDPOINT": "http://localhost:40342",
+        "LOCALAPPDATA": "C:\\Windows\\system32\\config\\systemprofile\\AppData\\Local",
+        "NODE_OPTIONS": "--max-old-space-size=1024 --no-warnings --no-deprecation",
+        "NUMBER_OF_PROCESSORS": "2",
+        "OS": "Windows_NT",
+        "Path": "C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\Amazon\\cfn-bootstrap\\;C:\\Program Files\\AzureConnectedMachineAgent\\;C:\\Windows\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps",
+        "PATHEXT": ".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC",
+        "PROCESSOR_ARCHITECTURE": "AMD64",
+        "PROCESSOR_IDENTIFIER": "Intel64 Family 6 Model 79 Stepping 1, GenuineIntel",
+        "PROCESSOR_LEVEL": "6",
+        "PROCESSOR_REVISION": "4f01",
+        "ProgramData": "C:\\ProgramData",
+        "ProgramFiles": "C:\\Program Files",
+        "ProgramFiles(x86)": "C:\\Program Files (x86)",
+        "ProgramW6432": "C:\\Program Files",
+        "PSModulePath": "C:\\Program Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules;C:\\Program Files (x86)\\AWS Tools\\PowerShell\\",
+        "PUBLIC": "C:\\Users\\Public",
+        "SystemDrive": "C:",
+        "SystemRoot": "C:\\Windows",
+        "TEMP": "C:\\Windows\\TEMP",
+        "TMP": "C:\\Windows\\TEMP",
+        "USERDOMAIN": "WORKGROUP",
+        "USERNAME": "EC2AMAZ-EFUIE9P$",
+        "USERPROFILE": "C:\\Windows\\system32\\config\\systemprofile",
+        "windir": "C:\\Windows"
+      }
+    }
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_raw": "{\"Id\":4798,\"Version\":0,\"Qualifiers\":null,\"Level\":0,\"Task\":13824,\"Opcode\":0,\"Keywords\":-9214364837600034816,\"RecordId\":154871,\"ProviderName\":\"Microsoft-Windows-Security-Auditing\",\"ProviderId\":\"54849625-5478-4994-a5ba-3e3b0328c30d\",\"LogName\":\"Security\",\"ProcessId\":836,\"ThreadId\":4740,\"MachineName\":\"EC2AMAZ-EFUIE9P\",\"UserId\":null,\"TimeCreated\":\"\\/Date(1680910578916)\\/\",\"ActivityId\":\"96f0aeab-6634-0001-87af-f0963466d901\",\"RelatedActivityId\":null,\"ContainerLog\":\"Security\",\"MatchedQueryIds\":[],\"Bookmark\":{},\"LevelDisplayName\":\"Information\",\"OpcodeDisplayName\":\"Info\",\"TaskDisplayName\":\"User Account Management\",\"KeywordsDisplayNames\":[\"Audit Success\"],\"Properties\":[{\"Value\":\"Guest\"},{\"Value\":\"EC2AMAZ-EFUIE9P\"},{\"Value\":\"S-1-5-21-4073093101-1709838126-2283403042-501\"},{\"Value\":\"S-1-5-21-4073093101-1709838126-2283403042-500\"},{\"Value\":\"Administrator\"},{\"Value\":\"EC2AMAZ-EFUIE9P\"},{\"Value\":1629888},{\"Value\":5860},{\"Value\":\"C:\\\\Windows\\\\System32\\\\SystemSettingsAdminFlows.exe\"}],\"Message\":\"A user\\u0027s local group membership was enumerated.\\r\\n\\r\\nSubject:\\r\\n\\tSecurity ID:\\t\\tS-1-5-21-4073093101-1709838126-2283403042-500\\r\\n\\tAccount Name:\\t\\tAdministrator\\r\\n\\tAccount Domain:\\t\\tEC2AMAZ-EFUIE9P\\r\\n\\tLogon ID:\\t\\t0x18DEC0\\r\\n\\r\\nUser:\\r\\n\\tSecurity ID:\\t\\tS-1-5-21-4073093101-1709838126-2283403042-501\\r\\n\\tAccount Name:\\t\\tGuest\\r\\n\\tAccount Domain:\\t\\tEC2AMAZ-EFUIE9P\\r\\n\\r\\nProcess Information:\\r\\n\\tProcess ID:\\t\\t0x16e4\\r\\n\\tProcess Name:\\t\\tC:\\\\Windows\\\\System32\\\\SystemSettingsAdminFlows.exe\"}",
+    "source": "Security",
+    "host": "EC2AMAZ-EFUIE9P",
+    "__source": "Security",
+    "__channel": "Security",
+    "__isBroken": true,
+    "__raw": "{\"Id\":4798,\"Version\":0,\"Qualifiers\":null,\"Level\":0,\"Task\":13824,\"Opcode\":0,\"Keywords\":-9214364837600034816,\"RecordId\":154871,\"ProviderName\":\"Microsoft-Windows-Security-Auditing\",\"ProviderId\":\"54849625-5478-4994-a5ba-3e3b0328c30d\",\"LogName\":\"Security\",\"ProcessId\":836,\"ThreadId\":4740,\"MachineName\":\"EC2AMAZ-EFUIE9P\",\"UserId\":null,\"TimeCreated\":\"\\/Date(1680910578916)\\/\",\"ActivityId\":\"96f0aeab-6634-0001-87af-f0963466d901\",\"RelatedActivityId\":null,\"ContainerLog\":\"Security\",\"MatchedQueryIds\":[],\"Bookmark\":{},\"LevelDisplayName\":\"Information\",\"OpcodeDisplayName\":\"Info\",\"TaskDisplayName\":\"User Account Management\",\"KeywordsDisplayNames\":[\"Audit Success\"],\"Properties\":[{\"Value\":\"Guest\"},{\"Value\":\"EC2AMAZ-EFUIE9P\"},{\"Value\":\"S-1-5-21-4073093101-1709838126-2283403042-501\"},{\"Value\":\"S-1-5-21-4073093101-1709838126-2283403042-500\"},{\"Value\":\"Administrator\"},{\"Value\":\"EC2AMAZ-EFUIE9P\"},{\"Value\":1629888},{\"Value\":5860},{\"Value\":\"C:\\\\Windows\\\\System32\\\\SystemSettingsAdminFlows.exe\"}],\"Message\":\"A user\\u0027s local group membership was enumerated.\\r\\n\\r\\nSubject:\\r\\n\\tSecurity ID:\\t\\tS-1-5-21-4073093101-1709838126-2283403042-500\\r\\n\\tAccount Name:\\t\\tAdministrator\\r\\n\\tAccount Domain:\\t\\tEC2AMAZ-EFUIE9P\\r\\n\\tLogon ID:\\t\\t0x18DEC0\\r\\n\\r\\nUser:\\r\\n\\tSecurity ID:\\t\\tS-1-5-21-4073093101-1709838126-2283403042-501\\r\\n\\tAccount Name:\\t\\tGuest\\r\\n\\tAccount Domain:\\t\\tEC2AMAZ-EFUIE9P\\r\\n\\r\\nProcess Information:\\r\\n\\tProcess ID:\\t\\t0x16e4\\r\\n\\tProcess Name:\\t\\tC:\\\\Windows\\\\System32\\\\SystemSettingsAdminFlows.exe\"}",
+    "_time": 1680910578.916,
+    "cribl_breaker": "windows event logs",
+    "__inputId": "win_event_logs:in_win_event_logs",
+    "__metadata": {
+      "timestamp": 1680910330.846,
+      "cribl": {
+        "version": "4.1.0-6979aea9",
+        "mode": "managed-edge",
+        "group": "default_fleet",
+        "config_version": "06c994f"
+      },
+      "os": {
+        "arch": "x64",
+        "cpu_count": 2,
+        "cpu_speed_mhz": 2300,
+        "cpu_type": "Intel(R) Xeon(R) CPU E5-2686 v4 @ 2.30GHz",
+        "gid": -1,
+        "homedir": "C:\\Windows\\system32\\config\\systemprofile",
+        "hostname": "EC2AMAZ-EFUIE9P",
+        "interfaces": {
+          "Ethernet 2": [
+            {
+              "address": "fe80::46a0:4d4e:b104:f6a6",
+              "netmask": "ffff:ffff:ffff:ffff::",
+              "family": "IPv6",
+              "mac": "0a:ff:94:01:93:0d",
+              "internal": false,
+              "cidr": "fe80::46a0:4d4e:b104:f6a6/64",
+              "scopeid": 7
+            },
+            {
+              "address": "172.31.15.42",
+              "netmask": "255.255.240.0",
+              "family": "IPv4",
+              "mac": "0a:ff:94:01:93:0d",
+              "internal": false,
+              "cidr": "172.31.15.42/20"
+            }
+          ],
+          "Loopback Pseudo-Interface 1": [
+            {
+              "address": "::1",
+              "netmask": "ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff",
+              "family": "IPv6",
+              "mac": "00:00:00:00:00:00",
+              "internal": true,
+              "cidr": "::1/128",
+              "scopeid": 0
+            },
+            {
+              "address": "127.0.0.1",
+              "netmask": "255.0.0.0",
+              "family": "IPv4",
+              "mac": "00:00:00:00:00:00",
+              "internal": true,
+              "cidr": "127.0.0.1/8"
+            }
+          ]
+        },
+        "memory": 4294557696,
+        "os_id": "windows",
+        "os_name": "Microsoft Windows Server 2022 Datacenter",
+        "os_version": "10.0.20348",
+        "os_version_id": "20348",
+        "platform": "win32",
+        "release": "10.0.20348",
+        "timezone": "UTC",
+        "timezone_offset": "+00:00",
+        "uid": -1,
+        "username": "SYSTEM"
+      },
+      "aws": {
+        "version": 2,
+        "identity": {
+          "accountId": "243602015558",
+          "architecture": "x86_64",
+          "availabilityZone": "us-west-2c",
+          "billingProducts": [
+            "bp-6ba54002"
+          ],
+          "devpayProductCodes": null,
+          "marketplaceProductCodes": null,
+          "imageId": "ami-0b8508d946afbf024",
+          "instanceId": "i-0a9ff344dd6ca2604",
+          "instanceType": "t2.medium",
+          "kernelId": null,
+          "pendingTime": "2023-03-27T14:36:27Z",
+          "privateIp": "172.31.15.42",
+          "ramdiskId": null,
+          "region": "us-west-2",
+          "version": "2017-09-30"
+        },
+        "public_ipv4": "18.237.42.35",
+        "hostname": "ec2-18-237-42-35.us-west-2.compute.amazonaws.com",
+        "security_groups": [
+          "launch-wizard-355"
+        ]
+      },
+      "env": {
+        "ALLUSERSPROFILE": "C:\\ProgramData",
+        "APPDATA": "C:\\Windows\\system32\\config\\systemprofile\\AppData\\Roaming",
+        "AWS_EXECUTION_ENV": "EC2",
+        "AzureMonAgentClientLocation": "C:\\Packages\\Plugins\\Microsoft.Azure.Monitor.AzureMonitorWindowsAgent\\1.12.1.0\\Monitoring\\Agent",
+        "CommonProgramFiles": "C:\\Program Files\\Common Files",
+        "CommonProgramFiles(x86)": "C:\\Program Files (x86)\\Common Files",
+        "CommonProgramW6432": "C:\\Program Files\\Common Files",
+        "COMPUTERNAME": "EC2AMAZ-EFUIE9P",
+        "ComSpec": "C:\\Windows\\system32\\cmd.exe",
+        "CRIBL_CONF_DIR": "C:\\ProgramData\\Cribl",
+        "CRIBL_EDGE_FS_ROOT": "\\",
+        "CRIBL_HOME": "C:\\ProgramData\\Cribl",
+        "CRIBL_INSTANCE_HOME": "C:\\ProgramData\\Cribl",
+        "CRIBL_INTERACTIVE": "0",
+        "CRIBL_ROLE": "WORKER",
+        "CRIBL_VOLUME_DIR": "C:\\ProgramData\\Cribl",
+        "CRIBL_WORKER_DIST_MODE": "managed-edge",
+        "CRIBL_WORKER_ID": "0",
+        "CRIBL_WORKER_LABEL": "w0",
+        "DriverData": "C:\\Windows\\System32\\Drivers\\DriverData",
+        "EC2LAUNCH_TELEMETRY": "1",
+        "IDENTITY_ENDPOINT": "http://localhost:40342/metadata/identity/oauth2/token",
+        "IMDS_ENDPOINT": "http://localhost:40342",
+        "LOCALAPPDATA": "C:\\Windows\\system32\\config\\systemprofile\\AppData\\Local",
+        "NODE_OPTIONS": "--max-old-space-size=1024 --no-warnings --no-deprecation",
+        "NUMBER_OF_PROCESSORS": "2",
+        "OS": "Windows_NT",
+        "Path": "C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\Amazon\\cfn-bootstrap\\;C:\\Program Files\\AzureConnectedMachineAgent\\;C:\\Windows\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps",
+        "PATHEXT": ".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC",
+        "PROCESSOR_ARCHITECTURE": "AMD64",
+        "PROCESSOR_IDENTIFIER": "Intel64 Family 6 Model 79 Stepping 1, GenuineIntel",
+        "PROCESSOR_LEVEL": "6",
+        "PROCESSOR_REVISION": "4f01",
+        "ProgramData": "C:\\ProgramData",
+        "ProgramFiles": "C:\\Program Files",
+        "ProgramFiles(x86)": "C:\\Program Files (x86)",
+        "ProgramW6432": "C:\\Program Files",
+        "PSModulePath": "C:\\Program Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules;C:\\Program Files (x86)\\AWS Tools\\PowerShell\\",
+        "PUBLIC": "C:\\Users\\Public",
+        "SystemDrive": "C:",
+        "SystemRoot": "C:\\Windows",
+        "TEMP": "C:\\Windows\\TEMP",
+        "TMP": "C:\\Windows\\TEMP",
+        "USERDOMAIN": "WORKGROUP",
+        "USERNAME": "EC2AMAZ-EFUIE9P$",
+        "USERPROFILE": "C:\\Windows\\system32\\config\\systemprofile",
+        "windir": "C:\\Windows"
+      }
+    }
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_raw": "{\"Id\":4733,\"Version\":0,\"Qualifiers\":null,\"Level\":0,\"Task\":13826,\"Opcode\":0,\"Keywords\":-9214364837600034816,\"RecordId\":154872,\"ProviderName\":\"Microsoft-Windows-Security-Auditing\",\"ProviderId\":\"54849625-5478-4994-a5ba-3e3b0328c30d\",\"LogName\":\"Security\",\"ProcessId\":836,\"ThreadId\":4740,\"MachineName\":\"EC2AMAZ-EFUIE9P\",\"UserId\":null,\"TimeCreated\":\"\\/Date(1680910581027)\\/\",\"ActivityId\":\"96f0aeab-6634-0001-87af-f0963466d901\",\"RelatedActivityId\":null,\"ContainerLog\":\"Security\",\"MatchedQueryIds\":[],\"Bookmark\":{},\"LevelDisplayName\":\"Information\",\"OpcodeDisplayName\":\"Info\",\"TaskDisplayName\":\"Security Group Management\",\"KeywordsDisplayNames\":[\"Audit Success\"],\"Properties\":[{\"Value\":\"-\"},{\"Value\":\"S-1-5-21-4073093101-1709838126-2283403042-1013\"},{\"Value\":\"Administrators\"},{\"Value\":\"Builtin\"},{\"Value\":\"S-1-5-32-544\"},{\"Value\":\"S-1-5-21-4073093101-1709838126-2283403042-500\"},{\"Value\":\"Administrator\"},{\"Value\":\"EC2AMAZ-EFUIE9P\"},{\"Value\":1629888},{\"Value\":\"-\"}],\"Message\":\"A member was removed from a security-enabled local group.\\r\\n\\r\\nSubject:\\r\\n\\tSecurity ID:\\t\\tS-1-5-21-4073093101-1709838126-2283403042-500\\r\\n\\tAccount Name:\\t\\tAdministrator\\r\\n\\tAccount Domain:\\t\\tEC2AMAZ-EFUIE9P\\r\\n\\tLogon ID:\\t\\t0x18DEC0\\r\\n\\r\\nMember:\\r\\n\\tSecurity ID:\\t\\tS-1-5-21-4073093101-1709838126-2283403042-1013\\r\\n\\tAccount Name:\\t\\t-\\r\\n\\r\\nGroup:\\r\\n\\tSecurity ID:\\t\\tS-1-5-32-544\\r\\n\\tGroup Name:\\t\\tAdministrators\\r\\n\\tGroup Domain:\\t\\tBuiltin\\r\\n\\r\\nAdditional Information:\\r\\n\\tPrivileges:\\t\\t-\"}",
+    "source": "Security",
+    "host": "EC2AMAZ-EFUIE9P",
+    "__source": "Security",
+    "__channel": "Security",
+    "__isBroken": true,
+    "__raw": "{\"Id\":4733,\"Version\":0,\"Qualifiers\":null,\"Level\":0,\"Task\":13826,\"Opcode\":0,\"Keywords\":-9214364837600034816,\"RecordId\":154872,\"ProviderName\":\"Microsoft-Windows-Security-Auditing\",\"ProviderId\":\"54849625-5478-4994-a5ba-3e3b0328c30d\",\"LogName\":\"Security\",\"ProcessId\":836,\"ThreadId\":4740,\"MachineName\":\"EC2AMAZ-EFUIE9P\",\"UserId\":null,\"TimeCreated\":\"\\/Date(1680910581027)\\/\",\"ActivityId\":\"96f0aeab-6634-0001-87af-f0963466d901\",\"RelatedActivityId\":null,\"ContainerLog\":\"Security\",\"MatchedQueryIds\":[],\"Bookmark\":{},\"LevelDisplayName\":\"Information\",\"OpcodeDisplayName\":\"Info\",\"TaskDisplayName\":\"Security Group Management\",\"KeywordsDisplayNames\":[\"Audit Success\"],\"Properties\":[{\"Value\":\"-\"},{\"Value\":\"S-1-5-21-4073093101-1709838126-2283403042-1013\"},{\"Value\":\"Administrators\"},{\"Value\":\"Builtin\"},{\"Value\":\"S-1-5-32-544\"},{\"Value\":\"S-1-5-21-4073093101-1709838126-2283403042-500\"},{\"Value\":\"Administrator\"},{\"Value\":\"EC2AMAZ-EFUIE9P\"},{\"Value\":1629888},{\"Value\":\"-\"}],\"Message\":\"A member was removed from a security-enabled local group.\\r\\n\\r\\nSubject:\\r\\n\\tSecurity ID:\\t\\tS-1-5-21-4073093101-1709838126-2283403042-500\\r\\n\\tAccount Name:\\t\\tAdministrator\\r\\n\\tAccount Domain:\\t\\tEC2AMAZ-EFUIE9P\\r\\n\\tLogon ID:\\t\\t0x18DEC0\\r\\n\\r\\nMember:\\r\\n\\tSecurity ID:\\t\\tS-1-5-21-4073093101-1709838126-2283403042-1013\\r\\n\\tAccount Name:\\t\\t-\\r\\n\\r\\nGroup:\\r\\n\\tSecurity ID:\\t\\tS-1-5-32-544\\r\\n\\tGroup Name:\\t\\tAdministrators\\r\\n\\tGroup Domain:\\t\\tBuiltin\\r\\n\\r\\nAdditional Information:\\r\\n\\tPrivileges:\\t\\t-\"}",
+    "_time": 1680910581.027,
+    "cribl_breaker": "windows event logs",
+    "__inputId": "win_event_logs:in_win_event_logs",
+    "__metadata": {
+      "timestamp": 1680910330.846,
+      "cribl": {
+        "version": "4.1.0-6979aea9",
+        "mode": "managed-edge",
+        "group": "default_fleet",
+        "config_version": "06c994f"
+      },
+      "os": {
+        "arch": "x64",
+        "cpu_count": 2,
+        "cpu_speed_mhz": 2300,
+        "cpu_type": "Intel(R) Xeon(R) CPU E5-2686 v4 @ 2.30GHz",
+        "gid": -1,
+        "homedir": "C:\\Windows\\system32\\config\\systemprofile",
+        "hostname": "EC2AMAZ-EFUIE9P",
+        "interfaces": {
+          "Ethernet 2": [
+            {
+              "address": "fe80::46a0:4d4e:b104:f6a6",
+              "netmask": "ffff:ffff:ffff:ffff::",
+              "family": "IPv6",
+              "mac": "0a:ff:94:01:93:0d",
+              "internal": false,
+              "cidr": "fe80::46a0:4d4e:b104:f6a6/64",
+              "scopeid": 7
+            },
+            {
+              "address": "172.31.15.42",
+              "netmask": "255.255.240.0",
+              "family": "IPv4",
+              "mac": "0a:ff:94:01:93:0d",
+              "internal": false,
+              "cidr": "172.31.15.42/20"
+            }
+          ],
+          "Loopback Pseudo-Interface 1": [
+            {
+              "address": "::1",
+              "netmask": "ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff",
+              "family": "IPv6",
+              "mac": "00:00:00:00:00:00",
+              "internal": true,
+              "cidr": "::1/128",
+              "scopeid": 0
+            },
+            {
+              "address": "127.0.0.1",
+              "netmask": "255.0.0.0",
+              "family": "IPv4",
+              "mac": "00:00:00:00:00:00",
+              "internal": true,
+              "cidr": "127.0.0.1/8"
+            }
+          ]
+        },
+        "memory": 4294557696,
+        "os_id": "windows",
+        "os_name": "Microsoft Windows Server 2022 Datacenter",
+        "os_version": "10.0.20348",
+        "os_version_id": "20348",
+        "platform": "win32",
+        "release": "10.0.20348",
+        "timezone": "UTC",
+        "timezone_offset": "+00:00",
+        "uid": -1,
+        "username": "SYSTEM"
+      },
+      "aws": {
+        "version": 2,
+        "identity": {
+          "accountId": "243602015558",
+          "architecture": "x86_64",
+          "availabilityZone": "us-west-2c",
+          "billingProducts": [
+            "bp-6ba54002"
+          ],
+          "devpayProductCodes": null,
+          "marketplaceProductCodes": null,
+          "imageId": "ami-0b8508d946afbf024",
+          "instanceId": "i-0a9ff344dd6ca2604",
+          "instanceType": "t2.medium",
+          "kernelId": null,
+          "pendingTime": "2023-03-27T14:36:27Z",
+          "privateIp": "172.31.15.42",
+          "ramdiskId": null,
+          "region": "us-west-2",
+          "version": "2017-09-30"
+        },
+        "public_ipv4": "18.237.42.35",
+        "hostname": "ec2-18-237-42-35.us-west-2.compute.amazonaws.com",
+        "security_groups": [
+          "launch-wizard-355"
+        ]
+      },
+      "env": {
+        "ALLUSERSPROFILE": "C:\\ProgramData",
+        "APPDATA": "C:\\Windows\\system32\\config\\systemprofile\\AppData\\Roaming",
+        "AWS_EXECUTION_ENV": "EC2",
+        "AzureMonAgentClientLocation": "C:\\Packages\\Plugins\\Microsoft.Azure.Monitor.AzureMonitorWindowsAgent\\1.12.1.0\\Monitoring\\Agent",
+        "CommonProgramFiles": "C:\\Program Files\\Common Files",
+        "CommonProgramFiles(x86)": "C:\\Program Files (x86)\\Common Files",
+        "CommonProgramW6432": "C:\\Program Files\\Common Files",
+        "COMPUTERNAME": "EC2AMAZ-EFUIE9P",
+        "ComSpec": "C:\\Windows\\system32\\cmd.exe",
+        "CRIBL_CONF_DIR": "C:\\ProgramData\\Cribl",
+        "CRIBL_EDGE_FS_ROOT": "\\",
+        "CRIBL_HOME": "C:\\ProgramData\\Cribl",
+        "CRIBL_INSTANCE_HOME": "C:\\ProgramData\\Cribl",
+        "CRIBL_INTERACTIVE": "0",
+        "CRIBL_ROLE": "WORKER",
+        "CRIBL_VOLUME_DIR": "C:\\ProgramData\\Cribl",
+        "CRIBL_WORKER_DIST_MODE": "managed-edge",
+        "CRIBL_WORKER_ID": "0",
+        "CRIBL_WORKER_LABEL": "w0",
+        "DriverData": "C:\\Windows\\System32\\Drivers\\DriverData",
+        "EC2LAUNCH_TELEMETRY": "1",
+        "IDENTITY_ENDPOINT": "http://localhost:40342/metadata/identity/oauth2/token",
+        "IMDS_ENDPOINT": "http://localhost:40342",
+        "LOCALAPPDATA": "C:\\Windows\\system32\\config\\systemprofile\\AppData\\Local",
+        "NODE_OPTIONS": "--max-old-space-size=1024 --no-warnings --no-deprecation",
+        "NUMBER_OF_PROCESSORS": "2",
+        "OS": "Windows_NT",
+        "Path": "C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\Amazon\\cfn-bootstrap\\;C:\\Program Files\\AzureConnectedMachineAgent\\;C:\\Windows\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps",
+        "PATHEXT": ".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC",
+        "PROCESSOR_ARCHITECTURE": "AMD64",
+        "PROCESSOR_IDENTIFIER": "Intel64 Family 6 Model 79 Stepping 1, GenuineIntel",
+        "PROCESSOR_LEVEL": "6",
+        "PROCESSOR_REVISION": "4f01",
+        "ProgramData": "C:\\ProgramData",
+        "ProgramFiles": "C:\\Program Files",
+        "ProgramFiles(x86)": "C:\\Program Files (x86)",
+        "ProgramW6432": "C:\\Program Files",
+        "PSModulePath": "C:\\Program Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules;C:\\Program Files (x86)\\AWS Tools\\PowerShell\\",
+        "PUBLIC": "C:\\Users\\Public",
+        "SystemDrive": "C:",
+        "SystemRoot": "C:\\Windows",
+        "TEMP": "C:\\Windows\\TEMP",
+        "TMP": "C:\\Windows\\TEMP",
+        "USERDOMAIN": "WORKGROUP",
+        "USERNAME": "EC2AMAZ-EFUIE9P$",
+        "USERPROFILE": "C:\\Windows\\system32\\config\\systemprofile",
+        "windir": "C:\\Windows"
+      }
+    }
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_raw": "{\"Id\":4798,\"Version\":0,\"Qualifiers\":null,\"Level\":0,\"Task\":13824,\"Opcode\":0,\"Keywords\":-9214364837600034816,\"RecordId\":154873,\"ProviderName\":\"Microsoft-Windows-Security-Auditing\",\"ProviderId\":\"54849625-5478-4994-a5ba-3e3b0328c30d\",\"LogName\":\"Security\",\"ProcessId\":836,\"ThreadId\":2832,\"MachineName\":\"EC2AMAZ-EFUIE9P\",\"UserId\":null,\"TimeCreated\":\"\\/Date(1680910581470)\\/\",\"ActivityId\":\"96f0aeab-6634-0001-87af-f0963466d901\",\"RelatedActivityId\":null,\"ContainerLog\":\"Security\",\"MatchedQueryIds\":[],\"Bookmark\":{},\"LevelDisplayName\":\"Information\",\"OpcodeDisplayName\":\"Info\",\"TaskDisplayName\":\"User Account Management\",\"KeywordsDisplayNames\":[\"Audit Success\"],\"Properties\":[{\"Value\":\"Administrator\"},{\"Value\":\"EC2AMAZ-EFUIE9P\"},{\"Value\":\"S-1-5-21-4073093101-1709838126-2283403042-500\"},{\"Value\":\"S-1-5-21-4073093101-1709838126-2283403042-500\"},{\"Value\":\"Administrator\"},{\"Value\":\"EC2AMAZ-EFUIE9P\"},{\"Value\":1629888},{\"Value\":5796},{\"Value\":\"C:\\\\Windows\\\\ImmersiveControlPanel\\\\SystemSettings.exe\"}],\"Message\":\"A user\\u0027s local group membership was enumerated.\\r\\n\\r\\nSubject:\\r\\n\\tSecurity ID:\\t\\tS-1-5-21-4073093101-1709838126-2283403042-500\\r\\n\\tAccount Name:\\t\\tAdministrator\\r\\n\\tAccount Domain:\\t\\tEC2AMAZ-EFUIE9P\\r\\n\\tLogon ID:\\t\\t0x18DEC0\\r\\n\\r\\nUser:\\r\\n\\tSecurity ID:\\t\\tS-1-5-21-4073093101-1709838126-2283403042-500\\r\\n\\tAccount Name:\\t\\tAdministrator\\r\\n\\tAccount Domain:\\t\\tEC2AMAZ-EFUIE9P\\r\\n\\r\\nProcess Information:\\r\\n\\tProcess ID:\\t\\t0x16a4\\r\\n\\tProcess Name:\\t\\tC:\\\\Windows\\\\ImmersiveControlPanel\\\\SystemSettings.exe\"}",
+    "source": "Security",
+    "host": "EC2AMAZ-EFUIE9P",
+    "__source": "Security",
+    "__channel": "Security",
+    "__isBroken": true,
+    "__raw": "{\"Id\":4798,\"Version\":0,\"Qualifiers\":null,\"Level\":0,\"Task\":13824,\"Opcode\":0,\"Keywords\":-9214364837600034816,\"RecordId\":154873,\"ProviderName\":\"Microsoft-Windows-Security-Auditing\",\"ProviderId\":\"54849625-5478-4994-a5ba-3e3b0328c30d\",\"LogName\":\"Security\",\"ProcessId\":836,\"ThreadId\":2832,\"MachineName\":\"EC2AMAZ-EFUIE9P\",\"UserId\":null,\"TimeCreated\":\"\\/Date(1680910581470)\\/\",\"ActivityId\":\"96f0aeab-6634-0001-87af-f0963466d901\",\"RelatedActivityId\":null,\"ContainerLog\":\"Security\",\"MatchedQueryIds\":[],\"Bookmark\":{},\"LevelDisplayName\":\"Information\",\"OpcodeDisplayName\":\"Info\",\"TaskDisplayName\":\"User Account Management\",\"KeywordsDisplayNames\":[\"Audit Success\"],\"Properties\":[{\"Value\":\"Administrator\"},{\"Value\":\"EC2AMAZ-EFUIE9P\"},{\"Value\":\"S-1-5-21-4073093101-1709838126-2283403042-500\"},{\"Value\":\"S-1-5-21-4073093101-1709838126-2283403042-500\"},{\"Value\":\"Administrator\"},{\"Value\":\"EC2AMAZ-EFUIE9P\"},{\"Value\":1629888},{\"Value\":5796},{\"Value\":\"C:\\\\Windows\\\\ImmersiveControlPanel\\\\SystemSettings.exe\"}],\"Message\":\"A user\\u0027s local group membership was enumerated.\\r\\n\\r\\nSubject:\\r\\n\\tSecurity ID:\\t\\tS-1-5-21-4073093101-1709838126-2283403042-500\\r\\n\\tAccount Name:\\t\\tAdministrator\\r\\n\\tAccount Domain:\\t\\tEC2AMAZ-EFUIE9P\\r\\n\\tLogon ID:\\t\\t0x18DEC0\\r\\n\\r\\nUser:\\r\\n\\tSecurity ID:\\t\\tS-1-5-21-4073093101-1709838126-2283403042-500\\r\\n\\tAccount Name:\\t\\tAdministrator\\r\\n\\tAccount Domain:\\t\\tEC2AMAZ-EFUIE9P\\r\\n\\r\\nProcess Information:\\r\\n\\tProcess ID:\\t\\t0x16a4\\r\\n\\tProcess Name:\\t\\tC:\\\\Windows\\\\ImmersiveControlPanel\\\\SystemSettings.exe\"}",
+    "_time": 1680910581.47,
+    "cribl_breaker": "windows event logs",
+    "__inputId": "win_event_logs:in_win_event_logs",
+    "__metadata": {
+      "timestamp": 1680910330.846,
+      "cribl": {
+        "version": "4.1.0-6979aea9",
+        "mode": "managed-edge",
+        "group": "default_fleet",
+        "config_version": "06c994f"
+      },
+      "os": {
+        "arch": "x64",
+        "cpu_count": 2,
+        "cpu_speed_mhz": 2300,
+        "cpu_type": "Intel(R) Xeon(R) CPU E5-2686 v4 @ 2.30GHz",
+        "gid": -1,
+        "homedir": "C:\\Windows\\system32\\config\\systemprofile",
+        "hostname": "EC2AMAZ-EFUIE9P",
+        "interfaces": {
+          "Ethernet 2": [
+            {
+              "address": "fe80::46a0:4d4e:b104:f6a6",
+              "netmask": "ffff:ffff:ffff:ffff::",
+              "family": "IPv6",
+              "mac": "0a:ff:94:01:93:0d",
+              "internal": false,
+              "cidr": "fe80::46a0:4d4e:b104:f6a6/64",
+              "scopeid": 7
+            },
+            {
+              "address": "172.31.15.42",
+              "netmask": "255.255.240.0",
+              "family": "IPv4",
+              "mac": "0a:ff:94:01:93:0d",
+              "internal": false,
+              "cidr": "172.31.15.42/20"
+            }
+          ],
+          "Loopback Pseudo-Interface 1": [
+            {
+              "address": "::1",
+              "netmask": "ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff",
+              "family": "IPv6",
+              "mac": "00:00:00:00:00:00",
+              "internal": true,
+              "cidr": "::1/128",
+              "scopeid": 0
+            },
+            {
+              "address": "127.0.0.1",
+              "netmask": "255.0.0.0",
+              "family": "IPv4",
+              "mac": "00:00:00:00:00:00",
+              "internal": true,
+              "cidr": "127.0.0.1/8"
+            }
+          ]
+        },
+        "memory": 4294557696,
+        "os_id": "windows",
+        "os_name": "Microsoft Windows Server 2022 Datacenter",
+        "os_version": "10.0.20348",
+        "os_version_id": "20348",
+        "platform": "win32",
+        "release": "10.0.20348",
+        "timezone": "UTC",
+        "timezone_offset": "+00:00",
+        "uid": -1,
+        "username": "SYSTEM"
+      },
+      "aws": {
+        "version": 2,
+        "identity": {
+          "accountId": "243602015558",
+          "architecture": "x86_64",
+          "availabilityZone": "us-west-2c",
+          "billingProducts": [
+            "bp-6ba54002"
+          ],
+          "devpayProductCodes": null,
+          "marketplaceProductCodes": null,
+          "imageId": "ami-0b8508d946afbf024",
+          "instanceId": "i-0a9ff344dd6ca2604",
+          "instanceType": "t2.medium",
+          "kernelId": null,
+          "pendingTime": "2023-03-27T14:36:27Z",
+          "privateIp": "172.31.15.42",
+          "ramdiskId": null,
+          "region": "us-west-2",
+          "version": "2017-09-30"
+        },
+        "public_ipv4": "18.237.42.35",
+        "hostname": "ec2-18-237-42-35.us-west-2.compute.amazonaws.com",
+        "security_groups": [
+          "launch-wizard-355"
+        ]
+      },
+      "env": {
+        "ALLUSERSPROFILE": "C:\\ProgramData",
+        "APPDATA": "C:\\Windows\\system32\\config\\systemprofile\\AppData\\Roaming",
+        "AWS_EXECUTION_ENV": "EC2",
+        "AzureMonAgentClientLocation": "C:\\Packages\\Plugins\\Microsoft.Azure.Monitor.AzureMonitorWindowsAgent\\1.12.1.0\\Monitoring\\Agent",
+        "CommonProgramFiles": "C:\\Program Files\\Common Files",
+        "CommonProgramFiles(x86)": "C:\\Program Files (x86)\\Common Files",
+        "CommonProgramW6432": "C:\\Program Files\\Common Files",
+        "COMPUTERNAME": "EC2AMAZ-EFUIE9P",
+        "ComSpec": "C:\\Windows\\system32\\cmd.exe",
+        "CRIBL_CONF_DIR": "C:\\ProgramData\\Cribl",
+        "CRIBL_EDGE_FS_ROOT": "\\",
+        "CRIBL_HOME": "C:\\ProgramData\\Cribl",
+        "CRIBL_INSTANCE_HOME": "C:\\ProgramData\\Cribl",
+        "CRIBL_INTERACTIVE": "0",
+        "CRIBL_ROLE": "WORKER",
+        "CRIBL_VOLUME_DIR": "C:\\ProgramData\\Cribl",
+        "CRIBL_WORKER_DIST_MODE": "managed-edge",
+        "CRIBL_WORKER_ID": "0",
+        "CRIBL_WORKER_LABEL": "w0",
+        "DriverData": "C:\\Windows\\System32\\Drivers\\DriverData",
+        "EC2LAUNCH_TELEMETRY": "1",
+        "IDENTITY_ENDPOINT": "http://localhost:40342/metadata/identity/oauth2/token",
+        "IMDS_ENDPOINT": "http://localhost:40342",
+        "LOCALAPPDATA": "C:\\Windows\\system32\\config\\systemprofile\\AppData\\Local",
+        "NODE_OPTIONS": "--max-old-space-size=1024 --no-warnings --no-deprecation",
+        "NUMBER_OF_PROCESSORS": "2",
+        "OS": "Windows_NT",
+        "Path": "C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\Amazon\\cfn-bootstrap\\;C:\\Program Files\\AzureConnectedMachineAgent\\;C:\\Windows\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps",
+        "PATHEXT": ".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC",
+        "PROCESSOR_ARCHITECTURE": "AMD64",
+        "PROCESSOR_IDENTIFIER": "Intel64 Family 6 Model 79 Stepping 1, GenuineIntel",
+        "PROCESSOR_LEVEL": "6",
+        "PROCESSOR_REVISION": "4f01",
+        "ProgramData": "C:\\ProgramData",
+        "ProgramFiles": "C:\\Program Files",
+        "ProgramFiles(x86)": "C:\\Program Files (x86)",
+        "ProgramW6432": "C:\\Program Files",
+        "PSModulePath": "C:\\Program Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules;C:\\Program Files (x86)\\AWS Tools\\PowerShell\\",
+        "PUBLIC": "C:\\Users\\Public",
+        "SystemDrive": "C:",
+        "SystemRoot": "C:\\Windows",
+        "TEMP": "C:\\Windows\\TEMP",
+        "TMP": "C:\\Windows\\TEMP",
+        "USERDOMAIN": "WORKGROUP",
+        "USERNAME": "EC2AMAZ-EFUIE9P$",
+        "USERPROFILE": "C:\\Windows\\system32\\config\\systemprofile",
+        "windir": "C:\\Windows"
+      }
+    }
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_raw": "{\"Id\":4798,\"Version\":0,\"Qualifiers\":null,\"Level\":0,\"Task\":13824,\"Opcode\":0,\"Keywords\":-9214364837600034816,\"RecordId\":154874,\"ProviderName\":\"Microsoft-Windows-Security-Auditing\",\"ProviderId\":\"54849625-5478-4994-a5ba-3e3b0328c30d\",\"LogName\":\"Security\",\"ProcessId\":836,\"ThreadId\":2832,\"MachineName\":\"EC2AMAZ-EFUIE9P\",\"UserId\":null,\"TimeCreated\":\"\\/Date(1680910581471)\\/\",\"ActivityId\":\"96f0aeab-6634-0001-87af-f0963466d901\",\"RelatedActivityId\":null,\"ContainerLog\":\"Security\",\"MatchedQueryIds\":[],\"Bookmark\":{},\"LevelDisplayName\":\"Information\",\"OpcodeDisplayName\":\"Info\",\"TaskDisplayName\":\"User Account Management\",\"KeywordsDisplayNames\":[\"Audit Success\"],\"Properties\":[{\"Value\":\"DefaultAccount\"},{\"Value\":\"EC2AMAZ-EFUIE9P\"},{\"Value\":\"S-1-5-21-4073093101-1709838126-2283403042-503\"},{\"Value\":\"S-1-5-21-4073093101-1709838126-2283403042-500\"},{\"Value\":\"Administrator\"},{\"Value\":\"EC2AMAZ-EFUIE9P\"},{\"Value\":1629888},{\"Value\":5796},{\"Value\":\"C:\\\\Windows\\\\ImmersiveControlPanel\\\\SystemSettings.exe\"}],\"Message\":\"A user\\u0027s local group membership was enumerated.\\r\\n\\r\\nSubject:\\r\\n\\tSecurity ID:\\t\\tS-1-5-21-4073093101-1709838126-2283403042-500\\r\\n\\tAccount Name:\\t\\tAdministrator\\r\\n\\tAccount Domain:\\t\\tEC2AMAZ-EFUIE9P\\r\\n\\tLogon ID:\\t\\t0x18DEC0\\r\\n\\r\\nUser:\\r\\n\\tSecurity ID:\\t\\tS-1-5-21-4073093101-1709838126-2283403042-503\\r\\n\\tAccount Name:\\t\\tDefaultAccount\\r\\n\\tAccount Domain:\\t\\tEC2AMAZ-EFUIE9P\\r\\n\\r\\nProcess Information:\\r\\n\\tProcess ID:\\t\\t0x16a4\\r\\n\\tProcess Name:\\t\\tC:\\\\Windows\\\\ImmersiveControlPanel\\\\SystemSettings.exe\"}",
+    "source": "Security",
+    "host": "EC2AMAZ-EFUIE9P",
+    "__source": "Security",
+    "__channel": "Security",
+    "__isBroken": true,
+    "__raw": "{\"Id\":4798,\"Version\":0,\"Qualifiers\":null,\"Level\":0,\"Task\":13824,\"Opcode\":0,\"Keywords\":-9214364837600034816,\"RecordId\":154874,\"ProviderName\":\"Microsoft-Windows-Security-Auditing\",\"ProviderId\":\"54849625-5478-4994-a5ba-3e3b0328c30d\",\"LogName\":\"Security\",\"ProcessId\":836,\"ThreadId\":2832,\"MachineName\":\"EC2AMAZ-EFUIE9P\",\"UserId\":null,\"TimeCreated\":\"\\/Date(1680910581471)\\/\",\"ActivityId\":\"96f0aeab-6634-0001-87af-f0963466d901\",\"RelatedActivityId\":null,\"ContainerLog\":\"Security\",\"MatchedQueryIds\":[],\"Bookmark\":{},\"LevelDisplayName\":\"Information\",\"OpcodeDisplayName\":\"Info\",\"TaskDisplayName\":\"User Account Management\",\"KeywordsDisplayNames\":[\"Audit Success\"],\"Properties\":[{\"Value\":\"DefaultAccount\"},{\"Value\":\"EC2AMAZ-EFUIE9P\"},{\"Value\":\"S-1-5-21-4073093101-1709838126-2283403042-503\"},{\"Value\":\"S-1-5-21-4073093101-1709838126-2283403042-500\"},{\"Value\":\"Administrator\"},{\"Value\":\"EC2AMAZ-EFUIE9P\"},{\"Value\":1629888},{\"Value\":5796},{\"Value\":\"C:\\\\Windows\\\\ImmersiveControlPanel\\\\SystemSettings.exe\"}],\"Message\":\"A user\\u0027s local group membership was enumerated.\\r\\n\\r\\nSubject:\\r\\n\\tSecurity ID:\\t\\tS-1-5-21-4073093101-1709838126-2283403042-500\\r\\n\\tAccount Name:\\t\\tAdministrator\\r\\n\\tAccount Domain:\\t\\tEC2AMAZ-EFUIE9P\\r\\n\\tLogon ID:\\t\\t0x18DEC0\\r\\n\\r\\nUser:\\r\\n\\tSecurity ID:\\t\\tS-1-5-21-4073093101-1709838126-2283403042-503\\r\\n\\tAccount Name:\\t\\tDefaultAccount\\r\\n\\tAccount Domain:\\t\\tEC2AMAZ-EFUIE9P\\r\\n\\r\\nProcess Information:\\r\\n\\tProcess ID:\\t\\t0x16a4\\r\\n\\tProcess Name:\\t\\tC:\\\\Windows\\\\ImmersiveControlPanel\\\\SystemSettings.exe\"}",
+    "_time": 1680910581.471,
+    "cribl_breaker": "windows event logs",
+    "__inputId": "win_event_logs:in_win_event_logs",
+    "__metadata": {
+      "timestamp": 1680910330.846,
+      "cribl": {
+        "version": "4.1.0-6979aea9",
+        "mode": "managed-edge",
+        "group": "default_fleet",
+        "config_version": "06c994f"
+      },
+      "os": {
+        "arch": "x64",
+        "cpu_count": 2,
+        "cpu_speed_mhz": 2300,
+        "cpu_type": "Intel(R) Xeon(R) CPU E5-2686 v4 @ 2.30GHz",
+        "gid": -1,
+        "homedir": "C:\\Windows\\system32\\config\\systemprofile",
+        "hostname": "EC2AMAZ-EFUIE9P",
+        "interfaces": {
+          "Ethernet 2": [
+            {
+              "address": "fe80::46a0:4d4e:b104:f6a6",
+              "netmask": "ffff:ffff:ffff:ffff::",
+              "family": "IPv6",
+              "mac": "0a:ff:94:01:93:0d",
+              "internal": false,
+              "cidr": "fe80::46a0:4d4e:b104:f6a6/64",
+              "scopeid": 7
+            },
+            {
+              "address": "172.31.15.42",
+              "netmask": "255.255.240.0",
+              "family": "IPv4",
+              "mac": "0a:ff:94:01:93:0d",
+              "internal": false,
+              "cidr": "172.31.15.42/20"
+            }
+          ],
+          "Loopback Pseudo-Interface 1": [
+            {
+              "address": "::1",
+              "netmask": "ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff",
+              "family": "IPv6",
+              "mac": "00:00:00:00:00:00",
+              "internal": true,
+              "cidr": "::1/128",
+              "scopeid": 0
+            },
+            {
+              "address": "127.0.0.1",
+              "netmask": "255.0.0.0",
+              "family": "IPv4",
+              "mac": "00:00:00:00:00:00",
+              "internal": true,
+              "cidr": "127.0.0.1/8"
+            }
+          ]
+        },
+        "memory": 4294557696,
+        "os_id": "windows",
+        "os_name": "Microsoft Windows Server 2022 Datacenter",
+        "os_version": "10.0.20348",
+        "os_version_id": "20348",
+        "platform": "win32",
+        "release": "10.0.20348",
+        "timezone": "UTC",
+        "timezone_offset": "+00:00",
+        "uid": -1,
+        "username": "SYSTEM"
+      },
+      "aws": {
+        "version": 2,
+        "identity": {
+          "accountId": "243602015558",
+          "architecture": "x86_64",
+          "availabilityZone": "us-west-2c",
+          "billingProducts": [
+            "bp-6ba54002"
+          ],
+          "devpayProductCodes": null,
+          "marketplaceProductCodes": null,
+          "imageId": "ami-0b8508d946afbf024",
+          "instanceId": "i-0a9ff344dd6ca2604",
+          "instanceType": "t2.medium",
+          "kernelId": null,
+          "pendingTime": "2023-03-27T14:36:27Z",
+          "privateIp": "172.31.15.42",
+          "ramdiskId": null,
+          "region": "us-west-2",
+          "version": "2017-09-30"
+        },
+        "public_ipv4": "18.237.42.35",
+        "hostname": "ec2-18-237-42-35.us-west-2.compute.amazonaws.com",
+        "security_groups": [
+          "launch-wizard-355"
+        ]
+      },
+      "env": {
+        "ALLUSERSPROFILE": "C:\\ProgramData",
+        "APPDATA": "C:\\Windows\\system32\\config\\systemprofile\\AppData\\Roaming",
+        "AWS_EXECUTION_ENV": "EC2",
+        "AzureMonAgentClientLocation": "C:\\Packages\\Plugins\\Microsoft.Azure.Monitor.AzureMonitorWindowsAgent\\1.12.1.0\\Monitoring\\Agent",
+        "CommonProgramFiles": "C:\\Program Files\\Common Files",
+        "CommonProgramFiles(x86)": "C:\\Program Files (x86)\\Common Files",
+        "CommonProgramW6432": "C:\\Program Files\\Common Files",
+        "COMPUTERNAME": "EC2AMAZ-EFUIE9P",
+        "ComSpec": "C:\\Windows\\system32\\cmd.exe",
+        "CRIBL_CONF_DIR": "C:\\ProgramData\\Cribl",
+        "CRIBL_EDGE_FS_ROOT": "\\",
+        "CRIBL_HOME": "C:\\ProgramData\\Cribl",
+        "CRIBL_INSTANCE_HOME": "C:\\ProgramData\\Cribl",
+        "CRIBL_INTERACTIVE": "0",
+        "CRIBL_ROLE": "WORKER",
+        "CRIBL_VOLUME_DIR": "C:\\ProgramData\\Cribl",
+        "CRIBL_WORKER_DIST_MODE": "managed-edge",
+        "CRIBL_WORKER_ID": "0",
+        "CRIBL_WORKER_LABEL": "w0",
+        "DriverData": "C:\\Windows\\System32\\Drivers\\DriverData",
+        "EC2LAUNCH_TELEMETRY": "1",
+        "IDENTITY_ENDPOINT": "http://localhost:40342/metadata/identity/oauth2/token",
+        "IMDS_ENDPOINT": "http://localhost:40342",
+        "LOCALAPPDATA": "C:\\Windows\\system32\\config\\systemprofile\\AppData\\Local",
+        "NODE_OPTIONS": "--max-old-space-size=1024 --no-warnings --no-deprecation",
+        "NUMBER_OF_PROCESSORS": "2",
+        "OS": "Windows_NT",
+        "Path": "C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\Amazon\\cfn-bootstrap\\;C:\\Program Files\\AzureConnectedMachineAgent\\;C:\\Windows\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps",
+        "PATHEXT": ".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC",
+        "PROCESSOR_ARCHITECTURE": "AMD64",
+        "PROCESSOR_IDENTIFIER": "Intel64 Family 6 Model 79 Stepping 1, GenuineIntel",
+        "PROCESSOR_LEVEL": "6",
+        "PROCESSOR_REVISION": "4f01",
+        "ProgramData": "C:\\ProgramData",
+        "ProgramFiles": "C:\\Program Files",
+        "ProgramFiles(x86)": "C:\\Program Files (x86)",
+        "ProgramW6432": "C:\\Program Files",
+        "PSModulePath": "C:\\Program Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules;C:\\Program Files (x86)\\AWS Tools\\PowerShell\\",
+        "PUBLIC": "C:\\Users\\Public",
+        "SystemDrive": "C:",
+        "SystemRoot": "C:\\Windows",
+        "TEMP": "C:\\Windows\\TEMP",
+        "TMP": "C:\\Windows\\TEMP",
+        "USERDOMAIN": "WORKGROUP",
+        "USERNAME": "EC2AMAZ-EFUIE9P$",
+        "USERPROFILE": "C:\\Windows\\system32\\config\\systemprofile",
+        "windir": "C:\\Windows"
+      }
+    }
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_raw": "{\"Id\":4798,\"Version\":0,\"Qualifiers\":null,\"Level\":0,\"Task\":13824,\"Opcode\":0,\"Keywords\":-9214364837600034816,\"RecordId\":154875,\"ProviderName\":\"Microsoft-Windows-Security-Auditing\",\"ProviderId\":\"54849625-5478-4994-a5ba-3e3b0328c30d\",\"LogName\":\"Security\",\"ProcessId\":836,\"ThreadId\":2832,\"MachineName\":\"EC2AMAZ-EFUIE9P\",\"UserId\":null,\"TimeCreated\":\"\\/Date(1680910581471)\\/\",\"ActivityId\":\"96f0aeab-6634-0001-87af-f0963466d901\",\"RelatedActivityId\":null,\"ContainerLog\":\"Security\",\"MatchedQueryIds\":[],\"Bookmark\":{},\"LevelDisplayName\":\"Information\",\"OpcodeDisplayName\":\"Info\",\"TaskDisplayName\":\"User Account Management\",\"KeywordsDisplayNames\":[\"Audit Success\"],\"Properties\":[{\"Value\":\"DoomGuy\"},{\"Value\":\"EC2AMAZ-EFUIE9P\"},{\"Value\":\"S-1-5-21-4073093101-1709838126-2283403042-1008\"},{\"Value\":\"S-1-5-21-4073093101-1709838126-2283403042-500\"},{\"Value\":\"Administrator\"},{\"Value\":\"EC2AMAZ-EFUIE9P\"},{\"Value\":1629888},{\"Value\":5796},{\"Value\":\"C:\\\\Windows\\\\ImmersiveControlPanel\\\\SystemSettings.exe\"}],\"Message\":\"A user\\u0027s local group membership was enumerated.\\r\\n\\r\\nSubject:\\r\\n\\tSecurity ID:\\t\\tS-1-5-21-4073093101-1709838126-2283403042-500\\r\\n\\tAccount Name:\\t\\tAdministrator\\r\\n\\tAccount Domain:\\t\\tEC2AMAZ-EFUIE9P\\r\\n\\tLogon ID:\\t\\t0x18DEC0\\r\\n\\r\\nUser:\\r\\n\\tSecurity ID:\\t\\tS-1-5-21-4073093101-1709838126-2283403042-1008\\r\\n\\tAccount Name:\\t\\tDoomGuy\\r\\n\\tAccount Domain:\\t\\tEC2AMAZ-EFUIE9P\\r\\n\\r\\nProcess Information:\\r\\n\\tProcess ID:\\t\\t0x16a4\\r\\n\\tProcess Name:\\t\\tC:\\\\Windows\\\\ImmersiveControlPanel\\\\SystemSettings.exe\"}",
+    "source": "Security",
+    "host": "EC2AMAZ-EFUIE9P",
+    "__source": "Security",
+    "__channel": "Security",
+    "__isBroken": true,
+    "__raw": "{\"Id\":4798,\"Version\":0,\"Qualifiers\":null,\"Level\":0,\"Task\":13824,\"Opcode\":0,\"Keywords\":-9214364837600034816,\"RecordId\":154875,\"ProviderName\":\"Microsoft-Windows-Security-Auditing\",\"ProviderId\":\"54849625-5478-4994-a5ba-3e3b0328c30d\",\"LogName\":\"Security\",\"ProcessId\":836,\"ThreadId\":2832,\"MachineName\":\"EC2AMAZ-EFUIE9P\",\"UserId\":null,\"TimeCreated\":\"\\/Date(1680910581471)\\/\",\"ActivityId\":\"96f0aeab-6634-0001-87af-f0963466d901\",\"RelatedActivityId\":null,\"ContainerLog\":\"Security\",\"MatchedQueryIds\":[],\"Bookmark\":{},\"LevelDisplayName\":\"Information\",\"OpcodeDisplayName\":\"Info\",\"TaskDisplayName\":\"User Account Management\",\"KeywordsDisplayNames\":[\"Audit Success\"],\"Properties\":[{\"Value\":\"DoomGuy\"},{\"Value\":\"EC2AMAZ-EFUIE9P\"},{\"Value\":\"S-1-5-21-4073093101-1709838126-2283403042-1008\"},{\"Value\":\"S-1-5-21-4073093101-1709838126-2283403042-500\"},{\"Value\":\"Administrator\"},{\"Value\":\"EC2AMAZ-EFUIE9P\"},{\"Value\":1629888},{\"Value\":5796},{\"Value\":\"C:\\\\Windows\\\\ImmersiveControlPanel\\\\SystemSettings.exe\"}],\"Message\":\"A user\\u0027s local group membership was enumerated.\\r\\n\\r\\nSubject:\\r\\n\\tSecurity ID:\\t\\tS-1-5-21-4073093101-1709838126-2283403042-500\\r\\n\\tAccount Name:\\t\\tAdministrator\\r\\n\\tAccount Domain:\\t\\tEC2AMAZ-EFUIE9P\\r\\n\\tLogon ID:\\t\\t0x18DEC0\\r\\n\\r\\nUser:\\r\\n\\tSecurity ID:\\t\\tS-1-5-21-4073093101-1709838126-2283403042-1008\\r\\n\\tAccount Name:\\t\\tDoomGuy\\r\\n\\tAccount Domain:\\t\\tEC2AMAZ-EFUIE9P\\r\\n\\r\\nProcess Information:\\r\\n\\tProcess ID:\\t\\t0x16a4\\r\\n\\tProcess Name:\\t\\tC:\\\\Windows\\\\ImmersiveControlPanel\\\\SystemSettings.exe\"}",
+    "_time": 1680910581.471,
+    "cribl_breaker": "windows event logs",
+    "__inputId": "win_event_logs:in_win_event_logs",
+    "__metadata": {
+      "timestamp": 1680910330.846,
+      "cribl": {
+        "version": "4.1.0-6979aea9",
+        "mode": "managed-edge",
+        "group": "default_fleet",
+        "config_version": "06c994f"
+      },
+      "os": {
+        "arch": "x64",
+        "cpu_count": 2,
+        "cpu_speed_mhz": 2300,
+        "cpu_type": "Intel(R) Xeon(R) CPU E5-2686 v4 @ 2.30GHz",
+        "gid": -1,
+        "homedir": "C:\\Windows\\system32\\config\\systemprofile",
+        "hostname": "EC2AMAZ-EFUIE9P",
+        "interfaces": {
+          "Ethernet 2": [
+            {
+              "address": "fe80::46a0:4d4e:b104:f6a6",
+              "netmask": "ffff:ffff:ffff:ffff::",
+              "family": "IPv6",
+              "mac": "0a:ff:94:01:93:0d",
+              "internal": false,
+              "cidr": "fe80::46a0:4d4e:b104:f6a6/64",
+              "scopeid": 7
+            },
+            {
+              "address": "172.31.15.42",
+              "netmask": "255.255.240.0",
+              "family": "IPv4",
+              "mac": "0a:ff:94:01:93:0d",
+              "internal": false,
+              "cidr": "172.31.15.42/20"
+            }
+          ],
+          "Loopback Pseudo-Interface 1": [
+            {
+              "address": "::1",
+              "netmask": "ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff",
+              "family": "IPv6",
+              "mac": "00:00:00:00:00:00",
+              "internal": true,
+              "cidr": "::1/128",
+              "scopeid": 0
+            },
+            {
+              "address": "127.0.0.1",
+              "netmask": "255.0.0.0",
+              "family": "IPv4",
+              "mac": "00:00:00:00:00:00",
+              "internal": true,
+              "cidr": "127.0.0.1/8"
+            }
+          ]
+        },
+        "memory": 4294557696,
+        "os_id": "windows",
+        "os_name": "Microsoft Windows Server 2022 Datacenter",
+        "os_version": "10.0.20348",
+        "os_version_id": "20348",
+        "platform": "win32",
+        "release": "10.0.20348",
+        "timezone": "UTC",
+        "timezone_offset": "+00:00",
+        "uid": -1,
+        "username": "SYSTEM"
+      },
+      "aws": {
+        "version": 2,
+        "identity": {
+          "accountId": "243602015558",
+          "architecture": "x86_64",
+          "availabilityZone": "us-west-2c",
+          "billingProducts": [
+            "bp-6ba54002"
+          ],
+          "devpayProductCodes": null,
+          "marketplaceProductCodes": null,
+          "imageId": "ami-0b8508d946afbf024",
+          "instanceId": "i-0a9ff344dd6ca2604",
+          "instanceType": "t2.medium",
+          "kernelId": null,
+          "pendingTime": "2023-03-27T14:36:27Z",
+          "privateIp": "172.31.15.42",
+          "ramdiskId": null,
+          "region": "us-west-2",
+          "version": "2017-09-30"
+        },
+        "public_ipv4": "18.237.42.35",
+        "hostname": "ec2-18-237-42-35.us-west-2.compute.amazonaws.com",
+        "security_groups": [
+          "launch-wizard-355"
+        ]
+      },
+      "env": {
+        "ALLUSERSPROFILE": "C:\\ProgramData",
+        "APPDATA": "C:\\Windows\\system32\\config\\systemprofile\\AppData\\Roaming",
+        "AWS_EXECUTION_ENV": "EC2",
+        "AzureMonAgentClientLocation": "C:\\Packages\\Plugins\\Microsoft.Azure.Monitor.AzureMonitorWindowsAgent\\1.12.1.0\\Monitoring\\Agent",
+        "CommonProgramFiles": "C:\\Program Files\\Common Files",
+        "CommonProgramFiles(x86)": "C:\\Program Files (x86)\\Common Files",
+        "CommonProgramW6432": "C:\\Program Files\\Common Files",
+        "COMPUTERNAME": "EC2AMAZ-EFUIE9P",
+        "ComSpec": "C:\\Windows\\system32\\cmd.exe",
+        "CRIBL_CONF_DIR": "C:\\ProgramData\\Cribl",
+        "CRIBL_EDGE_FS_ROOT": "\\",
+        "CRIBL_HOME": "C:\\ProgramData\\Cribl",
+        "CRIBL_INSTANCE_HOME": "C:\\ProgramData\\Cribl",
+        "CRIBL_INTERACTIVE": "0",
+        "CRIBL_ROLE": "WORKER",
+        "CRIBL_VOLUME_DIR": "C:\\ProgramData\\Cribl",
+        "CRIBL_WORKER_DIST_MODE": "managed-edge",
+        "CRIBL_WORKER_ID": "0",
+        "CRIBL_WORKER_LABEL": "w0",
+        "DriverData": "C:\\Windows\\System32\\Drivers\\DriverData",
+        "EC2LAUNCH_TELEMETRY": "1",
+        "IDENTITY_ENDPOINT": "http://localhost:40342/metadata/identity/oauth2/token",
+        "IMDS_ENDPOINT": "http://localhost:40342",
+        "LOCALAPPDATA": "C:\\Windows\\system32\\config\\systemprofile\\AppData\\Local",
+        "NODE_OPTIONS": "--max-old-space-size=1024 --no-warnings --no-deprecation",
+        "NUMBER_OF_PROCESSORS": "2",
+        "OS": "Windows_NT",
+        "Path": "C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\Amazon\\cfn-bootstrap\\;C:\\Program Files\\AzureConnectedMachineAgent\\;C:\\Windows\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps",
+        "PATHEXT": ".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC",
+        "PROCESSOR_ARCHITECTURE": "AMD64",
+        "PROCESSOR_IDENTIFIER": "Intel64 Family 6 Model 79 Stepping 1, GenuineIntel",
+        "PROCESSOR_LEVEL": "6",
+        "PROCESSOR_REVISION": "4f01",
+        "ProgramData": "C:\\ProgramData",
+        "ProgramFiles": "C:\\Program Files",
+        "ProgramFiles(x86)": "C:\\Program Files (x86)",
+        "ProgramW6432": "C:\\Program Files",
+        "PSModulePath": "C:\\Program Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules;C:\\Program Files (x86)\\AWS Tools\\PowerShell\\",
+        "PUBLIC": "C:\\Users\\Public",
+        "SystemDrive": "C:",
+        "SystemRoot": "C:\\Windows",
+        "TEMP": "C:\\Windows\\TEMP",
+        "TMP": "C:\\Windows\\TEMP",
+        "USERDOMAIN": "WORKGROUP",
+        "USERNAME": "EC2AMAZ-EFUIE9P$",
+        "USERPROFILE": "C:\\Windows\\system32\\config\\systemprofile",
+        "windir": "C:\\Windows"
+      }
+    }
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_raw": "{\"Id\":4798,\"Version\":0,\"Qualifiers\":null,\"Level\":0,\"Task\":13824,\"Opcode\":0,\"Keywords\":-9214364837600034816,\"RecordId\":154876,\"ProviderName\":\"Microsoft-Windows-Security-Auditing\",\"ProviderId\":\"54849625-5478-4994-a5ba-3e3b0328c30d\",\"LogName\":\"Security\",\"ProcessId\":836,\"ThreadId\":2832,\"MachineName\":\"EC2AMAZ-EFUIE9P\",\"UserId\":null,\"TimeCreated\":\"\\/Date(1680910581471)\\/\",\"ActivityId\":\"96f0aeab-6634-0001-87af-f0963466d901\",\"RelatedActivityId\":null,\"ContainerLog\":\"Security\",\"MatchedQueryIds\":[],\"Bookmark\":{},\"LevelDisplayName\":\"Information\",\"OpcodeDisplayName\":\"Info\",\"TaskDisplayName\":\"User Account Management\",\"KeywordsDisplayNames\":[\"Audit Success\"],\"Properties\":[{\"Value\":\"Guest\"},{\"Value\":\"EC2AMAZ-EFUIE9P\"},{\"Value\":\"S-1-5-21-4073093101-1709838126-2283403042-501\"},{\"Value\":\"S-1-5-21-4073093101-1709838126-2283403042-500\"},{\"Value\":\"Administrator\"},{\"Value\":\"EC2AMAZ-EFUIE9P\"},{\"Value\":1629888},{\"Value\":5796},{\"Value\":\"C:\\\\Windows\\\\ImmersiveControlPanel\\\\SystemSettings.exe\"}],\"Message\":\"A user\\u0027s local group membership was enumerated.\\r\\n\\r\\nSubject:\\r\\n\\tSecurity ID:\\t\\tS-1-5-21-4073093101-1709838126-2283403042-500\\r\\n\\tAccount Name:\\t\\tAdministrator\\r\\n\\tAccount Domain:\\t\\tEC2AMAZ-EFUIE9P\\r\\n\\tLogon ID:\\t\\t0x18DEC0\\r\\n\\r\\nUser:\\r\\n\\tSecurity ID:\\t\\tS-1-5-21-4073093101-1709838126-2283403042-501\\r\\n\\tAccount Name:\\t\\tGuest\\r\\n\\tAccount Domain:\\t\\tEC2AMAZ-EFUIE9P\\r\\n\\r\\nProcess Information:\\r\\n\\tProcess ID:\\t\\t0x16a4\\r\\n\\tProcess Name:\\t\\tC:\\\\Windows\\\\ImmersiveControlPanel\\\\SystemSettings.exe\"}",
+    "source": "Security",
+    "host": "EC2AMAZ-EFUIE9P",
+    "__source": "Security",
+    "__channel": "Security",
+    "__isBroken": true,
+    "__raw": "{\"Id\":4798,\"Version\":0,\"Qualifiers\":null,\"Level\":0,\"Task\":13824,\"Opcode\":0,\"Keywords\":-9214364837600034816,\"RecordId\":154876,\"ProviderName\":\"Microsoft-Windows-Security-Auditing\",\"ProviderId\":\"54849625-5478-4994-a5ba-3e3b0328c30d\",\"LogName\":\"Security\",\"ProcessId\":836,\"ThreadId\":2832,\"MachineName\":\"EC2AMAZ-EFUIE9P\",\"UserId\":null,\"TimeCreated\":\"\\/Date(1680910581471)\\/\",\"ActivityId\":\"96f0aeab-6634-0001-87af-f0963466d901\",\"RelatedActivityId\":null,\"ContainerLog\":\"Security\",\"MatchedQueryIds\":[],\"Bookmark\":{},\"LevelDisplayName\":\"Information\",\"OpcodeDisplayName\":\"Info\",\"TaskDisplayName\":\"User Account Management\",\"KeywordsDisplayNames\":[\"Audit Success\"],\"Properties\":[{\"Value\":\"Guest\"},{\"Value\":\"EC2AMAZ-EFUIE9P\"},{\"Value\":\"S-1-5-21-4073093101-1709838126-2283403042-501\"},{\"Value\":\"S-1-5-21-4073093101-1709838126-2283403042-500\"},{\"Value\":\"Administrator\"},{\"Value\":\"EC2AMAZ-EFUIE9P\"},{\"Value\":1629888},{\"Value\":5796},{\"Value\":\"C:\\\\Windows\\\\ImmersiveControlPanel\\\\SystemSettings.exe\"}],\"Message\":\"A user\\u0027s local group membership was enumerated.\\r\\n\\r\\nSubject:\\r\\n\\tSecurity ID:\\t\\tS-1-5-21-4073093101-1709838126-2283403042-500\\r\\n\\tAccount Name:\\t\\tAdministrator\\r\\n\\tAccount Domain:\\t\\tEC2AMAZ-EFUIE9P\\r\\n\\tLogon ID:\\t\\t0x18DEC0\\r\\n\\r\\nUser:\\r\\n\\tSecurity ID:\\t\\tS-1-5-21-4073093101-1709838126-2283403042-501\\r\\n\\tAccount Name:\\t\\tGuest\\r\\n\\tAccount Domain:\\t\\tEC2AMAZ-EFUIE9P\\r\\n\\r\\nProcess Information:\\r\\n\\tProcess ID:\\t\\t0x16a4\\r\\n\\tProcess Name:\\t\\tC:\\\\Windows\\\\ImmersiveControlPanel\\\\SystemSettings.exe\"}",
+    "_time": 1680910581.471,
+    "cribl_breaker": "windows event logs",
+    "__inputId": "win_event_logs:in_win_event_logs",
+    "__metadata": {
+      "timestamp": 1680910330.846,
+      "cribl": {
+        "version": "4.1.0-6979aea9",
+        "mode": "managed-edge",
+        "group": "default_fleet",
+        "config_version": "06c994f"
+      },
+      "os": {
+        "arch": "x64",
+        "cpu_count": 2,
+        "cpu_speed_mhz": 2300,
+        "cpu_type": "Intel(R) Xeon(R) CPU E5-2686 v4 @ 2.30GHz",
+        "gid": -1,
+        "homedir": "C:\\Windows\\system32\\config\\systemprofile",
+        "hostname": "EC2AMAZ-EFUIE9P",
+        "interfaces": {
+          "Ethernet 2": [
+            {
+              "address": "fe80::46a0:4d4e:b104:f6a6",
+              "netmask": "ffff:ffff:ffff:ffff::",
+              "family": "IPv6",
+              "mac": "0a:ff:94:01:93:0d",
+              "internal": false,
+              "cidr": "fe80::46a0:4d4e:b104:f6a6/64",
+              "scopeid": 7
+            },
+            {
+              "address": "172.31.15.42",
+              "netmask": "255.255.240.0",
+              "family": "IPv4",
+              "mac": "0a:ff:94:01:93:0d",
+              "internal": false,
+              "cidr": "172.31.15.42/20"
+            }
+          ],
+          "Loopback Pseudo-Interface 1": [
+            {
+              "address": "::1",
+              "netmask": "ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff",
+              "family": "IPv6",
+              "mac": "00:00:00:00:00:00",
+              "internal": true,
+              "cidr": "::1/128",
+              "scopeid": 0
+            },
+            {
+              "address": "127.0.0.1",
+              "netmask": "255.0.0.0",
+              "family": "IPv4",
+              "mac": "00:00:00:00:00:00",
+              "internal": true,
+              "cidr": "127.0.0.1/8"
+            }
+          ]
+        },
+        "memory": 4294557696,
+        "os_id": "windows",
+        "os_name": "Microsoft Windows Server 2022 Datacenter",
+        "os_version": "10.0.20348",
+        "os_version_id": "20348",
+        "platform": "win32",
+        "release": "10.0.20348",
+        "timezone": "UTC",
+        "timezone_offset": "+00:00",
+        "uid": -1,
+        "username": "SYSTEM"
+      },
+      "aws": {
+        "version": 2,
+        "identity": {
+          "accountId": "243602015558",
+          "architecture": "x86_64",
+          "availabilityZone": "us-west-2c",
+          "billingProducts": [
+            "bp-6ba54002"
+          ],
+          "devpayProductCodes": null,
+          "marketplaceProductCodes": null,
+          "imageId": "ami-0b8508d946afbf024",
+          "instanceId": "i-0a9ff344dd6ca2604",
+          "instanceType": "t2.medium",
+          "kernelId": null,
+          "pendingTime": "2023-03-27T14:36:27Z",
+          "privateIp": "172.31.15.42",
+          "ramdiskId": null,
+          "region": "us-west-2",
+          "version": "2017-09-30"
+        },
+        "public_ipv4": "18.237.42.35",
+        "hostname": "ec2-18-237-42-35.us-west-2.compute.amazonaws.com",
+        "security_groups": [
+          "launch-wizard-355"
+        ]
+      },
+      "env": {
+        "ALLUSERSPROFILE": "C:\\ProgramData",
+        "APPDATA": "C:\\Windows\\system32\\config\\systemprofile\\AppData\\Roaming",
+        "AWS_EXECUTION_ENV": "EC2",
+        "AzureMonAgentClientLocation": "C:\\Packages\\Plugins\\Microsoft.Azure.Monitor.AzureMonitorWindowsAgent\\1.12.1.0\\Monitoring\\Agent",
+        "CommonProgramFiles": "C:\\Program Files\\Common Files",
+        "CommonProgramFiles(x86)": "C:\\Program Files (x86)\\Common Files",
+        "CommonProgramW6432": "C:\\Program Files\\Common Files",
+        "COMPUTERNAME": "EC2AMAZ-EFUIE9P",
+        "ComSpec": "C:\\Windows\\system32\\cmd.exe",
+        "CRIBL_CONF_DIR": "C:\\ProgramData\\Cribl",
+        "CRIBL_EDGE_FS_ROOT": "\\",
+        "CRIBL_HOME": "C:\\ProgramData\\Cribl",
+        "CRIBL_INSTANCE_HOME": "C:\\ProgramData\\Cribl",
+        "CRIBL_INTERACTIVE": "0",
+        "CRIBL_ROLE": "WORKER",
+        "CRIBL_VOLUME_DIR": "C:\\ProgramData\\Cribl",
+        "CRIBL_WORKER_DIST_MODE": "managed-edge",
+        "CRIBL_WORKER_ID": "0",
+        "CRIBL_WORKER_LABEL": "w0",
+        "DriverData": "C:\\Windows\\System32\\Drivers\\DriverData",
+        "EC2LAUNCH_TELEMETRY": "1",
+        "IDENTITY_ENDPOINT": "http://localhost:40342/metadata/identity/oauth2/token",
+        "IMDS_ENDPOINT": "http://localhost:40342",
+        "LOCALAPPDATA": "C:\\Windows\\system32\\config\\systemprofile\\AppData\\Local",
+        "NODE_OPTIONS": "--max-old-space-size=1024 --no-warnings --no-deprecation",
+        "NUMBER_OF_PROCESSORS": "2",
+        "OS": "Windows_NT",
+        "Path": "C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\Amazon\\cfn-bootstrap\\;C:\\Program Files\\AzureConnectedMachineAgent\\;C:\\Windows\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps",
+        "PATHEXT": ".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC",
+        "PROCESSOR_ARCHITECTURE": "AMD64",
+        "PROCESSOR_IDENTIFIER": "Intel64 Family 6 Model 79 Stepping 1, GenuineIntel",
+        "PROCESSOR_LEVEL": "6",
+        "PROCESSOR_REVISION": "4f01",
+        "ProgramData": "C:\\ProgramData",
+        "ProgramFiles": "C:\\Program Files",
+        "ProgramFiles(x86)": "C:\\Program Files (x86)",
+        "ProgramW6432": "C:\\Program Files",
+        "PSModulePath": "C:\\Program Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules;C:\\Program Files (x86)\\AWS Tools\\PowerShell\\",
+        "PUBLIC": "C:\\Users\\Public",
+        "SystemDrive": "C:",
+        "SystemRoot": "C:\\Windows",
+        "TEMP": "C:\\Windows\\TEMP",
+        "TMP": "C:\\Windows\\TEMP",
+        "USERDOMAIN": "WORKGROUP",
+        "USERNAME": "EC2AMAZ-EFUIE9P$",
+        "USERPROFILE": "C:\\Windows\\system32\\config\\systemprofile",
+        "windir": "C:\\Windows"
+      }
+    }
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_raw": "{\"Id\":4798,\"Version\":0,\"Qualifiers\":null,\"Level\":0,\"Task\":13824,\"Opcode\":0,\"Keywords\":-9214364837600034816,\"RecordId\":154877,\"ProviderName\":\"Microsoft-Windows-Security-Auditing\",\"ProviderId\":\"54849625-5478-4994-a5ba-3e3b0328c30d\",\"LogName\":\"Security\",\"ProcessId\":836,\"ThreadId\":2832,\"MachineName\":\"EC2AMAZ-EFUIE9P\",\"UserId\":null,\"TimeCreated\":\"\\/Date(1680910581472)\\/\",\"ActivityId\":\"96f0aeab-6634-0001-87af-f0963466d901\",\"RelatedActivityId\":null,\"ContainerLog\":\"Security\",\"MatchedQueryIds\":[],\"Bookmark\":{},\"LevelDisplayName\":\"Information\",\"OpcodeDisplayName\":\"Info\",\"TaskDisplayName\":\"User Account Management\",\"KeywordsDisplayNames\":[\"Audit Success\"],\"Properties\":[{\"Value\":\"Kevin\"},{\"Value\":\"EC2AMAZ-EFUIE9P\"},{\"Value\":\"S-1-5-21-4073093101-1709838126-2283403042-1013\"},{\"Value\":\"S-1-5-21-4073093101-1709838126-2283403042-500\"},{\"Value\":\"Administrator\"},{\"Value\":\"EC2AMAZ-EFUIE9P\"},{\"Value\":1629888},{\"Value\":5796},{\"Value\":\"C:\\\\Windows\\\\ImmersiveControlPanel\\\\SystemSettings.exe\"}],\"Message\":\"A user\\u0027s local group membership was enumerated.\\r\\n\\r\\nSubject:\\r\\n\\tSecurity ID:\\t\\tS-1-5-21-4073093101-1709838126-2283403042-500\\r\\n\\tAccount Name:\\t\\tAdministrator\\r\\n\\tAccount Domain:\\t\\tEC2AMAZ-EFUIE9P\\r\\n\\tLogon ID:\\t\\t0x18DEC0\\r\\n\\r\\nUser:\\r\\n\\tSecurity ID:\\t\\tS-1-5-21-4073093101-1709838126-2283403042-1013\\r\\n\\tAccount Name:\\t\\tKevin\\r\\n\\tAccount Domain:\\t\\tEC2AMAZ-EFUIE9P\\r\\n\\r\\nProcess Information:\\r\\n\\tProcess ID:\\t\\t0x16a4\\r\\n\\tProcess Name:\\t\\tC:\\\\Windows\\\\ImmersiveControlPanel\\\\SystemSettings.exe\"}",
+    "source": "Security",
+    "host": "EC2AMAZ-EFUIE9P",
+    "__source": "Security",
+    "__channel": "Security",
+    "__isBroken": true,
+    "__raw": "{\"Id\":4798,\"Version\":0,\"Qualifiers\":null,\"Level\":0,\"Task\":13824,\"Opcode\":0,\"Keywords\":-9214364837600034816,\"RecordId\":154877,\"ProviderName\":\"Microsoft-Windows-Security-Auditing\",\"ProviderId\":\"54849625-5478-4994-a5ba-3e3b0328c30d\",\"LogName\":\"Security\",\"ProcessId\":836,\"ThreadId\":2832,\"MachineName\":\"EC2AMAZ-EFUIE9P\",\"UserId\":null,\"TimeCreated\":\"\\/Date(1680910581472)\\/\",\"ActivityId\":\"96f0aeab-6634-0001-87af-f0963466d901\",\"RelatedActivityId\":null,\"ContainerLog\":\"Security\",\"MatchedQueryIds\":[],\"Bookmark\":{},\"LevelDisplayName\":\"Information\",\"OpcodeDisplayName\":\"Info\",\"TaskDisplayName\":\"User Account Management\",\"KeywordsDisplayNames\":[\"Audit Success\"],\"Properties\":[{\"Value\":\"Kevin\"},{\"Value\":\"EC2AMAZ-EFUIE9P\"},{\"Value\":\"S-1-5-21-4073093101-1709838126-2283403042-1013\"},{\"Value\":\"S-1-5-21-4073093101-1709838126-2283403042-500\"},{\"Value\":\"Administrator\"},{\"Value\":\"EC2AMAZ-EFUIE9P\"},{\"Value\":1629888},{\"Value\":5796},{\"Value\":\"C:\\\\Windows\\\\ImmersiveControlPanel\\\\SystemSettings.exe\"}],\"Message\":\"A user\\u0027s local group membership was enumerated.\\r\\n\\r\\nSubject:\\r\\n\\tSecurity ID:\\t\\tS-1-5-21-4073093101-1709838126-2283403042-500\\r\\n\\tAccount Name:\\t\\tAdministrator\\r\\n\\tAccount Domain:\\t\\tEC2AMAZ-EFUIE9P\\r\\n\\tLogon ID:\\t\\t0x18DEC0\\r\\n\\r\\nUser:\\r\\n\\tSecurity ID:\\t\\tS-1-5-21-4073093101-1709838126-2283403042-1013\\r\\n\\tAccount Name:\\t\\tKevin\\r\\n\\tAccount Domain:\\t\\tEC2AMAZ-EFUIE9P\\r\\n\\r\\nProcess Information:\\r\\n\\tProcess ID:\\t\\t0x16a4\\r\\n\\tProcess Name:\\t\\tC:\\\\Windows\\\\ImmersiveControlPanel\\\\SystemSettings.exe\"}",
+    "_time": 1680910581.472,
+    "cribl_breaker": "windows event logs",
+    "__inputId": "win_event_logs:in_win_event_logs",
+    "__metadata": {
+      "timestamp": 1680910330.846,
+      "cribl": {
+        "version": "4.1.0-6979aea9",
+        "mode": "managed-edge",
+        "group": "default_fleet",
+        "config_version": "06c994f"
+      },
+      "os": {
+        "arch": "x64",
+        "cpu_count": 2,
+        "cpu_speed_mhz": 2300,
+        "cpu_type": "Intel(R) Xeon(R) CPU E5-2686 v4 @ 2.30GHz",
+        "gid": -1,
+        "homedir": "C:\\Windows\\system32\\config\\systemprofile",
+        "hostname": "EC2AMAZ-EFUIE9P",
+        "interfaces": {
+          "Ethernet 2": [
+            {
+              "address": "fe80::46a0:4d4e:b104:f6a6",
+              "netmask": "ffff:ffff:ffff:ffff::",
+              "family": "IPv6",
+              "mac": "0a:ff:94:01:93:0d",
+              "internal": false,
+              "cidr": "fe80::46a0:4d4e:b104:f6a6/64",
+              "scopeid": 7
+            },
+            {
+              "address": "172.31.15.42",
+              "netmask": "255.255.240.0",
+              "family": "IPv4",
+              "mac": "0a:ff:94:01:93:0d",
+              "internal": false,
+              "cidr": "172.31.15.42/20"
+            }
+          ],
+          "Loopback Pseudo-Interface 1": [
+            {
+              "address": "::1",
+              "netmask": "ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff",
+              "family": "IPv6",
+              "mac": "00:00:00:00:00:00",
+              "internal": true,
+              "cidr": "::1/128",
+              "scopeid": 0
+            },
+            {
+              "address": "127.0.0.1",
+              "netmask": "255.0.0.0",
+              "family": "IPv4",
+              "mac": "00:00:00:00:00:00",
+              "internal": true,
+              "cidr": "127.0.0.1/8"
+            }
+          ]
+        },
+        "memory": 4294557696,
+        "os_id": "windows",
+        "os_name": "Microsoft Windows Server 2022 Datacenter",
+        "os_version": "10.0.20348",
+        "os_version_id": "20348",
+        "platform": "win32",
+        "release": "10.0.20348",
+        "timezone": "UTC",
+        "timezone_offset": "+00:00",
+        "uid": -1,
+        "username": "SYSTEM"
+      },
+      "aws": {
+        "version": 2,
+        "identity": {
+          "accountId": "243602015558",
+          "architecture": "x86_64",
+          "availabilityZone": "us-west-2c",
+          "billingProducts": [
+            "bp-6ba54002"
+          ],
+          "devpayProductCodes": null,
+          "marketplaceProductCodes": null,
+          "imageId": "ami-0b8508d946afbf024",
+          "instanceId": "i-0a9ff344dd6ca2604",
+          "instanceType": "t2.medium",
+          "kernelId": null,
+          "pendingTime": "2023-03-27T14:36:27Z",
+          "privateIp": "172.31.15.42",
+          "ramdiskId": null,
+          "region": "us-west-2",
+          "version": "2017-09-30"
+        },
+        "public_ipv4": "18.237.42.35",
+        "hostname": "ec2-18-237-42-35.us-west-2.compute.amazonaws.com",
+        "security_groups": [
+          "launch-wizard-355"
+        ]
+      },
+      "env": {
+        "ALLUSERSPROFILE": "C:\\ProgramData",
+        "APPDATA": "C:\\Windows\\system32\\config\\systemprofile\\AppData\\Roaming",
+        "AWS_EXECUTION_ENV": "EC2",
+        "AzureMonAgentClientLocation": "C:\\Packages\\Plugins\\Microsoft.Azure.Monitor.AzureMonitorWindowsAgent\\1.12.1.0\\Monitoring\\Agent",
+        "CommonProgramFiles": "C:\\Program Files\\Common Files",
+        "CommonProgramFiles(x86)": "C:\\Program Files (x86)\\Common Files",
+        "CommonProgramW6432": "C:\\Program Files\\Common Files",
+        "COMPUTERNAME": "EC2AMAZ-EFUIE9P",
+        "ComSpec": "C:\\Windows\\system32\\cmd.exe",
+        "CRIBL_CONF_DIR": "C:\\ProgramData\\Cribl",
+        "CRIBL_EDGE_FS_ROOT": "\\",
+        "CRIBL_HOME": "C:\\ProgramData\\Cribl",
+        "CRIBL_INSTANCE_HOME": "C:\\ProgramData\\Cribl",
+        "CRIBL_INTERACTIVE": "0",
+        "CRIBL_ROLE": "WORKER",
+        "CRIBL_VOLUME_DIR": "C:\\ProgramData\\Cribl",
+        "CRIBL_WORKER_DIST_MODE": "managed-edge",
+        "CRIBL_WORKER_ID": "0",
+        "CRIBL_WORKER_LABEL": "w0",
+        "DriverData": "C:\\Windows\\System32\\Drivers\\DriverData",
+        "EC2LAUNCH_TELEMETRY": "1",
+        "IDENTITY_ENDPOINT": "http://localhost:40342/metadata/identity/oauth2/token",
+        "IMDS_ENDPOINT": "http://localhost:40342",
+        "LOCALAPPDATA": "C:\\Windows\\system32\\config\\systemprofile\\AppData\\Local",
+        "NODE_OPTIONS": "--max-old-space-size=1024 --no-warnings --no-deprecation",
+        "NUMBER_OF_PROCESSORS": "2",
+        "OS": "Windows_NT",
+        "Path": "C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\Amazon\\cfn-bootstrap\\;C:\\Program Files\\AzureConnectedMachineAgent\\;C:\\Windows\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps",
+        "PATHEXT": ".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC",
+        "PROCESSOR_ARCHITECTURE": "AMD64",
+        "PROCESSOR_IDENTIFIER": "Intel64 Family 6 Model 79 Stepping 1, GenuineIntel",
+        "PROCESSOR_LEVEL": "6",
+        "PROCESSOR_REVISION": "4f01",
+        "ProgramData": "C:\\ProgramData",
+        "ProgramFiles": "C:\\Program Files",
+        "ProgramFiles(x86)": "C:\\Program Files (x86)",
+        "ProgramW6432": "C:\\Program Files",
+        "PSModulePath": "C:\\Program Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules;C:\\Program Files (x86)\\AWS Tools\\PowerShell\\",
+        "PUBLIC": "C:\\Users\\Public",
+        "SystemDrive": "C:",
+        "SystemRoot": "C:\\Windows",
+        "TEMP": "C:\\Windows\\TEMP",
+        "TMP": "C:\\Windows\\TEMP",
+        "USERDOMAIN": "WORKGROUP",
+        "USERNAME": "EC2AMAZ-EFUIE9P$",
+        "USERPROFILE": "C:\\Windows\\system32\\config\\systemprofile",
+        "windir": "C:\\Windows"
+      }
+    }
+  }
+]

@@ -1,0 +1,62 @@
+{
+  "key": "aws_guardduty",
+  "sourcetype": "aws_guardduty",
+  "classUid": 4001,
+  "destFormat": "ocsf#network",
+  "source": "generic",
+  "vendorNames": [
+    "aws guardduty"
+  ],
+  "provenance": {
+    "samplePack": "fallback",
+    "sampleName": "aws_guardduty_fallback",
+    "tier": "reference",
+    "sampleEvents": 5,
+    "emulated": "golden OCSF pipeline, offline emulation of scripts/build-source-ocsf-samples.mjs",
+    "rejected": []
+  },
+  "events": [
+    {
+      "metadata": {
+        "product": {
+          "name": "Security",
+          "vendor_name": "aws guardduty"
+        },
+        "version": "1.9.0"
+      },
+      "class_uid": 4001,
+      "category_uid": 4,
+      "activity_id": 1,
+      "type_uid": 400101,
+      "severity_id": 6
+    },
+    {
+      "metadata": {
+        "product": {
+          "name": "Security",
+          "vendor_name": "aws guardduty"
+        },
+        "version": "1.9.0"
+      },
+      "class_uid": 4001,
+      "category_uid": 4,
+      "activity_id": 1,
+      "type_uid": 400101,
+      "severity_id": 4
+    },
+    {
+      "metadata": {
+        "product": {
+          "name": "Security",
+          "vendor_name": "aws guardduty"
+        },
+        "version": "1.9.0"
+      },
+      "class_uid": 4001,
+      "category_uid": 4,
+      "activity_id": 1,
+      "type_uid": 400101,
+      "severity_id": 6
+    }
+  ]
+}

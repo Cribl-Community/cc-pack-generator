@@ -1,0 +1,102 @@
+[
+  {
+    "_raw": "831 <13>1 2023-06-05T15:28:16-04:00 1.1.164.22 time=1685993296|hostname=MIDRBNCPMLM01|product=Firewall|layer_name=Network|layer_uuid=cbba30fa-48d4-418a-8e27-62ab292c4cad|match_id=605|parent_rule=0|rule_action=Accept|rule_name=7.599_._._T2 - - - Wideopen https|rule_uid=eafe8e4c-8014-4f7d-9d0f-d049c00b8148|action=Accept|ifdir=inbound|ifname=bond1.106|logid=0|loguid={0x3b0be45d,0x214545af,0x6505b902,0x2afc45a8}|origin=1.1.160.28|originsicname=REDACTED | user=REDACTED",
+    "_time": 1685993296,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "821 <13>1 2023-06-05T15:28:16-04:00 1.1.164.22 time=1685993296|hostname=MIDRBNCPMLM01|product=Firewall|layer_name=Network|layer_uuid=cbba30fa-48d4-418a-8e27-62ab292c4cad|match_id=605|parent_rule=0|rule_action=Accept|rule_name=7.599_._._T2 - - - Wideopen https|rule_uid=eafe8e4c-8014-4f7d-9d0f-d049c00b8148|action=Accept|ifdir=inbound|ifname=bond1.106|logid=0|loguid={0xfe87c47b,0x467fdf9,0x21b7f47b,0x9cdf1afa}|origin=1.1.160.28|originsicname=REDACTED | user=REDACTED",
+    "_time": 1685993296,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "634 <13>1 2023-06-05T15:28:16-04:00 1.1.164.22 time=1685993296|hostname=MIDRBNCPMLM01|product=Firewall|layer_name=Network|layer_uuid=cbba30fa-48d4-418a-8e27-62ab292c4cad|match_id=935|parent_rule=0|rule_action=Accept|rule_name=7.929_._._|rule_uid=52b7de3d-51ed-423f-b739-9a8d1441129f|action=Accept|ifdir=inbound|ifname=bond0.592|logid=0|loguid={0x5b0962ff,0x4bd1d3be,0xffee6430,0xe62e28d9}|origin=1.1.160.28|originsicname=REDACTED | src=10.226.160.54 - - - ",
+    "_time": 1685993296,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "817 <13>1 2023-06-05T15:28:16-04:00 1.1.164.22 time=1685993296|hostname=MIDRBNCPMLM01|product=Firewall|layer_name=Network|layer_uuid=cbba30fa-48d4-418a-8e27-62ab292c4cad|match_id=1184|parent_rule=0|rule_action=Accept|rule_name=7.1178_._._|rule_uid=a2dbcae1-ff87-44be-8700-7d7ca4656ead|action=Accept|ifdir=inbound|ifname=bond0.554|logid=0|loguid={0xe8417e83,0x660ff5e7,0xcfea2e1a,0xcb816f5d}|origin=1.1.160.28|originsicname=REDACTED | user=REDACTED",
+    "_time": 1685993296,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "638 <13>1 2023-06-05T15:28:16-04:00 1.1.164.22 time=1685993296|hostname=MIDRBNCPMLM01|product=Firewall|layer_name=Network|layer_uuid=cbba30fa-48d4-418a-8e27-62ab292c4cad|match_id=1105|parent_rule=0|rule_action=Accept|rule_name=7.1099_._._|rule_uid=a3ee01a5-6844-431b-a59e-07c57f52d419|action=Accept|ifdir=inbound|ifname=bond0.593|logid=0|loguid={0xc12ad744,0x215bc512,0x9047fc8,0x6ddb4bb}|origin=1.1.160.28|originsicname=REDACTED | src=10.226.180.218 - - - ",
+    "_time": 1685993296,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "851 <13>1 2023-06-05T15:28:16-04:00 1.1.164.22 time=1685993296|hostname=MIDRBNCPMLM01|product=Firewall|layer_name=Network|layer_uuid=cbba30fa-48d4-418a-8e27-62ab292c4cad|match_id=605|parent_rule=0|rule_action=Accept|rule_name=7.599_._._T2 - - - Wideopen https|rule_uid=eafe8e4c-8014-4f7d-9d0f-d049c00b8148|action=Accept|conn_direction=Outgoing|ifdir=inbound|ifname=bond1.106|logid=0|loguid={0x50b2d5ab,0xdbebd387,0xbeb1567e,0x4dcde33}|origin=1.1.160.28|originsicname=REDACTED | user=REDACTED",
+    "_time": 1685993296,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "842 <13>1 2023-06-05T15:28:16-04:00 1.1.164.22 time=1685993296|hostname=MIDRBNCPMLM01|product=Firewall|layer_name=Network|layer_uuid=cbba30fa-48d4-418a-8e27-62ab292c4cad|match_id=605|parent_rule=0|rule_action=Accept|rule_name=7.599_._._T2 - - - Wideopen https|rule_uid=eafe8e4c-8014-4f7d-9d0f-d049c00b8148|action=Accept|ifdir=inbound|ifname=bond1.106|logid=0|loguid={0xb6f5fab3,0xe1745ea8,0xfb99d49f,0x85f94a90}|origin=1.1.160.28|originsicname=REDACTED | user=REDACTED",
+    "_time": 1685993296,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "695 <13>1 2023-06-05T15:28:16-04:00 1.1.164.22 time=1685993296|hostname=MIDRBNCPMLM01|product=Firewall|layer_name=Network|layer_uuid=cbba30fa-48d4-418a-8e27-62ab292c4cad|match_id=1838|parent_rule=0|rule_action=Accept|rule_name=7.1832_._._Exadata - - - Production NonPCI and PCi Networks Vegas to Dearborn|rule_uid=bdb31574-8730-4646-b49a-45c4d0871432|action=Accept|ifdir=inbound|ifname=bond0.591|logid=0|loguid={0x9052fb92,0x64359547,0x9fe136cf,0xe0a4f7a8}|origin=1.1.160.28|originsicname=REDACTED | src=10.226.145.203",
+    "_time": 1685993296,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "864 <13>1 2023-06-05T15:28:16-04:00 1.1.164.22 time=1685993296|hostname=MIDRBNCPMLM01|product=Firewall|layer_name=Network|layer_uuid=cbba30fa-48d4-418a-8e27-62ab292c4cad|match_id=605|parent_rule=0|rule_action=Accept|rule_name=7.599_._._T2 - - - Wideopen https|rule_uid=eafe8e4c-8014-4f7d-9d0f-d049c00b8148|action=Accept|conn_direction=Outgoing|ifdir=inbound|ifname=bond1.106|logid=0|loguid={0xbeb70c42,0x6e39703e,0x50db111e,0x69fcc5f0}|origin=1.1.160.28|originsicname=REDACTED | user=REDACTED",
+    "_time": 1685993296,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "646 <13>1 2023-06-05T15:28:16-04:00 1.1.164.22 time=1685993296|hostname=MIDRBNCPMLM01|product=Firewall|layer_name=Network|layer_uuid=cbba30fa-48d4-418a-8e27-62ab292c4cad|match_id=605|parent_rule=0|rule_action=Accept|rule_name=7.599_._._T2 - - - Wideopen https|rule_uid=eafe8e4c-8014-4f7d-9d0f-d049c00b8148|action=Accept|ifdir=inbound|ifname=bond1.106|logid=0|loguid={0xbff5db08,0xdf64d809,0xcfa3d6ed,0x16293a3c}|origin=1.1.160.28|originsicname=REDACTED | src=10.96.110.198",
+    "_time": 1685993296,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "822 <13>1 2023-06-05T15:28:16-04:00 1.1.164.22 time=1685993296|hostname=MIDRBNCPMLM01|product=Firewall|layer_name=Network|layer_uuid=cbba30fa-48d4-418a-8e27-62ab292c4cad|match_id=605|parent_rule=0|rule_action=Accept|rule_name=7.599_._._T2 - - - Wideopen https|rule_uid=eafe8e4c-8014-4f7d-9d0f-d049c00b8148|action=Accept|ifdir=inbound|ifname=bond1.106|logid=0|loguid={0x91831586,0xd5d26fce,0x74053028,0xb5a2a316}|origin=1.1.160.28|originsicname=REDACTED | user=REDACTED",
+    "_time": 1685993296,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "826 <13>1 2023-06-05T15:28:16-04:00 1.1.164.22 time=1685993296|hostname=MIDRBNCPMLM01|product=Firewall|layer_name=Network|layer_uuid=cbba30fa-48d4-418a-8e27-62ab292c4cad|match_id=605|parent_rule=0|rule_action=Accept|rule_name=7.599_._._T2 - - - Wideopen https|rule_uid=eafe8e4c-8014-4f7d-9d0f-d049c00b8148|action=Accept|ifdir=inbound|ifname=bond1.106|logid=0|loguid={0xf228f77e,0x17b0b3ab,0xc0c9b05f,0x72d5467f}|origin=1.1.160.28|originsicname=REDACTED | user=REDACTED",
+    "_time": 1685993296,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "819 <13>1 2023-06-05T15:28:16-04:00 1.1.164.22 time=1685993296|hostname=MIDRBNCPMLM01|product=Firewall|layer_name=Network|layer_uuid=cbba30fa-48d4-418a-8e27-62ab292c4cad|match_id=904|parent_rule=0|rule_action=Accept|rule_name=7.898_._._Intranet - - - into access zones|rule_uid=0f431696-e291-4606-a162-cd6c1ea45b99|action=Accept|ifdir=inbound|ifname=bond1.106|logid=0|loguid={0x82616bee,0x3e258825,0x2755bcd2,0xd506423}|origin=1.1.160.28|originsicname=REDACTED | user=REDACTED",
+    "_time": 1685993296,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "821 <13>1 2023-06-05T15:28:16-04:00 1.1.164.22 time=1685993296|hostname=MIDRBNCPMLM01|product=Firewall|layer_name=Network|layer_uuid=cbba30fa-48d4-418a-8e27-62ab292c4cad|match_id=605|parent_rule=0|rule_action=Accept|rule_name=7.599_._._T2 - - - Wideopen https|rule_uid=eafe8e4c-8014-4f7d-9d0f-d049c00b8148|action=Accept|ifdir=inbound|ifname=bond1.106|logid=0|loguid={0xb94d5aab,0xd7a99a86,0x4be3eaeb,0xd59b826c}|origin=1.1.160.28|originsicname=REDACTED | user=REDACTED",
+    "_time": 1685993296,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "693 <13>1 2023-06-05T15:28:16-04:00 1.1.164.22 time=1685993296|hostname=MIDRBNCPMLM01|product=Firewall|layer_name=Network|layer_uuid=cbba30fa-48d4-418a-8e27-62ab292c4cad|match_id=1838|parent_rule=0|rule_action=Accept|rule_name=7.1832_._._Exadata - - - Production NonPCI and PCi Networks Vegas to Dearborn|rule_uid=bdb31574-8730-4646-b49a-45c4d0871432|action=Accept|ifdir=inbound|ifname=bond0.591|logid=0|loguid={0xfdb6137c,0x6b42c7,0xb72db100,0xd3a2c610}|origin=1.1.160.28|originsicname=REDACTED | src=10.226.145.203",
+    "_time": 1685993296,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "845 <13>1 2023-06-05T15:28:16-04:00 1.1.164.22 time=1685993296|hostname=MIDRBNCPMLM01|product=Firewall|layer_name=Network|layer_uuid=cbba30fa-48d4-418a-8e27-62ab292c4cad|match_id=605|parent_rule=0|rule_action=Accept|rule_name=7.599_._._T2 - - - Wideopen https|rule_uid=eafe8e4c-8014-4f7d-9d0f-d049c00b8148|action=Accept|conn_direction=Outgoing|ifdir=inbound|ifname=bond1.106|logid=0|loguid={0x9e346ca3,0x8d582b78,0xf3ad4b1b,0x6face750}|origin=1.1.160.28|originsicname=REDACTED | user=REDACTED",
+    "_time": 1685993296,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "823 <13>1 2023-06-05T15:28:16-04:00 1.1.164.22 time=1685993296|hostname=MIDRBNCPMLM01|product=Firewall|layer_name=Network|layer_uuid=cbba30fa-48d4-418a-8e27-62ab292c4cad|match_id=605|parent_rule=0|rule_action=Accept|rule_name=7.599_._._T2 - - - Wideopen https|rule_uid=eafe8e4c-8014-4f7d-9d0f-d049c00b8148|action=Accept|ifdir=inbound|ifname=bond1.106|logid=0|loguid={0xd85b5f01,0x57fdf9e7,0xc1d7f601,0xa21a4cc3}|origin=1.1.160.28|originsicname=REDACTED | user=REDACTED",
+    "_time": 1685993296,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "651 <13>1 2023-06-05T15:28:16-04:00 1.1.164.22 time=1685993296|hostname=MIDRBNCPMLM01|product=Firewall|layer_name=Network|layer_uuid=cbba30fa-48d4-418a-8e27-62ab292c4cad|match_id=1578|parent_rule=0|rule_action=Accept|rule_name=7.1572_._._Capgemini|rule_uid=0e8c82dd-7dee-4440-9cd0-cb9aa8c1e30d|action=Accept|ifdir=inbound|ifname=bond1.106|logid=0|loguid={0x9e0cd542,0x5594ae47,0x448b05bf,0x6dd0deb2}|origin=1.1.160.28|originsicname=REDACTED | src=10.96.71.130 - - - ",
+    "_time": 1685993296,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "824 <13>1 2023-06-05T15:28:16-04:00 1.1.164.22 time=1685993296|hostname=MIDRBNCPMLM01|product=Firewall|layer_name=Network|layer_uuid=cbba30fa-48d4-418a-8e27-62ab292c4cad|match_id=605|parent_rule=0|rule_action=Accept|rule_name=7.599_._._T2 - - - Wideopen https|rule_uid=eafe8e4c-8014-4f7d-9d0f-d049c00b8148|action=Accept|conn_direction=Outgoing|ifdir=inbound|ifname=bond1.106|logid=0|loguid={0xade46f0b,0x130c9b40,0xe58b8e61,0x18337122}|origin=1.1.160.28|originsicname=REDACTED | user=REDACTED",
+    "_time": 1685993296,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "806 <13>1 2023-06-05T15:28:16-04:00 1.1.164.22 time=1685993296|hostname=MIDRBNCPMLM01|product=Firewall|layer_name=Network|layer_uuid=cbba30fa-48d4-418a-8e27-62ab292c4cad|match_id=605|parent_rule=0|rule_action=Accept|rule_name=7.599_._._T2 - - - Wideopen https|rule_uid=eafe8e4c-8014-4f7d-9d0f-d049c00b8148|action=Accept|ifdir=inbound|ifname=bond0.2506|logid=0|loguid={0x587d5bf8,0xdfe0b305,0xc71be118,0x3d81a5de}|origin=1.1.160.28|originsicname=REDACTED | user=REDACTED",
+    "_time": 1685993296,
+    "cribl_breaker": "Break on newlines"
+  }
+]

@@ -1,0 +1,122 @@
+[
+  {
+    "_raw": "#separator \\x09",
+    "_time": 1521911747.733658,
+    "sourcetype": "bro_syslog",
+    "source": "/opt/zeek/logs/current/syslog.log"
+  },
+  {
+    "_raw": "#set_separator\t,",
+    "_time": 1521911747.733658,
+    "sourcetype": "bro_syslog",
+    "source": "/opt/zeek/logs/current/syslog.log"
+  },
+  {
+    "_raw": "#empty_field\t(empty)",
+    "_time": 1521911747.733658,
+    "sourcetype": "bro_syslog",
+    "source": "/opt/zeek/logs/current/syslog.log"
+  },
+  {
+    "_raw": "#unset_field\t-",
+    "_time": 1521911747.733658,
+    "sourcetype": "bro_syslog",
+    "source": "/opt/zeek/logs/current/syslog.log"
+  },
+  {
+    "_raw": "#path\tsyslog",
+    "_time": 1521911747.733658,
+    "sourcetype": "bro_syslog",
+    "source": "/opt/zeek/logs/current/syslog.log"
+  },
+  {
+    "_raw": "#open\t2024-04-12-19-29-24",
+    "_time": 1521911747.733658,
+    "sourcetype": "bro_syslog",
+    "source": "/opt/zeek/logs/current/syslog.log"
+  },
+  {
+    "_raw": "#fields\tts\tuid\tid.orig_h\tid.orig_p\tid.resp_h\tid.resp_p\tproto\tfacility\tseverity\tmessage",
+    "_time": 1521911747.733658,
+    "sourcetype": "bro_syslog",
+    "source": "/opt/zeek/logs/current/syslog.log"
+  },
+  {
+    "_raw": "#types\ttime\tstring\taddr\tport\taddr\tport\tenum\tstring\tstring\tstring",
+    "_time": 1521911747.733658,
+    "sourcetype": "bro_syslog",
+    "source": "/opt/zeek/logs/current/syslog.log"
+  },
+  {
+    "_raw": "1521911747.733658\tCgDNpczQ7oLqM2Ta5\t10.47.22.82\t62695\t10.47.2.153\t514\tudp\tLOCAL0\tINFO\t1 2018-03-24T08:59:37-07:00 PC-helen.jerry.land EvntSLog - - - @cee: {\"source\": \"PC-helen.jerry.land\", \"msg\": \"The Multimedia Class Scheduler service entered the stopped state.\", \"nteventlogtype\": \"System\", \"sourceproc\": \"Service Control Manager\", \"id\": \"7036\", \"categoryid\": \"0\", \"category\": \"0\", \"keywordid\": \"0x8080000000000000\", \"user\": \"N\\\\\\\\A\", \"param1\": \"Multimedia Class Scheduler\", \"param2\": \"stopped\", \"catname\": \"\", \"keyword\": \"Classic\", \"level\": \"Information\"}",
+    "_time": 1521911747.733658,
+    "sourcetype": "bro_syslog",
+    "source": "/opt/zeek/logs/current/syslog.log"
+  },
+  {
+    "_raw": "1521911749.318535\tCTDoHcxsI20hhvY75\t10.47.22.80\t51899\t10.47.2.153\t514\tudp\tLOCAL0\tINFO\t1 2018-03-24T08:59:39-07:00 PC-newman.jerry.land EvntSLog - - - Successful auto update of third-party root certificate:: Subject: <CN=GeoTrust Global CA, O=GeoTrust Inc., C=US> Sha1 thumbprint: <DE28F4A4FFE5B92FA3C503D1A349A7F9962A8212>.",
+    "_time": 1521911749.318535,
+    "sourcetype": "bro_syslog",
+    "source": "/opt/zeek/logs/current/syslog.log"
+  },
+  {
+    "_raw": "1521911764.849603\tClIW0K7GCQpzzKukf\t10.47.22.25\t58947\t10.47.2.153\t514\tudp\tLOCAL0\tNOTICE\t1 2018-03-24T08:59:54-07:00 Kramer.jerry.land EvntSLog - - - Special privileges assigned to new logon. Subject: Security ID: S-1-5-18 Account Name: KRAMER$ Account Domain: JERRY Logon ID: 0x3bad0b8 Privileges: SeSecurityPrivilege SeBackupPrivilege SeRestorePrivilege SeTakeOwnershipPrivilege SeDebugPrivilege SeSystemEnvironmentPrivilege SeLoadDriverPrivilege SeImpersonatePrivilege SeEnableDelegationPrivilege",
+    "_time": 1521911764.849603,
+    "sourcetype": "bro_syslog",
+    "source": "/opt/zeek/logs/current/syslog.log"
+  },
+  {
+    "_raw": "1521911815.810266\tC1F6Ct4NTSrnuhxncf\t10.47.22.82\t62695\t10.47.2.153\t514\tudp\tLOCAL0\tINFO\t1 2018-03-24T09:00:47-07:00 PC-helen.jerry.land EvntSLog - - - @cee: {\"source\": \"PC-helen.jerry.land\", \"msg\": \"Task Scheduler launched \\\\\"{1C056058-E4E9-4E18-9ECA-ACD687FFCF0E}\\\\\"  instance of task \\\\\"\\\\\\\\Microsoft\\\\\\\\Windows\\\\\\\\RAC\\\\\\\\RacTask\\\\\" due to a time trigger condition.\", \"nteventlogtype\": \"Microsoft-Windows-TaskScheduler/Operational\", \"sourceproc\": \"Microsoft-Windows-TaskScheduler\", \"id\": \"107\", \"categoryid\": \"107\", \"category\": \"107\", \"keywordid\": \"0x8000000000000000\", \"user\": \"NT AUTHORITY\\\\\\\\SYSTEM\", \"user_sid\": \"S-1-5-18\", \"TaskName\": \"\\\\\\\\Microsoft\\\\\\\\Windows\\\\\\\\RAC\\\\\\\\RacTask\", \"InstanceId\": \"{1C056058-E4E9-4E18-9ECA-ACD687FFCF0E}\", \"catname\": \"Task triggered on scheduler\", \"level\": \"Information\"}",
+    "_time": 1521911815.810266,
+    "sourcetype": "bro_syslog",
+    "source": "/opt/zeek/logs/current/syslog.log"
+  },
+  {
+    "_raw": "1521911865.256365\tClIW0K7GCQpzzKukf\t10.47.22.25\t58947\t10.47.2.153\t514\tudp\tLOCAL0\tWARNING\t1 2018-03-24T09:01:35-07:00 Kramer.jerry.land EvntSLog - - - Reliability Analysis encountered an error. Reliability Analysis error code is 2147749898. Windows error code is 2147942405.",
+    "_time": 1521911865.256365,
+    "sourcetype": "bro_syslog",
+    "source": "/opt/zeek/logs/current/syslog.log"
+  },
+  {
+    "_raw": "1521911905.746829\tCh0AfDSaPcbmWiE8l\t10.47.22.82\t62695\t10.47.2.153\t514\tudp\tLOCAL0\tINFO\t1 2018-03-24T09:02:16-07:00 PC-helen.jerry.land EvntSLog - - - @cee: {\"source\": \"PC-helen.jerry.land\", \"msg\": \"The Application Experience service entered the stopped state.\", \"nteventlogtype\": \"System\", \"sourceproc\": \"Service Control Manager\", \"id\": \"7036\", \"categoryid\": \"0\", \"category\": \"0\", \"keywordid\": \"0x8080000000000000\", \"user\": \"N\\\\\\\\A\", \"param1\": \"Application Experience\", \"param2\": \"stopped\", \"catname\": \"\", \"keyword\": \"Classic\", \"level\": \"Information\"}",
+    "_time": 1521911905.746829,
+    "sourcetype": "bro_syslog",
+    "source": "/opt/zeek/logs/current/syslog.log"
+  },
+  {
+    "_raw": "1521912022.416290\tCjvGcY2CSizwLel0Yk\t10.47.22.80\t51899\t10.47.2.153\t514\tudp\tLOCAL0\tINFO\t1 2018-03-24T09:04:11-07:00 PC-newman.jerry.land EvntSLog - - - The start type of the Windows Modules Installer service was changed from demand start to auto start.",
+    "_time": 1521912022.41629,
+    "sourcetype": "bro_syslog",
+    "source": "/opt/zeek/logs/current/syslog.log"
+  },
+  {
+    "_raw": "1521912173.153552\tClncEv1r3duHFO8l59\t10.47.22.81\t60245\t10.47.2.153\t514\tudp\tLOCAL0\tNOTICE\t1 2018-03-24T09:06:44-07:00 PC-susan.jerry.land EvntSLog - - - @cee: {\"source\": \"PC-susan.jerry.land\", \"msg\": \"An account was successfully logged on.\\\\r\\\\n\\\\r\\\\nSubject:\\\\r\\\\n\\\\tSecurity ID:\\\\t\\\\tS-1-0-0\\\\r\\\\n\\\\tAccount Name:\\\\t\\\\t-\\\\r\\\\n\\\\tAccount Domain:\\\\t\\\\t-\\\\r\\\\n\\\\tLogon ID:\\\\t\\\\t0x0\\\\r\\\\n\\\\r\\\\nLogon Type:\\\\t\\\\t\\\\t3\\\\r\\\\n\\\\r\\\\nNew Logon:\\\\r\\\\n\\\\tSecurity ID:\\\\t\\\\tS-1-5-21-1311969832-1707640848-2310541705-1000\\\\r\\\\n\\\\tAccount Name:\\\\t\\\\tKRAMER$\\\\r\\\\n\\\\tAccount Domain:\\\\t\\\\tJERRY\\\\r\\\\n\\\\tLogon ID:\\\\t\\\\t0x22006e9\\\\r\\\\n\\\\tLogon GUID:\\\\t\\\\t{FAC18703-0C3D-8867-27E2-58DB992550C6}\\\\r\\\\n\\\\r\\\\nProcess Information:\\\\r\\\\n\\\\tProcess ID:\\\\t\\\\t0x0\\\\r\\\\n\\\\tProcess Name:\\\\t\\\\t-\\\\r\\\\n\\\\r\\\\nNetwork Information:\\\\r\\\\n\\\\tWorkstation Name:\\\\t\\\\r\\\\n\\\\tSource Network Address:\\\\t172.20.0.25\\\\r\\\\n\\\\tSource Port:\\\\t\\\\t49386\\\\r\\\\n\\\\r\\\\nDetailed Authentication Information:\\\\r\\\\n\\\\tLogon Process:\\\\t\\\\tKerberos\\\\r\\\\n\\\\tAuthentication Package:\\\\tKerberos\\\\r\\\\n\\\\tTransited Services:\\\\t-\\\\r\\\\n\\\\tPackage Name (NTLM only):\\\\t-\\\\r\\\\n\\\\tKey Length:\\\\t\\\\t0\\\\r\\\\n\\\\r\\\\nThis event is generated when a logon session is created. It is generated on the computer that was accessed.\\\\r\\\\n\\\\r\\\\nThe subject fields indicate the account on the local system which requested the logon. This is most commonly a service such as the Server service, or a local process such as Winlogon.exe or Services.exe.\\\\r\\\\n\\\\r\\\\nThe logon type field indicates the kind of logon that occurred. The most common types are 2 (interactive) and 3 (network).\\\\r\\\\n\\\\r\\\\nThe New Logon fields indicate the account for whom the new logon was created, i.e. the account that was logged on.\\\\r\\\\n\\\\r\\\\nThe network fields indicate where a remote logon request originated. Workstation name is not always available and may be left blank in some cases.\\\\r\\\\n\\\\r\\\\nThe authentication information fields provide detailed information about this specific logon request.\\\\r\\\\n\\\\t- Logon GUID is a unique identifier that can be used to correlate this event with a KDC event.\\\\r\\\\n\\\\t- Transited services indicate which intermediate services have participated in this logon request.\\\\r\\\\n\\\\t- Package name indicates which sub-protocol was used among the NTLM protocols.\\\\r\\\\n\\\\t- Key length indicates the length of the generated session key. This will be 0 if no session key was requested.\", \"nteventlogtype\": \"Security\", \"sourceproc\": \"Microsoft-Windows-Security-Auditing\", \"id\": \"4624\", \"categoryid\": \"12544\", \"category\": \"12544\", \"keywordid\": \"0x8020000000000000\", \"user\": \"N\\\\\\\\A\", \"SubjectUserSid\": \"S-1-0-0\", \"SubjectUserName\": \"-\", \"SubjectDomainName\": \"-\", \"SubjectLogonId\": \"0x0\", \"TargetUserSid\": \"S-1-5-21-1311969832-1707640848-2310541705-1000\", \"TargetUserName\": \"KRAMER$\", \"TargetDomainName\": \"JERRY\", \"TargetLogonId\": \"0x22006e9\", \"LogonType\": \"3\", \"LogonProcessName\": \"Kerberos\", \"AuthenticationPackageName\": \"Kerberos\", \"LogonGuid\": \"{FAC18703-0C3D-8867-27E2-58DB992550C6}\", \"TransmittedServices\": \"-\", \"LmPackageName\": \"-\", \"KeyLength\": \"0\", \"ProcessId\": \"0x0\", \"ProcessName\": \"-\", \"IpAddress\": \"172.20.0.25\", \"IpPort\": \"49386\", \"catname\": \"Logon\", \"keyword\": \"Audit Success\", \"level\": \"Information\"}",
+    "_time": 1521912173.153552,
+    "sourcetype": "bro_syslog",
+    "source": "/opt/zeek/logs/current/syslog.log"
+  },
+  {
+    "_raw": "1521912202.083528\tCBs8sZ2kIbw2QgSdy4\t10.47.22.25\t58947\t10.47.2.153\t514\tudp\tLOCAL0\tERR\t1 2018-03-24T09:07:13-07:00 Kramer.jerry.land EvntSLog - - - Security Risk Found! Trojan Horse in File: C:\\\\Windows\\\\yfHMhijb.exe by: Auto-Protect scan. Action: Quarantine succeeded : Access denied. Action Description: The file was quarantined successfully.",
+    "_time": 1521912202.083528,
+    "sourcetype": "bro_syslog",
+    "source": "/opt/zeek/logs/current/syslog.log"
+  },
+  {
+    "_raw": "1521912203.074085\tCiAK86hHBovlpfxZk\t10.47.22.80\t51899\t10.47.2.153\t514\tudp\tLOCAL0\tINFO\t1 2018-03-24T09:07:14-07:00 PC-newman.jerry.land EvntSLog - - - Scan Complete: Risks: 0 Scanned: 183387 Files/Folders/Drives Omitted: 0 Trusted Files Skipped: 703",
+    "_time": 1521912203.074085,
+    "sourcetype": "bro_syslog",
+    "source": "/opt/zeek/logs/current/syslog.log"
+  },
+  {
+    "_raw": "1521912243.756936\tC8LM253pN6vapZsaoc\t10.47.22.82\t62695\t10.47.2.153\t514\tudp\tLOCAL0\tINFO\t1 2018-03-24T09:07:54-07:00 PC-helen.jerry.land EvntSLog - - - @cee: {\"source\": \"PC-helen.jerry.land\", \"msg\": \"Task Scheduler started Task Engine \\\\\"S-1-5-18:NT AUTHORITY\\\\\\\\System:Service:\\\\\"  process. Command=\\\\\"taskeng.exe\\\\\" , ProcessID=4240, ThreadID=3420\", \"nteventlogtype\": \"Microsoft-Windows-TaskScheduler/Operational\", \"sourceproc\": \"Microsoft-Windows-TaskScheduler\", \"id\": \"310\", \"categoryid\": \"310\", \"category\": \"310\", \"keywordid\": \"0x8000000000000000\", \"user\": \"NT AUTHORITY\\\\\\\\SYSTEM\", \"user_sid\": \"S-1-5-18\", \"TaskEngineName\": \"S-1-5-18:NT AUTHORITY\\\\\\\\System:Service:\", \"Command\": \"taskeng.exe\", \"ProcessID\": \"4240\", \"ThreadID\": \"3420\", \"catname\": \"Task Engine started\", \"level\": \"Information\"}",
+    "_time": 1521912243.756936,
+    "sourcetype": "bro_syslog",
+    "source": "/opt/zeek/logs/current/syslog.log"
+  },
+  {
+    "_raw": "1521912331.152322\tCjiINg3TvK3kLQG6mf\t10.47.22.81\t60245\t10.47.2.153\t514\tudp\tLOCAL0\tINFO\t1 2018-03-24T09:09:21-07:00 PC-susan.jerry.land EvntSLog - - - @cee: {\"source\": \"PC-susan.jerry.land\", \"msg\": \"The WinHTTP Web Proxy Auto-Discovery Service service entered the stopped state.\", \"nteventlogtype\": \"System\", \"sourceproc\": \"Service Control Manager\", \"id\": \"7036\", \"categoryid\": \"0\", \"category\": \"0\", \"keywordid\": \"0x8080000000000000\", \"user\": \"N\\\\\\\\A\", \"param1\": \"WinHTTP Web Proxy Auto-Discovery Service\", \"param2\": \"stopped\", \"catname\": \"\", \"keyword\": \"Classic\", \"level\": \"Information\"}",
+    "_time": 1521912331.152322,
+    "sourcetype": "bro_syslog",
+    "source": "/opt/zeek/logs/current/syslog.log"
+  }
+]

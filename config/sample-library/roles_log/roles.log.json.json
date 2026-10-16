@@ -1,0 +1,10 @@
+[
+  {
+    "_raw": "{\n    \"id\": \"2c91808c6faadea6016fb4f2bc69077b\",\n    \"accessProfileCount\": 1,\n    \"accessProfiles\": [\n      {\n        \"id\": \"468171f0af874adebb58d3718519bd56\",\n        \"name\": \"SalesCommonAccess\"\n      }\n    ],\n    \"created\": \"2023-06-01T22:00:55.311Z\",\n    \"description\": \"All Sales people in the company\",\n    \"dimensional\": false,\n    \"enabled\": true,\n    \"modified\": \"2023-06-01T22:00:55.432Z\",\n    \"name\": \"SalesGlobal\",\n    \"owner\": {\n      \"email\": \"admin@sailpointdemo.com\",\n      \"id\": \"c18630c4811c4030810afb3a14f388cf\",\n      \"name\": \"admin\",\n      \"type\": \"IDENTITY\"\n    },\n    \"requestCommentsRequired\": false,\n    \"requestable\": true,\n    \"tags\": [\n      \"TAG_1\",\n      \"TAG_2\"\n    ],\n    \"pod\": \"pod01-useast1\",\n    \"org\": \"org-name\",\n    \"_type\": \"role\",\n    \"type\": \"role\",\n    \"_version\": \"v2\"\n  }",
+    "_time": 1760744868.368,
+    "cribl_breaker": [
+      "Break on newlines",
+      "ndjson"
+    ]
+  }
+]

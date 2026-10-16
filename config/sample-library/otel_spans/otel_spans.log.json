@@ -1,0 +1,2018 @@
+[
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "resource": {
+      "dropped_attributes_count": 0,
+      "attributes": {
+        "service.name": "frontend-proxy",
+        "k8s.pod.ip": "10.244.0.17",
+        "k8s.namespace.name": "default",
+        "k8s.pod.start_time": "2023-10-05 13:54:10 +0000 UTC",
+        "k8s.pod.uid": "04c32311-72c8-4523-9812-b8c9650755d4",
+        "k8s.deployment.name": "otel-demo-frontendproxy",
+        "k8s.node.name": "minikube",
+        "k8s.pod.name": "otel-demo-frontendproxy-7b4dcc8899-rpmzc",
+        "service.instance.id": "04c32311-72c8-4523-9812-b8c9650755d4"
+      }
+    },
+    "schema_url": "",
+    "instrumentation_library_span": {
+      "instrumentation_library": {
+        "name": "unknown",
+        "version": "unknown"
+      },
+      "schema_url": ""
+    },
+    "trace_id": "6e9e227ebe644c3fe83d5de62ea98c41",
+    "span_id": "b82e5798c822818e",
+    "trace_state": "",
+    "parent_span_id": "8ed279b8218a2743",
+    "kind": 2,
+    "start_time_unix_nano": 1696514313552840000,
+    "end_time_unix_nano": 1696514313555778000,
+    "attributes": {
+      "node_id": "",
+      "zone": "",
+      "guid:x-request-id": "97fb97de-28f6-97c8-a55e-dc9b31c9f5dc",
+      "http.url": "http://otel-demo-frontendproxy:8080/api/products/66VCHSJNUP",
+      "http.method": "GET",
+      "downstream_cluster": "-",
+      "user_agent": "python-requests/2.31.0",
+      "http.protocol": "HTTP/1.1",
+      "peer.address": "10.244.0.23",
+      "request_size": "0",
+      "response_size": "515",
+      "component": "proxy",
+      "upstream_cluster": "frontend",
+      "upstream_cluster.name": "frontend",
+      "http.status_code": "200",
+      "response_flags": "-"
+    },
+    "dropped_attributes_count": 0,
+    "events": [],
+    "dropped_events_count": 0,
+    "links": [],
+    "dropped_links_count": 0,
+    "status": {
+      "code": 0,
+      "message": ""
+    },
+    "_time": 1696514314.27,
+    "__bytes": 567,
+    "__srcIpPort": "107.4.162.218:56901",
+    "__inputId": "open_telemetry:open_telemetry",
+    "duration": 2938112,
+    "http_status_code": "200",
+    "service": "frontend-proxy",
+    "http_url": "http://otel-demo-frontendproxy:8080/api/products/66VCHSJNUP",
+    "resource_url": "ingress",
+    "__criblMetrics": [
+      {
+        "values": [
+          "duration",
+          "status.code",
+          "http_status_code"
+        ],
+        "nameExpr": [
+          "'otel.duration'",
+          "'otel.status.code'",
+          "'otel.http.status.code'"
+        ],
+        "types": [
+          "gauge",
+          "gauge",
+          "gauge"
+        ],
+        "dims": [
+          "service",
+          "resource_url"
+        ]
+      }
+    ],
+    "cribl_pipe": "t2m",
+    "__outputId": "datadog:personal"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "resource": {
+      "dropped_attributes_count": 0,
+      "attributes": {
+        "service.name": "frontend-proxy",
+        "k8s.pod.ip": "10.244.0.17",
+        "k8s.namespace.name": "default",
+        "k8s.pod.start_time": "2023-10-05 13:54:10 +0000 UTC",
+        "k8s.pod.uid": "04c32311-72c8-4523-9812-b8c9650755d4",
+        "k8s.deployment.name": "otel-demo-frontendproxy",
+        "k8s.node.name": "minikube",
+        "k8s.pod.name": "otel-demo-frontendproxy-7b4dcc8899-rpmzc",
+        "service.instance.id": "04c32311-72c8-4523-9812-b8c9650755d4"
+      }
+    },
+    "schema_url": "",
+    "instrumentation_library_span": {
+      "instrumentation_library": {
+        "name": "unknown",
+        "version": "unknown"
+      },
+      "schema_url": ""
+    },
+    "trace_id": "8b3c5b9734349a10500699798c2d7fcb",
+    "span_id": "66688b87e75d9b12",
+    "trace_state": "",
+    "parent_span_id": "6d7e2ad285094151",
+    "kind": 2,
+    "start_time_unix_nano": 1696514313556815000,
+    "end_time_unix_nano": 1696514313562083000,
+    "attributes": {
+      "node_id": "",
+      "zone": "",
+      "guid:x-request-id": "7cd2b59c-bcdc-91cf-81ca-d7356024ae64",
+      "http.url": "http://otel-demo-frontendproxy:8080/api/cart",
+      "http.method": "POST",
+      "downstream_cluster": "-",
+      "user_agent": "python-requests/2.31.0",
+      "http.protocol": "HTTP/1.1",
+      "peer.address": "10.244.0.23",
+      "request_size": "102",
+      "response_size": "99",
+      "component": "proxy",
+      "upstream_cluster": "frontend",
+      "upstream_cluster.name": "frontend",
+      "http.status_code": "200",
+      "response_flags": "-"
+    },
+    "dropped_attributes_count": 0,
+    "events": [],
+    "dropped_events_count": 0,
+    "links": [],
+    "dropped_links_count": 0,
+    "status": {
+      "code": 0,
+      "message": ""
+    },
+    "_time": 1696514314.27,
+    "__bytes": 554,
+    "__srcIpPort": "107.4.162.218:56901",
+    "__inputId": "open_telemetry:open_telemetry",
+    "duration": 5267968,
+    "http_status_code": "200",
+    "service": "frontend-proxy",
+    "http_url": "http://otel-demo-frontendproxy:8080/api/cart",
+    "resource_url": "ingress",
+    "__criblMetrics": [
+      {
+        "values": [
+          "duration",
+          "status.code",
+          "http_status_code"
+        ],
+        "nameExpr": [
+          "'otel.duration'",
+          "'otel.status.code'",
+          "'otel.http.status.code'"
+        ],
+        "types": [
+          "gauge",
+          "gauge",
+          "gauge"
+        ],
+        "dims": [
+          "service",
+          "resource_url"
+        ]
+      }
+    ],
+    "cribl_pipe": "t2m",
+    "__outputId": "datadog:personal"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "resource": {
+      "dropped_attributes_count": 0,
+      "attributes": {
+        "service.name": "frontend-proxy",
+        "k8s.pod.ip": "10.244.0.17",
+        "k8s.namespace.name": "default",
+        "k8s.pod.start_time": "2023-10-05 13:54:10 +0000 UTC",
+        "k8s.pod.uid": "04c32311-72c8-4523-9812-b8c9650755d4",
+        "k8s.deployment.name": "otel-demo-frontendproxy",
+        "k8s.node.name": "minikube",
+        "k8s.pod.name": "otel-demo-frontendproxy-7b4dcc8899-rpmzc",
+        "service.instance.id": "04c32311-72c8-4523-9812-b8c9650755d4"
+      }
+    },
+    "schema_url": "",
+    "instrumentation_library_span": {
+      "instrumentation_library": {
+        "name": "unknown",
+        "version": "unknown"
+      },
+      "schema_url": ""
+    },
+    "trace_id": "e46c69d16b58a2570056508176a5b296",
+    "span_id": "5f8abe0ddd6d4da9",
+    "trace_state": "",
+    "parent_span_id": "221726b986dae223",
+    "kind": 2,
+    "start_time_unix_nano": 1696514314061898000,
+    "end_time_unix_nano": 1696514314064832000,
+    "attributes": {
+      "node_id": "",
+      "zone": "",
+      "guid:x-request-id": "6e9233e7-02f2-933d-a988-231f08826ef2",
+      "http.url": "http://otel-demo-frontendproxy:8080/api/products/L9ECAV7KIM",
+      "http.method": "GET",
+      "downstream_cluster": "-",
+      "user_agent": "python-requests/2.31.0",
+      "http.protocol": "HTTP/1.1",
+      "peer.address": "10.244.0.23",
+      "request_size": "0",
+      "response_size": "752",
+      "component": "proxy",
+      "upstream_cluster": "frontend",
+      "upstream_cluster.name": "frontend",
+      "http.status_code": "200",
+      "response_flags": "-"
+    },
+    "dropped_attributes_count": 0,
+    "events": [],
+    "dropped_events_count": 0,
+    "links": [],
+    "dropped_links_count": 0,
+    "status": {
+      "code": 0,
+      "message": ""
+    },
+    "_time": 1696514314.27,
+    "__bytes": 567,
+    "__srcIpPort": "107.4.162.218:56901",
+    "__inputId": "open_telemetry:open_telemetry",
+    "duration": 2934016,
+    "http_status_code": "200",
+    "service": "frontend-proxy",
+    "http_url": "http://otel-demo-frontendproxy:8080/api/products/L9ECAV7KIM",
+    "resource_url": "ingress",
+    "__criblMetrics": [
+      {
+        "values": [
+          "duration",
+          "status.code",
+          "http_status_code"
+        ],
+        "nameExpr": [
+          "'otel.duration'",
+          "'otel.status.code'",
+          "'otel.http.status.code'"
+        ],
+        "types": [
+          "gauge",
+          "gauge",
+          "gauge"
+        ],
+        "dims": [
+          "service",
+          "resource_url"
+        ]
+      }
+    ],
+    "cribl_pipe": "t2m",
+    "__outputId": "datadog:personal"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "resource": {
+      "dropped_attributes_count": 0,
+      "attributes": {
+        "service.name": "frontend-proxy",
+        "k8s.pod.ip": "10.244.0.17",
+        "k8s.namespace.name": "default",
+        "k8s.pod.start_time": "2023-10-05 13:54:10 +0000 UTC",
+        "k8s.pod.uid": "04c32311-72c8-4523-9812-b8c9650755d4",
+        "k8s.deployment.name": "otel-demo-frontendproxy",
+        "k8s.node.name": "minikube",
+        "k8s.pod.name": "otel-demo-frontendproxy-7b4dcc8899-rpmzc",
+        "service.instance.id": "04c32311-72c8-4523-9812-b8c9650755d4"
+      }
+    },
+    "schema_url": "",
+    "instrumentation_library_span": {
+      "instrumentation_library": {
+        "name": "unknown",
+        "version": "unknown"
+      },
+      "schema_url": ""
+    },
+    "trace_id": "f2dfdf404d660f3af3eaabd211e44edd",
+    "span_id": "d8c90e557e8225e6",
+    "trace_state": "",
+    "parent_span_id": "629e746c8775c87b",
+    "kind": 2,
+    "start_time_unix_nano": 1696514314066375000,
+    "end_time_unix_nano": 1696514314072015000,
+    "attributes": {
+      "node_id": "",
+      "zone": "",
+      "guid:x-request-id": "6a72fd67-8627-9d7a-9b36-2e51e4cbaeb4",
+      "http.url": "http://otel-demo-frontendproxy:8080/api/cart",
+      "http.method": "POST",
+      "downstream_cluster": "-",
+      "user_agent": "python-requests/2.31.0",
+      "http.protocol": "HTTP/1.1",
+      "peer.address": "10.244.0.23",
+      "request_size": "103",
+      "response_size": "100",
+      "component": "proxy",
+      "upstream_cluster": "frontend",
+      "upstream_cluster.name": "frontend",
+      "http.status_code": "200",
+      "response_flags": "-"
+    },
+    "dropped_attributes_count": 0,
+    "events": [],
+    "dropped_events_count": 0,
+    "links": [],
+    "dropped_links_count": 0,
+    "status": {
+      "code": 0,
+      "message": ""
+    },
+    "_time": 1696514314.27,
+    "__bytes": 555,
+    "__srcIpPort": "107.4.162.218:56901",
+    "__inputId": "open_telemetry:open_telemetry",
+    "duration": 5640192,
+    "http_status_code": "200",
+    "service": "frontend-proxy",
+    "http_url": "http://otel-demo-frontendproxy:8080/api/cart",
+    "resource_url": "ingress",
+    "__criblMetrics": [
+      {
+        "values": [
+          "duration",
+          "status.code",
+          "http_status_code"
+        ],
+        "nameExpr": [
+          "'otel.duration'",
+          "'otel.status.code'",
+          "'otel.http.status.code'"
+        ],
+        "types": [
+          "gauge",
+          "gauge",
+          "gauge"
+        ],
+        "dims": [
+          "service",
+          "resource_url"
+        ]
+      }
+    ],
+    "cribl_pipe": "t2m",
+    "__outputId": "datadog:personal"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "resource": {
+      "dropped_attributes_count": 0,
+      "attributes": {
+        "service.name": "frontend-proxy",
+        "k8s.pod.ip": "10.244.0.17",
+        "k8s.namespace.name": "default",
+        "k8s.pod.start_time": "2023-10-05 13:54:10 +0000 UTC",
+        "k8s.pod.uid": "04c32311-72c8-4523-9812-b8c9650755d4",
+        "k8s.deployment.name": "otel-demo-frontendproxy",
+        "k8s.node.name": "minikube",
+        "k8s.pod.name": "otel-demo-frontendproxy-7b4dcc8899-rpmzc",
+        "service.instance.id": "04c32311-72c8-4523-9812-b8c9650755d4"
+      }
+    },
+    "schema_url": "",
+    "instrumentation_library_span": {
+      "instrumentation_library": {
+        "name": "unknown",
+        "version": "unknown"
+      },
+      "schema_url": ""
+    },
+    "trace_id": "672a7fa53e2675f4505b35724f64b213",
+    "span_id": "e0b87ebd265833c5",
+    "trace_state": "",
+    "parent_span_id": "9e936640b96ec2e4",
+    "kind": 2,
+    "start_time_unix_nano": 1696514314073218000,
+    "end_time_unix_nano": 1696514314076923000,
+    "attributes": {
+      "node_id": "",
+      "zone": "",
+      "guid:x-request-id": "264ed412-0577-9284-ae3b-fc7025ae79dc",
+      "http.url": "http://otel-demo-frontendproxy:8080/api/products/L9ECAV7KIM",
+      "http.method": "GET",
+      "downstream_cluster": "-",
+      "user_agent": "python-requests/2.31.0",
+      "http.protocol": "HTTP/1.1",
+      "peer.address": "10.244.0.23",
+      "request_size": "0",
+      "response_size": "752",
+      "component": "proxy",
+      "upstream_cluster": "frontend",
+      "upstream_cluster.name": "frontend",
+      "http.status_code": "200",
+      "response_flags": "-"
+    },
+    "dropped_attributes_count": 0,
+    "events": [],
+    "dropped_events_count": 0,
+    "links": [],
+    "dropped_links_count": 0,
+    "status": {
+      "code": 0,
+      "message": ""
+    },
+    "_time": 1696514314.271,
+    "__bytes": 567,
+    "__srcIpPort": "107.4.162.218:56901",
+    "__inputId": "open_telemetry:open_telemetry",
+    "duration": 3704832,
+    "http_status_code": "200",
+    "service": "frontend-proxy",
+    "http_url": "http://otel-demo-frontendproxy:8080/api/products/L9ECAV7KIM",
+    "resource_url": "ingress",
+    "__criblMetrics": [
+      {
+        "values": [
+          "duration",
+          "status.code",
+          "http_status_code"
+        ],
+        "nameExpr": [
+          "'otel.duration'",
+          "'otel.status.code'",
+          "'otel.http.status.code'"
+        ],
+        "types": [
+          "gauge",
+          "gauge",
+          "gauge"
+        ],
+        "dims": [
+          "service",
+          "resource_url"
+        ]
+      }
+    ],
+    "cribl_pipe": "t2m",
+    "__outputId": "datadog:personal"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "resource": {
+      "dropped_attributes_count": 0,
+      "attributes": {
+        "service.name": "currencyservice",
+        "service.namespace": "opentelemetry-demo",
+        "telemetry.sdk.version": "1.10.0",
+        "telemetry.sdk.name": "opentelemetry",
+        "telemetry.sdk.language": "cpp",
+        "k8s.pod.ip": "10.244.0.5",
+        "k8s.namespace.name": "default",
+        "k8s.pod.start_time": "2023-10-05 13:54:10 +0000 UTC",
+        "k8s.pod.uid": "1855379e-7730-4a9a-a28e-b9d0fb23438f",
+        "k8s.deployment.name": "otel-demo-currencyservice",
+        "k8s.node.name": "minikube",
+        "k8s.pod.name": "otel-demo-currencyservice-ff6d5dfc5-lxswn",
+        "service.instance.id": "1855379e-7730-4a9a-a28e-b9d0fb23438f"
+      }
+    },
+    "schema_url": "",
+    "instrumentation_library_span": {
+      "instrumentation_library": {
+        "name": "currencyservice",
+        "version": "unknown"
+      },
+      "schema_url": ""
+    },
+    "trace_id": "1424dfb7c3b5642e9f9d1e90536e2c1e",
+    "span_id": "b3dfbdca4bde719f",
+    "trace_state": "",
+    "parent_span_id": "5c4d9ca71d1517f7",
+    "kind": 2,
+    "start_time_unix_nano": 1696514314099437300,
+    "end_time_unix_nano": 1696514314099481300,
+    "attributes": {
+      "rpc.system": "grpc",
+      "rpc.service": "CurrencyService",
+      "rpc.method": "Convert",
+      "rpc.grpc.status_code": 0,
+      "app.currency.conversion.from": "USD",
+      "app.currency.conversion.to": "CAD"
+    },
+    "dropped_attributes_count": 0,
+    "events": [
+      {
+        "time_unix_nano": 1696514314099441700,
+        "name": "Processing currency conversion request",
+        "attributes": {},
+        "dropped_attributes_count": 0
+      },
+      {
+        "time_unix_nano": 1696514314099455200,
+        "name": "Conversion successful, response sent back",
+        "attributes": {},
+        "dropped_attributes_count": 0
+      }
+    ],
+    "dropped_events_count": 0,
+    "links": [],
+    "dropped_links_count": 0,
+    "status": {
+      "code": 1,
+      "message": ""
+    },
+    "_time": 1696514314.271,
+    "__bytes": 377,
+    "__srcIpPort": "107.4.162.218:56901",
+    "__inputId": "open_telemetry:open_telemetry",
+    "duration": 44032,
+    "service": "currencyservice",
+    "resource_url": "CurrencyService/Convert",
+    "__criblMetrics": [
+      {
+        "values": [
+          "duration",
+          "status.code",
+          "http_status_code"
+        ],
+        "nameExpr": [
+          "'otel.duration'",
+          "'otel.status.code'",
+          "'otel.http.status.code'"
+        ],
+        "types": [
+          "gauge",
+          "gauge",
+          "gauge"
+        ],
+        "dims": [
+          "service",
+          "resource_url"
+        ]
+      }
+    ],
+    "cribl_pipe": "t2m",
+    "__outputId": "datadog:personal"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "resource": {
+      "dropped_attributes_count": 0,
+      "attributes": {
+        "service.name": "currencyservice",
+        "service.namespace": "opentelemetry-demo",
+        "telemetry.sdk.version": "1.10.0",
+        "telemetry.sdk.name": "opentelemetry",
+        "telemetry.sdk.language": "cpp",
+        "k8s.pod.ip": "10.244.0.5",
+        "k8s.node.name": "minikube",
+        "k8s.pod.name": "otel-demo-currencyservice-ff6d5dfc5-lxswn",
+        "k8s.namespace.name": "default",
+        "k8s.pod.start_time": "2023-10-05 13:54:10 +0000 UTC",
+        "k8s.pod.uid": "1855379e-7730-4a9a-a28e-b9d0fb23438f",
+        "k8s.deployment.name": "otel-demo-currencyservice",
+        "service.instance.id": "1855379e-7730-4a9a-a28e-b9d0fb23438f"
+      }
+    },
+    "schema_url": "",
+    "instrumentation_library_span": {
+      "instrumentation_library": {
+        "name": "currencyservice",
+        "version": "unknown"
+      },
+      "schema_url": ""
+    },
+    "trace_id": "1424dfb7c3b5642e9f9d1e90536e2c1e",
+    "span_id": "1f3f8ac02e33bf60",
+    "trace_state": "",
+    "parent_span_id": "c292bbdfac84f65e",
+    "kind": 2,
+    "start_time_unix_nano": 1696514314104675800,
+    "end_time_unix_nano": 1696514314104706300,
+    "attributes": {
+      "rpc.system": "grpc",
+      "rpc.service": "CurrencyService",
+      "rpc.method": "Convert",
+      "rpc.grpc.status_code": 0,
+      "app.currency.conversion.from": "USD",
+      "app.currency.conversion.to": "CAD"
+    },
+    "dropped_attributes_count": 0,
+    "events": [
+      {
+        "time_unix_nano": 1696514314104678400,
+        "name": "Processing currency conversion request",
+        "attributes": {},
+        "dropped_attributes_count": 0
+      },
+      {
+        "time_unix_nano": 1696514314104690200,
+        "name": "Conversion successful, response sent back",
+        "attributes": {},
+        "dropped_attributes_count": 0
+      }
+    ],
+    "dropped_events_count": 0,
+    "links": [],
+    "dropped_links_count": 0,
+    "status": {
+      "code": 1,
+      "message": ""
+    },
+    "_time": 1696514314.271,
+    "__bytes": 377,
+    "__srcIpPort": "107.4.162.218:56901",
+    "__inputId": "open_telemetry:open_telemetry",
+    "duration": 30464,
+    "service": "currencyservice",
+    "resource_url": "CurrencyService/Convert",
+    "__criblMetrics": [
+      {
+        "values": [
+          "duration",
+          "status.code",
+          "http_status_code"
+        ],
+        "nameExpr": [
+          "'otel.duration'",
+          "'otel.status.code'",
+          "'otel.http.status.code'"
+        ],
+        "types": [
+          "gauge",
+          "gauge",
+          "gauge"
+        ],
+        "dims": [
+          "service",
+          "resource_url"
+        ]
+      }
+    ],
+    "cribl_pipe": "t2m",
+    "__outputId": "datadog:personal"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "resource": {
+      "dropped_attributes_count": 0,
+      "attributes": {
+        "service.name": "quoteservice",
+        "service.namespace": "opentelemetry-demo",
+        "service.version": "1.0.0+no-version-set",
+        "telemetry.sdk.name": "opentelemetry",
+        "telemetry.sdk.language": "php",
+        "telemetry.sdk.version": "1.0.0beta14",
+        "telemetry.auto.version": "1.0.0RC1",
+        "process.runtime.name": "cli",
+        "process.runtime.version": "8.2.10",
+        "process.pid": 8,
+        "process.executable.path": "/usr/local/bin/php",
+        "process.command": "public/index.php",
+        "process.command_args": [
+          "public/index.php"
+        ],
+        "process.owner": "www-data",
+        "os.type": "linux",
+        "os.description": "5.10.104-linuxkit",
+        "os.name": "Linux",
+        "os.version": "#1 SMP PREEMPT Thu Mar 17 17:05:54 UTC 2022",
+        "host.name": "otel-demo-quoteservice-ddfc67d94-pjhgw",
+        "host.arch": "aarch64",
+        "k8s.pod.ip": "10.244.0.12",
+        "k8s.deployment.name": "otel-demo-quoteservice",
+        "k8s.node.name": "minikube",
+        "k8s.pod.name": "otel-demo-quoteservice-ddfc67d94-pjhgw",
+        "k8s.namespace.name": "default",
+        "k8s.pod.start_time": "2023-10-05 13:54:11 +0000 UTC",
+        "k8s.pod.uid": "f4492852-a614-401b-be08-96f2b3220f0e",
+        "service.instance.id": "f4492852-a614-401b-be08-96f2b3220f0e"
+      }
+    },
+    "schema_url": "https://opentelemetry.io/schemas/1.19.0",
+    "instrumentation_library_span": {
+      "instrumentation_library": {
+        "name": "manual-instrumentation",
+        "version": "unknown"
+      },
+      "schema_url": ""
+    },
+    "trace_id": "1424dfb7c3b5642e9f9d1e90536e2c1e",
+    "span_id": "32589be7b6866baf",
+    "trace_state": "",
+    "parent_span_id": "1d9fbe69ca2fb74c",
+    "kind": 1,
+    "start_time_unix_nano": 1696514314104956000,
+    "end_time_unix_nano": 1696514314104961000,
+    "attributes": {
+      "app.quote.items.count": 15,
+      "app.quote.cost.total": 133.5
+    },
+    "dropped_attributes_count": 0,
+    "events": [
+      {
+        "time_unix_nano": 1696514314104957000,
+        "name": "Calculating quote",
+        "attributes": {},
+        "dropped_attributes_count": 0
+      },
+      {
+        "time_unix_nano": 1696514314104960300,
+        "name": "Quote calculated, returning its value",
+        "attributes": {},
+        "dropped_attributes_count": 0
+      }
+    ],
+    "dropped_events_count": 0,
+    "links": [],
+    "dropped_links_count": 0,
+    "status": {
+      "code": 0,
+      "message": ""
+    },
+    "_time": 1696514314.67,
+    "__bytes": 221,
+    "__srcIpPort": "107.4.162.218:56901",
+    "__inputId": "open_telemetry:open_telemetry",
+    "duration": 5120,
+    "service": "quoteservice",
+    "resource_url": "calculate-quote",
+    "__criblMetrics": [
+      {
+        "values": [
+          "duration",
+          "status.code",
+          "http_status_code"
+        ],
+        "nameExpr": [
+          "'otel.duration'",
+          "'otel.status.code'",
+          "'otel.http.status.code'"
+        ],
+        "types": [
+          "gauge",
+          "gauge",
+          "gauge"
+        ],
+        "dims": [
+          "service",
+          "resource_url"
+        ]
+      }
+    ],
+    "cribl_pipe": "t2m",
+    "__outputId": "datadog:personal"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "resource": {
+      "dropped_attributes_count": 0,
+      "attributes": {
+        "service.name": "quoteservice",
+        "service.namespace": "opentelemetry-demo",
+        "service.version": "1.0.0+no-version-set",
+        "telemetry.sdk.name": "opentelemetry",
+        "telemetry.sdk.language": "php",
+        "telemetry.sdk.version": "1.0.0beta14",
+        "telemetry.auto.version": "1.0.0RC1",
+        "process.runtime.name": "cli",
+        "process.runtime.version": "8.2.10",
+        "process.pid": 8,
+        "process.executable.path": "/usr/local/bin/php",
+        "process.command": "public/index.php",
+        "process.command_args": [
+          "public/index.php"
+        ],
+        "process.owner": "www-data",
+        "os.type": "linux",
+        "os.description": "5.10.104-linuxkit",
+        "os.name": "Linux",
+        "os.version": "#1 SMP PREEMPT Thu Mar 17 17:05:54 UTC 2022",
+        "host.name": "otel-demo-quoteservice-ddfc67d94-pjhgw",
+        "host.arch": "aarch64",
+        "k8s.pod.ip": "10.244.0.12",
+        "k8s.deployment.name": "otel-demo-quoteservice",
+        "k8s.node.name": "minikube",
+        "k8s.pod.name": "otel-demo-quoteservice-ddfc67d94-pjhgw",
+        "k8s.namespace.name": "default",
+        "k8s.pod.start_time": "2023-10-05 13:54:11 +0000 UTC",
+        "k8s.pod.uid": "f4492852-a614-401b-be08-96f2b3220f0e",
+        "service.instance.id": "f4492852-a614-401b-be08-96f2b3220f0e"
+      }
+    },
+    "schema_url": "https://opentelemetry.io/schemas/1.19.0",
+    "instrumentation_library_span": {
+      "instrumentation_library": {
+        "name": "io.opentelemetry.contrib.php.slim",
+        "version": "unknown"
+      },
+      "schema_url": ""
+    },
+    "trace_id": "1424dfb7c3b5642e9f9d1e90536e2c1e",
+    "span_id": "1d9fbe69ca2fb74c",
+    "trace_state": "",
+    "parent_span_id": "c6787217ca04331d",
+    "kind": 1,
+    "start_time_unix_nano": 1696514314104931600,
+    "end_time_unix_nano": 1696514314104985300,
+    "attributes": {
+      "code.function": "__invoke",
+      "code.namespace": "DI\\Bridge\\Slim\\ControllerInvoker",
+      "code.filepath": "/var/www/vendor/php-di/slim-bridge/src/ControllerInvoker.php",
+      "code.lineno": 31
+    },
+    "dropped_attributes_count": 0,
+    "events": [
+      {
+        "time_unix_nano": 1696514314104944400,
+        "name": "Received get quote request, processing it",
+        "attributes": {},
+        "dropped_attributes_count": 0
+      },
+      {
+        "time_unix_nano": 1696514314104972800,
+        "name": "Quote processed, response sent back",
+        "attributes": {
+          "app.quote.cost.total": 133.5
+        },
+        "dropped_attributes_count": 0
+      }
+    ],
+    "dropped_events_count": 0,
+    "links": [],
+    "dropped_links_count": 0,
+    "status": {
+      "code": 0,
+      "message": ""
+    },
+    "_time": 1696514314.67,
+    "__bytes": 391,
+    "__srcIpPort": "107.4.162.218:56901",
+    "__inputId": "open_telemetry:open_telemetry",
+    "duration": 53760,
+    "service": "quoteservice",
+    "resource_url": "{closure}",
+    "__criblMetrics": [
+      {
+        "values": [
+          "duration",
+          "status.code",
+          "http_status_code"
+        ],
+        "nameExpr": [
+          "'otel.duration'",
+          "'otel.status.code'",
+          "'otel.http.status.code'"
+        ],
+        "types": [
+          "gauge",
+          "gauge",
+          "gauge"
+        ],
+        "dims": [
+          "service",
+          "resource_url"
+        ]
+      }
+    ],
+    "cribl_pipe": "t2m",
+    "__outputId": "datadog:personal"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "resource": {
+      "dropped_attributes_count": 0,
+      "attributes": {
+        "service.name": "quoteservice",
+        "service.namespace": "opentelemetry-demo",
+        "service.version": "1.0.0+no-version-set",
+        "telemetry.sdk.name": "opentelemetry",
+        "telemetry.sdk.language": "php",
+        "telemetry.sdk.version": "1.0.0beta14",
+        "telemetry.auto.version": "1.0.0RC1",
+        "process.runtime.name": "cli",
+        "process.runtime.version": "8.2.10",
+        "process.pid": 8,
+        "process.executable.path": "/usr/local/bin/php",
+        "process.command": "public/index.php",
+        "process.command_args": [
+          "public/index.php"
+        ],
+        "process.owner": "www-data",
+        "os.type": "linux",
+        "os.description": "5.10.104-linuxkit",
+        "os.name": "Linux",
+        "os.version": "#1 SMP PREEMPT Thu Mar 17 17:05:54 UTC 2022",
+        "host.name": "otel-demo-quoteservice-ddfc67d94-pjhgw",
+        "host.arch": "aarch64",
+        "k8s.pod.ip": "10.244.0.12",
+        "k8s.deployment.name": "otel-demo-quoteservice",
+        "k8s.node.name": "minikube",
+        "k8s.pod.name": "otel-demo-quoteservice-ddfc67d94-pjhgw",
+        "k8s.namespace.name": "default",
+        "k8s.pod.start_time": "2023-10-05 13:54:11 +0000 UTC",
+        "k8s.pod.uid": "f4492852-a614-401b-be08-96f2b3220f0e",
+        "service.instance.id": "f4492852-a614-401b-be08-96f2b3220f0e"
+      }
+    },
+    "schema_url": "https://opentelemetry.io/schemas/1.19.0",
+    "instrumentation_library_span": {
+      "instrumentation_library": {
+        "name": "io.opentelemetry.contrib.php.slim",
+        "version": "unknown"
+      },
+      "schema_url": ""
+    },
+    "trace_id": "1424dfb7c3b5642e9f9d1e90536e2c1e",
+    "span_id": "c6787217ca04331d",
+    "trace_state": "",
+    "parent_span_id": "73b34002271af96a",
+    "kind": 2,
+    "start_time_unix_nano": 1696514314104873200,
+    "end_time_unix_nano": 1696514314104993000,
+    "attributes": {
+      "code.function": "handle",
+      "code.namespace": "Slim\\App",
+      "code.filepath": "/var/www/vendor/slim/slim/Slim/App.php",
+      "code.lineno": 197,
+      "http.url": "http://otel-demo-quoteservice:8080/getquote",
+      "http.method": "POST",
+      "http.request_content_length": "20",
+      "http.scheme": "http",
+      "http.status_code": 200,
+      "http.flavor": "1.1",
+      "http.response_content_length": ""
+    },
+    "dropped_attributes_count": 0,
+    "events": [],
+    "dropped_events_count": 0,
+    "links": [],
+    "dropped_links_count": 0,
+    "status": {
+      "code": 0,
+      "message": ""
+    },
+    "_time": 1696514314.67,
+    "__bytes": 437,
+    "__srcIpPort": "107.4.162.218:56901",
+    "__inputId": "open_telemetry:open_telemetry",
+    "duration": 119808,
+    "http_status_code": 200,
+    "service": "quoteservice",
+    "http_url": "http://otel-demo-quoteservice:8080/getquote",
+    "resource_url": "POST /getquote",
+    "__criblMetrics": [
+      {
+        "values": [
+          "duration",
+          "status.code",
+          "http_status_code"
+        ],
+        "nameExpr": [
+          "'otel.duration'",
+          "'otel.status.code'",
+          "'otel.http.status.code'"
+        ],
+        "types": [
+          "gauge",
+          "gauge",
+          "gauge"
+        ],
+        "dims": [
+          "service",
+          "resource_url"
+        ]
+      }
+    ],
+    "cribl_pipe": "t2m",
+    "__outputId": "datadog:personal"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "resource": {
+      "dropped_attributes_count": 0,
+      "attributes": {
+        "os.type": "linux",
+        "service.namespace": "opentelemetry-demo",
+        "service.name": "shippingservice",
+        "telemetry.sdk.version": "0.19.0",
+        "telemetry.sdk.language": "rust",
+        "telemetry.sdk.name": "opentelemetry",
+        "process.command_args": [
+          "/app/shippingservice"
+        ],
+        "process.pid": 1,
+        "k8s.pod.ip": "10.244.0.10",
+        "k8s.pod.name": "otel-demo-shippingservice-7d469b48c6-sht4n",
+        "k8s.namespace.name": "default",
+        "k8s.pod.start_time": "2023-10-05 13:54:10 +0000 UTC",
+        "k8s.pod.uid": "a78ae5c1-2136-4fcb-9634-923d474269d7",
+        "k8s.deployment.name": "otel-demo-shippingservice",
+        "k8s.node.name": "minikube",
+        "service.instance.id": "a78ae5c1-2136-4fcb-9634-923d474269d7"
+      }
+    },
+    "schema_url": "",
+    "instrumentation_library_span": {
+      "instrumentation_library": {
+        "name": "opentelemetry-otlp",
+        "version": "0.12.0"
+      },
+      "schema_url": ""
+    },
+    "trace_id": "1424dfb7c3b5642e9f9d1e90536e2c1e",
+    "span_id": "5bd2470475f0beef",
+    "trace_state": "",
+    "parent_span_id": "73b34002271af96a",
+    "kind": 3,
+    "start_time_unix_nano": 1696514314101740800,
+    "end_time_unix_nano": 1696514314103107800,
+    "attributes": {
+      "idle_ns": 1230833,
+      "http.user_agent": "",
+      "busy_ns": 134708,
+      "code.filepath": "/usr/local/cargo/registry/src/github.com-1ecc6299db9ec823/reqwest-tracing-0.4.5/src/reqwest_otel_span_builder.rs",
+      "http.method": "POST",
+      "code.lineno": 138,
+      "thread.id": 3,
+      "http.host": "otel-demo-quoteservice",
+      "net.host.port": "8080",
+      "thread.name": "tokio-runtime-worker",
+      "http.url": "http://otel-demo-quoteservice:8080/getquote",
+      "code.namespace": "reqwest_tracing::reqwest_otel_span_builder",
+      "http.scheme": "http",
+      "http.status_code": "200"
+    },
+    "dropped_attributes_count": 0,
+    "events": [],
+    "dropped_events_count": 0,
+    "links": [],
+    "dropped_links_count": 0,
+    "status": {
+      "code": 0,
+      "message": ""
+    },
+    "_time": 1696514315.068,
+    "__bytes": 593,
+    "__srcIpPort": "107.4.162.218:56901",
+    "__inputId": "open_telemetry:open_telemetry",
+    "duration": 1367040,
+    "http_status_code": "200",
+    "service": "shippingservice",
+    "http_url": "http://otel-demo-quoteservice:8080/getquote",
+    "resource_url": "POST",
+    "__criblMetrics": [
+      {
+        "values": [
+          "duration",
+          "status.code",
+          "http_status_code"
+        ],
+        "nameExpr": [
+          "'otel.duration'",
+          "'otel.status.code'",
+          "'otel.http.status.code'"
+        ],
+        "types": [
+          "gauge",
+          "gauge",
+          "gauge"
+        ],
+        "dims": [
+          "service",
+          "resource_url"
+        ]
+      }
+    ],
+    "cribl_pipe": "t2m",
+    "__outputId": "datadog:personal"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "resource": {
+      "dropped_attributes_count": 0,
+      "attributes": {
+        "os.type": "linux",
+        "service.namespace": "opentelemetry-demo",
+        "service.name": "shippingservice",
+        "telemetry.sdk.version": "0.19.0",
+        "telemetry.sdk.language": "rust",
+        "telemetry.sdk.name": "opentelemetry",
+        "process.command_args": [
+          "/app/shippingservice"
+        ],
+        "process.pid": 1,
+        "k8s.pod.ip": "10.244.0.10",
+        "k8s.pod.name": "otel-demo-shippingservice-7d469b48c6-sht4n",
+        "k8s.namespace.name": "default",
+        "k8s.pod.start_time": "2023-10-05 13:54:10 +0000 UTC",
+        "k8s.pod.uid": "a78ae5c1-2136-4fcb-9634-923d474269d7",
+        "k8s.deployment.name": "otel-demo-shippingservice",
+        "k8s.node.name": "minikube",
+        "service.instance.id": "a78ae5c1-2136-4fcb-9634-923d474269d7"
+      }
+    },
+    "schema_url": "",
+    "instrumentation_library_span": {
+      "instrumentation_library": {
+        "name": "shippingservice",
+        "version": "unknown"
+      },
+      "schema_url": ""
+    },
+    "trace_id": "1424dfb7c3b5642e9f9d1e90536e2c1e",
+    "span_id": "73b34002271af96a",
+    "trace_state": "",
+    "parent_span_id": "bd984ffd45c73186",
+    "kind": 2,
+    "start_time_unix_nano": 1696514314101705200,
+    "end_time_unix_nano": 1696514314103159600,
+    "attributes": {
+      "app.shipping.zip_code": "K2P1L4",
+      "rpc.grpc.status_code": 0,
+      "rpc.system": "grpc",
+      "app.shipping.items.count": 15,
+      "app.shipping.cost.total": "133.50"
+    },
+    "dropped_attributes_count": 0,
+    "events": [
+      {
+        "time_unix_nano": 1696514314101707000,
+        "name": "Processing get quote request",
+        "attributes": {},
+        "dropped_attributes_count": 0
+      },
+      {
+        "time_unix_nano": 1696514314103132700,
+        "name": "Received Quote",
+        "attributes": {
+          "app.shipping.cost.total": "133.50"
+        },
+        "dropped_attributes_count": 0
+      }
+    ],
+    "dropped_events_count": 0,
+    "links": [],
+    "dropped_links_count": 0,
+    "status": {
+      "code": 0,
+      "message": ""
+    },
+    "_time": 1696514315.068,
+    "__bytes": 354,
+    "__srcIpPort": "107.4.162.218:56901",
+    "__inputId": "open_telemetry:open_telemetry",
+    "duration": 1454336,
+    "service": "shippingservice",
+    "resource_url": "oteldemo.ShippingService/GetQuote",
+    "__criblMetrics": [
+      {
+        "values": [
+          "duration",
+          "status.code",
+          "http_status_code"
+        ],
+        "nameExpr": [
+          "'otel.duration'",
+          "'otel.status.code'",
+          "'otel.http.status.code'"
+        ],
+        "types": [
+          "gauge",
+          "gauge",
+          "gauge"
+        ],
+        "dims": [
+          "service",
+          "resource_url"
+        ]
+      }
+    ],
+    "cribl_pipe": "t2m",
+    "__outputId": "datadog:personal"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "resource": {
+      "dropped_attributes_count": 0,
+      "attributes": {
+        "os.type": "linux",
+        "service.namespace": "opentelemetry-demo",
+        "service.name": "shippingservice",
+        "telemetry.sdk.version": "0.19.0",
+        "telemetry.sdk.language": "rust",
+        "telemetry.sdk.name": "opentelemetry",
+        "process.command_args": [
+          "/app/shippingservice"
+        ],
+        "process.pid": 1,
+        "k8s.pod.ip": "10.244.0.10",
+        "k8s.pod.uid": "a78ae5c1-2136-4fcb-9634-923d474269d7",
+        "k8s.deployment.name": "otel-demo-shippingservice",
+        "k8s.node.name": "minikube",
+        "k8s.pod.name": "otel-demo-shippingservice-7d469b48c6-sht4n",
+        "k8s.namespace.name": "default",
+        "k8s.pod.start_time": "2023-10-05 13:54:10 +0000 UTC",
+        "service.instance.id": "a78ae5c1-2136-4fcb-9634-923d474269d7"
+      }
+    },
+    "schema_url": "",
+    "instrumentation_library_span": {
+      "instrumentation_library": {
+        "name": "shippingservice",
+        "version": "unknown"
+      },
+      "schema_url": ""
+    },
+    "trace_id": "1424dfb7c3b5642e9f9d1e90536e2c1e",
+    "span_id": "f5717a316af03d1c",
+    "trace_state": "",
+    "parent_span_id": "dad4014d21184f2f",
+    "kind": 2,
+    "start_time_unix_nano": 1696514314109558000,
+    "end_time_unix_nano": 1696514314109564200,
+    "attributes": {
+      "rpc.grpc.status_code": 0,
+      "rpc.system": "grpc",
+      "app.shipping.tracking.id": "a14d73d7-e932-4acc-a08e-d28abef76ef6"
+    },
+    "dropped_attributes_count": 0,
+    "events": [
+      {
+        "time_unix_nano": 1696514314109560000,
+        "name": "Processing shipping order request",
+        "attributes": {},
+        "dropped_attributes_count": 0
+      },
+      {
+        "time_unix_nano": 1696514314109563600,
+        "name": "Shipping tracking id created, response sent back",
+        "attributes": {},
+        "dropped_attributes_count": 0
+      }
+    ],
+    "dropped_events_count": 0,
+    "links": [],
+    "dropped_links_count": 0,
+    "status": {
+      "code": 0,
+      "message": ""
+    },
+    "_time": 1696514315.069,
+    "__bytes": 321,
+    "__srcIpPort": "107.4.162.218:56901",
+    "__inputId": "open_telemetry:open_telemetry",
+    "duration": 6144,
+    "service": "shippingservice",
+    "resource_url": "oteldemo.ShippingService/ShipOrder",
+    "__criblMetrics": [
+      {
+        "values": [
+          "duration",
+          "status.code",
+          "http_status_code"
+        ],
+        "nameExpr": [
+          "'otel.duration'",
+          "'otel.status.code'",
+          "'otel.http.status.code'"
+        ],
+        "types": [
+          "gauge",
+          "gauge",
+          "gauge"
+        ],
+        "dims": [
+          "service",
+          "resource_url"
+        ]
+      }
+    ],
+    "cribl_pipe": "t2m",
+    "__outputId": "datadog:personal"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "resource": {
+      "dropped_attributes_count": 0,
+      "attributes": {
+        "container.id": "848624abe2502508fd4f54018146047762c5ed9843442be743a24c75e8f09123",
+        "host.arch": "aarch64",
+        "host.name": "otel-demo-adservice-54b76c796c-vmlwn",
+        "os.description": "Linux 5.10.104-linuxkit",
+        "os.type": "linux",
+        "process.command_line": "/opt/java/openjdk/bin/java -javaagent:/usr/src/app/opentelemetry-javaagent.jar oteldemo.AdService",
+        "process.executable.path": "/opt/java/openjdk/bin/java",
+        "process.pid": 1,
+        "process.runtime.description": "Eclipse Adoptium OpenJDK 64-Bit Server VM 17.0.8.1+1",
+        "process.runtime.name": "OpenJDK Runtime Environment",
+        "process.runtime.version": "17.0.8.1+1",
+        "service.name": "adservice",
+        "service.namespace": "opentelemetry-demo",
+        "telemetry.auto.version": "1.28.0",
+        "telemetry.sdk.language": "java",
+        "telemetry.sdk.name": "opentelemetry",
+        "telemetry.sdk.version": "1.28.0",
+        "k8s.pod.ip": "10.244.0.6",
+        "k8s.pod.start_time": "2023-10-05 13:54:10 +0000 UTC",
+        "k8s.pod.uid": "51cccac9-4e1f-4529-af97-552513b5deb0",
+        "k8s.deployment.name": "otel-demo-adservice",
+        "k8s.node.name": "minikube",
+        "k8s.pod.name": "otel-demo-adservice-54b76c796c-vmlwn",
+        "k8s.namespace.name": "default",
+        "service.instance.id": "51cccac9-4e1f-4529-af97-552513b5deb0"
+      }
+    },
+    "schema_url": "https://opentelemetry.io/schemas/1.20.0",
+    "instrumentation_library_span": {
+      "instrumentation_library": {
+        "name": "io.opentelemetry.opentelemetry-instrumentation-annotations-1.16",
+        "version": "1.28.0-alpha"
+      },
+      "schema_url": ""
+    },
+    "trace_id": "d0dbbc7b90b94be4fcd0ef7912ebaefd",
+    "span_id": "3e7174bf62e7f60a",
+    "trace_state": "",
+    "parent_span_id": "43f3e26e2e955c93",
+    "kind": 1,
+    "start_time_unix_nano": 1696514313123979300,
+    "end_time_unix_nano": 1696514313124002600,
+    "attributes": {
+      "app.ads.category": "books",
+      "code.namespace": "oteldemo.AdService",
+      "code.function": "getAdsByCategory",
+      "thread.id": 34,
+      "app.ads.count": 0,
+      "thread.name": "grpc-default-executor-1"
+    },
+    "dropped_attributes_count": 0,
+    "events": [],
+    "dropped_events_count": 0,
+    "links": [],
+    "dropped_links_count": 0,
+    "status": {
+      "code": 0,
+      "message": ""
+    },
+    "_time": 1696514315.475,
+    "__bytes": 264,
+    "__srcIpPort": "107.4.162.218:56901",
+    "__inputId": "open_telemetry:open_telemetry",
+    "duration": 23296,
+    "service": "adservice",
+    "resource_url": "getAdsByCategory",
+    "__criblMetrics": [
+      {
+        "values": [
+          "duration",
+          "status.code",
+          "http_status_code"
+        ],
+        "nameExpr": [
+          "'otel.duration'",
+          "'otel.status.code'",
+          "'otel.http.status.code'"
+        ],
+        "types": [
+          "gauge",
+          "gauge",
+          "gauge"
+        ],
+        "dims": [
+          "service",
+          "resource_url"
+        ]
+      }
+    ],
+    "cribl_pipe": "t2m",
+    "__outputId": "datadog:personal"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "resource": {
+      "dropped_attributes_count": 0,
+      "attributes": {
+        "container.id": "848624abe2502508fd4f54018146047762c5ed9843442be743a24c75e8f09123",
+        "host.arch": "aarch64",
+        "host.name": "otel-demo-adservice-54b76c796c-vmlwn",
+        "os.description": "Linux 5.10.104-linuxkit",
+        "os.type": "linux",
+        "process.command_line": "/opt/java/openjdk/bin/java -javaagent:/usr/src/app/opentelemetry-javaagent.jar oteldemo.AdService",
+        "process.executable.path": "/opt/java/openjdk/bin/java",
+        "process.pid": 1,
+        "process.runtime.description": "Eclipse Adoptium OpenJDK 64-Bit Server VM 17.0.8.1+1",
+        "process.runtime.name": "OpenJDK Runtime Environment",
+        "process.runtime.version": "17.0.8.1+1",
+        "service.name": "adservice",
+        "service.namespace": "opentelemetry-demo",
+        "telemetry.auto.version": "1.28.0",
+        "telemetry.sdk.language": "java",
+        "telemetry.sdk.name": "opentelemetry",
+        "telemetry.sdk.version": "1.28.0",
+        "k8s.pod.ip": "10.244.0.6",
+        "k8s.pod.start_time": "2023-10-05 13:54:10 +0000 UTC",
+        "k8s.pod.uid": "51cccac9-4e1f-4529-af97-552513b5deb0",
+        "k8s.deployment.name": "otel-demo-adservice",
+        "k8s.node.name": "minikube",
+        "k8s.pod.name": "otel-demo-adservice-54b76c796c-vmlwn",
+        "k8s.namespace.name": "default",
+        "service.instance.id": "51cccac9-4e1f-4529-af97-552513b5deb0"
+      }
+    },
+    "schema_url": "https://opentelemetry.io/schemas/1.20.0",
+    "instrumentation_library_span": {
+      "instrumentation_library": {
+        "name": "io.opentelemetry.grpc-1.6",
+        "version": "1.28.0-alpha"
+      },
+      "schema_url": ""
+    },
+    "trace_id": "d0dbbc7b90b94be4fcd0ef7912ebaefd",
+    "span_id": "43f3e26e2e955c93",
+    "trace_state": "",
+    "parent_span_id": "ab49a08a4a4d2fe7",
+    "kind": 2,
+    "start_time_unix_nano": 1696514313123043600,
+    "end_time_unix_nano": 1696514313124611300,
+    "attributes": {
+      "rpc.grpc.status_code": 0,
+      "net.sock.peer.port": 45160,
+      "rpc.method": "GetAds",
+      "thread.id": 34,
+      "app.ads.ad_response_type": "RANDOM",
+      "app.ads.count": 2,
+      "net.host.port": 8080,
+      "net.host.name": "otel-demo-adservice",
+      "rpc.service": "oteldemo.AdService",
+      "net.sock.peer.addr": "10.244.0.18",
+      "app.ads.contextKeys.count": 1,
+      "app.ads.contextKeys": "[books]",
+      "app.ads.ad_request_type": "TARGETED",
+      "rpc.system": "grpc",
+      "thread.name": "grpc-default-executor-1"
+    },
+    "dropped_attributes_count": 0,
+    "events": [
+      {
+        "time_unix_nano": 1696514313123695600,
+        "name": "message",
+        "attributes": {
+          "message.id": 1,
+          "message.type": "RECEIVED"
+        },
+        "dropped_attributes_count": 0
+      },
+      {
+        "time_unix_nano": 1696514313124530700,
+        "name": "message",
+        "attributes": {
+          "message.id": 2,
+          "message.type": "SENT"
+        },
+        "dropped_attributes_count": 0
+      }
+    ],
+    "dropped_events_count": 0,
+    "links": [],
+    "dropped_links_count": 0,
+    "status": {
+      "code": 0,
+      "message": ""
+    },
+    "_time": 1696514315.475,
+    "__bytes": 677,
+    "__srcIpPort": "107.4.162.218:56901",
+    "__inputId": "open_telemetry:open_telemetry",
+    "duration": 1567744,
+    "service": "adservice",
+    "resource_url": "oteldemo.AdService/GetAds",
+    "__criblMetrics": [
+      {
+        "values": [
+          "duration",
+          "status.code",
+          "http_status_code"
+        ],
+        "nameExpr": [
+          "'otel.duration'",
+          "'otel.status.code'",
+          "'otel.http.status.code'"
+        ],
+        "types": [
+          "gauge",
+          "gauge",
+          "gauge"
+        ],
+        "dims": [
+          "service",
+          "resource_url"
+        ]
+      }
+    ],
+    "cribl_pipe": "t2m",
+    "__outputId": "datadog:personal"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "resource": {
+      "dropped_attributes_count": 0,
+      "attributes": {
+        "container.id": "848624abe2502508fd4f54018146047762c5ed9843442be743a24c75e8f09123",
+        "host.arch": "aarch64",
+        "host.name": "otel-demo-adservice-54b76c796c-vmlwn",
+        "os.description": "Linux 5.10.104-linuxkit",
+        "os.type": "linux",
+        "process.command_line": "/opt/java/openjdk/bin/java -javaagent:/usr/src/app/opentelemetry-javaagent.jar oteldemo.AdService",
+        "process.executable.path": "/opt/java/openjdk/bin/java",
+        "process.pid": 1,
+        "process.runtime.description": "Eclipse Adoptium OpenJDK 64-Bit Server VM 17.0.8.1+1",
+        "process.runtime.name": "OpenJDK Runtime Environment",
+        "process.runtime.version": "17.0.8.1+1",
+        "service.name": "adservice",
+        "service.namespace": "opentelemetry-demo",
+        "telemetry.auto.version": "1.28.0",
+        "telemetry.sdk.language": "java",
+        "telemetry.sdk.name": "opentelemetry",
+        "telemetry.sdk.version": "1.28.0",
+        "k8s.pod.ip": "10.244.0.6",
+        "k8s.pod.start_time": "2023-10-05 13:54:10 +0000 UTC",
+        "k8s.pod.uid": "51cccac9-4e1f-4529-af97-552513b5deb0",
+        "k8s.deployment.name": "otel-demo-adservice",
+        "k8s.node.name": "minikube",
+        "k8s.pod.name": "otel-demo-adservice-54b76c796c-vmlwn",
+        "k8s.namespace.name": "default",
+        "service.instance.id": "51cccac9-4e1f-4529-af97-552513b5deb0"
+      }
+    },
+    "schema_url": "https://opentelemetry.io/schemas/1.20.0",
+    "instrumentation_library_span": {
+      "instrumentation_library": {
+        "name": "adservice",
+        "version": "unknown"
+      },
+      "schema_url": ""
+    },
+    "trace_id": "d0dbbc7b90b94be4fcd0ef7912ebaefd",
+    "span_id": "d60ed3c034352ca3",
+    "trace_state": "",
+    "parent_span_id": "43f3e26e2e955c93",
+    "kind": 1,
+    "start_time_unix_nano": 1696514313124019700,
+    "end_time_unix_nano": 1696514313124054500,
+    "attributes": {
+      "thread.id": 34,
+      "app.ads.count": 2,
+      "thread.name": "grpc-default-executor-1"
+    },
+    "dropped_attributes_count": 0,
+    "events": [],
+    "dropped_events_count": 0,
+    "links": [],
+    "dropped_links_count": 0,
+    "status": {
+      "code": 0,
+      "message": ""
+    },
+    "_time": 1696514315.475,
+    "__bytes": 154,
+    "__srcIpPort": "107.4.162.218:56901",
+    "__inputId": "open_telemetry:open_telemetry",
+    "duration": 34816,
+    "service": "adservice",
+    "resource_url": "getRandomAds",
+    "__criblMetrics": [
+      {
+        "values": [
+          "duration",
+          "status.code",
+          "http_status_code"
+        ],
+        "nameExpr": [
+          "'otel.duration'",
+          "'otel.status.code'",
+          "'otel.http.status.code'"
+        ],
+        "types": [
+          "gauge",
+          "gauge",
+          "gauge"
+        ],
+        "dims": [
+          "service",
+          "resource_url"
+        ]
+      }
+    ],
+    "cribl_pipe": "t2m",
+    "__outputId": "datadog:personal"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "resource": {
+      "dropped_attributes_count": 0,
+      "attributes": {
+        "telemetry.sdk.language": "python",
+        "telemetry.sdk.name": "opentelemetry",
+        "telemetry.sdk.version": "1.19.0",
+        "service.name": "recommendationservice",
+        "service.namespace": "opentelemetry-demo",
+        "telemetry.auto.version": "0.40b0",
+        "k8s.pod.ip": "10.244.0.25",
+        "k8s.namespace.name": "default",
+        "k8s.pod.start_time": "2023-10-05 13:54:10 +0000 UTC",
+        "k8s.pod.uid": "0292f0bd-0f34-4f0c-a32f-0f842edf9412",
+        "k8s.deployment.name": "otel-demo-recommendationservice",
+        "k8s.node.name": "minikube",
+        "k8s.pod.name": "otel-demo-recommendationservice-5df8c85444-gwvgx",
+        "service.instance.id": "0292f0bd-0f34-4f0c-a32f-0f842edf9412"
+      }
+    },
+    "schema_url": "",
+    "instrumentation_library_span": {
+      "instrumentation_library": {
+        "name": "opentelemetry.instrumentation.grpc",
+        "version": "0.40b0"
+      },
+      "schema_url": ""
+    },
+    "trace_id": "2d4c3e7e44e78156f15b46562314fcef",
+    "span_id": "db645850dd3bcb25",
+    "trace_state": "",
+    "parent_span_id": "cf1e45ec916ef729",
+    "kind": 3,
+    "start_time_unix_nano": 1696514312444414200,
+    "end_time_unix_nano": 1696514312446462000,
+    "attributes": {
+      "rpc.system": "grpc",
+      "rpc.grpc.status_code": 0,
+      "rpc.method": "GetFlag",
+      "rpc.service": "oteldemo.FeatureFlagService"
+    },
+    "dropped_attributes_count": 0,
+    "events": [],
+    "dropped_events_count": 0,
+    "links": [],
+    "dropped_links_count": 0,
+    "status": {
+      "code": 0,
+      "message": ""
+    },
+    "_time": 1696514315.475,
+    "__bytes": 219,
+    "__srcIpPort": "107.4.162.218:56901",
+    "__inputId": "open_telemetry:open_telemetry",
+    "duration": 2047744,
+    "service": "recommendationservice",
+    "resource_url": "/oteldemo.FeatureFlagService/GetFlag",
+    "__criblMetrics": [
+      {
+        "values": [
+          "duration",
+          "status.code",
+          "http_status_code"
+        ],
+        "nameExpr": [
+          "'otel.duration'",
+          "'otel.status.code'",
+          "'otel.http.status.code'"
+        ],
+        "types": [
+          "gauge",
+          "gauge",
+          "gauge"
+        ],
+        "dims": [
+          "service",
+          "resource_url"
+        ]
+      }
+    ],
+    "cribl_pipe": "t2m",
+    "__outputId": "datadog:personal"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "resource": {
+      "dropped_attributes_count": 0,
+      "attributes": {
+        "telemetry.sdk.language": "python",
+        "telemetry.sdk.name": "opentelemetry",
+        "telemetry.sdk.version": "1.19.0",
+        "service.name": "recommendationservice",
+        "service.namespace": "opentelemetry-demo",
+        "telemetry.auto.version": "0.40b0",
+        "k8s.pod.ip": "10.244.0.25",
+        "k8s.namespace.name": "default",
+        "k8s.pod.start_time": "2023-10-05 13:54:10 +0000 UTC",
+        "k8s.pod.uid": "0292f0bd-0f34-4f0c-a32f-0f842edf9412",
+        "k8s.deployment.name": "otel-demo-recommendationservice",
+        "k8s.node.name": "minikube",
+        "k8s.pod.name": "otel-demo-recommendationservice-5df8c85444-gwvgx",
+        "service.instance.id": "0292f0bd-0f34-4f0c-a32f-0f842edf9412"
+      }
+    },
+    "schema_url": "",
+    "instrumentation_library_span": {
+      "instrumentation_library": {
+        "name": "opentelemetry.instrumentation.grpc",
+        "version": "0.40b0"
+      },
+      "schema_url": ""
+    },
+    "trace_id": "2d4c3e7e44e78156f15b46562314fcef",
+    "span_id": "18eda7cbafacdcb5",
+    "trace_state": "",
+    "parent_span_id": "cf1e45ec916ef729",
+    "kind": 3,
+    "start_time_unix_nano": 1696514312446516500,
+    "end_time_unix_nano": 1696514312447384000,
+    "attributes": {
+      "rpc.system": "grpc",
+      "rpc.grpc.status_code": 0,
+      "rpc.method": "ListProducts",
+      "rpc.service": "oteldemo.ProductCatalogService"
+    },
+    "dropped_attributes_count": 0,
+    "events": [],
+    "dropped_events_count": 0,
+    "links": [],
+    "dropped_links_count": 0,
+    "status": {
+      "code": 0,
+      "message": ""
+    },
+    "_time": 1696514315.475,
+    "__bytes": 235,
+    "__srcIpPort": "107.4.162.218:56901",
+    "__inputId": "open_telemetry:open_telemetry",
+    "duration": 867584,
+    "service": "recommendationservice",
+    "resource_url": "/oteldemo.ProductCatalogService/ListProducts",
+    "__criblMetrics": [
+      {
+        "values": [
+          "duration",
+          "status.code",
+          "http_status_code"
+        ],
+        "nameExpr": [
+          "'otel.duration'",
+          "'otel.status.code'",
+          "'otel.http.status.code'"
+        ],
+        "types": [
+          "gauge",
+          "gauge",
+          "gauge"
+        ],
+        "dims": [
+          "service",
+          "resource_url"
+        ]
+      }
+    ],
+    "cribl_pipe": "t2m",
+    "__outputId": "datadog:personal"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "resource": {
+      "dropped_attributes_count": 0,
+      "attributes": {
+        "telemetry.sdk.language": "python",
+        "telemetry.sdk.name": "opentelemetry",
+        "telemetry.sdk.version": "1.19.0",
+        "service.name": "recommendationservice",
+        "service.namespace": "opentelemetry-demo",
+        "telemetry.auto.version": "0.40b0",
+        "k8s.pod.ip": "10.244.0.25",
+        "k8s.namespace.name": "default",
+        "k8s.pod.start_time": "2023-10-05 13:54:10 +0000 UTC",
+        "k8s.pod.uid": "0292f0bd-0f34-4f0c-a32f-0f842edf9412",
+        "k8s.deployment.name": "otel-demo-recommendationservice",
+        "k8s.node.name": "minikube",
+        "k8s.pod.name": "otel-demo-recommendationservice-5df8c85444-gwvgx",
+        "service.instance.id": "0292f0bd-0f34-4f0c-a32f-0f842edf9412"
+      }
+    },
+    "schema_url": "",
+    "instrumentation_library_span": {
+      "instrumentation_library": {
+        "name": "opentelemetry.instrumentation.grpc",
+        "version": "0.40b0"
+      },
+      "schema_url": ""
+    },
+    "trace_id": "2d4c3e7e44e78156f15b46562314fcef",
+    "span_id": "935893fe3e0c8726",
+    "trace_state": "",
+    "parent_span_id": "96a902890807617b",
+    "kind": 2,
+    "start_time_unix_nano": 1696514312444350500,
+    "end_time_unix_nano": 1696514312447624400,
+    "attributes": {
+      "rpc.system": "grpc",
+      "rpc.grpc.status_code": 0,
+      "rpc.method": "ListRecommendations",
+      "rpc.service": "oteldemo.RecommendationService",
+      "rpc.user_agent": "grpc-node-js/1.9.0",
+      "net.peer.ip": "10.244.0.18",
+      "net.peer.port": "58872",
+      "app.products_recommended.count": 5
+    },
+    "dropped_attributes_count": 0,
+    "events": [],
+    "dropped_events_count": 0,
+    "links": [],
+    "dropped_links_count": 0,
+    "status": {
+      "code": 0,
+      "message": ""
+    },
+    "_time": 1696514315.475,
+    "__bytes": 383,
+    "__srcIpPort": "107.4.162.218:56901",
+    "__inputId": "open_telemetry:open_telemetry",
+    "duration": 3273984,
+    "service": "recommendationservice",
+    "resource_url": "/oteldemo.RecommendationService/ListRecommendations",
+    "__criblMetrics": [
+      {
+        "values": [
+          "duration",
+          "status.code",
+          "http_status_code"
+        ],
+        "nameExpr": [
+          "'otel.duration'",
+          "'otel.status.code'",
+          "'otel.http.status.code'"
+        ],
+        "types": [
+          "gauge",
+          "gauge",
+          "gauge"
+        ],
+        "dims": [
+          "service",
+          "resource_url"
+        ]
+      }
+    ],
+    "cribl_pipe": "t2m",
+    "__outputId": "datadog:personal"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "resource": {
+      "dropped_attributes_count": 0,
+      "attributes": {
+        "telemetry.sdk.language": "python",
+        "telemetry.sdk.name": "opentelemetry",
+        "telemetry.sdk.version": "1.19.0",
+        "service.name": "recommendationservice",
+        "service.namespace": "opentelemetry-demo",
+        "telemetry.auto.version": "0.40b0",
+        "k8s.pod.ip": "10.244.0.25",
+        "k8s.namespace.name": "default",
+        "k8s.pod.start_time": "2023-10-05 13:54:10 +0000 UTC",
+        "k8s.pod.uid": "0292f0bd-0f34-4f0c-a32f-0f842edf9412",
+        "k8s.deployment.name": "otel-demo-recommendationservice",
+        "k8s.node.name": "minikube",
+        "k8s.pod.name": "otel-demo-recommendationservice-5df8c85444-gwvgx",
+        "service.instance.id": "0292f0bd-0f34-4f0c-a32f-0f842edf9412"
+      }
+    },
+    "schema_url": "",
+    "instrumentation_library_span": {
+      "instrumentation_library": {
+        "name": "opentelemetry.instrumentation.grpc",
+        "version": "0.40b0"
+      },
+      "schema_url": ""
+    },
+    "trace_id": "2522fa743c1f1d871efe6e0fdad83df0",
+    "span_id": "eeffbd0d06b645c1",
+    "trace_state": "",
+    "parent_span_id": "8d606bf0097399fd",
+    "kind": 3,
+    "start_time_unix_nano": 1696514312503585000,
+    "end_time_unix_nano": 1696514312505346300,
+    "attributes": {
+      "rpc.system": "grpc",
+      "rpc.grpc.status_code": 0,
+      "rpc.method": "GetFlag",
+      "rpc.service": "oteldemo.FeatureFlagService"
+    },
+    "dropped_attributes_count": 0,
+    "events": [],
+    "dropped_events_count": 0,
+    "links": [],
+    "dropped_links_count": 0,
+    "status": {
+      "code": 0,
+      "message": ""
+    },
+    "_time": 1696514315.475,
+    "__bytes": 219,
+    "__srcIpPort": "107.4.162.218:56901",
+    "__inputId": "open_telemetry:open_telemetry",
+    "duration": 1761280,
+    "service": "recommendationservice",
+    "resource_url": "/oteldemo.FeatureFlagService/GetFlag",
+    "__criblMetrics": [
+      {
+        "values": [
+          "duration",
+          "status.code",
+          "http_status_code"
+        ],
+        "nameExpr": [
+          "'otel.duration'",
+          "'otel.status.code'",
+          "'otel.http.status.code'"
+        ],
+        "types": [
+          "gauge",
+          "gauge",
+          "gauge"
+        ],
+        "dims": [
+          "service",
+          "resource_url"
+        ]
+      }
+    ],
+    "cribl_pipe": "t2m",
+    "__outputId": "datadog:personal"
+  }
+]

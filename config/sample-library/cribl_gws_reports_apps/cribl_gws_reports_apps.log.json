@@ -1,0 +1,114 @@
+[
+  {
+    "_raw": "{\n      \"kind\": \"admin#reports#activity\",\n      \"id\": {\n        \"time\": \"2025-10-15T19:30:26.851Z\",\n        \"uniqueQualifier\": \"3970913979489681016\",\n        \"applicationName\": \"gemini_in_workspace_apps\",\n        \"customerId\": \"D03cdmbi0\"\n      },\n      \"etag\": \"\\\"6yvc0u1_mWuJiETyootWURYWuYFYgltz9xJKYRsM3cM/scUWhdME5qbFUnBxhMb1JF-x7xc\\\"\",\n      \"actor\": {\n        \"callerType\": \"USER\",\n        \"email\": \"user@acmecorp.com\",\n        \"profileId\": \"117329556664445035546\"\n      },\n      \"ipAddress\": \"69.122.43.179\",\n      \"networkInfo\": {\n        \"ipAsn\": [\n          701\n        ],\n        \"regionCode\": \"US\",\n        \"subdivisionCode\": \"US-NY\"\n      },\n      \"events\": [\n        {\n          \"type\": \"ai_usage_event\",\n          \"name\": \"feature_utilization\",\n          \"parameters\": [\n            {\n              \"name\": \"app_name\",\n              \"value\": \"gemini_app\"\n            },\n            {\n              \"name\": \"feature_source\",\n              \"value\": \"chat_with_gemini\"\n            },\n            {\n              \"name\": \"action\",\n              \"value\": \"classic_use_case_gemini_app\"\n            },\n            {\n              \"name\": \"event_category\",\n              \"value\": \"active_conversations\"\n            }\n          ]\n        }\n      ]\n    }",
+    "host": "ip-10-255-0-219",
+    "source": "https://admin.googleapis.com/admin/reports/v1/activity/users/all/applications/gemini_in_workspace_apps",
+    "kind": "admin#reports#activity",
+    "id": {
+      "time": "2025-10-15T19:30:26.851Z",
+      "uniqueQualifier": "3970913979489681016",
+      "applicationName": "gemini_in_workspace_apps",
+      "customerId": "D03cdmbi0"
+    },
+    "etag": "\"6yvc0u1_mWuJiETyootWURYWuYFYgltz9xJKYRsM3cM/scUWhdME5qbFUnBxhMb1JF-x7xc\"",
+    "actor": {
+      "callerType": "USER",
+      "email": "user@acmecorp.com",
+      "profileId": "117329556664445035546"
+    },
+    "ipAddress": "69.122.43.179",
+    "networkInfo": {
+      "ipAsn": [
+        701
+      ],
+      "regionCode": "US",
+      "subdivisionCode": "US-NY"
+    },
+    "events": [
+      {
+        "type": "ai_usage_event",
+        "name": "feature_utilization",
+        "parameters": [
+          {
+            "name": "app_name",
+            "value": "gemini_app"
+          },
+          {
+            "name": "feature_source",
+            "value": "chat_with_gemini"
+          },
+          {
+            "name": "action",
+            "value": "classic_use_case_gemini_app"
+          },
+          {
+            "name": "event_category",
+            "value": "active_conversations"
+          }
+        ]
+      }
+    ],
+    "_time": 1760556626.851,
+    "_data_source": "http_google_workspace_admin",
+    "cribl_breaker": [
+      "google_sdk:get_items",
+      "ndjson"
+    ]
+  },
+  {
+    "_raw": "{\n      \"kind\": \"admin#reports#activity\",\n      \"id\": {\n        \"time\": \"2025-10-15T19:23:36.443Z\",\n        \"uniqueQualifier\": \"-5863911632630507400\",\n        \"applicationName\": \"gemini_in_workspace_apps\",\n        \"customerId\": \"D03cdmbi0\"\n      },\n      \"etag\": \"\\\"6yvc0u1_mWuJiETyootWURYWuYFYgltz9xJKYRsM3cM/-yXfQPj321KRfBq7-jgxXvHUnE4\\\"\",\n      \"actor\": {\n        \"callerType\": \"USER\",\n        \"email\": \"user@acmecorp.com\",\n        \"profileId\": \"117329556664445035546\"\n      },\n      \"ipAddress\": \"69.122.43.179\",\n      \"networkInfo\": {\n        \"ipAsn\": [\n          701\n        ],\n        \"regionCode\": \"US\",\n        \"subdivisionCode\": \"US-NY\"\n      },\n      \"events\": [\n        {\n          \"type\": \"ai_usage_event\",\n          \"name\": \"feature_utilization\",\n          \"parameters\": [\n            {\n              \"name\": \"app_name\",\n              \"value\": \"docs\"\n            },\n            {\n              \"name\": \"feature_source\",\n              \"value\": \"help_me_write\"\n            },\n            {\n              \"name\": \"action\",\n              \"value\": \"generate_document\"\n            },\n            {\n              \"name\": \"event_category\",\n              \"value\": \"active_generate\"\n            }\n          ]\n        }\n      ]\n    }",
+    "host": "ip-10-255-0-219",
+    "source": "https://admin.googleapis.com/admin/reports/v1/activity/users/all/applications/gemini_in_workspace_apps",
+    "kind": "admin#reports#activity",
+    "id": {
+      "time": "2025-10-15T19:23:36.443Z",
+      "uniqueQualifier": "-5863911632630507400",
+      "applicationName": "gemini_in_workspace_apps",
+      "customerId": "D03cdmbi0"
+    },
+    "etag": "\"6yvc0u1_mWuJiETyootWURYWuYFYgltz9xJKYRsM3cM/-yXfQPj321KRfBq7-jgxXvHUnE4\"",
+    "actor": {
+      "callerType": "USER",
+      "email": "user@acmecorp.com",
+      "profileId": "117329556664445035546"
+    },
+    "ipAddress": "69.122.43.179",
+    "networkInfo": {
+      "ipAsn": [
+        701
+      ],
+      "regionCode": "US",
+      "subdivisionCode": "US-NY"
+    },
+    "events": [
+      {
+        "type": "ai_usage_event",
+        "name": "feature_utilization",
+        "parameters": [
+          {
+            "name": "app_name",
+            "value": "docs"
+          },
+          {
+            "name": "feature_source",
+            "value": "help_me_write"
+          },
+          {
+            "name": "action",
+            "value": "generate_document"
+          },
+          {
+            "name": "event_category",
+            "value": "active_generate"
+          }
+        ]
+      }
+    ],
+    "_time": 1760556216.443,
+    "_data_source": "http_google_workspace_admin",
+    "cribl_breaker": [
+      "google_sdk:get_items",
+      "ndjson"
+    ]
+  }
+]

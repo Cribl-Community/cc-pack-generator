@@ -1,0 +1,524 @@
+[
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "__raw": "{\"records\": [{ \"time\": \"2026-03-12T20:06:02.4567382Z\", \"resourceId\": \"/tenants/00000000-8e35-44eb-95d1-000000000000/providers/Microsoft.aadiam\", \"operationName\": \"Sign-in activity\", \"operationVersion\": \"1.0\", \"category\": \"NonInteractiveUserSignInLogs\", \"tenantId\": \"00000000-8e35-44eb-95d1-000000000000\", \"resultType\": \"0\", \"resultSignature\": \"SUCCESS\", \"durationMs\": 0, \"callerIpAddress\": \"2601:280:5d80:af00:ccaf:2e27:dd76:c44b\", \"correlationId\": \"9cd416a9-50ef-4422-a924-e910e685382a\", \"identity\": \"Mike Score\", \"level\": \"4\", \"location\": \"US\", \"properties\": {\"id\":\"2bbb5a8b-af3b-4167-8e1b-5ac04f810600\",\"createdDateTime\":\"2026-03-12T20:04:16.5502885+00:00\",\"userDisplayName\":\"Mike Score\",\"userPrincipalName\":\"mscore@afos.io\",\"userId\":\"4db31d77-4304-4c83-9d1a-f8de57b58c3b\",\"agent\":{\"agentType\":\"notAgentic\",\"agentSubjectType\":\"notAgentic\"},\"appId\":\"c0ab8ce9-e9a0-42e7-b064-33d422df41f1\",\"appDisplayName\":\"M365ChatClient\",\"ipAddress\":\"2601:280:5d80:af00:ccaf:2e27:dd76:c44b\",\"ipAddressFromResourceProvider\":\"\",\"status\":{\"errorCode\":0,\"additionalDetails\":\"MFA requirement satisfied by claim in the token\"},\"clientAppUsed\":\"Mobile Apps and Desktop clients\",\"userAgent\":\"Mozilla/5.0 (compatible; MSAL 1.0) PKeyAuth/1.0\",\"deviceDetail\":{\"deviceId\":\"\",\"operatingSystem\":\"MacOs\",\"browser\":\"\",\"isCompliant\":false,\"isManaged\":false},\"location\":{\"city\":\"Thornton\",\"state\":\"Colorado\",\"countryOrRegion\":\"US\",\"geoCoordinates\":{\"latitude\":39.860958099365234,\"longitude\":-104.97530364990234}},\"correlationId\":\"9cd416a9-50ef-4422-a924-e910e685382a\",\"conditionalAccessStatus\":\"notApplied\",\"appliedConditionalAccessPolicies\":[{\"id\":\"SecurityDefaults\",\"displayName\":\"Security Defaults\",\"enforcedGrantControls\":[\"Mfa\"],\"result\":\"success\",\"conditionsSatisfied\":3,\"conditionsNotSatisfied\":0},{\"id\":\"082cac04-c044-4d11-9802-0ef202e67665\",\"displayName\":\"Require multifactor authentication for all users\",\"enforcedGrantControls\":[\"Mfa\"],\"result\":\"reportOnlyNotApplied\",\"conditionsSatisfied\":1,\"conditionsNotSatisfied\":2}],\"authenticationContextClassReferences\":[],\"originalRequestId\":\"2bbb5a8b-af3b-4167-8e1b-5ac04f810600\",\"isInteractive\":false,\"tokenIssuerName\":\"\",\"tokenIssuerType\":\"AzureAD\",\"authenticationProcessingDetails\":[{\"key\":\"Legacy TLS (TLS 1.0, 1.1, 3DES)\",\"value\":\"False\"},{\"key\":\"Oauth Scope Info\",\"value\":\"[\\\"SubstrateSearch-Internal.ReadWrite\\\"]\"},{\"key\":\"Is Legacy Store Used\",\"value\":\"False\"},{\"key\":\"Is CAE Token\",\"value\":\"False\"}],\"clientCredentialType\":\"none\",\"processingTimeInMilliseconds\":169,\"riskDetail\":\"hidden\",\"riskLevelAggregated\":\"hidden\",\"riskLevelDuringSignIn\":\"hidden\",\"riskState\":\"none\",\"riskEventTypes\":[],\"riskEventTypes_v2\":[],\"resourceDisplayName\":\"Office 365 Search Service\",\"resourceId\":\"66a88757-258c-4c72-893c-3e8bed4d6899\",\"resourceTenantId\":\"00000000-8e35-44eb-95d1-000000000000\",\"homeTenantId\":\"00000000-8e35-44eb-95d1-000000000000\",\"tenantId\":\"00000000-8e35-44eb-95d1-000000000000\",\"homeTenantName\":\"\",\"authenticationDetails\":[{\"authenticationStepDateTime\":\"2026-03-12T20:04:16.5502885+00:00\",\"authenticationMethod\":\"Previously satisfied\",\"authenticationMethodDetail\":\"\",\"succeeded\":true,\"authenticationStepResultDetail\":\"MFA requirement satisfied by claim in the token\",\"authenticationStepRequirement\":\"\"}],\"authenticationRequirementPolicies\":[{\"requirementProvider\":\"securityDefaults\",\"detail\":\"Security Defaults\"}],\"sessionLifetimePolicies\":[],\"authenticationRequirement\":\"multiFactorAuthentication\",\"alternateSignInName\":\"\",\"signInIdentifier\":\"\",\"servicePrincipalName\":\"M365ChatClient\",\"signInEventTypes\":[\"nonInteractiveUser\"],\"servicePrincipalId\":\"\",\"userType\":\"Member\",\"flaggedForReview\":false,\"isTenantRestricted\":false,\"autonomousSystemNumber\":7922,\"crossTenantAccessType\":\"none\",\"privateLinkDetails\":{},\"servicePrincipalCredentialKeyId\":\"\",\"servicePrincipalCredentialThumbprint\":\"\",\"uniqueTokenIdentifier\":\"i1q7KzuvZ0GOG1rAT4EGAA\",\"authenticationStrengths\":[],\"incomingTokenType\":\"refreshToken\",\"authenticationProtocol\":\"none\",\"appServicePrincipalId\":null,\"resourceServicePrincipalId\":\"00000000-2343-47cb-ae96-000000000000\",\"signInTokenProtectionStatus\":\"none\",\"tokenProtectionStatusDetails\":{\"signInSessionStatus\":\"unbound\",\"signInSessionStatusCode\":1002},\"originalTransferMethod\":\"none\",\"isThroughGlobalSecureAccess\":false,\"globalSecureAccessIpAddress\":\"\",\"conditionalAccessAudiences\":[\"66a88757-258c-4c72-893c-3e8bed4d6899\"],\"sessionId\":\"00319f39-35c7-1f3a-8f68-8210db853daa\",\"appOwnerTenantId\":\"00000000-8e35-44eb-95d1-000000000000\",\"resourceOwnerTenantId\":\"00000000-8e35-44eb-95d1-000000000000\",\"sourceAppClientId\":\"\",\"redirectUrl\":\"\"}}]}",
+    "__topicIn": "splunk",
+    "__partition": 0,
+    "_time": 1773345856.5502882,
+    "__inputId": "eventhub:cribl-microsoft-entraid-io.in_nth_azure_monitor_aad",
+    "__synthetic": true,
+    "time": "2026-03-12T20:06:02.4567382Z",
+    "resourceId": "/tenants/00000000-8e35-44eb-95d1-000000000000/providers/Microsoft.aadiam",
+    "operationName": "Sign-in activity",
+    "operationVersion": "1.0",
+    "category": "NonInteractiveUserSignInLogs",
+    "tenantId": "00000000-8e35-44eb-95d1-000000000000",
+    "resultType": "0",
+    "resultSignature": "SUCCESS",
+    "durationMs": 0,
+    "callerIpAddress": "2601:280:5d80:af00:ccaf:2e27:dd76:c44b",
+    "correlationId": "9cd416a9-50ef-4422-a924-e910e685382a",
+    "identity": "Mike Score",
+    "level": "4",
+    "location": "US",
+    "properties": {
+      "id": "2bbb5a8b-af3b-4167-8e1b-5ac04f810600",
+      "createdDateTime": "2026-03-12T20:04:16.5502885+00:00",
+      "userDisplayName": "Mike Score",
+      "userPrincipalName": "mscore@afos.io",
+      "userId": "4db31d77-4304-4c83-9d1a-f8de57b58c3b",
+      "agent": {
+        "agentType": "notAgentic",
+        "agentSubjectType": "notAgentic"
+      },
+      "appId": "c0ab8ce9-e9a0-42e7-b064-33d422df41f1",
+      "appDisplayName": "M365ChatClient",
+      "ipAddress": "2601:280:5d80:af00:ccaf:2e27:dd76:c44b",
+      "status": {
+        "errorCode": 0,
+        "additionalDetails": "MFA requirement satisfied by claim in the token"
+      },
+      "clientAppUsed": "Mobile Apps and Desktop clients",
+      "userAgent": "Mozilla/5.0 (compatible; MSAL 1.0) PKeyAuth/1.0",
+      "deviceDetail": {
+        "operatingSystem": "MacOs",
+        "isCompliant": false,
+        "isManaged": false
+      },
+      "location": {
+        "city": "Thornton",
+        "state": "Colorado",
+        "countryOrRegion": "US",
+        "geoCoordinates": {
+          "latitude": 39.860958099365234,
+          "longitude": -104.97530364990234
+        }
+      },
+      "correlationId": "9cd416a9-50ef-4422-a924-e910e685382a",
+      "conditionalAccessStatus": "notApplied",
+      "appliedConditionalAccessPolicies": [
+        {
+          "id": "SecurityDefaults",
+          "displayName": "Security Defaults",
+          "enforcedGrantControls": [
+            "Mfa"
+          ],
+          "result": "success",
+          "conditionsSatisfied": 3,
+          "conditionsNotSatisfied": 0
+        },
+        {
+          "id": "082cac04-c044-4d11-9802-0ef202e67665",
+          "displayName": "Require multifactor authentication for all users",
+          "enforcedGrantControls": [
+            "Mfa"
+          ],
+          "result": "reportOnlyNotApplied",
+          "conditionsSatisfied": 1,
+          "conditionsNotSatisfied": 2
+        }
+      ],
+      "authenticationContextClassReferences": [],
+      "originalRequestId": "2bbb5a8b-af3b-4167-8e1b-5ac04f810600",
+      "isInteractive": false,
+      "tokenIssuerType": "AzureAD",
+      "authenticationProcessingDetails": [
+        {
+          "key": "Legacy TLS (TLS 1.0, 1.1, 3DES)",
+          "value": "False"
+        },
+        {
+          "key": "Oauth Scope Info",
+          "value": "[\"SubstrateSearch-Internal.ReadWrite\"]"
+        },
+        {
+          "key": "Is Legacy Store Used",
+          "value": "False"
+        },
+        {
+          "key": "Is CAE Token",
+          "value": "False"
+        }
+      ],
+      "clientCredentialType": "none",
+      "processingTimeInMilliseconds": 169,
+      "riskDetail": "hidden",
+      "riskLevelAggregated": "hidden",
+      "riskLevelDuringSignIn": "hidden",
+      "riskState": "none",
+      "riskEventTypes": [],
+      "riskEventTypes_v2": [],
+      "resourceDisplayName": "Office 365 Search Service",
+      "resourceId": "66a88757-258c-4c72-893c-3e8bed4d6899",
+      "resourceTenantId": "00000000-8e35-44eb-95d1-000000000000",
+      "homeTenantId": "00000000-8e35-44eb-95d1-000000000000",
+      "tenantId": "00000000-8e35-44eb-95d1-000000000000",
+      "authenticationDetails": [
+        {
+          "authenticationStepDateTime": "2026-03-12T20:04:16.5502885+00:00",
+          "authenticationMethod": "Previously satisfied",
+          "succeeded": true,
+          "authenticationStepResultDetail": "MFA requirement satisfied by claim in the token"
+        }
+      ],
+      "authenticationRequirementPolicies": [
+        {
+          "requirementProvider": "securityDefaults",
+          "detail": "Security Defaults"
+        }
+      ],
+      "sessionLifetimePolicies": [],
+      "authenticationRequirement": "multiFactorAuthentication",
+      "servicePrincipalName": "M365ChatClient",
+      "signInEventTypes": [
+        "nonInteractiveUser"
+      ],
+      "userType": "Member",
+      "flaggedForReview": false,
+      "isTenantRestricted": false,
+      "autonomousSystemNumber": 7922,
+      "crossTenantAccessType": "none",
+      "privateLinkDetails": {},
+      "uniqueTokenIdentifier": "i1q7KzuvZ0GOG1rAT4EGAA",
+      "authenticationStrengths": [],
+      "incomingTokenType": "refreshToken",
+      "authenticationProtocol": "none",
+      "resourceServicePrincipalId": "00000000-2343-47cb-ae96-000000000000",
+      "signInTokenProtectionStatus": "none",
+      "tokenProtectionStatusDetails": {
+        "signInSessionStatus": "unbound",
+        "signInSessionStatusCode": 1002
+      },
+      "originalTransferMethod": "none",
+      "isThroughGlobalSecureAccess": false,
+      "conditionalAccessAudiences": [
+        "66a88757-258c-4c72-893c-3e8bed4d6899"
+      ],
+      "sessionId": "00319f39-35c7-1f3a-8f68-8210db853daa",
+      "appOwnerTenantId": "00000000-8e35-44eb-95d1-000000000000",
+      "resourceOwnerTenantId": "00000000-8e35-44eb-95d1-000000000000"
+    },
+    "cribl_pipe": "_cribl_eventhub_msentra_preprocess",
+    "__packId": "cribl-microsoft-entraid-io"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "__raw": "{\"records\": [{ \"time\": \"2026-03-12T20:07:42.4551821Z\", \"resourceId\": \"/tenants/00000000-8e35-44eb-95d1-000000000000/providers/Microsoft.aadiam\", \"operationName\": \"Sign-in activity\", \"operationVersion\": \"1.0\", \"category\": \"NonInteractiveUserSignInLogs\", \"tenantId\": \"00000000-8e35-44eb-95d1-000000000000\", \"resultType\": \"0\", \"resultSignature\": \"SUCCESS\", \"durationMs\": 0, \"callerIpAddress\": \"2601:280:5d80:af00:ed4e:1fba:c906:b7b5\", \"correlationId\": \"cb2c0100-7cd3-4f82-8c5f-33278c3a02c1\", \"identity\": \"Mike Score\", \"level\": \"4\", \"location\": \"US\", \"properties\": {\"id\":\"5f3a9e30-9ef0-479d-ad6f-aad2a7250800\",\"createdDateTime\":\"2026-03-12T20:06:55.65756+00:00\",\"userDisplayName\":\"Mike Score\",\"userPrincipalName\":\"mscore@afos.io\",\"userId\":\"4db31d77-4304-4c83-9d1a-f8de57b58c3b\",\"agent\":{\"agentType\":\"notAgentic\",\"agentSubjectType\":\"notAgentic\"},\"appId\":\"1fec8e78-bce4-4aaf-ab1b-5451cc387264\",\"appDisplayName\":\"Microsoft Teams\",\"ipAddress\":\"2601:280:5d80:af00:ed4e:1fba:c906:b7b5\",\"ipAddressFromResourceProvider\":\"\",\"status\":{\"errorCode\":0,\"additionalDetails\":\"MFA requirement satisfied by claim in the token\"},\"clientAppUsed\":\"Mobile Apps and Desktop clients\",\"userAgent\":\"MSAL 1.1.0 (iPhone; OS 26_3_1 like Mac OS X arm64 en-US) PKeyAuth/1.0\",\"deviceDetail\":{\"deviceId\":\"\",\"operatingSystem\":\"Ios 26.3.1\",\"browser\":\"Mobile Safari\",\"isCompliant\":false,\"isManaged\":false},\"location\":{\"city\":\"Thornton\",\"state\":\"Colorado\",\"countryOrRegion\":\"US\",\"geoCoordinates\":{\"latitude\":39.858280181884766,\"longitude\":-104.9792709350586}},\"correlationId\":\"cb2c0100-7cd3-4f82-8c5f-33278c3a02c1\",\"conditionalAccessStatus\":\"notApplied\",\"appliedConditionalAccessPolicies\":[{\"id\":\"SecurityDefaults\",\"displayName\":\"Security Defaults\",\"enforcedGrantControls\":[\"Mfa\"],\"result\":\"success\",\"conditionsSatisfied\":3,\"conditionsNotSatisfied\":0},{\"id\":\"082cac04-c044-4d11-9802-0ef202e67665\",\"displayName\":\"Require multifactor authentication for all users\",\"enforcedGrantControls\":[\"Mfa\"],\"result\":\"reportOnlyNotApplied\",\"conditionsSatisfied\":1,\"conditionsNotSatisfied\":2}],\"authenticationContextClassReferences\":[],\"originalRequestId\":\"5f3a9e30-9ef0-479d-ad6f-aad2a7250800\",\"isInteractive\":false,\"tokenIssuerName\":\"\",\"tokenIssuerType\":\"AzureAD\",\"authenticationProcessingDetails\":[{\"key\":\"Is Client Capable\",\"value\":\"True\"},{\"key\":\"Legacy TLS (TLS 1.0, 1.1, 3DES)\",\"value\":\"False\"},{\"key\":\"Token Binding Attempted\",\"value\":\"True\"},{\"key\":\"Root Key Type\",\"value\":\"Unknown\"},{\"key\":\"Oauth Scope Info\",\"value\":\"[\\\"Teams.AccessAsUser.All\\\"]\"},{\"key\":\"Is Legacy Store Used\",\"value\":\"False\"},{\"key\":\"Is CAE Token\",\"value\":\"False\"}],\"clientCredentialType\":\"none\",\"processingTimeInMilliseconds\":59,\"riskDetail\":\"hidden\",\"riskLevelAggregated\":\"hidden\",\"riskLevelDuringSignIn\":\"hidden\",\"riskState\":\"none\",\"riskEventTypes\":[],\"riskEventTypes_v2\":[],\"resourceDisplayName\":\"IC3 Gateway\",\"resourceId\":\"39aaf054-81a5-48c7-a4f8-0293012095b9\",\"resourceTenantId\":\"00000000-8e35-44eb-95d1-000000000000\",\"homeTenantId\":\"00000000-8e35-44eb-95d1-000000000000\",\"tenantId\":\"00000000-8e35-44eb-95d1-000000000000\",\"homeTenantName\":\"\",\"authenticationDetails\":[{\"authenticationStepDateTime\":\"2026-03-12T20:06:55.65756+00:00\",\"authenticationMethod\":\"Previously satisfied\",\"authenticationMethodDetail\":\"\",\"succeeded\":true,\"authenticationStepResultDetail\":\"MFA requirement satisfied by claim in the token\",\"authenticationStepRequirement\":\"\"}],\"authenticationRequirementPolicies\":[{\"requirementProvider\":\"securityDefaults\",\"detail\":\"Security Defaults\"}],\"sessionLifetimePolicies\":[],\"authenticationRequirement\":\"multiFactorAuthentication\",\"alternateSignInName\":\"\",\"signInIdentifier\":\"\",\"servicePrincipalName\":\"Microsoft Teams\",\"signInEventTypes\":[\"nonInteractiveUser\"],\"servicePrincipalId\":\"299ad2d6-382a-4215-85ce-0d94f7ef77ee\",\"userType\":\"Member\",\"flaggedForReview\":false,\"isTenantRestricted\":false,\"autonomousSystemNumber\":7922,\"crossTenantAccessType\":\"none\",\"privateLinkDetails\":{},\"servicePrincipalCredentialKeyId\":\"\",\"servicePrincipalCredentialThumbprint\":\"\",\"uniqueTokenIdentifier\":\"MJ46X_CenUetb6rSpyUIAA\",\"authenticationStrengths\":[],\"incomingTokenType\":\"refreshToken\",\"authenticationProtocol\":\"none\",\"appServicePrincipalId\":null,\"resourceServicePrincipalId\":\"\",\"signInTokenProtectionStatus\":\"none\",\"tokenProtectionStatusDetails\":{\"signInSessionStatus\":\"unbound\",\"signInSessionStatusCode\":1002},\"originalTransferMethod\":\"none\",\"isThroughGlobalSecureAccess\":false,\"globalSecureAccessIpAddress\":\"\",\"conditionalAccessAudiences\":[\"cc15fd57-2c6c-4117-a88c-83b1d56b4bbe\"],\"sessionId\":\"0099afd9-ebc4-578d-862e-26bdd88a0d41\",\"appOwnerTenantId\":\"00000000-8e35-44eb-95d1-000000000000\",\"resourceOwnerTenantId\":\"\",\"sourceAppClientId\":\"\",\"redirectUrl\":\"\"}}]}",
+    "__topicIn": "splunk",
+    "__partition": 0,
+    "_time": 1773346015.65756,
+    "__inputId": "eventhub:cribl-microsoft-entraid-io.in_nth_azure_monitor_aad",
+    "__synthetic": true,
+    "time": "2026-03-12T20:07:42.4551821Z",
+    "resourceId": "/tenants/00000000-8e35-44eb-95d1-000000000000/providers/Microsoft.aadiam",
+    "operationName": "Sign-in activity",
+    "operationVersion": "1.0",
+    "category": "NonInteractiveUserSignInLogs",
+    "tenantId": "00000000-8e35-44eb-95d1-000000000000",
+    "resultType": "0",
+    "resultSignature": "SUCCESS",
+    "durationMs": 0,
+    "callerIpAddress": "2601:280:5d80:af00:ed4e:1fba:c906:b7b5",
+    "correlationId": "cb2c0100-7cd3-4f82-8c5f-33278c3a02c1",
+    "identity": "Mike Score",
+    "level": "4",
+    "location": "US",
+    "properties": {
+      "id": "5f3a9e30-9ef0-479d-ad6f-aad2a7250800",
+      "createdDateTime": "2026-03-12T20:06:55.65756+00:00",
+      "userDisplayName": "Mike Score",
+      "userPrincipalName": "mscore@afos.io",
+      "userId": "4db31d77-4304-4c83-9d1a-f8de57b58c3b",
+      "agent": {
+        "agentType": "notAgentic",
+        "agentSubjectType": "notAgentic"
+      },
+      "appId": "1fec8e78-bce4-4aaf-ab1b-5451cc387264",
+      "appDisplayName": "Microsoft Teams",
+      "ipAddress": "2601:280:5d80:af00:ed4e:1fba:c906:b7b5",
+      "status": {
+        "errorCode": 0,
+        "additionalDetails": "MFA requirement satisfied by claim in the token"
+      },
+      "clientAppUsed": "Mobile Apps and Desktop clients",
+      "userAgent": "MSAL 1.1.0 (iPhone; OS 26_3_1 like Mac OS X arm64 en-US) PKeyAuth/1.0",
+      "deviceDetail": {
+        "operatingSystem": "Ios 26.3.1",
+        "browser": "Mobile Safari",
+        "isCompliant": false,
+        "isManaged": false
+      },
+      "location": {
+        "city": "Thornton",
+        "state": "Colorado",
+        "countryOrRegion": "US",
+        "geoCoordinates": {
+          "latitude": 39.858280181884766,
+          "longitude": -104.9792709350586
+        }
+      },
+      "correlationId": "cb2c0100-7cd3-4f82-8c5f-33278c3a02c1",
+      "conditionalAccessStatus": "notApplied",
+      "appliedConditionalAccessPolicies": [
+        {
+          "id": "SecurityDefaults",
+          "displayName": "Security Defaults",
+          "enforcedGrantControls": [
+            "Mfa"
+          ],
+          "result": "success",
+          "conditionsSatisfied": 3,
+          "conditionsNotSatisfied": 0
+        },
+        {
+          "id": "082cac04-c044-4d11-9802-0ef202e67665",
+          "displayName": "Require multifactor authentication for all users",
+          "enforcedGrantControls": [
+            "Mfa"
+          ],
+          "result": "reportOnlyNotApplied",
+          "conditionsSatisfied": 1,
+          "conditionsNotSatisfied": 2
+        }
+      ],
+      "authenticationContextClassReferences": [],
+      "originalRequestId": "5f3a9e30-9ef0-479d-ad6f-aad2a7250800",
+      "isInteractive": false,
+      "tokenIssuerType": "AzureAD",
+      "authenticationProcessingDetails": [
+        {
+          "key": "Is Client Capable",
+          "value": "True"
+        },
+        {
+          "key": "Legacy TLS (TLS 1.0, 1.1, 3DES)",
+          "value": "False"
+        },
+        {
+          "key": "Token Binding Attempted",
+          "value": "True"
+        },
+        {
+          "key": "Root Key Type",
+          "value": "Unknown"
+        },
+        {
+          "key": "Oauth Scope Info",
+          "value": "[\"Teams.AccessAsUser.All\"]"
+        },
+        {
+          "key": "Is Legacy Store Used",
+          "value": "False"
+        },
+        {
+          "key": "Is CAE Token",
+          "value": "False"
+        }
+      ],
+      "clientCredentialType": "none",
+      "processingTimeInMilliseconds": 59,
+      "riskDetail": "hidden",
+      "riskLevelAggregated": "hidden",
+      "riskLevelDuringSignIn": "hidden",
+      "riskState": "none",
+      "riskEventTypes": [],
+      "riskEventTypes_v2": [],
+      "resourceDisplayName": "IC3 Gateway",
+      "resourceId": "39aaf054-81a5-48c7-a4f8-0293012095b9",
+      "resourceTenantId": "00000000-8e35-44eb-95d1-000000000000",
+      "homeTenantId": "00000000-8e35-44eb-95d1-000000000000",
+      "tenantId": "00000000-8e35-44eb-95d1-000000000000",
+      "authenticationDetails": [
+        {
+          "authenticationStepDateTime": "2026-03-12T20:06:55.65756+00:00",
+          "authenticationMethod": "Previously satisfied",
+          "succeeded": true,
+          "authenticationStepResultDetail": "MFA requirement satisfied by claim in the token"
+        }
+      ],
+      "authenticationRequirementPolicies": [
+        {
+          "requirementProvider": "securityDefaults",
+          "detail": "Security Defaults"
+        }
+      ],
+      "sessionLifetimePolicies": [],
+      "authenticationRequirement": "multiFactorAuthentication",
+      "servicePrincipalName": "Microsoft Teams",
+      "signInEventTypes": [
+        "nonInteractiveUser"
+      ],
+      "servicePrincipalId": "299ad2d6-382a-4215-85ce-0d94f7ef77ee",
+      "userType": "Member",
+      "flaggedForReview": false,
+      "isTenantRestricted": false,
+      "autonomousSystemNumber": 7922,
+      "crossTenantAccessType": "none",
+      "privateLinkDetails": {},
+      "uniqueTokenIdentifier": "MJ46X_CenUetb6rSpyUIAA",
+      "authenticationStrengths": [],
+      "incomingTokenType": "refreshToken",
+      "authenticationProtocol": "none",
+      "signInTokenProtectionStatus": "none",
+      "tokenProtectionStatusDetails": {
+        "signInSessionStatus": "unbound",
+        "signInSessionStatusCode": 1002
+      },
+      "originalTransferMethod": "none",
+      "isThroughGlobalSecureAccess": false,
+      "conditionalAccessAudiences": [
+        "cc15fd57-2c6c-4117-a88c-83b1d56b4bbe"
+      ],
+      "sessionId": "0099afd9-ebc4-578d-862e-26bdd88a0d41",
+      "appOwnerTenantId": "00000000-8e35-44eb-95d1-000000000000"
+    },
+    "cribl_pipe": "_cribl_eventhub_msentra_preprocess",
+    "__packId": "cribl-microsoft-entraid-io"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "__raw": "{\"records\": [{ \"time\": \"2026-03-12T20:07:12.5155571Z\", \"resourceId\": \"/tenants/00000000-8e35-44eb-95d1-000000000000/providers/Microsoft.aadiam\", \"operationName\": \"Sign-in activity\", \"operationVersion\": \"1.0\", \"category\": \"NonInteractiveUserSignInLogs\", \"tenantId\": \"00000000-8e35-44eb-95d1-000000000000\", \"resultType\": \"0\", \"resultSignature\": \"SUCCESS\", \"durationMs\": 0, \"callerIpAddress\": \"107.3.144.3\", \"correlationId\": \"4532ee81-8550-4466-8a28-6139416af279\", \"identity\": \"Scott Fulcrum\", \"level\": \"4\", \"location\": \"US\", \"properties\": {\"id\":\"f39a2cec-beaa-448c-adba-b434c51e3c01\",\"createdDateTime\":\"2026-03-12T20:05:01.1942221+00:00\",\"userDisplayName\":\"Scott Fulcrum\",\"userPrincipalName\":\"scott@afos.io\",\"userId\":\"fa5bff15-20b5-4d37-a880-4f99a4bf01e8\",\"agent\":{\"agentType\":\"notAgentic\",\"agentSubjectType\":\"notAgentic\"},\"appId\":\"c0ab8ce9-e9a0-42e7-b064-33d422df41f1\",\"appDisplayName\":\"M365ChatClient\",\"ipAddress\":\"107.3.144.3\",\"ipAddressFromResourceProvider\":\"\",\"status\":{\"errorCode\":0,\"additionalDetails\":\"MFA requirement satisfied by claim in the token\"},\"clientAppUsed\":\"Mobile Apps and Desktop clients\",\"userAgent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36 Edge/18.26200\",\"deviceDetail\":{\"deviceId\":\"0102d340-6b01-4468-9d18-11a612fde000\",\"displayName\":\"LAPTOP-C6H93IS1\",\"operatingSystem\":\"Windows10\",\"browser\":\"Edge 18.26200\",\"isCompliant\":false,\"isManaged\":false,\"trustType\":\"Azure AD registered\"},\"location\":{\"city\":\"Rohnert Park\",\"state\":\"California\",\"countryOrRegion\":\"US\",\"geoCoordinates\":{\"latitude\":38.3459587097168,\"longitude\":-122.69245147705078}},\"correlationId\":\"4532ee81-8550-4466-8a28-6139416af279\",\"conditionalAccessStatus\":\"notApplied\",\"appliedConditionalAccessPolicies\":[{\"id\":\"SecurityDefaults\",\"displayName\":\"Security Defaults\",\"enforcedGrantControls\":[\"Mfa\"],\"result\":\"success\",\"conditionsSatisfied\":3,\"conditionsNotSatisfied\":0},{\"id\":\"082cac04-c044-4d11-9802-0ef202e67665\",\"displayName\":\"Require multifactor authentication for all users\",\"enforcedGrantControls\":[\"Mfa\"],\"result\":\"reportOnlySuccess\",\"conditionsSatisfied\":3,\"conditionsNotSatisfied\":0}],\"authenticationContextClassReferences\":[],\"originalRequestId\":\"f39a2cec-beaa-448c-adba-b434c51e3c01\",\"isInteractive\":false,\"tokenIssuerName\":\"\",\"tokenIssuerType\":\"AzureAD\",\"authenticationProcessingDetails\":[{\"key\":\"Legacy TLS (TLS 1.0, 1.1, 3DES)\",\"value\":\"False\"},{\"key\":\"Token Binding Attempted\",\"value\":\"True\"},{\"key\":\"Root Key Type\",\"value\":\"SessionKey\"},{\"key\":\"Oauth Scope Info\",\"value\":\"[\\\"Chat.Read\\\",\\\"Files.ReadWrite\\\",\\\"Group.ReadWrite\\\",\\\"Mail.Read\\\",\\\"User.Read\\\",\\\"User.Read.All\\\",\\\"User.ReadWrite\\\",\\\"LLM.Read\\\",\\\"Policy.Read\\\"]\"},{\"key\":\"Is Legacy Store Used\",\"value\":\"False\"},{\"key\":\"Is CAE Token\",\"value\":\"False\"}],\"clientCredentialType\":\"none\",\"processingTimeInMilliseconds\":190,\"riskDetail\":\"hidden\",\"riskLevelAggregated\":\"hidden\",\"riskLevelDuringSignIn\":\"hidden\",\"riskState\":\"none\",\"riskEventTypes\":[],\"riskEventTypes_v2\":[],\"resourceDisplayName\":\"Microsoft People Cards Service\",\"resourceId\":\"394866fc-eedb-4f01-8536-3ff84b16be2a\",\"resourceTenantId\":\"00000000-8e35-44eb-95d1-000000000000\",\"homeTenantId\":\"00000000-8e35-44eb-95d1-000000000000\",\"tenantId\":\"00000000-8e35-44eb-95d1-000000000000\",\"homeTenantName\":\"\",\"authenticationDetails\":[{\"authenticationStepDateTime\":\"2026-03-12T20:05:01.1942221+00:00\",\"authenticationMethod\":\"Previously satisfied\",\"authenticationMethodDetail\":\"\",\"succeeded\":true,\"authenticationStepResultDetail\":\"MFA requirement satisfied by claim in the token\",\"authenticationStepRequirement\":\"\"}],\"authenticationRequirementPolicies\":[{\"requirementProvider\":\"securityDefaults\",\"detail\":\"Security Defaults\"}],\"sessionLifetimePolicies\":[],\"authenticationRequirement\":\"multiFactorAuthentication\",\"alternateSignInName\":\"\",\"signInIdentifier\":\"\",\"servicePrincipalName\":\"M365ChatClient\",\"signInEventTypes\":[\"nonInteractiveUser\"],\"servicePrincipalId\":\"\",\"userType\":\"Member\",\"flaggedForReview\":false,\"isTenantRestricted\":false,\"autonomousSystemNumber\":7922,\"crossTenantAccessType\":\"none\",\"privateLinkDetails\":{},\"servicePrincipalCredentialKeyId\":\"\",\"servicePrincipalCredentialThumbprint\":\"\",\"uniqueTokenIdentifier\":\"7Cya86q-jESturQ0xR48AQ\",\"authenticationStrengths\":[],\"incomingTokenType\":\"primaryRefreshToken\",\"authenticationProtocol\":\"none\",\"appServicePrincipalId\":null,\"resourceServicePrincipalId\":\"00000000-345d-4656-9ef8-000000000000\",\"signInTokenProtectionStatus\":\"none\",\"tokenProtectionStatusDetails\":{\"signInSessionStatus\":\"bound\",\"signInSessionStatusCode\":0},\"originalTransferMethod\":\"none\",\"isThroughGlobalSecureAccess\":false,\"globalSecureAccessIpAddress\":\"\",\"conditionalAccessAudiences\":[\"cc15fd57-2c6c-4117-a88c-83b1d56b4bbe\",\"00000002-0000-0ff1-ce00-000000000000\",\"40775b29-2688-46b6-a3b5-b256bd04df9f\",\"00000002-0000-0000-c000-000000000000\"],\"sessionId\":\"003f0cb9-7fbc-c16b-f66f-1a15d5014405\",\"appOwnerTenantId\":\"00000000-8e35-44eb-95d1-000000000000\",\"resourceOwnerTenantId\":\"00000000-8e35-44eb-95d1-000000000000\",\"sourceAppClientId\":\"\",\"redirectUrl\":\"\"}}]}",
+    "__topicIn": "splunk",
+    "__partition": 0,
+    "_time": 1773345901.194222,
+    "__inputId": "eventhub:cribl-microsoft-entraid-io.in_nth_azure_monitor_aad",
+    "__synthetic": true,
+    "time": "2026-03-12T20:07:12.5155571Z",
+    "resourceId": "/tenants/00000000-8e35-44eb-95d1-000000000000/providers/Microsoft.aadiam",
+    "operationName": "Sign-in activity",
+    "operationVersion": "1.0",
+    "category": "NonInteractiveUserSignInLogs",
+    "tenantId": "00000000-8e35-44eb-95d1-000000000000",
+    "resultType": "0",
+    "resultSignature": "SUCCESS",
+    "durationMs": 0,
+    "callerIpAddress": "107.3.144.3",
+    "correlationId": "4532ee81-8550-4466-8a28-6139416af279",
+    "identity": "Scott Fulcrum",
+    "level": "4",
+    "location": "US",
+    "properties": {
+      "id": "f39a2cec-beaa-448c-adba-b434c51e3c01",
+      "createdDateTime": "2026-03-12T20:05:01.1942221+00:00",
+      "userDisplayName": "Scott Fulcrum",
+      "userPrincipalName": "scott@afos.io",
+      "userId": "fa5bff15-20b5-4d37-a880-4f99a4bf01e8",
+      "agent": {
+        "agentType": "notAgentic",
+        "agentSubjectType": "notAgentic"
+      },
+      "appId": "c0ab8ce9-e9a0-42e7-b064-33d422df41f1",
+      "appDisplayName": "M365ChatClient",
+      "ipAddress": "107.3.144.3",
+      "status": {
+        "errorCode": 0,
+        "additionalDetails": "MFA requirement satisfied by claim in the token"
+      },
+      "clientAppUsed": "Mobile Apps and Desktop clients",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36 Edge/18.26200",
+      "deviceDetail": {
+        "deviceId": "0102d340-6b01-4468-9d18-11a612fde000",
+        "displayName": "LAPTOP-C6H93IS1",
+        "operatingSystem": "Windows10",
+        "browser": "Edge 18.26200",
+        "isCompliant": false,
+        "isManaged": false,
+        "trustType": "Azure AD registered"
+      },
+      "location": {
+        "city": "Rohnert Park",
+        "state": "California",
+        "countryOrRegion": "US",
+        "geoCoordinates": {
+          "latitude": 38.3459587097168,
+          "longitude": -122.69245147705078
+        }
+      },
+      "correlationId": "4532ee81-8550-4466-8a28-6139416af279",
+      "conditionalAccessStatus": "notApplied",
+      "appliedConditionalAccessPolicies": [
+        {
+          "id": "SecurityDefaults",
+          "displayName": "Security Defaults",
+          "enforcedGrantControls": [
+            "Mfa"
+          ],
+          "result": "success",
+          "conditionsSatisfied": 3,
+          "conditionsNotSatisfied": 0
+        },
+        {
+          "id": "082cac04-c044-4d11-9802-0ef202e67665",
+          "displayName": "Require multifactor authentication for all users",
+          "enforcedGrantControls": [
+            "Mfa"
+          ],
+          "result": "reportOnlySuccess",
+          "conditionsSatisfied": 3,
+          "conditionsNotSatisfied": 0
+        }
+      ],
+      "authenticationContextClassReferences": [],
+      "originalRequestId": "f39a2cec-beaa-448c-adba-b434c51e3c01",
+      "isInteractive": false,
+      "tokenIssuerType": "AzureAD",
+      "authenticationProcessingDetails": [
+        {
+          "key": "Legacy TLS (TLS 1.0, 1.1, 3DES)",
+          "value": "False"
+        },
+        {
+          "key": "Token Binding Attempted",
+          "value": "True"
+        },
+        {
+          "key": "Root Key Type",
+          "value": "SessionKey"
+        },
+        {
+          "key": "Oauth Scope Info",
+          "value": "[\"Chat.Read\",\"Files.ReadWrite\",\"Group.ReadWrite\",\"Mail.Read\",\"User.Read\",\"User.Read.All\",\"User.ReadWrite\",\"LLM.Read\",\"Policy.Read\"]"
+        },
+        {
+          "key": "Is Legacy Store Used",
+          "value": "False"
+        },
+        {
+          "key": "Is CAE Token",
+          "value": "False"
+        }
+      ],
+      "clientCredentialType": "none",
+      "processingTimeInMilliseconds": 190,
+      "riskDetail": "hidden",
+      "riskLevelAggregated": "hidden",
+      "riskLevelDuringSignIn": "hidden",
+      "riskState": "none",
+      "riskEventTypes": [],
+      "riskEventTypes_v2": [],
+      "resourceDisplayName": "Microsoft People Cards Service",
+      "resourceId": "394866fc-eedb-4f01-8536-3ff84b16be2a",
+      "resourceTenantId": "00000000-8e35-44eb-95d1-000000000000",
+      "homeTenantId": "00000000-8e35-44eb-95d1-000000000000",
+      "tenantId": "00000000-8e35-44eb-95d1-000000000000",
+      "authenticationDetails": [
+        {
+          "authenticationStepDateTime": "2026-03-12T20:05:01.1942221+00:00",
+          "authenticationMethod": "Previously satisfied",
+          "succeeded": true,
+          "authenticationStepResultDetail": "MFA requirement satisfied by claim in the token"
+        }
+      ],
+      "authenticationRequirementPolicies": [
+        {
+          "requirementProvider": "securityDefaults",
+          "detail": "Security Defaults"
+        }
+      ],
+      "sessionLifetimePolicies": [],
+      "authenticationRequirement": "multiFactorAuthentication",
+      "servicePrincipalName": "M365ChatClient",
+      "signInEventTypes": [
+        "nonInteractiveUser"
+      ],
+      "userType": "Member",
+      "flaggedForReview": false,
+      "isTenantRestricted": false,
+      "autonomousSystemNumber": 7922,
+      "crossTenantAccessType": "none",
+      "privateLinkDetails": {},
+      "uniqueTokenIdentifier": "7Cya86q-jESturQ0xR48AQ",
+      "authenticationStrengths": [],
+      "incomingTokenType": "primaryRefreshToken",
+      "authenticationProtocol": "none",
+      "resourceServicePrincipalId": "00000000-345d-4656-9ef8-000000000000",
+      "signInTokenProtectionStatus": "none",
+      "tokenProtectionStatusDetails": {
+        "signInSessionStatus": "bound",
+        "signInSessionStatusCode": 0
+      },
+      "originalTransferMethod": "none",
+      "isThroughGlobalSecureAccess": false,
+      "conditionalAccessAudiences": [
+        "cc15fd57-2c6c-4117-a88c-83b1d56b4bbe",
+        "00000002-0000-0ff1-ce00-000000000000",
+        "40775b29-2688-46b6-a3b5-b256bd04df9f",
+        "00000002-0000-0000-c000-000000000000"
+      ],
+      "sessionId": "003f0cb9-7fbc-c16b-f66f-1a15d5014405",
+      "appOwnerTenantId": "00000000-8e35-44eb-95d1-000000000000",
+      "resourceOwnerTenantId": "00000000-8e35-44eb-95d1-000000000000"
+    },
+    "cribl_pipe": "_cribl_eventhub_msentra_preprocess",
+    "__packId": "cribl-microsoft-entraid-io"
+  }
+]

@@ -1,0 +1,53 @@
+{
+  "name": "XSIAM-OKTA-SSO",
+  "kind": "source-specific",
+  "pattern": "tag_only",
+  "sourceIdField": "__sourceIdentifier",
+  "sourceIdentifier": "5faf4c1fdb8443d9920d6a54815432c1",
+  "vendor": null,
+  "product": null,
+  "reshapesRaw": false,
+  "sample": {
+    "name": "XSIAM-OKTA-SSO.log",
+    "format": "json",
+    "formatLabel": "JSON",
+    "events": 1
+  },
+  "upstream": {
+    "pack": "cribl-paloalto-xsiam",
+    "version": "2.1.1",
+    "path": "default/pipelines/XSIAM-OKTA-SSO/conf.yml",
+    "sha256": "e2a928ce246bf4dbc545dbeb398a4935f419dd6d6f312cb88213753e884fca13",
+    "source": "https://packs.cribl.io/packs/cribl-paloalto-xsiam"
+  },
+  "conf": {
+    "output": "default",
+    "streamtags": [],
+    "groups": {},
+    "asyncFuncTimeout": 1000,
+    "description": ""
+  },
+  "functions": [
+    {
+      "id": "comment",
+      "filter": "true",
+      "conf": {
+        "comment": "Assign the Source-Identifier from https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Documentation/Data-source-UUIDs"
+      }
+    },
+    {
+      "id": "eval",
+      "filter": "true",
+      "conf": {
+        "add": [
+          {
+            "disabled": false,
+            "name": "__sourceIdentifier",
+            "value": "'5faf4c1fdb8443d9920d6a54815432c1'"
+          }
+        ]
+      },
+      "description": "Assign the Source-Identifier"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+[
+  {
+    "_raw": "<134>1 1749587372.973131808 hostxyz ip_flow_start src=172.16.225.230 dst=123.45.65.178 protocol=tcp sport=57046 dport=443 translated_src_ip=123.47.50.5 translated_port=57046",
+    "_time": 1749587372,
+    "host": "10.3.254.38",
+    "cribl_breaker": "ndjson"
+  },
+  {
+    "_raw": "<134>1 1749587375.675347608 hostxyz ip_flow_end src=123.159.46.254 dst=123.47.50.5 protocol=icmp translated_dst_ip=123.47.50.5",
+    "_time": 1749587375,
+    "host": "10.3.254.38",
+    "cribl_breaker": "ndjson"
+  }
+]

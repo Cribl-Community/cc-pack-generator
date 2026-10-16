@@ -1,0 +1,71 @@
+{
+  "key": "salesforce_loginhistory",
+  "sourcetype": "salesforce_loginhistory",
+  "classUid": 4001,
+  "destFormat": "ocsf#network",
+  "source": "generic",
+  "vendorNames": [
+    "salesforce loginhistory"
+  ],
+  "provenance": {
+    "samplePack": "cribl-salesforce-rest-io",
+    "sampleName": "salesforce_loginhistory.log",
+    "tier": "reference",
+    "sampleEvents": 20,
+    "emulated": "golden OCSF pipeline, offline emulation of scripts/build-source-ocsf-samples.mjs",
+    "rejected": []
+  },
+  "events": [
+    {
+      "device": {
+        "hostname": "cribl"
+      },
+      "metadata": {
+        "product": {
+          "name": "Security",
+          "vendor_name": "salesforce loginhistory"
+        },
+        "version": "1.9.0"
+      },
+      "class_uid": 4001,
+      "category_uid": 4,
+      "activity_id": 1,
+      "type_uid": 400101,
+      "severity_id": 1
+    },
+    {
+      "device": {
+        "hostname": "cribl"
+      },
+      "metadata": {
+        "product": {
+          "name": "Security",
+          "vendor_name": "salesforce loginhistory"
+        },
+        "version": "1.9.0"
+      },
+      "class_uid": 4001,
+      "category_uid": 4,
+      "activity_id": 1,
+      "type_uid": 400101,
+      "severity_id": 1
+    },
+    {
+      "device": {
+        "hostname": "cribl"
+      },
+      "metadata": {
+        "product": {
+          "name": "Security",
+          "vendor_name": "salesforce loginhistory"
+        },
+        "version": "1.9.0"
+      },
+      "class_uid": 4001,
+      "category_uid": 4,
+      "activity_id": 1,
+      "type_uid": 400101,
+      "severity_id": 1
+    }
+  ]
+}

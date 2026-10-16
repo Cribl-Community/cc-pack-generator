@@ -1,0 +1,102 @@
+[
+  {
+    "_raw": "<188>Jun 22 2022 11:11:11: %ASA-4-722051: Group <MyGroup> User <jsmith> IP <99.225.169.94> IPv4 Address <10.50.96.79> IPv6 address <     ::> assigned to session",
+    "_time": 1655914271,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "<164>2022-06-22T11:11:11Z FEDPERSEC03 : %FTD-4-722051: Group <GP-LEFTVPN> User <kumudm> IP <122.107.100.88> IPv4 Address <10.39.192.173> IPv6 address <::> assigned to session",
+    "_time": 1655896271,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "<166>Jun 22 2022 11:11:11: %ASA-6-713228: Group = CCF_General, Username = jsmith, IP = 76.189.115.141, Assigned private IP address 10.26.2.181 to remote user",
+    "_time": 1655914271,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "<166>Jun 22 2022 11:11:11: %ASA-6-716001: Group <AnyConnectVPN> User <Mgeorges> IP <174.228.147.173> WebVPN session started.",
+    "_time": 1655914271,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "<166>Jun 22 2022 11:11:11: %ASA-6-716038: Group <Clean_AnyConnectVPN> User <vconti> IP <24.186.204.119> Authentication: successful, Session Type: WebVPN.",
+    "_time": 1655914271,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "<166>Jun 22 2022 11:11:11: %ASA-6-716059: Group <Clean_AnyConnectVPN> User <aschenck> IP <108.41.190.175> AnyConnect session resumed connection from IP <108.41.190.175>.",
+    "_time": 1655914271,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "<166>2022-06-22T11:11:11Z FEDPERSEC03 : %FTD-6-716059: Group <TG-LEFTVPN> User <reddyt> IP <115.131.19.255> AnyConnect session resumed connection from IP <115.131.19.255>.",
+    "_time": 1655896271,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "2022-06-22T11:11:11-04:00 he2cvpn : %ASA-5-751025: Local:161.107.21.133:4500 Remote:50.59.200.165:59085 Username:USER2 IKEv2 Group:General_User IPv4 Address=172.26.26.148 IPv6 address=0.0.0.0 assigned to session",
+    "_time": 1655910671,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "<166>Jun 22 2022 11:11:11: %ASA-6-113039: Group <Cert-Anyconnect> User <collinj5@itsec.com> IP <184.59.129.146> AnyConnect parent session started.",
+    "_time": 1655914271,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "%ASA-6-113039: Group <GroupPolicy_INFRA> User <user1> IP <1.1.1.1> AnyConnect parent session started.",
+    "_time": 1699478262.628,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "<166>%ASA-6-113039: Group <ALWAYS-ON-GROUP-POLICY> User <user@email.com> IP <192.64.36.49> AnyConnect parent session started.",
+    "_time": 1699478262.628,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "<166>Jun 22 2022 11:11:11: %ASA-6-713184: Group = CCF_General, Username = myuser, IP = 71.22.148.179, Client Type: WinNT  Client Application Version: 5.0.01.0600",
+    "_time": 1655914271,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "<189>Jun 22 2022 11:11:11 host : %ASA-5-713050: Group = 1.1.1.1, IP = 1.1.1.1, Connection terminated for peer 1.1.1.1.  Reason: IPSec SA Idle Timeout  Remote Proxy 1.1.1.1, Local Proxy 1.1.1.1",
+    "_time": 1655914271,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "<190>Jun 22 2022 11:11:11 host : %ASA-6-716002: Group <GroupPolicy_INTERNOS1> User <user> IP <1.1.1.1> WebVPN session terminated: User Requested.",
+    "_time": 1655914271,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "<166>2022-06-22T11:11:11Z FEDPERSEC03 : %FTD-6-716002: Group <GP-LEFTVPN> User <megant> IP <193.119.101.77> WebVPN session terminated: User Requested.",
+    "_time": 1655896271,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "%ASA-6-716002: Group <GroupPolicy_DEV_USERS> User <user2> IP <2.2.2.2> WebVPN session terminated: Idle Timeout.",
+    "_time": 1699478262.628,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "<189>Jun 22 2022 11:11:11 host : %ASA-5-713259: Group = 1.1.1.1, IP = 1.1.1.1, Session is being torn down. Reason: User Requested",
+    "_time": 1655914271,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "<165>Jun 22 2022 11:11:11: %ASA-5-713259: Group = MyGroup, Username = jsmith, IP = 100.11.18.23, Session is being torn down. Reason: Peer Reconnected",
+    "_time": 1655914271,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "<164>Jun 22 2022 11:11:11: %ASA-4-113019: Group = MyGroup, Username = jsmith, IP = 96.242.167.41, Session disconnected. Session Type: AnyConnect-Parent, Duration: 2h:22m:18s, Bytes xmt: 0, Bytes rcv: 0, Reason: User Requested",
+    "_time": 1655914271,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "<164>2022-06-22T11:11:11Z FEDPERSEC03 : %FTD-4-113019: Group = TG-LEFTVPN, Username = megant, IP = 193.119.101.77, Session disconnected. Session Type: SSL, Duration: 3h:52m:26s, Bytes xmt: 165382735, Bytes rcv: 72724122, Reason: User Requested",
+    "_time": 1655896271,
+    "cribl_breaker": "Break on newlines"
+  }
+]

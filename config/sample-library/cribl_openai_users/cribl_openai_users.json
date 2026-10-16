@@ -1,0 +1,52 @@
+[
+  {
+    "_raw": "{\n      \"object\": \"organization.user\",\n      \"id\": \"user-RaLMdpTvACy9lQrCXsBoPBAo\",\n      \"email\": \"userb@afos.io\",\n      \"name\": \"Mike Score\",\n      \"role\": \"owner\",\n      \"added_at\": 1675873831\n    }",
+    "host": "ip-10-255-0-219",
+    "source": "https://api.openai.com/v1/organization/users",
+    "_time": 1760634292.884,
+    "cribl_breaker": [
+      "OpenAI API Ruleset:other_logs",
+      "ndjson"
+    ]
+  },
+  {
+    "_raw": "{\n      \"object\": \"organization.user\",\n      \"id\": \"user-llEuC1kgS2OVZ45pJcNULTJ7\",\n      \"email\": \"userac@afos.io\",\n      \"name\": \"Geddy L\",\n      \"role\": \"owner\",\n      \"added_at\": 1677776210\n    }",
+    "host": "ip-10-255-0-219",
+    "source": "https://api.openai.com/v1/organization/users",
+    "_time": 1760634292.884,
+    "cribl_breaker": [
+      "OpenAI API Ruleset:other_logs",
+      "ndjson"
+    ]
+  },
+  {
+    "_raw": "{\n      \"object\": \"organization.user\",\n      \"id\": \"user-kRFLunwrISLlbwqLp9rGvyBF\",\n      \"email\": \"usereel@afos.io\",\n      \"name\": \"D Gilmour\",\n      \"role\": \"owner\",\n      \"added_at\": 1677787153\n    }",
+    "host": "ip-10-255-0-219",
+    "source": "https://api.openai.com/v1/organization/users",
+    "_time": 1760634292.884,
+    "cribl_breaker": [
+      "OpenAI API Ruleset:other_logs",
+      "ndjson"
+    ]
+  },
+  {
+    "_raw": "{\n      \"object\": \"organization.user\",\n      \"id\": \"user-xZ7Jk0Ih5Y2bXyr51CE5EzwL\",\n      \"email\": \"usernmu@afos.io\",\n      \"name\": \"B May\",\n      \"role\": \"owner\",\n      \"added_at\": 1679716393\n    }",
+    "host": "ip-10-255-0-219",
+    "source": "https://api.openai.com/v1/organization/users",
+    "_time": 1760634292.884,
+    "cribl_breaker": [
+      "OpenAI API Ruleset:other_logs",
+      "ndjson"
+    ]
+  },
+  {
+    "_raw": "{\n      \"object\": \"organization.user\",\n      \"id\": \"user-F8TRpLrf1TelOebXqx3BBGwG\",\n      \"email\": \"useruz@afos.io\",\n      \"name\": \"F Mendelssohn\",\n      \"role\": \"owner\",\n      \"added_at\": 1682705509\n    }",
+    "host": "ip-10-255-0-219",
+    "source": "https://api.openai.com/v1/organization/users",
+    "_time": 1760634292.884,
+    "cribl_breaker": [
+      "OpenAI API Ruleset:other_logs",
+      "ndjson"
+    ]
+  }
+]

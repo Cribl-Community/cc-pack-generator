@@ -1,0 +1,35 @@
+[
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "__channel": "MESB:10",
+    "__FIN": true,
+    "_raw": "{\"version\": \"1\", \"id\": \"0c5c51c4-5037-4dd3-844c-13e52e25327e\", \"timestamp\": 1738779068, \"object\": \"BROWSER\", \"friendlyName\": \"Browser\", \"category\": \"ENTITY\", \"description\": \"New browser for username@example.com\", \"type\": \"CREATE\", \"new\": {\"id\": \"d3c6c446-44b1-4b2d-8851-b8130e5a84f3\", \"employeeId\": \"4e60642c-6e6f-425b-a288-53c1d8f89096\", \"email\": \"username@example.com\", \"version\": \"132.0.0.0\", \"tokenType\": \"INDIVIDUAL\", \"isActive\": true, \"browser\": \"CHROME\", \"os\": \"MACOS\", \"extensionVersion\": \"1.75.102\", \"creationTimestamp\": 1738779068, \"lastOnlineTimestamp\": 1738779068}, \"old\": null}",
+    "host": "ip-10-250-3-86",
+    "source": "httpIn-52.18.236.97",
+    "method": "POST",
+    "path": "/",
+    "headers": {
+      "host": "default.main.example-org-0000003.cribl.cloud:20001",
+      "accept": "*/*",
+      "accept_encoding": "gzip, deflate",
+      "connection": "keep-alive",
+      "user_agent": "python-httpx/0.28.1",
+      "content_type": "application/json",
+      "x_signature": "t=1738779068,v1=0483E25F5499341E68CC947A7F9C9B41D6DBDB9D15A1AA614C4761C6DBE9D13F",
+      "authorization": "6e4b4b4b-7375-4f64-6143-4e4c7a427978",
+      "content_length": "590",
+      "x_amzn_trace_id": "Root=1-67a3a9bc-7b9819d4633045837da3257d;Parent=ac761a20a3d1a8c6;Sampled=1;Lineage=1:c2aa6ff9:0"
+    },
+    "clientip": "52.18.236.97",
+    "__source": "httpIn-52.18.236.97",
+    "__isBroken": false,
+    "__raw": "{\"version\": \"1\", \"id\": \"0c5c51c4-5037-4dd3-844c-13e52e25327e\", \"timestamp\": 1738779068, \"object\": \"BROWSER\", \"friendlyName\": \"Browser\", \"category\": \"ENTITY\", \"description\": \"New browser for username@example.com\", \"type\": \"CREATE\", \"new\": {\"id\": \"d3c6c446-44b1-4b2d-8851-b8130e5a84f3\", \"employeeId\": \"4e60642c-6e6f-425b-a288-53c1d8f89096\", \"email\": \"username@example.com\", \"version\": \"132.0.0.0\", \"tokenType\": \"INDIVIDUAL\", \"isActive\": true, \"browser\": \"CHROME\", \"os\": \"MACOS\", \"extensionVersion\": \"1.75.102\", \"creationTimestamp\": 1738779068, \"lastOnlineTimestamp\": 1738779068}, \"old\": null}",
+    "_time": 1738779068,
+    "cribl_breaker": "fallback",
+    "__srcIpPort": "52.18.236.97:42500",
+    "__inputId": "http_raw:push-security"
+  }
+]

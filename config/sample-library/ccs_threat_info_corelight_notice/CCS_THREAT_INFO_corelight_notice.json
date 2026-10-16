@@ -1,0 +1,96 @@
+[
+  {
+    "__channel": "preview",
+    "__FIN": true,
+    "__isBroken": true,
+    "__raw": "{\"__criblEventType\":\"event\",\"__ctrlFields\":[],\"__final\":false,\"__cloneCount\":0,\"_time\":1698617967.354,\"cribl_breaker\":\"Break on newlines\",\"_raw\":\"{\\n  \\\"_path\\\": \\\"notice\\\",\\n  \\\"_system_name\\\": \\\"prod342324u\\\",\\n  \\\"_write_ts\\\": \\\"2023-10-29T22:19:27.354297Z\\\",\\n  \\\"ts\\\": \\\"2023-07-25T20:56:04.433063Z\\\",\\n  \\\"uid\\\": \\\"AIhdehIlk8J0w\\\",\\n  \\\"id.orig_h\\\": \\\"10.0.0.101\\\",\\n  \\\"id.orig_p\\\": 49455,\\n  \\\"id.resp_h\\\": \\\"10.3.22.12\\\",\\n  \\\"id.resp_p\\\": 445,\\n  \\\"proto\\\": \\\"tcp\\\",\\n  \\\"note\\\": \\\"EternalSafety::EternalBlue\\\",\\n  \\\"msg\\\": \\\"SMBv1 proto violation, possible EternalBlue or other buffer exploit: 10.4.30.101:49455/tcp tried to interleave NT_TRANSACT and TRANS2_SECONDARY commands in request to 10.3.22.12:445/tcp\\\",\\n  \\\"src\\\": \\\"10.0.0.101\\\",\\n  \\\"dst\\\": \\\"10.3.22.12\\\",\\n  \\\"p\\\": 445,\\n  \\\"peer_descr\\\": \\\"prod9j0ij03\\\",\\n  \\\"actions\\\": [\\n    \\\"Notice::ACTION_LOG\\\"\\n  ],\\n  \\\"suppress_for\\\": 3600,\\n  \\\"severity.level\\\": 1,\\n  \\\"severity.name\\\": \\\"alert\\\",\\n  \\\"_time\\\": 1698617967.354}\",\"__id\":0,\"__raw_json\":{\"_path\":\"notice\",\"_system_name\":\"prod342324u\",\"_write_ts\":\"2023-10-29T22:19:27.354297Z\",\"ts\":\"2023-07-25T20:56:04.433063Z\",\"uid\":\"AIhdehIlk8J0w\",\"id.orig_h\":\"10.0.0.101\",\"id.orig_p\":49455,\"id.resp_h\":\"10.3.22.12\",\"id.resp_p\":445,\"proto\":\"tcp\",\"note\":\"EternalSafety::EternalBlue\",\"msg\":\"SMBv1 proto violation, possible EternalBlue or other buffer exploit: 10.4.30.101:49455/tcp tried to interleave NT_TRANSACT and TRANS2_SECONDARY commands in request to 10.3.22.12:445/tcp\",\"src\":\"10.0.0.101\",\"dst\":\"10.3.22.12\",\"p\":445,\"peer_descr\":\"prod9j0ij03\",\"actions\":[\"Notice::ACTION_LOG\"],\"suppress_for\":3600,\"severity.level\":1,\"severity.name\":\"alert\",\"_time\":1698617967.354},\"__timestamp\":\"2023-07-25T20:56:04.433Z\",\"__module\":\"corelight\",\"__dataset\":\"corelight.notice\",\"__outcome\":\"unknown\",\"__action\":\"notice\",\"__message\":\"SMBv1 proto violation, possible EternalBlue or other buffer exploit: 10.4.30.101:49455/tcp tried to interleave NT_TRANSACT and TRANS2_SECONDARY commands in request to 10.3.22.12:445/tcp\",\"__severity\":5,\"__source_ip\":\"10.0.0.101\",\"__source_address\":\"10.0.0.101\",\"__destination_ip\":\"10.3.22.12\",\"__destination_address\":\"10.3.22.12\",\"__user_name\":\"\",\"__user_full_name\":\"\",\"__user_email\":\"\",\"__schema\":{\"@timestamp\":\"2023-07-25T20:56:04.433Z\",\"ecs\":{\"version\":\"8.10.0\"},\"event\":{\"kind\":\"event\",\"category\":[\"threat\"],\"type\":[\"info\"],\"module\":\"corelight\",\"dataset\":\"corelight.notice\",\"outcome\":\"unknown\",\"action\":\"notice\",\"severity\":5,\"original\":\"{\\n  \\\"_path\\\": \\\"notice\\\",\\n  \\\"_system_name\\\": \\\"prod342324u\\\",\\n  \\\"_write_ts\\\": \\\"2023-10-29T22:19:27.354297Z\\\",\\n  \\\"ts\\\": \\\"2023-07-25T20:56:04.433063Z\\\",\\n  \\\"uid\\\": \\\"AIhdehIlk8J0w\\\",\\n  \\\"id.orig_h\\\": \\\"10.0.0.101\\\",\\n  \\\"id.orig_p\\\": 49455,\\n  \\\"id.resp_h\\\": \\\"10.3.22.12\\\",\\n  \\\"id.resp_p\\\": 445,\\n  \\\"proto\\\": \\\"tcp\\\",\\n  \\\"note\\\": \\\"EternalSafety::EternalBlue\\\",\\n  \\\"msg\\\": \\\"SMBv1 proto violation, possible EternalBlue or other buffer exploit: 10.4.30.101:49455/tcp tried to interleave NT_TRANSACT and TRANS2_SECONDARY commands in request to 10.3.22.12:445/tcp\\\",\\n  \\\"src\\\": \\\"10.0.0.101\\\",\\n  \\\"dst\\\": \\\"10.3.22.12\\\",\\n  \\\"p\\\": 445,\\n  \\\"peer_descr\\\": \\\"prod9j0ij03\\\",\\n  \\\"actions\\\": [\\n    \\\"Notice::ACTION_LOG\\\"\\n  ],\\n  \\\"suppress_for\\\": 3600,\\n  \\\"severity.level\\\": 1,\\n  \\\"severity.name\\\": \\\"alert\\\",\\n  \\\"_time\\\": 1698617967.354}\"},\"message\":\"SMBv1 proto violation, possible EternalBlue or other buffer exploit: 10.4.30.101:49455/tcp tried to interleave NT_TRANSACT and TRANS2_SECONDARY commands in request to 10.3.22.12:445/tcp\",\"cribl\":{\"input_id\":\"undefined\",\"pipelines\":\"undefined\"},\"source\":{\"address\":\"10.0.0.101\",\"ip\":\"10.0.0.101\"},\"destination\":{\"address\":\"10.3.22.12\",\"ip\":\"10.3.22.12\"},\"user\":{\"name\":\"\",\"full_name\":\"\",\"email\":\"\"}},\"cribl_pipe\":\"EXAMPLE_threat_info_CORELIGHT_NOTICE\",\"__packId\":\"cribl_ccs_templates_and_examples\"}",
+    "_time": 1698617967.354,
+    "cribl_breaker": "Break on newlines",
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_raw": "{\n  \"_path\": \"notice\",\n  \"_system_name\": \"prod342324u\",\n  \"_write_ts\": \"2023-10-29T22:19:27.354297Z\",\n  \"ts\": \"2023-07-25T20:56:04.433063Z\",\n  \"uid\": \"AIhdehIlk8J0w\",\n  \"id.orig_h\": \"10.0.0.101\",\n  \"id.orig_p\": 49455,\n  \"id.resp_h\": \"10.3.22.12\",\n  \"id.resp_p\": 445,\n  \"proto\": \"tcp\",\n  \"note\": \"EternalSafety::EternalBlue\",\n  \"msg\": \"SMBv1 proto violation, possible EternalBlue or other buffer exploit: 10.4.30.101:49455/tcp tried to interleave NT_TRANSACT and TRANS2_SECONDARY commands in request to 10.3.22.12:445/tcp\",\n  \"src\": \"10.0.0.101\",\n  \"dst\": \"10.3.22.12\",\n  \"p\": 445,\n  \"peer_descr\": \"prod9j0ij03\",\n  \"actions\": [\n    \"Notice::ACTION_LOG\"\n  ],\n  \"suppress_for\": 3600,\n  \"severity.level\": 1,\n  \"severity.name\": \"alert\",\n  \"_time\": 1698617967.354}",
+    "__id": 0,
+    "__raw_json": {
+      "_path": "notice",
+      "_system_name": "prod342324u",
+      "_write_ts": "2023-10-29T22:19:27.354297Z",
+      "ts": "2023-07-25T20:56:04.433063Z",
+      "uid": "AIhdehIlk8J0w",
+      "id.orig_h": "10.0.0.101",
+      "id.orig_p": 49455,
+      "id.resp_h": "10.3.22.12",
+      "id.resp_p": 445,
+      "proto": "tcp",
+      "note": "EternalSafety::EternalBlue",
+      "msg": "SMBv1 proto violation, possible EternalBlue or other buffer exploit: 10.4.30.101:49455/tcp tried to interleave NT_TRANSACT and TRANS2_SECONDARY commands in request to 10.3.22.12:445/tcp",
+      "src": "10.0.0.101",
+      "dst": "10.3.22.12",
+      "p": 445,
+      "peer_descr": "prod9j0ij03",
+      "actions": [
+        "Notice::ACTION_LOG"
+      ],
+      "suppress_for": 3600,
+      "severity.level": 1,
+      "severity.name": "alert",
+      "_time": 1698617967.354
+    },
+    "__timestamp": "2023-07-25T20:56:04.433Z",
+    "__module": "corelight",
+    "__dataset": "corelight.notice",
+    "__outcome": "unknown",
+    "__action": "notice",
+    "__message": "SMBv1 proto violation, possible EternalBlue or other buffer exploit: 10.4.30.101:49455/tcp tried to interleave NT_TRANSACT and TRANS2_SECONDARY commands in request to 10.3.22.12:445/tcp",
+    "__severity": 5,
+    "__source_ip": "10.0.0.101",
+    "__source_address": "10.0.0.101",
+    "__destination_ip": "10.3.22.12",
+    "__destination_address": "10.3.22.12",
+    "__user_name": "",
+    "__user_full_name": "",
+    "__user_email": "",
+    "__schema": {
+      "@timestamp": "2023-07-25T20:56:04.433Z",
+      "ecs": {
+        "version": "8.10.0"
+      },
+      "event": {
+        "kind": "event",
+        "category": [
+          "threat"
+        ],
+        "type": [
+          "info"
+        ],
+        "module": "corelight",
+        "dataset": "corelight.notice",
+        "outcome": "unknown",
+        "action": "notice",
+        "severity": 5,
+        "original": "{\n  \"_path\": \"notice\",\n  \"_system_name\": \"prod342324u\",\n  \"_write_ts\": \"2023-10-29T22:19:27.354297Z\",\n  \"ts\": \"2023-07-25T20:56:04.433063Z\",\n  \"uid\": \"AIhdehIlk8J0w\",\n  \"id.orig_h\": \"10.0.0.101\",\n  \"id.orig_p\": 49455,\n  \"id.resp_h\": \"10.3.22.12\",\n  \"id.resp_p\": 445,\n  \"proto\": \"tcp\",\n  \"note\": \"EternalSafety::EternalBlue\",\n  \"msg\": \"SMBv1 proto violation, possible EternalBlue or other buffer exploit: 10.4.30.101:49455/tcp tried to interleave NT_TRANSACT and TRANS2_SECONDARY commands in request to 10.3.22.12:445/tcp\",\n  \"src\": \"10.0.0.101\",\n  \"dst\": \"10.3.22.12\",\n  \"p\": 445,\n  \"peer_descr\": \"prod9j0ij03\",\n  \"actions\": [\n    \"Notice::ACTION_LOG\"\n  ],\n  \"suppress_for\": 3600,\n  \"severity.level\": 1,\n  \"severity.name\": \"alert\",\n  \"_time\": 1698617967.354}"
+      },
+      "message": "SMBv1 proto violation, possible EternalBlue or other buffer exploit: 10.4.30.101:49455/tcp tried to interleave NT_TRANSACT and TRANS2_SECONDARY commands in request to 10.3.22.12:445/tcp",
+      "cribl": {
+        "input_id": "undefined",
+        "pipelines": "undefined"
+      },
+      "source": {
+        "address": "10.0.0.101",
+        "ip": "10.0.0.101"
+      },
+      "destination": {
+        "address": "10.3.22.12",
+        "ip": "10.3.22.12"
+      },
+      "user": {
+        "name": "",
+        "full_name": "",
+        "email": ""
+      }
+    },
+    "cribl_pipe": "EXAMPLE_threat_info_CORELIGHT_NOTICE",
+    "__packId": "cribl_ccs_templates_and_examples"
+  }
+]

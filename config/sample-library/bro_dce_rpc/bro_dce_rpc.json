@@ -1,0 +1,122 @@
+[
+  {
+    "_raw": "#separator \\x09",
+    "_time": 1521911725.396014,
+    "sourcetype": "bro_dce_rpc",
+    "source": "/opt/zeek/logs/current/dce_rpc.log"
+  },
+  {
+    "_raw": "#set_separator\t,",
+    "_time": 1521911725.396014,
+    "sourcetype": "bro_dce_rpc",
+    "source": "/opt/zeek/logs/current/dce_rpc.log"
+  },
+  {
+    "_raw": "#empty_field\t(empty)",
+    "_time": 1521911725.396014,
+    "sourcetype": "bro_dce_rpc",
+    "source": "/opt/zeek/logs/current/dce_rpc.log"
+  },
+  {
+    "_raw": "#unset_field\t-",
+    "_time": 1521911725.396014,
+    "sourcetype": "bro_dce_rpc",
+    "source": "/opt/zeek/logs/current/dce_rpc.log"
+  },
+  {
+    "_raw": "#path\tdce_rpc",
+    "_time": 1521911725.396014,
+    "sourcetype": "bro_dce_rpc",
+    "source": "/opt/zeek/logs/current/dce_rpc.log"
+  },
+  {
+    "_raw": "#open\t2024-04-12-19-29-15",
+    "_time": 1521911725.396014,
+    "sourcetype": "bro_dce_rpc",
+    "source": "/opt/zeek/logs/current/dce_rpc.log"
+  },
+  {
+    "_raw": "#fields\tts\tuid\tid.orig_h\tid.orig_p\tid.resp_h\tid.resp_p\trtt\tnamed_pipe\tendpoint\toperation",
+    "_time": 1521911725.396014,
+    "sourcetype": "bro_dce_rpc",
+    "source": "/opt/zeek/logs/current/dce_rpc.log"
+  },
+  {
+    "_raw": "#types\ttime\tstring\taddr\tport\taddr\tport\tinterval\tstring\tstring\tstring",
+    "_time": 1521911725.396014,
+    "sourcetype": "bro_dce_rpc",
+    "source": "/opt/zeek/logs/current/dce_rpc.log"
+  },
+  {
+    "_raw": "1521911725.396014\tCom0DqIPOu8FjMTma\t10.164.94.120\t36643\t10.47.3.151\t1030\t0.000431\t1030\tsamr\tSamrConnect2",
+    "_time": 1521911725.396014,
+    "sourcetype": "bro_dce_rpc",
+    "source": "/opt/zeek/logs/current/dce_rpc.log"
+  },
+  {
+    "_raw": "1521911741.356590\tCT1orU31pfzjVTClIh\t10.128.0.233\t33692\t10.47.21.25\t135\t0.000684\t135\tIObjectExporter\tComplexPing",
+    "_time": 1521911741.35659,
+    "sourcetype": "bro_dce_rpc",
+    "source": "/opt/zeek/logs/current/dce_rpc.log"
+  },
+  {
+    "_raw": "1521911754.621588\tC6WWAQ2G8MqT1hrQHd\t10.128.0.214\t41717\t10.47.8.142\t445\t0.002721\t\\\\pipe\\\\ntsvcs\tsvcctl\tOpenSCManagerW",
+    "_time": 1521911754.621588,
+    "sourcetype": "bro_dce_rpc",
+    "source": "/opt/zeek/logs/current/dce_rpc.log"
+  },
+  {
+    "_raw": "1521911767.525144\tCPd22l18QxvwF9MS6f\t10.128.0.214\t36333\t10.47.8.154\t445\t0.053299\t\\\\pipe\\\\ntsvcs\tsvcctl\tStartServiceW",
+    "_time": 1521911767.525144,
+    "sourcetype": "bro_dce_rpc",
+    "source": "/opt/zeek/logs/current/dce_rpc.log"
+  },
+  {
+    "_raw": "1521911775.645727\tCwQ3Tk4svaPqg2xCv9\t10.128.0.233\t43558\t10.47.21.82\t445\t0.214749\t\\\\PIPE\\\\atsvc\tITaskSchedulerService\tSchRpcRegisterTask",
+    "_time": 1521911775.645727,
+    "sourcetype": "bro_dce_rpc",
+    "source": "/opt/zeek/logs/current/dce_rpc.log"
+  },
+  {
+    "_raw": "1521912016.063522\tCa1GHMXOdERAoPxtb\t10.128.0.233\t52366\t10.47.21.82\t135\t0.000725\t135\tIObjectExporter\tSimplePing",
+    "_time": 1521912016.063522,
+    "sourcetype": "bro_dce_rpc",
+    "source": "/opt/zeek/logs/current/dce_rpc.log"
+  },
+  {
+    "_raw": "1521912165.076728\tCl81Dy1EF8qqSPFog2\t10.150.0.20\t43414\t10.47.24.25\t445\t0.027357\t\\\\pipe\\\\ntsvcs\tsvcctl\tCreateServiceW",
+    "_time": 1521912165.076728,
+    "sourcetype": "bro_dce_rpc",
+    "source": "/opt/zeek/logs/current/dce_rpc.log"
+  },
+  {
+    "_raw": "1521912167.932018\tC2XJv93R26N3aooPTk\t10.150.0.20\t43119\t10.47.22.25\t445\t0.062051\t\\\\pipe\\\\ntsvcs\tsvcctl\tDeleteService",
+    "_time": 1521912167.932018,
+    "sourcetype": "bro_dce_rpc",
+    "source": "/opt/zeek/logs/current/dce_rpc.log"
+  },
+  {
+    "_raw": "1521912206.542593\tCF0g772wEPFoRKyYg3\t10.128.0.233\t44132\t10.47.21.82\t445\t0.004148\t\\\\PIPE\\\\atsvc\tITaskSchedulerService\tSchRpcRun",
+    "_time": 1521912206.542593,
+    "sourcetype": "bro_dce_rpc",
+    "source": "/opt/zeek/logs/current/dce_rpc.log"
+  },
+  {
+    "_raw": "1521912301.594256\tCuqnI52nucKpAKoRmk\t10.164.94.120\t46165\t10.47.3.142\t1053\t0.000797\t1053\tsamr\tSamrConnect2",
+    "_time": 1521912301.594256,
+    "sourcetype": "bro_dce_rpc",
+    "source": "/opt/zeek/logs/current/dce_rpc.log"
+  },
+  {
+    "_raw": "1521912416.600431\tCnZepj1A5hoph4Hd38\t10.128.0.233\t59246\t10.47.21.81\t135\t0.255216\t135\tIRemoteSCMActivator\tRemoteCreateInstance",
+    "_time": 1521912416.600431,
+    "sourcetype": "bro_dce_rpc",
+    "source": "/opt/zeek/logs/current/dce_rpc.log"
+  },
+  {
+    "_raw": "1521912605.262695\tC2iEQa33X6xgXoissc\t10.128.0.214\t36131\t10.47.8.19\t445\t0.005114\t\\\\pipe\\\\ntsvcs\tsvcctl\tCloseServiceHandle",
+    "_time": 1521912605.262695,
+    "sourcetype": "bro_dce_rpc",
+    "source": "/opt/zeek/logs/current/dce_rpc.log"
+  }
+]

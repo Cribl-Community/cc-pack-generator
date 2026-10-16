@@ -1,0 +1,18 @@
+[
+  {
+    "_raw": "{\n    \"requestCommentsRequired\": false,\n    \"schema\": \"group\",\n    \"cloudEligible\": false,\n    \"displayName\": \"Benefits\",\n    \"standalone\": false,\n    \"source\": {\n      \"name\": \"Active Directory\",\n      \"id\": \"5c71ff71195b4794a0b87e7cf36fb017\"\n    },\n    \"type\": \"ENTITLEMENT\",\n    \"enabled\": false,\n    \"privileged\": false,\n    \"name\": \"Benefits\",\n    \"disabled\": false,\n    \"id\": \"4919721c3c1a4ca484469b85f0fd9ba1\",\n    \"requestable\": false,\n    \"attribute\": \"memberOf\",\n    \"value\": \"CN=Benefits,OU=Groups,OU=Demo,DC=seri,DC=sailpointdemo,DC=com\",\n    \"cloudGoverned\": false,\n    \"_type\": \"access\",\n    \"_originalType\": \"identity\",\n    \"_version\": \"v2\"\n  }",
+    "_time": 1760745011.858,
+    "cribl_breaker": [
+      "Break on newlines",
+      "ndjson"
+    ]
+  },
+  {
+    "_raw": "{\n    \"requestCommentsRequired\": false,\n    \"owner\": {\n      \"displayName\": \"Jerry.Bennett\",\n      \"name\": \"Jerry.Bennett\",\n      \"id\": \"278f8a1859df48d2a0adb204257b26a2\"\n    },\n    \"cloudEligible\": false,\n    \"displayName\": \"Benefits Employees\",\n    \"standalone\": false,\n    \"description\": \"Access for Benefits Employees. Distribution group and File share access.\",\n    \"source\": {\n      \"name\": \"Active Directory\",\n      \"id\": \"5c71ff71195b4794a0b87e7cf36fb017\"\n    },\n    \"revocable\": false,\n    \"type\": \"ACCESS_PROFILE\",\n    \"enabled\": false,\n    \"privileged\": false,\n    \"name\": \"Benefits Employees\",\n    \"disabled\": false,\n    \"id\": \"7e277d102c874560becc464cdfe33a86\",\n    \"requestable\": false,\n    \"cloudGoverned\": false,\n    \"_type\": \"access\",\n    \"_originalType\": \"identity\",\n    \"_version\": \"v2\"\n  }",
+    "_time": 1760745011.858,
+    "cribl_breaker": [
+      "Break on newlines",
+      "ndjson"
+    ]
+  }
+]

@@ -1,0 +1,37 @@
+{
+  "key": "azure_graph_users",
+  "sourcetype": "azure_graph_users",
+  "classUid": 4001,
+  "destFormat": "ocsf#network",
+  "source": "generic",
+  "vendorNames": [
+    "azure graph users"
+  ],
+  "provenance": {
+    "samplePack": "cribl-azure-graph-rest",
+    "sampleName": "cribl_azure_graph_users",
+    "tier": "reference",
+    "sampleEvents": 1,
+    "emulated": "golden OCSF pipeline, offline emulation of scripts/build-source-ocsf-samples.mjs",
+    "rejected": []
+  },
+  "events": [
+    {
+      "device": {
+        "hostname": "main-cribl000000"
+      },
+      "metadata": {
+        "product": {
+          "name": "Security",
+          "vendor_name": "azure graph users"
+        },
+        "version": "1.9.0"
+      },
+      "class_uid": 4001,
+      "category_uid": 4,
+      "activity_id": 1,
+      "type_uid": 400101,
+      "severity_id": 1
+    }
+  ]
+}

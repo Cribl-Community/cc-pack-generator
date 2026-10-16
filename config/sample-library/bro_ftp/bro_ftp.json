@@ -1,0 +1,122 @@
+[
+  {
+    "_raw": "#separator \\x09",
+    "_time": 1521911724.699488,
+    "sourcetype": "bro_ftp",
+    "source": "/opt/zeek/logs/current/ftp.log"
+  },
+  {
+    "_raw": "#set_separator\t,",
+    "_time": 1521911724.699488,
+    "sourcetype": "bro_ftp",
+    "source": "/opt/zeek/logs/current/ftp.log"
+  },
+  {
+    "_raw": "#empty_field\t(empty)",
+    "_time": 1521911724.699488,
+    "sourcetype": "bro_ftp",
+    "source": "/opt/zeek/logs/current/ftp.log"
+  },
+  {
+    "_raw": "#unset_field\t-",
+    "_time": 1521911724.699488,
+    "sourcetype": "bro_ftp",
+    "source": "/opt/zeek/logs/current/ftp.log"
+  },
+  {
+    "_raw": "#path\tftp",
+    "_time": 1521911724.699488,
+    "sourcetype": "bro_ftp",
+    "source": "/opt/zeek/logs/current/ftp.log"
+  },
+  {
+    "_raw": "#open\t2024-04-12-19-29-14",
+    "_time": 1521911724.699488,
+    "sourcetype": "bro_ftp",
+    "source": "/opt/zeek/logs/current/ftp.log"
+  },
+  {
+    "_raw": "#fields\tts\tuid\tid.orig_h\tid.orig_p\tid.resp_h\tid.resp_p\tuser\tpassword\tcommand\targ\tmime_type\tfile_size\treply_code\treply_msg\tdata_channel.passive\tdata_channel.orig_h\tdata_channel.resp_h\tdata_channel.resp_p\tfuid",
+    "_time": 1521911724.699488,
+    "sourcetype": "bro_ftp",
+    "source": "/opt/zeek/logs/current/ftp.log"
+  },
+  {
+    "_raw": "#types\ttime\tstring\taddr\tport\taddr\tport\tstring\tstring\tstring\tstring\tstring\tcount\tcount\tstring\tbool\taddr\taddr\tport\tstring",
+    "_time": 1521911724.699488,
+    "sourcetype": "bro_ftp",
+    "source": "/opt/zeek/logs/current/ftp.log"
+  },
+  {
+    "_raw": "1521911724.699488\tCRJ34i2alWZXGHGfng\t10.164.94.120\t45905\t10.47.27.80\t21\tanonymous\tnessus@nessus.org\tPASV\t-\t-\t-\t227\tEntering Passive Mode (172,20,0,80,200,63).\tT\t10.164.94.120\t172.20.0.80\t51263\t-",
+    "_time": 1521911724.699488,
+    "sourcetype": "bro_ftp",
+    "source": "/opt/zeek/logs/current/ftp.log"
+  },
+  {
+    "_raw": "1521911972.260419\tCSeBlc2RJFbsTJsTSl\t10.164.94.120\t42047\t10.47.21.80\t21\tanonymous\tnessus@nessus.org\tRETR\tftp://10.47.21.80/boot.ini\t-\t-\t550\tThe system cannot find the file specified. \t-\t-\t-\t-\t-",
+    "_time": 1521911972.260419,
+    "sourcetype": "bro_ftp",
+    "source": "/opt/zeek/logs/current/ftp.log"
+  },
+  {
+    "_raw": "1521911973.428759\tCthKsh4JaZIKbserLe\t10.164.94.120\t45601\t10.47.21.80\t21\tanonymous\tnessus@nessus.org\tRETR\tftp://10.47.21.80/../../../../../../../../../../../../boot.ini\t-\t-\t550\tThe system cannot find the file specified. \t-\t-\t-\t-\t-",
+    "_time": 1521911973.428759,
+    "sourcetype": "bro_ftp",
+    "source": "/opt/zeek/logs/current/ftp.log"
+  },
+  {
+    "_raw": "1521911980.174147\tCi1VD243DzAtwMNnul\t10.164.94.120\t35139\t10.47.21.80\t21\tanonymous\tnessus@nessus.org\tRETR\tftp://10.47.21.80/./..\\\\..\\\\..\\\\..\\\\..\\\\..\\\\..\\\\..\\\\..\\\\..\\\\..\\\\..\\\\boot.ini\t-\t-\t550\tThe system cannot find the file specified. \t-\t-\t-\t-\t-",
+    "_time": 1521911980.174147,
+    "sourcetype": "bro_ftp",
+    "source": "/opt/zeek/logs/current/ftp.log"
+  },
+  {
+    "_raw": "1521911983.221585\tCYHqhO3BvDgZWQF8Ik\t10.164.94.120\t33239\t10.47.21.80\t21\tanonymous\tnessus@nessus.org\tRETR\tftp://10.47.21.80/./..\\\\..\\\\..\\\\..\\\\..\\\\..\\\\..\\\\..\\\\..\\\\..\\\\..\\\\..\\\\/boot.ini\t-\t-\t550\tThe system cannot find the file specified. \t-\t-\t-\t-\t-",
+    "_time": 1521911983.221585,
+    "sourcetype": "bro_ftp",
+    "source": "/opt/zeek/logs/current/ftp.log"
+  },
+  {
+    "_raw": "1521911986.030299\tCyXVer29F0B62ZfPQ3\t10.164.94.120\t33651\t10.47.21.80\t21\tanonymous\tnessus@nessus.org\tRETR\tftp://10.47.21.80/./..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f/boot.ini\t-\t-\t550\tThe system cannot find the path specified. \t-\t-\t-\t-\t-",
+    "_time": 1521911986.030299,
+    "sourcetype": "bro_ftp",
+    "source": "/opt/zeek/logs/current/ftp.log"
+  },
+  {
+    "_raw": "1521911987.067369\tCq6SkQ3WqcsSBpoM4c\t10.164.94.120\t45117\t10.47.21.80\t21\tanonymous\tnessus@nessus.org\tRETR\tftp://10.47.21.80/./..%5c..%5c..%5c..%5c..%5c..%5c..%5c..%5c..%5c..%5c..%5c..%5c/boot.ini\t-\t-\t550\tThe system cannot find the path specified. \t-\t-\t-\t-\t-",
+    "_time": 1521911987.067369,
+    "sourcetype": "bro_ftp",
+    "source": "/opt/zeek/logs/current/ftp.log"
+  },
+  {
+    "_raw": "1521911988.185309\tCcZxcD3YVNU6PFDack\t10.164.94.120\t45093\t10.47.21.80\t21\tanonymous\tnessus@nessus.org\tRETR\tftp://10.47.21.80/./.../.../.../.../.../.../.../.../.../.../.../.../boot.ini\t-\t-\t550\tThe system cannot find the path specified. \t-\t-\t-\t-\t-",
+    "_time": 1521911988.185309,
+    "sourcetype": "bro_ftp",
+    "source": "/opt/zeek/logs/current/ftp.log"
+  },
+  {
+    "_raw": "1521911990.376180\tCeaEiF8WeGHlEJot\t10.164.94.120\t33615\t10.47.21.80\t21\tanonymous\tnessus@nessus.org\tRETR\tftp://10.47.21.80/./...\\\\...\\\\...\\\\...\\\\...\\\\...\\\\...\\\\...\\\\...\\\\...\\\\...\\\\...\\\\boot.ini\t-\t-\t550\tThe system cannot find the path specified. \t-\t-\t-\t-\t-",
+    "_time": 1521911990.37618,
+    "sourcetype": "bro_ftp",
+    "source": "/opt/zeek/logs/current/ftp.log"
+  },
+  {
+    "_raw": "1521911991.426094\tC2JDiR1Hcu89VJxdg4\t10.164.94.120\t38243\t10.47.21.80\t21\tanonymous\tnessus@nessus.org\tRETR\tftp://10.47.21.80/./...\\\\...\\\\...\\\\...\\\\...\\\\...\\\\...\\\\...\\\\...\\\\...\\\\...\\\\...\\\\/boot.ini\t-\t-\t550\tThe system cannot find the file specified. \t-\t-\t-\t-\t-",
+    "_time": 1521911991.426094,
+    "sourcetype": "bro_ftp",
+    "source": "/opt/zeek/logs/current/ftp.log"
+  },
+  {
+    "_raw": "1521911993.292722\tCEtE8BCkI4CGONPya\t10.164.94.120\t42925\t10.47.21.80\t21\tanonymous\tnessus@nessus.org\tRETR\tftp://10.47.21.80/./...%2f...%2f...%2f...%2f...%2f...%2f...%2f...%2f...%2f...%2f...%2f...%2f/boot.ini\t-\t-\t550\tThe system cannot find the path specified. \t-\t-\t-\t-\t-",
+    "_time": 1521911993.292722,
+    "sourcetype": "bro_ftp",
+    "source": "/opt/zeek/logs/current/ftp.log"
+  },
+  {
+    "_raw": "1521911994.639855\tCoDpoi1dTrW95Pvg2e\t10.164.94.120\t43409\t10.47.21.80\t21\tanonymous\tnessus@nessus.org\tRETR\tftp://10.47.21.80/./...%5c...%5c...%5c...%5c...%5c...%5c...%5c...%5c...%5c...%5c...%5c...%5c/boot.ini\t-\t-\t550\tThe system cannot find the path specified. \t-\t-\t-\t-\t-",
+    "_time": 1521911994.639855,
+    "sourcetype": "bro_ftp",
+    "source": "/opt/zeek/logs/current/ftp.log"
+  }
+]

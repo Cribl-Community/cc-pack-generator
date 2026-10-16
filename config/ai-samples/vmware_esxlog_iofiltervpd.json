@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "key": "vmware_esxlog_iofiltervpd",
+  "sourcetype": "vmware_esxlog_iofiltervpd",
+  "events": [
+    "2024-05-14T03:12:07.441Z esx-prd-01.corp.local Iofiltervpd[2101234]: info  IOFilterVPD: Successfully registered filter class 'com.vmware.vsan.esa' for VM vm-01472 on datastore vsanDatastore",
+    "2024-05-14T03:14:22.118Z esx-prd-01.corp.local Iofiltervpd[2101235]: info  IOFilterVPD: Filter attach request received for disk scsi0:0 vmid=1024 user=root@10.20.4.51",
+    "2024-05-14T03:15:05.902Z esx-dev-07.corp.local Iofiltervpd[894512]: warning  IOFilterVPD: Filter 'CacheFilter-Dell' response latency 812ms exceeds threshold 500ms on volume /vmfs/volumes/5f3a1b2c-vol1",
+    "2024-05-14T03:16:44.330Z esx-dev-07.corp.local Iofiltervpd[894512]: error  IOFilterVPD: Failed to load VIB com.example.encryptfilter-2.1: signature verification failed (untrusted publisher)",
+    "2024-05-14T03:18:19.744Z esx-prd-02.corp.local Iofiltervpd[2093344]: info  IOFilterVPD: VP daemon started successfully, listening on unix socket /var/run/vmware/iofiltervpd.sock",
+    "2024-05-14T03:20:03.221Z esx-prd-02.corp.local Iofiltervpd[2093344]: critical  IOFilterVPD: Filter process crashed unexpectedly (signal=11) while handling I/O for vm-08832, restarting service",
+    "2024-05-14T03:21:58.556Z esx-mgmt-03.corp.local Iofiltervpd[771290]: info  IOFilterVPD: Policy update accepted from vCenter 172.16.4.10, new SIOC filter policy applied to cluster Compute-Cluster-A",
+    "2024-05-14T03:24:11.902Z esx-mgmt-03.corp.local Iofiltervpd[771290]: warning  IOFilterVPD: Unauthenticated connection attempt from 203.0.113.44 rejected on management interface vmk0",
+    "2024-05-14T03:27:34.187Z esx-prd-04.corp.local Iofiltervpd[2211987]: info  IOFilterVPD: Snapshot consistency filter 'vsphere-replication' enabled for datastore vol-nfs01 mounted from 10.20.30.5:/exports/nfs1",
+    "2024-05-14T03:29:47.410Z esx-prd-04.corp.local Iofiltervpd[2211987]: error  IOFilterVPD: I/O timeout (30000ms) waiting for filter ack from user-space process pid=889234, disk io suspended for vm-19022",
+    "2024-05-14T03:31:22.673Z esx-branch-11.remote.local Iofiltervpd[550012]: info  IOFilterVPD: New filter class registration request from user svc_backup@192.168.55.20 approved for BackupIOFilter v3.4",
+    "2024-05-14T03:33:09.845Z esx-branch-11.remote.local Iofiltervpd[550012]: warning  IOFilterVPD: Filter certificate for 'AcmeSecureIO' expires in 5 days, renewal recommended",
+    "2024-05-14T03:35:51.290Z esx-prd-05.corp.local Iofiltervpd[2338811]: info  IOFilterVPD: Detach completed for filter 'EncryptionFilter' on VM vm-04471, disk scsi0:1",
+    "2024-05-14T03:38:14.502Z esx-prd-05.corp.local Iofiltervpd[2338811]: critical  IOFilterVPD: Repeated authentication failures (5) detected from host 198.51.100.77 attempting filter management API access, blocking source",
+    "2024-05-14T03:41:29.671Z esx-dr-site02.corp.local Iofiltervpd[112233]: info  IOFilterVPD: Filter chain reconfigured for vm-77213: [DedupFilter, CacheFilter, EncryptFilter]",
+    "2024-05-14T03:44:02.938Z esx-dr-site02.corp.local Iofiltervpd[112233]: error  IOFilterVPD: Large payload (256MB) exceeded internal buffer capacity during filter data transfer, request dropped",
+    "2024-05-14T03:46:57.114Z esx-mgmt-09.corp.local Iofiltervpd[998234]: info  IOFilterVPD: Health check heartbeat OK, active filters=14, pending requests=0",
+    "2024-05-14T03:49:33.402Z esx-mgmt-09.corp.local Iofiltervpd[998234]: warning  IOFilterVPD: Connection from IPv6 address fe80::250:56ff:fe4e:3b21 could not be resolved, using fallback ACL",
+    "2024-05-14T03:52:18.766Z esx-prd-06.corp.local Iofiltervpd[1204577]: info  IOFilterVPD: User admin@corp.local via 10.10.10.15 requested filter uninstall for 'LegacyCacheFilter', operation completed successfully",
+    "2024-05-14T03:55:41.033Z esx-prd-06.corp.local Iofiltervpd[1204577]: critical  IOFilterVPD: Detected filter binary hash mismatch for 'vsan-esa-filter.so' — potential tampering, quarantining VIB and alerting vCenter"
+  ],
+  "fingerprint": "c29291c4-3788",
+  "verification": {
+    "verdict": "unverified",
+    "method": "none",
+    "eventsParsed": 0,
+    "eventsChecked": 20,
+    "fields": [],
+    "reasons": [
+      "vmware_esxlog_iofiltervpd has no parser and the events are unstructured text — nothing to verify against"
+    ],
+    "offendingEvents": [],
+    "keyEcho": null
+  },
+  "provenance": {
+    "model": "us.anthropic.claude-sonnet-5",
+    "buildNumber": 529,
+    "generatedAt": "2026-08-18T07:07:19.480Z",
+    "grounding": "KNOWN FACTS ABOUT THIS SOURCE (from sourcetype recognition — match these exactly):\n- Product: VMware ESXi host log\n- Log family: syslog"
+  }
+}

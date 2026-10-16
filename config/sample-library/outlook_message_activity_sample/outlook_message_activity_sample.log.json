@@ -1,0 +1,7 @@
+[
+  {
+    "_raw": "{\"Organization\":\"test.oncompany.test\",\"MessageId\":\"<32A2AAA5SAA4.AAAA00A6A2AA@AA00155AA5A4A6>\",\"Received\":\"2020-06-02T01:29:06.3627033\",\"SenderAddress\":\"username@domain.test\",\"RecipientAddress\":\"testRecep@test.oncompany.test\",\"Subject\":\"Azure AD Identity Protection Weekly Digest\",\"Status\":\"Delivered\",\"ToIP\":null,\"FromIP\":\"10.10.10.12\",\"Size\":76047,\"MessageTraceId\":\"66f62cca-c8ce-4436-f519-08d80694575d\",\"StartDate\":\"2020-05-31T16:34:00Z\",\"EndDate\":\"2020-06-02T16:34:00Z\",\"Index\":0}",
+    "_time": 1591079346.362,
+    "cribl_breaker": "Break on newlines"
+  }
+]

@@ -1,0 +1,53 @@
+{
+  "name": "XSIAM-Crowdstrike-FalconDataReplicator",
+  "kind": "source-specific",
+  "pattern": "tag_only",
+  "sourceIdField": "__sourceIdentifier",
+  "sourceIdentifier": "6cd7d60f0ff5497baecf6b9073c8000e",
+  "vendor": null,
+  "product": null,
+  "reshapesRaw": false,
+  "sample": {
+    "name": "XSIAM-Crowdstrike-FalconDataReplicator.log",
+    "format": "json",
+    "formatLabel": "JSON",
+    "events": 2
+  },
+  "upstream": {
+    "pack": "cribl-paloalto-xsiam",
+    "version": "2.1.1",
+    "path": "default/pipelines/XSIAM-Crowdstrike-FalconDataReplicator/conf.yml",
+    "sha256": "f88b8286789362993e838778cab0b9e0f043d5b6dfe6c74a8fe4909f6c53215a",
+    "source": "https://packs.cribl.io/packs/cribl-paloalto-xsiam"
+  },
+  "conf": {
+    "output": "default",
+    "streamtags": [],
+    "groups": {},
+    "asyncFuncTimeout": 1000,
+    "description": ""
+  },
+  "functions": [
+    {
+      "id": "comment",
+      "filter": "true",
+      "conf": {
+        "comment": "Assign the Source-Identifier from https://docs-cortex.paloaltonetworks.com/r/Cortex-XSIAM/Cortex-XSIAM-Documentation/Data-source-UUIDs"
+      }
+    },
+    {
+      "id": "eval",
+      "filter": "true",
+      "conf": {
+        "add": [
+          {
+            "disabled": false,
+            "name": "__sourceIdentifier",
+            "value": "'6cd7d60f0ff5497baecf6b9073c8000e'"
+          }
+        ]
+      },
+      "description": "Assign the Source-Identifier"
+    }
+  ]
+}

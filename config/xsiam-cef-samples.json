@@ -1,0 +1,79 @@
+{
+  "_notice": "CEF contract fixtures for XSIAM-required sources that do not ship a Palo Alto sample. Everything under \"sources\" is a deterministic synthetic example, not a captured customer event. FortiGate and Check Point use the mirrored Palo Alto pack samples. \"harvested\" is the exception: real upstream lines, kept HERE rather than read from the samples pool because an asserted XSIAM CEF requirement blocks the wizard until it is satisfied, and a contract fixture must therefore resolve offline with no network read. Its upstream attribution travels with the events, as the licence requires.",
+  "version": 1,
+  "harvested": {
+    "cyberark_pta": {
+      "sourcetype": "cyberark_pta_cef",
+      "sampleName": "cyberark_pta_cef",
+      "provenance": "Real CyberArk PTA CEF fixture harvested from Splunk Connect for Syslog",
+      "upstream": {
+        "repo": "splunk/splunk-connect-for-syslog",
+        "commit": "d861082778c4ce35a1636dc83e19763338bf662e",
+        "license": "BSD-2-Clause (tests/, Copyright 2019 Splunk, Inc.) — repo Apache-2.0",
+        "path": "tests/test_cyberark.py"
+      },
+      "events": [
+        "<111>Jun 15 13:45:07 sc4s-lab-01 CEF:0|CyberArk|PTA|2.6.1|20|Privileged account anomaly|8|cs1Label=incidentId cs1=55a32ed8e4b0e4a90114e12c start=1436755482000 deviceCustomDate1Label=detectionDate deviceCustomDate1=1436759065017 msg=Incident updated. Now contains 7 anomalies cs2Label=link cs2=https://10.0.0.1/incidents/55a32ed8e4b0e4a90114e12c",
+        "<190>Jul 12 23:44:25 10.0.0.1 CEF:0|CyberArk|PTA|2.6.1|20|Privileged account anomaly|8|cs1Label=incidentId cs1=55a32ed8e4b0e4a90114e12c start=1436755482000 deviceCustomDate1Label=detectionDate deviceCustomDate1=1436759065017 msg=Incident updated. Now contains 7 anomalies cs2Label=link cs2=https://10.0.0.1/incidents/55a32ed8e4b0e4a90114e12c"
+      ]
+    }
+  },
+  "sources": {
+    "aruba_clearpass": {
+      "evidence": "HPE Aruba ClearPass content-pack README requires CEF.",
+      "events": [
+        "CEF:0|Aruba Networks|ClearPass|6.11|1001|Authentication succeeded|3|rt=1785326400000 src=10.10.20.15 suser=alice@example.com act=Accept cs1Label=Service cs1=Corporate-WiFi cs2Label=Role cs2=Employee",
+        "CEF:0|Aruba Networks|ClearPass|6.11|1002|Authentication rejected|7|rt=1785326460000 src=10.10.20.16 suser=bob@example.com act=Reject reason=Invalid credentials cs1Label=Service cs1=VPN",
+        "CEF:0|Aruba Networks|ClearPass|6.11|1003|Endpoint posture failed|6|rt=1785326520000 src=10.10.20.17 smac=00:11:22:33:44:55 act=Quarantine cs1Label=Posture cs1=NonCompliant"
+      ]
+    },
+    "forcepoint": {
+      "evidence": "Forcepoint content-pack README requires CEF for NGFW.",
+      "events": [
+        "CEF:0|Forcepoint|NGFW|7.0|100|Connection allowed|3|rt=1785326400000 src=10.20.1.15 dst=203.0.113.10 spt=51514 dpt=443 proto=TCP act=Allow deviceExternalId=ngfw-01",
+        "CEF:0|Forcepoint|NGFW|7.0|101|Connection blocked|7|rt=1785326460000 src=10.20.1.16 dst=198.51.100.25 spt=51515 dpt=22 proto=TCP act=Block reason=Policy",
+        "CEF:0|Forcepoint|NGFW|7.0|102|Malware detected|9|rt=1785326520000 src=10.20.1.17 dst=192.0.2.44 act=Block fileName=payload.exe cs1Label=Rule cs1=Malware-Prevention"
+      ]
+    },
+    "silverfort": {
+      "evidence": "Silverfort content-pack README requires CEF.",
+      "events": [
+        "CEF:0|Silverfort|Admin Console|1.0|2001|Authentication allowed|3|rt=1785326400000 src=10.30.1.15 suser=alice@example.com act=Allow cs1Label=Application cs1=Microsoft365",
+        "CEF:0|Silverfort|Admin Console|1.0|2002|Authentication denied|8|rt=1785326460000 src=198.51.100.60 suser=admin@example.com act=Deny reason=Risk policy cs1Label=Risk cs1=High",
+        "CEF:0|Silverfort|Admin Console|1.0|2003|MFA challenged|5|rt=1785326520000 src=10.30.1.17 suser=bob@example.com act=Challenge cs1Label=Method cs1=Push"
+      ]
+    },
+    "txone_stellarone": {
+      "evidence": "TXOne StellarOne content-pack README requires Syslog CEF.",
+      "events": [
+        "CEF:0|TXOne Networks|StellarOne|1.0|3001|Agent security event|7|rt=1785326400000 src=10.40.1.15 shost=ot-host-01 act=Block cs1Label=Threat cs1=Suspicious process",
+        "CEF:0|TXOne Networks|StellarOne|1.0|3002|Audit event|3|rt=1785326460000 suser=operator@example.com act=Update cs1Label=Object cs1=Policy",
+        "CEF:0|TXOne Networks|StellarOne|1.0|3003|Agent offline|6|rt=1785326520000 src=10.40.1.17 shost=ot-host-03 act=Alert reason=Heartbeat timeout"
+      ]
+    },
+    "txone_stellarone_legacy_mode": {
+      "evidence": "TXOne StellarOne legacy-mode content-pack README requires Syslog CEF.",
+      "events": [
+        "CEF:0|TXOne Networks|StellarOne (Legacy Mode)|1.0|3101|Agent security event|7|rt=1785326400000 src=10.41.1.15 shost=legacy-host-01 act=Block cs1Label=Threat cs1=Suspicious process",
+        "CEF:0|TXOne Networks|StellarOne (Legacy Mode)|1.0|3102|Audit event|3|rt=1785326460000 suser=operator@example.com act=Update cs1Label=Object cs1=Policy",
+        "CEF:0|TXOne Networks|StellarOne (Legacy Mode)|1.0|3103|Agent offline|6|rt=1785326520000 src=10.41.1.17 shost=legacy-host-03 act=Alert reason=Heartbeat timeout"
+      ]
+    },
+    "txone_stellarprotect": {
+      "evidence": "TXOne StellarProtect content-pack README requires Syslog CEF.",
+      "events": [
+        "CEF:0|TXOne Networks|StellarProtect|1.0|3201|Malware blocked|9|rt=1785326400000 src=10.42.1.15 shost=protect-host-01 act=Block fileName=payload.exe",
+        "CEF:0|TXOne Networks|StellarProtect|1.0|3202|Application control event|6|rt=1785326460000 src=10.42.1.16 shost=protect-host-02 act=Deny cs1Label=Application cs1=Unknown",
+        "CEF:0|TXOne Networks|StellarProtect|1.0|3203|Pattern updated|2|rt=1785326520000 shost=protect-host-03 act=Update cs1Label=Version cs1=2026.08.26"
+      ]
+    },
+    "txone_stellarprotect_legacy_mode": {
+      "evidence": "TXOne StellarProtect legacy-mode content-pack README requires Syslog CEF.",
+      "events": [
+        "CEF:0|TXOne Networks|StellarProtect (Legacy Mode)|1.0|3301|Malware blocked|9|rt=1785326400000 src=10.43.1.15 shost=legacy-protect-01 act=Block fileName=payload.exe",
+        "CEF:0|TXOne Networks|StellarProtect (Legacy Mode)|1.0|3302|Application control event|6|rt=1785326460000 src=10.43.1.16 shost=legacy-protect-02 act=Deny cs1Label=Application cs1=Unknown",
+        "CEF:0|TXOne Networks|StellarProtect (Legacy Mode)|1.0|3303|Pattern updated|2|rt=1785326520000 shost=legacy-protect-03 act=Update cs1Label=Version cs1=2026.08.26"
+      ]
+    }
+  }
+}

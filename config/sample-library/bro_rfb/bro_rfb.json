@@ -1,0 +1,68 @@
+[
+  {
+    "_raw": "#separator \\x09",
+    "_time": 1521911869.61413,
+    "sourcetype": "bro_rfb",
+    "source": "/opt/zeek/logs/current/rfb.log"
+  },
+  {
+    "_raw": "#set_separator\t,",
+    "_time": 1521911869.61413,
+    "sourcetype": "bro_rfb",
+    "source": "/opt/zeek/logs/current/rfb.log"
+  },
+  {
+    "_raw": "#empty_field\t(empty)",
+    "_time": 1521911869.61413,
+    "sourcetype": "bro_rfb",
+    "source": "/opt/zeek/logs/current/rfb.log"
+  },
+  {
+    "_raw": "#unset_field\t-",
+    "_time": 1521911869.61413,
+    "sourcetype": "bro_rfb",
+    "source": "/opt/zeek/logs/current/rfb.log"
+  },
+  {
+    "_raw": "#path\trfb",
+    "_time": 1521911869.61413,
+    "sourcetype": "bro_rfb",
+    "source": "/opt/zeek/logs/current/rfb.log"
+  },
+  {
+    "_raw": "#open\t2024-04-12-19-30-01",
+    "_time": 1521911869.61413,
+    "sourcetype": "bro_rfb",
+    "source": "/opt/zeek/logs/current/rfb.log"
+  },
+  {
+    "_raw": "#fields\tts\tuid\tid.orig_h\tid.orig_p\tid.resp_h\tid.resp_p\tclient_major_version\tclient_minor_version\tserver_major_version\tserver_minor_version\tauthentication_method\tauth\tshare_flag\tdesktop_name\twidth\theight",
+    "_time": 1521911869.61413,
+    "sourcetype": "bro_rfb",
+    "source": "/opt/zeek/logs/current/rfb.log"
+  },
+  {
+    "_raw": "#types\ttime\tstring\taddr\tport\taddr\tport\tstring\tstring\tstring\tstring\tstring\tbool\tbool\tstring\tcount\tcount",
+    "_time": 1521911869.61413,
+    "sourcetype": "bro_rfb",
+    "source": "/opt/zeek/logs/current/rfb.log"
+  },
+  {
+    "_raw": "1521911869.614130\tC22RRY2eUniPO7ldn7\t10.164.94.120\t33671\t10.47.3.142\t5900\t003\t008\t003\t008\tNone\t-\t-\t-\t-\t-",
+    "_time": 1521911869.61413,
+    "sourcetype": "bro_rfb",
+    "source": "/opt/zeek/logs/current/rfb.log"
+  },
+  {
+    "_raw": "1521912086.207589\tCbLXnN1Hh3MPAZXvq\t10.164.94.120\t33187\t10.47.8.19\t5900\t003\t008\t003\t008\tNone\t-\t-\t-\t-\t-",
+    "_time": 1521912086.207589,
+    "sourcetype": "bro_rfb",
+    "source": "/opt/zeek/logs/current/rfb.log"
+  },
+  {
+    "_raw": "1521912483.303845\tCLwcLJ1Of2MLoRIzq6\t10.164.94.120\t45179\t10.47.8.151\t5900\t003\t008\t003\t008\tNone\t-\t-\t-\t-\t-",
+    "_time": 1521912483.303845,
+    "sourcetype": "bro_rfb",
+    "source": "/opt/zeek/logs/current/rfb.log"
+  }
+]

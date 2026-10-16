@@ -1,0 +1,56 @@
+[
+  {
+    "_raw": "#separator \\x09",
+    "_time": 1712950152.827586,
+    "sourcetype": "bro_packet_filter",
+    "source": "/opt/zeek/logs/current/packet_filter.log"
+  },
+  {
+    "_raw": "#set_separator\t,",
+    "_time": 1712950152.827586,
+    "sourcetype": "bro_packet_filter",
+    "source": "/opt/zeek/logs/current/packet_filter.log"
+  },
+  {
+    "_raw": "#empty_field\t(empty)",
+    "_time": 1712950152.827586,
+    "sourcetype": "bro_packet_filter",
+    "source": "/opt/zeek/logs/current/packet_filter.log"
+  },
+  {
+    "_raw": "#unset_field\t-",
+    "_time": 1712950152.827586,
+    "sourcetype": "bro_packet_filter",
+    "source": "/opt/zeek/logs/current/packet_filter.log"
+  },
+  {
+    "_raw": "#path\tpacket_filter",
+    "_time": 1712950152.827586,
+    "sourcetype": "bro_packet_filter",
+    "source": "/opt/zeek/logs/current/packet_filter.log"
+  },
+  {
+    "_raw": "#open\t2024-04-12-19-29-12",
+    "_time": 1712950152.827586,
+    "sourcetype": "bro_packet_filter",
+    "source": "/opt/zeek/logs/current/packet_filter.log"
+  },
+  {
+    "_raw": "#fields\tts\tnode\tfilter\tinit\tsuccess\tfailure_reason",
+    "_time": 1712950152.827586,
+    "sourcetype": "bro_packet_filter",
+    "source": "/opt/zeek/logs/current/packet_filter.log"
+  },
+  {
+    "_raw": "#types\ttime\tstring\tstring\tbool\tbool\tstring",
+    "_time": 1712950152.827586,
+    "sourcetype": "bro_packet_filter",
+    "source": "/opt/zeek/logs/current/packet_filter.log"
+  },
+  {
+    "_raw": "1712950152.827586\tzeek\tip or not ip\tT\tT\t-",
+    "_time": 1712950152.827586,
+    "sourcetype": "bro_packet_filter",
+    "source": "/opt/zeek/logs/current/packet_filter.log"
+  }
+]

@@ -1,0 +1,122 @@
+[
+  {
+    "_raw": "#separator \\x09",
+    "_time": 1521911721.255387,
+    "sourcetype": "bro_conn",
+    "source": "/opt/zeek/logs/current/conn.log"
+  },
+  {
+    "_raw": "#set_separator\t,",
+    "_time": 1521911721.255387,
+    "sourcetype": "bro_conn",
+    "source": "/opt/zeek/logs/current/conn.log"
+  },
+  {
+    "_raw": "#empty_field\t(empty)",
+    "_time": 1521911721.255387,
+    "sourcetype": "bro_conn",
+    "source": "/opt/zeek/logs/current/conn.log"
+  },
+  {
+    "_raw": "#unset_field\t-",
+    "_time": 1521911721.255387,
+    "sourcetype": "bro_conn",
+    "source": "/opt/zeek/logs/current/conn.log"
+  },
+  {
+    "_raw": "#path\tconn",
+    "_time": 1521911721.255387,
+    "sourcetype": "bro_conn",
+    "source": "/opt/zeek/logs/current/conn.log"
+  },
+  {
+    "_raw": "#open\t2024-04-12-19-29-13",
+    "_time": 1521911721.255387,
+    "sourcetype": "bro_conn",
+    "source": "/opt/zeek/logs/current/conn.log"
+  },
+  {
+    "_raw": "#fields\tts\tuid\tid.orig_h\tid.orig_p\tid.resp_h\tid.resp_p\tproto\tservice\tduration\torig_bytes\tresp_bytes\tconn_state\tlocal_orig\tlocal_resp\tmissed_bytes\thistory\torig_pkts\torig_ip_bytes\tresp_pkts\tresp_ip_bytes\ttunnel_parents",
+    "_time": 1521911721.255387,
+    "sourcetype": "bro_conn",
+    "source": "/opt/zeek/logs/current/conn.log"
+  },
+  {
+    "_raw": "#types\ttime\tstring\taddr\tport\taddr\tport\tenum\tstring\tinterval\tcount\tcount\tstring\tbool\tbool\tcount\tstring\tcount\tcount\tcount\tcount\tset[string]",
+    "_time": 1521911721.255387,
+    "sourcetype": "bro_conn",
+    "source": "/opt/zeek/logs/current/conn.log"
+  },
+  {
+    "_raw": "1521911721.255387\tCMwJl820SlYyy434c8\t10.164.94.120\t39681\t10.47.3.155\t3389\ttcp\tssl\t0.004266\t97\t19\tRSTR\tT\tT\t0\tShADTdtr\t10\t730\t6\t342\t-",
+    "_time": 1521911721.255387,
+    "sourcetype": "bro_conn",
+    "source": "/opt/zeek/logs/current/conn.log"
+  },
+  {
+    "_raw": "1521911721.386954\tCuvVlI2KyMLget8SCh\t10.47.3.142\t1046\t192.58.128.30\t53\tudp\tdns\t0.000252\t196\t0\tS0\tT\tF\t0\tD\t4\t308\t0\t0\t-",
+    "_time": 1521911721.386954,
+    "sourcetype": "bro_conn",
+    "source": "/opt/zeek/logs/current/conn.log"
+  },
+  {
+    "_raw": "1521911723.450528\tCJyTQs3RxC9tsjhPpe\t10.47.6.100\t47594\t134.71.3.17\t443\ttcp\t-\t10.012855\t401\t31\tRSTRH\tT\tF\t0\tAaDTdtfrr\t6\t1040\t10\t462\t-",
+    "_time": 1521911723.450528,
+    "sourcetype": "bro_conn",
+    "source": "/opt/zeek/logs/current/conn.log"
+  },
+  {
+    "_raw": "1521911735.039052\tCzRi162nniULDapz78\t10.47.5.155\t40717\t91.189.91.23\t80\ttcp\thttp\t8.532715\t21702\t85521998\tSF\tT\tF\t2896\tShADTadttttgTtfF\t65888\t3783676\t122051\t182947326\t-",
+    "_time": 1521911735.039052,
+    "sourcetype": "bro_conn",
+    "source": "/opt/zeek/logs/current/conn.log"
+  },
+  {
+    "_raw": "1521911723.913701\tCwFujZ3RovOzXhfye3\t10.128.0.207\t13\t10.47.26.160\t14\ticmp\t-\t3.757417\t96\t96\tOTH\tT\tT\t0\t-\t8\t320\t8\t320\t-",
+    "_time": 1521911723.913701,
+    "sourcetype": "bro_conn",
+    "source": "/opt/zeek/logs/current/conn.log"
+  },
+  {
+    "_raw": "1521911789.446205\tCv5n1f2x5svy0ExdIa\t10.128.0.233\t49568\t10.47.21.80\t445\ttcp\tsmb,ntlm,dce_rpc,gssapi\t1.638603\t1705\t1582\tRSTR\tT\tT\t779\tShADTadtGgTFr\t30\t4524\t30\t4130\t-",
+    "_time": 1521911789.446205,
+    "sourcetype": "bro_conn",
+    "source": "/opt/zeek/logs/current/conn.log"
+  },
+  {
+    "_raw": "1521911747.618446\tCP29Tx4K9UOBuKmKda\t10.47.1.152\t61459\t10.0.0.85\t161\tudp\tsnmp\t0.001358\t92\t94\tSF\tT\tT\t0\tDd\t2\t148\t2\t150\t-",
+    "_time": 1521911747.618446,
+    "sourcetype": "bro_conn",
+    "source": "/opt/zeek/logs/current/conn.log"
+  },
+  {
+    "_raw": "1521911729.862675\tCtDyB2eTH2tGYY79a\t10.47.24.81\t61127\t10.128.0.238\t60004\ttcp\t-\t0.009179\t0\t1\tS2\tT\tT\t1\tShAgFa\t7\t304\t4\t184\t-",
+    "_time": 1521911729.862675,
+    "sourcetype": "bro_conn",
+    "source": "/opt/zeek/logs/current/conn.log"
+  },
+  {
+    "_raw": "1521911754.155471\tCzFns7ajOqjB8qTee\t10.164.94.120\t41119\t10.47.22.55\t143\ttcp\tssl,imap\t0.053561\t85\t82\tS3\tT\tT\t0\tShAdtDTaf\t12\t810\t12\t804\t-",
+    "_time": 1521911754.155471,
+    "sourcetype": "bro_conn",
+    "source": "/opt/zeek/logs/current/conn.log"
+  },
+  {
+    "_raw": "1521912001.132505\tC1KPja2hOMWgQtYcGc\t10.128.0.241\t43444\t10.47.1.208\t587\ttcp\tsmtp\t5.342893\t34\t474\tRSTO\tT\tT\t0\tShAdtDTafR\t22\t1240\t14\t1716\t-",
+    "_time": 1521912001.132505,
+    "sourcetype": "bro_conn",
+    "source": "/opt/zeek/logs/current/conn.log"
+  },
+  {
+    "_raw": "1521911744.912114\tC5hkwt44fl0oJ98xhk\t10.0.0.251\t56109\t10.47.6.58\t80\ttcp\thttp\t17.018365\t5688\t3672\tS1\tT\tT\t1558\tShADTadttgGT\t42\t11224\t42\t8640\t-",
+    "_time": 1521911744.912114,
+    "sourcetype": "bro_conn",
+    "source": "/opt/zeek/logs/current/conn.log"
+  },
+  {
+    "_raw": "1521912116.849335\tCNTeUaLUfbzSR2Sq4\t172.31.255.3\t52848\t10.104.255.16\t9443\ttcp\tssl\t108.716409\t26251\t657318\tSF\tT\tT\t69\tShADTadttTtTGfF\t1384\t124348\t2588\t1449228\t-",
+    "_time": 1521912116.849335,
+    "sourcetype": "bro_conn",
+    "source": "/opt/zeek/logs/current/conn.log"
+  }
+]

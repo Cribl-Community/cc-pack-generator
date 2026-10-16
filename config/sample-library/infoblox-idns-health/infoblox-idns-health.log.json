@@ -1,0 +1,7 @@
+[
+  {
+    "_raw": "Sep 3 12:12:35 10.34.6.30 idns_healthd[1220]: resource health status [Monitor 'icmp' (ICMP, port 0) checked server 's1' (IP 10.34.6.23), status: IPv4=ONLINE]",
+    "_time": 1630696355,
+    "cribl_breaker": "Break on newlines"
+  }
+]

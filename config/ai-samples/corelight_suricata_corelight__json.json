@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "key": "corelight_suricata_corelight::json",
+  "sourcetype": "corelight_suricata_corelight",
+  "format": "json",
+  "events": [
+    "{\"_path\":\"suricata_corelight\",\"ts\":1718012345.123456,\"uid\":\"CHhAvVGS1DHFjwGM9\",\"id.orig_h\":\"10.1.4.22\",\"id.orig_p\":49213,\"id.resp_h\":\"203.0.113.55\",\"id.resp_p\":443,\"event_type\":\"alert\",\"proto\":\"TCP\",\"alert\":{\"action\":\"allowed\",\"gid\":1,\"signature_id\":2024897,\"rev\":2,\"signature\":\"ET MALWARE Win32/Cobalt Strike Beacon Activity\",\"category\":\"A Network Trojan was detected\",\"severity\":1},\"flow_id\":934821023847123}",
+    "{\"_path\":\"suricata_corelight\",\"ts\":1718013456.654321,\"uid\":\"C4tRnf2vXyLm3Aoq1a\",\"id.orig_h\":\"192.168.1.14\",\"id.orig_p\":52344,\"id.resp_h\":\"8.8.8.8\",\"id.resp_p\":53,\"event_type\":\"dns\",\"proto\":\"UDP\",\"dns\":{\"type\":\"query\",\"id\":51023,\"rrname\":\"update.microsoft.com\",\"rrtype\":\"A\",\"rcode\":\"NOERROR\"}}",
+    "{\"_path\":\"suricata_corelight\",\"ts\":1718014521.987654,\"uid\":\"CqZ8p1sJn4vXe7Y6h5\",\"id.orig_h\":\"172.16.5.9\",\"id.orig_p\":51222,\"id.resp_h\":\"198.51.100.23\",\"id.resp_p\":80,\"event_type\":\"http\",\"proto\":\"TCP\",\"http\":{\"hostname\":\"insecure-download.biz\",\"url\":\"/payload.exe\",\"http_user_agent\":\"Mozilla/5.0\",\"http_method\":\"GET\",\"status\":200,\"length\":184320}}",
+    "{\"_path\":\"suricata_corelight\",\"ts\":1718015672.111222,\"uid\":\"CxT2mQ9wLp5Kj0Ac3d\",\"id.orig_h\":\"10.10.10.5\",\"id.orig_p\":22,\"id.resp_h\":\"45.33.32.156\",\"id.resp_p\":51322,\"event_type\":\"ssh\",\"proto\":\"TCP\",\"ssh\":{\"client\":{\"software_version\":\"OpenSSH_8.9\",\"version\":2},\"server\":{\"software_version\":\"OpenSSH_7.4\",\"version\":2}}}",
+    "{\"_path\":\"suricata_corelight\",\"ts\":1718016789.333444,\"uid\":\"CvB3nRq7Y8sT1jLk9m\",\"id.orig_h\":\"10.1.9.44\",\"id.orig_p\":58211,\"id.resp_h\":\"142.250.72.14\",\"id.resp_p\":443,\"event_type\":\"tls\",\"proto\":\"TCP\",\"tls\":{\"version\":\"TLS 1.3\",\"sni\":\"mail.google.com\",\"subject\":\"CN=mail.google.com\",\"issuerdn\":\"CN=GTS CA 1C3,O=Google Trust Services LLC,C=US\",\"notbefore\":\"2024-03-01T00:00:00\",\"notafter\":\"2024-06-01T00:00:00\"}}",
+    "{\"_path\":\"suricata_corelight\",\"ts\":1718017890.445566,\"uid\":\"CzP6xWr2Y9tR3kMn8p\",\"id.orig_h\":\"203.0.113.99\",\"id.orig_p\":41562,\"id.resp_h\":\"10.0.2.15\",\"id.resp_p\":3389,\"event_type\":\"alert\",\"proto\":\"TCP\",\"alert\":{\"action\":\"allowed\",\"gid\":1,\"signature_id\":2210044,\"rev\":1,\"signature\":\"ET SCAN Potential SSH Scan\",\"category\":\"Attempted Information Leak\",\"severity\":2},\"flow_id\":934821023899221}",
+    "{\"_path\":\"suricata_corelight\",\"ts\":1718018901.556677,\"uid\":\"CoK1jXn5Z7wQ2rTl4v\",\"id.orig_h\":\"10.2.3.77\",\"id.orig_p\":60321,\"id.resp_h\":\"185.199.108.153\",\"id.resp_p\":443,\"event_type\":\"fileinfo\",\"proto\":\"TCP\",\"fileinfo\":{\"filename\":\"invoice_2024.pdf\",\"magic\":\"PDF document\",\"size\":2485760,\"sha256\":\"a1b2c3d4e5f60718293a4b5c6d7e8f9012345678901234567890abcdef12345\",\"stored\":false}}",
+    "{\"_path\":\"suricata_corelight\",\"ts\":1718019012.667788,\"uid\":\"CpR9mYt3X6vWq1Zk7j\",\"id.orig_h\":\"192.168.50.12\",\"id.orig_p\":25,\"id.resp_h\":\"172.217.14.99\",\"id.resp_p\":25,\"event_type\":\"smtp\",\"proto\":\"TCP\",\"smtp\":{\"helo\":\"mail.corp.local\",\"mail_from\":\"<billing@corp.local>\",\"rcpt_to\":[\"<user@partner.com>\"]}}",
+    "{\"_path\":\"suricata_corelight\",\"ts\":1718020123.778899,\"uid\":\"CsN4hVb8Y2xLp5Wq3r\",\"id.orig_h\":\"::1\",\"id.orig_p\":58211,\"id.resp_h\":\"fe80::1a2b:3c4d:5e6f:7890\",\"id.resp_p\":443,\"event_type\":\"flow\",\"proto\":\"TCP\",\"flow\":{\"pkts_toserver\":42,\"pkts_toclient\":38,\"bytes_toserver\":5120,\"bytes_toclient\":48200,\"start\":\"2024-06-10T12:14:22.334455\",\"end\":\"2024-06-10T12:14:29.556677\"}}",
+    "{\"_path\":\"suricata_corelight\",\"ts\":1718021234.8899,\"uid\":\"CtM7jRk2X9wPq6Vl1s\",\"id.orig_h\":\"10.5.6.7\",\"id.orig_p\":33221,\"id.resp_h\":\"91.219.237.244\",\"id.resp_p\":6667,\"event_type\":\"alert\",\"proto\":\"TCP\",\"alert\":{\"action\":\"blocked\",\"gid\":1,\"signature_id\":2400012,\"rev\":3,\"signature\":\"ET TROJAN IRC Botnet Command Channel\",\"category\":\"A Network Trojan was detected\",\"severity\":1},\"flow_id\":934821023912345}",
+    "{\"_path\":\"suricata_corelight\",\"ts\":1718022345.990011,\"uid\":\"CuL5kQm9Z3xRt2Wp8n\",\"id.orig_h\":\"172.16.8.201\",\"id.orig_p\":49873,\"id.resp_h\":\"104.16.85.20\",\"id.resp_p\":443,\"event_type\":\"tls\",\"proto\":\"TCP\",\"tls\":{\"version\":\"TLS 1.2\",\"sni\":\"\",\"subject\":\"\",\"issuerdn\":\"\",\"fingerprint\":\"9e:14:2d:6a:88:11:cc:3f:00:1a:9b:3e:77:44:ff:0a:12:bc:de:88\"}}",
+    "{\"_path\":\"suricata_corelight\",\"ts\":1718023456.001122,\"uid\":\"CvX8pWr4Y7tQn1Zk6m\",\"id.orig_h\":\"10.1.1.100\",\"id.orig_p\":49001,\"id.resp_h\":\"10.1.1.200\",\"id.resp_p\":445,\"event_type\":\"alert\",\"proto\":\"TCP\",\"alert\":{\"action\":\"allowed\",\"gid\":1,\"signature_id\":2027678,\"rev\":1,\"signature\":\"ET POLICY SMBv1 Protocol Usage Detected\",\"category\":\"Potentially Bad Traffic\",\"severity\":3},\"flow_id\":934821023933321}",
+    "{\"_path\":\"suricata_corelight\",\"ts\":1718024567.112233,\"uid\":\"CwY1qXs5Z8uRn2Vl9p\",\"id.orig_h\":\"198.51.100.7\",\"id.orig_p\":51022,\"id.resp_h\":\"10.0.5.5\",\"id.resp_p\":22,\"event_type\":\"alert\",\"proto\":\"TCP\",\"alert\":{\"action\":\"allowed\",\"gid\":1,\"signature_id\":2001219,\"rev\":5,\"signature\":\"ET SCAN SSH Brute Force Attempt\",\"category\":\"Attempted Administrator Privilege Gain\",\"severity\":1},\"flow_id\":934821023944432}",
+    "{\"_path\":\"suricata_corelight\",\"ts\":1718025678.223344,\"uid\":\"CxZ2rYt6A9vSo3Wm0q\",\"id.orig_h\":\"10.3.7.9\",\"id.orig_p\":56342,\"id.resp_h\":\"151.101.65.69\",\"id.resp_p\":443,\"event_type\":\"http\",\"proto\":\"TCP\",\"http\":{\"hostname\":\"cdn.example.com\",\"url\":\"/assets/app.js\",\"http_user_agent\":\"curl/8.1.2\",\"http_method\":\"GET\",\"status\":304,\"length\":0}}",
+    "{\"_path\":\"suricata_corelight\",\"ts\":1718026789.334455,\"uid\":\"CyA3sZu7B0wTp4Xn1r\",\"id.orig_h\":\"192.168.20.30\",\"id.orig_p\":33445,\"id.resp_h\":\"77.88.55.60\",\"id.resp_p\":53,\"event_type\":\"dns\",\"proto\":\"UDP\",\"dns\":{\"type\":\"query\",\"id\":9012,\"rrname\":\"suspicious-c2-domain.ru\",\"rrtype\":\"A\",\"rcode\":\"NXDOMAIN\"}}",
+    "{\"_path\":\"suricata_corelight\",\"ts\":1718027890.445566,\"uid\":\"CzB4tAv8C1xUq5Yo2s\",\"id.orig_h\":\"10.9.9.9\",\"id.orig_p\":48221,\"id.resp_h\":\"40.100.50.60\",\"id.resp_p\":8080,\"event_type\":\"alert\",\"proto\":\"TCP\",\"alert\":{\"action\":\"allowed\",\"gid\":1,\"signature_id\":2030555,\"rev\":2,\"signature\":\"ET WEB_SERVER PHP Injection Attack\",\"category\":\"Web Application Attack\",\"severity\":1},\"flow_id\":934821023956789}",
+    "{\"_path\":\"suricata_corelight\",\"ts\":1718028901.556677,\"uid\":\"CaC5uBw9D2yVr6Zp3t\",\"id.orig_h\":\"10.4.4.4\",\"id.orig_p\":63021,\"id.resp_h\":\"172.16.99.1\",\"id.resp_p\":161,\"event_type\":\"alert\",\"proto\":\"UDP\",\"alert\":{\"action\":\"allowed\",\"gid\":1,\"signature_id\":2101414,\"rev\":9,\"signature\":\"GPL SNMP public access udp\",\"category\":\"Attempted Information Leak\",\"severity\":2},\"flow_id\":934821023967890}",
+    "{\"_path\":\"suricata_corelight\",\"ts\":1718029012.667788,\"uid\":\"CbD6vCx0E3zWs7Aq4u\",\"id.orig_h\":\"192.168.100.15\",\"id.orig_p\":50322,\"id.resp_h\":\"13.107.42.14\",\"id.resp_p\":443,\"event_type\":\"fileinfo\",\"proto\":\"TCP\",\"fileinfo\":{\"filename\":\"report_final.docx.exe\",\"magic\":\"PE32 executable\",\"size\":9437184,\"sha256\":\"ffeeddccbbaa99887766554433221100ffeeddccbbaa998877665544332211\",\"stored\":true}}",
+    "{\"_path\":\"suricata_corelight\",\"ts\":1718030123.778899,\"uid\":\"CcE7wDy1F4aXt8Br5v\",\"id.orig_h\":\"10.7.7.7\",\"id.orig_p\":41221,\"id.resp_h\":\"216.58.212.10\",\"id.resp_p\":443,\"event_type\":\"stats\",\"proto\":\"\",\"stats\":{\"uptime\":864211,\"capture\":{\"kernel_packets\":9284712,\"kernel_drops\":45}}}",
+    "{\"_path\":\"suricata_corelight\",\"ts\":1718031234.8899,\"uid\":\"CdF8xEz2G5bYu9Cs6w\",\"id.orig_h\":\"185.220.101.45\",\"id.orig_p\":443,\"id.resp_h\":\"10.1.2.3\",\"id.resp_p\":52334,\"event_type\":\"alert\",\"proto\":\"TCP\",\"alert\":{\"action\":\"blocked\",\"gid\":1,\"signature_id\":2029988,\"rev\":4,\"signature\":\"ET TOR Known Tor Exit Node Traffic\",\"category\":\"Potentially Bad Traffic\",\"severity\":2},\"flow_id\":934821023978901}"
+  ],
+  "fingerprint": "d3b37a64-7242",
+  "verification": {
+    "verdict": "pass",
+    "method": "structure",
+    "eventsParsed": 20,
+    "eventsChecked": 20,
+    "fields": [
+      "_path",
+      "alert",
+      "dns",
+      "event_type",
+      "fileinfo",
+      "flow",
+      "flow_id",
+      "http",
+      "id.orig_h",
+      "id.orig_p",
+      "id.resp_h",
+      "id.resp_p",
+      "proto",
+      "smtp",
+      "ssh",
+      "stats",
+      "tls",
+      "ts",
+      "uid"
+    ],
+    "reasons": [
+      "no parser for corelight_suricata_corelight; the events are well-formed json with 19 distinct keys"
+    ],
+    "offendingEvents": [],
+    "keyEcho": null
+  },
+  "provenance": {
+    "model": "us.anthropic.claude-sonnet-5",
+    "buildNumber": 529,
+    "generatedAt": "2026-08-18T07:10:20.671Z",
+    "grounding": "KNOWN FACTS ABOUT THIS SOURCE (from sourcetype recognition — match these exactly):\n- Product: Corelight Corelight (Zeek)\n- Log family: network\n- REQUIRED wire format (the user confirmed this — emit ONLY this format): Format: one compact JSON object per line. Every event carries _path (the Zeek log name, matching the sourcetype), ts as a fractional epoch, uid, and the id.orig_h/id.orig_p/id.resp_h/id.resp_p tuple. Every OTHER key must be one Zeek defines for that specific log — do not carry conn.log fields (conn_state, orig_bytes, resp_bytes, duration, history, service) into a log that is not conn."
+  }
+}

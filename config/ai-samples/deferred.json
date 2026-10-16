@@ -1,0 +1,810 @@
+{
+  "version": 1,
+  "_comment": "Open questions: samples dropped from the review queue without a verdict, by `npm run samples:defer`. Keyed by SAMPLE KEY, not by content fingerprint, so the note is found again when a regenerated sample for that source arrives — a fingerprint-keyed note never would be. This file is NOT a gate: nothing here blocks a promotion, which is the whole difference from rejected.json. Promoting or rejecting the key removes its entry, so what is left is always still open.",
+  "deferred": {
+    "arbor_pravailaps": {
+      "reason": "build-529 HOLD — needs evidence: Arbor events are plausible, but exact field schema is unproven.",
+      "deferredAt": "2026-08-18",
+      "times": 1,
+      "events": 20,
+      "verdict": "pass",
+      "method": "structure",
+      "seen": [
+        "ea9a1170-3943"
+      ],
+      "firstEvent": "Jan 15 2024 03:12:47 aps-sensor01 pravail_aps[2841]: severity=CRITICAL event_type=AttackStarted attack_id=884213 src_ip=203.0.113.44 dst_ip=10.20.5.12 dst_port=443 protocol=TCP attack_type=\"TCP SYN Fl"
+    },
+    "brocade_syslog::json": {
+      "reason": "build-529 HOLD — needs evidence: Brocade message text plausible, JSON/Zeek envelope unproven.",
+      "deferredAt": "2026-08-18",
+      "times": 1,
+      "events": 20,
+      "verdict": "pass",
+      "method": "structure",
+      "seen": [
+        "778cf1b6-6860"
+      ],
+      "firstEvent": "{\"_path\":\"syslog\",\"ts\":1718009041.223841,\"uid\":\"CXWx1a3Zt8kFj2Qz3\",\"id.orig_h\":\"10.20.4.15\",\"id.orig_p\":51422,\"id.resp_h\":\"10.20.4.1\",\"id.resp_p\":514,\"proto\":\"udp\",\"facility\":\"local7\",\"severity\":\"warn"
+    },
+    "cisco_prime": {
+      "reason": "build-529 HOLD — needs evidence: Cisco Prime Java messages are plausible, exact fixture absent.",
+      "deferredAt": "2026-08-18",
+      "times": 1,
+      "events": 20,
+      "verdict": "unverified",
+      "method": "none",
+      "seen": [
+        "2af7cf7d-3460"
+      ],
+      "firstEvent": "05/03/2024 08:12:34,102 INFO  [AlarmNotificationThread] AlarmManager - Alarm cleared: AP Up - AP-Floor2-North (10.10.14.22) reassociated with Controller WLC-CAMPUS-01 (10.10.1.5)"
+    },
+    "clearswift_email_syslog": {
+      "reason": "build-529 HOLD — needs evidence: Clearswift fields are plausible, but exact serialization is unproven.",
+      "deferredAt": "2026-08-18",
+      "times": 1,
+      "events": 20,
+      "verdict": "pass",
+      "method": "structure",
+      "seen": [
+        "af51c8bf-5478"
+      ],
+      "firstEvent": "Oct 03 08:12:41 seg-gw01 CS-SEG[10234]: [INFO] MessageID=<a1b2c3d4@corp.local> From=jsmith@company.com To=partner@external.org Subject=\"Q3 Financial Report\" Size=245678 Action=Delivered Route=SMTP-OUT"
+    },
+    "corelight_corelight_audit_log::json": {
+      "reason": "build-529 HOLD — needs evidence: Corelight audit path/schema unproven.",
+      "deferredAt": "2026-08-18",
+      "times": 1,
+      "events": 20,
+      "verdict": "pass",
+      "method": "structure",
+      "seen": [
+        "5fe16bbb-5503"
+      ],
+      "firstEvent": "{\"_path\":\"audit\",\"ts\":1717401234.123456,\"uid\":\"C4a1b2c3d4e5f6g7h8\",\"id.orig_h\":\"10.1.2.15\",\"id.orig_p\":54321,\"id.resp_h\":\"10.1.2.5\",\"id.resp_p\":443,\"user\":\"admin\",\"action\":\"login\",\"status\":\"success\",\""
+    },
+    "corelight_corelight_ml_metrics::json": {
+      "reason": "build-529 HOLD — needs evidence: Custom Corelight ML metrics schema is unproven.",
+      "deferredAt": "2026-08-18",
+      "times": 1,
+      "events": 20,
+      "verdict": "pass",
+      "method": "structure",
+      "seen": [
+        "d1b0894d-7522"
+      ],
+      "firstEvent": "{\"_path\":\"corelight_ml_metrics\",\"ts\":1718012345.123456,\"uid\":\"CXWv8Z3z9YqK2mN1Ig\",\"id.orig_h\":\"10.1.4.22\",\"id.orig_p\":52344,\"id.resp_h\":\"172.217.14.226\",\"id.resp_p\":443,\"model_name\":\"tls_fingerprint_c"
+    },
+    "corelight_etc_viz::json": {
+      "reason": "build-529 HOLD — needs evidence: etc_viz schema is plausible, exact fields unproven.",
+      "deferredAt": "2026-08-18",
+      "times": 1,
+      "events": 20,
+      "verdict": "pass",
+      "method": "structure",
+      "seen": [
+        "d83ec293-8153"
+      ],
+      "firstEvent": "{\"_path\":\"etc_viz\",\"ts\":1721030412.184532,\"uid\":\"CxT1a23BvVQz9F5kh1\",\"id.orig_h\":\"10.0.4.22\",\"id.orig_p\":51322,\"id.resp_h\":\"172.217.14.10\",\"id.resp_p\":443,\"os\":\"Windows 10\",\"os_confidence\":0.94,\"brows"
+    },
+    "corelight_known_names::json": {
+      "reason": "build-529 HOLD — needs evidence: known_names schema variant is not proven.",
+      "deferredAt": "2026-08-18",
+      "times": 1,
+      "events": 20,
+      "verdict": "pass",
+      "method": "structure",
+      "seen": [
+        "90afb410-5007"
+      ],
+      "firstEvent": "{\"_path\":\"known_names\",\"ts\":1717034421.234567,\"uid\":\"CHhAvVGS1DHFjwGM9\",\"id.orig_h\":\"10.1.4.22\",\"id.orig_p\":52344,\"id.resp_h\":\"8.8.8.8\",\"id.resp_p\":53,\"host\":\"10.1.4.22\",\"name\":\"www.corp-intranet.loca"
+    },
+    "corelight_known_users::json": {
+      "reason": "build-529 HOLD — needs evidence: Corelight known_users schema variant unproven.",
+      "deferredAt": "2026-08-18",
+      "times": 1,
+      "events": 20,
+      "verdict": "pass",
+      "method": "structure",
+      "seen": [
+        "c28f10a8-4373"
+      ],
+      "firstEvent": "{\"_path\":\"known_users\",\"ts\":1718003421.234567,\"uid\":\"C1a2b3c4d5e6f7g8h9\",\"id.orig_h\":\"10.1.4.22\",\"id.orig_p\":51422,\"id.resp_h\":\"10.1.1.10\",\"id.resp_p\":21,\"user\":\"jsmith\",\"msg\":\"FTP login observed\"}"
+    },
+    "corelight_yara_error_corelight::json": {
+      "reason": "build-529 HOLD — needs evidence: Custom YARA path and schema are not proven.",
+      "deferredAt": "2026-08-18",
+      "times": 1,
+      "events": 20,
+      "verdict": "pass",
+      "method": "structure",
+      "seen": [
+        "cdfe92ab-6526"
+      ],
+      "firstEvent": "{\"_path\":\"yara_error\",\"ts\":1718012345.123456,\"uid\":\"CXWv8B3Tsz4gk9RyQe\",\"id.orig_h\":\"10.1.4.22\",\"id.orig_p\":51322,\"id.resp_h\":\"203.0.113.45\",\"id.resp_p\":443,\"fuid\":\"FGh3k2QpLxT9vY7Zc\",\"file_mime_type\""
+    },
+    "datadiode_syslog": {
+      "reason": "build-529 HOLD — needs evidence: Data Diode structure is coherent, product fixture absent.",
+      "deferredAt": "2026-08-18",
+      "times": 1,
+      "events": 20,
+      "verdict": "pass",
+      "method": "structure",
+      "seen": [
+        "c7d57df7-3800"
+      ],
+      "firstEvent": "<134>Jan 15 03:12:47 DD-TX-NODE01 owldiode[1421]: severity=INFO event=\"File Transfer Complete\" src=10.12.4.22 dst=172.16.8.15 filename=scada_export_0115.csv bytes=2048576 duration_ms=842 session_id=8f"
+    },
+    "delinea_app": {
+      "reason": "build-529 HOLD — needs evidence: Delinea JSON is plausible, but documented output is Syslog/CEF.",
+      "deferredAt": "2026-08-18",
+      "times": 1,
+      "events": 20,
+      "verdict": "pass",
+      "method": "structure",
+      "seen": [
+        "259ba532-5647"
+      ],
+      "firstEvent": "{\"timestamp\":\"2024-06-03T08:12:44Z\",\"product\":\"Delinea Secret Server\",\"eventType\":\"UserLoginSuccess\",\"severity\":\"Info\",\"user\":\"jsmith\",\"domain\":\"CORP\",\"sourceIp\":\"10.14.22.53\",\"hostname\":\"SS-PROD-01\","
+    },
+    "email_fpc_metadata": {
+      "reason": "build-529 HOLD — needs evidence: Generic FPC metadata has no identified product or fixture.",
+      "deferredAt": "2026-08-18",
+      "times": 1,
+      "events": 20,
+      "verdict": "pass",
+      "method": "structure",
+      "seen": [
+        "e8c55259-9236"
+      ],
+      "firstEvent": "2024-06-08T02:14:37.221Z sensor=FPC-EAST-04 event_id=fpc-8823910 src_ip=203.0.113.44 src_port=52344 dst_ip=10.20.4.15 dst_port=25 protocol=SMTP direction=inbound sender=finance-alerts@vendor-billing.c"
+    },
+    "fidelis_syslog": {
+      "reason": "build-529 HOLD — needs evidence: Fidelis KVP/syslog plausible, exact fixture absent.",
+      "deferredAt": "2026-08-18",
+      "times": 1,
+      "events": 20,
+      "verdict": "pass",
+      "method": "structure",
+      "seen": [
+        "4611b4e7-5692"
+      ],
+      "firstEvent": "<134>Feb 12 2025 03:14:22 fidelis-sensor01 Fidelis[network]: Severity=5 Type=Alert Category=DataExfiltration Src=10.2.14.33 SrcPort=51322 Dst=203.0.113.45 DstPort=443 Proto=TCP Policy=\"Sensitive Data "
+    },
+    "forcepoint_local_email_security": {
+      "reason": "build-529 HOLD — needs evidence: Forcepoint KVP email events plausible, exact schema absent.",
+      "deferredAt": "2026-08-18",
+      "times": 1,
+      "events": 20,
+      "verdict": "pass",
+      "method": "structure",
+      "seen": [
+        "455a6376-6782"
+      ],
+      "firstEvent": "2024-01-15 08:23:14 mail-gw01 ForcepointEmail[14522]: action=Permit direction=Inbound sender=john.doe@acmecorp.com recipient=finance@acmecorp.com subject=\"Q4 Budget Review\" size=245678 src_ip=203.0.11"
+    },
+    "https_request": {
+      "reason": "build-529 HOLD — needs evidence: Generic HTTP/TLS access shape is plausible, ownership absent.",
+      "deferredAt": "2026-08-18",
+      "times": 1,
+      "events": 21,
+      "verdict": "pass",
+      "method": "structure",
+      "seen": [
+        "b140d1af-5945"
+      ],
+      "firstEvent": "10.0.4.22 - jdoe [03/Apr/2025:08:12:33 -0400] \"GET /account/dashboard HTTP/2.0\" 200 4521 \"https://portal.example.com/login\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/123.0.0.0\" TLSv1.3 TLS_AES"
+    },
+    "isva_syslog": {
+      "reason": "build-529 HOLD — needs evidence: Plausible shape, but no exact literal ground-truth fixture was found; do not promote yet.",
+      "deferredAt": "2026-08-18",
+      "times": 1,
+      "events": 21,
+      "verdict": "pass",
+      "method": "structure",
+      "seen": [
+        "a452db7c-5770"
+      ],
+      "firstEvent": "<134>Jan 22 00:12:07 wga-prod-01 webseald-default[19332]: HPDAU0224I User 'jsmith' authentication succeeded. severity=INFO sourceip=10.20.4.55 port=443 method=POST resource=/mga/sps/oauth/oauth20/toke"
+    },
+    "ivanti_audit_log": {
+      "reason": "build-529 HOLD — needs evidence: Ivanti audit fields are plausible, exact fixture absent.",
+      "deferredAt": "2026-08-18",
+      "times": 1,
+      "events": 20,
+      "verdict": "pass",
+      "method": "structure",
+      "seen": [
+        "475b5cbf-5158"
+      ],
+      "firstEvent": "2024-06-05T08:12:33+0000 ivanti-ics01 ive: id=AUT24326 time=\"2024-06-05 08:12:33\" pri=6 vpn=VPN-Gateway1 realm=\"Employees\" roles=\"Full-Access\" user=jdoe proto=https src=203.0.113.45 dst=10.0.0.5 dstpo"
+    },
+    "ivanti_certactivity": {
+      "reason": "build-529 HOLD — needs evidence: Certificate fields are plausible; exact Ivanti schema is unproven.",
+      "deferredAt": "2026-08-18",
+      "times": 1,
+      "events": 20,
+      "verdict": "pass",
+      "method": "structure",
+      "seen": [
+        "3a402662-4845"
+      ],
+      "firstEvent": "Sep 21 08:12:33 ive01 certactivity[21345]: NOTICE - Client certificate authentication successful for user 'jsmith' cert_serial=4F3A2B1C issuer='CN=ACME Root CA,O=ACME Corp' subject='CN=jsmith,OU=Engin"
+    },
+    "ivanti_cpu": {
+      "reason": "build-529 HOLD — needs evidence: Ivanti CPU telemetry is plausible, exact schema absent.",
+      "deferredAt": "2026-08-18",
+      "times": 1,
+      "events": 20,
+      "verdict": "pass",
+      "method": "structure",
+      "seen": [
+        "2b97730c-4091"
+      ],
+      "firstEvent": "Jan 15 00:14:22 ive-gw01 dsmon[3011]: severity=INFO node=ive-node1 cpu=22% mem=38% load1=0.41 load5=0.55 src_ip=10.20.14.5 user=svc_monitor msg=\"Routine CPU utilization check completed within normal r"
+    },
+    "ivanti_dep": {
+      "reason": "build-529 HOLD — needs evidence: Ivanti DEP integration plausible, exact event schema absent.",
+      "deferredAt": "2026-08-18",
+      "times": 1,
+      "events": 20,
+      "verdict": "pass",
+      "method": "structure",
+      "seen": [
+        "236012a1-6467"
+      ],
+      "firstEvent": "Oct 15 03:12:34 ivanti-dep-01 DEPConnector[8821]: level=info event=DeviceEnrollmentRequest user=\"svc-dep-sync\" src_ip=10.42.11.7 device_serial=C02XG2JHJGH5 apple_dep_id=DEP-88213 profile=\"Corporate-iO"
+    },
+    "ivanti_df": {
+      "reason": "build-529 HOLD — needs evidence: Ivanti df records plausible, exact format absent.",
+      "deferredAt": "2026-08-18",
+      "times": 1,
+      "events": 20,
+      "verdict": "unverified",
+      "method": "none",
+      "seen": [
+        "a70cf220-3440"
+      ],
+      "firstEvent": "<134>May 30 2024 08:12:41 ivanti-ics01 dsAdmin[2211]: [NOTICE] AUT24391 User login succeeded for user 'jsmith' from 10.14.2.55 realm 'Users' role 'Employee-Full'"
+    },
+    "ivanti_es_devices": {
+      "reason": "build-529 HOLD — needs evidence: Ivanti EPMM device records plausible, exact fixture absent.",
+      "deferredAt": "2026-08-18",
+      "times": 1,
+      "events": 20,
+      "verdict": "pass",
+      "method": "structure",
+      "seen": [
+        "1df7027b-4360"
+      ],
+      "firstEvent": "2024-06-10T08:12:34.221Z INFO ivanti_es_devices host=EPMM-CORE-01 event=DEVICE_CHECKIN deviceId=A1F4-2291-BC7E userId=jsmith@corp.com platform=iOS osVersion=17.4.1 model=iPhone14,3 status=SUCCESS ip=1"
+    },
+    "ivanti_https_access": {
+      "reason": "build-529 HOLD — needs evidence: Ivanti access fields are plausible, but exact combined format remains unproven.",
+      "deferredAt": "2026-08-18",
+      "times": 1,
+      "events": 20,
+      "verdict": "pass",
+      "method": "structure",
+      "seen": [
+        "2cf1fd3-3913"
+      ],
+      "firstEvent": "10.45.12.33 - jsmith [15/Mar/2025:03:12:44 +0000] \"GET /dana-na/auth/url_default/welcome.cgi HTTP/1.1\" 200 4821 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/122.0\" sid=8f3a2c91e0 realm=\"Users"
+    },
+    "ivanti_inmemory_queue_metrics": {
+      "reason": "build-529 HOLD — needs evidence: Ivanti queue metrics plausible, exact schema absent.",
+      "deferredAt": "2026-08-18",
+      "times": 1,
+      "events": 20,
+      "verdict": "pass",
+      "method": "structure",
+      "seen": [
+        "cbb0a0b7-4815"
+      ],
+      "firstEvent": "2024-06-11T02:14:33.221Z ivc-gw01.corp.local ive[4021]: <queue_metrics> module=IVE queue=AuthRequestQueue depth=12 capacity=500 enqueue_rate=45/s dequeue_rate=44/s drop_count=0 latency_ms=8 status=OK "
+    },
+    "ivanti_ldap": {
+      "reason": "build-529 HOLD — needs evidence: Ivanti LDAP content is plausible, exact envelope absent.",
+      "deferredAt": "2026-08-18",
+      "times": 1,
+      "events": 20,
+      "verdict": "unverified",
+      "method": "none",
+      "seen": [
+        "ad094dc9-4294"
+      ],
+      "firstEvent": "2024-06-05T08:12:34+00:00 ivanti-ics-01 auth[21983]: LDAPAuth[AUTH22930] INFO - LDAP authentication succeeded for user 'jsmith' from 192.168.10.42 against server 'ldaps://dc01.corp.local:636' realm 'U"
+    },
+    "ivanti_linux_audit": {
+      "reason": "build-529 HOLD — needs evidence: Ivanti audit structure is plausible, but exact fields are unproven.",
+      "deferredAt": "2026-08-18",
+      "times": 1,
+      "events": 21,
+      "verdict": "pass",
+      "method": "structure",
+      "seen": [
+        "8ea39f9-6780"
+      ],
+      "firstEvent": "<134>Feb 12 03:14:22 ivanti-vpn01 audit[21345]: id=admin sn=1013492 time=\"2024-02-12 03:14:22\" fw=ivanti-vpn01 pri=6 vpn=Employee-VPN realm=\"Users\" roles=\"Employee\" msg=\"AUT24451\" user=\"jchen\" src=203"
+    },
+    "ivanti_mi": {
+      "reason": "build-529 HOLD — needs evidence: Ivanti mobile-management events are plausible, exact schema unproven.",
+      "deferredAt": "2026-08-18",
+      "times": 1,
+      "events": 20,
+      "verdict": "pass",
+      "method": "structure",
+      "seen": [
+        "1f526b0e-4190"
+      ],
+      "firstEvent": "2024-06-03T08:12:41+00:00 mi-core-prod01 IvantiMI[Core]: INFO event=DEVICE_CHECKIN user=jsmith device_id=A1B2C3D4E5F6 imei=356938035643809 platform=iOS os_version=17.4.1 ip=10.14.22.101 status=SUCCESS"
+    },
+    "ivanti_miclient_access": {
+      "reason": "build-529 HOLD — needs evidence: Ivanti MICLIENT fields are plausible, exact fixture absent.",
+      "deferredAt": "2026-08-18",
+      "times": 1,
+      "events": 20,
+      "verdict": "unverified",
+      "method": "none",
+      "seen": [
+        "1065a465-4476"
+      ],
+      "firstEvent": "<134>Jan 15 08:23:11 ivanti-gw01 MICLIENT[AUT22930]: 2024-01-15 08:23:11 - ic - [203.0.113.45] jsmith(Users)[Sales] - Primary authentication successful for jsmith/Users from 203.0.113.45 realm 'Users'"
+    },
+    "ivanti_openports": {
+      "reason": "build-529 HOLD — needs evidence: Ivanti documents openPorts as Proto/Port inventory, not these audit events.",
+      "deferredAt": "2026-08-18",
+      "times": 1,
+      "events": 20,
+      "verdict": "pass",
+      "method": "structure",
+      "seen": [
+        "b7ff82d5-4025"
+      ],
+      "firstEvent": "2024-06-11T03:14:22Z ivanti-gw01 openports[4521]: severity=INFO msg=\"Port scan baseline established\" src=10.10.5.12 dst=10.10.5.1 dport=443 proto=tcp user=svc_monitor outcome=success"
+    },
+    "ivanti_portal_request": {
+      "reason": "build-529 HOLD — needs evidence: Ivanti portal request shape plausible, exact fixture absent.",
+      "deferredAt": "2026-08-18",
+      "times": 1,
+      "events": 20,
+      "verdict": "pass",
+      "method": "structure",
+      "seen": [
+        "580184bf-6263"
+      ],
+      "firstEvent": "Jan 14 03:12:07 ivanti-vpn02 ive[4021]: id=IVE-2024-1001 time=\"2024-01-14 03:12:07\" src=192.168.10.15 port=51322 user=jsmith realm=\"Users\" role=\"Employees\" method=POST uri=/dana-na/auth/url_default/lo"
+    },
+    "ivanti_protocol": {
+      "reason": "build-529 HOLD — needs evidence: Ivanti protocol fields plausible, exact schema absent.",
+      "deferredAt": "2026-08-18",
+      "times": 1,
+      "events": 20,
+      "verdict": "pass",
+      "method": "structure",
+      "seen": [
+        "d69b3843-5148"
+      ],
+      "firstEvent": "2024-05-14 06:12:03 ivanti-ics01 ive: id=AUT24451 severity=notice vpn=\"Default-VPN\" sessionId=8f3a9c2e1b user=\"jsmith\" realm=\"Users\" roles=\"Employee_Role\" src=203.0.113.45 dst=10.10.10.5 msg=\"Primary "
+    },
+    "ivanti_sentry_sentry": {
+      "reason": "build-529 HOLD — needs evidence: Sentry semantics are plausible, but the exact key/value schema is unproven.",
+      "deferredAt": "2026-08-18",
+      "times": 1,
+      "events": 20,
+      "verdict": "pass",
+      "method": "structure",
+      "seen": [
+        "f3545c30-3981"
+      ],
+      "firstEvent": "2024-05-14T08:12:33.102Z sentry-prod-01 Sentry[4521]: INFO [ActiveSync] Device authentication successful user=jsmith@corp.com deviceId=A1B2C3D4E5 clientIP=192.168.14.22 backend=exch01.corp.local statu"
+    },
+    "ivanti_unix_listeningports": {
+      "reason": "build-529 HOLD — needs evidence: Ivanti listener telemetry is plausible, exact ownership absent.",
+      "deferredAt": "2026-08-18",
+      "times": 1,
+      "events": 20,
+      "verdict": "pass",
+      "method": "structure",
+      "seen": [
+        "1897b527-5107"
+      ],
+      "firstEvent": "May 14 01:02:11 web-prd-01.corp.local ivlistportd[2211]: severity=INFO proto=tcp local_addr=10.20.4.15 local_port=443 pid=2211 process=nginx user=www-data state=LISTEN result=success message=\"Known se"
+    },
+    "ivanti_vpp": {
+      "reason": "build-529 HOLD — needs evidence: Ivanti VPP fields plausible, exact schema absent.",
+      "deferredAt": "2026-08-18",
+      "times": 1,
+      "events": 20,
+      "verdict": "pass",
+      "method": "structure",
+      "seen": [
+        "d1849d70-3776"
+      ],
+      "firstEvent": "2024-06-18T03:14:22-04:00 ics-gw02 Ivanti[2891]: INFO AUT22653 msg=\"User authentication successful\" user=mreyes realm=\"Users-Auth\" src=203.0.113.45 proto=SSL-VPN session=SESSAB129384 outcome=success"
+    },
+    "mandiant_advantage_asm_entities": {
+      "reason": "build-529 HOLD — needs evidence: Mandiant ASM fields plausible, exact schema absent.",
+      "deferredAt": "2026-08-18",
+      "times": 1,
+      "events": 20,
+      "verdict": "pass",
+      "method": "structure",
+      "seen": [
+        "863bc523-5954"
+      ],
+      "firstEvent": "{\"timestamp\":\"2024-05-14T02:13:45Z\",\"event_type\":\"entity_discovered\",\"entity_id\":\"ent-7f3a9c21\",\"entity_type\":\"domain\",\"entity_value\":\"dev-api.acmecorp.com\",\"organization\":\"AcmeCorp\",\"severity\":\"mediu"
+    },
+    "mcafee_epo_dlpevents": {
+      "reason": "build-529 HOLD — needs evidence: McAfee DLP CEF is plausible, exact mapping absent.",
+      "deferredAt": "2026-08-18",
+      "times": 1,
+      "events": 20,
+      "verdict": "pass",
+      "method": "structure",
+      "seen": [
+        "563be3db-5429"
+      ],
+      "firstEvent": "CEF:0|McAfee|DLP Endpoint|11.6.100|3001|Removable Storage Device Blocked|8|rt=Feb 14 2025 09:12:33 src=10.20.5.44 shost=WKSTN-FIN02 suser=jharper act=Block cat=Device Control fname=Q4_Financials.xlsx "
+    },
+    "mcafee_epo_solidcoreevents": {
+      "reason": "build-529 HOLD — needs evidence: McAfee Solidcore CEF plausible, exact event mapping absent.",
+      "deferredAt": "2026-08-18",
+      "times": 1,
+      "events": 21,
+      "verdict": "pass",
+      "method": "structure",
+      "seen": [
+        "64d11cd0-6116"
+      ],
+      "firstEvent": "CEF:0|McAfee|Solidcore|6.4.0|1001|Solidcore Change Control Policy Violation|8|rt=Feb 14 2024 03:12:44 dvchost=WIN-FIN-DB01 src=10.22.4.15 suser=jsmith cs1=Change Control Policy cs1Label=PolicyName cs2"
+    },
+    "ncsc_cloudflare_email_area1": {
+      "reason": "build-529 HOLD — needs evidence: Cloudflare Area1 JSON plausible, exact envelope unproven.",
+      "deferredAt": "2026-08-18",
+      "times": 1,
+      "events": 21,
+      "verdict": "pass",
+      "method": "structure",
+      "seen": [
+        "2192775c-10164"
+      ],
+      "firstEvent": "{\"timestamp\":\"2024-06-03T08:12:44Z\",\"logSource\":\"Cloudflare Area1 Email Security\",\"messageId\":\"<a1b2c3d4@mail.example.com>\",\"sender\":\"invoice@billing-support.net\",\"recipients\":[\"finance@corp-acme.com\""
+    },
+    "ncsc_fidelis_assets": {
+      "reason": "build-529 HOLD — needs evidence: Fidelis asset fields plausible, exact fixture absent.",
+      "deferredAt": "2026-08-18",
+      "times": 1,
+      "events": 20,
+      "verdict": "pass",
+      "method": "structure",
+      "seen": [
+        "43f2b41c-8159"
+      ],
+      "firstEvent": "Jan 15 2025 08:23:14 fidelis-sensor01 FIDELIS: alert_id=FN-2025011500123 severity=Critical policy=\"Data Exfiltration - SSN Pattern\" src_ip=10.45.12.88 src_port=52341 dst_ip=203.0.113.44 dst_port=443 p"
+    },
+    "ncsc_fidelis_endpoint": {
+      "reason": "build-529 HOLD — needs evidence: Fidelis endpoint output normally requires CEF/LEEF framing; exact bare KVP is unproven.",
+      "deferredAt": "2026-08-18",
+      "times": 1,
+      "events": 20,
+      "verdict": "pass",
+      "method": "structure",
+      "seen": [
+        "b0c29f6c-7112"
+      ],
+      "firstEvent": "Sep 03 2024 00:12:47 FID-EP-SENSOR03 Fidelis[Endpoint]: severity=High event_type=MalwareDetected action=Quarantine src_ip=10.14.22.8 src_port=51322 dst_ip=185.220.101.47 dst_port=443 protocol=TCP user"
+    },
+    "ncsc_solarwinds_vpn": {
+      "reason": "build-529 HOLD — needs evidence: SolarWinds VPN fields plausible, exact fixture absent.",
+      "deferredAt": "2026-08-18",
+      "times": 1,
+      "events": 20,
+      "verdict": "pass",
+      "method": "structure",
+      "seen": [
+        "b63586cf-4652"
+      ],
+      "firstEvent": "2024-06-03T08:12:41Z SW-VPN-GW01 SolarWinds-VPN: [INFO] EventType=VPN_Connect User=jsmith SrcIP=203.0.113.45 DstIP=10.20.1.5 Port=443 Protocol=SSL Status=SUCCESS Message=\"User authentication successfu"
+    },
+    "securetransport": {
+      "reason": "build-529 HOLD — needs evidence: Axway SecureTransport fields plausible, exact fixture absent.",
+      "deferredAt": "2026-08-18",
+      "times": 1,
+      "events": 20,
+      "verdict": "pass",
+      "method": "structure",
+      "seen": [
+        "952de853-4347"
+      ],
+      "firstEvent": "2024-06-03 03:12:45,102 INFO [SessionManager] [com.axway.st.server.session] event=LOGIN user=jsmith host=st-node01 clientIp=192.168.1.44 protocol=SFTP port=22 sessionId=8f3a2b1c status=SUCCESS"
+    },
+    "ssl_access_log_too_small": {
+      "reason": "build-529 HOLD — needs evidence: TLS access format plausible, product ownership absent.",
+      "deferredAt": "2026-08-18",
+      "times": 1,
+      "events": 20,
+      "verdict": "unverified",
+      "method": "none",
+      "seen": [
+        "37235097-3327"
+      ],
+      "firstEvent": "203.0.113.45 - - [12/May/2024:03:14:22 +0000] \"GET /login HTTP/1.1\" 200 3421 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64)\" TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384"
+    },
+    "symantec_email_cloud_antispam": {
+      "reason": "build-529 HOLD — needs evidence: Symantec CSV is plausible, exact columns/order unproven.",
+      "deferredAt": "2026-08-18",
+      "times": 1,
+      "events": 20,
+      "verdict": "unverified",
+      "method": "none",
+      "seen": [
+        "9dd749c1-5045"
+      ],
+      "firstEvent": "\"2024-06-10 08:15:22\",\"Spam\",\"<msg-20240610-8841@mailrelay.symcloud.net>\",\"spammer@cheapdeals-ru.biz\",\"jsmith@acmecorp.com\",\"URGENT: Claim Your Prize Now!!!\",\"203.0.113.45\",\"RU\",\"Quarantined\",\"Global "
+    },
+    "symantec_email_cloud_atp": {
+      "reason": "build-529 HOLD — needs evidence: Symantec ATP fields are plausible, exact fixture absent.",
+      "deferredAt": "2026-08-18",
+      "times": 1,
+      "events": 21,
+      "verdict": "pass",
+      "method": "structure",
+      "seen": [
+        "c04daaee-7675"
+      ],
+      "firstEvent": "2024-01-15T03:12:44Z event_type=EmailReceived severity=Info action=Delivered verdict=Clean sender=john.doe@acmecorp.com recipient=finance@acmecorp.com subject=\"Q4 Budget Report\" message_id=<A1B2C3.998"
+    },
+    "sysmon_deploy_log": {
+      "reason": "build-529 HOLD — needs evidence: Sysmon deployment app log is plausible, exact sourcetype schema absent.",
+      "deferredAt": "2026-08-18",
+      "times": 1,
+      "events": 20,
+      "verdict": "pass",
+      "method": "structure",
+      "seen": [
+        "e456d34f-4047"
+      ],
+      "firstEvent": "2024-06-14 03:12:07 INFO [SysmonDeploy] host=WIN-DC01.corp.local action=install status=success user=CORP\\svc_sysdeploy version=14.16 config_hash=a1f3c9e2b7d4 src_ip=10.1.2.5 duration_ms=4213"
+    },
+    "tenable_ad_alerts": {
+      "reason": "build-529 HOLD — needs evidence: Tenable.ad alert JSON plausible, exact schema absent.",
+      "deferredAt": "2026-08-18",
+      "times": 1,
+      "events": 21,
+      "verdict": "pass",
+      "method": "structure",
+      "seen": [
+        "934cc5e0-11445"
+      ],
+      "firstEvent": "{\"id\":48213,\"type\":\"Attack\",\"name\":\"Golden Ticket\",\"severity\":\"critical\",\"date\":\"2024-05-14T02:13:44Z\",\"dateFirstEvent\":\"2024-05-14T02:13:44Z\",\"dateLastEvent\":\"2024-05-14T02:13:44Z\",\"resolved\":false,\""
+    },
+    "tenable_sc_admin": {
+      "reason": "build-529 HOLD — needs evidence: Tenable admin records are coherent, exact fixture absent.",
+      "deferredAt": "2026-08-18",
+      "times": 1,
+      "events": 20,
+      "verdict": "pass",
+      "method": "structure",
+      "seen": [
+        "c2915b0e-4366"
+      ],
+      "firstEvent": "2024-05-14T03:12:45Z tenable_sc_admin[sc01.internal.corp] severity=INFO user=admin src_ip=10.22.14.9 action=login status=success message=\"User admin authenticated via local auth\" session_id=8f3a2c1e"
+    },
+    "tenable_sc_vuln": {
+      "reason": "build-529 HOLD — needs evidence: Tenable vulnerability fields are plausible, but standalone JSON shape is unproven.",
+      "deferredAt": "2026-08-18",
+      "times": 1,
+      "events": 13,
+      "verdict": "pass",
+      "method": "structure",
+      "seen": [
+        "945b84e1-6548"
+      ],
+      "firstEvent": "{\"type\":\"vuln\",\"event\":\"vuln_detected\",\"timestamp\":\"2024-06-01T03:12:45Z\",\"ip\":\"10.12.4.55\",\"dnsName\":\"web-prod-01.corp.local\",\"macAddress\":\"00:1A:2B:3C:4D:5E\",\"pluginID\":19506,\"pluginName\":\"Nessus Sc"
+    },
+    "tenable_sc_web": {
+      "reason": "build-529 HOLD — needs evidence: Tenable web activity is plausible, exact web.log format absent.",
+      "deferredAt": "2026-08-18",
+      "times": 1,
+      "events": 20,
+      "verdict": "pass",
+      "method": "structure",
+      "seen": [
+        "aa744c5-3954"
+      ],
+      "firstEvent": "TYPE=web.log; DATE=Jun 14 2024 03:12:07; USER=admin; ROLE=Security Manager; IP=10.0.14.22; ACTION=Login; STATUS=Success; MESSAGE=User successfully authenticated via LDAP"
+    },
+    "vmware_esxlog_apiforwarder": {
+      "reason": "build-529 HOLD — needs evidence: apiForwarder ownership/activity plausible, exact fixture absent.",
+      "deferredAt": "2026-08-18",
+      "times": 1,
+      "events": 20,
+      "verdict": "unverified",
+      "method": "none",
+      "seen": [
+        "14a37722-2548"
+      ],
+      "firstEvent": "2024-05-01T03:12:44.102Z esxi01.corp.local Apiforwarder[2099234]: Accepted connection from 127.0.0.1:8089"
+    },
+    "vmware_esxlog_backup_ssh": {
+      "reason": "build-529 HOLD — needs evidence: ESXi dropbear/backup SSH ownership plausible, exact fixture absent.",
+      "deferredAt": "2026-08-18",
+      "times": 1,
+      "events": 20,
+      "verdict": "unverified",
+      "method": "none",
+      "seen": [
+        "c653e0b5-2356"
+      ],
+      "firstEvent": "2024-05-14T03:12:47Z esxi01.corp.local dropbear[5231]: Password auth succeeded for 'root' from 10.20.4.15:53412"
+    },
+    "vmware_esxlog_clomd": {
+      "reason": "build-529 HOLD — needs evidence: CLOMD semantics are plausible, exact fixture absent.",
+      "deferredAt": "2026-08-18",
+      "times": 1,
+      "events": 20,
+      "verdict": "unverified",
+      "method": "none",
+      "seen": [
+        "282d5abf-3403"
+      ],
+      "firstEvent": "2024-05-14T03:12:07.441Z esxi-host01.corp.local Clomd[2098234]: [ClomdVsanCorrelator] Object 52f8a3e1-9c4b-4a2e-8f3d-1a2b3c4d5e6f is compliant with policy, no action needed"
+    },
+    "vmware_esxlog_crond": {
+      "reason": "build-529 HOLD — needs evidence: crond records are plausible, ESXi catalogue ownership unproven.",
+      "deferredAt": "2026-08-18",
+      "times": 1,
+      "events": 20,
+      "verdict": "unverified",
+      "method": "none",
+      "seen": [
+        "6eec7ebf-2608"
+      ],
+      "firstEvent": "2024-05-14T00:03:12.441Z esx01.prod.local crond[65342]: crond: USER root PID 65343 CMD /sbin/auto-backup.sh"
+    },
+    "vmware_esxlog_envoy": {
+      "reason": "build-529 HOLD — needs evidence: Envoy semantics are plausible, but ESXi ownership/line format is unproven.",
+      "deferredAt": "2026-08-18",
+      "times": 1,
+      "events": 20,
+      "verdict": "unverified",
+      "method": "none",
+      "seen": [
+        "bb67ba04-3023"
+      ],
+      "firstEvent": "2024-05-14T03:12:07.441Z esxi01.corp.local Envoy: [Originator@6876 sub=Default] Accepted TCP connection from 10.20.4.55:54211 to 127.0.0.1:8307"
+    },
+    "vmware_esxlog_epd": {
+      "reason": "build-529 HOLD — needs evidence: VMware EPD ownership plausible, exact fixture absent.",
+      "deferredAt": "2026-08-18",
+      "times": 1,
+      "events": 20,
+      "verdict": "unverified",
+      "method": "none",
+      "seen": [
+        "ca9f4475-3023"
+      ],
+      "firstEvent": "2024-06-01T02:14:33.102Z esxi-host01.corp.local epd[2101245]: [epd] Verbose: Health check completed successfully for module storage; status=OK"
+    },
+    "vmware_esxlog_esxcli": {
+      "reason": "build-529 HOLD — needs evidence: Esxcli structure is plausible, but exact log schema is unproven.",
+      "deferredAt": "2026-08-18",
+      "times": 1,
+      "events": 20,
+      "verdict": "pass",
+      "method": "structure",
+      "seen": [
+        "d84b23e1-3708"
+      ],
+      "firstEvent": "2024-05-14T03:12:45.102Z esx01.dc1.local Esxcli: 178234 opID=hostd-89ab user=root source=127.0.0.1 cmd='esxcli network firewall set --enabled true' result=Success"
+    },
+    "vmware_esxlog_healthd": {
+      "reason": "build-529 HOLD — needs evidence: Healthd content is plausible, but exact VMware fixture is absent.",
+      "deferredAt": "2026-08-18",
+      "times": 1,
+      "events": 20,
+      "verdict": "unverified",
+      "method": "none",
+      "seen": [
+        "bb7ff9af-3192"
+      ],
+      "firstEvent": "2024-05-14T03:12:07.441Z esx-prod-01.corp.local Healthd: [7FA3B2C1] HealthStatus: Sensor 'System Board 1 Temp' reading normal: 42C threshold 65C"
+    },
+    "vmware_esxlog_hostd": {
+      "reason": "build-529 HOLD — needs evidence: Hostd content is plausible, but the declared Key=value schema is not proven.",
+      "deferredAt": "2026-08-18",
+      "times": 1,
+      "events": 20,
+      "verdict": "pass",
+      "method": "structure",
+      "seen": [
+        "bf47c340-4765"
+      ],
+      "firstEvent": "2024-06-03T14:22:07.541Z esx01.corp.local Hostd: 2024-06-03T14:22:07.541Z info hostd[2097316] [Originator@6876 sub=Vimsvc.ha-eventmgr opID=52a1b3c4 user=root] Event 1043 : User root@10.20.30.40 logged"
+    },
+    "vmware_esxlog_kmxa": {
+      "reason": "build-529 HOLD — needs evidence: kmxa ownership is plausible, exact semantics unproven.",
+      "deferredAt": "2026-08-18",
+      "times": 1,
+      "events": 20,
+      "verdict": "unverified",
+      "method": "none",
+      "seen": [
+        "a468c8ad-3155"
+      ],
+      "firstEvent": "2024-06-03T02:14:07.331Z esxi-prod-01.corp.local kmxa: [scsi] Path vmhba1:C0:T2:L0 changed state from active to dead on device naa.6000c295f8a1b2c3"
+    },
+    "vmware_esxlog_localcli": {
+      "reason": "build-529 HOLD — needs evidence: localcli activity is plausible, exact fixture absent.",
+      "deferredAt": "2026-08-18",
+      "times": 1,
+      "events": 20,
+      "verdict": "unverified",
+      "method": "none",
+      "seen": [
+        "a9da8b27-3217"
+      ],
+      "firstEvent": "2024-05-14T03:12:45.192Z esxi-prod-01.corp.local localcli[2481923]: [User=root] esxcli network vswitch standard list -- SUCCESS"
+    },
+    "vmware_esxlog_nfcd": {
+      "reason": "build-529 HOLD — needs evidence: nfcd ownership is plausible, exact literals unproven.",
+      "deferredAt": "2026-08-18",
+      "times": 1,
+      "events": 20,
+      "verdict": "unverified",
+      "method": "none",
+      "seen": [
+        "9b220589-3157"
+      ],
+      "firstEvent": "2024-05-21T03:14:22.184Z esx01.corp.local Nfcd[2101345]: [NfcNetLib] NfcNet_ConnectStart: Connecting to server 172.16.5.11:902 succeeded, socket 47"
+    },
+    "vmware_esxlog_osfsd": {
+      "reason": "build-529 HOLD — needs evidence: OSFSd ownership is plausible, exact fixture absent.",
+      "deferredAt": "2026-08-18",
+      "times": 1,
+      "events": 20,
+      "verdict": "unverified",
+      "method": "none",
+      "seen": [
+        "54b83ffa-3176"
+      ],
+      "firstEvent": "2024-06-01T03:12:44.812Z esxi-host01.corp.local osfsd[2098145]: VMFS volume 5f8a3b21-4c9e8f70-8a2b-001a4a160182 mounted successfully on device naa.6000c2941d9a3b8e0f1234567890abcd"
+    },
+    "vmware_esxlog_sdrsinjector": {
+      "reason": "build-529 HOLD — needs evidence: Storage DRS injector ownership plausible, exact fixture absent.",
+      "deferredAt": "2026-08-18",
+      "times": 1,
+      "events": 20,
+      "verdict": "unverified",
+      "method": "none",
+      "seen": [
+        "ca358a47-4143"
+      ],
+      "firstEvent": "2024-02-14T03:12:47.881Z esx01.prod.corp.local Sdrsinjector: [FFA92B1C info 'Default'] opID=SDRS-8834a2f0 Injecting synthetic latency of 45ms for datastore 'DS_CLUSTER01_VOL03' on host esx01.prod.corp"
+    },
+    "vmware_esxlog_settingsd": {
+      "reason": "build-529 HOLD — needs evidence: settingsd semantics are plausible, exact VMware fixture absent.",
+      "deferredAt": "2026-08-18",
+      "times": 1,
+      "events": 20,
+      "verdict": "unverified",
+      "method": "none",
+      "seen": [
+        "b71bb52a-3631"
+      ],
+      "firstEvent": "2024-05-14T03:12:07.482193Z esxi-prod01.corp.local settingsd[2097571]: [SettingsServiceImpl] Successfully applied configuration change for key 'Config.HostAgent.log.level' to value 'info'"
+    },
+    "vmware_esxlog_vmauthd": {
+      "reason": "build-529 HOLD — needs evidence: vmauthd ownership is plausible, exact fixture absent.",
+      "deferredAt": "2026-08-18",
+      "times": 1,
+      "events": 20,
+      "verdict": "unverified",
+      "method": "none",
+      "seen": [
+        "ea3e141e-2846"
+      ],
+      "firstEvent": "2024-05-14T03:12:45.102Z esxi-prod01.corp.local vmauthd[1049231]: Login succeeded for user 'root' on /var/run/vmware/vmware-authdpipe from 10.10.4.22"
+    }
+  }
+}

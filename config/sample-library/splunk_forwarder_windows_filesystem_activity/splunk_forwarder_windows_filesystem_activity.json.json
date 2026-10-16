@@ -1,0 +1,17 @@
+[
+  {
+    "_time": 1566444095,
+    "cribl_breaker": "Break on newlines",
+    "_raw": "08/21/2019 10:21:35 PM\nLogName=Security\nSourceName=Microsoft Windows security auditing.\nEventCode=4656\nEventType=0\nType=Information\nComputerName=MYHOST\nTaskCategory=Removable Storage\nOpCode=Info\nRecordNumber=795900\nKeywords=Audit Success\nMessage=A handle to an object was requested.\r\n\r\nSubject:\r\n\tSecurity ID:\t\tNT AUTHORITY\\SYSTEM\r\n\tAccount Name:\t\tJSMITH$\r\n\tAccount Domain:\t\tWORKGROUP\r\n\tLogon ID:\t\t0x3E7\r\n\r\nObject:\r\n\tObject Server:\t\tSecurity\r\n\tObject Type:\t\tFile\r\n\tObject Name:\t\t\\Device\\Floppy0\r\n\tHandle ID:\t\t0x7e8\r\n\tResource Attributes:\t-\r\n\r\nProcess Information:\r\n\tProcess ID:\t\t0x7cc\r\n\tProcess Name:\t\tC:\\Program Files\\VMware\\VMware Tools\\vmtoolsd.exe\r\n\r\nAccess Request Information:\r\n\tTransaction ID:\t\t{00000000-0000-0000-0000-000000000000}\r\n\tAccesses:\t\tREAD_CONTROL\r\n\t\t\t\tSYNCHRONIZE\r\n\t\t\t\tReadData (or ListDirectory)\r\n\t\t\t\tReadEA\r\n\t\t\t\tReadAttributes\r\n\t\t\t\t\r\n\tAccess Reasons:\t\t-\r\n\tAccess Mask:\t\t0x120089\r\n\tPrivileges Used for Access Check:\t-\r\n\tRestricted SID Count:\t0"
+  },
+  {
+    "_time": 1566427693,
+    "cribl_breaker": "Break on newlines",
+    "_raw": "08/21/2019 05:48:13 PM\nLogName=Security\nSourceName=Microsoft Windows security auditing.\nEventCode=4660\nEventType=0\nType=Information\nComputerName=MYHOST\nTaskCategory=Removable Storage\nOpCode=Info\nRecordNumber=115625\nKeywords=Audit Success\nMessage=An object was deleted.\r\n\r\nSubject:\r\n\tSecurity ID:\t\tNT AUTHORITY\\SYSTEM\r\n\tAccount Name:\t\tJSMITH$\r\n\tAccount Domain:\t\tWORKGROUP\r\n\tLogon ID:\t\t0x3E7\r\n\r\nObject:\r\n\tObject Server:\tSecurity\r\n\tHandle ID:\t0x2bc\r\n\r\nProcess Information:\r\n\tProcess ID:\t0x1c68\r\n\tProcess Name:\tC:\\Windows\\System32\\poqexec.exe\r\n\tTransaction ID:\t{4A260C1A-C413-11E9-8649-000C294DA8F3}"
+  },
+  {
+    "_time": 1566443012,
+    "cribl_breaker": "Break on newlines",
+    "_raw": "08/21/2019 10:03:32 PM\nLogName=Security\nSourceName=Microsoft Windows security auditing.\nEventCode=4663\nEventType=0\nType=Information\nComputerName=HYHOST\nTaskCategory=Removable Storage\nOpCode=Info\nRecordNumber=121801\nKeywords=Audit Success\nMessage=An attempt was made to access an object.\r\n\r\nSubject:\r\n\tSecurity ID:\t\tVIJEO\\Admin\r\n\tAccount Name:\t\tJSMITH\r\n\tAccount Domain:\t\tACME\r\n\tLogon ID:\t\t0x199B38\r\n\r\nObject:\r\n\tObject Server:\t\tSecurity\r\n\tObject Type:\t\tFile\r\n\tObject Name:\t\t\\Device\\HarddiskVolume5\\._ismHost.exe.zip\r\n\tHandle ID:\t\t0x5558\r\n\tResource Attributes:\t\r\n\r\nProcess Information:\r\n\tProcess ID:\t\t0xdd0\r\n\tProcess Name:\t\tC:\\Windows\\explorer.exe\r\n\r\nAccess Request Information:\r\n\tAccesses:\t\tReadData (or ListDirectory)\r\n\t\t\t\t\r\n\tAccess Mask:\t\t0x1"
+  }
+]

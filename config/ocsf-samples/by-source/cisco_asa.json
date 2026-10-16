@@ -1,0 +1,81 @@
+{
+  "key": "cisco_asa",
+  "sourcetype": "cisco_asa",
+  "classUid": 4001,
+  "destFormat": "ocsf#network",
+  "source": "cisco",
+  "vendorNames": [
+    "Cisco"
+  ],
+  "provenance": {
+    "samplePack": "cribl-cisco-ftd-cleanup",
+    "sampleName": "ftd_sample.log",
+    "tier": "reference",
+    "sampleEvents": 20,
+    "emulated": "golden OCSF pipeline, offline emulation of scripts/build-source-ocsf-samples.mjs",
+    "rejected": []
+  },
+  "events": [
+    {
+      "src_endpoint": {
+        "ip": "10.123.123.123",
+        "port": 53723
+      },
+      "dst_endpoint": {
+        "ip": "10.233.123.123",
+        "port": 53
+      },
+      "connection_info": {
+        "protocol_name": "udp"
+      },
+      "traffic": {
+        "bytes_out": 148
+      },
+      "actor": {
+        "user": {
+          "name": "LOCAL\\\\Elastic"
+        }
+      },
+      "metadata": {
+        "product": {
+          "name": "ASA",
+          "vendor_name": "Cisco"
+        },
+        "version": "1.9.0"
+      },
+      "class_uid": 4001,
+      "category_uid": 4,
+      "activity_id": 2,
+      "type_uid": 400102,
+      "severity_id": 5
+    },
+    {
+      "metadata": {
+        "product": {
+          "name": "ASA",
+          "vendor_name": "Cisco"
+        },
+        "version": "1.9.0"
+      },
+      "class_uid": 4001,
+      "category_uid": 4,
+      "activity_id": 2,
+      "type_uid": 400102,
+      "severity_id": 3
+    },
+    {
+      "metadata": {
+        "product": {
+          "name": "ASA",
+          "vendor_name": "Cisco"
+        },
+        "version": "1.9.0"
+      },
+      "class_uid": 4001,
+      "category_uid": 4,
+      "activity_id": 2,
+      "type_uid": 400102,
+      "severity_id": 3
+    }
+  ]
+}

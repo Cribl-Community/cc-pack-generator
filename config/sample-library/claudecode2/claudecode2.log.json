@@ -1,0 +1,1199 @@
+[
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "__otlp": {
+      "version": "1.3.1",
+      "type": "logs",
+      "extracted": true
+    },
+    "schema_url": "",
+    "resource": {
+      "dropped_attributes_count": 0,
+      "attributes": {
+        "host.arch": "arm64",
+        "os.type": "darwin",
+        "os.version": "25.2.0",
+        "service.name": "claude-code",
+        "service.version": "2.1.14"
+      }
+    },
+    "scope": {
+      "name": "com.anthropic.claude_code.events",
+      "version": "2.1.14",
+      "dropped_attributes_count": 0
+    },
+    "time_unix_nano": 1768962543174000000,
+    "observed_time_unix_nano": 1768962543174000000,
+    "body": "claude_code.tool_decision",
+    "dropped_attributes_count": 0,
+    "attributes": {
+      "user.id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "session.id": "f2ad4e2d-e9a0-4216-805d-ed07cae96d20",
+      "organization.id": "00000000-0000-0000-0000-000000000001",
+      "user.email": "demo.user@example.com",
+      "user.account_uuid": "00000000-0000-0000-0000-000000000002",
+      "terminal.type": "cursor",
+      "event.name": "tool_decision",
+      "event.timestamp": "2026-01-21T02:29:03.174Z",
+      "decision": "accept",
+      "source": "user_temporary",
+      "tool_name": "Edit"
+    },
+    "_time": 1768962543.174,
+    "__bytes": 510,
+    "__srcIpPort": "192.0.2.100:53151",
+    "__inputId": "open_telemetry:open_telemetry"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "__otlp": {
+      "version": "1.3.1",
+      "type": "logs",
+      "extracted": true
+    },
+    "schema_url": "",
+    "resource": {
+      "dropped_attributes_count": 0,
+      "attributes": {
+        "host.arch": "arm64",
+        "os.type": "darwin",
+        "os.version": "25.2.0",
+        "service.name": "claude-code",
+        "service.version": "2.1.14"
+      }
+    },
+    "scope": {
+      "name": "com.anthropic.claude_code.events",
+      "version": "2.1.14",
+      "dropped_attributes_count": 0
+    },
+    "time_unix_nano": 1768962543177000000,
+    "observed_time_unix_nano": 1768962543177000000,
+    "body": "claude_code.tool_result",
+    "dropped_attributes_count": 0,
+    "attributes": {
+      "user.id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "session.id": "f2ad4e2d-e9a0-4216-805d-ed07cae96d20",
+      "organization.id": "00000000-0000-0000-0000-000000000001",
+      "user.email": "demo.user@example.com",
+      "user.account_uuid": "00000000-0000-0000-0000-000000000002",
+      "terminal.type": "cursor",
+      "event.name": "tool_result",
+      "event.timestamp": "2026-01-21T02:29:03.177Z",
+      "tool_name": "Edit",
+      "success": "true",
+      "duration_ms": "3",
+      "tool_result_size_bytes": "3174",
+      "decision_source": "user_temporary",
+      "decision_type": "accept"
+    },
+    "_time": 1768962543.177,
+    "__bytes": 593,
+    "__srcIpPort": "192.0.2.100:53151",
+    "__inputId": "open_telemetry:open_telemetry"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "__otlp": {
+      "version": "1.3.1",
+      "type": "logs",
+      "extracted": true
+    },
+    "schema_url": "",
+    "resource": {
+      "dropped_attributes_count": 0,
+      "attributes": {
+        "host.arch": "arm64",
+        "os.type": "darwin",
+        "os.version": "25.2.0",
+        "service.name": "claude-code",
+        "service.version": "2.1.14"
+      }
+    },
+    "scope": {
+      "name": "com.anthropic.claude_code.events",
+      "version": "2.1.14",
+      "dropped_attributes_count": 0
+    },
+    "time_unix_nano": 1768962544299000000,
+    "observed_time_unix_nano": 1768962544299000000,
+    "body": "claude_code.tool_decision",
+    "dropped_attributes_count": 0,
+    "attributes": {
+      "user.id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "session.id": "f2ad4e2d-e9a0-4216-805d-ed07cae96d20",
+      "organization.id": "00000000-0000-0000-0000-000000000001",
+      "user.email": "demo.user@example.com",
+      "user.account_uuid": "00000000-0000-0000-0000-000000000002",
+      "terminal.type": "cursor",
+      "event.name": "tool_decision",
+      "event.timestamp": "2026-01-21T02:29:04.299Z",
+      "decision": "accept",
+      "source": "user_temporary",
+      "tool_name": "Edit"
+    },
+    "_time": 1768962544.299,
+    "__bytes": 510,
+    "__srcIpPort": "192.0.2.100:53151",
+    "__inputId": "open_telemetry:open_telemetry"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "__otlp": {
+      "version": "1.3.1",
+      "type": "logs",
+      "extracted": true
+    },
+    "schema_url": "",
+    "resource": {
+      "dropped_attributes_count": 0,
+      "attributes": {
+        "host.arch": "arm64",
+        "os.type": "darwin",
+        "os.version": "25.2.0",
+        "service.name": "claude-code",
+        "service.version": "2.1.14"
+      }
+    },
+    "scope": {
+      "name": "com.anthropic.claude_code.events",
+      "version": "2.1.14",
+      "dropped_attributes_count": 0
+    },
+    "time_unix_nano": 1768962544301000000,
+    "observed_time_unix_nano": 1768962544301000000,
+    "body": "claude_code.tool_result",
+    "dropped_attributes_count": 0,
+    "attributes": {
+      "user.id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "session.id": "f2ad4e2d-e9a0-4216-805d-ed07cae96d20",
+      "organization.id": "00000000-0000-0000-0000-000000000001",
+      "user.email": "demo.user@example.com",
+      "user.account_uuid": "00000000-0000-0000-0000-000000000002",
+      "terminal.type": "cursor",
+      "event.name": "tool_result",
+      "event.timestamp": "2026-01-21T02:29:04.301Z",
+      "tool_name": "Edit",
+      "success": "true",
+      "duration_ms": "1",
+      "tool_result_size_bytes": "3225",
+      "decision_source": "user_temporary",
+      "decision_type": "accept"
+    },
+    "_time": 1768962544.3009999,
+    "__bytes": 593,
+    "__srcIpPort": "192.0.2.100:53151",
+    "__inputId": "open_telemetry:open_telemetry"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "__otlp": {
+      "version": "1.3.1",
+      "type": "logs",
+      "extracted": true
+    },
+    "schema_url": "",
+    "resource": {
+      "dropped_attributes_count": 0,
+      "attributes": {
+        "host.arch": "arm64",
+        "os.type": "darwin",
+        "os.version": "25.2.0",
+        "service.name": "claude-code",
+        "service.version": "2.1.14"
+      }
+    },
+    "scope": {
+      "name": "com.anthropic.claude_code.events",
+      "version": "2.1.14",
+      "dropped_attributes_count": 0
+    },
+    "time_unix_nano": 1768962553542000000,
+    "observed_time_unix_nano": 1768962553542000000,
+    "body": "claude_code.api_request",
+    "dropped_attributes_count": 0,
+    "attributes": {
+      "user.id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "session.id": "f2ad4e2d-e9a0-4216-805d-ed07cae96d20",
+      "organization.id": "00000000-0000-0000-0000-000000000001",
+      "user.email": "demo.user@example.com",
+      "user.account_uuid": "00000000-0000-0000-0000-000000000002",
+      "terminal.type": "cursor",
+      "event.name": "api_request",
+      "event.timestamp": "2026-01-21T02:29:13.542Z",
+      "model": "claude-opus-4-5-20251101",
+      "input_tokens": "7",
+      "output_tokens": "698",
+      "cache_read_tokens": "24045",
+      "cache_creation_tokens": "1801",
+      "cost_usd": "0.04076375",
+      "duration_ms": "9185"
+    },
+    "_time": 1768962553.542,
+    "__bytes": 629,
+    "__srcIpPort": "192.0.2.100:53151",
+    "__inputId": "open_telemetry:open_telemetry"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "__otlp": {
+      "version": "1.3.1",
+      "type": "logs",
+      "extracted": true
+    },
+    "schema_url": "",
+    "resource": {
+      "dropped_attributes_count": 0,
+      "attributes": {
+        "host.arch": "arm64",
+        "os.type": "darwin",
+        "os.version": "25.2.0",
+        "service.name": "claude-code",
+        "service.version": "2.1.14"
+      }
+    },
+    "scope": {
+      "name": "com.anthropic.claude_code.events",
+      "version": "2.1.14",
+      "dropped_attributes_count": 0
+    },
+    "time_unix_nano": 1768962553575000000,
+    "observed_time_unix_nano": 1768962553575000000,
+    "body": "claude_code.tool_decision",
+    "dropped_attributes_count": 0,
+    "attributes": {
+      "user.id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "session.id": "f2ad4e2d-e9a0-4216-805d-ed07cae96d20",
+      "organization.id": "00000000-0000-0000-0000-000000000001",
+      "user.email": "demo.user@example.com",
+      "user.account_uuid": "00000000-0000-0000-0000-000000000002",
+      "terminal.type": "cursor",
+      "event.name": "tool_decision",
+      "event.timestamp": "2026-01-21T02:29:13.575Z",
+      "decision": "accept",
+      "source": "config",
+      "tool_name": "TodoWrite"
+    },
+    "_time": 1768962553.575,
+    "__bytes": 507,
+    "__srcIpPort": "192.0.2.100:53151",
+    "__inputId": "open_telemetry:open_telemetry"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "__otlp": {
+      "version": "1.3.1",
+      "type": "logs",
+      "extracted": true
+    },
+    "schema_url": "",
+    "resource": {
+      "dropped_attributes_count": 0,
+      "attributes": {
+        "host.arch": "arm64",
+        "os.type": "darwin",
+        "os.version": "25.2.0",
+        "service.name": "claude-code",
+        "service.version": "2.1.14"
+      }
+    },
+    "scope": {
+      "name": "com.anthropic.claude_code.events",
+      "version": "2.1.14",
+      "dropped_attributes_count": 0
+    },
+    "time_unix_nano": 1768962553586000000,
+    "observed_time_unix_nano": 1768962553586000000,
+    "body": "claude_code.tool_result",
+    "dropped_attributes_count": 0,
+    "attributes": {
+      "user.id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "session.id": "f2ad4e2d-e9a0-4216-805d-ed07cae96d20",
+      "organization.id": "00000000-0000-0000-0000-000000000001",
+      "user.email": "demo.user@example.com",
+      "user.account_uuid": "00000000-0000-0000-0000-000000000002",
+      "terminal.type": "cursor",
+      "event.name": "tool_result",
+      "event.timestamp": "2026-01-21T02:29:13.586Z",
+      "tool_name": "TodoWrite",
+      "success": "true",
+      "duration_ms": "11",
+      "tool_result_size_bytes": "917",
+      "decision_source": "config",
+      "decision_type": "accept"
+    },
+    "_time": 1768962553.586,
+    "__bytes": 590,
+    "__srcIpPort": "192.0.2.100:53151",
+    "__inputId": "open_telemetry:open_telemetry"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "__otlp": {
+      "version": "1.3.1",
+      "type": "logs",
+      "extracted": true
+    },
+    "schema_url": "",
+    "resource": {
+      "dropped_attributes_count": 0,
+      "attributes": {
+        "host.arch": "arm64",
+        "os.type": "darwin",
+        "os.version": "25.2.0",
+        "service.name": "claude-code",
+        "service.version": "2.1.12"
+      }
+    },
+    "scope": {
+      "name": "com.anthropic.claude_code.events",
+      "version": "2.1.12",
+      "dropped_attributes_count": 0
+    },
+    "time_unix_nano": 1768962571346000000,
+    "observed_time_unix_nano": 1768962571346000000,
+    "body": "claude_code.tool_decision",
+    "dropped_attributes_count": 0,
+    "attributes": {
+      "user.id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "session.id": "d27ebdac-1a6c-454e-9255-32130552c561",
+      "organization.id": "00000000-0000-0000-0000-000000000001",
+      "user.email": "demo.user@example.com",
+      "user.account_uuid": "00000000-0000-0000-0000-000000000002",
+      "terminal.type": "cursor",
+      "event.name": "tool_decision",
+      "event.timestamp": "2026-01-21T02:29:31.346Z",
+      "decision": "accept",
+      "source": "user_temporary",
+      "tool_name": "Bash"
+    },
+    "_time": 1768962571.346,
+    "__bytes": 510,
+    "__srcIpPort": "192.0.2.100:53470",
+    "__inputId": "open_telemetry:open_telemetry"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "__otlp": {
+      "version": "1.3.1",
+      "type": "logs",
+      "extracted": true
+    },
+    "schema_url": "",
+    "resource": {
+      "dropped_attributes_count": 0,
+      "attributes": {
+        "host.arch": "arm64",
+        "os.type": "darwin",
+        "os.version": "25.2.0",
+        "service.name": "claude-code",
+        "service.version": "2.1.12"
+      }
+    },
+    "scope": {
+      "name": "com.anthropic.claude_code.events",
+      "version": "2.1.12",
+      "dropped_attributes_count": 0
+    },
+    "time_unix_nano": 1768962571479000000,
+    "observed_time_unix_nano": 1768962571479000000,
+    "body": "claude_code.tool_result",
+    "dropped_attributes_count": 0,
+    "attributes": {
+      "user.id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "session.id": "d27ebdac-1a6c-454e-9255-32130552c561",
+      "organization.id": "00000000-0000-0000-0000-000000000001",
+      "user.email": "demo.user@example.com",
+      "user.account_uuid": "00000000-0000-0000-0000-000000000002",
+      "terminal.type": "cursor",
+      "event.name": "tool_result",
+      "event.timestamp": "2026-01-21T02:29:31.479Z",
+      "tool_name": "Bash",
+      "success": "true",
+      "duration_ms": "133",
+      "tool_parameters": "{\"bash_command\":\"timeout\",\"full_command\":\"timeout 5 node src/server.js 2>&1 || true\",\"description\":\"Verify server starts without errors\"}",
+      "tool_result_size_bytes": "97",
+      "decision_source": "user_temporary",
+      "decision_type": "accept"
+    },
+    "_time": 1768962571.479,
+    "__bytes": 756,
+    "__srcIpPort": "192.0.2.100:53470",
+    "__inputId": "open_telemetry:open_telemetry"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "__otlp": {
+      "version": "1.3.1",
+      "type": "logs",
+      "extracted": true
+    },
+    "schema_url": "",
+    "resource": {
+      "dropped_attributes_count": 0,
+      "attributes": {
+        "host.arch": "arm64",
+        "os.type": "darwin",
+        "os.version": "25.2.0",
+        "service.name": "claude-code",
+        "service.version": "2.1.12"
+      }
+    },
+    "scope": {
+      "name": "com.anthropic.claude_code.events",
+      "version": "2.1.12",
+      "dropped_attributes_count": 0
+    },
+    "time_unix_nano": 1768962572383000000,
+    "observed_time_unix_nano": 1768962572383000000,
+    "body": "claude_code.api_request",
+    "dropped_attributes_count": 0,
+    "attributes": {
+      "user.id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "session.id": "d27ebdac-1a6c-454e-9255-32130552c561",
+      "organization.id": "00000000-0000-0000-0000-000000000001",
+      "user.email": "demo.user@example.com",
+      "user.account_uuid": "00000000-0000-0000-0000-000000000002",
+      "terminal.type": "cursor",
+      "event.name": "api_request",
+      "event.timestamp": "2026-01-21T02:29:32.383Z",
+      "model": "claude-haiku-4-5-20251001",
+      "input_tokens": "332",
+      "output_tokens": "32",
+      "cache_read_tokens": "0",
+      "cache_creation_tokens": "0",
+      "cost_usd": "0.000492",
+      "duration_ms": "903"
+    },
+    "_time": 1768962572.3830001,
+    "__bytes": 621,
+    "__srcIpPort": "192.0.2.100:53470",
+    "__inputId": "open_telemetry:open_telemetry"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "__otlp": {
+      "version": "1.3.1",
+      "type": "logs",
+      "extracted": true
+    },
+    "schema_url": "",
+    "resource": {
+      "dropped_attributes_count": 0,
+      "attributes": {
+        "host.arch": "arm64",
+        "os.type": "darwin",
+        "os.version": "25.2.0",
+        "service.name": "claude-code",
+        "service.version": "2.1.12"
+      }
+    },
+    "scope": {
+      "name": "com.anthropic.claude_code.events",
+      "version": "2.1.12",
+      "dropped_attributes_count": 0
+    },
+    "time_unix_nano": 1768962575894000000,
+    "observed_time_unix_nano": 1768962575894000000,
+    "body": "claude_code.api_request",
+    "dropped_attributes_count": 0,
+    "attributes": {
+      "user.id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "session.id": "d27ebdac-1a6c-454e-9255-32130552c561",
+      "organization.id": "00000000-0000-0000-0000-000000000001",
+      "user.email": "demo.user@example.com",
+      "user.account_uuid": "00000000-0000-0000-0000-000000000002",
+      "terminal.type": "cursor",
+      "event.name": "api_request",
+      "event.timestamp": "2026-01-21T02:29:35.894Z",
+      "model": "claude-opus-4-5-20251101",
+      "input_tokens": "8",
+      "output_tokens": "161",
+      "cache_read_tokens": "111612",
+      "cache_creation_tokens": "173",
+      "cost_usd": "0.06095225",
+      "duration_ms": "4265"
+    },
+    "_time": 1768962575.894,
+    "__bytes": 629,
+    "__srcIpPort": "192.0.2.100:53470",
+    "__inputId": "open_telemetry:open_telemetry"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "schema_url": "",
+    "scope": {
+      "name": "com.anthropic.claude_code",
+      "version": "2.1.14",
+      "dropped_attributes_count": 0
+    },
+    "__criblMetrics": [
+      {
+        "nameExpr": [
+          "_metric"
+        ],
+        "values": [
+          "_value"
+        ],
+        "types": [
+          "gauge"
+        ],
+        "dims": [
+          "host.arch",
+          "os.type",
+          "os.version",
+          "service.name",
+          "service.version",
+          "user.id",
+          "session.id",
+          "organization.id",
+          "user.email",
+          "user.account_uuid",
+          "terminal.type",
+          "type"
+        ]
+      }
+    ],
+    "host.arch": "arm64",
+    "os.type": "darwin",
+    "os.version": "25.2.0",
+    "service.name": "claude-code",
+    "service.version": "2.1.14",
+    "__otlp": {
+      "version": "1.3.1",
+      "type": "metrics",
+      "extracted": true
+    },
+    "user.id": "0000000000000000000000000000000000000000000000000000000000000000",
+    "session.id": "f2ad4e2d-e9a0-4216-805d-ed07cae96d20",
+    "organization.id": "00000000-0000-0000-0000-000000000001",
+    "user.email": "demo.user@example.com",
+    "user.account_uuid": "00000000-0000-0000-0000-000000000002",
+    "terminal.type": "cursor",
+    "type": "added",
+    "claude_code.lines_of_code.count_otel": {
+      "time_unix_nano": 1768962579227000000,
+      "start_time_unix_nano": 1768962543177000000,
+      "flags": 0,
+      "exemplars": [],
+      "aggregation_temporality": 1,
+      "is_monotonic": true
+    },
+    "_time": 1768962579.227,
+    "_metric": "claude_code.lines_of_code.count",
+    "_value": 0,
+    "__bytes": 358,
+    "__srcIpPort": "192.0.2.100:53151",
+    "__inputId": "open_telemetry:open_telemetry"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "schema_url": "",
+    "scope": {
+      "name": "com.anthropic.claude_code",
+      "version": "2.1.14",
+      "dropped_attributes_count": 0
+    },
+    "__criblMetrics": [
+      {
+        "nameExpr": [
+          "_metric"
+        ],
+        "values": [
+          "_value"
+        ],
+        "types": [
+          "gauge"
+        ],
+        "dims": [
+          "host.arch",
+          "os.type",
+          "os.version",
+          "service.name",
+          "service.version",
+          "user.id",
+          "session.id",
+          "organization.id",
+          "user.email",
+          "user.account_uuid",
+          "terminal.type",
+          "type"
+        ]
+      }
+    ],
+    "host.arch": "arm64",
+    "os.type": "darwin",
+    "os.version": "25.2.0",
+    "service.name": "claude-code",
+    "service.version": "2.1.14",
+    "__otlp": {
+      "version": "1.3.1",
+      "type": "metrics",
+      "extracted": true
+    },
+    "user.id": "0000000000000000000000000000000000000000000000000000000000000000",
+    "session.id": "f2ad4e2d-e9a0-4216-805d-ed07cae96d20",
+    "organization.id": "00000000-0000-0000-0000-000000000001",
+    "user.email": "demo.user@example.com",
+    "user.account_uuid": "00000000-0000-0000-0000-000000000002",
+    "terminal.type": "cursor",
+    "type": "removed",
+    "claude_code.lines_of_code.count_otel": {
+      "time_unix_nano": 1768962579227000000,
+      "start_time_unix_nano": 1768962543177000000,
+      "flags": 0,
+      "exemplars": [],
+      "aggregation_temporality": 1,
+      "is_monotonic": true
+    },
+    "_time": 1768962579.227,
+    "_metric": "claude_code.lines_of_code.count",
+    "_value": 6,
+    "__bytes": 360,
+    "__srcIpPort": "192.0.2.100:53151",
+    "__inputId": "open_telemetry:open_telemetry"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "schema_url": "",
+    "scope": {
+      "name": "com.anthropic.claude_code",
+      "version": "2.1.14",
+      "dropped_attributes_count": 0
+    },
+    "__criblMetrics": [
+      {
+        "nameExpr": [
+          "_metric"
+        ],
+        "values": [
+          "_value"
+        ],
+        "types": [
+          "gauge"
+        ],
+        "dims": [
+          "host.arch",
+          "os.type",
+          "os.version",
+          "service.name",
+          "service.version",
+          "user.id",
+          "session.id",
+          "organization.id",
+          "user.email",
+          "user.account_uuid",
+          "terminal.type",
+          "model"
+        ]
+      }
+    ],
+    "host.arch": "arm64",
+    "os.type": "darwin",
+    "os.version": "25.2.0",
+    "service.name": "claude-code",
+    "service.version": "2.1.14",
+    "__otlp": {
+      "version": "1.3.1",
+      "type": "metrics",
+      "extracted": true
+    },
+    "user.id": "0000000000000000000000000000000000000000000000000000000000000000",
+    "session.id": "f2ad4e2d-e9a0-4216-805d-ed07cae96d20",
+    "organization.id": "00000000-0000-0000-0000-000000000001",
+    "user.email": "demo.user@example.com",
+    "user.account_uuid": "00000000-0000-0000-0000-000000000002",
+    "terminal.type": "cursor",
+    "model": "claude-opus-4-5-20251101",
+    "claude_code.cost.usage_otel": {
+      "time_unix_nano": 1768962579227000000,
+      "start_time_unix_nano": 1768962553539000000,
+      "flags": 0,
+      "exemplars": [],
+      "aggregation_temporality": 1,
+      "is_monotonic": true
+    },
+    "_time": 1768962579.227,
+    "_metric": "claude_code.cost.usage",
+    "_value": 0.04076375,
+    "__bytes": 378,
+    "__srcIpPort": "192.0.2.100:53151",
+    "__inputId": "open_telemetry:open_telemetry"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "schema_url": "",
+    "scope": {
+      "name": "com.anthropic.claude_code",
+      "version": "2.1.14",
+      "dropped_attributes_count": 0
+    },
+    "__criblMetrics": [
+      {
+        "nameExpr": [
+          "_metric"
+        ],
+        "values": [
+          "_value"
+        ],
+        "types": [
+          "gauge"
+        ],
+        "dims": [
+          "host.arch",
+          "os.type",
+          "os.version",
+          "service.name",
+          "service.version",
+          "user.id",
+          "session.id",
+          "organization.id",
+          "user.email",
+          "user.account_uuid",
+          "terminal.type",
+          "type",
+          "model"
+        ]
+      }
+    ],
+    "host.arch": "arm64",
+    "os.type": "darwin",
+    "os.version": "25.2.0",
+    "service.name": "claude-code",
+    "service.version": "2.1.14",
+    "__otlp": {
+      "version": "1.3.1",
+      "type": "metrics",
+      "extracted": true
+    },
+    "user.id": "0000000000000000000000000000000000000000000000000000000000000000",
+    "session.id": "f2ad4e2d-e9a0-4216-805d-ed07cae96d20",
+    "organization.id": "00000000-0000-0000-0000-000000000001",
+    "user.email": "demo.user@example.com",
+    "user.account_uuid": "00000000-0000-0000-0000-000000000002",
+    "terminal.type": "cursor",
+    "type": "input",
+    "model": "claude-opus-4-5-20251101",
+    "claude_code.token.usage_otel": {
+      "time_unix_nano": 1768962579227000000,
+      "start_time_unix_nano": 1768962553540000000,
+      "flags": 0,
+      "exemplars": [],
+      "aggregation_temporality": 1,
+      "is_monotonic": true
+    },
+    "_time": 1768962579.227,
+    "_metric": "claude_code.token.usage",
+    "_value": 7,
+    "__bytes": 395,
+    "__srcIpPort": "192.0.2.100:53151",
+    "__inputId": "open_telemetry:open_telemetry"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "schema_url": "",
+    "scope": {
+      "name": "com.anthropic.claude_code",
+      "version": "2.1.14",
+      "dropped_attributes_count": 0
+    },
+    "__criblMetrics": [
+      {
+        "nameExpr": [
+          "_metric"
+        ],
+        "values": [
+          "_value"
+        ],
+        "types": [
+          "gauge"
+        ],
+        "dims": [
+          "host.arch",
+          "os.type",
+          "os.version",
+          "service.name",
+          "service.version",
+          "user.id",
+          "session.id",
+          "organization.id",
+          "user.email",
+          "user.account_uuid",
+          "terminal.type",
+          "type",
+          "model"
+        ]
+      }
+    ],
+    "host.arch": "arm64",
+    "os.type": "darwin",
+    "os.version": "25.2.0",
+    "service.name": "claude-code",
+    "service.version": "2.1.14",
+    "__otlp": {
+      "version": "1.3.1",
+      "type": "metrics",
+      "extracted": true
+    },
+    "user.id": "0000000000000000000000000000000000000000000000000000000000000000",
+    "session.id": "f2ad4e2d-e9a0-4216-805d-ed07cae96d20",
+    "organization.id": "00000000-0000-0000-0000-000000000001",
+    "user.email": "demo.user@example.com",
+    "user.account_uuid": "00000000-0000-0000-0000-000000000002",
+    "terminal.type": "cursor",
+    "type": "output",
+    "model": "claude-opus-4-5-20251101",
+    "claude_code.token.usage_otel": {
+      "time_unix_nano": 1768962579227000000,
+      "start_time_unix_nano": 1768962553540000000,
+      "flags": 0,
+      "exemplars": [],
+      "aggregation_temporality": 1,
+      "is_monotonic": true
+    },
+    "_time": 1768962579.227,
+    "_metric": "claude_code.token.usage",
+    "_value": 698,
+    "__bytes": 396,
+    "__srcIpPort": "192.0.2.100:53151",
+    "__inputId": "open_telemetry:open_telemetry"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "schema_url": "",
+    "scope": {
+      "name": "com.anthropic.claude_code",
+      "version": "2.1.14",
+      "dropped_attributes_count": 0
+    },
+    "__criblMetrics": [
+      {
+        "nameExpr": [
+          "_metric"
+        ],
+        "values": [
+          "_value"
+        ],
+        "types": [
+          "gauge"
+        ],
+        "dims": [
+          "host.arch",
+          "os.type",
+          "os.version",
+          "service.name",
+          "service.version",
+          "user.id",
+          "session.id",
+          "organization.id",
+          "user.email",
+          "user.account_uuid",
+          "terminal.type",
+          "type",
+          "model"
+        ]
+      }
+    ],
+    "host.arch": "arm64",
+    "os.type": "darwin",
+    "os.version": "25.2.0",
+    "service.name": "claude-code",
+    "service.version": "2.1.14",
+    "__otlp": {
+      "version": "1.3.1",
+      "type": "metrics",
+      "extracted": true
+    },
+    "user.id": "0000000000000000000000000000000000000000000000000000000000000000",
+    "session.id": "f2ad4e2d-e9a0-4216-805d-ed07cae96d20",
+    "organization.id": "00000000-0000-0000-0000-000000000001",
+    "user.email": "demo.user@example.com",
+    "user.account_uuid": "00000000-0000-0000-0000-000000000002",
+    "terminal.type": "cursor",
+    "type": "cacheRead",
+    "model": "claude-opus-4-5-20251101",
+    "claude_code.token.usage_otel": {
+      "time_unix_nano": 1768962579227000000,
+      "start_time_unix_nano": 1768962553540000000,
+      "flags": 0,
+      "exemplars": [],
+      "aggregation_temporality": 1,
+      "is_monotonic": true
+    },
+    "_time": 1768962579.227,
+    "_metric": "claude_code.token.usage",
+    "_value": 24045,
+    "__bytes": 399,
+    "__srcIpPort": "192.0.2.100:53151",
+    "__inputId": "open_telemetry:open_telemetry"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "schema_url": "",
+    "scope": {
+      "name": "com.anthropic.claude_code",
+      "version": "2.1.14",
+      "dropped_attributes_count": 0
+    },
+    "__criblMetrics": [
+      {
+        "nameExpr": [
+          "_metric"
+        ],
+        "values": [
+          "_value"
+        ],
+        "types": [
+          "gauge"
+        ],
+        "dims": [
+          "host.arch",
+          "os.type",
+          "os.version",
+          "service.name",
+          "service.version",
+          "user.id",
+          "session.id",
+          "organization.id",
+          "user.email",
+          "user.account_uuid",
+          "terminal.type",
+          "type",
+          "model"
+        ]
+      }
+    ],
+    "host.arch": "arm64",
+    "os.type": "darwin",
+    "os.version": "25.2.0",
+    "service.name": "claude-code",
+    "service.version": "2.1.14",
+    "__otlp": {
+      "version": "1.3.1",
+      "type": "metrics",
+      "extracted": true
+    },
+    "user.id": "0000000000000000000000000000000000000000000000000000000000000000",
+    "session.id": "f2ad4e2d-e9a0-4216-805d-ed07cae96d20",
+    "organization.id": "00000000-0000-0000-0000-000000000001",
+    "user.email": "demo.user@example.com",
+    "user.account_uuid": "00000000-0000-0000-0000-000000000002",
+    "terminal.type": "cursor",
+    "type": "cacheCreation",
+    "model": "claude-opus-4-5-20251101",
+    "claude_code.token.usage_otel": {
+      "time_unix_nano": 1768962579227000000,
+      "start_time_unix_nano": 1768962553540000000,
+      "flags": 0,
+      "exemplars": [],
+      "aggregation_temporality": 1,
+      "is_monotonic": true
+    },
+    "_time": 1768962579.227,
+    "_metric": "claude_code.token.usage",
+    "_value": 1801,
+    "__bytes": 403,
+    "__srcIpPort": "192.0.2.100:53151",
+    "__inputId": "open_telemetry:open_telemetry"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "schema_url": "",
+    "scope": {
+      "name": "com.anthropic.claude_code",
+      "version": "2.1.14",
+      "dropped_attributes_count": 0
+    },
+    "__criblMetrics": [
+      {
+        "nameExpr": [
+          "_metric"
+        ],
+        "values": [
+          "_value"
+        ],
+        "types": [
+          "gauge"
+        ],
+        "dims": [
+          "host.arch",
+          "os.type",
+          "os.version",
+          "service.name",
+          "service.version",
+          "user.id",
+          "session.id",
+          "organization.id",
+          "user.email",
+          "user.account_uuid",
+          "terminal.type",
+          "decision",
+          "source",
+          "tool_name",
+          "language"
+        ]
+      }
+    ],
+    "host.arch": "arm64",
+    "os.type": "darwin",
+    "os.version": "25.2.0",
+    "service.name": "claude-code",
+    "service.version": "2.1.14",
+    "__otlp": {
+      "version": "1.3.1",
+      "type": "metrics",
+      "extracted": true
+    },
+    "user.id": "0000000000000000000000000000000000000000000000000000000000000000",
+    "session.id": "f2ad4e2d-e9a0-4216-805d-ed07cae96d20",
+    "organization.id": "00000000-0000-0000-0000-000000000001",
+    "user.email": "demo.user@example.com",
+    "user.account_uuid": "00000000-0000-0000-0000-000000000002",
+    "terminal.type": "cursor",
+    "decision": "accept",
+    "source": "user_temporary",
+    "tool_name": "Edit",
+    "language": "unknown",
+    "claude_code.code_edit_tool.decision_otel": {
+      "time_unix_nano": 1768962579227000000,
+      "start_time_unix_nano": 1768962543174000000,
+      "flags": 0,
+      "exemplars": [],
+      "aggregation_temporality": 1,
+      "is_monotonic": true
+    },
+    "_time": 1768962579.227,
+    "_metric": "claude_code.code_edit_tool.decision",
+    "_value": 2,
+    "__bytes": 435,
+    "__srcIpPort": "192.0.2.100:53151",
+    "__inputId": "open_telemetry:open_telemetry"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "schema_url": "",
+    "scope": {
+      "name": "com.anthropic.claude_code",
+      "version": "2.1.14",
+      "dropped_attributes_count": 0
+    },
+    "__criblMetrics": [
+      {
+        "nameExpr": [
+          "_metric"
+        ],
+        "values": [
+          "_value"
+        ],
+        "types": [
+          "gauge"
+        ],
+        "dims": [
+          "host.arch",
+          "os.type",
+          "os.version",
+          "service.name",
+          "service.version",
+          "user.id",
+          "session.id",
+          "organization.id",
+          "user.email",
+          "user.account_uuid",
+          "terminal.type",
+          "type"
+        ]
+      }
+    ],
+    "host.arch": "arm64",
+    "os.type": "darwin",
+    "os.version": "25.2.0",
+    "service.name": "claude-code",
+    "service.version": "2.1.14",
+    "__otlp": {
+      "version": "1.3.1",
+      "type": "metrics",
+      "extracted": true
+    },
+    "user.id": "0000000000000000000000000000000000000000000000000000000000000000",
+    "session.id": "f2ad4e2d-e9a0-4216-805d-ed07cae96d20",
+    "organization.id": "00000000-0000-0000-0000-000000000001",
+    "user.email": "demo.user@example.com",
+    "user.account_uuid": "00000000-0000-0000-0000-000000000002",
+    "terminal.type": "cursor",
+    "type": "cli",
+    "claude_code.active_time.total_otel": {
+      "time_unix_nano": 1768962579227000000,
+      "start_time_unix_nano": 1768962543299000000,
+      "flags": 0,
+      "exemplars": [],
+      "aggregation_temporality": 1,
+      "is_monotonic": true
+    },
+    "_time": 1768962579.227,
+    "_metric": "claude_code.active_time.total",
+    "_value": 9.452,
+    "__bytes": 356,
+    "__srcIpPort": "192.0.2.100:53151",
+    "__inputId": "open_telemetry:open_telemetry"
+  }
+]

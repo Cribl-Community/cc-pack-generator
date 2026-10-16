@@ -1,0 +1,2444 @@
+[
+  {
+    "_time": 1732751808,
+    "cribl_breaker": "Break on newlines",
+    "metadata": {
+      "product": {
+        "version": "1.10",
+        "name": "CloudTrail",
+        "vendor_name": "AWS",
+        "feature": {
+          "name": "Data"
+        }
+      },
+      "event_code": "AwsApiCall",
+      "uid": "abc-123-uid",
+      "profiles": [
+        "cloud",
+        "datetime"
+      ],
+      "version": "1.1.0"
+    },
+    "time": 1732751295000,
+    "time_dt": 1732751295000,
+    "cloud": {
+      "region": "region-id",
+      "provider": "AWS"
+    },
+    "api": {
+      "operation": "ListObjects",
+      "service": {
+        "name": "s3.amazonaws.com"
+      },
+      "request": {
+        "data": "{\"list-type\":\"2\",\"bucketName\":\"bucket_name_goes_here\",\"Host\":\"bucket_name_goes_here.s3.region-id.amazonaws.com\",\"prefix\":\"prefix-name-goes-here/\"delimiter\":\"/\"}",
+        "uid": "abc-123-uid"
+      }
+    },
+    "actor": {
+      "user": {
+        "type": "AssumedRole",
+        "uid_alt": "ABCDEF12345",
+        "uid": "abc-123-uid",
+        "account": {
+          "uid": "12345678"
+        },
+        "credential_uid": "ABCDEF12345"
+      },
+      "session": {
+        "created_time_dt": 1732751295000,
+        "is_mfa": false,
+        "issuer": "arn:aws:iam::12345:role/role_name"
+      }
+    },
+    "http_request": {
+      "user_agent": "user_agent_string"
+    },
+    "src_endpoint": {
+      "ip": "10.0.0.1"
+    },
+    "resources": [
+      {
+        "type": "AWS::S3::Object"
+      },
+      {
+        "uid": "abc-123-uid",
+        "owner": {
+          "account": {
+            "uid": "12345678"
+          }
+        },
+        "type": "AWS::S3::Bucket"
+      }
+    ],
+    "class_name": "API Activity",
+    "class_uid": 6003,
+    "category_name": "Application Activity",
+    "category_uid": 6,
+    "severity_id": 1,
+    "severity": "Informational",
+    "activity_name": "Read",
+    "activity_id": 2,
+    "type_uid": 600302,
+    "type_name": "API Activity: Read",
+    "status": "Success",
+    "unmapped": {
+      "userIdentity.sessionContext.sessionIssuer.type": "Role",
+      "userIdentity.sessionContext.webIdFederationData.federatedProvider": "arn:aws:iam::123456:name/name.region-id.amazonaws.com/id/ABC123",
+      "additionalEventData.SignatureVersion": "SigV4",
+      "additionalEventData.CipherSuite": "TLS_AES_128_GCM_SHA256",
+      "additionalEventData.bytesTransferredOut": "477",
+      "userIdentity.sessionContext.sessionIssuer.principalId": "ABC123",
+      "additionalEventData.x-amz-id-2": "ABC123",
+      "readOnly": "true",
+      "additionalEventData.AuthenticationMethod": "AuthHeader",
+      "resources[].ARNPrefix": "arn:aws:s3:::bucket_name_goes_here/prefix-name-goes-here/",
+      "sharedEventID": "abc-123-def-456",
+      "tlsDetails.clientProvidedHostHeader": "bucket_name_goes_here.s3.region-id.amazonaws.com",
+      "userIdentity.sessionContext.sessionIssuer.userName": "prefix-name-goes-here-region-id-irsa",
+      "recipientAccountId": "123456789",
+      "tlsDetails.tlsVersion": "TLSv1.3",
+      "managementEvent": "false",
+      "userIdentity.sessionContext.sessionIssuer.accountId": "123456789",
+      "tlsDetails.cipherSuite": "TLS_AES_128_GCM_SHA256",
+      "additionalEventData.bytesTransferredIn": "0"
+    },
+    "observables": [
+      {
+        "name": "src_endpoint.ip",
+        "value": "1.2.3.4",
+        "type": "IP Address",
+        "type_id": 2
+      },
+      {
+        "name": "resources[].uid",
+        "value": "arn:aws:s3:::bucket_name_goes_here",
+        "type": "Resource UID",
+        "type_id": 10
+      }
+    ],
+    "source": "s3://aws-security-data-lake-bucket-name/aws/S3_DATA/2.0/region=region-id/accountId=1234567/eventDay=20241127/18c9b8071e1dd2908283712ebcba3747.gz.parquet"
+  },
+  {
+    "_time": 1732751808,
+    "cribl_breaker": "Break on newlines",
+    "metadata": {
+      "product": {
+        "version": "1.10",
+        "name": "CloudTrail",
+        "vendor_name": "AWS",
+        "feature": {
+          "name": "Data"
+        }
+      },
+      "event_code": "AwsApiCall",
+      "uid": "abc-123-uid",
+      "profiles": [
+        "cloud",
+        "datetime"
+      ],
+      "version": "1.1.0"
+    },
+    "time": 1732751309000,
+    "time_dt": 1732751309000,
+    "cloud": {
+      "region": "region-id",
+      "provider": "AWS"
+    },
+    "api": {
+      "operation": "ListObjects",
+      "service": {
+        "name": "s3.amazonaws.com"
+      },
+      "request": {
+        "data": "{\"list-type\":\"2\",\"bucketName\":\"bucket_name_goes_here\",\"Host\":\"bucket_name_goes_here.s3.region-id.amazonaws.com\",\"prefix\":\"prefix-name-goes-here/\"delimiter\":\"/\"}",
+        "uid": "abc-123-uid"
+      }
+    },
+    "actor": {
+      "user": {
+        "type": "AssumedRole",
+        "uid_alt": "ABCDEF12345",
+        "uid": "abc-123-uid",
+        "account": {
+          "uid": "12345678"
+        },
+        "credential_uid": "ABCDEF12345"
+      },
+      "session": {
+        "created_time_dt": 1732751309000,
+        "is_mfa": false,
+        "issuer": "arn:aws:iam::12345:role/role_name"
+      }
+    },
+    "http_request": {
+      "user_agent": "user_agent_string"
+    },
+    "src_endpoint": {
+      "ip": "10.0.0.1"
+    },
+    "resources": [
+      {
+        "type": "AWS::S3::Object"
+      },
+      {
+        "uid": "abc-123-uid",
+        "owner": {
+          "account": {
+            "uid": "12345678"
+          }
+        },
+        "type": "AWS::S3::Bucket"
+      }
+    ],
+    "class_name": "API Activity",
+    "class_uid": 6003,
+    "category_name": "Application Activity",
+    "category_uid": 6,
+    "severity_id": 1,
+    "severity": "Informational",
+    "activity_name": "Read",
+    "activity_id": 2,
+    "type_uid": 600302,
+    "type_name": "API Activity: Read",
+    "status": "Success",
+    "unmapped": {
+      "userIdentity.sessionContext.sessionIssuer.type": "Role",
+      "userIdentity.sessionContext.webIdFederationData.federatedProvider": "arn:aws:iam::123456:name/name.region-id.amazonaws.com/id/ABC123",
+      "additionalEventData.SignatureVersion": "SigV4",
+      "additionalEventData.CipherSuite": "TLS_AES_128_GCM_SHA256",
+      "additionalEventData.bytesTransferredOut": "13960",
+      "userIdentity.sessionContext.sessionIssuer.principalId": "ABC123",
+      "additionalEventData.x-amz-id-2": "ABC123",
+      "readOnly": "true",
+      "additionalEventData.AuthenticationMethod": "AuthHeader",
+      "resources[].ARNPrefix": "arn:aws:s3:::bucket_name_goes_here/prefix-name-goes-here/",
+      "tlsDetails.clientProvidedHostHeader": "bucket_name_goes_here.s3.region-id.amazonaws.com",
+      "userIdentity.sessionContext.sessionIssuer.userName": "prefix-name-goes-here-region-id-irsa",
+      "recipientAccountId": "123456789",
+      "tlsDetails.tlsVersion": "TLSv1.3",
+      "managementEvent": "false",
+      "userIdentity.sessionContext.sessionIssuer.accountId": "123456789",
+      "tlsDetails.cipherSuite": "TLS_AES_128_GCM_SHA256",
+      "additionalEventData.bytesTransferredIn": "0"
+    },
+    "observables": [
+      {
+        "name": "src_endpoint.ip",
+        "value": "1.2.3.4",
+        "type": "IP Address",
+        "type_id": 2
+      },
+      {
+        "name": "resources[].uid",
+        "value": "arn:aws:s3:::bucket_name_goes_here",
+        "type": "Resource UID",
+        "type_id": 10
+      }
+    ],
+    "source": "s3://aws-security-data-lake-bucket-name/aws/S3_DATA/2.0/region=region-id/accountId=1234567/eventDay=20241127/18c9b8071e1dd2908283712ebcba3747.gz.parquet"
+  },
+  {
+    "_time": 1732751808,
+    "cribl_breaker": "Break on newlines",
+    "metadata": {
+      "product": {
+        "version": "1.10",
+        "name": "CloudTrail",
+        "vendor_name": "AWS",
+        "feature": {
+          "name": "Data"
+        }
+      },
+      "event_code": "AwsApiCall",
+      "uid": "abc-123-uid",
+      "profiles": [
+        "cloud",
+        "datetime"
+      ],
+      "version": "1.1.0"
+    },
+    "time": 1732751309000,
+    "time_dt": 1732751309000,
+    "cloud": {
+      "region": "region-id",
+      "provider": "AWS"
+    },
+    "api": {
+      "operation": "ListObjects",
+      "service": {
+        "name": "s3.amazonaws.com"
+      },
+      "request": {
+        "data": "{\"list-type\":\"2\",\"bucketName\":\"bucket_name_goes_here\",\"Host\":\"bucket_name_goes_here.s3.region-id.amazonaws.com\",\"prefix\":\"prefix-name-goes-here/\"delimiter\":\"/\"}",
+        "uid": "abc-123-uid"
+      }
+    },
+    "actor": {
+      "user": {
+        "type": "AssumedRole",
+        "uid_alt": "ABCDEF12345",
+        "uid": "abc-123-uid",
+        "account": {
+          "uid": "abc-123-uid"
+        },
+        "credential_uid": "ABCDEF12345"
+      },
+      "session": {
+        "created_time_dt": 1732751309000,
+        "is_mfa": false,
+        "issuer": "arn:aws:iam::12345:role/role_name"
+      }
+    },
+    "http_request": {
+      "user_agent": "user_agent_string"
+    },
+    "src_endpoint": {
+      "ip": "10.0.0.1"
+    },
+    "resources": [
+      {
+        "type": "AWS::S3::Object"
+      },
+      {
+        "uid": "abc-123-uid",
+        "owner": {
+          "account": {
+            "uid": "abc-123-uid"
+          }
+        },
+        "type": "AWS::S3::Bucket"
+      }
+    ],
+    "class_name": "API Activity",
+    "class_uid": 6003,
+    "category_name": "Application Activity",
+    "category_uid": 6,
+    "severity_id": 1,
+    "severity": "Informational",
+    "activity_name": "Read",
+    "activity_id": 2,
+    "type_uid": 600302,
+    "type_name": "API Activity: Read",
+    "status": "Success",
+    "unmapped": {
+      "userIdentity.sessionContext.sessionIssuer.type": "Role",
+      "userIdentity.sessionContext.webIdFederationData.federatedProvider": "arn:aws:iam::123456:name/name.region-id.amazonaws.com/id/ABC123",
+      "additionalEventData.SignatureVersion": "SigV4",
+      "additionalEventData.CipherSuite": "TLS_AES_128_GCM_SHA256",
+      "additionalEventData.bytesTransferredOut": "3642",
+      "userIdentity.sessionContext.sessionIssuer.principalId": "ABC123",
+      "additionalEventData.x-amz-id-2": "ABC123",
+      "readOnly": "true",
+      "additionalEventData.AuthenticationMethod": "AuthHeader",
+      "resources[].ARNPrefix": "arn:aws:s3:::bucket_name_goes_here/prefix-name-goes-here/",
+      "sharedEventID": "abc-123-def-456",
+      "tlsDetails.clientProvidedHostHeader": "bucket_name_goes_here.s3.region-id.amazonaws.com",
+      "userIdentity.sessionContext.sessionIssuer.userName": "prefix-name-goes-here-region-id-irsa",
+      "recipientAccountId": "123456789",
+      "tlsDetails.tlsVersion": "TLSv1.3",
+      "managementEvent": "false",
+      "userIdentity.sessionContext.sessionIssuer.accountId": "123456789",
+      "tlsDetails.cipherSuite": "TLS_AES_128_GCM_SHA256",
+      "additionalEventData.bytesTransferredIn": "0"
+    },
+    "observables": [
+      {
+        "name": "src_endpoint.ip",
+        "value": "1.2.3.4",
+        "type": "IP Address",
+        "type_id": 2
+      },
+      {
+        "name": "resources[].uid",
+        "value": "arn:aws:s3:::bucket_name_goes_here",
+        "type": "Resource UID",
+        "type_id": 10
+      }
+    ],
+    "source": "s3://aws-security-data-lake-bucket-name/aws/S3_DATA/2.0/region=region-id/accountId=1234567/eventDay=20241127/18c9b8071e1dd2908283712ebcba3747.gz.parquet"
+  },
+  {
+    "_time": 1732751808,
+    "cribl_breaker": "Break on newlines",
+    "metadata": {
+      "product": {
+        "version": "1.10",
+        "name": "CloudTrail",
+        "vendor_name": "AWS",
+        "feature": {
+          "name": "Data"
+        }
+      },
+      "event_code": "AwsApiCall",
+      "uid": "abc-123-uid",
+      "profiles": [
+        "cloud",
+        "datetime"
+      ],
+      "version": "1.1.0"
+    },
+    "time": 1732751315000,
+    "time_dt": 1732751315000,
+    "cloud": {
+      "region": "region-id",
+      "provider": "AWS"
+    },
+    "api": {
+      "operation": "ListObjects",
+      "service": {
+        "name": "s3.amazonaws.com"
+      },
+      "request": {
+        "data": "{\"list-type\":\"2\",\"bucketName\":\"bucket_name_goes_here\",\"Host\":\"bucket_name_goes_here.s3.region-id.amazonaws.com\",\"delimiter\":\"/\",\"prefix\":\"prefix-name-goes-here/\"}",
+        "uid": "abc-123-uid"
+      }
+    },
+    "actor": {
+      "user": {
+        "type": "AssumedRole",
+        "uid_alt": "ABCDEF12345",
+        "uid": "abc-123-uid",
+        "account": {
+          "uid": "abc-123-uid"
+        },
+        "credential_uid": "ABCDEF12345"
+      },
+      "session": {
+        "created_time_dt": 1732751315000,
+        "is_mfa": false,
+        "issuer": "arn:aws:iam::12345:role/role_name"
+      }
+    },
+    "http_request": {
+      "user_agent": "user_agent_string"
+    },
+    "src_endpoint": {
+      "ip": "10.0.0.1"
+    },
+    "resources": [
+      {
+        "type": "AWS::S3::Object"
+      },
+      {
+        "uid": "abc-123-uid",
+        "owner": {
+          "account": {
+            "uid": "abc-123-uid"
+          }
+        },
+        "type": "AWS::S3::Bucket"
+      }
+    ],
+    "class_name": "API Activity",
+    "class_uid": 6003,
+    "category_name": "Application Activity",
+    "category_uid": 6,
+    "severity_id": 1,
+    "severity": "Informational",
+    "activity_name": "Read",
+    "activity_id": 2,
+    "type_uid": 600302,
+    "type_name": "API Activity: Read",
+    "status": "Success",
+    "unmapped": {
+      "userIdentity.sessionContext.sessionIssuer.type": "Role",
+      "userIdentity.sessionContext.webIdFederationData.federatedProvider": "arn:aws:iam::123456:name/name.region-id.amazonaws.com/id/ABC123",
+      "additionalEventData.SignatureVersion": "SigV4",
+      "additionalEventData.CipherSuite": "TLS_AES_128_GCM_SHA256",
+      "additionalEventData.bytesTransferredOut": "397",
+      "userIdentity.sessionContext.sessionIssuer.principalId": "ABC123",
+      "additionalEventData.x-amz-id-2": "ABC123",
+      "readOnly": "true",
+      "additionalEventData.AuthenticationMethod": "AuthHeader",
+      "resources[].ARNPrefix": "arn:aws:s3:::bucket_name_goes_here/prefix-name-goes-here/",
+      "tlsDetails.clientProvidedHostHeader": "bucket_name_goes_here.s3.region-id.amazonaws.com",
+      "userIdentity.sessionContext.sessionIssuer.userName": "prefix-name-goes-here-region-id-irsa",
+      "recipientAccountId": "123456789",
+      "tlsDetails.tlsVersion": "TLSv1.3",
+      "managementEvent": "false",
+      "userIdentity.sessionContext.sessionIssuer.accountId": "123456789",
+      "tlsDetails.cipherSuite": "TLS_AES_128_GCM_SHA256",
+      "additionalEventData.bytesTransferredIn": "0"
+    },
+    "observables": [
+      {
+        "name": "src_endpoint.ip",
+        "value": "1.2.3.4",
+        "type": "IP Address",
+        "type_id": 2
+      },
+      {
+        "name": "resources[].uid",
+        "value": "arn:aws:s3:::bucket_name_goes_here",
+        "type": "Resource UID",
+        "type_id": 10
+      }
+    ],
+    "source": "s3://aws-security-data-lake-bucket-name/aws/S3_DATA/2.0/region=region-id/accountId=1234567/eventDay=20241127/18c9b8071e1dd2908283712ebcba3747.gz.parquet"
+  },
+  {
+    "_time": 1732751808,
+    "cribl_breaker": "Break on newlines",
+    "metadata": {
+      "product": {
+        "version": "1.10",
+        "name": "CloudTrail",
+        "vendor_name": "AWS",
+        "feature": {
+          "name": "Data"
+        }
+      },
+      "event_code": "AwsApiCall",
+      "uid": "abc-123-uid",
+      "profiles": [
+        "cloud",
+        "datetime"
+      ],
+      "version": "1.1.0"
+    },
+    "time": 1732751355000,
+    "time_dt": 1732751355000,
+    "cloud": {
+      "region": "region-id",
+      "provider": "AWS"
+    },
+    "api": {
+      "operation": "ListObjects",
+      "service": {
+        "name": "s3.amazonaws.com"
+      },
+      "request": {
+        "data": "{\"list-type\":\"2\",\"bucketName\":\"bucket_name_goes_here\",\"Host\":\"bucket_name_goes_here.s3.region-id.amazonaws.com\",\"prefix\":\"prefix-name-goes-here/\"delimiter\":\"/\"}",
+        "uid": "abc-123-uid"
+      }
+    },
+    "actor": {
+      "user": {
+        "type": "AssumedRole",
+        "uid_alt": "ABCDEF12345",
+        "uid": "abc-123-uid",
+        "account": {
+          "uid": "abc-123-uid"
+        },
+        "credential_uid": "ABCDEF12345"
+      },
+      "session": {
+        "created_time_dt": 1732751355000,
+        "is_mfa": false,
+        "issuer": "arn:aws:iam::12345:role/role_name"
+      }
+    },
+    "http_request": {
+      "user_agent": "user_agent_string"
+    },
+    "src_endpoint": {
+      "ip": "10.0.0.1"
+    },
+    "resources": [
+      {
+        "type": "AWS::S3::Object"
+      },
+      {
+        "uid": "abc-123-uid",
+        "owner": {
+          "account": {
+            "uid": "abc-123-uid"
+          }
+        },
+        "type": "AWS::S3::Bucket"
+      }
+    ],
+    "class_name": "API Activity",
+    "class_uid": 6003,
+    "category_name": "Application Activity",
+    "category_uid": 6,
+    "severity_id": 1,
+    "severity": "Informational",
+    "activity_name": "Read",
+    "activity_id": 2,
+    "type_uid": 600302,
+    "type_name": "API Activity: Read",
+    "status": "Success",
+    "unmapped": {
+      "userIdentity.sessionContext.sessionIssuer.type": "Role",
+      "userIdentity.sessionContext.webIdFederationData.federatedProvider": "arn:aws:iam::123456:name/name.region-id.amazonaws.com/id/ABC123",
+      "additionalEventData.SignatureVersion": "SigV4",
+      "additionalEventData.CipherSuite": "TLS_AES_128_GCM_SHA256",
+      "additionalEventData.bytesTransferredOut": "477",
+      "userIdentity.sessionContext.sessionIssuer.principalId": "ABC123",
+      "additionalEventData.x-amz-id-2": "ABC123",
+      "readOnly": "true",
+      "additionalEventData.AuthenticationMethod": "AuthHeader",
+      "resources[].ARNPrefix": "arn:aws:s3:::bucket_name_goes_here/prefix-name-goes-here/",
+      "sharedEventID": "abc-123-def-456",
+      "tlsDetails.clientProvidedHostHeader": "bucket_name_goes_here.s3.region-id.amazonaws.com",
+      "userIdentity.sessionContext.sessionIssuer.userName": "prefix-name-goes-here-region-id-irsa",
+      "recipientAccountId": "123456789",
+      "tlsDetails.tlsVersion": "TLSv1.3",
+      "managementEvent": "false",
+      "userIdentity.sessionContext.sessionIssuer.accountId": "123456789",
+      "tlsDetails.cipherSuite": "TLS_AES_128_GCM_SHA256",
+      "additionalEventData.bytesTransferredIn": "0"
+    },
+    "observables": [
+      {
+        "name": "src_endpoint.ip",
+        "value": "1.2.3.4",
+        "type": "IP Address",
+        "type_id": 2
+      },
+      {
+        "name": "resources[].uid",
+        "value": "arn:aws:s3:::bucket_name_goes_here",
+        "type": "Resource UID",
+        "type_id": 10
+      }
+    ],
+    "source": "s3://aws-security-data-lake-bucket-name/aws/S3_DATA/2.0/region=region-id/accountId=1234567/eventDay=20241127/18c9b8071e1dd2908283712ebcba3747.gz.parquet"
+  },
+  {
+    "_time": 1732751808,
+    "cribl_breaker": "Break on newlines",
+    "metadata": {
+      "product": {
+        "version": "1.10",
+        "name": "CloudTrail",
+        "vendor_name": "AWS",
+        "feature": {
+          "name": "Data"
+        }
+      },
+      "event_code": "AwsApiCall",
+      "uid": "abc-123-uid",
+      "profiles": [
+        "cloud",
+        "datetime"
+      ],
+      "version": "1.1.0"
+    },
+    "time": 1732751375000,
+    "time_dt": 1732751375000,
+    "cloud": {
+      "region": "region-id",
+      "provider": "AWS"
+    },
+    "api": {
+      "operation": "ListObjects",
+      "service": {
+        "name": "s3.amazonaws.com"
+      },
+      "request": {
+        "data": "{\"list-type\":\"2\",\"bucketName\":\"bucket_name_goes_here\",\"Host\":\"bucket_name_goes_here.s3.region-id.amazonaws.com\",\"prefix\":\"prefix-name-goes-here/\"delimiter\":\"/\"}",
+        "uid": "abc-123-uid"
+      }
+    },
+    "actor": {
+      "user": {
+        "type": "AssumedRole",
+        "uid_alt": "ABCDEF12345",
+        "uid": "abc-123-uid",
+        "account": {
+          "uid": "abc-123-uid"
+        },
+        "credential_uid": "ABCDEF12345"
+      },
+      "session": {
+        "created_time_dt": 1732751375000,
+        "is_mfa": false,
+        "issuer": "arn:aws:iam::12345:role/role_name"
+      }
+    },
+    "http_request": {
+      "user_agent": "user_agent_string"
+    },
+    "src_endpoint": {
+      "ip": "10.0.0.1"
+    },
+    "resources": [
+      {
+        "type": "AWS::S3::Object"
+      },
+      {
+        "uid": "abc-123-uid",
+        "owner": {
+          "account": {
+            "uid": "abc-123-uid"
+          }
+        },
+        "type": "AWS::S3::Bucket"
+      }
+    ],
+    "class_name": "API Activity",
+    "class_uid": 6003,
+    "category_name": "Application Activity",
+    "category_uid": 6,
+    "severity_id": 1,
+    "severity": "Informational",
+    "activity_name": "Read",
+    "activity_id": 2,
+    "type_uid": 600302,
+    "type_name": "API Activity: Read",
+    "status": "Success",
+    "unmapped": {
+      "userIdentity.sessionContext.sessionIssuer.type": "Role",
+      "userIdentity.sessionContext.webIdFederationData.federatedProvider": "arn:aws:iam::123456:name/name.region-id.amazonaws.com/id/ABC123",
+      "additionalEventData.SignatureVersion": "SigV4",
+      "additionalEventData.CipherSuite": "TLS_AES_128_GCM_SHA256",
+      "additionalEventData.bytesTransferredOut": "397",
+      "userIdentity.sessionContext.sessionIssuer.principalId": "ABC123",
+      "additionalEventData.x-amz-id-2": "ABC123",
+      "readOnly": "true",
+      "additionalEventData.AuthenticationMethod": "AuthHeader",
+      "resources[].ARNPrefix": "arn:aws:s3:::bucket_name_goes_here/prefix-name-goes-here/",
+      "tlsDetails.clientProvidedHostHeader": "bucket_name_goes_here.s3.region-id.amazonaws.com",
+      "userIdentity.sessionContext.sessionIssuer.userName": "prefix-name-goes-here-region-id-irsa",
+      "recipientAccountId": "123456789",
+      "tlsDetails.tlsVersion": "TLSv1.3",
+      "managementEvent": "false",
+      "userIdentity.sessionContext.sessionIssuer.accountId": "123456789",
+      "tlsDetails.cipherSuite": "TLS_AES_128_GCM_SHA256",
+      "additionalEventData.bytesTransferredIn": "0"
+    },
+    "observables": [
+      {
+        "name": "src_endpoint.ip",
+        "value": "1.2.3.4",
+        "type": "IP Address",
+        "type_id": 2
+      },
+      {
+        "name": "resources[].uid",
+        "value": "arn:aws:s3:::bucket_name_goes_here",
+        "type": "Resource UID",
+        "type_id": 10
+      }
+    ],
+    "source": "s3://aws-security-data-lake-bucket-name/aws/S3_DATA/2.0/region=region-id/accountId=1234567/eventDay=20241127/18c9b8071e1dd2908283712ebcba3747.gz.parquet"
+  },
+  {
+    "_time": 1732751808,
+    "cribl_breaker": "Break on newlines",
+    "metadata": {
+      "product": {
+        "version": "1.10",
+        "name": "CloudTrail",
+        "vendor_name": "AWS",
+        "feature": {
+          "name": "Data"
+        }
+      },
+      "event_code": "AwsApiCall",
+      "uid": "abc-123-uid",
+      "profiles": [
+        "cloud",
+        "datetime"
+      ],
+      "version": "1.1.0"
+    },
+    "time": 1732751415000,
+    "time_dt": 1732751415000,
+    "cloud": {
+      "region": "region-id",
+      "provider": "AWS"
+    },
+    "api": {
+      "operation": "ListObjects",
+      "service": {
+        "name": "s3.amazonaws.com"
+      },
+      "request": {
+        "data": "{\"list-type\":\"2\",\"bucketName\":\"bucket_name_goes_here\",\"Host\":\"bucket_name_goes_here.s3.region-id.amazonaws.com\",\"delimiter\":\"/\",\"prefix\":\"prefix-name-goes-here/\"}",
+        "uid": "abc-123-uid"
+      }
+    },
+    "actor": {
+      "user": {
+        "type": "AssumedRole",
+        "uid_alt": "ABCDEF12345",
+        "uid": "abc-123-uid",
+        "account": {
+          "uid": "abc-123-uid"
+        },
+        "credential_uid": "ABCDEF12345"
+      },
+      "session": {
+        "created_time_dt": 1732751415000,
+        "is_mfa": false,
+        "issuer": "arn:aws:iam::12345:role/role_name"
+      }
+    },
+    "http_request": {
+      "user_agent": "user_agent_string"
+    },
+    "src_endpoint": {
+      "ip": "10.0.0.1"
+    },
+    "resources": [
+      {
+        "type": "AWS::S3::Object"
+      },
+      {
+        "uid": "abc-123-uid",
+        "owner": {
+          "account": {
+            "uid": "abc-123-uid"
+          }
+        },
+        "type": "AWS::S3::Bucket"
+      }
+    ],
+    "class_name": "API Activity",
+    "class_uid": 6003,
+    "category_name": "Application Activity",
+    "category_uid": 6,
+    "severity_id": 1,
+    "severity": "Informational",
+    "activity_name": "Read",
+    "activity_id": 2,
+    "type_uid": 600302,
+    "type_name": "API Activity: Read",
+    "status": "Success",
+    "unmapped": {
+      "userIdentity.sessionContext.sessionIssuer.type": "Role",
+      "userIdentity.sessionContext.webIdFederationData.federatedProvider": "arn:aws:iam::123456:name/name.region-id.amazonaws.com/id/ABC123",
+      "additionalEventData.SignatureVersion": "SigV4",
+      "additionalEventData.CipherSuite": "TLS_AES_128_GCM_SHA256",
+      "additionalEventData.bytesTransferredOut": "477",
+      "userIdentity.sessionContext.sessionIssuer.principalId": "ABC123",
+      "additionalEventData.x-amz-id-2": "ABC123",
+      "readOnly": "true",
+      "additionalEventData.AuthenticationMethod": "AuthHeader",
+      "resources[].ARNPrefix": "arn:aws:s3:::bucket_name_goes_here/prefix-name-goes-here/",
+      "sharedEventID": "abc-123-def-456",
+      "tlsDetails.clientProvidedHostHeader": "bucket_name_goes_here.s3.region-id.amazonaws.com",
+      "userIdentity.sessionContext.sessionIssuer.userName": "prefix-name-goes-here-region-id-irsa",
+      "recipientAccountId": "123456789",
+      "tlsDetails.tlsVersion": "TLSv1.3",
+      "managementEvent": "false",
+      "userIdentity.sessionContext.sessionIssuer.accountId": "123456789",
+      "tlsDetails.cipherSuite": "TLS_AES_128_GCM_SHA256",
+      "additionalEventData.bytesTransferredIn": "0"
+    },
+    "observables": [
+      {
+        "name": "src_endpoint.ip",
+        "value": "1.2.3.4",
+        "type": "IP Address",
+        "type_id": 2
+      },
+      {
+        "name": "resources[].uid",
+        "value": "arn:aws:s3:::bucket_name_goes_here",
+        "type": "Resource UID",
+        "type_id": 10
+      }
+    ],
+    "source": "s3://aws-security-data-lake-bucket-name/aws/S3_DATA/2.0/region=region-id/accountId=1234567/eventDay=20241127/18c9b8071e1dd2908283712ebcba3747.gz.parquet"
+  },
+  {
+    "_time": 1732751808,
+    "cribl_breaker": "Break on newlines",
+    "metadata": {
+      "product": {
+        "version": "1.10",
+        "name": "CloudTrail",
+        "vendor_name": "AWS",
+        "feature": {
+          "name": "Data"
+        }
+      },
+      "event_code": "AwsApiCall",
+      "uid": "abc-123-uid",
+      "profiles": [
+        "cloud",
+        "datetime"
+      ],
+      "version": "1.1.0"
+    },
+    "time": 1732751429000,
+    "time_dt": 1732751429000,
+    "cloud": {
+      "region": "region-id",
+      "provider": "AWS"
+    },
+    "api": {
+      "operation": "ListObjects",
+      "service": {
+        "name": "s3.amazonaws.com"
+      },
+      "request": {
+        "data": "{\"list-type\":\"2\",\"bucketName\":\"bucket_name_goes_here\",\"Host\":\"bucket_name_goes_here.s3.region-id.amazonaws.com\",\"prefix\":\"prefix-name-goes-here/\"delimiter\":\"/\"}",
+        "uid": "abc-123-uid"
+      }
+    },
+    "actor": {
+      "user": {
+        "type": "AssumedRole",
+        "uid_alt": "ABCDEF12345",
+        "uid": "abc-123-uid",
+        "account": {
+          "uid": "abc-123-uid"
+        },
+        "credential_uid": "ABCDEF12345"
+      },
+      "session": {
+        "created_time_dt": 1732751429000,
+        "is_mfa": false,
+        "issuer": "arn:aws:iam::12345:role/role_name"
+      }
+    },
+    "http_request": {
+      "user_agent": "user_agent_string"
+    },
+    "src_endpoint": {
+      "ip": "10.0.0.1"
+    },
+    "resources": [
+      {
+        "type": "AWS::S3::Object"
+      },
+      {
+        "uid": "abc-123-uid",
+        "owner": {
+          "account": {
+            "uid": "abc-123-uid"
+          }
+        },
+        "type": "AWS::S3::Bucket"
+      }
+    ],
+    "class_name": "API Activity",
+    "class_uid": 6003,
+    "category_name": "Application Activity",
+    "category_uid": 6,
+    "severity_id": 1,
+    "severity": "Informational",
+    "activity_name": "Read",
+    "activity_id": 2,
+    "type_uid": 600302,
+    "type_name": "API Activity: Read",
+    "status": "Success",
+    "unmapped": {
+      "userIdentity.sessionContext.sessionIssuer.type": "Role",
+      "userIdentity.sessionContext.webIdFederationData.federatedProvider": "arn:aws:iam::123456:name/name.region-id.amazonaws.com/id/ABC123",
+      "additionalEventData.SignatureVersion": "SigV4",
+      "additionalEventData.CipherSuite": "TLS_AES_128_GCM_SHA256",
+      "additionalEventData.bytesTransferredOut": "3642",
+      "userIdentity.sessionContext.sessionIssuer.principalId": "ABC123",
+      "additionalEventData.x-amz-id-2": "ABC123",
+      "readOnly": "true",
+      "additionalEventData.AuthenticationMethod": "AuthHeader",
+      "resources[].ARNPrefix": "arn:aws:s3:::bucket_name_goes_here/prefix-name-goes-here/",
+      "sharedEventID": "abc-123-def-456",
+      "tlsDetails.clientProvidedHostHeader": "bucket_name_goes_here.s3.region-id.amazonaws.com",
+      "userIdentity.sessionContext.sessionIssuer.userName": "prefix-name-goes-here-region-id-irsa",
+      "recipientAccountId": "123456789",
+      "tlsDetails.tlsVersion": "TLSv1.3",
+      "managementEvent": "false",
+      "userIdentity.sessionContext.sessionIssuer.accountId": "123456789",
+      "tlsDetails.cipherSuite": "TLS_AES_128_GCM_SHA256",
+      "additionalEventData.bytesTransferredIn": "0"
+    },
+    "observables": [
+      {
+        "name": "src_endpoint.ip",
+        "value": "1.2.3.4",
+        "type": "IP Address",
+        "type_id": 2
+      },
+      {
+        "name": "resources[].uid",
+        "value": "arn:aws:s3:::bucket_name_goes_here",
+        "type": "Resource UID",
+        "type_id": 10
+      }
+    ],
+    "source": "s3://aws-security-data-lake-bucket-name/aws/S3_DATA/2.0/region=region-id/accountId=1234567/eventDay=20241127/18c9b8071e1dd2908283712ebcba3747.gz.parquet"
+  },
+  {
+    "_time": 1732751808,
+    "cribl_breaker": "Break on newlines",
+    "metadata": {
+      "product": {
+        "version": "1.10",
+        "name": "CloudTrail",
+        "vendor_name": "AWS",
+        "feature": {
+          "name": "Data"
+        }
+      },
+      "event_code": "AwsApiCall",
+      "uid": "abc-123-uid",
+      "profiles": [
+        "cloud",
+        "datetime"
+      ],
+      "version": "1.1.0"
+    },
+    "time": 1732751429000,
+    "time_dt": 1732751429000,
+    "cloud": {
+      "region": "region-id",
+      "provider": "AWS"
+    },
+    "api": {
+      "operation": "GetObject",
+      "service": {
+        "name": "s3.amazonaws.com"
+      },
+      "request": {
+        "data": "{\"bucketName\":\"bucket_name_goes_here\",\"Host\":\"bucket_name_goes_here.s3.dualstack.region-id.amazonaws.com\",\"key\":\"prefix-name-goes-here/\"}",
+        "uid": "abc-123-uid"
+      }
+    },
+    "actor": {
+      "user": {
+        "type": "AssumedRole",
+        "uid_alt": "ABCDEF12345",
+        "uid": "abc-123-uid",
+        "account": {
+          "uid": "abc-123-uid"
+        },
+        "credential_uid": "ABCDEF12345"
+      },
+      "session": {
+        "created_time_dt": 1732751429000,
+        "is_mfa": false,
+        "issuer": "arn:aws:iam::12345:role/role_name"
+      }
+    },
+    "http_request": {
+      "user_agent": "user_agent_string"
+    },
+    "src_endpoint": {
+      "ip": "10.0.0.1"
+    },
+    "resources": [
+      {
+        "uid": "abc-123-uid",
+        "type": "AWS::S3::Object"
+      },
+      {
+        "uid": "abc-123-uid",
+        "owner": {
+          "account": {
+            "uid": "abc-123-uid"
+          }
+        },
+        "type": "AWS::S3::Bucket"
+      }
+    ],
+    "class_name": "API Activity",
+    "class_uid": 6003,
+    "category_name": "Application Activity",
+    "category_uid": 6,
+    "severity_id": 1,
+    "severity": "Informational",
+    "activity_name": "Read",
+    "activity_id": 2,
+    "type_uid": 600302,
+    "type_name": "API Activity: Read",
+    "status": "Success",
+    "unmapped": {
+      "userIdentity.sessionContext.sessionIssuer.type": "Role",
+      "userIdentity.sessionContext.webIdFederationData.federatedProvider": "arn:aws:iam::123456:name/name.region-id.amazonaws.com/id/ABC123",
+      "additionalEventData.SignatureVersion": "SigV4",
+      "additionalEventData.CipherSuite": "TLS_AES_128_GCM_SHA256",
+      "additionalEventData.bytesTransferredOut": "143",
+      "userIdentity.sessionContext.sessionIssuer.principalId": "ABC123",
+      "additionalEventData.x-amz-id-2": "ABC123",
+      "readOnly": "true",
+      "additionalEventData.AuthenticationMethod": "AuthHeader",
+      "sharedEventID": "abc-123-def-456",
+      "tlsDetails.clientProvidedHostHeader": "bucket_name_goes_here.s3.dualstack.region-id.amazonaws.com",
+      "userIdentity.sessionContext.sessionIssuer.userName": "prefix-name-goes-here-region-id-irsa",
+      "recipientAccountId": "123456789",
+      "tlsDetails.tlsVersion": "TLSv1.3",
+      "managementEvent": "false",
+      "userIdentity.sessionContext.sessionIssuer.accountId": "123456789",
+      "tlsDetails.cipherSuite": "TLS_AES_128_GCM_SHA256",
+      "additionalEventData.bytesTransferredIn": "0"
+    },
+    "observables": [
+      {
+        "name": "resources[].uid",
+        "value": "arn:aws:s3:::bucket_name_goes_here",
+        "type": "Resource UID",
+        "type_id": 10
+      },
+      {
+        "name": "resources[].uid",
+        "value": "arn:aws:s3:::bucket_name_goes_here/prefix-name-goes-here/",
+        "type": "Resource UID",
+        "type_id": 10
+      },
+      {
+        "name": "src_endpoint.ip",
+        "value": "1.2.3.4",
+        "type": "IP Address",
+        "type_id": 2
+      }
+    ],
+    "source": "s3://aws-security-data-lake-bucket-name/aws/S3_DATA/2.0/region=region-id/accountId=1234567/eventDay=20241127/18c9b8071e1dd2908283712ebcba3747.gz.parquet"
+  },
+  {
+    "_time": 1732751808,
+    "cribl_breaker": "Break on newlines",
+    "metadata": {
+      "product": {
+        "version": "1.10",
+        "name": "CloudTrail",
+        "vendor_name": "AWS",
+        "feature": {
+          "name": "Data"
+        }
+      },
+      "event_code": "AwsApiCall",
+      "uid": "abc-123-uid",
+      "profiles": [
+        "cloud",
+        "datetime"
+      ],
+      "version": "1.1.0"
+    },
+    "time": 1732751429000,
+    "time_dt": 1732751429000,
+    "cloud": {
+      "region": "region-id",
+      "provider": "AWS"
+    },
+    "api": {
+      "operation": "ListObjects",
+      "service": {
+        "name": "s3.amazonaws.com"
+      },
+      "request": {
+        "data": "{\"list-type\":\"2\",\"bucketName\":\"bucket_name_goes_here\",\"encoding-type\":\"url\",\"fetch-owner\":\"true\",\"prefix\":\"prefix-name-goes-here/\"delimiter\":\"/\",\"Host\":\"bucket_name_goes_here.s3.dualstack.region-id.amazonaws.com\"}",
+        "uid": "abc-123-uid"
+      }
+    },
+    "actor": {
+      "user": {
+        "type": "AssumedRole",
+        "uid_alt": "ABCDEF12345",
+        "uid": "abc-123-uid",
+        "account": {
+          "uid": "abc-123-uid"
+        },
+        "credential_uid": "ABCDEF12345"
+      },
+      "session": {
+        "created_time_dt": 1732751429000,
+        "is_mfa": false,
+        "issuer": "arn:aws:iam::12345:role/role_name"
+      }
+    },
+    "http_request": {
+      "user_agent": "user_agent_string"
+    },
+    "src_endpoint": {
+      "ip": "10.0.0.1"
+    },
+    "resources": [
+      {
+        "type": "AWS::S3::Object"
+      },
+      {
+        "uid": "abc-123-uid",
+        "owner": {
+          "account": {
+            "uid": "abc-123-uid"
+          }
+        },
+        "type": "AWS::S3::Bucket"
+      }
+    ],
+    "class_name": "API Activity",
+    "class_uid": 6003,
+    "category_name": "Application Activity",
+    "category_uid": 6,
+    "severity_id": 1,
+    "severity": "Informational",
+    "activity_name": "Read",
+    "activity_id": 2,
+    "type_uid": 600302,
+    "type_name": "API Activity: Read",
+    "status": "Success",
+    "unmapped": {
+      "userIdentity.sessionContext.sessionIssuer.type": "Role",
+      "userIdentity.sessionContext.webIdFederationData.federatedProvider": "arn:aws:iam::123456:name/name.region-id.amazonaws.com/id/ABC123",
+      "additionalEventData.SignatureVersion": "SigV4",
+      "additionalEventData.CipherSuite": "TLS_AES_128_GCM_SHA256",
+      "additionalEventData.bytesTransferredOut": "4909",
+      "userIdentity.sessionContext.sessionIssuer.principalId": "ABC123",
+      "additionalEventData.x-amz-id-2": "ABC123",
+      "readOnly": "true",
+      "additionalEventData.AuthenticationMethod": "AuthHeader",
+      "resources[].ARNPrefix": "arn:aws:s3:::bucket_name_goes_here/prefix-name-goes-here/",
+      "sharedEventID": "abc-123-def-456",
+      "tlsDetails.clientProvidedHostHeader": "bucket_name_goes_here.s3.dualstack.region-id.amazonaws.com",
+      "userIdentity.sessionContext.sessionIssuer.userName": "prefix-name-goes-here-region-id-irsa",
+      "recipientAccountId": "123456789",
+      "tlsDetails.tlsVersion": "TLSv1.3",
+      "managementEvent": "false",
+      "userIdentity.sessionContext.sessionIssuer.accountId": "123456789",
+      "tlsDetails.cipherSuite": "TLS_AES_128_GCM_SHA256",
+      "additionalEventData.bytesTransferredIn": "0"
+    },
+    "observables": [
+      {
+        "name": "resources[].uid",
+        "value": "arn:aws:s3:::bucket_name_goes_here",
+        "type": "Resource UID",
+        "type_id": 10
+      },
+      {
+        "name": "src_endpoint.ip",
+        "value": "1.2.3.4",
+        "type": "IP Address",
+        "type_id": 2
+      }
+    ],
+    "source": "s3://aws-security-data-lake-bucket-name/aws/S3_DATA/2.0/region=region-id/accountId=1234567/eventDay=20241127/18c9b8071e1dd2908283712ebcba3747.gz.parquet"
+  },
+  {
+    "_time": 1732751808,
+    "cribl_breaker": "Break on newlines",
+    "metadata": {
+      "product": {
+        "version": "1.10",
+        "name": "CloudTrail",
+        "vendor_name": "AWS",
+        "feature": {
+          "name": "Data"
+        }
+      },
+      "event_code": "AwsApiCall",
+      "uid": "abc-123-uid",
+      "profiles": [
+        "cloud",
+        "datetime"
+      ],
+      "version": "1.1.0"
+    },
+    "time": 1732751429000,
+    "time_dt": 1732751429000,
+    "cloud": {
+      "region": "region-id",
+      "provider": "AWS"
+    },
+    "api": {
+      "operation": "GetObject",
+      "service": {
+        "name": "s3.amazonaws.com"
+      },
+      "request": {
+        "data": "{\"bucketName\":\"bucket_name_goes_here\",\"Host\":\"bucket_name_goes_here.s3.dualstack.region-id.amazonaws.com\",\"key\":\"prefix-name-goes-here/\"}",
+        "uid": "abc-123-uid"
+      }
+    },
+    "actor": {
+      "user": {
+        "type": "AssumedRole",
+        "uid_alt": "ABCDEF12345",
+        "uid": "abc-123-uid",
+        "account": {
+          "uid": "abc-123-uid"
+        },
+        "credential_uid": "ABCDEF12345"
+      },
+      "session": {
+        "created_time_dt": 1732751429000,
+        "is_mfa": false,
+        "issuer": "arn:aws:iam::12345:role/role_name"
+      }
+    },
+    "http_request": {
+      "user_agent": "user_agent_string"
+    },
+    "src_endpoint": {
+      "ip": "10.0.0.1"
+    },
+    "resources": [
+      {
+        "uid": "abc-123-uid",
+        "type": "AWS::S3::Object"
+      },
+      {
+        "uid": "abc-123-uid",
+        "owner": {
+          "account": {
+            "uid": "abc-123-uid"
+          }
+        },
+        "type": "AWS::S3::Bucket"
+      }
+    ],
+    "class_name": "API Activity",
+    "class_uid": 6003,
+    "category_name": "Application Activity",
+    "category_uid": 6,
+    "severity_id": 1,
+    "severity": "Informational",
+    "activity_name": "Read",
+    "activity_id": 2,
+    "type_uid": 600302,
+    "type_name": "API Activity: Read",
+    "status": "Success",
+    "unmapped": {
+      "userIdentity.sessionContext.sessionIssuer.type": "Role",
+      "userIdentity.sessionContext.webIdFederationData.federatedProvider": "arn:aws:iam::123456:name/name.region-id.amazonaws.com/id/ABC123",
+      "additionalEventData.SignatureVersion": "SigV4",
+      "additionalEventData.CipherSuite": "TLS_AES_128_GCM_SHA256",
+      "additionalEventData.bytesTransferredOut": "30",
+      "userIdentity.sessionContext.sessionIssuer.principalId": "ABC123",
+      "additionalEventData.x-amz-id-2": "ABC123",
+      "readOnly": "true",
+      "additionalEventData.AuthenticationMethod": "AuthHeader",
+      "sharedEventID": "abc-123-def-456",
+      "tlsDetails.clientProvidedHostHeader": "bucket_name_goes_here.s3.dualstack.region-id.amazonaws.com",
+      "userIdentity.sessionContext.sessionIssuer.userName": "prefix-name-goes-here-region-id-irsa",
+      "recipientAccountId": "123456789",
+      "tlsDetails.tlsVersion": "TLSv1.3",
+      "managementEvent": "false",
+      "userIdentity.sessionContext.sessionIssuer.accountId": "123456789",
+      "tlsDetails.cipherSuite": "TLS_AES_128_GCM_SHA256",
+      "additionalEventData.bytesTransferredIn": "0"
+    },
+    "observables": [
+      {
+        "name": "resources[].uid",
+        "value": "arn:aws:s3:::bucket_name_goes_here/prefix-name-goes-here/",
+        "type": "Resource UID",
+        "type_id": 10
+      },
+      {
+        "name": "resources[].uid",
+        "value": "arn:aws:s3:::bucket_name_goes_here",
+        "type": "Resource UID",
+        "type_id": 10
+      },
+      {
+        "name": "src_endpoint.ip",
+        "value": "1.2.3.4",
+        "type": "IP Address",
+        "type_id": 2
+      }
+    ],
+    "source": "s3://aws-security-data-lake-bucket-name/aws/S3_DATA/2.0/region=region-id/accountId=1234567/eventDay=20241127/18c9b8071e1dd2908283712ebcba3747.gz.parquet"
+  },
+  {
+    "_time": 1732751808,
+    "cribl_breaker": "Break on newlines",
+    "metadata": {
+      "product": {
+        "version": "1.10",
+        "name": "CloudTrail",
+        "vendor_name": "AWS",
+        "feature": {
+          "name": "Data"
+        }
+      },
+      "event_code": "AwsApiCall",
+      "uid": "abc-123-uid",
+      "profiles": [
+        "cloud",
+        "datetime"
+      ],
+      "version": "1.1.0"
+    },
+    "time": 1732751429000,
+    "time_dt": 1732751429000,
+    "cloud": {
+      "region": "region-id",
+      "provider": "AWS"
+    },
+    "api": {
+      "operation": "ListObjects",
+      "service": {
+        "name": "s3.amazonaws.com"
+      },
+      "request": {
+        "data": "{\"list-type\":\"2\",\"bucketName\":\"bucket_name_goes_here\",\"encoding-type\":\"url\",\"fetch-owner\":\"true\",\"prefix\":\"prefix-name-goes-here/\",\"delimiter\":\"/\",\"Host\":\"bucket_name_goes_here.s3.dualstack.region-id.amazonaws.com\"}",
+        "uid": "abc-123-uid"
+      }
+    },
+    "actor": {
+      "user": {
+        "type": "AssumedRole",
+        "uid_alt": "ABCDEF12345",
+        "uid": "abc-123-uid",
+        "account": {
+          "uid": "abc-123-uid"
+        },
+        "credential_uid": "ABCDEF12345"
+      },
+      "session": {
+        "created_time_dt": 1732751429000,
+        "is_mfa": false,
+        "issuer": "arn:aws:iam::12345:role/role_name"
+      }
+    },
+    "http_request": {
+      "user_agent": "user_agent_string"
+    },
+    "src_endpoint": {
+      "ip": "10.0.0.1"
+    },
+    "resources": [
+      {
+        "type": "AWS::S3::Object"
+      },
+      {
+        "uid": "abc-123-uid",
+        "owner": {
+          "account": {
+            "uid": "abc-123-uid"
+          }
+        },
+        "type": "AWS::S3::Bucket"
+      }
+    ],
+    "class_name": "API Activity",
+    "class_uid": 6003,
+    "category_name": "Application Activity",
+    "category_uid": 6,
+    "severity_id": 1,
+    "severity": "Informational",
+    "activity_name": "Read",
+    "activity_id": 2,
+    "type_uid": 600302,
+    "type_name": "API Activity: Read",
+    "status": "Success",
+    "unmapped": {
+      "userIdentity.sessionContext.sessionIssuer.type": "Role",
+      "userIdentity.sessionContext.webIdFederationData.federatedProvider": "arn:aws:iam::123456:name/name.region-id.amazonaws.com/id/ABC123",
+      "additionalEventData.SignatureVersion": "SigV4",
+      "additionalEventData.CipherSuite": "TLS_AES_128_GCM_SHA256",
+      "additionalEventData.bytesTransferredOut": "384",
+      "userIdentity.sessionContext.sessionIssuer.principalId": "ABC123",
+      "additionalEventData.x-amz-id-2": "ABC123",
+      "readOnly": "true",
+      "additionalEventData.AuthenticationMethod": "AuthHeader",
+      "resources[].ARNPrefix": "arn:aws:s3:::bucket_name_goes_here/prefix-name-goes-here/",
+      "sharedEventID": "abc-123-def-456",
+      "tlsDetails.clientProvidedHostHeader": "bucket_name_goes_here.s3.dualstack.region-id.amazonaws.com",
+      "userIdentity.sessionContext.sessionIssuer.userName": "prefix-name-goes-here-region-id-irsa",
+      "recipientAccountId": "123456789",
+      "tlsDetails.tlsVersion": "TLSv1.3",
+      "managementEvent": "false",
+      "userIdentity.sessionContext.sessionIssuer.accountId": "123456789",
+      "tlsDetails.cipherSuite": "TLS_AES_128_GCM_SHA256",
+      "additionalEventData.bytesTransferredIn": "0"
+    },
+    "observables": [
+      {
+        "name": "resources[].uid",
+        "value": "arn:aws:s3:::bucket_name_goes_here",
+        "type": "Resource UID",
+        "type_id": 10
+      },
+      {
+        "name": "src_endpoint.ip",
+        "value": "1.2.3.4",
+        "type": "IP Address",
+        "type_id": 2
+      }
+    ],
+    "source": "s3://aws-security-data-lake-bucket-name/aws/S3_DATA/2.0/region=region-id/accountId=1234567/eventDay=20241127/18c9b8071e1dd2908283712ebcba3747.gz.parquet"
+  },
+  {
+    "_time": 1732751808,
+    "cribl_breaker": "Break on newlines",
+    "metadata": {
+      "product": {
+        "version": "1.10",
+        "name": "CloudTrail",
+        "vendor_name": "AWS",
+        "feature": {
+          "name": "Data"
+        }
+      },
+      "event_code": "AwsApiCall",
+      "uid": "abc-123-uid",
+      "profiles": [
+        "cloud",
+        "datetime"
+      ],
+      "version": "1.1.0"
+    },
+    "time": 1732751429000,
+    "time_dt": 1732751429000,
+    "cloud": {
+      "region": "region-id",
+      "provider": "AWS"
+    },
+    "api": {
+      "operation": "ListObjects",
+      "service": {
+        "name": "s3.amazonaws.com"
+      },
+      "request": {
+        "data": "{\"list-type\":\"2\",\"bucketName\":\"bucket_name_goes_here\",\"encoding-type\":\"url\",\"fetch-owner\":\"true\",\"delimiter\":\"/\",\"prefix\":\"prefix-name-goes-here/\",\"Host\":\"bucket_name_goes_here.s3.dualstack.region-id.amazonaws.com\"}",
+        "uid": "abc-123-uid"
+      }
+    },
+    "actor": {
+      "user": {
+        "type": "AssumedRole",
+        "uid_alt": "ABCDEF12345",
+        "uid": "abc-123-uid",
+        "account": {
+          "uid": "abc-123-uid"
+        },
+        "credential_uid": "ABCDEF12345"
+      },
+      "session": {
+        "created_time_dt": 1732751429000,
+        "is_mfa": false,
+        "issuer": "arn:aws:iam::12345:role/role_name"
+      }
+    },
+    "http_request": {
+      "user_agent": "user_agent_string"
+    },
+    "src_endpoint": {
+      "ip": "10.0.0.1"
+    },
+    "resources": [
+      {
+        "type": "AWS::S3::Object"
+      },
+      {
+        "uid": "abc-123-uid",
+        "owner": {
+          "account": {
+            "uid": "abc-123-uid"
+          }
+        },
+        "type": "AWS::S3::Bucket"
+      }
+    ],
+    "class_name": "API Activity",
+    "class_uid": 6003,
+    "category_name": "Application Activity",
+    "category_uid": 6,
+    "severity_id": 1,
+    "severity": "Informational",
+    "activity_name": "Read",
+    "activity_id": 2,
+    "type_uid": 600302,
+    "type_name": "API Activity: Read",
+    "status": "Success",
+    "unmapped": {
+      "userIdentity.sessionContext.sessionIssuer.type": "Role",
+      "userIdentity.sessionContext.webIdFederationData.federatedProvider": "arn:aws:iam::123456:name/name.region-id.amazonaws.com/id/ABC123",
+      "additionalEventData.SignatureVersion": "SigV4",
+      "additionalEventData.CipherSuite": "TLS_AES_128_GCM_SHA256",
+      "additionalEventData.bytesTransferredOut": "616",
+      "userIdentity.sessionContext.sessionIssuer.principalId": "ABC123",
+      "additionalEventData.x-amz-id-2": "ABC123",
+      "readOnly": "true",
+      "additionalEventData.AuthenticationMethod": "AuthHeader",
+      "resources[].ARNPrefix": "arn:aws:s3:::bucket_name_goes_here/prefix-name-goes-here/",
+      "sharedEventID": "abc-123-def-456",
+      "tlsDetails.clientProvidedHostHeader": "bucket_name_goes_here.s3.dualstack.region-id.amazonaws.com",
+      "userIdentity.sessionContext.sessionIssuer.userName": "prefix-name-goes-here-region-id-irsa",
+      "recipientAccountId": "123456789",
+      "tlsDetails.tlsVersion": "TLSv1.3",
+      "managementEvent": "false",
+      "userIdentity.sessionContext.sessionIssuer.accountId": "123456789",
+      "tlsDetails.cipherSuite": "TLS_AES_128_GCM_SHA256",
+      "additionalEventData.bytesTransferredIn": "0"
+    },
+    "observables": [
+      {
+        "name": "resources[].uid",
+        "value": "arn:aws:s3:::bucket_name_goes_here",
+        "type": "Resource UID",
+        "type_id": 10
+      },
+      {
+        "name": "src_endpoint.ip",
+        "value": "1.2.3.4",
+        "type": "IP Address",
+        "type_id": 2
+      }
+    ],
+    "source": "s3://aws-security-data-lake-bucket-name/aws/S3_DATA/2.0/region=region-id/accountId=1234567/eventDay=20241127/18c9b8071e1dd2908283712ebcba3747.gz.parquet"
+  },
+  {
+    "_time": 1732751808,
+    "cribl_breaker": "Break on newlines",
+    "metadata": {
+      "product": {
+        "version": "1.10",
+        "name": "CloudTrail",
+        "vendor_name": "AWS",
+        "feature": {
+          "name": "Data"
+        }
+      },
+      "event_code": "AwsApiCall",
+      "uid": "abc-123-uid",
+      "profiles": [
+        "cloud",
+        "datetime"
+      ],
+      "version": "1.1.0"
+    },
+    "time": 1732751429000,
+    "time_dt": 1732751429000,
+    "cloud": {
+      "region": "region-id",
+      "provider": "AWS"
+    },
+    "api": {
+      "operation": "ListObjects",
+      "service": {
+        "name": "s3.amazonaws.com"
+      },
+      "request": {
+        "data": "{\"list-type\":\"2\",\"bucketName\":\"bucket_name_goes_here\",\"Host\":\"bucket_name_goes_here.s3.region-id.amazonaws.com\",\"prefix\":\"prefix-name-goes-here/\"delimiter\":\"/\"}",
+        "uid": "abc-123-uid"
+      }
+    },
+    "actor": {
+      "user": {
+        "type": "AssumedRole",
+        "uid_alt": "ABCDEF12345",
+        "uid": "abc-123-uid",
+        "account": {
+          "uid": "abc-123-uid"
+        },
+        "credential_uid": "ABCDEF12345"
+      },
+      "session": {
+        "created_time_dt": 1732751429000,
+        "is_mfa": false,
+        "issuer": "arn:aws:iam::12345:role/role_name"
+      }
+    },
+    "http_request": {
+      "user_agent": "user_agent_string"
+    },
+    "src_endpoint": {
+      "ip": "10.0.0.1"
+    },
+    "resources": [
+      {
+        "type": "AWS::S3::Object"
+      },
+      {
+        "uid": "abc-123-uid",
+        "owner": {
+          "account": {
+            "uid": "abc-123-uid"
+          }
+        },
+        "type": "AWS::S3::Bucket"
+      }
+    ],
+    "class_name": "API Activity",
+    "class_uid": 6003,
+    "category_name": "Application Activity",
+    "category_uid": 6,
+    "severity_id": 1,
+    "severity": "Informational",
+    "activity_name": "Read",
+    "activity_id": 2,
+    "type_uid": 600302,
+    "type_name": "API Activity: Read",
+    "status": "Success",
+    "unmapped": {
+      "userIdentity.sessionContext.sessionIssuer.type": "Role",
+      "userIdentity.sessionContext.webIdFederationData.federatedProvider": "arn:aws:iam::123456:name/name.region-id.amazonaws.com/id/ABC123",
+      "additionalEventData.SignatureVersion": "SigV4",
+      "additionalEventData.CipherSuite": "TLS_AES_128_GCM_SHA256",
+      "additionalEventData.bytesTransferredOut": "13960",
+      "userIdentity.sessionContext.sessionIssuer.principalId": "ABC123",
+      "additionalEventData.x-amz-id-2": "ABC123",
+      "readOnly": "true",
+      "additionalEventData.AuthenticationMethod": "AuthHeader",
+      "resources[].ARNPrefix": "arn:aws:s3:::bucket_name_goes_here/prefix-name-goes-here/",
+      "tlsDetails.clientProvidedHostHeader": "bucket_name_goes_here.s3.region-id.amazonaws.com",
+      "userIdentity.sessionContext.sessionIssuer.userName": "prefix-name-goes-here-region-id-irsa",
+      "recipientAccountId": "123456789",
+      "tlsDetails.tlsVersion": "TLSv1.3",
+      "managementEvent": "false",
+      "userIdentity.sessionContext.sessionIssuer.accountId": "123456789",
+      "tlsDetails.cipherSuite": "TLS_AES_128_GCM_SHA256",
+      "additionalEventData.bytesTransferredIn": "0"
+    },
+    "observables": [
+      {
+        "name": "src_endpoint.ip",
+        "value": "1.2.3.4",
+        "type": "IP Address",
+        "type_id": 2
+      },
+      {
+        "name": "resources[].uid",
+        "value": "arn:aws:s3:::bucket_name_goes_here",
+        "type": "Resource UID",
+        "type_id": 10
+      }
+    ],
+    "source": "s3://aws-security-data-lake-bucket-name/aws/S3_DATA/2.0/region=region-id/accountId=1234567/eventDay=20241127/18c9b8071e1dd2908283712ebcba3747.gz.parquet"
+  },
+  {
+    "_time": 1732751808,
+    "cribl_breaker": "Break on newlines",
+    "metadata": {
+      "product": {
+        "version": "1.10",
+        "name": "CloudTrail",
+        "vendor_name": "AWS",
+        "feature": {
+          "name": "Data"
+        }
+      },
+      "event_code": "AwsApiCall",
+      "uid": "abc-123-uid",
+      "profiles": [
+        "cloud",
+        "datetime"
+      ],
+      "version": "1.1.0"
+    },
+    "time": 1732751429000,
+    "time_dt": 1732751429000,
+    "cloud": {
+      "region": "region-id",
+      "provider": "AWS"
+    },
+    "api": {
+      "operation": "ListObjects",
+      "service": {
+        "name": "s3.amazonaws.com"
+      },
+      "request": {
+        "data": "{\"list-type\":\"2\",\"bucketName\":\"bucket_name_goes_here\",\"encoding-type\":\"url\",\"fetch-owner\":\"true\",\"prefix\":\"prefix-name-goes-here/\",\"delimiter\":\"/\",\"Host\":\"bucket_name_goes_here.s3.dualstack.region-id.amazonaws.com\"}",
+        "uid": "abc-123-uid"
+      }
+    },
+    "actor": {
+      "user": {
+        "type": "AssumedRole",
+        "uid_alt": "ABCDEF12345",
+        "uid": "abc-123-uid",
+        "account": {
+          "uid": "abc-123-uid"
+        },
+        "credential_uid": "ABCDEF12345"
+      },
+      "session": {
+        "created_time_dt": 1732751429000,
+        "is_mfa": false,
+        "issuer": "arn:aws:iam::12345:role/role_name"
+      }
+    },
+    "http_request": {
+      "user_agent": "user_agent_string"
+    },
+    "src_endpoint": {
+      "ip": "10.0.0.1"
+    },
+    "resources": [
+      {
+        "type": "AWS::S3::Object"
+      },
+      {
+        "uid": "abc-123-uid",
+        "owner": {
+          "account": {
+            "uid": "abc-123-uid"
+          }
+        },
+        "type": "AWS::S3::Bucket"
+      }
+    ],
+    "class_name": "API Activity",
+    "class_uid": 6003,
+    "category_name": "Application Activity",
+    "category_uid": 6,
+    "severity_id": 1,
+    "severity": "Informational",
+    "activity_name": "Read",
+    "activity_id": 2,
+    "type_uid": 600302,
+    "type_name": "API Activity: Read",
+    "status": "Success",
+    "unmapped": {
+      "userIdentity.sessionContext.sessionIssuer.type": "Role",
+      "userIdentity.sessionContext.webIdFederationData.federatedProvider": "arn:aws:iam::123456:name/name.region-id.amazonaws.com/id/ABC123",
+      "additionalEventData.SignatureVersion": "SigV4",
+      "additionalEventData.CipherSuite": "TLS_AES_128_GCM_SHA256",
+      "additionalEventData.bytesTransferredOut": "2668",
+      "userIdentity.sessionContext.sessionIssuer.principalId": "ABC123",
+      "additionalEventData.x-amz-id-2": "ABC123",
+      "readOnly": "true",
+      "additionalEventData.AuthenticationMethod": "AuthHeader",
+      "resources[].ARNPrefix": "arn:aws:s3:::bucket_name_goes_here/prefix-name-goes-here/",
+      "sharedEventID": "abc-123-def-456",
+      "tlsDetails.clientProvidedHostHeader": "bucket_name_goes_here.s3.dualstack.region-id.amazonaws.com",
+      "userIdentity.sessionContext.sessionIssuer.userName": "prefix-name-goes-here-region-id-irsa",
+      "recipientAccountId": "123456789",
+      "tlsDetails.tlsVersion": "TLSv1.3",
+      "managementEvent": "false",
+      "userIdentity.sessionContext.sessionIssuer.accountId": "123456789",
+      "tlsDetails.cipherSuite": "TLS_AES_128_GCM_SHA256",
+      "additionalEventData.bytesTransferredIn": "0"
+    },
+    "observables": [
+      {
+        "name": "resources[].uid",
+        "value": "arn:aws:s3:::bucket_name_goes_here",
+        "type": "Resource UID",
+        "type_id": 10
+      },
+      {
+        "name": "src_endpoint.ip",
+        "value": "1.2.3.4",
+        "type": "IP Address",
+        "type_id": 2
+      }
+    ],
+    "source": "s3://aws-security-data-lake-bucket-name/aws/S3_DATA/2.0/region=region-id/accountId=1234567/eventDay=20241127/18c9b8071e1dd2908283712ebcba3747.gz.parquet"
+  },
+  {
+    "_time": 1732751808,
+    "cribl_breaker": "Break on newlines",
+    "metadata": {
+      "product": {
+        "version": "1.10",
+        "name": "CloudTrail",
+        "vendor_name": "AWS",
+        "feature": {
+          "name": "Data"
+        }
+      },
+      "event_code": "AwsApiCall",
+      "uid": "abc-123-uid",
+      "profiles": [
+        "cloud",
+        "datetime"
+      ],
+      "version": "1.1.0"
+    },
+    "time": 1732751429000,
+    "time_dt": 1732751429000,
+    "cloud": {
+      "region": "region-id",
+      "provider": "AWS"
+    },
+    "api": {
+      "operation": "GetObject",
+      "service": {
+        "name": "s3.amazonaws.com"
+      },
+      "request": {
+        "data": "{\"bucketName\":\"bucket_name_goes_here\",\"Host\":\"bucket_name_goes_here.s3.dualstack.region-id.amazonaws.com\",\"key\":\"prefix-name-goes-here/\"}",
+        "uid": "abc-123-uid"
+      }
+    },
+    "actor": {
+      "user": {
+        "type": "AssumedRole",
+        "uid_alt": "ABCDEF12345",
+        "uid": "abc-123-uid",
+        "account": {
+          "uid": "abc-123-uid"
+        },
+        "credential_uid": "ABCDEF12345"
+      },
+      "session": {
+        "created_time_dt": 1732751429000,
+        "is_mfa": false,
+        "issuer": "arn:aws:iam::12345:role/role_name"
+      }
+    },
+    "http_request": {
+      "user_agent": "user_agent_string"
+    },
+    "src_endpoint": {
+      "ip": "10.0.0.1"
+    },
+    "resources": [
+      {
+        "uid": "abc-123-uid",
+        "type": "AWS::S3::Object"
+      },
+      {
+        "uid": "abc-123-uid",
+        "owner": {
+          "account": {
+            "uid": "abc-123-uid"
+          }
+        },
+        "type": "AWS::S3::Bucket"
+      }
+    ],
+    "class_name": "API Activity",
+    "class_uid": 6003,
+    "category_name": "Application Activity",
+    "category_uid": 6,
+    "severity_id": 1,
+    "severity": "Informational",
+    "activity_name": "Read",
+    "activity_id": 2,
+    "type_uid": 600302,
+    "type_name": "API Activity: Read",
+    "status": "Success",
+    "unmapped": {
+      "userIdentity.sessionContext.sessionIssuer.type": "Role",
+      "userIdentity.sessionContext.webIdFederationData.federatedProvider": "arn:aws:iam::123456:name/name.region-id.amazonaws.com/id/ABC123",
+      "additionalEventData.SignatureVersion": "SigV4",
+      "additionalEventData.CipherSuite": "TLS_AES_128_GCM_SHA256",
+      "additionalEventData.bytesTransferredOut": "19929",
+      "userIdentity.sessionContext.sessionIssuer.principalId": "ABC123",
+      "additionalEventData.x-amz-id-2": "ABC123",
+      "readOnly": "true",
+      "additionalEventData.AuthenticationMethod": "AuthHeader",
+      "sharedEventID": "abc-123-def-456",
+      "tlsDetails.clientProvidedHostHeader": "bucket_name_goes_here.s3.dualstack.region-id.amazonaws.com",
+      "userIdentity.sessionContext.sessionIssuer.userName": "prefix-name-goes-here-region-id-irsa",
+      "recipientAccountId": "123456789",
+      "tlsDetails.tlsVersion": "TLSv1.3",
+      "managementEvent": "false",
+      "userIdentity.sessionContext.sessionIssuer.accountId": "123456789",
+      "tlsDetails.cipherSuite": "TLS_AES_128_GCM_SHA256",
+      "additionalEventData.bytesTransferredIn": "0"
+    },
+    "observables": [
+      {
+        "name": "resources[].uid",
+        "value": "arn:aws:s3:::bucket_name_goes_here",
+        "type": "Resource UID",
+        "type_id": 10
+      },
+      {
+        "name": "src_endpoint.ip",
+        "value": "1.2.3.4",
+        "type": "IP Address",
+        "type_id": 2
+      },
+      {
+        "name": "resources[].uid",
+        "value": "arn:aws:s3:::bucket_name_goes_here/prefix-name-goes-here/",
+        "type": "Resource UID",
+        "type_id": 10
+      }
+    ],
+    "source": "s3://aws-security-data-lake-bucket-name/aws/S3_DATA/2.0/region=region-id/accountId=1234567/eventDay=20241127/18c9b8071e1dd2908283712ebcba3747.gz.parquet"
+  },
+  {
+    "_time": 1732751808,
+    "cribl_breaker": "Break on newlines",
+    "metadata": {
+      "product": {
+        "version": "1.10",
+        "name": "CloudTrail",
+        "vendor_name": "AWS",
+        "feature": {
+          "name": "Data"
+        }
+      },
+      "event_code": "AwsApiCall",
+      "uid": "abc-123-uid",
+      "profiles": [
+        "cloud",
+        "datetime"
+      ],
+      "version": "1.1.0"
+    },
+    "time": 1732751429000,
+    "time_dt": 1732751429000,
+    "cloud": {
+      "region": "region-id",
+      "provider": "AWS"
+    },
+    "api": {
+      "operation": "GetObject",
+      "service": {
+        "name": "s3.amazonaws.com"
+      },
+      "request": {
+        "data": "{\"bucketName\":\"bucket_name_goes_here\",\"Host\":\"bucket_name_goes_here.s3.dualstack.region-id.amazonaws.com\",\"key\":\"prefix-name-goes-here/\"}",
+        "uid": "abc-123-uid"
+      }
+    },
+    "actor": {
+      "user": {
+        "type": "AssumedRole",
+        "uid_alt": "ABCDEF12345",
+        "uid": "abc-123-uid",
+        "account": {
+          "uid": "abc-123-uid"
+        },
+        "credential_uid": "ABCDEF12345"
+      },
+      "session": {
+        "created_time_dt": 1732751429000,
+        "is_mfa": false,
+        "issuer": "arn:aws:iam::12345:role/role_name"
+      }
+    },
+    "http_request": {
+      "user_agent": "user_agent_string"
+    },
+    "src_endpoint": {
+      "ip": "10.0.0.1"
+    },
+    "resources": [
+      {
+        "uid": "abc-123-uid",
+        "type": "AWS::S3::Object"
+      },
+      {
+        "uid": "abc-123-uid",
+        "owner": {
+          "account": {
+            "uid": "abc-123-uid"
+          }
+        },
+        "type": "AWS::S3::Bucket"
+      }
+    ],
+    "class_name": "API Activity",
+    "class_uid": 6003,
+    "category_name": "Application Activity",
+    "category_uid": 6,
+    "severity_id": 1,
+    "severity": "Informational",
+    "activity_name": "Read",
+    "activity_id": 2,
+    "type_uid": 600302,
+    "type_name": "API Activity: Read",
+    "status": "Success",
+    "unmapped": {
+      "userIdentity.sessionContext.sessionIssuer.type": "Role",
+      "userIdentity.sessionContext.webIdFederationData.federatedProvider": "arn:aws:iam::123456:name/name.region-id.amazonaws.com/id/ABC123",
+      "additionalEventData.SignatureVersion": "SigV4",
+      "additionalEventData.CipherSuite": "TLS_AES_128_GCM_SHA256",
+      "additionalEventData.bytesTransferredOut": "143",
+      "userIdentity.sessionContext.sessionIssuer.principalId": "ABC123",
+      "additionalEventData.x-amz-id-2": "ABC123",
+      "readOnly": "true",
+      "additionalEventData.AuthenticationMethod": "AuthHeader",
+      "sharedEventID": "abc-123-def-456",
+      "tlsDetails.clientProvidedHostHeader": "bucket_name_goes_here.s3.dualstack.region-id.amazonaws.com",
+      "userIdentity.sessionContext.sessionIssuer.userName": "prefix-name-goes-here-region-id-irsa",
+      "recipientAccountId": "123456789",
+      "tlsDetails.tlsVersion": "TLSv1.3",
+      "managementEvent": "false",
+      "userIdentity.sessionContext.sessionIssuer.accountId": "123456789",
+      "tlsDetails.cipherSuite": "TLS_AES_128_GCM_SHA256",
+      "additionalEventData.bytesTransferredIn": "0"
+    },
+    "observables": [
+      {
+        "name": "resources[].uid",
+        "value": "arn:aws:s3:::bucket_name_goes_here/prefix-name-goes-here/",
+        "type": "Resource UID",
+        "type_id": 10
+      },
+      {
+        "name": "resources[].uid",
+        "value": "arn:aws:s3:::bucket_name_goes_here",
+        "type": "Resource UID",
+        "type_id": 10
+      },
+      {
+        "name": "src_endpoint.ip",
+        "value": "1.2.3.4",
+        "type": "IP Address",
+        "type_id": 2
+      }
+    ],
+    "source": "s3://aws-security-data-lake-bucket-name/aws/S3_DATA/2.0/region=region-id/accountId=1234567/eventDay=20241127/18c9b8071e1dd2908283712ebcba3747.gz.parquet"
+  },
+  {
+    "_time": 1732751808,
+    "cribl_breaker": "Break on newlines",
+    "metadata": {
+      "product": {
+        "version": "1.10",
+        "name": "CloudTrail",
+        "vendor_name": "AWS",
+        "feature": {
+          "name": "Data"
+        }
+      },
+      "event_code": "AwsApiCall",
+      "uid": "abc-123-uid",
+      "profiles": [
+        "cloud",
+        "datetime"
+      ],
+      "version": "1.1.0"
+    },
+    "time": 1732751429000,
+    "time_dt": 1732751429000,
+    "cloud": {
+      "region": "region-id",
+      "provider": "AWS"
+    },
+    "api": {
+      "operation": "GetObject",
+      "service": {
+        "name": "s3.amazonaws.com"
+      },
+      "request": {
+        "data": "{\"bucketName\":\"bucket_name_goes_here\",\"Host\":\"bucket_name_goes_here.s3.dualstack.region-id.amazonaws.com\",\"key\":\"prefix-name-goes-here/\"}",
+        "uid": "abc-123-uid"
+      }
+    },
+    "actor": {
+      "user": {
+        "type": "AssumedRole",
+        "uid_alt": "ABCDEF12345",
+        "uid": "abc-123-uid",
+        "account": {
+          "uid": "abc-123-uid"
+        },
+        "credential_uid": "ABCDEF12345"
+      },
+      "session": {
+        "created_time_dt": 1732751429000,
+        "is_mfa": false,
+        "issuer": "arn:aws:iam::12345:role/role_name"
+      }
+    },
+    "http_request": {
+      "user_agent": "user_agent_string"
+    },
+    "src_endpoint": {
+      "ip": "10.0.0.1"
+    },
+    "resources": [
+      {
+        "uid": "abc-123-uid",
+        "type": "AWS::S3::Object"
+      },
+      {
+        "uid": "abc-123-uid",
+        "owner": {
+          "account": {
+            "uid": "abc-123-uid"
+          }
+        },
+        "type": "AWS::S3::Bucket"
+      }
+    ],
+    "class_name": "API Activity",
+    "class_uid": 6003,
+    "category_name": "Application Activity",
+    "category_uid": 6,
+    "severity_id": 1,
+    "severity": "Informational",
+    "activity_name": "Read",
+    "activity_id": 2,
+    "type_uid": 600302,
+    "type_name": "API Activity: Read",
+    "status": "Success",
+    "unmapped": {
+      "userIdentity.sessionContext.sessionIssuer.type": "Role",
+      "userIdentity.sessionContext.webIdFederationData.federatedProvider": "arn:aws:iam::123456:name/name.region-id.amazonaws.com/id/ABC123",
+      "additionalEventData.SignatureVersion": "SigV4",
+      "additionalEventData.CipherSuite": "TLS_AES_128_GCM_SHA256",
+      "additionalEventData.bytesTransferredOut": "19453",
+      "userIdentity.sessionContext.sessionIssuer.principalId": "ABC123",
+      "additionalEventData.x-amz-id-2": "ABC123",
+      "readOnly": "true",
+      "additionalEventData.AuthenticationMethod": "AuthHeader",
+      "sharedEventID": "abc-123-def-456",
+      "tlsDetails.clientProvidedHostHeader": "bucket_name_goes_here.s3.dualstack.region-id.amazonaws.com",
+      "userIdentity.sessionContext.sessionIssuer.userName": "prefix-name-goes-here-region-id-irsa",
+      "recipientAccountId": "123456789",
+      "tlsDetails.tlsVersion": "TLSv1.3",
+      "managementEvent": "false",
+      "userIdentity.sessionContext.sessionIssuer.accountId": "123456789",
+      "tlsDetails.cipherSuite": "TLS_AES_128_GCM_SHA256",
+      "additionalEventData.bytesTransferredIn": "0"
+    },
+    "observables": [
+      {
+        "name": "resources[].uid",
+        "value": "arn:aws:s3:::bucket_name_goes_here/prefix-name-goes-here/",
+        "type": "Resource UID",
+        "type_id": 10
+      },
+      {
+        "name": "resources[].uid",
+        "value": "arn:aws:s3:::bucket_name_goes_here",
+        "type": "Resource UID",
+        "type_id": 10
+      },
+      {
+        "name": "src_endpoint.ip",
+        "value": "1.2.3.4",
+        "type": "IP Address",
+        "type_id": 2
+      }
+    ],
+    "source": "s3://aws-security-data-lake-bucket-name/aws/S3_DATA/2.0/region=region-id/accountId=1234567/eventDay=20241127/18c9b8071e1dd2908283712ebcba3747.gz.parquet"
+  },
+  {
+    "_time": 1732751808,
+    "cribl_breaker": "Break on newlines",
+    "metadata": {
+      "product": {
+        "version": "1.10",
+        "name": "CloudTrail",
+        "vendor_name": "AWS",
+        "feature": {
+          "name": "Data"
+        }
+      },
+      "event_code": "AwsApiCall",
+      "uid": "abc-123-uid",
+      "profiles": [
+        "cloud",
+        "datetime"
+      ],
+      "version": "1.1.0"
+    },
+    "time": 1732751429000,
+    "time_dt": 1732751429000,
+    "cloud": {
+      "region": "region-id",
+      "provider": "AWS"
+    },
+    "api": {
+      "operation": "GetObject",
+      "service": {
+        "name": "s3.amazonaws.com"
+      },
+      "request": {
+        "data": "{\"bucketName\":\"bucket_name_goes_here\",\"Host\":\"bucket_name_goes_here.s3.dualstack.region-id.amazonaws.com\",\"key\":\"prefix-name-goes-here/\"}",
+        "uid": "abc-123-uid"
+      }
+    },
+    "actor": {
+      "user": {
+        "type": "AssumedRole",
+        "uid_alt": "ABCDEF12345",
+        "uid": "abc-123-uid",
+        "account": {
+          "uid": "abc-123-uid"
+        },
+        "credential_uid": "ABCDEF12345"
+      },
+      "session": {
+        "created_time_dt": 1732751429000,
+        "is_mfa": false,
+        "issuer": "arn:aws:iam::12345:role/role_name"
+      }
+    },
+    "http_request": {
+      "user_agent": "user_agent_string"
+    },
+    "src_endpoint": {
+      "ip": "10.0.0.1"
+    },
+    "resources": [
+      {
+        "uid": "abc-123-uid",
+        "type": "AWS::S3::Object"
+      },
+      {
+        "uid": "abc-123-uid",
+        "owner": {
+          "account": {
+            "uid": "abc-123-uid"
+          }
+        },
+        "type": "AWS::S3::Bucket"
+      }
+    ],
+    "class_name": "API Activity",
+    "class_uid": 6003,
+    "category_name": "Application Activity",
+    "category_uid": 6,
+    "severity_id": 1,
+    "severity": "Informational",
+    "activity_name": "Read",
+    "activity_id": 2,
+    "type_uid": 600302,
+    "type_name": "API Activity: Read",
+    "status": "Success",
+    "unmapped": {
+      "userIdentity.sessionContext.sessionIssuer.type": "Role",
+      "userIdentity.sessionContext.webIdFederationData.federatedProvider": "arn:aws:iam::123456:name/name.region-id.amazonaws.com/id/ABC123",
+      "additionalEventData.SignatureVersion": "SigV4",
+      "additionalEventData.CipherSuite": "TLS_AES_128_GCM_SHA256",
+      "additionalEventData.bytesTransferredOut": "379",
+      "userIdentity.sessionContext.sessionIssuer.principalId": "ABC123",
+      "additionalEventData.x-amz-id-2": "ABC123",
+      "readOnly": "true",
+      "additionalEventData.AuthenticationMethod": "AuthHeader",
+      "sharedEventID": "abc-123-def-456",
+      "tlsDetails.clientProvidedHostHeader": "bucket_name_goes_here.s3.dualstack.region-id.amazonaws.com",
+      "userIdentity.sessionContext.sessionIssuer.userName": "prefix-name-goes-here-region-id-irsa",
+      "recipientAccountId": "123456789",
+      "tlsDetails.tlsVersion": "TLSv1.3",
+      "managementEvent": "false",
+      "userIdentity.sessionContext.sessionIssuer.accountId": "123456789",
+      "tlsDetails.cipherSuite": "TLS_AES_128_GCM_SHA256",
+      "additionalEventData.bytesTransferredIn": "0"
+    },
+    "observables": [
+      {
+        "name": "resources[].uid",
+        "value": "arn:aws:s3:::bucket_name_goes_here/prefix-name-goes-here/",
+        "type": "Resource UID",
+        "type_id": 10
+      },
+      {
+        "name": "resources[].uid",
+        "value": "arn:aws:s3:::bucket_name_goes_here",
+        "type": "Resource UID",
+        "type_id": 10
+      },
+      {
+        "name": "src_endpoint.ip",
+        "value": "1.2.3.4",
+        "type": "IP Address",
+        "type_id": 2
+      }
+    ],
+    "source": "s3://aws-security-data-lake-bucket-name/aws/S3_DATA/2.0/region=region-id/accountId=1234567/eventDay=20241127/18c9b8071e1dd2908283712ebcba3747.gz.parquet"
+  },
+  {
+    "_time": 1732751808,
+    "cribl_breaker": "Break on newlines",
+    "metadata": {
+      "product": {
+        "version": "1.10",
+        "name": "CloudTrail",
+        "vendor_name": "AWS",
+        "feature": {
+          "name": "Data"
+        }
+      },
+      "event_code": "AwsApiCall",
+      "uid": "abc-123-uid",
+      "profiles": [
+        "cloud",
+        "datetime"
+      ],
+      "version": "1.1.0"
+    },
+    "time": 1732751429000,
+    "time_dt": 1732751429000,
+    "cloud": {
+      "region": "region-id",
+      "provider": "AWS"
+    },
+    "api": {
+      "response": {
+        "error": "NoSuchKey",
+        "message": "The specified key does not exist."
+      },
+      "operation": "GetObject",
+      "service": {
+        "name": "s3.amazonaws.com"
+      },
+      "request": {
+        "data": "{\"bucketName\":\"bucket_name_goes_here\",\"Host\":\"bucket_name_goes_here.s3.dualstack.region-id.amazonaws.com\",\"key\":\"prefix-name-goes-here/\"}",
+        "uid": "abc-123-uid"
+      }
+    },
+    "actor": {
+      "user": {
+        "type": "AssumedRole",
+        "uid_alt": "ABCDEF12345",
+        "uid": "abc-123-uid",
+        "account": {
+          "uid": "abc-123-uid"
+        },
+        "credential_uid": "ABCDEF12345"
+      },
+      "session": {
+        "created_time_dt": 1732751429000,
+        "is_mfa": false,
+        "issuer": "arn:aws:iam::12345:role/role_name"
+      }
+    },
+    "http_request": {
+      "user_agent": "user_agent_string"
+    },
+    "src_endpoint": {
+      "ip": "10.0.0.1"
+    },
+    "resources": [
+      {
+        "uid": "abc-123-uid",
+        "type": "AWS::S3::Object"
+      },
+      {
+        "uid": "abc-123-uid",
+        "owner": {
+          "account": {
+            "uid": "abc-123-uid"
+          }
+        },
+        "type": "AWS::S3::Bucket"
+      }
+    ],
+    "class_name": "API Activity",
+    "class_uid": 6003,
+    "category_name": "Application Activity",
+    "category_uid": 6,
+    "severity_id": 1,
+    "severity": "Informational",
+    "activity_name": "Read",
+    "activity_id": 2,
+    "type_uid": 600302,
+    "type_name": "API Activity: Read",
+    "status": "Failure",
+    "unmapped": {
+      "userIdentity.sessionContext.sessionIssuer.type": "Role",
+      "userIdentity.sessionContext.webIdFederationData.federatedProvider": "arn:aws:iam::123456:name/name.region-id.amazonaws.com/id/ABC123",
+      "additionalEventData.SignatureVersion": "SigV4",
+      "additionalEventData.CipherSuite": "TLS_AES_128_GCM_SHA256",
+      "additionalEventData.bytesTransferredOut": "346",
+      "userIdentity.sessionContext.sessionIssuer.principalId": "ABC123",
+      "additionalEventData.x-amz-id-2": "ABC123",
+      "readOnly": "true",
+      "additionalEventData.AuthenticationMethod": "AuthHeader",
+      "sharedEventID": "abc-123-def-456",
+      "tlsDetails.clientProvidedHostHeader": "bucket_name_goes_here.s3.dualstack.region-id.amazonaws.com",
+      "userIdentity.sessionContext.sessionIssuer.userName": "prefix-name-goes-here-region-id-irsa",
+      "recipientAccountId": "123456789",
+      "tlsDetails.tlsVersion": "TLSv1.3",
+      "managementEvent": "false",
+      "userIdentity.sessionContext.sessionIssuer.accountId": "123456789",
+      "tlsDetails.cipherSuite": "TLS_AES_128_GCM_SHA256",
+      "additionalEventData.bytesTransferredIn": "0"
+    },
+    "observables": [
+      {
+        "name": "resources[].uid",
+        "value": "arn:aws:s3:::bucket_name_goes_here",
+        "type": "Resource UID",
+        "type_id": 10
+      },
+      {
+        "name": "src_endpoint.ip",
+        "value": "1.2.3.4",
+        "type": "IP Address",
+        "type_id": 2
+      },
+      {
+        "name": "resources[].uid",
+        "value": "arn:aws:s3:::bucket_name_goes_here/prefix-name-goes-here/",
+        "type": "Resource UID",
+        "type_id": 10
+      }
+    ],
+    "source": "s3://aws-security-data-lake-bucket-name/aws/S3_DATA/2.0/region=region-id/accountId=1234567/eventDay=20241127/18c9b8071e1dd2908283712ebcba3747.gz.parquet"
+  }
+]

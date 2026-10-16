@@ -1,0 +1,105 @@
+{
+  "key": "infoblox_dns",
+  "sourcetype": "infoblox_dns",
+  "classUid": 4003,
+  "destFormat": "ocsf#dns",
+  "source": "generic",
+  "vendorNames": [
+    "infoblox dns"
+  ],
+  "provenance": {
+    "samplePack": "vendor-samples",
+    "sampleName": "infoblox_dns_vendor_sample",
+    "tier": "fallback",
+    "sampleEvents": 20,
+    "emulated": "golden OCSF pipeline, offline emulation of scripts/build-source-ocsf-samples.mjs",
+    "rejected": [
+      {
+        "tier": "reference",
+        "reason": "sample-format-mismatch",
+        "detail": "sampleMatchesSourceExpectation=mismatch"
+      }
+    ]
+  },
+  "events": [
+    {
+      "message": "07-Apr-2022 08:08:10.043 client 192.168.0.1#57398 UDP: query: a1.foo.com IN A response: NOERROR +ED a1.foo.com 28800 IN A foo.com; a1.foo.com 28800 IN A 0.0.0.0;",
+      "query": {
+        "hostname": "a1.foo.com",
+        "type": "A",
+        "class": "IN"
+      },
+      "src_endpoint": {
+        "ip": "192.168.0.1",
+        "port": 57398
+      },
+      "metadata": {
+        "product": {
+          "name": "Security",
+          "vendor_name": "infoblox dns"
+        },
+        "version": "1.9.0"
+      },
+      "class_uid": 4003,
+      "category_uid": 4,
+      "activity_id": 1,
+      "type_uid": 400301,
+      "severity_id": 1,
+      "status_id": 1,
+      "status": "Success",
+      "rcode": "NOERROR",
+      "rcode_id": 0,
+      "time": 1649311690043
+    },
+    {
+      "message": "DHCPREQUEST for 192.168.0.4 from 00:50:56:81:14:6c via eth3",
+      "dst_endpoint": {
+        "ip": "192.168.0.4"
+      },
+      "metadata": {
+        "product": {
+          "name": "Security",
+          "vendor_name": "infoblox dns"
+        },
+        "version": "1.9.0"
+      },
+      "class_uid": 4003,
+      "category_uid": 4,
+      "activity_id": 1,
+      "type_uid": 400301,
+      "severity_id": 1,
+      "status_id": 1,
+      "status": "Success",
+      "time": null
+    },
+    {
+      "message": "07-Apr-2022 08:08:10.043 client 192.168.0.1#50565 UDP: query: test.com IN A response: REFUSED -",
+      "query": {
+        "hostname": "test.com",
+        "type": "A",
+        "class": "IN"
+      },
+      "src_endpoint": {
+        "ip": "192.168.0.1",
+        "port": 50565
+      },
+      "metadata": {
+        "product": {
+          "name": "Security",
+          "vendor_name": "infoblox dns"
+        },
+        "version": "1.9.0"
+      },
+      "class_uid": 4003,
+      "category_uid": 4,
+      "activity_id": 1,
+      "type_uid": 400301,
+      "severity_id": 1,
+      "status_id": 2,
+      "status": "Failure",
+      "rcode": "REFUSED",
+      "rcode_id": 5,
+      "time": 1649311690043
+    }
+  ]
+}

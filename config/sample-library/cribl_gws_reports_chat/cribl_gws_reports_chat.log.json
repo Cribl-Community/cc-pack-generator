@@ -1,0 +1,286 @@
+[
+  {
+    "_raw": "{\n      \"kind\": \"admin#reports#activity\",\n      \"id\": {\n        \"time\": \"2025-10-15T19:35:02.012Z\",\n        \"uniqueQualifier\": \"3801200375286939801\",\n        \"applicationName\": \"chat\",\n        \"customerId\": \"D03cdmbi0\"\n      },\n      \"etag\": \"\\\"6yvc0u1_mWuJiETyootWURYWuYFYgltz9xJKYRsM3cM/X59a6wAbtvdyReeV1Xf33RAAddY\\\"\",\n      \"actor\": {\n        \"callerType\": \"USER\",\n        \"email\": \"user@acmecorp.com\",\n        \"profileId\": \"117329556664445035546\"\n      },\n      \"events\": [\n        {\n          \"type\": \"user_action\",\n          \"name\": \"conversation_read\",\n          \"parameters\": [\n            {\n              \"name\": \"room_id\",\n              \"value\": \"iz8SkiAAAAE\"\n            },\n            {\n              \"name\": \"actor\",\n              \"value\": \"user@acmecorp.com\"\n            },\n            {\n              \"name\": \"external_room\",\n              \"value\": \"DISABLED\"\n            },\n            {\n              \"name\": \"actor_type\",\n              \"value\": \"NON_ADMIN\"\n            },\n            {\n              \"name\": \"conversation_type\",\n              \"value\": \"USER_TO_APP_DIRECT_MESSAGE\"\n            },\n            {\n              \"name\": \"conversation_ownership\",\n              \"value\": \"INTERNALLY_OWNED\"\n            }\n          ],\n          \"resourceIds\": [\n            \"spaces/iz8SkiAAAAE\"\n          ]\n        }\n      ],\n      \"resourceDetails\": [\n        {\n          \"id\": \"spaces/iz8SkiAAAAE\",\n          \"title\": \"\",\n          \"type\": \"CHAT_SPACE\"\n        }\n      ]\n    }",
+    "host": "ip-10-255-9-252",
+    "source": "https://admin.googleapis.com/admin/reports/v1/activity/users/all/applications/chat",
+    "kind": "admin#reports#activity",
+    "id": {
+      "time": "2025-10-15T19:35:02.012Z",
+      "uniqueQualifier": "3801200375286939801",
+      "applicationName": "chat",
+      "customerId": "D03cdmbi0"
+    },
+    "etag": "\"6yvc0u1_mWuJiETyootWURYWuYFYgltz9xJKYRsM3cM/X59a6wAbtvdyReeV1Xf33RAAddY\"",
+    "actor": {
+      "callerType": "USER",
+      "email": "user@acmecorp.com",
+      "profileId": "117329556664445035546"
+    },
+    "events": [
+      {
+        "type": "user_action",
+        "name": "conversation_read",
+        "parameters": [
+          {
+            "name": "room_id",
+            "value": "iz8SkiAAAAE"
+          },
+          {
+            "name": "actor",
+            "value": "user@acmecorp.com"
+          },
+          {
+            "name": "external_room",
+            "value": "DISABLED"
+          },
+          {
+            "name": "actor_type",
+            "value": "NON_ADMIN"
+          },
+          {
+            "name": "conversation_type",
+            "value": "USER_TO_APP_DIRECT_MESSAGE"
+          },
+          {
+            "name": "conversation_ownership",
+            "value": "INTERNALLY_OWNED"
+          }
+        ],
+        "resourceIds": [
+          "spaces/iz8SkiAAAAE"
+        ]
+      }
+    ],
+    "resourceDetails": [
+      {
+        "id": "spaces/iz8SkiAAAAE",
+        "title": "",
+        "type": "CHAT_SPACE"
+      }
+    ],
+    "_time": 1760556902.012,
+    "_data_source": "http_google_workspace_admin",
+    "cribl_breaker": [
+      "google_sdk:get_items",
+      "ndjson"
+    ]
+  },
+  {
+    "_raw": "{\n      \"kind\": \"admin#reports#activity\",\n      \"id\": {\n        \"time\": \"2025-10-15T19:29:49.872Z\",\n        \"uniqueQualifier\": \"1361612804340237465\",\n        \"applicationName\": \"chat\",\n        \"customerId\": \"D03cdmbi0\"\n      },\n      \"etag\": \"\\\"6yvc0u1_mWuJiETyootWURYWuYFYgltz9xJKYRsM3cM/1aSX8VhQBNTqbp32KXiQqv3Lk5U\\\"\",\n      \"actor\": {\n        \"callerType\": \"USER\",\n        \"email\": \"user@acmecorp.com\",\n        \"profileId\": \"117329556664445035546\"\n      },\n      \"events\": [\n        {\n          \"type\": \"user_action\",\n          \"name\": \"invite_send\",\n          \"parameters\": [\n            {\n              \"name\": \"room_id\",\n              \"value\": \"AAQAKZi1qdk\"\n            },\n            {\n              \"name\": \"actor\",\n              \"value\": \"user@acmecorp.com\"\n            },\n            {\n              \"name\": \"target_users\",\n              \"multiValue\": [\n                \"/hd/domain/acmecorp.com\"\n              ]\n            },\n            {\n              \"name\": \"room_name\",\n              \"value\": \"Work\"\n            },\n            {\n              \"name\": \"external_room\",\n              \"value\": \"DISABLED\"\n            },\n            {\n              \"name\": \"actor_type\",\n              \"value\": \"NON_ADMIN\"\n            },\n            {\n              \"name\": \"conversation_type\",\n              \"value\": \"SPACE\"\n            },\n            {\n              \"name\": \"conversation_ownership\",\n              \"value\": \"INTERNALLY_OWNED\"\n            }\n          ],\n          \"resourceIds\": [\n            \"spaces/AAQAKZi1qdk\"\n          ]\n        }\n      ],\n      \"resourceDetails\": [\n        {\n          \"id\": \"spaces/AAQAKZi1qdk\",\n          \"title\": \"Work\",\n          \"type\": \"CHAT_SPACE\"\n        }\n      ]\n    }",
+    "host": "ip-10-255-9-252",
+    "source": "https://admin.googleapis.com/admin/reports/v1/activity/users/all/applications/chat",
+    "kind": "admin#reports#activity",
+    "id": {
+      "time": "2025-10-15T19:29:49.872Z",
+      "uniqueQualifier": "1361612804340237465",
+      "applicationName": "chat",
+      "customerId": "D03cdmbi0"
+    },
+    "etag": "\"6yvc0u1_mWuJiETyootWURYWuYFYgltz9xJKYRsM3cM/1aSX8VhQBNTqbp32KXiQqv3Lk5U\"",
+    "actor": {
+      "callerType": "USER",
+      "email": "user@acmecorp.com",
+      "profileId": "117329556664445035546"
+    },
+    "events": [
+      {
+        "type": "user_action",
+        "name": "invite_send",
+        "parameters": [
+          {
+            "name": "room_id",
+            "value": "AAQAKZi1qdk"
+          },
+          {
+            "name": "actor",
+            "value": "user@acmecorp.com"
+          },
+          {
+            "name": "target_users",
+            "multiValue": [
+              "/hd/domain/acmecorp.com"
+            ]
+          },
+          {
+            "name": "room_name",
+            "value": "Work"
+          },
+          {
+            "name": "external_room",
+            "value": "DISABLED"
+          },
+          {
+            "name": "actor_type",
+            "value": "NON_ADMIN"
+          },
+          {
+            "name": "conversation_type",
+            "value": "SPACE"
+          },
+          {
+            "name": "conversation_ownership",
+            "value": "INTERNALLY_OWNED"
+          }
+        ],
+        "resourceIds": [
+          "spaces/AAQAKZi1qdk"
+        ]
+      }
+    ],
+    "resourceDetails": [
+      {
+        "id": "spaces/AAQAKZi1qdk",
+        "title": "Work",
+        "type": "CHAT_SPACE"
+      }
+    ],
+    "_time": 1760556589.872,
+    "_data_source": "http_google_workspace_admin",
+    "cribl_breaker": [
+      "google_sdk:get_items",
+      "ndjson"
+    ]
+  },
+  {
+    "_raw": "{\n      \"kind\": \"admin#reports#activity\",\n      \"id\": {\n        \"time\": \"2025-10-15T19:29:47.796Z\",\n        \"uniqueQualifier\": \"-8235215338171911561\",\n        \"applicationName\": \"chat\",\n        \"customerId\": \"D03cdmbi0\"\n      },\n      \"etag\": \"\\\"6yvc0u1_mWuJiETyootWURYWuYFYgltz9xJKYRsM3cM/U-NOuAFAFC_Fd-tCqM13-qYQzGo\\\"\",\n      \"actor\": {\n        \"callerType\": \"USER\",\n        \"email\": \"user@acmecorp.com\",\n        \"profileId\": \"117329556664445035546\"\n      },\n      \"events\": [\n        {\n          \"type\": \"user_action\",\n          \"name\": \"room_created\",\n          \"parameters\": [\n            {\n              \"name\": \"room_id\",\n              \"value\": \"AAQAKZi1qdk\"\n            },\n            {\n              \"name\": \"actor\",\n              \"value\": \"user@acmecorp.com\"\n            },\n            {\n              \"name\": \"room_name\",\n              \"value\": \"Work\"\n            },\n            {\n              \"name\": \"external_room\",\n              \"value\": \"DISABLED\"\n            },\n            {\n              \"name\": \"actor_type\",\n              \"value\": \"NON_ADMIN\"\n            },\n            {\n              \"name\": \"conversation_type\",\n              \"value\": \"SPACE\"\n            },\n            {\n              \"name\": \"conversation_ownership\",\n              \"value\": \"INTERNALLY_OWNED\"\n            }\n          ],\n          \"resourceIds\": [\n            \"spaces/AAQAKZi1qdk\"\n          ]\n        }\n      ],\n      \"resourceDetails\": [\n        {\n          \"id\": \"spaces/AAQAKZi1qdk\",\n          \"title\": \"Work\",\n          \"type\": \"CHAT_SPACE\"\n        }\n      ]\n    }",
+    "host": "ip-10-255-9-252",
+    "source": "https://admin.googleapis.com/admin/reports/v1/activity/users/all/applications/chat",
+    "kind": "admin#reports#activity",
+    "id": {
+      "time": "2025-10-15T19:29:47.796Z",
+      "uniqueQualifier": "-8235215338171911561",
+      "applicationName": "chat",
+      "customerId": "D03cdmbi0"
+    },
+    "etag": "\"6yvc0u1_mWuJiETyootWURYWuYFYgltz9xJKYRsM3cM/U-NOuAFAFC_Fd-tCqM13-qYQzGo\"",
+    "actor": {
+      "callerType": "USER",
+      "email": "user@acmecorp.com",
+      "profileId": "117329556664445035546"
+    },
+    "events": [
+      {
+        "type": "user_action",
+        "name": "room_created",
+        "parameters": [
+          {
+            "name": "room_id",
+            "value": "AAQAKZi1qdk"
+          },
+          {
+            "name": "actor",
+            "value": "user@acmecorp.com"
+          },
+          {
+            "name": "room_name",
+            "value": "Work"
+          },
+          {
+            "name": "external_room",
+            "value": "DISABLED"
+          },
+          {
+            "name": "actor_type",
+            "value": "NON_ADMIN"
+          },
+          {
+            "name": "conversation_type",
+            "value": "SPACE"
+          },
+          {
+            "name": "conversation_ownership",
+            "value": "INTERNALLY_OWNED"
+          }
+        ],
+        "resourceIds": [
+          "spaces/AAQAKZi1qdk"
+        ]
+      }
+    ],
+    "resourceDetails": [
+      {
+        "id": "spaces/AAQAKZi1qdk",
+        "title": "Work",
+        "type": "CHAT_SPACE"
+      }
+    ],
+    "_time": 1760556587.796,
+    "_data_source": "http_google_workspace_admin",
+    "cribl_breaker": [
+      "google_sdk:get_items",
+      "ndjson"
+    ]
+  },
+  {
+    "_raw": "{\n      \"kind\": \"admin#reports#activity\",\n      \"id\": {\n        \"time\": \"2025-10-15T19:29:16.474Z\",\n        \"uniqueQualifier\": \"8382475106991575706\",\n        \"applicationName\": \"chat\",\n        \"customerId\": \"D03cdmbi0\"\n      },\n      \"etag\": \"\\\"6yvc0u1_mWuJiETyootWURYWuYFYgltz9xJKYRsM3cM/pWLiC8Rraqn1fTpje2aFSDBagMQ\\\"\",\n      \"actor\": {\n        \"callerType\": \"USER\",\n        \"email\": \"user@acmecorp.com\",\n        \"profileId\": \"117329556664445035546\"\n      },\n      \"events\": [\n        {\n          \"type\": \"user_action\",\n          \"name\": \"app_added\",\n          \"parameters\": [\n            {\n              \"name\": \"room_id\",\n              \"value\": \"iz8SkiAAAAE\"\n            },\n            {\n              \"name\": \"actor\",\n              \"value\": \"user@acmecorp.com\"\n            },\n            {\n              \"name\": \"external_room\",\n              \"value\": \"DISABLED\"\n            },\n            {\n              \"name\": \"actor_type\",\n              \"value\": \"NON_ADMIN\"\n            },\n            {\n              \"name\": \"conversation_type\",\n              \"value\": \"USER_TO_APP_DIRECT_MESSAGE\"\n            },\n            {\n              \"name\": \"conversation_ownership\",\n              \"value\": \"INTERNALLY_OWNED\"\n            }\n          ],\n          \"resourceIds\": [\n            \"spaces/iz8SkiAAAAE\",\n            \"gcp/882371411600\"\n          ]\n        }\n      ],\n      \"resourceDetails\": [\n        {\n          \"id\": \"spaces/iz8SkiAAAAE\",\n          \"title\": \"\",\n          \"type\": \"CHAT_SPACE\"\n        },\n        {\n          \"id\": \"gcp/882371411600\",\n          \"title\": \"Google Drive\",\n          \"type\": \"APPLICATION\"\n        }\n      ]\n    }",
+    "host": "ip-10-255-9-252",
+    "source": "https://admin.googleapis.com/admin/reports/v1/activity/users/all/applications/chat",
+    "kind": "admin#reports#activity",
+    "id": {
+      "time": "2025-10-15T19:29:16.474Z",
+      "uniqueQualifier": "8382475106991575706",
+      "applicationName": "chat",
+      "customerId": "D03cdmbi0"
+    },
+    "etag": "\"6yvc0u1_mWuJiETyootWURYWuYFYgltz9xJKYRsM3cM/pWLiC8Rraqn1fTpje2aFSDBagMQ\"",
+    "actor": {
+      "callerType": "USER",
+      "email": "user@acmecorp.com",
+      "profileId": "117329556664445035546"
+    },
+    "events": [
+      {
+        "type": "user_action",
+        "name": "app_added",
+        "parameters": [
+          {
+            "name": "room_id",
+            "value": "iz8SkiAAAAE"
+          },
+          {
+            "name": "actor",
+            "value": "user@acmecorp.com"
+          },
+          {
+            "name": "external_room",
+            "value": "DISABLED"
+          },
+          {
+            "name": "actor_type",
+            "value": "NON_ADMIN"
+          },
+          {
+            "name": "conversation_type",
+            "value": "USER_TO_APP_DIRECT_MESSAGE"
+          },
+          {
+            "name": "conversation_ownership",
+            "value": "INTERNALLY_OWNED"
+          }
+        ],
+        "resourceIds": [
+          "spaces/iz8SkiAAAAE",
+          "gcp/882371411600"
+        ]
+      }
+    ],
+    "resourceDetails": [
+      {
+        "id": "spaces/iz8SkiAAAAE",
+        "title": "",
+        "type": "CHAT_SPACE"
+      },
+      {
+        "id": "gcp/882371411600",
+        "title": "Google Drive",
+        "type": "APPLICATION"
+      }
+    ],
+    "_time": 1760556556.474,
+    "_data_source": "http_google_workspace_admin",
+    "cribl_breaker": [
+      "google_sdk:get_items",
+      "ndjson"
+    ]
+  }
+]

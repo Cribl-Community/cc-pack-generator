@@ -1,0 +1,682 @@
+{
+  "_notice": "Mirrored from the Cortex XSIAM documentation by `npm run sync:xsiam-uuids`. Do not edit by hand: the next sync overwrites it. A dedicated UUID here always beats the generic collector UUID (see docs/destination-specs/xsiam.md, ordering rule 2).",
+  "_sourceUrl": "https://cortex-docs.paloaltonetworks.com/cortex-xsiam/configure-cortex-xsiam/cortex-xsiam-data-sources/vendor-specific-data-sources-and-connectors/cribl/ingest-data-from-cribl/data-souce-uuids.md",
+  "_docTitle": "Data souce UUIDs",
+  "_docRules": [
+    "This table lists the Cribl catalog for the the specific collectors supported. If a dedicated collector does not exist, use the generic UUID collector.",
+    "Any data source can be ingested using the generic UUID collector with the correct vendor and product fields. Yet, while parsing and modeling rules can be applied to any source, out-of-the-box (OOTB) analytics are only available for data sources using dedicated UUIDs."
+  ],
+  "_syncedAt": "2026-08-18T08:02:20.142Z",
+  "counts": {
+    "sources": 48,
+    "vendors": 14,
+    "multiUuid": 1,
+    "criblUnsupported": 1,
+    "warnings": 1
+  },
+  "warnings": [
+    "section \"Workday\" has no markdown heading upstream; read from the bare line above its table"
+  ],
+  "generic": {
+    "uuid": "af01292940d7426594d3d3e55ae17ee0",
+    "product": "Indicate specific product name as not listed below (Generic)",
+    "rule": "Do not use this generic UUID when your data source is listed in this table.",
+    "datasetTemplate": "<Vendor>_<Product>_raw",
+    "docSection": "Indicate specific vendor name as not listed below (Generic)"
+  },
+  "sources": {
+    "amazon_aws_audit_logs": {
+      "vendor": "Amazon",
+      "product": "AWS audit logs",
+      "uuid": "c19f87b6262f48259b3d5d2a2c691802",
+      "datasets": [
+        "amazon_aws_raw"
+      ],
+      "datasetKey": "amazon_aws",
+      "docSection": "Amazon",
+      "docLabelFromHeading": true,
+      "criblSupported": true,
+      "collectionMethod": "These AWS logs are collected via Amazon S3. To ensure compatibility, see [Ingest audit logs from AWS Cloud Trail](/cortex-xsiam/configure-cortex-xsiam/cortex-xsiam-data-sources/vendor-specific-data-sources-and-connectors/amazon/amazon-s3/ingest-audit-logs-from-aws-cloudtrail.md)."
+    },
+    "amazon_aws_eks": {
+      "vendor": "Amazon",
+      "product": "AWS EKS",
+      "uuid": "fb8a9d4922cb4095b76d71e921d2d999",
+      "datasets": [
+        "amazon_eks_raw"
+      ],
+      "datasetKey": "amazon_eks",
+      "docSection": "Amazon",
+      "docLabelFromHeading": true,
+      "criblSupported": true,
+      "collectionMethod": "These AWS logs are collected via Amazon CloudWatch. To ensure collector compatibility, see [Ingest logs from Amazon CloudWatch](/cortex-xsiam/configure-cortex-xsiam/cortex-xsiam-data-sources/vendor-specific-data-sources-and-connectors/amazon/amazon-cloud-watch/ingest-logs-from-amazon-cloudwatch.md)."
+    },
+    "amazon_aws_flow_logs": {
+      "vendor": "Amazon",
+      "product": "AWS flow logs",
+      "uuid": "667083aa68544eee8b67cdd2d4cc327b",
+      "datasets": [
+        "amazon_aws_raw"
+      ],
+      "datasetKey": "amazon_aws",
+      "docSection": "Amazon",
+      "docLabelFromHeading": true,
+      "criblSupported": true,
+      "collectionMethod": "These logs are collected via Amazon S3. To ensure collector compatibility, see [Ingest network flow logs from Amazon S3](/cortex-xsiam/configure-cortex-xsiam/cortex-xsiam-data-sources/vendor-specific-data-sources-and-connectors/amazon/amazon-s3/ingest-network-flow-logs-from-amazon-s3.md)."
+    },
+    "amazon_aws_generic_logs": {
+      "vendor": "Amazon",
+      "product": "AWS generic logs",
+      "uuid": "0498f8a24de04b3e85102e742f6783f8",
+      "datasets": [
+        "amazon_aws_raw"
+      ],
+      "datasetKey": "amazon_aws",
+      "docSection": "Amazon",
+      "docLabelFromHeading": true,
+      "criblSupported": true,
+      "collectionMethod": "These logs are collected via Amazon S3. To ensure collector compatibility, see [Ingest generic logs from Amazon S3](/cortex-xsiam/configure-cortex-xsiam/cortex-xsiam-data-sources/vendor-specific-data-sources-and-connectors/amazon/amazon-s3/ingest-generic-logs-from-amazon-s3.md)."
+    },
+    "amazon_aws_prompt_logs": {
+      "vendor": "Amazon",
+      "product": "AWS prompt logs",
+      "uuid": "a53edad7ef0c46ffb5037fb2e21520cb",
+      "datasets": [
+        "amazon_aws_raw"
+      ],
+      "datasetKey": "amazon_aws",
+      "docSection": "Amazon",
+      "docLabelFromHeading": true,
+      "criblSupported": true,
+      "collectionMethod": "For setup details, see [Prompt log collection in AWS](/cortex-xsiam/detect-investigate-and-respond-to-threats/threat-management/analytics/analytics-overview/ai-detection-and-response-in-cortex-xsiam-beta/collect-prompt-logs/prompt-log-collection-in-aws.md)."
+    },
+    "amazon_aws_route_53_logs": {
+      "vendor": "Amazon",
+      "product": "AWS Route 53 logs",
+      "uuid": "0a7544038b444998a20e698669817e3d",
+      "uuids": [
+        {
+          "uuid": "d57ae82c1e2a4d138fc34084d159b09e",
+          "label": "old"
+        },
+        {
+          "uuid": "0a7544038b444998a20e698669817e3d",
+          "label": "new"
+        }
+      ],
+      "datasets": [
+        "amazon_route53_raw"
+      ],
+      "datasetKey": "amazon_route53",
+      "docSection": "Amazon",
+      "docLabelFromHeading": true,
+      "criblSupported": true,
+      "collectionMethod": "These logs are collected via Amazon S3. Using the old UUID routes data to the generic AWS dataset. For native routing to the Route 53 dataset, use the new dedicated UUID. To ensure collector compatibility, see [Ingest network Route 53 logs from Amazon S3](/cortex-xsiam/configure-cortex-xsiam/cortex-xsiam-data-sources/vendor-specific-data-sources-and-connectors/amazon/amazon-s3/ingest-network-route-53-logs-from-amazon-s3.md)."
+    },
+    "box_box": {
+      "vendor": "Box",
+      "product": "Box",
+      "uuid": "3ef05d14ae9349f8bbd48c8a4797334a",
+      "datasets": [
+        "box_admin_logs_raw",
+        "box_shield_alerts_raw",
+        "box_users_raw",
+        "box_groups_raw"
+      ],
+      "datasetKey": null,
+      "docSection": "Box",
+      "docLabelFromHeading": true,
+      "criblSupported": true,
+      "collectionMethod": "The BOX_DIRECTORIES connector queries the following Box API endpoints: Users Endpoint: <https://api.box.com/2.0/users> Purpose: To fetch the list of users in Box enterprise. Groups Endpoint: <https://api.box.com/2.0/groups> Purpose: To fetch the list of groups in Box enterprise. For setup details, see Ingest logs and data from Box."
+    },
+    "crowdstrike_falcon_incident": {
+      "vendor": "CrowdStrike",
+      "product": "Falcon incident",
+      "uuid": "230b2b0233bf4327806af72e6e5769f3",
+      "datasets": [
+        "crowdstrike_falcon_incident_raw"
+      ],
+      "datasetKey": "crowdstrike_falcon_incident",
+      "docSection": "CrowdStrike",
+      "docLabelFromHeading": true,
+      "criblSupported": false,
+      "collectionMethod": "Currently not supported by Cribl CrowdStrike Streaming API Base URL: <https://api.crowdstrike.com> (or api.us-2.crowdstrike.com, api.eu-1.crowdstrike.com, etc.) GET /sensors/entities/datafeed/v2 For setup details, see Ingest alerts and metadata from CrowdStrike APIs."
+    },
+    "crowdstrike_hosts": {
+      "vendor": "CrowdStrike",
+      "product": "Hosts",
+      "uuid": "8b673ac8e2f34b4a8dc14c22f0e6063b",
+      "datasets": [
+        "crowdstrike_hosts_raw"
+      ],
+      "datasetKey": "crowdstrike_hosts",
+      "docSection": "CrowdStrike",
+      "docLabelFromHeading": true,
+      "criblSupported": true,
+      "collectionMethod": "CrowdStrike Devices API GET /devices/queries/devices-scroll/v1 POST /devices/entities/devices/v2 For setup details, see Ingest alerts and metadata from CrowdStrike APIs."
+    },
+    "dropbox_directory": {
+      "vendor": "Dropbox",
+      "product": "Directory",
+      "uuid": "e8d2c52bc9594621924fab0507264586",
+      "datasets": [
+        "dropbox_members_devices_raw",
+        "dropbox_users_raw",
+        "dropbox_groups_raw"
+      ],
+      "datasetKey": null,
+      "docSection": "Dropbox",
+      "docLabelFromHeading": true,
+      "criblSupported": true,
+      "collectionMethod": "Base URL: <https://api.dropboxapi.com> Users (dropbox_users_raw) Endpoint: /2/team/members/list_v2 Groups (dropbox_groups_raw) Endpoint: /2/team/groups/list Devices (dropbox_member_devices_raw) Endpoint: /2/team/devices/list_members_devices For setup details, see Ingest logs and data from Dropbox."
+    },
+    "dropbox_events": {
+      "vendor": "Dropbox",
+      "product": "Events",
+      "uuid": "a6322b2fd9e545e0a4223ba754c48fb9",
+      "datasets": [
+        "dropbox_events_raw"
+      ],
+      "datasetKey": "dropbox_events",
+      "docSection": "Dropbox",
+      "docLabelFromHeading": true,
+      "criblSupported": true,
+      "collectionMethod": "Base URL: <https://api.dropboxapi.com> Endpoint: /2/team_log/get_events For setup details, see Ingest logs and data from Dropbox."
+    },
+    "google_cloud_logging_audit_logs_flow_logs": {
+      "vendor": "Google",
+      "product": "Cloud Logging (audit logs/flow logs)",
+      "uuid": "00a8322c85e14beabfa7ad5f3d62db73",
+      "datasets": [
+        "google_cloud_logging_raw"
+      ],
+      "datasetKey": "google_cloud_logging",
+      "docSection": "Google",
+      "docLabelFromHeading": true,
+      "criblSupported": true,
+      "collectionMethod": "For setup details, see [Ingest logs and data from a GCP Pub/Sub](/cortex-xsiam/configure-cortex-xsiam/cortex-xsiam-data-sources/vendor-specific-data-sources-and-connectors/google/google-cloud-platform/ingest-logs-and-data-from-a-gcp-pub-sub.md)."
+    },
+    "google_gmail": {
+      "vendor": "Google",
+      "product": "Gmail",
+      "uuid": "8607490288d1407ba82b5c5ad9dc64a0",
+      "datasets": [
+        "google_gmail_raw"
+      ],
+      "datasetKey": "google_gmail",
+      "docSection": "Google",
+      "docLabelFromHeading": true,
+      "criblSupported": true,
+      "collectionMethod": "GET <https://gmail.googleapis.com/gmail/v1/users/{userId}/messages> For setup details, see Ingest logs and data from Google Workspace."
+    },
+    "google_workspace_alerts": {
+      "vendor": "Google",
+      "product": "Workspace alerts",
+      "uuid": "4f263650cd29475c81f2ff953cf19827",
+      "datasets": [
+        "google_workspace_alerts_raw"
+      ],
+      "datasetKey": "google_workspace_alerts",
+      "docSection": "Google",
+      "docLabelFromHeading": true,
+      "criblSupported": true,
+      "collectionMethod": "Description: Ingests security and system alerts from the Google Workspace Alert Center. API Details API Name: Google Alert Center API Version: v1beta1 Base URL: <https://alertcenter.googleapis.com> Endpoint: /v1beta1/alerts Method: GET (List) OAuth Scope: <https://www.googleapis.com/auth/apps.alerts> Request Parameters filter: Used for incremental ingestion based on createTime. Format: createTime >= \"[TIMESTAMP_START]\" AND createTime < \"[TIMESTAMP_END]\" orderBy: createTime asc pageToken: Used for pagination. Data Mapping Source: The full JSON response object from the alerts list. Destination: Each alert object is ingested as a single record. For setup details, see Ingest logs and data from Google Workspace."
+    },
+    "google_workspace_chromeos_devices": {
+      "vendor": "Google",
+      "product": "Workspace ChromeOS devices",
+      "uuid": "e82ae276e6b9442fa80920a03d2a38d6",
+      "datasets": [
+        "google_workspace_chrome_raw"
+      ],
+      "datasetKey": "google_workspace_chrome",
+      "docSection": "Google",
+      "docLabelFromHeading": true,
+      "criblSupported": true,
+      "collectionMethod": "GET <https://admin.googleapis.com/admin/directory/v1/customer/{customer}/devices/chromeos> For setup details, see Ingest logs and data from Google Workspace."
+    },
+    "google_workspace_groups": {
+      "vendor": "Google",
+      "product": "Workspace groups",
+      "uuid": "689ae8ef14e848e3855b81e91d8af9bc",
+      "datasets": [
+        "google_workspace_enterprise_groups_raw"
+      ],
+      "datasetKey": "google_workspace_enterprise_groups",
+      "docSection": "Google",
+      "docLabelFromHeading": true,
+      "criblSupported": true,
+      "collectionMethod": "GET <https://admin.googleapis.com/admin/directory/v1/groups> For setup details, see Ingest logs and data from Google Workspace."
+    },
+    "google_workspace_rules": {
+      "vendor": "Google",
+      "product": "Workspace rules",
+      "uuid": "2621aaf3334a4147ae727afe84db31a9",
+      "datasets": [
+        "google_workspace_rules_raw"
+      ],
+      "datasetKey": "google_workspace_rules",
+      "docSection": "Google",
+      "docLabelFromHeading": true,
+      "criblSupported": true,
+      "collectionMethod": "GET <https://gmail.googleapis.com/gmail/v1/users/{userId}/settings/filters> For setup details, see Ingest logs and data from Google Workspace."
+    },
+    "google_workspace_users": {
+      "vendor": "Google",
+      "product": "Workspace users",
+      "uuid": "359ecd845fa54caab6ddb4b7c7a2764d",
+      "datasets": [
+        "google_workspace_user_acounts_raw"
+      ],
+      "datasetKey": "google_workspace_user_acounts",
+      "docSection": "Google",
+      "docLabelFromHeading": true,
+      "criblSupported": true,
+      "collectionMethod": "GET <https://admin.googleapis.com/admin/directory/v1/users/{userKey}> For setup details, see Ingest logs and data from Google Workspace."
+    },
+    "microsoft_azure": {
+      "vendor": "Microsoft",
+      "product": "Azure",
+      "uuid": "fce13a1d51294f84bae4a37851503060",
+      "datasets": [
+        "msft_azure_raw"
+      ],
+      "datasetKey": "msft_azure",
+      "docSection": "Microsoft",
+      "docLabelFromHeading": true,
+      "criblSupported": true,
+      "collectionMethod": "Azure Event Hubs SDK (AMQP): For setup details, see [Ingest logs from Microsoft Azure Event Hub](/cortex-xsiam/configure-cortex-xsiam/cortex-xsiam-data-sources/vendor-specific-data-sources-and-connectors/microsoft/azure-event-hub/ingest-logs-from-microsoft-azure-event-hub.md)."
+    },
+    "microsoft_azure_ad": {
+      "vendor": "Microsoft",
+      "product": "Azure AD",
+      "uuid": "c00d6d52e5b141a8baa8db9d9345423d",
+      "datasets": [
+        "msft_azure_ad_raw"
+      ],
+      "datasetKey": "msft_azure_ad",
+      "docSection": "Microsoft",
+      "docLabelFromHeading": true,
+      "criblSupported": true,
+      "collectionMethod": "For set up details, see [Ingest logs from Microsoft Office 365](/cortex-xsiam/configure-cortex-xsiam/cortex-xsiam-data-sources/vendor-specific-data-sources-and-connectors/microsoft/microsoft-office-365/ingest-logs-from-microsoft-office-365.md)."
+    },
+    "microsoft_azure_ad_audit": {
+      "vendor": "Microsoft",
+      "product": "Azure AD audit",
+      "uuid": "0e076d5abe864bf78e8145ea9e0d749e",
+      "datasets": [
+        "msft_azure_ad_audit_raw"
+      ],
+      "datasetKey": "msft_azure_ad_audit",
+      "docSection": "Microsoft",
+      "docLabelFromHeading": true,
+      "criblSupported": true,
+      "collectionMethod": "Microsoft Graph API: GET /v1.0/auditLogs/directoryaudits For set up details, see Ingest logs from Microsoft Office 365."
+    },
+    "microsoft_azure_ad_sign_ins": {
+      "vendor": "Microsoft",
+      "product": "Azure AD sign-ins",
+      "uuid": "f56dcfdf6bca43e793a4b6e9290e7b12",
+      "datasets": [
+        "msft_azure_ad_raw"
+      ],
+      "datasetKey": "msft_azure_ad",
+      "docSection": "Microsoft",
+      "docLabelFromHeading": true,
+      "criblSupported": true,
+      "collectionMethod": "Microsoft Graph API: GET /v1.0/auditLogs/signIns For set up details, see Ingest logs from Microsoft Office 365."
+    },
+    "microsoft_defender": {
+      "vendor": "Microsoft",
+      "product": "Defender",
+      "uuid": "ce9e8cf36e0742c38aa89787a256855f",
+      "datasets": [
+        "msft_defender_raw"
+      ],
+      "datasetKey": "msft_defender",
+      "docSection": "Microsoft",
+      "docLabelFromHeading": true,
+      "criblSupported": true,
+      "collectionMethod": "Azure Event Hubs SDK (AMQP): For setup details, see Ingest raw EDR events from Microsoft Defender for Endpoint. To enable analytics, contact Customer Support."
+    },
+    "microsoft_dhcp": {
+      "vendor": "Microsoft",
+      "product": "DHCP",
+      "uuid": "b55819e8959c49728d5d98a6d87eafb6",
+      "datasets": [
+        "msft_dhcp_raw"
+      ],
+      "datasetKey": "msft_dhcp",
+      "docSection": "Microsoft",
+      "docLabelFromHeading": true,
+      "criblSupported": true,
+      "collectionMethod": "File Collection: C:\\Windows\\System32\\dhcp\\DhcpSrvLog-*.log For set up details, see Ingest logs from Windows DHCP using Elasticsearch Filebeat."
+    },
+    "microsoft_graph_security_alerts": {
+      "vendor": "Microsoft",
+      "product": "Graph security alerts",
+      "uuid": "5619f2f691fc46c4b202587fdaa031c3",
+      "datasets": [
+        "msft_graph_security_alerts_raw"
+      ],
+      "datasetKey": "msft_graph_security_alerts",
+      "docSection": "Microsoft",
+      "docLabelFromHeading": true,
+      "criblSupported": true,
+      "collectionMethod": "Microsoft Graph API: /v1.0/security/alerts_v2 For set up details, see Ingest logs from Microsoft Office 365."
+    },
+    "microsoft_office_365_azure_ad": {
+      "vendor": "Microsoft",
+      "product": "Office 365 Azure AD",
+      "uuid": "e1f109f886ea42fbb96be6ec0cc597a9",
+      "datasets": [
+        "msft_o365_azure_ad_raw"
+      ],
+      "datasetKey": "msft_o365_azure_ad",
+      "docSection": "Microsoft",
+      "docLabelFromHeading": true,
+      "criblSupported": true,
+      "collectionMethod": "The Base URLs for the APIs are (depending on the environment): Worldwide: <https://manage.office.com> GCC: <https://manage-gcc.office.com> GCC High: <https://manage.office365.us> DoD: <https://manage.protection.apps.mil> Endpoints: Start Subscription: /api/v1.0/{tenantID}/activity/feed/subscriptions/start?contentType={type} List Available Content: /api/v1.0/{tenantID}/activity/feed/subscriptions/content?contentType={type} Fetch Content Blob: Dynamic URI returned from the “List Available Content” call. Content Types: audit.exchange, audit.sharepoint, audit.general, audit.azureactivedirectory, dlp.all. For set up details, see Ingest logs from Microsoft Office 365."
+    },
+    "microsoft_office_365_contacts_email": {
+      "vendor": "Microsoft",
+      "product": "Office 365 contacts (email)",
+      "uuid": "de1b694a6c8341958bc08c4b7c140874",
+      "datasets": [
+        "msft_o365_contacts_raw"
+      ],
+      "datasetKey": "msft_o365_contacts",
+      "docSection": "Microsoft",
+      "docLabelFromHeading": true,
+      "criblSupported": true,
+      "collectionMethod": "Microsoft Graph API: GET /v1.0/users/{id}/mailFolders/inbox/messageRules For set up details, see Ingest logs and data from Microsoft 365."
+    },
+    "microsoft_office_365_devices_email": {
+      "vendor": "Microsoft",
+      "product": "Office 365 devices (email)",
+      "uuid": "de229685f708413fad46289657ea09de",
+      "datasets": [
+        "msft_o365_devices_raw"
+      ],
+      "datasetKey": "msft_o365_devices",
+      "docSection": "Microsoft",
+      "docLabelFromHeading": true,
+      "criblSupported": true,
+      "collectionMethod": "Microsoft Graph API: GET /v1.0/users/{id}/registeredDevices For set up details, see Ingest logs and data from Microsoft 365."
+    },
+    "microsoft_office_365_dlp": {
+      "vendor": "Microsoft",
+      "product": "Office 365 DLP",
+      "uuid": "8f052782739d4b8389644cca23b994ac",
+      "datasets": [
+        "msft_o365_dlp_raw"
+      ],
+      "datasetKey": "msft_o365_dlp",
+      "docSection": "Microsoft",
+      "docLabelFromHeading": true,
+      "criblSupported": true,
+      "collectionMethod": "See Office 365 Azure AD. For set up details, see Ingest logs from Microsoft Office 365."
+    },
+    "microsoft_office_365_domains": {
+      "vendor": "Microsoft",
+      "product": "Office 365 domains",
+      "uuid": "cae29fd87b554bd9a5694afb225e8dc9",
+      "datasets": [
+        "msft_o365_domains_raw"
+      ],
+      "datasetKey": "msft_o365_domains",
+      "docSection": "Microsoft",
+      "docLabelFromHeading": true,
+      "criblSupported": true,
+      "collectionMethod": "Microsoft Graph API: `GET /v1.0/domains`"
+    },
+    "microsoft_office_365_exchange_online": {
+      "vendor": "Microsoft",
+      "product": "Office 365 Exchange Online",
+      "uuid": "dee8e85ce7db4573a8bc21b807e1d73a",
+      "datasets": [
+        "msft_o365_exchange_online_raw"
+      ],
+      "datasetKey": "msft_o365_exchange_online",
+      "docSection": "Microsoft",
+      "docLabelFromHeading": true,
+      "criblSupported": true,
+      "collectionMethod": "See Office 365 Azure AD. For set up details, see Ingest logs from Microsoft Office 365."
+    },
+    "microsoft_office_365_general": {
+      "vendor": "Microsoft",
+      "product": "Office 365 General",
+      "uuid": "c7655e83805b4a058e66043a6715156c",
+      "datasets": [
+        "msft_o365_general_raw"
+      ],
+      "datasetKey": "msft_o365_general",
+      "docSection": "Microsoft",
+      "docLabelFromHeading": true,
+      "criblSupported": true,
+      "collectionMethod": "See Office 365 Azure AD. For set up details, see Ingest logs from Microsoft Office 365."
+    },
+    "microsoft_office_365_groups_email": {
+      "vendor": "Microsoft",
+      "product": "Office 365 groups (email)",
+      "uuid": "0b0499ac0d984145b201c6d674771dbf",
+      "datasets": [
+        "msft_o365_groups_raw"
+      ],
+      "datasetKey": "msft_o365_groups",
+      "docSection": "Microsoft",
+      "docLabelFromHeading": true,
+      "criblSupported": true,
+      "collectionMethod": "Microsoft Graph API: GET /v1.0/groups For set up details, see Ingest logs and data from Microsoft 365."
+    },
+    "microsoft_office_365_mailboxes_email": {
+      "vendor": "Microsoft",
+      "product": "Office 365 mailboxes (email)",
+      "uuid": "9855a03559ce4263b568671e695d1fa8",
+      "datasets": [
+        "msft_o365_mailboxes_raw"
+      ],
+      "datasetKey": "msft_o365_mailboxes",
+      "docSection": "Microsoft",
+      "docLabelFromHeading": true,
+      "criblSupported": true,
+      "collectionMethod": "The Base URLs for the APIs are (depending on the environment): [https://graph.microsoft.com</code>](https://graph.microsoft.com</code>) (or <https://graph.microsoft.us`> for FedRAMP) Incoming Messages: GET /v1.0/users/{id}/messages Outgoing Messages: GET /v1.0/users/{id}/mailFolders/sentitems/messages/delta For set up details, see Ingest logs and data from Microsoft 365."
+    },
+    "microsoft_office_365_rules_email": {
+      "vendor": "Microsoft",
+      "product": "Office 365 rules (email)",
+      "uuid": "6b925df8923d4038bf78998d1ffde77c",
+      "datasets": [
+        "msft_o365_rules_raw"
+      ],
+      "datasetKey": "msft_o365_rules",
+      "docSection": "Microsoft",
+      "docLabelFromHeading": true,
+      "criblSupported": true,
+      "collectionMethod": "Microsoft Graph API: /users/{id}/mailFolders/inbox/messageRules For set up details, see Ingest logs and data from Microsoft 365."
+    },
+    "microsoft_office_365_sharepoint_online": {
+      "vendor": "Microsoft",
+      "product": "Office 365 Sharepoint Online",
+      "uuid": "3a37f519e9094a3f8c4185fa572cd111",
+      "datasets": [
+        "msft_o365_sharepoint_online_raw"
+      ],
+      "datasetKey": "msft_o365_sharepoint_online",
+      "docSection": "Microsoft",
+      "docLabelFromHeading": true,
+      "criblSupported": true,
+      "collectionMethod": "See Office 365 Azure AD. For set up details, see Ingest logs from Microsoft Office 365."
+    },
+    "microsoft_office_365_users_email": {
+      "vendor": "Microsoft",
+      "product": "Office 365 users (email)",
+      "uuid": "dcfb7a412e654efd868de0b8cf81766a",
+      "datasets": [
+        "msft_o365_users_raw"
+      ],
+      "datasetKey": "msft_o365_users",
+      "docSection": "Microsoft",
+      "docLabelFromHeading": true,
+      "criblSupported": true,
+      "collectionMethod": "Microsoft Graph API: GET /v1.0/users For set up details, see Ingest logs and data from Microsoft 365."
+    },
+    "microsoft_windows_event_logs": {
+      "vendor": "Microsoft",
+      "product": "Windows Event Logs",
+      "uuid": "63b0fbeb501e4650896e7064d3412e14",
+      "datasets": [
+        "microsoft_windows_raw"
+      ],
+      "datasetKey": "microsoft_windows",
+      "docSection": "Microsoft",
+      "docLabelFromHeading": true,
+      "criblSupported": true,
+      "collectionMethod": "For more information, see [Collect Windows Event Logs for Cortex XSIAM via Cribl](/cortex-xsiam/configure-cortex-xsiam/cortex-xsiam-data-sources/vendor-specific-data-sources-and-connectors/cribl/ingest-data-from-cribl/collect-windows-event-logs-for-cortex-xsiam-via-cribl.md)."
+    },
+    "okta_sso": {
+      "vendor": "Okta",
+      "product": "SSO",
+      "uuid": "5faf4c1fdb8443d9920d6a54815432c1",
+      "datasets": [
+        "okta_sso_raw"
+      ],
+      "datasetKey": "okta_sso",
+      "docSection": "Okta",
+      "docLabelFromHeading": true,
+      "criblSupported": true,
+      "collectionMethod": "Okta System Log API Base URL: https://{your-okta-domain}.okta.com GET /api/v1/logs For set up details, see Ingest logs and data from Okta."
+    },
+    "onelogin_events": {
+      "vendor": "OneLogin",
+      "product": "Events",
+      "uuid": "22b23a3f9f1e49998645b683d5dc3a6f",
+      "datasets": [
+        "onelogin_events_raw"
+      ],
+      "datasetKey": "onelogin_events",
+      "docSection": "OneLogin",
+      "docLabelFromHeading": true,
+      "criblSupported": true,
+      "collectionMethod": "Base URL: https://<subdomain>.onelogin.com Endpoint: /api/1/events` For set up details, see Ingest logs and data from OneLogin."
+    },
+    "onelogin_onelogin": {
+      "vendor": "OneLogin",
+      "product": "OneLogin",
+      "uuid": "88cfbd3e7b974d999b10edac83995b8a",
+      "datasets": [
+        "onelogin_users_raw",
+        "onelogin_groups_raw",
+        "onelogin_apps_raw"
+      ],
+      "datasetKey": null,
+      "docSection": "OneLogin",
+      "docLabelFromHeading": true,
+      "criblSupported": true,
+      "collectionMethod": "Base URL: https://<subdomain>.onelogin.com Endpoints: /api/1/users/api/1/groups/api/2/apps For set up details, see Ingest logs and data from OneLogin."
+    },
+    "pingid_pingone": {
+      "vendor": "PingID",
+      "product": "PingONE",
+      "uuid": "924951a8394b4605b1725f943292ab4f",
+      "datasets": [
+        "pingid_pingone_raw"
+      ],
+      "datasetKey": "pingid_pingone",
+      "docSection": "PingID",
+      "docLabelFromHeading": true,
+      "criblSupported": true,
+      "collectionMethod": "PingOne API: Base URL: <https://admin-api.pingone.com> Endpoint: /v3/reports/{account_id}/poll-subscriptions/{subscription_id}/events For set up details, see Ingest authentication logs and data from PingOne."
+    },
+    "proofpoint_tap": {
+      "vendor": "Proofpoint",
+      "product": "TAP",
+      "uuid": "3eefce0f791e4391a3643b8cf860a361",
+      "datasets": [
+        "proofpoint_tap_raw"
+      ],
+      "datasetKey": "proofpoint_tap",
+      "docSection": "Proofpoint",
+      "docLabelFromHeading": true,
+      "criblSupported": true,
+      "collectionMethod": "API Base URL: <https://tap-api-v2.proofpoint.com> Resource Path: /v2/siem/all For set up details, see Ingest logs from Proofpoint Targeted Attack Protection."
+    },
+    "salesforce_salesforce_logs": {
+      "vendor": "Salesforce",
+      "product": "Salesforce logs",
+      "uuid": "ab109687acd24978aabcb7ad8b5742e3",
+      "datasets": [
+        "salesforce_login_raw",
+        "salesforce_audit_raw",
+        "salesforce_eventlogfile_raw"
+      ],
+      "datasetKey": null,
+      "docSection": "Salesforce: Salesforce logs",
+      "docLabelFromHeading": true,
+      "criblSupported": true,
+      "collectionMethod": "The data schema for salesforce_eventlogfile_raw is dynamic and not hardcoded in the data collector's source code. Here's how it works: Dynamic Field Discovery: The collector calls the Salesforce describe endpoint (/services/data/v56.0/sobjects/EventLogFile/describe) to retrieve the list of all available fields for the EventLogFile object. Query Construction: It constructs a SOQL query selecting all these discovered fields, such as SELECT Id, LogFile, LogDate,.... FROM EventLogFile). CSV to JSON: The downloaded log files are in CSV format. The collector converts each CSV row into a JSON object where the keys are the CSV headers (which correspond to the fields discovered in the Dynamic Field Discovery explained above). For set up details, see Ingest logs and data from Salesforce."
+    },
+    "salesforce_salesforce_snapshots": {
+      "vendor": "Salesforce",
+      "product": "Salesforce snapshots",
+      "uuid": "addbf31a6372491e88d45934dff5b5b0",
+      "datasets": [
+        "<vendor>_<product>_raw",
+        "salesforce_ConnectedApplication_raw",
+        "salesforce_PermissionSet_raw",
+        "salesforce_Profile_raw",
+        "salesforce_GroupMember_raw",
+        "salesforce_Group_raw",
+        "salesforce_User_raw",
+        "salesforce_UserRole_raw",
+        "salesforce_TenantSecurityLogin_raw",
+        "salesforce_UserAccountTeamMember_raw",
+        "salesforce_TenantSecurityUserPerm_raw"
+      ],
+      "datasetKey": null,
+      "docSection": "Salesforce: Salesforce snapshots",
+      "docLabelFromHeading": true,
+      "criblSupported": true,
+      "collectionMethod": "Authentication: Path: /services/oauth2/token Purpose: Used for obtaining and refreshing access tokens. Data Query: Path: /services/data/v56.0/queryAll Purpose: Used to execute SOQL queries to fetch records for the snapshot objects, such as User, Profile, and Group. Object Description: Path: /services/data/v56.0/sobjects/{object}/describe Purpose: Used to dynamically retrieve the list of fields for a specific object before querying it. All endpoints are relative to the base URL: https://{domain}.my.salesforce.com. For set up details, see Ingest logs and data from Salesforce."
+    },
+    "sentinel_one_deep_visibility": {
+      "vendor": "Sentinel One",
+      "product": "Deep Visibility",
+      "uuid": "b9fa55e6fa564c709358425ce0f61517",
+      "datasets": [
+        "sentinelone_deep_visibility_raw"
+      ],
+      "datasetKey": "sentinelone_deep_visibility",
+      "docSection": "Sentinel One: Deep Visibility",
+      "docLabelFromHeading": true,
+      "criblSupported": true,
+      "collectionMethod": "For set up details, see Ingest raw EDR events from SentinelOne DeepVisibility. To enable analytics, contact Customer Support."
+    },
+    "service_now_cdmb": {
+      "vendor": "Service Now",
+      "product": "CDMB",
+      "uuid": "8b3e767247e44471a95e563378d0b9be",
+      "datasets": [
+        "servicenow_cmdb_<table_name>_raw"
+      ],
+      "datasetKey": null,
+      "docSection": "Service Now: CDMB",
+      "docLabelFromHeading": true,
+      "criblSupported": true,
+      "collectionMethod": "ServiceNow Table API Base URL: https://{instance}.service-now.com GET /api/now/table/{table_name} For set up details, see Ingest data from ServiceNow CMDB."
+    },
+    "workday_workday": {
+      "vendor": "Workday",
+      "product": "Workday",
+      "uuid": "00d4e740702d4eb2939a87c2318513dd",
+      "datasets": [
+        "workday_workday_raw"
+      ],
+      "datasetKey": "workday_workday",
+      "docSection": "Workday",
+      "docLabelFromHeading": false,
+      "criblSupported": true,
+      "collectionMethod": "Workday Report-as-a-Service (RaaS) Endpoint: Configurable Report URL For set up details, see Ingest report data from Workday."
+    }
+  }
+}

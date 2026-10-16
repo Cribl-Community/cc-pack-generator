@@ -1,0 +1,15 @@
+ftnt_level,severity,severity_id
+emergency,critical,5
+alert,critical,5
+critical,critical,5
+error,high,4
+warning,medium,3
+notice,low,2
+notification,low,2
+information,informational,1
+informational,informational,1
+debug,informational,1
+high,high,4
+medium,medium,3
+low,low,2
+elevated,medium,3

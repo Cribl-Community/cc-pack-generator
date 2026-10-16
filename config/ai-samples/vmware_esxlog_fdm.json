@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "key": "vmware_esxlog_fdm",
+  "sourcetype": "vmware_esxlog_fdm",
+  "events": [
+    "2024-06-10T08:12:34.102Z esx01.corp.local Fdm: [7F8A2C1B0D3E 'Election' opID=SWI-4a2b1c3d] [INFO] Election, current uptime is 1234 seconds",
+    "2024-06-10T08:14:02.556Z esx02.corp.local Fdm: [7F8A2C1B0D3F 'ClusterElection' opID=SWI-5b3c2d4e] [INFO] Node esx02.corp.local [10.10.5.12] is master; retained master role",
+    "2024-06-10T08:20:11.891Z esx03.corp.local Fdm: [7F8A2C1B0D40 'HostMonitor' opID=SWI-6c4d3e5f] [WARNING] Received network heartbeat from host esx07.corp.local after timeout period, marking host reachable",
+    "2024-06-10T08:25:44.223Z esx01.corp.local Fdm: [7F8A2C1B0D41 'VmOperationsManager' opID=SWI-7d5e4f60] [INFO] VM vm-142 (webserver-prod-03) power on succeeded",
+    "2024-06-10T08:31:09.007Z esx04.corp.local Fdm: [7F8A2C1B0D42 'HostMonitor' opID=SWI-8e6f5071] [ERROR] Lost network heartbeat from host esx09.corp.local, isolation address 172.16.5.1 unreachable",
+    "2024-06-10T08:35:22.678Z esx02.corp.local Fdm: [7F8A2C1B0D43 'FdmUtil' opID=SWI-9f708182] [INFO] Reading configuration from /etc/opt/vmware/fdm/fdm.cfg succeeded",
+    "2024-06-10T08:41:55.334Z esx03.corp.local Fdm: [7F8A2C1B0D44 'PropertyRedirector' opID=SWI-a0819293] [WARNING] Failed to connect to vpxd at 192.168.1.50:443, retrying in 30 seconds",
+    "2024-06-10T08:47:12.900Z esx05.corp.local Fdm: [7F8A2C1B0D45 'VmMonitor' opID=SWI-b192a3a4] [INFO] VM vm-201 (db-cluster-node2) heartbeat resumed after 45 seconds",
+    "2024-06-10T08:52:37.445Z esx01.corp.local Fdm: [7F8A2C1B0D46 'HaSslContext' opID=SWI-c2a3b4b5] [ERROR] SSL handshake failed with peer 203.0.113.44, certificate verification error: unable to get local issuer certificate",
+    "2024-06-10T09:03:19.212Z esx06.corp.local Fdm: [7F8A2C1B0D47 'ClusterElection' opID=SWI-d3b4c5c6] [WARNING] Multiple masters detected during election, forcing re-election",
+    "2024-06-10T09:08:41.678Z esx02.corp.local Fdm: [7F8A2C1B0D48 'HostMonitor' opID=SWI-e4c5d6d7] [INFO] Host esx08.corp.local [10.10.5.18] state changed from unreachable to poweredOn",
+    "2024-06-10T09:15:03.891Z esx04.corp.local Fdm: [7F8A2C1B0D49 'VmOperationsManager' opID=SWI-f5d6e7e8] [ERROR] VM vm-310 (finance-app-01) restart failed: insufficient resources on candidate hosts",
+    "2024-06-10T09:22:58.556Z esx03.corp.local Fdm: [7F8A2C1B0D4A 'FdmUtil' opID=SWI-06e7f8f9] [INFO] Datastore heartbeat check completed for ds-store-prod01, ds-store-prod02",
+    "2024-06-10T09:29:14.003Z esx01.corp.local Fdm: [7F8A2C1B0D4B 'HttpConnectionPool' opID=SWI-17f80a0a] [WARNING] Connection pool to vpxd exhausted, queueing 12 requests",
+    "2024-06-10T09:34:47.789Z esx07.corp.local Fdm: [7F8A2C1B0D4C 'HostMonitor' opID=SWI-2809b1b1] [ERROR] Host esx11.corp.local declared dead, no heartbeats received via network or datastore for 60 seconds",
+    "2024-06-10T09:41:02.331Z esx05.corp.local Fdm: [7F8A2C1B0D4D 'VmMonitor' opID=SWI-391ac2c2] [INFO] VM vm-455 (analytics-worker-07) monitoring disabled by user request",
+    "2024-06-10T09:48:19.667Z esx02.corp.local Fdm: [7F8A2C1B0D4E 'Election' opID=SWI-4a2bd3d3] [INFO] Election completed, node esx02.corp.local elected as master, previous master esx06.corp.local",
+    "2024-06-10T09:55:33.912Z esx06.corp.local Fdm: [7F8A2C1B0D4F 'HaSslContext' opID=SWI-5b3ce4e4] [WARNING] Rejected connection attempt from unauthorized peer [2001:db8:85a3::8a2e:370:7334]:8182",
+    "2024-06-10T10:02:47.445Z esx03.corp.local Fdm: [7F8A2C1B0D50 'VmOperationsManager' opID=SWI-6c4df5f5] [INFO] VM vm-520 (web-cache-cluster-04) failover completed successfully to host esx09.corp.local",
+    "2024-06-10T10:11:09.778Z esx04.corp.local Fdm: [7F8A2C1B0D51 'FdmUtil' opID=SWI-7d5e0606] [ERROR] Unable to write to log directory /var/log/vmware/fdm, disk /storage1 reporting 0 bytes free"
+  ],
+  "fingerprint": "76ff8f85-3615",
+  "verification": {
+    "verdict": "unverified",
+    "method": "none",
+    "eventsParsed": 0,
+    "eventsChecked": 20,
+    "fields": [],
+    "reasons": [
+      "vmware_esxlog_fdm has no parser and the events are unstructured text — nothing to verify against"
+    ],
+    "offendingEvents": [],
+    "keyEcho": null
+  },
+  "provenance": {
+    "model": "us.anthropic.claude-sonnet-5",
+    "buildNumber": 529,
+    "generatedAt": "2026-08-18T07:13:55.282Z",
+    "grounding": "KNOWN FACTS ABOUT THIS SOURCE (from sourcetype recognition — match these exactly):\n- Product: VMware ESXi host log\n- Log family: syslog"
+  }
+}

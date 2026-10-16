@@ -1,0 +1,14 @@
+{
+  "note": "Curated OCSF input samples for the post-processing pipeline flow (OCSF → CEF). One representative event per supported OCSF class. Used to build/preview/score the transform; users may also paste their own OCSF.",
+  "samples": [
+    { "key": "ocsf_network", "class_uid": 4001, "label": "Network Activity", "file": "ocsf_network.json" },
+    { "key": "ocsf_authentication", "class_uid": 3002, "label": "Authentication", "file": "ocsf_authentication.json" },
+    { "key": "ocsf_http", "class_uid": 4002, "label": "HTTP Activity", "file": "ocsf_http.json" },
+    { "key": "ocsf_firewall", "class_uid": 4001, "label": "Network Activity — Firewall (Cisco ASA)", "file": "ocsf_firewall.json" },
+    { "key": "ocsf_windows", "class_uid": 3002, "label": "Authentication — Windows (Event 4624/4625)", "file": "ocsf_windows.json" },
+    { "key": "ocsf_webproxy", "class_uid": 4002, "label": "HTTP Activity — Web Proxy (Zeek)", "file": "ocsf_webproxy.json" },
+    { "key": "ocsf_dns", "class_uid": 4003, "label": "DNS Activity — FortiGate (no query.hostname) + Zeek (query.hostname)", "file": "ocsf_dns.json" },
+    { "key": "ocsf_cloud_audit", "class_uid": 6003, "label": "API Activity — GCP Cloud Audit Logs", "file": "ocsf_cloud_audit.json" },
+    { "key": "ocsf_endpoint", "class_uid": 1007, "label": "Process Activity — Microsoft Defender for Endpoint", "file": "ocsf_endpoint.json" }
+  ]
+}

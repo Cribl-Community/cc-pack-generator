@@ -1,0 +1,83 @@
+{
+  "classUid": 6003,
+  "className": "API Activity",
+  "events": [
+    {
+      "class_uid": 6003,
+      "class_name": "API Activity",
+      "category_uid": 6,
+      "category_name": "Application Activity",
+      "activity_id": 2,
+      "activity_name": "Read",
+      "type_uid": 600302,
+      "severity_id": 1,
+      "status": "Success",
+      "status_id": 1,
+      "time": 1686259783271,
+      "actor": { "user": { "name": "153750138338-compute@developer.gserviceaccount.com" } },
+      "api": {
+        "operation": "google.pubsub.v1.Subscriber.GetSubscription",
+        "service": { "name": "pubsub.googleapis.com" },
+        "response": { "code": 0, "message": "OK" }
+      },
+      "src_endpoint": { "ip": "52.25.23.83" },
+      "cloud": { "provider": "GCP", "account": { "uid": "affable-alpha-386416" } },
+      "resources": [
+        { "type": "pubsub_subscription", "name": "projects/affable-alpha-386416/subscriptions/all4pubsub" }
+      ],
+      "metadata": { "version": "1.3.0", "product": { "name": "Cloud Audit Logs", "vendor_name": "Google Cloud" } },
+      "unmapped": { "insertId": "8vpmd8cacz", "logName": "projects/affable-alpha-386416/logs/cloudaudit.googleapis.com%2Fdata_access" }
+    },
+    {
+      "class_uid": 6003,
+      "class_name": "API Activity",
+      "category_uid": 6,
+      "category_name": "Application Activity",
+      "activity_id": 2,
+      "activity_name": "Read",
+      "type_uid": 600302,
+      "severity_id": 1,
+      "status": "Success",
+      "status_id": 1,
+      "time": 1686259860635,
+      "actor": { "user": { "name": "bq-data-transfer-9b4e9439@affable-alpha-386416.iam.gserviceaccount.com" } },
+      "api": {
+        "operation": "storage.objects.list",
+        "service": { "name": "storage.googleapis.com" },
+        "response": { "code": 0, "message": "OK" }
+      },
+      "cloud": { "provider": "GCP", "account": { "uid": "affable-alpha-386416" } },
+      "resources": [
+        { "type": "gcs_bucket", "name": "projects/_/buckets/log-analysis-pipeline-ingest-9b4e9439" }
+      ],
+      "metadata": { "version": "1.3.0", "product": { "name": "Cloud Audit Logs", "vendor_name": "Google Cloud" } },
+      "unmapped": { "insertId": "zt4ry9e8eumb", "logName": "projects/affable-alpha-386416/logs/cloudaudit.googleapis.com%2Fdata_access" }
+    },
+    {
+      "class_uid": 6003,
+      "class_name": "API Activity",
+      "category_uid": 6,
+      "category_name": "Application Activity",
+      "activity_id": 1,
+      "activity_name": "Create",
+      "type_uid": 600301,
+      "severity_id": 2,
+      "status": "Failure",
+      "status_id": 2,
+      "time": 1684175561972,
+      "actor": { "user": { "name": "153750138338-compute@developer.gserviceaccount.com" } },
+      "api": {
+        "operation": "google.pubsub.v1.Subscriber.CreateSubscription",
+        "service": { "name": "pubsub.googleapis.com" },
+        "response": { "code": 6, "message": "Resource already exists in the project (resource=all4sub)." }
+      },
+      "src_endpoint": { "ip": "54.68.193.216" },
+      "cloud": { "provider": "GCP", "account": { "uid": "affable-alpha-386416" } },
+      "resources": [
+        { "type": "pubsub_subscription", "name": "projects/affable-alpha-386416/subscriptions/all4sub" }
+      ],
+      "metadata": { "version": "1.3.0", "product": { "name": "Cloud Audit Logs", "vendor_name": "Google Cloud" } },
+      "unmapped": { "insertId": "1flzppoc1i4", "logName": "projects/affable-alpha-386416/logs/cloudaudit.googleapis.com%2Factivity" }
+    }
+  ]
+}

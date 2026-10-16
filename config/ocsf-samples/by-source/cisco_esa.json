@@ -1,0 +1,82 @@
+{
+  "key": "cisco_esa",
+  "sourcetype": "cisco_esa",
+  "classUid": 4009,
+  "destFormat": "ocsf#email",
+  "source": "cisco",
+  "vendorNames": [
+    "Cisco"
+  ],
+  "provenance": {
+    "samplePack": "fallback",
+    "sampleName": "cisco_esa_fallback",
+    "tier": "reference",
+    "sampleEvents": 19,
+    "emulated": "golden OCSF pipeline, offline emulation of scripts/build-source-ocsf-samples.mjs",
+    "rejected": []
+  },
+  "events": [
+    {
+      "src_endpoint": {
+        "ip": "198.51.100.10"
+      },
+      "metadata": {
+        "product": {
+          "name": "Email Security Appliance",
+          "vendor_name": "Cisco"
+        },
+        "version": "1.9.0"
+      },
+      "class_uid": 4009,
+      "category_uid": 4,
+      "activity_id": 2,
+      "direction_id": 1,
+      "type_uid": 400902,
+      "severity_id": 1,
+      "status_id": 1,
+      "status": "Success",
+      "time": 1705310625000
+    },
+    {
+      "metadata": {
+        "product": {
+          "name": "Email Security Appliance",
+          "vendor_name": "Cisco"
+        },
+        "version": "1.9.0"
+      },
+      "class_uid": 4009,
+      "category_uid": 4,
+      "activity_id": 2,
+      "direction_id": 1,
+      "type_uid": 400902,
+      "severity_id": 1,
+      "status_id": 1,
+      "status": "Success",
+      "time": 1705310626000
+    },
+    {
+      "email": {
+        "from": "sender@partner.com",
+        "message_uid": "8901234"
+      },
+      "metadata": {
+        "product": {
+          "name": "Email Security Appliance",
+          "vendor_name": "Cisco"
+        },
+        "uid": "8901234",
+        "version": "1.9.0"
+      },
+      "class_uid": 4009,
+      "category_uid": 4,
+      "activity_id": 2,
+      "direction_id": 1,
+      "type_uid": 400902,
+      "severity_id": 1,
+      "status_id": 1,
+      "status": "Success",
+      "time": 1705310627000
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+[
+  {
+    "_raw": "<135> 10/03/2025:15:38:40 GMT netscaler-03 0-GUL-0 : default SSLLOG SSL_HANDSHAKE_SUCCESS 118599142 0 :  SPCBId 97415913 - ClientIP 192.0.0.100 - ClientPort 60310 - VserverServiceIP 172.0.0.130 - VserverServicePort 443 - ClientVersion TLSv1.2 - CipherSuite \"TLS1-AES-256-CBC-SHA\" - Session New  - HandshakeTime 4 ms",
+    "message": " 10/03/2025:15:38:40 GMT netscaler-03 0-GUL-0 : default SSLLOG SSL_HANDSHAKE_SUCCESS 118599142 0 :  SPCBId 97415913 - ClientIP 192.0.0.100 - ClientPort 60310 - VserverServiceIP 172.0.0.130 - VserverServicePort 443 - ClientVersion TLSv1.2 - CipherSuite \"TLS1-AES-256-CBC-SHA\" - Session New  - HandshakeTime 4 ms",
+    "severity": 7,
+    "facility": 16,
+    "host": "10.0.0.10",
+    "severityName": "debug",
+    "facilityName": "local0",
+    "_time": 1759505920,
+    "cribl_breaker": "ndjson"
+  },
+  {
+    "_raw": "<135> 10/03/2025:15:38:40 GMT netscaler-03 0-GUL-0 : default SSLLOG SSL_HANDSHAKE_SUCCESS 118599143 0 :  SPCBId 97415916 - ClientIP 192.0.0.228 - ClientPort 61075 - VserverServiceIP 172.0.0.130 - VserverServicePort 443 - ClientVersion TLSv1.2 - CipherSuite \"TLS1-AES-256-CBC-SHA\" - Session New  - HandshakeTime 3 ms",
+    "message": " 10/03/2025:15:38:40 GMT netscaler-03 0-GUL-0 : default SSLLOG SSL_HANDSHAKE_SUCCESS 118599143 0 :  SPCBId 97415916 - ClientIP 192.0.0.228 - ClientPort 61075 - VserverServiceIP 172.0.0.130 - VserverServicePort 443 - ClientVersion TLSv1.2 - CipherSuite \"TLS1-AES-256-CBC-SHA\" - Session New  - HandshakeTime 3 ms",
+    "severity": 7,
+    "facility": 16,
+    "host": "10.0.0.10",
+    "severityName": "debug",
+    "facilityName": "local0",
+    "_time": 1759505920,
+    "cribl_breaker": "ndjson"
+  },
+  {
+    "_raw": "<135> 10/03/2025:15:38:40 GMT netscaler-03 0-GUL-1 : default SSLLOG SSL_HANDSHAKE_SUBJECTNAME 140774850 0 :  SPCBId 116047262 - SubjectName \" DC=com,DC=afos,DC=ds,OU=XenApp,OU=XENAPP-715,OU=Controllers,CN=XENGULL\"",
+    "message": " 10/03/2025:15:38:40 GMT netscaler-03 0-GUL-1 : default SSLLOG SSL_HANDSHAKE_SUBJECTNAME 140774850 0 :  SPCBId 116047262 - SubjectName \" DC=com,DC=afos,DC=ds,OU=XenApp,OU=XENAPP-715,OU=Controllers,CN=XENGULL\"",
+    "severity": 7,
+    "facility": 16,
+    "host": "10.0.0.10",
+    "severityName": "debug",
+    "facilityName": "local0",
+    "_time": 1759505920,
+    "cribl_breaker": "ndjson"
+  },
+  {
+    "_raw": "<135> 10/03/2025:15:38:40 GMT netscaler-03 0-GUL-1 : default SSLLOG SSL_HANDSHAKE_SUCCESS 140774848 0 :  Backend SPCBId 116047262 - ServerIP 172.0.0.22 - ServerPort 443 - ProtocolVersion TLSv1.2 - CipherSuite \"TLS1.2-ECDHE-RSA-AES256-GCM-SHA384\" - Session New - SERVER_AUTHENTICATED -SerialNumber \"6C00000000F8DE8BA7AEA23638000000004500\" - SignatureAlgorithm \"sha256WithRSAEncryption\" - ValidFrom \"Feb 12 21:07:48 2025 GMT\" - ValidTo \"Feb 12 21:07:48 2026 GMT\" - HandshakeTime 4 ms",
+    "message": " 10/03/2025:15:38:40 GMT netscaler-03 0-GUL-1 : default SSLLOG SSL_HANDSHAKE_SUCCESS 140774848 0 :  Backend SPCBId 116047262 - ServerIP 172.0.0.22 - ServerPort 443 - ProtocolVersion TLSv1.2 - CipherSuite \"TLS1.2-ECDHE-RSA-AES256-GCM-SHA384\" - Session New - SERVER_AUTHENTICATED -SerialNumber \"6C00000000F8DE8BA7AEA23638000000004500\" - SignatureAlgorithm \"sha256WithRSAEncryption\" - ValidFrom \"Feb 12 21:07:48 2025 GMT\" - ValidTo \"Feb 12 21:07:48 2026 GMT\" - HandshakeTime 4 ms",
+    "severity": 7,
+    "facility": 16,
+    "host": "10.0.0.10",
+    "severityName": "debug",
+    "facilityName": "local0",
+    "_time": 1759505920,
+    "cribl_breaker": "ndjson"
+  },
+  {
+    "_raw": "<135> 10/03/2025:15:38:40 GMT netscaler-03 0-GUL-1 : default SSLLOG SSL_HANDSHAKE_ISSUERNAME 140774849 0 :  SPCBId 116047262 - IssuerName \" DC=com,DC=afos,DC=ds,CN=QQ-PKI-INT1\"",
+    "message": " 10/03/2025:15:38:40 GMT netscaler-03 0-GUL-1 : default SSLLOG SSL_HANDSHAKE_ISSUERNAME 140774849 0 :  SPCBId 116047262 - IssuerName \" DC=com,DC=afos,DC=ds,CN=QQ-PKI-INT1\"",
+    "severity": 7,
+    "facility": 16,
+    "host": "10.0.0.10",
+    "severityName": "debug",
+    "facilityName": "local0",
+    "_time": 1759505920,
+    "cribl_breaker": "ndjson"
+  }
+]

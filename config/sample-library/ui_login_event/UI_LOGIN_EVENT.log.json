@@ -1,0 +1,22 @@
+[
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "message": "User 'user' login, class 'j-operator' [40936], ssh-connection '192.168.1.2 46128 192.168.1.1 22', client-mode 'cli'",
+    "severity": 6,
+    "facility": 23,
+    "host": "router_hostname",
+    "appname": "mgd",
+    "procid": "40936",
+    "msgid": "UI_LOGIN_EVENT",
+    "structuredData": "[junos@2636.1.1.1.2.136 username=\"user\" class-name=\"j-operator\" local-peer=\"\" pid=\"40936\" ssh-connection=\"192.168.1.2 46128 192.168.1.1 22\" client-mode=\"cli\"]",
+    "severityName": "info",
+    "facilityName": "local7",
+    "_time": 1690699380.432,
+    "_raw": "<190>1 2023-07-30T06:43:00.432Z router_hostname mgd 40936 UI_LOGIN_EVENT [junos@2636.1.1.1.2.136 username=\"user\" class-name=\"j-operator\" local-peer=\"\" pid=\"40936\" ssh-connection=\"192.168.1.2 46128 192.168.1.1 22\" client-mode=\"cli\"] User 'user' login, class 'j-operator' [40936], ssh-connection '192.168.1.2 46128 192.168.1.1 22', client-mode 'cli'",
+    "__srcIpPort": "udp|192.168.1.1|514",
+    "__inputId": "syslog:syslog:udp"
+  }
+]

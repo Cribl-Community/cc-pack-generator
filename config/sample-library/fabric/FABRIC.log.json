@@ -1,0 +1,42 @@
+[
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "message": "Device UUID zero for tx-port: fp-eth0, ignoring",
+    "severity": 4,
+    "facility": 22,
+    "host": "EGS-NSX-01-Large.example.com",
+    "appname": "NSX",
+    "procid": "5436",
+    "msgid": "FABRIC",
+    "structuredData": "[nsx@6876 comp=\"nsx-edge\" subcomp=\"datapathd\" s2comp=\"stats\" level=\"WARN\"]",
+    "severityName": "warning",
+    "facilityName": "local6",
+    "_time": 1695594123.143,
+    "_raw": "<180>1 2023-09-24T22:22:03.143Z EGS-NSX-01-Large.example.com NSX 5436 FABRIC [nsx@6876 comp=\"nsx-edge\" subcomp=\"datapathd\" s2comp=\"stats\" level=\"WARN\"] Device UUID zero for tx-port: fp-eth0, ignoring",
+    "__srcIpPort": "udp|192.168.1.100|2917",
+    "__inputId": "syslog:syslog:udp"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "message": "Device UUID zero for rx-port: fp-eth0, ignoring",
+    "severity": 4,
+    "facility": 22,
+    "host": "EGS-NSX-01-Large.example.com",
+    "appname": "NSX",
+    "procid": "5436",
+    "msgid": "FABRIC",
+    "structuredData": "[nsx@6876 comp=\"nsx-edge\" subcomp=\"datapathd\" s2comp=\"stats\" level=\"WARN\"]",
+    "severityName": "warning",
+    "facilityName": "local6",
+    "_time": 1695594123.143,
+    "_raw": "<180>1 2023-09-24T22:22:03.143Z EGS-NSX-01-Large.example.com NSX 5436 FABRIC [nsx@6876 comp=\"nsx-edge\" subcomp=\"datapathd\" s2comp=\"stats\" level=\"WARN\"] Device UUID zero for rx-port: fp-eth0, ignoring",
+    "__srcIpPort": "udp|192.168.1.100|25309",
+    "__inputId": "syslog:syslog:udp"
+  }
+]

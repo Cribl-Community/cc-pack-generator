@@ -1,0 +1,102 @@
+[
+  {
+    "_raw": "{\"LocalAddressIP4\":\"0.0.0.0\",\"event_simpleName\":\"NetworkConnectIP4\",\"ContextTimeStamp\":\"1633033247.677\",\"ConfigStateHash\":\"1579924039\",\"ConnectionFlags\":\"0\",\"ContextProcessId\":\"380479426352138985\",\"RemotePort\":\"53\",\"aip\":\"73.168.3.7\",\"ConfigBuild\":\"1007.4.0014301.11\",\"event_platform\":\"Mac\",\"LocalPort\":\"0\",\"Entitlements\":\"15\",\"name\":\"NetworkConnectIP4MacV10\",\"id\":\"e5c12a41-222b-11ec-a4f9-062bffab139d\",\"Protocol\":\"17\",\"EffectiveTransmissionClass\":\"3\",\"aid\":\"a19c185c931a4607961efab81784eb58\",\"RemoteAddressIP4\":\"10.99.2.234\",\"ConnectionDirection\":\"0\",\"InContext\":\"0\",\"timestamp\":\"1633033247522\",\"cid\":\"56879ccf959c4afc96dd17e8bb1dcbb5\"}",
+    "_time": 1633033247.677,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "{\"LocalAddressIP4\":\"0.0.0.0\",\"event_simpleName\":\"NetworkConnectIP4\",\"ContextTimeStamp\":\"1633033084.498\",\"ConfigStateHash\":\"3571897077\",\"ConnectionFlags\":\"0\",\"ContextProcessId\":\"380479187910794558\",\"RemotePort\":\"53\",\"aip\":\"73.168.3.7\",\"ConfigBuild\":\"1007.4.0014301.11\",\"event_platform\":\"Mac\",\"LocalPort\":\"0\",\"Entitlements\":\"15\",\"name\":\"NetworkConnectIP4MacV10\",\"id\":\"8483b468-222b-11ec-967c-06aea91b48a7\",\"Protocol\":\"17\",\"EffectiveTransmissionClass\":\"3\",\"aid\":\"a19c185c931a4607961efab81784eb58\",\"RemoteAddressIP4\":\"10.99.2.234\",\"ConnectionDirection\":\"0\",\"InContext\":\"0\",\"timestamp\":\"1633033084380\",\"cid\":\"56879ccf959c4afc96dd17e8bb1dcbb5\"}",
+    "_time": 1633033084.498,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "{\"LocalAddressIP4\":\"0.0.0.0\",\"event_simpleName\":\"NetworkConnectIP4\",\"ContextTimeStamp\":\"1633032997.232\",\"ConfigStateHash\":\"2465619581\",\"ConnectionFlags\":\"0\",\"ContextProcessId\":\"380479151247581191\",\"RemotePort\":\"53\",\"aip\":\"73.168.3.7\",\"ConfigBuild\":\"1007.4.0014202.11\",\"event_platform\":\"Mac\",\"LocalPort\":\"0\",\"Entitlements\":\"15\",\"name\":\"NetworkConnectIP4MacV10\",\"id\":\"5084ccb5-222b-11ec-9ed2-0acb0fa59efb\",\"Protocol\":\"17\",\"EffectiveTransmissionClass\":\"3\",\"aid\":\"a19c185c931a4607961efab81784eb58\",\"RemoteAddressIP4\":\"10.99.2.234\",\"ConnectionDirection\":\"0\",\"InContext\":\"0\",\"timestamp\":\"1633032997146\",\"cid\":\"56879ccf959c4afc96dd17e8bb1dcbb5\"}",
+    "_time": 1633032997.232,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "{\"LocalAddressIP4\":\"0.0.0.0\",\"event_simpleName\":\"NetworkConnectIP4\",\"ContextTimeStamp\":\"1633026155.583\",\"ConfigStateHash\":\"442195434\",\"ConnectionFlags\":\"0\",\"ContextProcessId\":\"380464803267600390\",\"RemotePort\":\"53\",\"aip\":\"73.168.3.7\",\"ConfigBuild\":\"1007.4.0014202.11\",\"event_platform\":\"Mac\",\"LocalPort\":\"0\",\"Entitlements\":\"15\",\"name\":\"NetworkConnectIP4MacV10\",\"id\":\"62b451a3-221b-11ec-9ebe-0acb0fa59efb\",\"Protocol\":\"17\",\"EffectiveTransmissionClass\":\"3\",\"aid\":\"a19c185c931a4607961efab81784eb58\",\"RemoteAddressIP4\":\"10.99.2.234\",\"ConnectionDirection\":\"0\",\"InContext\":\"0\",\"timestamp\":\"1633026155708\",\"cid\":\"56879ccf959c4afc96dd17e8bb1dcbb5\"}",
+    "_time": 1633026155.583,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "{\"LocalAddressIP4\":\"0.0.0.0\",\"event_simpleName\":\"NetworkConnectIP4\",\"ContextTimeStamp\":\"1633026139.183\",\"ConfigStateHash\":\"442195434\",\"ConnectionFlags\":\"0\",\"ContextProcessId\":\"380464768864870403\",\"RemotePort\":\"53\",\"aip\":\"73.168.3.7\",\"ConfigBuild\":\"1007.4.0014202.11\",\"event_platform\":\"Mac\",\"LocalPort\":\"0\",\"Entitlements\":\"15\",\"name\":\"NetworkConnectIP4MacV10\",\"id\":\"58f48562-221b-11ec-9ebe-0acb0fa59efb\",\"Protocol\":\"17\",\"EffectiveTransmissionClass\":\"3\",\"aid\":\"a19c185c931a4607961efab81784eb58\",\"RemoteAddressIP4\":\"10.99.2.234\",\"ConnectionDirection\":\"0\",\"InContext\":\"0\",\"timestamp\":\"1633026139352\",\"cid\":\"56879ccf959c4afc96dd17e8bb1dcbb5\"}",
+    "_time": 1633026139.183,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "{\"LocalAddressIP4\":\"0.0.0.0\",\"event_simpleName\":\"NetworkConnectIP4\",\"ContextTimeStamp\":\"1633026121.280\",\"ConfigStateHash\":\"442195434\",\"ConnectionFlags\":\"0\",\"ContextProcessId\":\"380464069741502368\",\"RemotePort\":\"53\",\"aip\":\"73.168.3.7\",\"ConfigBuild\":\"1007.4.0014202.11\",\"event_platform\":\"Mac\",\"LocalPort\":\"0\",\"Entitlements\":\"15\",\"name\":\"NetworkConnectIP4MacV10\",\"id\":\"4e393216-221b-11ec-9ebe-0acb0fa59efb\",\"Protocol\":\"17\",\"EffectiveTransmissionClass\":\"3\",\"aid\":\"a19c185c931a4607961efab81784eb58\",\"RemoteAddressIP4\":\"10.99.2.234\",\"ConnectionDirection\":\"0\",\"InContext\":\"0\",\"timestamp\":\"1633026121347\",\"cid\":\"56879ccf959c4afc96dd17e8bb1dcbb5\"}",
+    "_time": 1633026121.28,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "{\"LocalAddressIP4\":\"0.0.0.0\",\"event_simpleName\":\"NetworkConnectIP4\",\"ContextTimeStamp\":\"1633026120.933\",\"ConfigStateHash\":\"442195434\",\"ConnectionFlags\":\"0\",\"ContextProcessId\":\"380464081146863567\",\"RemotePort\":\"53\",\"aip\":\"73.168.3.7\",\"ConfigBuild\":\"1007.4.0014202.11\",\"event_platform\":\"Mac\",\"LocalPort\":\"0\",\"Entitlements\":\"15\",\"name\":\"NetworkConnectIP4MacV10\",\"id\":\"4e041910-221b-11ec-9ebe-0acb0fa59efb\",\"Protocol\":\"17\",\"EffectiveTransmissionClass\":\"3\",\"aid\":\"a19c185c931a4607961efab81784eb58\",\"RemoteAddressIP4\":\"10.99.2.234\",\"ConnectionDirection\":\"0\",\"InContext\":\"0\",\"timestamp\":\"1633026120999\",\"cid\":\"56879ccf959c4afc96dd17e8bb1dcbb5\"}",
+    "_time": 1633026120.933,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "{\"LocalAddressIP4\":\"0.0.0.0\",\"event_simpleName\":\"NetworkConnectIP4\",\"ContextTimeStamp\":\"1633026111.657\",\"ConfigStateHash\":\"442195434\",\"ConnectionFlags\":\"0\",\"ContextProcessId\":\"380464711134470145\",\"RemotePort\":\"53\",\"aip\":\"73.168.3.7\",\"ConfigBuild\":\"1007.4.0014202.11\",\"event_platform\":\"Mac\",\"LocalPort\":\"0\",\"Entitlements\":\"15\",\"name\":\"NetworkConnectIP4MacV10\",\"id\":\"4883c4c2-221b-11ec-9ebe-0acb0fa59efb\",\"Protocol\":\"17\",\"EffectiveTransmissionClass\":\"3\",\"aid\":\"a19c185c931a4607961efab81784eb58\",\"RemoteAddressIP4\":\"10.99.2.234\",\"ConnectionDirection\":\"0\",\"InContext\":\"0\",\"timestamp\":\"1633026111769\",\"cid\":\"56879ccf959c4afc96dd17e8bb1dcbb5\"}",
+    "_time": 1633026111.657,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "{\"LocalAddressIP4\":\"0.0.0.0\",\"event_simpleName\":\"NetworkConnectIP4\",\"ContextTimeStamp\":\"1633026110.975\",\"ConfigStateHash\":\"442195434\",\"ConnectionFlags\":\"0\",\"ContextProcessId\":\"380464709643395072\",\"RemotePort\":\"53\",\"aip\":\"73.168.3.7\",\"ConfigBuild\":\"1007.4.0014202.11\",\"event_platform\":\"Mac\",\"LocalPort\":\"0\",\"Entitlements\":\"15\",\"name\":\"NetworkConnectIP4MacV10\",\"id\":\"481cb185-221b-11ec-9ebe-0acb0fa59efb\",\"Protocol\":\"17\",\"EffectiveTransmissionClass\":\"3\",\"aid\":\"a19c185c931a4607961efab81784eb58\",\"RemoteAddressIP4\":\"10.99.2.234\",\"ConnectionDirection\":\"0\",\"InContext\":\"0\",\"timestamp\":\"1633026111094\",\"cid\":\"56879ccf959c4afc96dd17e8bb1dcbb5\"}",
+    "_time": 1633026110.975,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "{\"LocalAddressIP4\":\"0.0.0.0\",\"event_simpleName\":\"NetworkConnectIP4\",\"ContextTimeStamp\":\"1633026106.543\",\"ConfigStateHash\":\"442195434\",\"ConnectionFlags\":\"0\",\"ContextProcessId\":\"380464079410421703\",\"RemotePort\":\"53\",\"aip\":\"73.168.3.7\",\"ConfigBuild\":\"1007.4.0014202.11\",\"event_platform\":\"Mac\",\"LocalPort\":\"0\",\"Entitlements\":\"15\",\"name\":\"NetworkConnectIP4MacV10\",\"id\":\"456f641b-221b-11ec-9ebe-0acb0fa59efb\",\"Protocol\":\"17\",\"EffectiveTransmissionClass\":\"3\",\"aid\":\"a19c185c931a4607961efab81784eb58\",\"RemoteAddressIP4\":\"10.99.2.234\",\"ConnectionDirection\":\"0\",\"InContext\":\"0\",\"timestamp\":\"1633026106603\",\"cid\":\"56879ccf959c4afc96dd17e8bb1dcbb5\"}",
+    "_time": 1633026106.543,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "{\"LocalAddressIP4\":\"0.0.0.0\",\"event_simpleName\":\"NetworkConnectIP4\",\"ContextTimeStamp\":\"1633026105.874\",\"ConfigStateHash\":\"442195434\",\"ConnectionFlags\":\"0\",\"ContextProcessId\":\"380464698635444223\",\"RemotePort\":\"53\",\"aip\":\"73.168.3.7\",\"ConfigBuild\":\"1007.4.0014202.11\",\"event_platform\":\"Mac\",\"LocalPort\":\"0\",\"Entitlements\":\"15\",\"name\":\"NetworkConnectIP4MacV10\",\"id\":\"4509f5a5-221b-11ec-9ebe-0acb0fa59efb\",\"Protocol\":\"17\",\"EffectiveTransmissionClass\":\"3\",\"aid\":\"a19c185c931a4607961efab81784eb58\",\"RemoteAddressIP4\":\"10.99.2.234\",\"ConnectionDirection\":\"0\",\"InContext\":\"0\",\"timestamp\":\"1633026105938\",\"cid\":\"56879ccf959c4afc96dd17e8bb1dcbb5\"}",
+    "_time": 1633026105.874,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "{\"LocalAddressIP4\":\"0.0.0.0\",\"event_simpleName\":\"NetworkConnectIP4\",\"ContextTimeStamp\":\"1633026088.963\",\"ConfigStateHash\":\"442195434\",\"ConnectionFlags\":\"0\",\"ContextProcessId\":\"380464083294347237\",\"RemotePort\":\"53\",\"aip\":\"73.168.3.7\",\"ConfigBuild\":\"1007.4.0014202.11\",\"event_platform\":\"Mac\",\"LocalPort\":\"0\",\"Entitlements\":\"15\",\"name\":\"NetworkConnectIP4MacV10\",\"id\":\"3af5743c-221b-11ec-9ebe-0acb0fa59efb\",\"Protocol\":\"17\",\"EffectiveTransmissionClass\":\"3\",\"aid\":\"a19c185c931a4607961efab81784eb58\",\"RemoteAddressIP4\":\"10.99.2.234\",\"ConnectionDirection\":\"0\",\"InContext\":\"0\",\"timestamp\":\"1633026089026\",\"cid\":\"56879ccf959c4afc96dd17e8bb1dcbb5\"}",
+    "_time": 1633026088.963,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "{\"LocalAddressIP4\":\"0.0.0.0\",\"event_simpleName\":\"NetworkConnectIP4\",\"ContextTimeStamp\":\"1633025844.675\",\"ConfigStateHash\":\"442195434\",\"ConnectionFlags\":\"0\",\"ContextProcessId\":\"380464084021010420\",\"RemotePort\":\"53\",\"aip\":\"73.168.3.7\",\"ConfigBuild\":\"1007.4.0014202.11\",\"event_platform\":\"Mac\",\"LocalPort\":\"0\",\"Entitlements\":\"15\",\"name\":\"NetworkConnectIP4MacV10\",\"id\":\"a95b5a0a-221a-11ec-9ebd-0acb0fa59efb\",\"Protocol\":\"17\",\"EffectiveTransmissionClass\":\"3\",\"aid\":\"a19c185c931a4607961efab81784eb58\",\"RemoteAddressIP4\":\"10.99.2.234\",\"ConnectionDirection\":\"0\",\"InContext\":\"0\",\"timestamp\":\"1633025844747\",\"cid\":\"56879ccf959c4afc96dd17e8bb1dcbb5\"}",
+    "_time": 1633025844.675,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "{\"LocalAddressIP4\":\"0.0.0.0\",\"event_simpleName\":\"NetworkConnectIP4\",\"ContextTimeStamp\":\"1633025831.556\",\"ConfigStateHash\":\"442195434\",\"ConnectionFlags\":\"0\",\"ContextProcessId\":\"380464067047710604\",\"RemotePort\":\"53\",\"aip\":\"73.168.3.7\",\"ConfigBuild\":\"1007.4.0014202.11\",\"event_platform\":\"Mac\",\"LocalPort\":\"0\",\"Entitlements\":\"15\",\"name\":\"NetworkConnectIP4MacV10\",\"id\":\"a188fbfa-221a-11ec-9ebd-0acb0fa59efb\",\"Protocol\":\"17\",\"EffectiveTransmissionClass\":\"3\",\"aid\":\"a19c185c931a4607961efab81784eb58\",\"RemoteAddressIP4\":\"10.99.2.234\",\"ConnectionDirection\":\"0\",\"InContext\":\"0\",\"timestamp\":\"1633025831624\",\"cid\":\"56879ccf959c4afc96dd17e8bb1dcbb5\"}",
+    "_time": 1633025831.556,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "{\"LocalAddressIP4\":\"0.0.0.0\",\"event_simpleName\":\"NetworkConnectIP4\",\"ContextTimeStamp\":\"1633025830.022\",\"ConfigStateHash\":\"442195434\",\"ConnectionFlags\":\"0\",\"ContextProcessId\":\"380464076223799232\",\"RemotePort\":\"53\",\"aip\":\"73.168.3.7\",\"ConfigBuild\":\"1007.4.0014202.11\",\"event_platform\":\"Mac\",\"LocalPort\":\"0\",\"Entitlements\":\"15\",\"name\":\"NetworkConnectIP4MacV10\",\"id\":\"a09f7665-221a-11ec-9ebd-0acb0fa59efb\",\"Protocol\":\"17\",\"EffectiveTransmissionClass\":\"3\",\"aid\":\"a19c185c931a4607961efab81784eb58\",\"RemoteAddressIP4\":\"10.99.2.234\",\"ConnectionDirection\":\"0\",\"InContext\":\"0\",\"timestamp\":\"1633025830094\",\"cid\":\"56879ccf959c4afc96dd17e8bb1dcbb5\"}",
+    "_time": 1633025830.022,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "{\"LocalAddressIP4\":\"0.0.0.0\",\"event_simpleName\":\"NetworkConnectIP4\",\"ContextTimeStamp\":\"1633025824.071\",\"ConfigStateHash\":\"442195434\",\"ConnectionFlags\":\"0\",\"ContextProcessId\":\"380464107955806206\",\"RemotePort\":\"53\",\"aip\":\"73.168.3.7\",\"ConfigBuild\":\"1007.4.0014202.11\",\"event_platform\":\"Mac\",\"LocalPort\":\"0\",\"Entitlements\":\"15\",\"name\":\"NetworkConnectIP4MacV10\",\"id\":\"9d1c0060-221a-11ec-9ebd-0acb0fa59efb\",\"Protocol\":\"17\",\"EffectiveTransmissionClass\":\"3\",\"aid\":\"a19c185c931a4607961efab81784eb58\",\"RemoteAddressIP4\":\"10.99.2.234\",\"ConnectionDirection\":\"0\",\"InContext\":\"0\",\"timestamp\":\"1633025824199\",\"cid\":\"56879ccf959c4afc96dd17e8bb1dcbb5\"}",
+    "_time": 1633025824.071,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "{\"LocalAddressIP4\":\"0.0.0.0\",\"event_simpleName\":\"NetworkConnectIP4\",\"ContextTimeStamp\":\"1632342465.530\",\"ConfigStateHash\":\"1700685980\",\"ConnectionFlags\":\"0\",\"ContextProcessId\":\"378837741159481117\",\"RemotePort\":\"53\",\"aip\":\"73.168.3.7\",\"ConfigBuild\":\"1007.4.0014202.11\",\"event_platform\":\"Mac\",\"LocalPort\":\"0\",\"Entitlements\":\"15\",\"name\":\"NetworkConnectIP4MacV10\",\"id\":\"8b9d8f5a-1be3-11ec-a38f-0ace40a659ed\",\"Protocol\":\"17\",\"EffectiveTransmissionClass\":\"3\",\"aid\":\"a19c185c931a4607961efab81784eb58\",\"RemoteAddressIP4\":\"10.99.2.234\",\"ConnectionDirection\":\"0\",\"InContext\":\"0\",\"timestamp\":\"1632342465552\",\"cid\":\"56879ccf959c4afc96dd17e8bb1dcbb5\"}",
+    "_time": 1632342465.53,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "{\"LocalAddressIP4\":\"0.0.0.0\",\"event_simpleName\":\"NetworkConnectIP4\",\"ContextTimeStamp\":\"1632342463.724\",\"ConfigStateHash\":\"1700685980\",\"ConnectionFlags\":\"0\",\"ContextProcessId\":\"378837737370976028\",\"RemotePort\":\"53\",\"aip\":\"73.168.3.7\",\"ConfigBuild\":\"1007.4.0014202.11\",\"event_platform\":\"Mac\",\"LocalPort\":\"0\",\"Entitlements\":\"15\",\"name\":\"NetworkConnectIP4MacV10\",\"id\":\"8a8a052e-1be3-11ec-a38f-0ace40a659ed\",\"Protocol\":\"17\",\"EffectiveTransmissionClass\":\"3\",\"aid\":\"a19c185c931a4607961efab81784eb58\",\"RemoteAddressIP4\":\"10.99.2.234\",\"ConnectionDirection\":\"0\",\"InContext\":\"0\",\"timestamp\":\"1632342463747\",\"cid\":\"56879ccf959c4afc96dd17e8bb1dcbb5\"}",
+    "_time": 1632342463.724,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "{\"LocalAddressIP4\":\"0.0.0.0\",\"event_simpleName\":\"NetworkConnectIP4\",\"ContextTimeStamp\":\"1632341412.092\",\"ConfigStateHash\":\"1700685980\",\"ConnectionFlags\":\"0\",\"ContextProcessId\":\"378835531916803867\",\"RemotePort\":\"53\",\"aip\":\"73.168.3.7\",\"ConfigBuild\":\"1007.4.0014202.11\",\"event_platform\":\"Mac\",\"LocalPort\":\"0\",\"Entitlements\":\"15\",\"name\":\"NetworkConnectIP4MacV10\",\"id\":\"17bc0f7b-1be1-11ec-a38e-0ace40a659ed\",\"Protocol\":\"17\",\"EffectiveTransmissionClass\":\"3\",\"aid\":\"a19c185c931a4607961efab81784eb58\",\"RemoteAddressIP4\":\"10.99.2.234\",\"ConnectionDirection\":\"0\",\"InContext\":\"0\",\"timestamp\":\"1632341412143\",\"cid\":\"56879ccf959c4afc96dd17e8bb1dcbb5\"}",
+    "_time": 1632341412.092,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "{\"LocalAddressIP4\":\"0.0.0.0\",\"event_simpleName\":\"NetworkConnectIP4\",\"ContextTimeStamp\":\"1632341395.565\",\"ConfigStateHash\":\"1700685980\",\"ConnectionFlags\":\"0\",\"ContextProcessId\":\"378835497256124186\",\"RemotePort\":\"53\",\"aip\":\"73.168.3.7\",\"ConfigBuild\":\"1007.4.0014202.11\",\"event_platform\":\"Mac\",\"LocalPort\":\"0\",\"Entitlements\":\"15\",\"name\":\"NetworkConnectIP4MacV10\",\"id\":\"0de10b8e-1be1-11ec-a38e-0ace40a659ed\",\"Protocol\":\"17\",\"EffectiveTransmissionClass\":\"3\",\"aid\":\"a19c185c931a4607961efab81784eb58\",\"RemoteAddressIP4\":\"10.99.2.234\",\"ConnectionDirection\":\"0\",\"InContext\":\"0\",\"timestamp\":\"1632341395608\",\"cid\":\"56879ccf959c4afc96dd17e8bb1dcbb5\"}",
+    "_time": 1632341395.565,
+    "cribl_breaker": "Break on newlines"
+  }
+]

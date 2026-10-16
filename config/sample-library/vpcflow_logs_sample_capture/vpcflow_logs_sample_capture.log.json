@@ -1,0 +1,222 @@
+[
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": true,
+    "__cloneCount": 0,
+    "_time": 1534778145,
+    "_raw": "2 622676721278 eni-0536faba73134a9b7 172.16.0.127 13.125.33.130 11211 33333 17 1 44 1534778145 1534778145 ACCEPT OK",
+    "__srcIpPort": "44.220.81.233:49438",
+    "__inputId": "cribl_http:in_cribl_http",
+    "__outputId": "s3:snowflakeS3Dest"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": true,
+    "__cloneCount": 0,
+    "_time": 1534778145,
+    "_raw": "2 622676721278 eni-0536faba73134a9b7 13.125.33.130 172.16.0.127 33333 11211 17 2 212 1534778145 1534778145 ACCEPT OK",
+    "__srcIpPort": "44.220.81.233:49438",
+    "__inputId": "cribl_http:in_cribl_http",
+    "__outputId": "s3:snowflakeS3Dest"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": true,
+    "__cloneCount": 0,
+    "_time": 1534777980,
+    "_raw": "2 622676721278 eni-0fa769618733aa718 13.125.33.130 172.16.1.181 33333 11211 17 8 848 1534777980 1534777980 ACCEPT OK",
+    "__srcIpPort": "44.220.81.233:49438",
+    "__inputId": "cribl_http:in_cribl_http",
+    "__outputId": "s3:snowflakeS3Dest"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": true,
+    "__cloneCount": 0,
+    "_time": 1534778806,
+    "_raw": "2 622676721278 eni-0536faba73134a9b7 172.16.0.127 13.125.33.130 11211 40396 17 36 51327 1534778806 1534778806 ACCEPT OK",
+    "__srcIpPort": "44.220.81.233:49438",
+    "__inputId": "cribl_http:in_cribl_http",
+    "__outputId": "s3:snowflakeS3Dest"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": true,
+    "__cloneCount": 0,
+    "_time": 1534778806,
+    "_raw": "2 622676721278 eni-0536faba73134a9b7 13.125.33.130 172.16.0.127 40396 11211 17 1 50 1534778806 1534778806 ACCEPT OK",
+    "__srcIpPort": "44.220.81.233:49438",
+    "__inputId": "cribl_http:in_cribl_http",
+    "__outputId": "s3:snowflakeS3Dest"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": true,
+    "__cloneCount": 0,
+    "_time": 1534778325,
+    "_raw": "2 622676721278 eni-0536faba73134a9b7 172.16.0.127 13.125.33.130 11211 33333 17 5 345 1534778325 1534778325 ACCEPT OK",
+    "__srcIpPort": "44.220.81.233:49438",
+    "__inputId": "cribl_http:in_cribl_http",
+    "__outputId": "s3:snowflakeS3Dest"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": true,
+    "__cloneCount": 0,
+    "_time": 1534778325,
+    "_raw": "2 622676721278 eni-0536faba73134a9b7 13.125.33.130 172.16.0.127 33333 11211 17 6 648 1534778325 1534778325 ACCEPT OK",
+    "__srcIpPort": "44.220.81.233:49438",
+    "__inputId": "cribl_http:in_cribl_http",
+    "__outputId": "s3:snowflakeS3Dest"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": true,
+    "__cloneCount": 0,
+    "_time": 1534778386,
+    "_raw": "2 622676721278 eni-0536faba73134a9b7 13.125.33.130 172.16.0.127 34328 11211 17 1 47 1534778386 1534778386 ACCEPT OK",
+    "__srcIpPort": "44.220.81.233:49438",
+    "__inputId": "cribl_http:in_cribl_http",
+    "__outputId": "s3:snowflakeS3Dest"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": true,
+    "__cloneCount": 0,
+    "_time": 1534778386,
+    "_raw": "2 622676721278 eni-0536faba73134a9b7 172.16.0.127 13.125.33.130 11211 34328 17 1 41 1534778386 1534778386 ACCEPT OK",
+    "__srcIpPort": "44.220.81.233:49438",
+    "__inputId": "cribl_http:in_cribl_http",
+    "__outputId": "s3:snowflakeS3Dest"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": true,
+    "__cloneCount": 0,
+    "_time": 1534778446,
+    "_raw": "2 622676721278 eni-0536faba73134a9b7 172.16.0.127 13.125.33.130 11211 60452 17 1 170 1534778446 1534778446 ACCEPT OK",
+    "__srcIpPort": "44.220.81.233:49438",
+    "__inputId": "cribl_http:in_cribl_http",
+    "__outputId": "s3:snowflakeS3Dest"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": true,
+    "__cloneCount": 0,
+    "_time": 1534778446,
+    "_raw": "2 622676721278 eni-0536faba73134a9b7 13.125.33.130 172.16.0.127 60452 11211 17 1 50 1534778446 1534778446 ACCEPT OK",
+    "__srcIpPort": "44.220.81.233:49438",
+    "__inputId": "cribl_http:in_cribl_http",
+    "__outputId": "s3:snowflakeS3Dest"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": true,
+    "__cloneCount": 0,
+    "_time": 1534778566,
+    "_raw": "2 622676721278 eni-0536faba73134a9b7 13.125.33.130 172.16.0.127 22222 11211 17 3422 5072550 1534778566 1534778566 ACCEPT OK",
+    "__srcIpPort": "44.220.81.233:49438",
+    "__inputId": "cribl_http:in_cribl_http",
+    "__outputId": "s3:snowflakeS3Dest"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": true,
+    "__cloneCount": 0,
+    "_time": 1534778566,
+    "_raw": "2 622676721278 eni-0536faba73134a9b7 172.16.0.127 13.125.33.130 11211 22222 17 137 55727 1534778566 1534778566 ACCEPT OK",
+    "__srcIpPort": "44.220.81.233:49438",
+    "__inputId": "cribl_http:in_cribl_http",
+    "__outputId": "s3:snowflakeS3Dest"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": true,
+    "__cloneCount": 0,
+    "_time": 1534776517,
+    "_raw": "2 622676721278 eni-0212b9abe7101dbcb 172.16.0.178 172.16.1.239 80 44454 6 19 21116 1534776517 1534776517 ACCEPT OK",
+    "__srcIpPort": "44.220.81.233:49438",
+    "__inputId": "cribl_http:in_cribl_http",
+    "__outputId": "s3:snowflakeS3Dest"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": true,
+    "__cloneCount": 0,
+    "_time": 1534758315,
+    "_raw": "2 622676721278 eni-0feba9896c28639cd 172.16.3.197 172.16.0.178 3306 52708 6 20 30183 1534758315 1534758365 ACCEPT OK",
+    "__srcIpPort": "44.220.81.233:49438",
+    "__inputId": "cribl_http:in_cribl_http",
+    "__outputId": "s3:snowflakeS3Dest"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": true,
+    "__cloneCount": 0,
+    "_time": 1534758315,
+    "_raw": "2 622676721278 eni-0feba9896c28639cd 172.16.0.178 172.16.3.197 52704 3306 6 26 3852 1534758315 1534758365 ACCEPT OK",
+    "__srcIpPort": "44.220.81.233:49438",
+    "__inputId": "cribl_http:in_cribl_http",
+    "__outputId": "s3:snowflakeS3Dest"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": true,
+    "__cloneCount": 0,
+    "_time": 1534758315,
+    "_raw": "2 622676721278 eni-0feba9896c28639cd 172.16.0.178 172.16.3.197 52800 3306 6 28 3956 1534758315 1534758365 ACCEPT OK",
+    "__srcIpPort": "44.220.81.233:49438",
+    "__inputId": "cribl_http:in_cribl_http",
+    "__outputId": "s3:snowflakeS3Dest"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": true,
+    "__cloneCount": 0,
+    "_time": 1534758315,
+    "_raw": "2 622676721278 eni-0feba9896c28639cd 172.16.0.178 172.16.3.197 52708 3306 6 27 3904 1534758315 1534758365 ACCEPT OK",
+    "__srcIpPort": "44.220.81.233:49438",
+    "__inputId": "cribl_http:in_cribl_http",
+    "__outputId": "s3:snowflakeS3Dest"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": true,
+    "__cloneCount": 0,
+    "_time": 1534758315,
+    "_raw": "2 622676721278 eni-0feba9896c28639cd 172.16.3.197 172.16.0.178 3306 52704 6 20 30183 1534758315 1534758365 ACCEPT OK",
+    "__srcIpPort": "44.220.81.233:49438",
+    "__inputId": "cribl_http:in_cribl_http",
+    "__outputId": "s3:snowflakeS3Dest"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": true,
+    "__cloneCount": 0,
+    "_time": 1534758315,
+    "_raw": "2 622676721278 eni-0feba9896c28639cd 172.16.3.197 172.16.0.178 3306 52800 6 20 30183 1534758315 1534758365 ACCEPT OK",
+    "__srcIpPort": "44.220.81.233:49438",
+    "__inputId": "cribl_http:in_cribl_http",
+    "__outputId": "s3:snowflakeS3Dest"
+  }
+]

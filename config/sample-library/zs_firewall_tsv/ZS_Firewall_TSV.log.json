@@ -1,0 +1,7 @@
+[
+  {
+    "_raw": "zscalernss-fw\tWed Aug 23 00:56:52 2023\tnoauth-protocol$@2047623.zscalerthree.net\tUnauthenticated%20Transactions\tUK1\t51687\t25463\t51687\t33598\t192.168.0.169\t162.216.150.150\t147.161.224.255\t162.216.150.150\t35.176.50.157\t0\tIPSEC\tAllow due to insufficient app data\tNo\tYes\tNo\tTCP_ANY\ttcp\tTCP\tMiscellaneous or Unknown\tUnited States\t0\tRDP%20Allow\t0\t40\t0\t0\t1\tNone\tNone\tNA\tNA",
+    "_time": 1692766612,
+    "cribl_breaker": "Break on newlines"
+  }
+]

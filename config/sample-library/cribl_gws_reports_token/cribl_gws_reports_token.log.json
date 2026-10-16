@@ -1,0 +1,1621 @@
+[
+  {
+    "_raw": "{\n      \"kind\": \"admin#reports#activity\",\n      \"id\": {\n        \"time\": \"2025-10-09T20:49:59.669Z\",\n        \"uniqueQualifier\": \"-3635561619638774319\",\n        \"applicationName\": \"token\",\n        \"customerId\": \"D03cdmbi0\"\n      },\n      \"etag\": \"\\\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/3RARJVNcMUhKgWuWdZPfDm9gL1A\\\"\",\n      \"actor\": {\n        \"email\": \"user@acmecorp.com\",\n        \"profileId\": \"117329556664445035546\"\n      },\n      \"ipAddress\": \"44.247.228.16\",\n      \"networkInfo\": {\n        \"ipAsn\": [\n          16509\n        ],\n        \"regionCode\": \"US\",\n        \"subdivisionCode\": \"US-OR\"\n      },\n      \"events\": [\n        {\n          \"type\": \"auth\",\n          \"name\": \"authorize\",\n          \"parameters\": [\n            {\n              \"name\": \"client_id\",\n              \"value\": \"116703733704564446790\"\n            },\n            {\n              \"name\": \"app_name\",\n              \"value\": \"116703733704564446790\"\n            },\n            {\n              \"name\": \"client_type\",\n              \"value\": \"WEB\"\n            },\n            {\n              \"name\": \"scope_data\",\n              \"multiMessageValue\": [\n                {\n                  \"parameter\": [\n                    {\n                      \"name\": \"scope_name\",\n                      \"value\": \"https://www.googleapis.com/auth/admin.reports.audit.readonly\"\n                    },\n                    {\n                      \"name\": \"product_bucket\",\n                      \"multiValue\": [\n                        \"GSUITE_ADMIN\"\n                      ]\n                    }\n                  ]\n                }\n              ]\n            },\n            {\n              \"name\": \"scope\",\n              \"multiValue\": [\n                \"https://www.googleapis.com/auth/admin.reports.audit.readonly\"\n              ]\n            }\n          ]\n        }\n      ]\n    }",
+    "host": "ip-10-255-0-219",
+    "source": "https://admin.googleapis.com/admin/reports/v1/activity/users/all/applications/token",
+    "kind": "admin#reports#activity",
+    "id": {
+      "time": "2025-10-09T20:49:59.669Z",
+      "uniqueQualifier": "-3635561619638774319",
+      "applicationName": "token",
+      "customerId": "D03cdmbi0"
+    },
+    "etag": "\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/3RARJVNcMUhKgWuWdZPfDm9gL1A\"",
+    "actor": {
+      "email": "user@acmecorp.com",
+      "profileId": "117329556664445035546"
+    },
+    "ipAddress": "44.247.228.16",
+    "networkInfo": {
+      "ipAsn": [
+        16509
+      ],
+      "regionCode": "US",
+      "subdivisionCode": "US-OR"
+    },
+    "events": [
+      {
+        "type": "auth",
+        "name": "authorize",
+        "parameters": [
+          {
+            "name": "client_id",
+            "value": "116703733704564446790"
+          },
+          {
+            "name": "app_name",
+            "value": "116703733704564446790"
+          },
+          {
+            "name": "client_type",
+            "value": "WEB"
+          },
+          {
+            "name": "scope_data",
+            "multiMessageValue": [
+              {
+                "parameter": [
+                  {
+                    "name": "scope_name",
+                    "value": "https://www.googleapis.com/auth/admin.reports.audit.readonly"
+                  },
+                  {
+                    "name": "product_bucket",
+                    "multiValue": [
+                      "GSUITE_ADMIN"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "scope",
+            "multiValue": [
+              "https://www.googleapis.com/auth/admin.reports.audit.readonly"
+            ]
+          }
+        ]
+      }
+    ],
+    "_time": 1760042999.669,
+    "_data_source": "http_google_workspace_admin",
+    "cribl_breaker": [
+      "google_sdk:get_items",
+      "ndjson"
+    ]
+  },
+  {
+    "_raw": "{\n      \"kind\": \"admin#reports#activity\",\n      \"id\": {\n        \"time\": \"2025-10-09T17:08:39.589Z\",\n        \"uniqueQualifier\": \"-7576983855526235885\",\n        \"applicationName\": \"token\",\n        \"customerId\": \"D03cdmbi0\"\n      },\n      \"etag\": \"\\\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/LAugmqXE_tT_MAMJY6JRT-AOgNA\\\"\",\n      \"actor\": {\n        \"email\": \"admin@acmecorp.com\",\n        \"profileId\": \"116666192297935290365\"\n      },\n      \"ipAddress\": \"170.114.0.151\",\n      \"networkInfo\": {\n        \"ipAsn\": [\n          14618\n        ],\n        \"regionCode\": \"US\",\n        \"subdivisionCode\": \"US-MN\"\n      },\n      \"events\": [\n        {\n          \"type\": \"auth\",\n          \"name\": \"authorize\",\n          \"parameters\": [\n            {\n              \"name\": \"client_id\",\n              \"value\": \"849883241272-ed6lnodi1grnoomiuknqkq2rbvd2udku.apps.googleusercontent.com\"\n            },\n            {\n              \"name\": \"app_name\",\n              \"value\": \"Zoom\"\n            },\n            {\n              \"name\": \"client_type\",\n              \"value\": \"WEB\"\n            },\n            {\n              \"name\": \"scope_data\",\n              \"multiMessageValue\": [\n                {\n                  \"parameter\": [\n                    {\n                      \"name\": \"scope_name\",\n                      \"value\": \"https://www.googleapis.com/auth/userinfo.email\"\n                    },\n                    {\n                      \"name\": \"product_bucket\",\n                      \"multiValue\": [\n                        \"IDENTITY\",\n                        \"OTHER\"\n                      ]\n                    }\n                  ]\n                },\n                {\n                  \"parameter\": [\n                    {\n                      \"name\": \"scope_name\",\n                      \"value\": \"https://www.googleapis.com/auth/userinfo.profile\"\n                    },\n                    {\n                      \"name\": \"product_bucket\",\n                      \"multiValue\": [\n                        \"IDENTITY\",\n                        \"OTHER\"\n                      ]\n                    }\n                  ]\n                },\n                {\n                  \"parameter\": [\n                    {\n                      \"name\": \"scope_name\",\n                      \"value\": \"openid\"\n                    },\n                    {\n                      \"name\": \"product_bucket\",\n                      \"multiValue\": [\n                        \"IDENTITY\",\n                        \"OTHER\"\n                      ]\n                    }\n                  ]\n                }\n              ]\n            },\n            {\n              \"name\": \"scope\",\n              \"multiValue\": [\n                \"https://www.googleapis.com/auth/userinfo.email\",\n                \"https://www.googleapis.com/auth/userinfo.profile\",\n                \"openid\"\n              ]\n            }\n          ]\n        }\n      ]\n    }",
+    "host": "ip-10-255-0-219",
+    "source": "https://admin.googleapis.com/admin/reports/v1/activity/users/all/applications/token",
+    "kind": "admin#reports#activity",
+    "id": {
+      "time": "2025-10-09T17:08:39.589Z",
+      "uniqueQualifier": "-7576983855526235885",
+      "applicationName": "token",
+      "customerId": "D03cdmbi0"
+    },
+    "etag": "\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/LAugmqXE_tT_MAMJY6JRT-AOgNA\"",
+    "actor": {
+      "email": "admin@acmecorp.com",
+      "profileId": "116666192297935290365"
+    },
+    "ipAddress": "170.114.0.151",
+    "networkInfo": {
+      "ipAsn": [
+        14618
+      ],
+      "regionCode": "US",
+      "subdivisionCode": "US-MN"
+    },
+    "events": [
+      {
+        "type": "auth",
+        "name": "authorize",
+        "parameters": [
+          {
+            "name": "client_id",
+            "value": "849883241272-ed6lnodi1grnoomiuknqkq2rbvd2udku.apps.googleusercontent.com"
+          },
+          {
+            "name": "app_name",
+            "value": "Zoom"
+          },
+          {
+            "name": "client_type",
+            "value": "WEB"
+          },
+          {
+            "name": "scope_data",
+            "multiMessageValue": [
+              {
+                "parameter": [
+                  {
+                    "name": "scope_name",
+                    "value": "https://www.googleapis.com/auth/userinfo.email"
+                  },
+                  {
+                    "name": "product_bucket",
+                    "multiValue": [
+                      "IDENTITY",
+                      "OTHER"
+                    ]
+                  }
+                ]
+              },
+              {
+                "parameter": [
+                  {
+                    "name": "scope_name",
+                    "value": "https://www.googleapis.com/auth/userinfo.profile"
+                  },
+                  {
+                    "name": "product_bucket",
+                    "multiValue": [
+                      "IDENTITY",
+                      "OTHER"
+                    ]
+                  }
+                ]
+              },
+              {
+                "parameter": [
+                  {
+                    "name": "scope_name",
+                    "value": "openid"
+                  },
+                  {
+                    "name": "product_bucket",
+                    "multiValue": [
+                      "IDENTITY",
+                      "OTHER"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "scope",
+            "multiValue": [
+              "https://www.googleapis.com/auth/userinfo.email",
+              "https://www.googleapis.com/auth/userinfo.profile",
+              "openid"
+            ]
+          }
+        ]
+      }
+    ],
+    "_time": 1760029719.589,
+    "_data_source": "http_google_workspace_admin",
+    "cribl_breaker": [
+      "google_sdk:get_items",
+      "ndjson"
+    ]
+  },
+  {
+    "_raw": "{\n      \"kind\": \"admin#reports#activity\",\n      \"id\": {\n        \"time\": \"2025-10-09T17:04:45.789Z\",\n        \"uniqueQualifier\": \"-1448647238521888383\",\n        \"applicationName\": \"token\",\n        \"customerId\": \"D03cdmbi0\"\n      },\n      \"etag\": \"\\\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/jbpb1C2W5KEwA_VOd-rWtnXOPd8\\\"\",\n      \"actor\": {\n        \"email\": \"admin@acmecorp.com\",\n        \"profileId\": \"116666192297935290365\"\n      },\n      \"ipAddress\": \"170.114.0.150\",\n      \"networkInfo\": {\n        \"ipAsn\": [\n          14618\n        ],\n        \"regionCode\": \"US\",\n        \"subdivisionCode\": \"US-MN\"\n      },\n      \"events\": [\n        {\n          \"type\": \"auth\",\n          \"name\": \"authorize\",\n          \"parameters\": [\n            {\n              \"name\": \"client_id\",\n              \"value\": \"849883241272-ed6lnodi1grnoomiuknqkq2rbvd2udku.apps.googleusercontent.com\"\n            },\n            {\n              \"name\": \"app_name\",\n              \"value\": \"Zoom\"\n            },\n            {\n              \"name\": \"client_type\",\n              \"value\": \"WEB\"\n            },\n            {\n              \"name\": \"scope_data\",\n              \"multiMessageValue\": [\n                {\n                  \"parameter\": [\n                    {\n                      \"name\": \"scope_name\",\n                      \"value\": \"https://www.googleapis.com/auth/userinfo.email\"\n                    },\n                    {\n                      \"name\": \"product_bucket\",\n                      \"multiValue\": [\n                        \"IDENTITY\",\n                        \"OTHER\"\n                      ]\n                    }\n                  ]\n                },\n                {\n                  \"parameter\": [\n                    {\n                      \"name\": \"scope_name\",\n                      \"value\": \"https://www.googleapis.com/auth/userinfo.profile\"\n                    },\n                    {\n                      \"name\": \"product_bucket\",\n                      \"multiValue\": [\n                        \"IDENTITY\",\n                        \"OTHER\"\n                      ]\n                    }\n                  ]\n                },\n                {\n                  \"parameter\": [\n                    {\n                      \"name\": \"scope_name\",\n                      \"value\": \"openid\"\n                    },\n                    {\n                      \"name\": \"product_bucket\",\n                      \"multiValue\": [\n                        \"IDENTITY\",\n                        \"OTHER\"\n                      ]\n                    }\n                  ]\n                }\n              ]\n            },\n            {\n              \"name\": \"scope\",\n              \"multiValue\": [\n                \"https://www.googleapis.com/auth/userinfo.email\",\n                \"https://www.googleapis.com/auth/userinfo.profile\",\n                \"openid\"\n              ]\n            }\n          ]\n        }\n      ]\n    }",
+    "host": "ip-10-255-0-219",
+    "source": "https://admin.googleapis.com/admin/reports/v1/activity/users/all/applications/token",
+    "kind": "admin#reports#activity",
+    "id": {
+      "time": "2025-10-09T17:04:45.789Z",
+      "uniqueQualifier": "-1448647238521888383",
+      "applicationName": "token",
+      "customerId": "D03cdmbi0"
+    },
+    "etag": "\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/jbpb1C2W5KEwA_VOd-rWtnXOPd8\"",
+    "actor": {
+      "email": "admin@acmecorp.com",
+      "profileId": "116666192297935290365"
+    },
+    "ipAddress": "170.114.0.150",
+    "networkInfo": {
+      "ipAsn": [
+        14618
+      ],
+      "regionCode": "US",
+      "subdivisionCode": "US-MN"
+    },
+    "events": [
+      {
+        "type": "auth",
+        "name": "authorize",
+        "parameters": [
+          {
+            "name": "client_id",
+            "value": "849883241272-ed6lnodi1grnoomiuknqkq2rbvd2udku.apps.googleusercontent.com"
+          },
+          {
+            "name": "app_name",
+            "value": "Zoom"
+          },
+          {
+            "name": "client_type",
+            "value": "WEB"
+          },
+          {
+            "name": "scope_data",
+            "multiMessageValue": [
+              {
+                "parameter": [
+                  {
+                    "name": "scope_name",
+                    "value": "https://www.googleapis.com/auth/userinfo.email"
+                  },
+                  {
+                    "name": "product_bucket",
+                    "multiValue": [
+                      "IDENTITY",
+                      "OTHER"
+                    ]
+                  }
+                ]
+              },
+              {
+                "parameter": [
+                  {
+                    "name": "scope_name",
+                    "value": "https://www.googleapis.com/auth/userinfo.profile"
+                  },
+                  {
+                    "name": "product_bucket",
+                    "multiValue": [
+                      "IDENTITY",
+                      "OTHER"
+                    ]
+                  }
+                ]
+              },
+              {
+                "parameter": [
+                  {
+                    "name": "scope_name",
+                    "value": "openid"
+                  },
+                  {
+                    "name": "product_bucket",
+                    "multiValue": [
+                      "IDENTITY",
+                      "OTHER"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "scope",
+            "multiValue": [
+              "https://www.googleapis.com/auth/userinfo.email",
+              "https://www.googleapis.com/auth/userinfo.profile",
+              "openid"
+            ]
+          }
+        ]
+      }
+    ],
+    "_time": 1760029485.789,
+    "_data_source": "http_google_workspace_admin",
+    "cribl_breaker": [
+      "google_sdk:get_items",
+      "ndjson"
+    ]
+  },
+  {
+    "_raw": "{\n      \"kind\": \"admin#reports#activity\",\n      \"id\": {\n        \"time\": \"2025-10-08T19:19:43.296Z\",\n        \"uniqueQualifier\": \"-8940829256527474198\",\n        \"applicationName\": \"token\",\n        \"customerId\": \"D03cdmbi0\"\n      },\n      \"etag\": \"\\\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/kwB_0Gkhw1I-oYBYgopaZ9KRGDc\\\"\",\n      \"actor\": {\n        \"email\": \"user@acmecorp.com\",\n        \"profileId\": \"117329556664445035546\"\n      },\n      \"ipAddress\": \"35.89.28.158\",\n      \"networkInfo\": {\n        \"ipAsn\": [\n          16509\n        ],\n        \"regionCode\": \"US\",\n        \"subdivisionCode\": \"US-OR\"\n      },\n      \"events\": [\n        {\n          \"type\": \"auth\",\n          \"name\": \"authorize\",\n          \"parameters\": [\n            {\n              \"name\": \"client_id\",\n              \"value\": \"116703733704564446790\"\n            },\n            {\n              \"name\": \"app_name\",\n              \"value\": \"116703733704564446790\"\n            },\n            {\n              \"name\": \"client_type\",\n              \"value\": \"WEB\"\n            },\n            {\n              \"name\": \"scope_data\",\n              \"multiMessageValue\": [\n                {\n                  \"parameter\": [\n                    {\n                      \"name\": \"scope_name\",\n                      \"value\": \"https://www.googleapis.com/auth/admin.reports.audit.readonly\"\n                    },\n                    {\n                      \"name\": \"product_bucket\",\n                      \"multiValue\": [\n                        \"GSUITE_ADMIN\"\n                      ]\n                    }\n                  ]\n                }\n              ]\n            },\n            {\n              \"name\": \"scope\",\n              \"multiValue\": [\n                \"https://www.googleapis.com/auth/admin.reports.audit.readonly\"\n              ]\n            }\n          ]\n        }\n      ]\n    }",
+    "host": "ip-10-255-0-219",
+    "source": "https://admin.googleapis.com/admin/reports/v1/activity/users/all/applications/token",
+    "kind": "admin#reports#activity",
+    "id": {
+      "time": "2025-10-08T19:19:43.296Z",
+      "uniqueQualifier": "-8940829256527474198",
+      "applicationName": "token",
+      "customerId": "D03cdmbi0"
+    },
+    "etag": "\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/kwB_0Gkhw1I-oYBYgopaZ9KRGDc\"",
+    "actor": {
+      "email": "user@acmecorp.com",
+      "profileId": "117329556664445035546"
+    },
+    "ipAddress": "35.89.28.158",
+    "networkInfo": {
+      "ipAsn": [
+        16509
+      ],
+      "regionCode": "US",
+      "subdivisionCode": "US-OR"
+    },
+    "events": [
+      {
+        "type": "auth",
+        "name": "authorize",
+        "parameters": [
+          {
+            "name": "client_id",
+            "value": "116703733704564446790"
+          },
+          {
+            "name": "app_name",
+            "value": "116703733704564446790"
+          },
+          {
+            "name": "client_type",
+            "value": "WEB"
+          },
+          {
+            "name": "scope_data",
+            "multiMessageValue": [
+              {
+                "parameter": [
+                  {
+                    "name": "scope_name",
+                    "value": "https://www.googleapis.com/auth/admin.reports.audit.readonly"
+                  },
+                  {
+                    "name": "product_bucket",
+                    "multiValue": [
+                      "GSUITE_ADMIN"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "scope",
+            "multiValue": [
+              "https://www.googleapis.com/auth/admin.reports.audit.readonly"
+            ]
+          }
+        ]
+      }
+    ],
+    "_time": 1759951183.296,
+    "_data_source": "http_google_workspace_admin",
+    "cribl_breaker": [
+      "google_sdk:get_items",
+      "ndjson"
+    ]
+  },
+  {
+    "_raw": "{\n      \"kind\": \"admin#reports#activity\",\n      \"id\": {\n        \"time\": \"2025-10-08T19:18:00.551Z\",\n        \"uniqueQualifier\": \"7134815928394313429\",\n        \"applicationName\": \"token\",\n        \"customerId\": \"D03cdmbi0\"\n      },\n      \"etag\": \"\\\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/nnnHBfaU9zNJtaAvk0b8xcW5xrQ\\\"\",\n      \"actor\": {\n        \"email\": \"user@acmecorp.com\",\n        \"profileId\": \"117329556664445035546\"\n      },\n      \"ipAddress\": \"34.212.64.32\",\n      \"networkInfo\": {\n        \"ipAsn\": [\n          16509\n        ],\n        \"regionCode\": \"US\",\n        \"subdivisionCode\": \"US-OR\"\n      },\n      \"events\": [\n        {\n          \"type\": \"auth\",\n          \"name\": \"authorize\",\n          \"parameters\": [\n            {\n              \"name\": \"client_id\",\n              \"value\": \"116703733704564446790\"\n            },\n            {\n              \"name\": \"app_name\",\n              \"value\": \"116703733704564446790\"\n            },\n            {\n              \"name\": \"client_type\",\n              \"value\": \"WEB\"\n            },\n            {\n              \"name\": \"scope_data\",\n              \"multiMessageValue\": [\n                {\n                  \"parameter\": [\n                    {\n                      \"name\": \"scope_name\",\n                      \"value\": \"https://www.googleapis.com/auth/admin.reports.audit.readonly\"\n                    },\n                    {\n                      \"name\": \"product_bucket\",\n                      \"multiValue\": [\n                        \"GSUITE_ADMIN\"\n                      ]\n                    }\n                  ]\n                }\n              ]\n            },\n            {\n              \"name\": \"scope\",\n              \"multiValue\": [\n                \"https://www.googleapis.com/auth/admin.reports.audit.readonly\"\n              ]\n            }\n          ]\n        }\n      ]\n    }",
+    "host": "ip-10-255-0-219",
+    "source": "https://admin.googleapis.com/admin/reports/v1/activity/users/all/applications/token",
+    "kind": "admin#reports#activity",
+    "id": {
+      "time": "2025-10-08T19:18:00.551Z",
+      "uniqueQualifier": "7134815928394313429",
+      "applicationName": "token",
+      "customerId": "D03cdmbi0"
+    },
+    "etag": "\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/nnnHBfaU9zNJtaAvk0b8xcW5xrQ\"",
+    "actor": {
+      "email": "user@acmecorp.com",
+      "profileId": "117329556664445035546"
+    },
+    "ipAddress": "34.212.64.32",
+    "networkInfo": {
+      "ipAsn": [
+        16509
+      ],
+      "regionCode": "US",
+      "subdivisionCode": "US-OR"
+    },
+    "events": [
+      {
+        "type": "auth",
+        "name": "authorize",
+        "parameters": [
+          {
+            "name": "client_id",
+            "value": "116703733704564446790"
+          },
+          {
+            "name": "app_name",
+            "value": "116703733704564446790"
+          },
+          {
+            "name": "client_type",
+            "value": "WEB"
+          },
+          {
+            "name": "scope_data",
+            "multiMessageValue": [
+              {
+                "parameter": [
+                  {
+                    "name": "scope_name",
+                    "value": "https://www.googleapis.com/auth/admin.reports.audit.readonly"
+                  },
+                  {
+                    "name": "product_bucket",
+                    "multiValue": [
+                      "GSUITE_ADMIN"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "scope",
+            "multiValue": [
+              "https://www.googleapis.com/auth/admin.reports.audit.readonly"
+            ]
+          }
+        ]
+      }
+    ],
+    "_time": 1759951080.551,
+    "_data_source": "http_google_workspace_admin",
+    "cribl_breaker": [
+      "google_sdk:get_items",
+      "ndjson"
+    ]
+  },
+  {
+    "_raw": "{\n      \"kind\": \"admin#reports#activity\",\n      \"id\": {\n        \"time\": \"2025-10-08T19:17:43.605Z\",\n        \"uniqueQualifier\": \"2347804671475034542\",\n        \"applicationName\": \"token\",\n        \"customerId\": \"D03cdmbi0\"\n      },\n      \"etag\": \"\\\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/3BUILxp8sKAvNdv9R-GXvJMYFEI\\\"\",\n      \"actor\": {\n        \"email\": \"user@acmecorp.com\",\n        \"profileId\": \"117329556664445035546\"\n      },\n      \"ipAddress\": \"34.212.64.32\",\n      \"networkInfo\": {\n        \"ipAsn\": [\n          16509\n        ],\n        \"regionCode\": \"US\",\n        \"subdivisionCode\": \"US-OR\"\n      },\n      \"events\": [\n        {\n          \"type\": \"auth\",\n          \"name\": \"authorize\",\n          \"parameters\": [\n            {\n              \"name\": \"client_id\",\n              \"value\": \"116703733704564446790\"\n            },\n            {\n              \"name\": \"app_name\",\n              \"value\": \"116703733704564446790\"\n            },\n            {\n              \"name\": \"client_type\",\n              \"value\": \"WEB\"\n            },\n            {\n              \"name\": \"scope_data\",\n              \"multiMessageValue\": [\n                {\n                  \"parameter\": [\n                    {\n                      \"name\": \"scope_name\",\n                      \"value\": \"https://www.googleapis.com/auth/admin.reports.audit.readonly\"\n                    },\n                    {\n                      \"name\": \"product_bucket\",\n                      \"multiValue\": [\n                        \"GSUITE_ADMIN\"\n                      ]\n                    }\n                  ]\n                }\n              ]\n            },\n            {\n              \"name\": \"scope\",\n              \"multiValue\": [\n                \"https://www.googleapis.com/auth/admin.reports.audit.readonly\"\n              ]\n            }\n          ]\n        }\n      ]\n    }",
+    "host": "ip-10-255-0-219",
+    "source": "https://admin.googleapis.com/admin/reports/v1/activity/users/all/applications/token",
+    "kind": "admin#reports#activity",
+    "id": {
+      "time": "2025-10-08T19:17:43.605Z",
+      "uniqueQualifier": "2347804671475034542",
+      "applicationName": "token",
+      "customerId": "D03cdmbi0"
+    },
+    "etag": "\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/3BUILxp8sKAvNdv9R-GXvJMYFEI\"",
+    "actor": {
+      "email": "user@acmecorp.com",
+      "profileId": "117329556664445035546"
+    },
+    "ipAddress": "34.212.64.32",
+    "networkInfo": {
+      "ipAsn": [
+        16509
+      ],
+      "regionCode": "US",
+      "subdivisionCode": "US-OR"
+    },
+    "events": [
+      {
+        "type": "auth",
+        "name": "authorize",
+        "parameters": [
+          {
+            "name": "client_id",
+            "value": "116703733704564446790"
+          },
+          {
+            "name": "app_name",
+            "value": "116703733704564446790"
+          },
+          {
+            "name": "client_type",
+            "value": "WEB"
+          },
+          {
+            "name": "scope_data",
+            "multiMessageValue": [
+              {
+                "parameter": [
+                  {
+                    "name": "scope_name",
+                    "value": "https://www.googleapis.com/auth/admin.reports.audit.readonly"
+                  },
+                  {
+                    "name": "product_bucket",
+                    "multiValue": [
+                      "GSUITE_ADMIN"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "scope",
+            "multiValue": [
+              "https://www.googleapis.com/auth/admin.reports.audit.readonly"
+            ]
+          }
+        ]
+      }
+    ],
+    "_time": 1759951063.605,
+    "_data_source": "http_google_workspace_admin",
+    "cribl_breaker": [
+      "google_sdk:get_items",
+      "ndjson"
+    ]
+  },
+  {
+    "_raw": "{\n      \"kind\": \"admin#reports#activity\",\n      \"id\": {\n        \"time\": \"2025-10-08T19:11:28.282Z\",\n        \"uniqueQualifier\": \"5618112329006071705\",\n        \"applicationName\": \"token\",\n        \"customerId\": \"D03cdmbi0\"\n      },\n      \"etag\": \"\\\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/ueaeD5ZhLI7utLLLfclPB_MU3qI\\\"\",\n      \"actor\": {\n        \"email\": \"user@acmecorp.com\",\n        \"profileId\": \"117329556664445035546\"\n      },\n      \"ipAddress\": \"35.89.28.158\",\n      \"networkInfo\": {\n        \"ipAsn\": [\n          16509\n        ],\n        \"regionCode\": \"US\",\n        \"subdivisionCode\": \"US-OR\"\n      },\n      \"events\": [\n        {\n          \"type\": \"auth\",\n          \"name\": \"authorize\",\n          \"parameters\": [\n            {\n              \"name\": \"client_id\",\n              \"value\": \"116703733704564446790\"\n            },\n            {\n              \"name\": \"app_name\",\n              \"value\": \"116703733704564446790\"\n            },\n            {\n              \"name\": \"client_type\",\n              \"value\": \"WEB\"\n            },\n            {\n              \"name\": \"scope_data\",\n              \"multiMessageValue\": [\n                {\n                  \"parameter\": [\n                    {\n                      \"name\": \"scope_name\",\n                      \"value\": \"https://www.googleapis.com/auth/admin.reports.audit.readonly\"\n                    },\n                    {\n                      \"name\": \"product_bucket\",\n                      \"multiValue\": [\n                        \"GSUITE_ADMIN\"\n                      ]\n                    }\n                  ]\n                }\n              ]\n            },\n            {\n              \"name\": \"scope\",\n              \"multiValue\": [\n                \"https://www.googleapis.com/auth/admin.reports.audit.readonly\"\n              ]\n            }\n          ]\n        }\n      ]\n    }",
+    "host": "ip-10-255-0-219",
+    "source": "https://admin.googleapis.com/admin/reports/v1/activity/users/all/applications/token",
+    "kind": "admin#reports#activity",
+    "id": {
+      "time": "2025-10-08T19:11:28.282Z",
+      "uniqueQualifier": "5618112329006071705",
+      "applicationName": "token",
+      "customerId": "D03cdmbi0"
+    },
+    "etag": "\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/ueaeD5ZhLI7utLLLfclPB_MU3qI\"",
+    "actor": {
+      "email": "user@acmecorp.com",
+      "profileId": "117329556664445035546"
+    },
+    "ipAddress": "35.89.28.158",
+    "networkInfo": {
+      "ipAsn": [
+        16509
+      ],
+      "regionCode": "US",
+      "subdivisionCode": "US-OR"
+    },
+    "events": [
+      {
+        "type": "auth",
+        "name": "authorize",
+        "parameters": [
+          {
+            "name": "client_id",
+            "value": "116703733704564446790"
+          },
+          {
+            "name": "app_name",
+            "value": "116703733704564446790"
+          },
+          {
+            "name": "client_type",
+            "value": "WEB"
+          },
+          {
+            "name": "scope_data",
+            "multiMessageValue": [
+              {
+                "parameter": [
+                  {
+                    "name": "scope_name",
+                    "value": "https://www.googleapis.com/auth/admin.reports.audit.readonly"
+                  },
+                  {
+                    "name": "product_bucket",
+                    "multiValue": [
+                      "GSUITE_ADMIN"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "scope",
+            "multiValue": [
+              "https://www.googleapis.com/auth/admin.reports.audit.readonly"
+            ]
+          }
+        ]
+      }
+    ],
+    "_time": 1759950688.282,
+    "_data_source": "http_google_workspace_admin",
+    "cribl_breaker": [
+      "google_sdk:get_items",
+      "ndjson"
+    ]
+  },
+  {
+    "_raw": "{\n      \"kind\": \"admin#reports#activity\",\n      \"id\": {\n        \"time\": \"2025-10-08T19:10:07.859Z\",\n        \"uniqueQualifier\": \"6551394453621935922\",\n        \"applicationName\": \"token\",\n        \"customerId\": \"D03cdmbi0\"\n      },\n      \"etag\": \"\\\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/lBjhXp4hBWv_oARgR9VLZzPPu9g\\\"\",\n      \"actor\": {\n        \"email\": \"user@acmecorp.com\",\n        \"profileId\": \"117329556664445035546\"\n      },\n      \"ipAddress\": \"34.212.64.32\",\n      \"networkInfo\": {\n        \"ipAsn\": [\n          16509\n        ],\n        \"regionCode\": \"US\",\n        \"subdivisionCode\": \"US-OR\"\n      },\n      \"events\": [\n        {\n          \"type\": \"auth\",\n          \"name\": \"authorize\",\n          \"parameters\": [\n            {\n              \"name\": \"client_id\",\n              \"value\": \"116703733704564446790\"\n            },\n            {\n              \"name\": \"app_name\",\n              \"value\": \"116703733704564446790\"\n            },\n            {\n              \"name\": \"client_type\",\n              \"value\": \"WEB\"\n            },\n            {\n              \"name\": \"scope_data\",\n              \"multiMessageValue\": [\n                {\n                  \"parameter\": [\n                    {\n                      \"name\": \"scope_name\",\n                      \"value\": \"https://www.googleapis.com/auth/admin.reports.audit.readonly\"\n                    },\n                    {\n                      \"name\": \"product_bucket\",\n                      \"multiValue\": [\n                        \"GSUITE_ADMIN\"\n                      ]\n                    }\n                  ]\n                }\n              ]\n            },\n            {\n              \"name\": \"scope\",\n              \"multiValue\": [\n                \"https://www.googleapis.com/auth/admin.reports.audit.readonly\"\n              ]\n            }\n          ]\n        }\n      ]\n    }",
+    "host": "ip-10-255-0-219",
+    "source": "https://admin.googleapis.com/admin/reports/v1/activity/users/all/applications/token",
+    "kind": "admin#reports#activity",
+    "id": {
+      "time": "2025-10-08T19:10:07.859Z",
+      "uniqueQualifier": "6551394453621935922",
+      "applicationName": "token",
+      "customerId": "D03cdmbi0"
+    },
+    "etag": "\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/lBjhXp4hBWv_oARgR9VLZzPPu9g\"",
+    "actor": {
+      "email": "user@acmecorp.com",
+      "profileId": "117329556664445035546"
+    },
+    "ipAddress": "34.212.64.32",
+    "networkInfo": {
+      "ipAsn": [
+        16509
+      ],
+      "regionCode": "US",
+      "subdivisionCode": "US-OR"
+    },
+    "events": [
+      {
+        "type": "auth",
+        "name": "authorize",
+        "parameters": [
+          {
+            "name": "client_id",
+            "value": "116703733704564446790"
+          },
+          {
+            "name": "app_name",
+            "value": "116703733704564446790"
+          },
+          {
+            "name": "client_type",
+            "value": "WEB"
+          },
+          {
+            "name": "scope_data",
+            "multiMessageValue": [
+              {
+                "parameter": [
+                  {
+                    "name": "scope_name",
+                    "value": "https://www.googleapis.com/auth/admin.reports.audit.readonly"
+                  },
+                  {
+                    "name": "product_bucket",
+                    "multiValue": [
+                      "GSUITE_ADMIN"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "scope",
+            "multiValue": [
+              "https://www.googleapis.com/auth/admin.reports.audit.readonly"
+            ]
+          }
+        ]
+      }
+    ],
+    "_time": 1759950607.859,
+    "_data_source": "http_google_workspace_admin",
+    "cribl_breaker": [
+      "google_sdk:get_items",
+      "ndjson"
+    ]
+  },
+  {
+    "_raw": "{\n      \"kind\": \"admin#reports#activity\",\n      \"id\": {\n        \"time\": \"2025-10-08T19:09:13.635Z\",\n        \"uniqueQualifier\": \"5301148588732701283\",\n        \"applicationName\": \"token\",\n        \"customerId\": \"D03cdmbi0\"\n      },\n      \"etag\": \"\\\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/1GC6QMualW-EQx4LaVNOJxE_zRQ\\\"\",\n      \"actor\": {\n        \"email\": \"user@acmecorp.com\",\n        \"profileId\": \"117329556664445035546\"\n      },\n      \"ipAddress\": \"34.212.64.32\",\n      \"networkInfo\": {\n        \"ipAsn\": [\n          16509\n        ],\n        \"regionCode\": \"US\",\n        \"subdivisionCode\": \"US-OR\"\n      },\n      \"events\": [\n        {\n          \"type\": \"auth\",\n          \"name\": \"authorize\",\n          \"parameters\": [\n            {\n              \"name\": \"client_id\",\n              \"value\": \"116703733704564446790\"\n            },\n            {\n              \"name\": \"app_name\",\n              \"value\": \"116703733704564446790\"\n            },\n            {\n              \"name\": \"client_type\",\n              \"value\": \"WEB\"\n            },\n            {\n              \"name\": \"scope_data\",\n              \"multiMessageValue\": [\n                {\n                  \"parameter\": [\n                    {\n                      \"name\": \"scope_name\",\n                      \"value\": \"https://www.googleapis.com/auth/admin.reports.audit.readonly\"\n                    },\n                    {\n                      \"name\": \"product_bucket\",\n                      \"multiValue\": [\n                        \"GSUITE_ADMIN\"\n                      ]\n                    }\n                  ]\n                }\n              ]\n            },\n            {\n              \"name\": \"scope\",\n              \"multiValue\": [\n                \"https://www.googleapis.com/auth/admin.reports.audit.readonly\"\n              ]\n            }\n          ]\n        }\n      ]\n    }",
+    "host": "ip-10-255-0-219",
+    "source": "https://admin.googleapis.com/admin/reports/v1/activity/users/all/applications/token",
+    "kind": "admin#reports#activity",
+    "id": {
+      "time": "2025-10-08T19:09:13.635Z",
+      "uniqueQualifier": "5301148588732701283",
+      "applicationName": "token",
+      "customerId": "D03cdmbi0"
+    },
+    "etag": "\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/1GC6QMualW-EQx4LaVNOJxE_zRQ\"",
+    "actor": {
+      "email": "user@acmecorp.com",
+      "profileId": "117329556664445035546"
+    },
+    "ipAddress": "34.212.64.32",
+    "networkInfo": {
+      "ipAsn": [
+        16509
+      ],
+      "regionCode": "US",
+      "subdivisionCode": "US-OR"
+    },
+    "events": [
+      {
+        "type": "auth",
+        "name": "authorize",
+        "parameters": [
+          {
+            "name": "client_id",
+            "value": "116703733704564446790"
+          },
+          {
+            "name": "app_name",
+            "value": "116703733704564446790"
+          },
+          {
+            "name": "client_type",
+            "value": "WEB"
+          },
+          {
+            "name": "scope_data",
+            "multiMessageValue": [
+              {
+                "parameter": [
+                  {
+                    "name": "scope_name",
+                    "value": "https://www.googleapis.com/auth/admin.reports.audit.readonly"
+                  },
+                  {
+                    "name": "product_bucket",
+                    "multiValue": [
+                      "GSUITE_ADMIN"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "scope",
+            "multiValue": [
+              "https://www.googleapis.com/auth/admin.reports.audit.readonly"
+            ]
+          }
+        ]
+      }
+    ],
+    "_time": 1759950553.635,
+    "_data_source": "http_google_workspace_admin",
+    "cribl_breaker": [
+      "google_sdk:get_items",
+      "ndjson"
+    ]
+  },
+  {
+    "_raw": "{\n      \"kind\": \"admin#reports#activity\",\n      \"id\": {\n        \"time\": \"2025-10-08T18:59:04.107Z\",\n        \"uniqueQualifier\": \"-1932313721729531539\",\n        \"applicationName\": \"token\",\n        \"customerId\": \"D03cdmbi0\"\n      },\n      \"etag\": \"\\\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/-PXa_thSLCVWx3wu0qqzT1_H_XI\\\"\",\n      \"actor\": {\n        \"email\": \"user@acmecorp.com\",\n        \"profileId\": \"117329556664445035546\"\n      },\n      \"ipAddress\": \"35.89.28.158\",\n      \"networkInfo\": {\n        \"ipAsn\": [\n          16509\n        ],\n        \"regionCode\": \"US\",\n        \"subdivisionCode\": \"US-OR\"\n      },\n      \"events\": [\n        {\n          \"type\": \"auth\",\n          \"name\": \"authorize\",\n          \"parameters\": [\n            {\n              \"name\": \"client_id\",\n              \"value\": \"116703733704564446790\"\n            },\n            {\n              \"name\": \"app_name\",\n              \"value\": \"116703733704564446790\"\n            },\n            {\n              \"name\": \"client_type\",\n              \"value\": \"WEB\"\n            },\n            {\n              \"name\": \"scope_data\",\n              \"multiMessageValue\": [\n                {\n                  \"parameter\": [\n                    {\n                      \"name\": \"scope_name\",\n                      \"value\": \"https://www.googleapis.com/auth/admin.reports.audit.readonly\"\n                    },\n                    {\n                      \"name\": \"product_bucket\",\n                      \"multiValue\": [\n                        \"GSUITE_ADMIN\"\n                      ]\n                    }\n                  ]\n                }\n              ]\n            },\n            {\n              \"name\": \"scope\",\n              \"multiValue\": [\n                \"https://www.googleapis.com/auth/admin.reports.audit.readonly\"\n              ]\n            }\n          ]\n        }\n      ]\n    }",
+    "host": "ip-10-255-0-219",
+    "source": "https://admin.googleapis.com/admin/reports/v1/activity/users/all/applications/token",
+    "kind": "admin#reports#activity",
+    "id": {
+      "time": "2025-10-08T18:59:04.107Z",
+      "uniqueQualifier": "-1932313721729531539",
+      "applicationName": "token",
+      "customerId": "D03cdmbi0"
+    },
+    "etag": "\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/-PXa_thSLCVWx3wu0qqzT1_H_XI\"",
+    "actor": {
+      "email": "user@acmecorp.com",
+      "profileId": "117329556664445035546"
+    },
+    "ipAddress": "35.89.28.158",
+    "networkInfo": {
+      "ipAsn": [
+        16509
+      ],
+      "regionCode": "US",
+      "subdivisionCode": "US-OR"
+    },
+    "events": [
+      {
+        "type": "auth",
+        "name": "authorize",
+        "parameters": [
+          {
+            "name": "client_id",
+            "value": "116703733704564446790"
+          },
+          {
+            "name": "app_name",
+            "value": "116703733704564446790"
+          },
+          {
+            "name": "client_type",
+            "value": "WEB"
+          },
+          {
+            "name": "scope_data",
+            "multiMessageValue": [
+              {
+                "parameter": [
+                  {
+                    "name": "scope_name",
+                    "value": "https://www.googleapis.com/auth/admin.reports.audit.readonly"
+                  },
+                  {
+                    "name": "product_bucket",
+                    "multiValue": [
+                      "GSUITE_ADMIN"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "scope",
+            "multiValue": [
+              "https://www.googleapis.com/auth/admin.reports.audit.readonly"
+            ]
+          }
+        ]
+      }
+    ],
+    "_time": 1759949944.107,
+    "_data_source": "http_google_workspace_admin",
+    "cribl_breaker": [
+      "google_sdk:get_items",
+      "ndjson"
+    ]
+  },
+  {
+    "_raw": "{\n      \"kind\": \"admin#reports#activity\",\n      \"id\": {\n        \"time\": \"2025-10-08T18:48:29.873Z\",\n        \"uniqueQualifier\": \"-6427115598954201714\",\n        \"applicationName\": \"token\",\n        \"customerId\": \"D03cdmbi0\"\n      },\n      \"etag\": \"\\\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/dtN-NzhR3bA4smpyaHRJOHstPEU\\\"\",\n      \"actor\": {\n        \"email\": \"user@acmecorp.com\",\n        \"profileId\": \"117329556664445035546\"\n      },\n      \"ipAddress\": \"35.89.28.158\",\n      \"networkInfo\": {\n        \"ipAsn\": [\n          16509\n        ],\n        \"regionCode\": \"US\",\n        \"subdivisionCode\": \"US-OR\"\n      },\n      \"events\": [\n        {\n          \"type\": \"auth\",\n          \"name\": \"authorize\",\n          \"parameters\": [\n            {\n              \"name\": \"client_id\",\n              \"value\": \"116703733704564446790\"\n            },\n            {\n              \"name\": \"app_name\",\n              \"value\": \"116703733704564446790\"\n            },\n            {\n              \"name\": \"client_type\",\n              \"value\": \"WEB\"\n            },\n            {\n              \"name\": \"scope_data\",\n              \"multiMessageValue\": [\n                {\n                  \"parameter\": [\n                    {\n                      \"name\": \"scope_name\",\n                      \"value\": \"https://www.googleapis.com/auth/admin.reports.audit.readonly\"\n                    },\n                    {\n                      \"name\": \"product_bucket\",\n                      \"multiValue\": [\n                        \"GSUITE_ADMIN\"\n                      ]\n                    }\n                  ]\n                }\n              ]\n            },\n            {\n              \"name\": \"scope\",\n              \"multiValue\": [\n                \"https://www.googleapis.com/auth/admin.reports.audit.readonly\"\n              ]\n            }\n          ]\n        }\n      ]\n    }",
+    "host": "ip-10-255-0-219",
+    "source": "https://admin.googleapis.com/admin/reports/v1/activity/users/all/applications/token",
+    "kind": "admin#reports#activity",
+    "id": {
+      "time": "2025-10-08T18:48:29.873Z",
+      "uniqueQualifier": "-6427115598954201714",
+      "applicationName": "token",
+      "customerId": "D03cdmbi0"
+    },
+    "etag": "\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/dtN-NzhR3bA4smpyaHRJOHstPEU\"",
+    "actor": {
+      "email": "user@acmecorp.com",
+      "profileId": "117329556664445035546"
+    },
+    "ipAddress": "35.89.28.158",
+    "networkInfo": {
+      "ipAsn": [
+        16509
+      ],
+      "regionCode": "US",
+      "subdivisionCode": "US-OR"
+    },
+    "events": [
+      {
+        "type": "auth",
+        "name": "authorize",
+        "parameters": [
+          {
+            "name": "client_id",
+            "value": "116703733704564446790"
+          },
+          {
+            "name": "app_name",
+            "value": "116703733704564446790"
+          },
+          {
+            "name": "client_type",
+            "value": "WEB"
+          },
+          {
+            "name": "scope_data",
+            "multiMessageValue": [
+              {
+                "parameter": [
+                  {
+                    "name": "scope_name",
+                    "value": "https://www.googleapis.com/auth/admin.reports.audit.readonly"
+                  },
+                  {
+                    "name": "product_bucket",
+                    "multiValue": [
+                      "GSUITE_ADMIN"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "scope",
+            "multiValue": [
+              "https://www.googleapis.com/auth/admin.reports.audit.readonly"
+            ]
+          }
+        ]
+      }
+    ],
+    "_time": 1759949309.873,
+    "_data_source": "http_google_workspace_admin",
+    "cribl_breaker": [
+      "google_sdk:get_items",
+      "ndjson"
+    ]
+  },
+  {
+    "_raw": "{\n      \"kind\": \"admin#reports#activity\",\n      \"id\": {\n        \"time\": \"2025-10-08T17:50:03.576Z\",\n        \"uniqueQualifier\": \"3479480119290628665\",\n        \"applicationName\": \"token\",\n        \"customerId\": \"D03cdmbi0\"\n      },\n      \"etag\": \"\\\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/twrl9v3U961qH8k6N7MXvFtomSA\\\"\",\n      \"actor\": {\n        \"email\": \"user@acmecorp.com\",\n        \"profileId\": \"117329556664445035546\"\n      },\n      \"ipAddress\": \"69.122.43.179\",\n      \"networkInfo\": {\n        \"ipAsn\": [\n          701\n        ],\n        \"regionCode\": \"US\",\n        \"subdivisionCode\": \"US-NY\"\n      },\n      \"events\": [\n        {\n          \"type\": \"auth\",\n          \"name\": \"authorize\",\n          \"parameters\": [\n            {\n              \"name\": \"client_id\",\n              \"value\": \"77185425430.apps.googleusercontent.com\"\n            },\n            {\n              \"name\": \"app_name\",\n              \"value\": \"Google Chrome\"\n            },\n            {\n              \"name\": \"client_type\",\n              \"value\": \"NATIVE_DESKTOP\"\n            },\n            {\n              \"name\": \"scope_data\",\n              \"multiMessageValue\": [\n                {\n                  \"parameter\": [\n                    {\n                      \"name\": \"scope_name\",\n                      \"value\": \"https://www.google.com/accounts/OAuthLogin\"\n                    },\n                    {\n                      \"name\": \"product_bucket\",\n                      \"multiValue\": [\n                        \"IDENTITY\"\n                      ]\n                    }\n                  ]\n                }\n              ]\n            },\n            {\n              \"name\": \"scope\",\n              \"multiValue\": [\n                \"https://www.google.com/accounts/OAuthLogin\"\n              ]\n            }\n          ]\n        }\n      ]\n    }",
+    "host": "ip-10-255-0-219",
+    "source": "https://admin.googleapis.com/admin/reports/v1/activity/users/all/applications/token",
+    "kind": "admin#reports#activity",
+    "id": {
+      "time": "2025-10-08T17:50:03.576Z",
+      "uniqueQualifier": "3479480119290628665",
+      "applicationName": "token",
+      "customerId": "D03cdmbi0"
+    },
+    "etag": "\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/twrl9v3U961qH8k6N7MXvFtomSA\"",
+    "actor": {
+      "email": "user@acmecorp.com",
+      "profileId": "117329556664445035546"
+    },
+    "ipAddress": "69.122.43.179",
+    "networkInfo": {
+      "ipAsn": [
+        701
+      ],
+      "regionCode": "US",
+      "subdivisionCode": "US-NY"
+    },
+    "events": [
+      {
+        "type": "auth",
+        "name": "authorize",
+        "parameters": [
+          {
+            "name": "client_id",
+            "value": "77185425430.apps.googleusercontent.com"
+          },
+          {
+            "name": "app_name",
+            "value": "Google Chrome"
+          },
+          {
+            "name": "client_type",
+            "value": "NATIVE_DESKTOP"
+          },
+          {
+            "name": "scope_data",
+            "multiMessageValue": [
+              {
+                "parameter": [
+                  {
+                    "name": "scope_name",
+                    "value": "https://www.google.com/accounts/OAuthLogin"
+                  },
+                  {
+                    "name": "product_bucket",
+                    "multiValue": [
+                      "IDENTITY"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "scope",
+            "multiValue": [
+              "https://www.google.com/accounts/OAuthLogin"
+            ]
+          }
+        ]
+      }
+    ],
+    "_time": 1759945803.576,
+    "_data_source": "http_google_workspace_admin",
+    "cribl_breaker": [
+      "google_sdk:get_items",
+      "ndjson"
+    ]
+  },
+  {
+    "_raw": "{\n      \"kind\": \"admin#reports#activity\",\n      \"id\": {\n        \"time\": \"2025-10-08T17:40:29.258Z\",\n        \"uniqueQualifier\": \"-3726005190469523824\",\n        \"applicationName\": \"token\",\n        \"customerId\": \"D03cdmbi0\"\n      },\n      \"etag\": \"\\\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/XugJxZT8QtebjGLjU1aZg3duJfs\\\"\",\n      \"actor\": {\n        \"email\": \"user@acmecorp.com\",\n        \"profileId\": \"117329556664445035546\"\n      },\n      \"ipAddress\": \"34.212.64.32\",\n      \"networkInfo\": {\n        \"ipAsn\": [\n          16509\n        ],\n        \"regionCode\": \"US\",\n        \"subdivisionCode\": \"US-OR\"\n      },\n      \"events\": [\n        {\n          \"type\": \"auth\",\n          \"name\": \"authorize\",\n          \"parameters\": [\n            {\n              \"name\": \"client_id\",\n              \"value\": \"116703733704564446790\"\n            },\n            {\n              \"name\": \"app_name\",\n              \"value\": \"116703733704564446790\"\n            },\n            {\n              \"name\": \"client_type\",\n              \"value\": \"WEB\"\n            },\n            {\n              \"name\": \"scope_data\",\n              \"multiMessageValue\": [\n                {\n                  \"parameter\": [\n                    {\n                      \"name\": \"scope_name\",\n                      \"value\": \"https://www.googleapis.com/auth/admin.reports.audit.readonly\"\n                    },\n                    {\n                      \"name\": \"product_bucket\",\n                      \"multiValue\": [\n                        \"GSUITE_ADMIN\"\n                      ]\n                    }\n                  ]\n                }\n              ]\n            },\n            {\n              \"name\": \"scope\",\n              \"multiValue\": [\n                \"https://www.googleapis.com/auth/admin.reports.audit.readonly\"\n              ]\n            }\n          ]\n        }\n      ]\n    }",
+    "host": "ip-10-255-0-219",
+    "source": "https://admin.googleapis.com/admin/reports/v1/activity/users/all/applications/token",
+    "kind": "admin#reports#activity",
+    "id": {
+      "time": "2025-10-08T17:40:29.258Z",
+      "uniqueQualifier": "-3726005190469523824",
+      "applicationName": "token",
+      "customerId": "D03cdmbi0"
+    },
+    "etag": "\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/XugJxZT8QtebjGLjU1aZg3duJfs\"",
+    "actor": {
+      "email": "user@acmecorp.com",
+      "profileId": "117329556664445035546"
+    },
+    "ipAddress": "34.212.64.32",
+    "networkInfo": {
+      "ipAsn": [
+        16509
+      ],
+      "regionCode": "US",
+      "subdivisionCode": "US-OR"
+    },
+    "events": [
+      {
+        "type": "auth",
+        "name": "authorize",
+        "parameters": [
+          {
+            "name": "client_id",
+            "value": "116703733704564446790"
+          },
+          {
+            "name": "app_name",
+            "value": "116703733704564446790"
+          },
+          {
+            "name": "client_type",
+            "value": "WEB"
+          },
+          {
+            "name": "scope_data",
+            "multiMessageValue": [
+              {
+                "parameter": [
+                  {
+                    "name": "scope_name",
+                    "value": "https://www.googleapis.com/auth/admin.reports.audit.readonly"
+                  },
+                  {
+                    "name": "product_bucket",
+                    "multiValue": [
+                      "GSUITE_ADMIN"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "scope",
+            "multiValue": [
+              "https://www.googleapis.com/auth/admin.reports.audit.readonly"
+            ]
+          }
+        ]
+      }
+    ],
+    "_time": 1759945229.258,
+    "_data_source": "http_google_workspace_admin",
+    "cribl_breaker": [
+      "google_sdk:get_items",
+      "ndjson"
+    ]
+  },
+  {
+    "_raw": "{\n      \"kind\": \"admin#reports#activity\",\n      \"id\": {\n        \"time\": \"2025-10-08T17:36:28.775Z\",\n        \"uniqueQualifier\": \"7726794489530147262\",\n        \"applicationName\": \"token\",\n        \"customerId\": \"D03cdmbi0\"\n      },\n      \"etag\": \"\\\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/sIkrfc06XnpU-NozzdSAJmGdX4c\\\"\",\n      \"actor\": {\n        \"email\": \"user@acmecorp.com\",\n        \"profileId\": \"117329556664445035546\"\n      },\n      \"ipAddress\": \"34.212.64.32\",\n      \"networkInfo\": {\n        \"ipAsn\": [\n          16509\n        ],\n        \"regionCode\": \"US\",\n        \"subdivisionCode\": \"US-OR\"\n      },\n      \"events\": [\n        {\n          \"type\": \"auth\",\n          \"name\": \"authorize\",\n          \"parameters\": [\n            {\n              \"name\": \"client_id\",\n              \"value\": \"116703733704564446790\"\n            },\n            {\n              \"name\": \"app_name\",\n              \"value\": \"116703733704564446790\"\n            },\n            {\n              \"name\": \"client_type\",\n              \"value\": \"WEB\"\n            },\n            {\n              \"name\": \"scope_data\",\n              \"multiMessageValue\": [\n                {\n                  \"parameter\": [\n                    {\n                      \"name\": \"scope_name\",\n                      \"value\": \"https://www.googleapis.com/auth/admin.reports.audit.readonly\"\n                    },\n                    {\n                      \"name\": \"product_bucket\",\n                      \"multiValue\": [\n                        \"GSUITE_ADMIN\"\n                      ]\n                    }\n                  ]\n                }\n              ]\n            },\n            {\n              \"name\": \"scope\",\n              \"multiValue\": [\n                \"https://www.googleapis.com/auth/admin.reports.audit.readonly\"\n              ]\n            }\n          ]\n        }\n      ]\n    }",
+    "host": "ip-10-255-0-219",
+    "source": "https://admin.googleapis.com/admin/reports/v1/activity/users/all/applications/token",
+    "kind": "admin#reports#activity",
+    "id": {
+      "time": "2025-10-08T17:36:28.775Z",
+      "uniqueQualifier": "7726794489530147262",
+      "applicationName": "token",
+      "customerId": "D03cdmbi0"
+    },
+    "etag": "\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/sIkrfc06XnpU-NozzdSAJmGdX4c\"",
+    "actor": {
+      "email": "user@acmecorp.com",
+      "profileId": "117329556664445035546"
+    },
+    "ipAddress": "34.212.64.32",
+    "networkInfo": {
+      "ipAsn": [
+        16509
+      ],
+      "regionCode": "US",
+      "subdivisionCode": "US-OR"
+    },
+    "events": [
+      {
+        "type": "auth",
+        "name": "authorize",
+        "parameters": [
+          {
+            "name": "client_id",
+            "value": "116703733704564446790"
+          },
+          {
+            "name": "app_name",
+            "value": "116703733704564446790"
+          },
+          {
+            "name": "client_type",
+            "value": "WEB"
+          },
+          {
+            "name": "scope_data",
+            "multiMessageValue": [
+              {
+                "parameter": [
+                  {
+                    "name": "scope_name",
+                    "value": "https://www.googleapis.com/auth/admin.reports.audit.readonly"
+                  },
+                  {
+                    "name": "product_bucket",
+                    "multiValue": [
+                      "GSUITE_ADMIN"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "scope",
+            "multiValue": [
+              "https://www.googleapis.com/auth/admin.reports.audit.readonly"
+            ]
+          }
+        ]
+      }
+    ],
+    "_time": 1759944988.775,
+    "_data_source": "http_google_workspace_admin",
+    "cribl_breaker": [
+      "google_sdk:get_items",
+      "ndjson"
+    ]
+  },
+  {
+    "_raw": "{\n      \"kind\": \"admin#reports#activity\",\n      \"id\": {\n        \"time\": \"2025-10-08T17:36:00.667Z\",\n        \"uniqueQualifier\": \"7394280444360511545\",\n        \"applicationName\": \"token\",\n        \"customerId\": \"D03cdmbi0\"\n      },\n      \"etag\": \"\\\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/HG8MRUfgpePttJ95hJjwd7mSCdM\\\"\",\n      \"actor\": {\n        \"email\": \"user@acmecorp.com\",\n        \"profileId\": \"117329556664445035546\"\n      },\n      \"ipAddress\": \"34.212.64.32\",\n      \"networkInfo\": {\n        \"ipAsn\": [\n          16509\n        ],\n        \"regionCode\": \"US\",\n        \"subdivisionCode\": \"US-OR\"\n      },\n      \"events\": [\n        {\n          \"type\": \"auth\",\n          \"name\": \"authorize\",\n          \"parameters\": [\n            {\n              \"name\": \"client_id\",\n              \"value\": \"116703733704564446790\"\n            },\n            {\n              \"name\": \"app_name\",\n              \"value\": \"116703733704564446790\"\n            },\n            {\n              \"name\": \"client_type\",\n              \"value\": \"WEB\"\n            },\n            {\n              \"name\": \"scope_data\",\n              \"multiMessageValue\": [\n                {\n                  \"parameter\": [\n                    {\n                      \"name\": \"scope_name\",\n                      \"value\": \"https://www.googleapis.com/auth/admin.reports.audit.readonly\"\n                    },\n                    {\n                      \"name\": \"product_bucket\",\n                      \"multiValue\": [\n                        \"GSUITE_ADMIN\"\n                      ]\n                    }\n                  ]\n                }\n              ]\n            },\n            {\n              \"name\": \"scope\",\n              \"multiValue\": [\n                \"https://www.googleapis.com/auth/admin.reports.audit.readonly\"\n              ]\n            }\n          ]\n        }\n      ]\n    }",
+    "host": "ip-10-255-0-219",
+    "source": "https://admin.googleapis.com/admin/reports/v1/activity/users/all/applications/token",
+    "kind": "admin#reports#activity",
+    "id": {
+      "time": "2025-10-08T17:36:00.667Z",
+      "uniqueQualifier": "7394280444360511545",
+      "applicationName": "token",
+      "customerId": "D03cdmbi0"
+    },
+    "etag": "\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/HG8MRUfgpePttJ95hJjwd7mSCdM\"",
+    "actor": {
+      "email": "user@acmecorp.com",
+      "profileId": "117329556664445035546"
+    },
+    "ipAddress": "34.212.64.32",
+    "networkInfo": {
+      "ipAsn": [
+        16509
+      ],
+      "regionCode": "US",
+      "subdivisionCode": "US-OR"
+    },
+    "events": [
+      {
+        "type": "auth",
+        "name": "authorize",
+        "parameters": [
+          {
+            "name": "client_id",
+            "value": "116703733704564446790"
+          },
+          {
+            "name": "app_name",
+            "value": "116703733704564446790"
+          },
+          {
+            "name": "client_type",
+            "value": "WEB"
+          },
+          {
+            "name": "scope_data",
+            "multiMessageValue": [
+              {
+                "parameter": [
+                  {
+                    "name": "scope_name",
+                    "value": "https://www.googleapis.com/auth/admin.reports.audit.readonly"
+                  },
+                  {
+                    "name": "product_bucket",
+                    "multiValue": [
+                      "GSUITE_ADMIN"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "scope",
+            "multiValue": [
+              "https://www.googleapis.com/auth/admin.reports.audit.readonly"
+            ]
+          }
+        ]
+      }
+    ],
+    "_time": 1759944960.667,
+    "_data_source": "http_google_workspace_admin",
+    "cribl_breaker": [
+      "google_sdk:get_items",
+      "ndjson"
+    ]
+  },
+  {
+    "_raw": "{\n      \"kind\": \"admin#reports#activity\",\n      \"id\": {\n        \"time\": \"2025-10-08T17:21:52.721Z\",\n        \"uniqueQualifier\": \"6876005314393659346\",\n        \"applicationName\": \"token\",\n        \"customerId\": \"D03cdmbi0\"\n      },\n      \"etag\": \"\\\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/te_CTZHGRCN0aBTdc9vfkcl2soo\\\"\",\n      \"actor\": {\n        \"email\": \"user@acmecorp.com\",\n        \"profileId\": \"117329556664445035546\"\n      },\n      \"ipAddress\": \"34.212.64.32\",\n      \"networkInfo\": {\n        \"ipAsn\": [\n          16509\n        ],\n        \"regionCode\": \"US\",\n        \"subdivisionCode\": \"US-OR\"\n      },\n      \"events\": [\n        {\n          \"type\": \"auth\",\n          \"name\": \"authorize\",\n          \"parameters\": [\n            {\n              \"name\": \"client_id\",\n              \"value\": \"116703733704564446790\"\n            },\n            {\n              \"name\": \"app_name\",\n              \"value\": \"116703733704564446790\"\n            },\n            {\n              \"name\": \"client_type\",\n              \"value\": \"WEB\"\n            },\n            {\n              \"name\": \"scope_data\",\n              \"multiMessageValue\": [\n                {\n                  \"parameter\": [\n                    {\n                      \"name\": \"scope_name\",\n                      \"value\": \"https://www.googleapis.com/auth/admin.reports.audit.readonly\"\n                    },\n                    {\n                      \"name\": \"product_bucket\",\n                      \"multiValue\": [\n                        \"GSUITE_ADMIN\"\n                      ]\n                    }\n                  ]\n                }\n              ]\n            },\n            {\n              \"name\": \"scope\",\n              \"multiValue\": [\n                \"https://www.googleapis.com/auth/admin.reports.audit.readonly\"\n              ]\n            }\n          ]\n        }\n      ]\n    }",
+    "host": "ip-10-255-0-219",
+    "source": "https://admin.googleapis.com/admin/reports/v1/activity/users/all/applications/token",
+    "kind": "admin#reports#activity",
+    "id": {
+      "time": "2025-10-08T17:21:52.721Z",
+      "uniqueQualifier": "6876005314393659346",
+      "applicationName": "token",
+      "customerId": "D03cdmbi0"
+    },
+    "etag": "\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/te_CTZHGRCN0aBTdc9vfkcl2soo\"",
+    "actor": {
+      "email": "user@acmecorp.com",
+      "profileId": "117329556664445035546"
+    },
+    "ipAddress": "34.212.64.32",
+    "networkInfo": {
+      "ipAsn": [
+        16509
+      ],
+      "regionCode": "US",
+      "subdivisionCode": "US-OR"
+    },
+    "events": [
+      {
+        "type": "auth",
+        "name": "authorize",
+        "parameters": [
+          {
+            "name": "client_id",
+            "value": "116703733704564446790"
+          },
+          {
+            "name": "app_name",
+            "value": "116703733704564446790"
+          },
+          {
+            "name": "client_type",
+            "value": "WEB"
+          },
+          {
+            "name": "scope_data",
+            "multiMessageValue": [
+              {
+                "parameter": [
+                  {
+                    "name": "scope_name",
+                    "value": "https://www.googleapis.com/auth/admin.reports.audit.readonly"
+                  },
+                  {
+                    "name": "product_bucket",
+                    "multiValue": [
+                      "GSUITE_ADMIN"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "scope",
+            "multiValue": [
+              "https://www.googleapis.com/auth/admin.reports.audit.readonly"
+            ]
+          }
+        ]
+      }
+    ],
+    "_time": 1759944112.721,
+    "_data_source": "http_google_workspace_admin",
+    "cribl_breaker": [
+      "google_sdk:get_items",
+      "ndjson"
+    ]
+  },
+  {
+    "_raw": "{\n      \"kind\": \"admin#reports#activity\",\n      \"id\": {\n        \"time\": \"2025-10-08T14:38:10.596Z\",\n        \"uniqueQualifier\": \"-4882533767906197825\",\n        \"applicationName\": \"token\",\n        \"customerId\": \"D03cdmbi0\"\n      },\n      \"etag\": \"\\\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/M41d4i0A2o9M-Px9mtulvNqNxF8\\\"\",\n      \"actor\": {\n        \"email\": \"user@acmecorp.com\",\n        \"profileId\": \"117329556664445035546\"\n      },\n      \"ipAddress\": \"34.212.64.32\",\n      \"networkInfo\": {\n        \"ipAsn\": [\n          16509\n        ],\n        \"regionCode\": \"US\",\n        \"subdivisionCode\": \"US-OR\"\n      },\n      \"events\": [\n        {\n          \"type\": \"auth\",\n          \"name\": \"authorize\",\n          \"parameters\": [\n            {\n              \"name\": \"client_id\",\n              \"value\": \"116703733704564446790\"\n            },\n            {\n              \"name\": \"app_name\",\n              \"value\": \"116703733704564446790\"\n            },\n            {\n              \"name\": \"client_type\",\n              \"value\": \"WEB\"\n            },\n            {\n              \"name\": \"scope_data\",\n              \"multiMessageValue\": [\n                {\n                  \"parameter\": [\n                    {\n                      \"name\": \"scope_name\",\n                      \"value\": \"https://www.googleapis.com/auth/admin.reports.audit.readonly\"\n                    },\n                    {\n                      \"name\": \"product_bucket\",\n                      \"multiValue\": [\n                        \"GSUITE_ADMIN\"\n                      ]\n                    }\n                  ]\n                }\n              ]\n            },\n            {\n              \"name\": \"scope\",\n              \"multiValue\": [\n                \"https://www.googleapis.com/auth/admin.reports.audit.readonly\"\n              ]\n            }\n          ]\n        }\n      ]\n    }",
+    "host": "ip-10-255-0-219",
+    "source": "https://admin.googleapis.com/admin/reports/v1/activity/users/all/applications/token",
+    "kind": "admin#reports#activity",
+    "id": {
+      "time": "2025-10-08T14:38:10.596Z",
+      "uniqueQualifier": "-4882533767906197825",
+      "applicationName": "token",
+      "customerId": "D03cdmbi0"
+    },
+    "etag": "\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/M41d4i0A2o9M-Px9mtulvNqNxF8\"",
+    "actor": {
+      "email": "user@acmecorp.com",
+      "profileId": "117329556664445035546"
+    },
+    "ipAddress": "34.212.64.32",
+    "networkInfo": {
+      "ipAsn": [
+        16509
+      ],
+      "regionCode": "US",
+      "subdivisionCode": "US-OR"
+    },
+    "events": [
+      {
+        "type": "auth",
+        "name": "authorize",
+        "parameters": [
+          {
+            "name": "client_id",
+            "value": "116703733704564446790"
+          },
+          {
+            "name": "app_name",
+            "value": "116703733704564446790"
+          },
+          {
+            "name": "client_type",
+            "value": "WEB"
+          },
+          {
+            "name": "scope_data",
+            "multiMessageValue": [
+              {
+                "parameter": [
+                  {
+                    "name": "scope_name",
+                    "value": "https://www.googleapis.com/auth/admin.reports.audit.readonly"
+                  },
+                  {
+                    "name": "product_bucket",
+                    "multiValue": [
+                      "GSUITE_ADMIN"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "scope",
+            "multiValue": [
+              "https://www.googleapis.com/auth/admin.reports.audit.readonly"
+            ]
+          }
+        ]
+      }
+    ],
+    "_time": 1759934290.596,
+    "_data_source": "http_google_workspace_admin",
+    "cribl_breaker": [
+      "google_sdk:get_items",
+      "ndjson"
+    ]
+  },
+  {
+    "_raw": "{\n      \"kind\": \"admin#reports#activity\",\n      \"id\": {\n        \"time\": \"2025-10-08T14:36:40.162Z\",\n        \"uniqueQualifier\": \"-2339502068821587090\",\n        \"applicationName\": \"token\",\n        \"customerId\": \"D03cdmbi0\"\n      },\n      \"etag\": \"\\\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/6UU2uELeBSVFcG7WYqw_-EIe1LA\\\"\",\n      \"actor\": {\n        \"email\": \"user@acmecorp.com\",\n        \"profileId\": \"117329556664445035546\"\n      },\n      \"ipAddress\": \"35.89.28.158\",\n      \"networkInfo\": {\n        \"ipAsn\": [\n          16509\n        ],\n        \"regionCode\": \"US\",\n        \"subdivisionCode\": \"US-OR\"\n      },\n      \"events\": [\n        {\n          \"type\": \"auth\",\n          \"name\": \"authorize\",\n          \"parameters\": [\n            {\n              \"name\": \"client_id\",\n              \"value\": \"116703733704564446790\"\n            },\n            {\n              \"name\": \"app_name\",\n              \"value\": \"116703733704564446790\"\n            },\n            {\n              \"name\": \"client_type\",\n              \"value\": \"WEB\"\n            },\n            {\n              \"name\": \"scope_data\",\n              \"multiMessageValue\": [\n                {\n                  \"parameter\": [\n                    {\n                      \"name\": \"scope_name\",\n                      \"value\": \"https://www.googleapis.com/auth/admin.reports.audit.readonly\"\n                    },\n                    {\n                      \"name\": \"product_bucket\",\n                      \"multiValue\": [\n                        \"GSUITE_ADMIN\"\n                      ]\n                    }\n                  ]\n                }\n              ]\n            },\n            {\n              \"name\": \"scope\",\n              \"multiValue\": [\n                \"https://www.googleapis.com/auth/admin.reports.audit.readonly\"\n              ]\n            }\n          ]\n        }\n      ]\n    }",
+    "host": "ip-10-255-0-219",
+    "source": "https://admin.googleapis.com/admin/reports/v1/activity/users/all/applications/token",
+    "kind": "admin#reports#activity",
+    "id": {
+      "time": "2025-10-08T14:36:40.162Z",
+      "uniqueQualifier": "-2339502068821587090",
+      "applicationName": "token",
+      "customerId": "D03cdmbi0"
+    },
+    "etag": "\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/6UU2uELeBSVFcG7WYqw_-EIe1LA\"",
+    "actor": {
+      "email": "user@acmecorp.com",
+      "profileId": "117329556664445035546"
+    },
+    "ipAddress": "35.89.28.158",
+    "networkInfo": {
+      "ipAsn": [
+        16509
+      ],
+      "regionCode": "US",
+      "subdivisionCode": "US-OR"
+    },
+    "events": [
+      {
+        "type": "auth",
+        "name": "authorize",
+        "parameters": [
+          {
+            "name": "client_id",
+            "value": "116703733704564446790"
+          },
+          {
+            "name": "app_name",
+            "value": "116703733704564446790"
+          },
+          {
+            "name": "client_type",
+            "value": "WEB"
+          },
+          {
+            "name": "scope_data",
+            "multiMessageValue": [
+              {
+                "parameter": [
+                  {
+                    "name": "scope_name",
+                    "value": "https://www.googleapis.com/auth/admin.reports.audit.readonly"
+                  },
+                  {
+                    "name": "product_bucket",
+                    "multiValue": [
+                      "GSUITE_ADMIN"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "scope",
+            "multiValue": [
+              "https://www.googleapis.com/auth/admin.reports.audit.readonly"
+            ]
+          }
+        ]
+      }
+    ],
+    "_time": 1759934200.162,
+    "_data_source": "http_google_workspace_admin",
+    "cribl_breaker": [
+      "google_sdk:get_items",
+      "ndjson"
+    ]
+  },
+  {
+    "_raw": "{\n      \"kind\": \"admin#reports#activity\",\n      \"id\": {\n        \"time\": \"2025-10-08T13:29:23.211Z\",\n        \"uniqueQualifier\": \"-4615148282637150423\",\n        \"applicationName\": \"token\",\n        \"customerId\": \"D03cdmbi0\"\n      },\n      \"etag\": \"\\\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/mxIu__iJ9oaMzIsHwlgHApXcKAQ\\\"\",\n      \"actor\": {\n        \"email\": \"admin@acmecorp.com\",\n        \"profileId\": \"116666192297935290365\"\n      },\n      \"ipAddress\": \"2601:280:5d80:af00:21b2:f06:30f5:a9f7\",\n      \"networkInfo\": {\n        \"ipAsn\": [\n          33652\n        ],\n        \"regionCode\": \"US\",\n        \"subdivisionCode\": \"US-CO\"\n      },\n      \"events\": [\n        {\n          \"type\": \"auth\",\n          \"name\": \"authorize\",\n          \"parameters\": [\n            {\n              \"name\": \"client_id\",\n              \"value\": \"331588195051-jsmlcgdl2li407e48kjpjqgrb50k7u7c.apps.googleusercontent.com\"\n            },\n            {\n              \"name\": \"app_name\",\n              \"value\": \"Slack\"\n            },\n            {\n              \"name\": \"client_type\",\n              \"value\": \"NATIVE_IOS\"\n            },\n            {\n              \"name\": \"scope_data\",\n              \"multiMessageValue\": [\n                {\n                  \"parameter\": [\n                    {\n                      \"name\": \"scope_name\",\n                      \"value\": \"https://www.googleapis.com/auth/userinfo.email\"\n                    },\n                    {\n                      \"name\": \"product_bucket\",\n                      \"multiValue\": [\n                        \"IDENTITY\",\n                        \"OTHER\"\n                      ]\n                    }\n                  ]\n                },\n                {\n                  \"parameter\": [\n                    {\n                      \"name\": \"scope_name\",\n                      \"value\": \"https://www.googleapis.com/auth/userinfo.profile\"\n                    },\n                    {\n                      \"name\": \"product_bucket\",\n                      \"multiValue\": [\n                        \"IDENTITY\",\n                        \"OTHER\"\n                      ]\n                    }\n                  ]\n                },\n                {\n                  \"parameter\": [\n                    {\n                      \"name\": \"scope_name\",\n                      \"value\": \"openid\"\n                    },\n                    {\n                      \"name\": \"product_bucket\",\n                      \"multiValue\": [\n                        \"IDENTITY\",\n                        \"OTHER\"\n                      ]\n                    }\n                  ]\n                }\n              ]\n            },\n            {\n              \"name\": \"scope\",\n              \"multiValue\": [\n                \"https://www.googleapis.com/auth/userinfo.email\",\n                \"https://www.googleapis.com/auth/userinfo.profile\",\n                \"openid\"\n              ]\n            }\n          ]\n        }\n      ]\n    }",
+    "host": "ip-10-255-0-219",
+    "source": "https://admin.googleapis.com/admin/reports/v1/activity/users/all/applications/token",
+    "kind": "admin#reports#activity",
+    "id": {
+      "time": "2025-10-08T13:29:23.211Z",
+      "uniqueQualifier": "-4615148282637150423",
+      "applicationName": "token",
+      "customerId": "D03cdmbi0"
+    },
+    "etag": "\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/mxIu__iJ9oaMzIsHwlgHApXcKAQ\"",
+    "actor": {
+      "email": "admin@acmecorp.com",
+      "profileId": "116666192297935290365"
+    },
+    "ipAddress": "2601:280:5d80:af00:21b2:f06:30f5:a9f7",
+    "networkInfo": {
+      "ipAsn": [
+        33652
+      ],
+      "regionCode": "US",
+      "subdivisionCode": "US-CO"
+    },
+    "events": [
+      {
+        "type": "auth",
+        "name": "authorize",
+        "parameters": [
+          {
+            "name": "client_id",
+            "value": "331588195051-jsmlcgdl2li407e48kjpjqgrb50k7u7c.apps.googleusercontent.com"
+          },
+          {
+            "name": "app_name",
+            "value": "Slack"
+          },
+          {
+            "name": "client_type",
+            "value": "NATIVE_IOS"
+          },
+          {
+            "name": "scope_data",
+            "multiMessageValue": [
+              {
+                "parameter": [
+                  {
+                    "name": "scope_name",
+                    "value": "https://www.googleapis.com/auth/userinfo.email"
+                  },
+                  {
+                    "name": "product_bucket",
+                    "multiValue": [
+                      "IDENTITY",
+                      "OTHER"
+                    ]
+                  }
+                ]
+              },
+              {
+                "parameter": [
+                  {
+                    "name": "scope_name",
+                    "value": "https://www.googleapis.com/auth/userinfo.profile"
+                  },
+                  {
+                    "name": "product_bucket",
+                    "multiValue": [
+                      "IDENTITY",
+                      "OTHER"
+                    ]
+                  }
+                ]
+              },
+              {
+                "parameter": [
+                  {
+                    "name": "scope_name",
+                    "value": "openid"
+                  },
+                  {
+                    "name": "product_bucket",
+                    "multiValue": [
+                      "IDENTITY",
+                      "OTHER"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "scope",
+            "multiValue": [
+              "https://www.googleapis.com/auth/userinfo.email",
+              "https://www.googleapis.com/auth/userinfo.profile",
+              "openid"
+            ]
+          }
+        ]
+      }
+    ],
+    "_time": 1759930163.211,
+    "_data_source": "http_google_workspace_admin",
+    "cribl_breaker": [
+      "google_sdk:get_items",
+      "ndjson"
+    ]
+  },
+  {
+    "_raw": "{\n      \"kind\": \"admin#reports#activity\",\n      \"id\": {\n        \"time\": \"2025-10-07T20:14:08.422Z\",\n        \"uniqueQualifier\": \"-983510728070823081\",\n        \"applicationName\": \"token\",\n        \"customerId\": \"D03cdmbi0\"\n      },\n      \"etag\": \"\\\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/XH8j-QOt6jZHiT6Yu7IXBFr2FXM\\\"\",\n      \"actor\": {\n        \"email\": \"user@acmecorp.com\",\n        \"profileId\": \"117329556664445035546\"\n      },\n      \"ipAddress\": \"35.89.28.158\",\n      \"networkInfo\": {\n        \"ipAsn\": [\n          16509\n        ],\n        \"regionCode\": \"US\",\n        \"subdivisionCode\": \"US-OR\"\n      },\n      \"events\": [\n        {\n          \"type\": \"auth\",\n          \"name\": \"authorize\",\n          \"parameters\": [\n            {\n              \"name\": \"client_id\",\n              \"value\": \"116703733704564446790\"\n            },\n            {\n              \"name\": \"app_name\",\n              \"value\": \"116703733704564446790\"\n            },\n            {\n              \"name\": \"client_type\",\n              \"value\": \"WEB\"\n            },\n            {\n              \"name\": \"scope_data\",\n              \"multiMessageValue\": [\n                {\n                  \"parameter\": [\n                    {\n                      \"name\": \"scope_name\",\n                      \"value\": \"https://www.googleapis.com/auth/admin.reports.audit.readonly\"\n                    },\n                    {\n                      \"name\": \"product_bucket\",\n                      \"multiValue\": [\n                        \"GSUITE_ADMIN\"\n                      ]\n                    }\n                  ]\n                }\n              ]\n            },\n            {\n              \"name\": \"scope\",\n              \"multiValue\": [\n                \"https://www.googleapis.com/auth/admin.reports.audit.readonly\"\n              ]\n            }\n          ]\n        }\n      ]\n    }",
+    "host": "ip-10-255-0-219",
+    "source": "https://admin.googleapis.com/admin/reports/v1/activity/users/all/applications/token",
+    "kind": "admin#reports#activity",
+    "id": {
+      "time": "2025-10-07T20:14:08.422Z",
+      "uniqueQualifier": "-983510728070823081",
+      "applicationName": "token",
+      "customerId": "D03cdmbi0"
+    },
+    "etag": "\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/XH8j-QOt6jZHiT6Yu7IXBFr2FXM\"",
+    "actor": {
+      "email": "user@acmecorp.com",
+      "profileId": "117329556664445035546"
+    },
+    "ipAddress": "35.89.28.158",
+    "networkInfo": {
+      "ipAsn": [
+        16509
+      ],
+      "regionCode": "US",
+      "subdivisionCode": "US-OR"
+    },
+    "events": [
+      {
+        "type": "auth",
+        "name": "authorize",
+        "parameters": [
+          {
+            "name": "client_id",
+            "value": "116703733704564446790"
+          },
+          {
+            "name": "app_name",
+            "value": "116703733704564446790"
+          },
+          {
+            "name": "client_type",
+            "value": "WEB"
+          },
+          {
+            "name": "scope_data",
+            "multiMessageValue": [
+              {
+                "parameter": [
+                  {
+                    "name": "scope_name",
+                    "value": "https://www.googleapis.com/auth/admin.reports.audit.readonly"
+                  },
+                  {
+                    "name": "product_bucket",
+                    "multiValue": [
+                      "GSUITE_ADMIN"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "scope",
+            "multiValue": [
+              "https://www.googleapis.com/auth/admin.reports.audit.readonly"
+            ]
+          }
+        ]
+      }
+    ],
+    "_time": 1759868048.422,
+    "_data_source": "http_google_workspace_admin",
+    "cribl_breaker": [
+      "google_sdk:get_items",
+      "ndjson"
+    ]
+  }
+]

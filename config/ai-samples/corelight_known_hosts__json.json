@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "key": "corelight_known_hosts::json",
+  "sourcetype": "corelight_known_hosts",
+  "format": "json",
+  "events": [
+    "{\"_path\":\"known_hosts\",\"ts\":1727334012.123456,\"uid\":\"CqZ8h13x9vLdmJ2k7a\",\"id.orig_h\":\"10.0.4.15\",\"id.orig_p\":52344,\"id.resp_h\":\"93.184.216.34\",\"id.resp_p\":443,\"host\":\"10.0.4.15\"}",
+    "{\"_path\":\"known_hosts\",\"ts\":1727334087.654321,\"uid\":\"CfR2j94m1pTwXqL0nB\",\"id.orig_h\":\"172.16.8.22\",\"id.orig_p\":49213,\"id.resp_h\":\"52.84.150.21\",\"id.resp_p\":80,\"host\":\"172.16.8.22\"}",
+    "{\"_path\":\"known_hosts\",\"ts\":1727334145.987654,\"uid\":\"CbN7k30d5rYsVmO4iC\",\"id.orig_h\":\"192.168.1.101\",\"id.orig_p\":61233,\"id.resp_h\":\"8.8.8.8\",\"id.resp_p\":53,\"host\":\"192.168.1.101\"}",
+    "{\"_path\":\"known_hosts\",\"ts\":1727334201.445566,\"uid\":\"CxT4m81f2sUqWnP9jD\",\"id.orig_h\":\"203.0.113.55\",\"id.orig_p\":443,\"id.resp_h\":\"10.0.4.15\",\"id.resp_p\":8443,\"host\":\"203.0.113.55\"}",
+    "{\"_path\":\"known_hosts\",\"ts\":1727334267.112233,\"uid\":\"CyU5n92g3tVrXoQ0kE\",\"id.orig_h\":\"10.0.9.8\",\"id.orig_p\":33221,\"id.resp_h\":\"172.217.14.196\",\"id.resp_p\":443,\"host\":\"10.0.9.8\"}",
+    "{\"_path\":\"known_hosts\",\"ts\":1727334334.778899,\"uid\":\"CzV6o03h4uWsYpR1lF\",\"id.orig_h\":\"2001:0db8:85a3:0000:0000:8a2e:0370:7334\",\"id.orig_p\":56789,\"id.resp_h\":\"2606:4700:4700::1111\",\"id.resp_p\":443,\"host\":\"2001:0db8:85a3:0000:0000:8a2e:0370:7334\"}",
+    "{\"_path\":\"known_hosts\",\"ts\":1727334401.334455,\"uid\":\"CaW7p14i5vXtZqS2mG\",\"id.orig_h\":\"10.0.4.201\",\"id.orig_p\":22,\"id.resp_h\":\"198.51.100.7\",\"id.resp_p\":44231,\"host\":\"198.51.100.7\"}",
+    "{\"_path\":\"known_hosts\",\"ts\":1727334467.665544,\"uid\":\"CbX8q25j6wYuArT3nH\",\"id.orig_h\":\"192.168.20.44\",\"id.orig_p\":51122,\"id.resp_h\":\"151.101.1.140\",\"id.resp_p\":443,\"host\":\"192.168.20.44\"}",
+    "{\"_path\":\"known_hosts\",\"ts\":1727334534.2211,\"uid\":\"CcY9r36k7xZvBsU4oI\",\"id.orig_h\":\"10.0.1.5\",\"id.orig_p\":5555,\"id.resp_h\":\"185.220.101.34\",\"id.resp_p\":9001,\"host\":\"185.220.101.34\"}",
+    "{\"_path\":\"known_hosts\",\"ts\":1727334601.998877,\"uid\":\"CdZ0s47l8yAwCtV5pJ\",\"id.orig_h\":\"172.16.3.99\",\"id.orig_p\":48822,\"id.resp_h\":\"104.16.85.20\",\"id.resp_p\":443,\"host\":\"172.16.3.99\"}",
+    "{\"_path\":\"known_hosts\",\"ts\":1727334667.556677,\"uid\":\"CeA1t58m9zBxDuW6qK\",\"id.orig_h\":\"10.0.4.15\",\"id.orig_p\":52512,\"id.resp_h\":\"93.184.216.34\",\"id.resp_p\":80,\"host\":\"10.0.4.15\"}",
+    "{\"_path\":\"known_hosts\",\"ts\":1727334734.887766,\"uid\":\"CfB2u69n0aCyEvX7rL\",\"id.orig_h\":\"192.168.1.150\",\"id.orig_p\":63421,\"id.resp_h\":\"45.33.32.156\",\"id.resp_p\":31337,\"host\":\"192.168.1.150\"}",
+    "{\"_path\":\"known_hosts\",\"ts\":1727334801.334422,\"uid\":\"CgC3v70o1bDzFwY8sM\",\"id.orig_h\":\"10.0.6.77\",\"id.orig_p\":40122,\"id.resp_h\":\"142.250.72.10\",\"id.resp_p\":443,\"host\":\"10.0.6.77\"}",
+    "{\"_path\":\"known_hosts\",\"ts\":1727334867.667788,\"uid\":\"ChD4w81p2cEaGxZ9tN\",\"id.orig_h\":\"172.16.9.4\",\"id.orig_p\":22,\"id.resp_h\":\"203.0.113.199\",\"id.resp_p\":52441,\"host\":\"203.0.113.199\"}",
+    "{\"_path\":\"known_hosts\",\"ts\":1727334934.112299,\"uid\":\"CiE5x92q3dFbHyA0uO\",\"id.orig_h\":\"10.0.2.33\",\"id.orig_p\":51234,\"id.resp_h\":\"192.168.1.101\",\"id.resp_p\":3389,\"host\":\"10.0.2.33\"}",
+    "{\"_path\":\"known_hosts\",\"ts\":1727335001.445588,\"uid\":\"CjF6y03r4eGcIzB1vP\",\"id.orig_h\":\"66.249.66.1\",\"id.orig_p\":443,\"id.resp_h\":\"10.0.4.15\",\"id.resp_p\":80,\"host\":\"66.249.66.1\"}",
+    "{\"_path\":\"known_hosts\",\"ts\":1727335067.778811,\"uid\":\"CkG7z14s5fHdJaC2wQ\",\"id.orig_h\":\"10.0.11.12\",\"id.orig_p\":57123,\"id.resp_h\":\"216.58.212.164\",\"id.resp_p\":443,\"host\":\"10.0.11.12\"}",
+    "{\"_path\":\"known_hosts\",\"ts\":1727335134.221133,\"uid\":\"ClH8a25t6gIeKbD3xR\",\"id.orig_h\":\"192.168.50.7\",\"id.orig_p\":61890,\"id.resp_h\":\"91.189.91.42\",\"id.resp_p\":443,\"host\":\"192.168.50.7\"}",
+    "{\"_path\":\"known_hosts\",\"ts\":1727335201.554466,\"uid\":\"CmI9b36u7hJfLcE4yS\",\"id.orig_h\":\"10.0.4.15\",\"id.orig_p\":49222,\"id.resp_h\":\"::1\",\"id.resp_p\":8080,\"host\":\"10.0.4.15\"}",
+    "{\"_path\":\"known_hosts\",\"ts\":1727335267.887799,\"uid\":\"CnJ0c47v8iKgMdF5zT\",\"id.orig_h\":\"10.0.99.254\",\"id.orig_p\":443,\"id.resp_h\":\"41.202.33.11\",\"id.resp_p\":6667,\"host\":\"10.0.99.254\"}"
+  ],
+  "fingerprint": "4db4ae91-3676",
+  "verification": {
+    "verdict": "pass",
+    "method": "parser-emulation",
+    "eventsParsed": 20,
+    "eventsChecked": 20,
+    "fields": [
+      "_path",
+      "host",
+      "id.orig_h",
+      "id.orig_p",
+      "id.resp_h",
+      "id.resp_p",
+      "log_time",
+      "session_id",
+      "ts",
+      "uid"
+    ],
+    "reasons": [],
+    "offendingEvents": [],
+    "keyEcho": null
+  },
+  "provenance": {
+    "model": "us.anthropic.claude-sonnet-5",
+    "buildNumber": 529,
+    "generatedAt": "2026-08-18T07:07:25.806Z",
+    "grounding": "KNOWN FACTS ABOUT THIS SOURCE (from sourcetype recognition — match these exactly):\n- REQUIRED wire format (the user confirmed this — emit ONLY this format): Format: one compact JSON object per line. Every event carries _path (the Zeek log name, matching the sourcetype), ts as a fractional epoch, uid, and the id.orig_h/id.orig_p/id.resp_h/id.resp_p tuple. Every OTHER key must be one Zeek defines for that specific log — do not carry conn.log fields (conn_state, orig_bytes, resp_bytes, duration, history, service) into a log that is not conn."
+  }
+}

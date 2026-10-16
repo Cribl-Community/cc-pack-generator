@@ -1,0 +1,71 @@
+{
+  "key": "azure_signin",
+  "sourcetype": "azure_signin",
+  "classUid": 3002,
+  "destFormat": "ocsf#authentication",
+  "source": "microsoft",
+  "vendorNames": [
+    "Microsoft"
+  ],
+  "provenance": {
+    "samplePack": "azure-audit-log-ocsf",
+    "sampleName": "cribl_ms_entraid_graph_activity",
+    "tier": "reference",
+    "sampleEvents": 5,
+    "emulated": "golden OCSF pipeline, offline emulation of scripts/build-source-ocsf-samples.mjs",
+    "rejected": []
+  },
+  "events": [
+    {
+      "time": "2026-03-11T19:16:46.0721878Z",
+      "metadata": {
+        "product": {
+          "name": "Azure AD",
+          "vendor_name": "Microsoft"
+        },
+        "version": "1.9.0"
+      },
+      "class_uid": 3002,
+      "category_uid": 3,
+      "activity_id": 0,
+      "type_uid": 300200,
+      "severity_id": 1,
+      "status_id": 0,
+      "status": "Unknown"
+    },
+    {
+      "time": "2026-03-11T19:16:46.0721878Z",
+      "metadata": {
+        "product": {
+          "name": "Azure AD",
+          "vendor_name": "Microsoft"
+        },
+        "version": "1.9.0"
+      },
+      "class_uid": 3002,
+      "category_uid": 3,
+      "activity_id": 0,
+      "type_uid": 300200,
+      "severity_id": 1,
+      "status_id": 0,
+      "status": "Unknown"
+    },
+    {
+      "time": "2026-03-11T19:16:48.8529809Z",
+      "metadata": {
+        "product": {
+          "name": "Azure AD",
+          "vendor_name": "Microsoft"
+        },
+        "version": "1.9.0"
+      },
+      "class_uid": 3002,
+      "category_uid": 3,
+      "activity_id": 0,
+      "type_uid": 300200,
+      "severity_id": 1,
+      "status_id": 0,
+      "status": "Unknown"
+    }
+  ]
+}

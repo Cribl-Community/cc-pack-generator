@@ -1,0 +1,122 @@
+[
+  {
+    "_raw": "#separator \\x09",
+    "_time": 1521911720.605656,
+    "sourcetype": "bro_known_hosts",
+    "source": "/opt/zeek/logs/current/known_hosts.log"
+  },
+  {
+    "_raw": "#set_separator\t,",
+    "_time": 1521911720.605656,
+    "sourcetype": "bro_known_hosts",
+    "source": "/opt/zeek/logs/current/known_hosts.log"
+  },
+  {
+    "_raw": "#empty_field\t(empty)",
+    "_time": 1521911720.605656,
+    "sourcetype": "bro_known_hosts",
+    "source": "/opt/zeek/logs/current/known_hosts.log"
+  },
+  {
+    "_raw": "#unset_field\t-",
+    "_time": 1521911720.605656,
+    "sourcetype": "bro_known_hosts",
+    "source": "/opt/zeek/logs/current/known_hosts.log"
+  },
+  {
+    "_raw": "#path\tknown_hosts",
+    "_time": 1521911720.605656,
+    "sourcetype": "bro_known_hosts",
+    "source": "/opt/zeek/logs/current/known_hosts.log"
+  },
+  {
+    "_raw": "#open\t2024-04-12-19-29-12",
+    "_time": 1521911720.605656,
+    "sourcetype": "bro_known_hosts",
+    "source": "/opt/zeek/logs/current/known_hosts.log"
+  },
+  {
+    "_raw": "#fields\tts\thost",
+    "_time": 1521911720.605656,
+    "sourcetype": "bro_known_hosts",
+    "source": "/opt/zeek/logs/current/known_hosts.log"
+  },
+  {
+    "_raw": "#types\ttime\taddr",
+    "_time": 1521911720.605656,
+    "sourcetype": "bro_known_hosts",
+    "source": "/opt/zeek/logs/current/known_hosts.log"
+  },
+  {
+    "_raw": "1521911720.605656\t10.164.94.120",
+    "_time": 1521911720.605656,
+    "sourcetype": "bro_known_hosts",
+    "source": "/opt/zeek/logs/current/known_hosts.log"
+  },
+  {
+    "_raw": "1521911720.605656\t10.47.27.80",
+    "_time": 1521911720.605656,
+    "sourcetype": "bro_known_hosts",
+    "source": "/opt/zeek/logs/current/known_hosts.log"
+  },
+  {
+    "_raw": "1521911720.607559\t10.47.3.200",
+    "_time": 1521911720.607559,
+    "sourcetype": "bro_known_hosts",
+    "source": "/opt/zeek/logs/current/known_hosts.log"
+  },
+  {
+    "_raw": "1521911720.608069\t10.47.8.208",
+    "_time": 1521911720.608069,
+    "sourcetype": "bro_known_hosts",
+    "source": "/opt/zeek/logs/current/known_hosts.log"
+  },
+  {
+    "_raw": "1521911720.625649\t10.47.8.1",
+    "_time": 1521911720.625649,
+    "sourcetype": "bro_known_hosts",
+    "source": "/opt/zeek/logs/current/known_hosts.log"
+  },
+  {
+    "_raw": "1521911720.646188\t10.47.8.200",
+    "_time": 1521911720.646188,
+    "sourcetype": "bro_known_hosts",
+    "source": "/opt/zeek/logs/current/known_hosts.log"
+  },
+  {
+    "_raw": "1521911720.668528\t10.47.3.218",
+    "_time": 1521911720.668528,
+    "sourcetype": "bro_known_hosts",
+    "source": "/opt/zeek/logs/current/known_hosts.log"
+  },
+  {
+    "_raw": "1521911720.679553\t10.47.22.55",
+    "_time": 1521911720.679553,
+    "sourcetype": "bro_known_hosts",
+    "source": "/opt/zeek/logs/current/known_hosts.log"
+  },
+  {
+    "_raw": "1521911720.692212\t10.128.0.223",
+    "_time": 1521911720.692212,
+    "sourcetype": "bro_known_hosts",
+    "source": "/opt/zeek/logs/current/known_hosts.log"
+  },
+  {
+    "_raw": "1521911720.692212\t10.47.7.58",
+    "_time": 1521911720.692212,
+    "sourcetype": "bro_known_hosts",
+    "source": "/opt/zeek/logs/current/known_hosts.log"
+  },
+  {
+    "_raw": "1521911720.694623\t10.47.21.80",
+    "_time": 1521911720.694623,
+    "sourcetype": "bro_known_hosts",
+    "source": "/opt/zeek/logs/current/known_hosts.log"
+  },
+  {
+    "_raw": "1521911720.694623\t10.174.251.215",
+    "_time": 1521911720.694623,
+    "sourcetype": "bro_known_hosts",
+    "source": "/opt/zeek/logs/current/known_hosts.log"
+  }
+]

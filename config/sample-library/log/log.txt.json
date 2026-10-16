@@ -1,0 +1,12 @@
+[
+  {
+    "_raw": "INFO:Accepting request: [POST /user/]",
+    "_time": 1642572571.899,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "ERROR:root:more than one user: [User(id=1234, name=' John Smith', address='1234 Sand Hill Road, Menlo Park, CA 94001', social_security='458-02-6124', password='pa$$word123')]",
+    "_time": 1642572571.899,
+    "cribl_breaker": "Break on newlines"
+  }
+]

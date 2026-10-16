@@ -1,0 +1,102 @@
+[
+  {
+    "_raw": "1,2016/12/01- 11:17:00,007801001148,THREAT,url,1,2016/12/01 11:17:00,10.10.10.10,34.34.34.34,20.20.20.20,5.5.5.5,Inside-to-Outside,domain\\usrname,,web-browsing,vsys1,Inside,Outside,ethernet1/23,ethernet1/1,Syslog,2016/12/01 11:17:00,34586031,1,62182,80,54938,80,0x404000,tcp,block-url,\"em.licasd.com/s\",(9999),malware,informational,client-to-server,981634904,0x0,10.0.0.0-10.255.255.255,US,0,,0,,,1,Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.1; WOW64; Trident/7.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; .NET4.0C; .NET4.0E; InfoPath.3; Microsoft Outlook 14.0.7172; ms-office; MSOffice 14),,,,,,,0,12,0,0,0,,VA1-NW1-PA5050-01,",
+    "_time": 1480612620,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "1,2017/06/21 12:36:46,002201002897,THREAT,file,0,2017/06/21 12:36:46,1.1.1.1,10.16.125.216,1.1.1.1,2.2.2.2,Outbound Ports Post Proxy Ret-1,,domain\\user,flash,vsys1,External,Internal,ethernet1/1,ethernet1/5,Panorama w Email,2017/06/21 12:36:46,34422068,2,80,63373,80,8969,0x402000,tcp,alert,\"OverlayMenu.swf\",Adobe Shockwave Flash File(52145),ServerDomainAccess,low,server-to-client,9391516965,0x0,GB,10.0.0.0-10.255.255.255,0,,0,,,1,,,,,,,,0,20,0,0,0,,host,admin.brightcove.com/viewer/us20160520.1717/federatedVideoUI/menus/OverlayMenu.swf",
+    "_time": 1498066606,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "38750074 Device Stopped Emitting Events  A device has stopped emitting events    Log source 'PaSeries @ US-ICT-STAGE-FW01.corp.netapp.com' has stopped emitting events",
+    "_time": 1680192560.584,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "<14>1 2020-09-28T19:17:28.259Z stream-logfwd20-97032096-09221018-hn2a-harness-1jnf logforwarder - panwlogs - 1,2020-09-28T19:17:03.000000Z,no-serial,THREAT,file,9.1,2020-09-28T19:16:49.000000Z,10.172.39.2,23.201.216.73,208.127.85.136,23.201.216.73,Mobile Users outbound access,mhagstrom@company.com,,ms-update,vsys1,trust,untrust,tunnel,ethernet,CortexDL,,410683,1,64890,80,58365,80,4202496,tcp,alert,9a76be77-94a5-4010-ad5d-de894ae50b2e,52270,computer-and-internet-info,Low,server to client,429845,-6629298651489370112,10.0.0.0-10.255.255.255,US,,,0,,,,,,,,,,,0,20,0,0,0,,GP cloud service,,,,,0,,0,,N/A,,,0,,,,,bfa346d5-8861-429d-8774-14e663b7f917,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, ",
+    "_time": 1601320648.259,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "<10>Aug  5 10:33:09 host1.corp.domain.com 1,2019/08/05 10:33:08,012501001607,THREAT,data,0,2019/08/05 10:33:08,10.106.79.33,2.2.2.2,3.3.3.3,2.2.2.2,Internet-Services,domain2\\user,,web-browsing,vsys3,trust,untrust,ethernet1/7,ethernet1/5,Perimeter-Log-Profile,2019/08/05 10:33:08,33649974,1,55692,80,23275,80,0x402000,tcp,alert,\"\",SSN(60001),business-and-economy,critical,client-to-server,6704221269059042006,0x8000000000000000,domain2,United States,0,,0,,,8,,,,,,,,0,11,3652,0,0,DMZ,host1,,,,,0,,0,,N/A,unknown,AppThreat-0-0,0x0",
+    "_time": 1659713589,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "<10>Jan 30 12:41:33 TestHost.com 1,2021/01/30 12:41:32,001801048822,THREAT,spyware,2304,2021/01/30 12:41:32,5.6.7.8,1.2.3.4,0.0.0.0,0.0.0.0,Rule 127,,,unknown-udp,vsys1,Outside,Inside,ethernet1/1,ethernet1/2,SIEM Forwarding,2021/01/30 12:41:32,160997,1,1066,16464,0,0,0x2000,udp,block-ip,\"\",ZeroAccess.Gen Command and Control Traffic(13235),any,critical,client-to-server,3240689499,0x2000000000000000,United States,Canada,0,,0,,,0,,,,,,,,0,0,0,0,0,,portalx-palo1,,,,,0,,0,,N/A,botnet,AppThreat-8370-6526,0x0,0,4294967295,,,56e432ec-baea-42be-977d-6914ea1f9320,0",
+    "_time": 1675104093,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "<110> 2020-10-01T01:59:59.405140+00:00 2020-10-01T01:58:44.963Z 3474d859a460 Skyformation CEF:0|Skyformation|SkyFormation Cloud Apps Security|2.0.0|sk4-audit-event|audit-event|0|cat=audit cs6Label=raw-event destinationServiceName=Custom Application dproc=endpoint-sqs dtz=default-tenant end=1601517524963 requestClientApplication=Expedia_PaloAlto_DC_Logs suid=anonymous suser=anonymous cs6={\"time\":\"2020-09-30T18:51:37.000-07:00\",\"indexTimeEpoch\":\"1601517099\",\"raw\":\"Sep 30 18:51:37 nlamsdc-ecomfw01-PA 1,2020/09/30 18:51:37,007251000051689,THREAT,vulnerability,2049,2020/09/30 18:51:37,34.245.240.31,185.63.116.10,34.245.240.31,10.160.4.176,Rule 24-1,,,ssh,vsys1,Outside,Inside,ethernet1/3,ethernet1/2,Splunk-Log,2020/09/30 18:51:37,558643,3,31331,22,31331,22,0x402000,tcp,alert,\\\"\\\",SSH2 Login Attempt(31914),any,informational,client-to-server,976003559,0xa000000000000000,Ireland,United Kingdom,0,,0,,,0,,,,,,,,0,9942,0,0,0,,nlamsdc-ecomfw01-PA,,,,,0,,0,,N/A,brute-force,AppThreat-8325-6330,0x0,0,4294967295,\"} ",
+    "_time": 1601517599.405,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "<110> 2020-10-06T22:00:29.333497+00:00 2020-10-06T22:00:21.883Z 3474d859a460 Skyformation CEF:0|Skyformation|SkyFormation Cloud Apps Security|2.0.0|sk4-audit-event|audit-event|0|cat=audit cs6Label=raw-event destinationServiceName=Custom Application dproc=endpoint-sqs dtz=default-tenant end=1602021621883 requestClientApplication=Expedia_PaloAlto_DC_Logs suid=anonymous suser=anonymous cs6={\"time\":\"2020-10-06T14:53:43.000-07:00\",\"indexTimeEpoch\":\"1602021224\",\"raw\":\"Oct  6 14:53:43 nlamsdc-ecomfw01-PA 1,2020/10/06 14:53:43,007251000051689,THREAT,spyware,2049,2020/10/06 14:53:43,10.160.4.43,52.73.128.118,185.63.116.4,52.73.128.118,Rule 30,,,datadog,vsys1,Inside,Outside,ethernet1/2,ethernet1/3,Splunk-Log,2020/10/06 14:53:43,547218,1,62317,443,13554,443,0x403000,tcp,alert,\\\"5-10-1-app.agent.datadoghq.com/\\\",Suspicious TLS Evasion Found(14978),datadoghq.com,informational,client-to-server,995059634,0xa000000000000000,10.0.0.0-10.255.255.255,United States,0,,0,,,0,,,,,,,,0,9942,0,0,0,,nlamsdc-ecomfw01-PA,,,,,0,,0,,N/A,spyware,AppThreat-8327-6339,0x0,0,4294967295,\"}",
+    "_time": 1602021629.333,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "<12>1 2017-11-03T15:21:05-07:00 somehost.com 1,2017/11/03 - - - 15:21:05,007901003610,THREAT,virus,0,2017/11/03 15:21:05,10.46.68.242,10.46.203.228,0.0.0.0,0.0.0.0,SH-IntraVLAN-TEMP_ALLOW,s_dom\\s_user,dom\\user,ms-ds-smbv3,vsys1,trust,trust,ae1.568,ae1.2020,NOA Reporting,2017/11/03 15:21:05,34170864,1,55014,445,0,0,0x6000,tcp,reset-both,\"Desktop\",Eicar Test File(100000),any,medium,client-to-server,585841592,0x0,10.0.0.0-10.255.255.255,10.0.0.0-10.255.255.255,0,,0,,,0,,,,,,,,0,16,0,0,0,,RD-ACC-FW2,",
+    "_time": 1509747665,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "<12>Aug 10 23:59:37 sv2lxpanlogc01.corp.domain.com 1,2022/08/10 23:59:36,013201010535,THREAT,spyware,2305,2022/08/10 23:59:29,1.2.3.4,2.3.4.5,3.4.5.6,4.5.6.7,CE_GoodApps_Out,,,dns-base,vsys1,inside,outside,ethernet1/6,ethernet1/5.103,Log_All_Panorama,2022/08/10 23:59:29,442332,1,57136,53,56759,53,0x403000,udp,sinkhole,\"testdomain.com\",454305494(454305494),any,medium,client-to-server,7013337694829150063,0xa000000000000000,172.16.0.0-172.31.255.255,Japan,0,,0,,,0,,,,,,,,0,3812,11,0,0,,sv1-pan1ce-pri,,,,,0,,0,,N/A,dns-security,AppThreat-0-0,0x0,0,4294967295,,,db44ebdd-284d-474c-83f2-7dfd008a9647,0,",
+    "_time": 1660193977,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "<12>May 18 13:49:45 SPAM-ICS_A LEEF:1.0|Palo Alto Networks|PAN-OS Syslog Integration|8.1.13 |wildfire-conn-failed|ReceiveTime=2020/05/18 13:49:45|SerialNumber=011901012387|cat=SYSTEM|Subtype=wildfire |devTime=May 18 2020 11:49:45 GMT|VirtualSystem=|Filename=|Module= general|sev=3|Severity=medium|msg=\"Failed to resolve host wildfire.paloaltonetworks.com\"|sequence=1347519| ActionFlags=0x8000000000000000|DeviceGroupHierarchyL1=0|DeviceGroupHierarchyL2 =0|DeviceGroupHierarchyL3=0|DeviceGroupHierarchyL4=$dg_ hier_level_4|vSrcName=|DeviceName=SPAM-ICS_A\"\"LEEF: 1.0|Palo Alto Networks|PAN-OS Syslog Integration|8.0.12|MP4 Detected(52104)|ReceiveTime=2019/09/29 12:00:06|SerialNumber=010108001344|cat=THREAT|Subtype=file|devTime=Sep 29 2019 19:00:06 GMT|src=1.1.1.1|dst=1.1.1.1|srcPostNAT=1.1.1.1|dstPostNAT=1.1.1.1|RuleName=Edge Allow Applications|usrName=|SourceUser=|DestinationUser=domain\\dmp8|Application=youtube-streaming|VirtualSystem=vsys12|SourceZone=outside|DestinationZone=inside|IngressInterface=ae1.509|EgressInterface=ae1.606|LogForwardingProfile=UDN QRadar Logging Services|SessionID=1249762|RepeatCount=2|srcPort=443|dstPort=55188|srcPostNATPort=443|dstPostNATPort=1390|Flags=0x1402400|proto=tcp|action=alert|Miscellaneous=\"videoplayback\"|ThreatID=MP4 Detected(52104)|URLCategory=streaming-media|sev=2|Severity=low|Direction=server-to-client|sequence=6707330773001525884|ActionFlags=0x8000000000000000|SourceLocation=United States|DestinationLocation=1.1.1.1-1.1.1.1|ContentType=|PCAP_ID=0|FileDigest=|Cloud=|URLIndex=13|RequestMethod=|Subject=|DeviceGroupHierarchyL1=7876|DeviceGroupHierarchyL2=31|DeviceGroupHierarchyL3=3166|DeviceGroupHierarchyL4=0|vSrcName=outbound|DeviceName=panfwfxiocint02|SrcUUID=|DstUUID=|TunnelID=0|MonitorTag=|ParentSessionID=0|",
+    "_time": 1652899785,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "<12>Oct 18 09:48:45 host 1,2019/10/18 09:48:44,001701010524,THREAT,virus,0,2019/10/18 10:05:06,10.144.15.4,1.1.1.1,1.1.1.1,1.1.1.1,Allow Social Media1,,,web-browsing,vsys1,Intranet,Internet,ethernet1/2,ethernet1/7,,2019/10/18 10:05:06,439177,1,50041,80,40490,80,0x402000,tcp,reset-server,\"teracopy.exe\",Virus/Win32.WGeneric.afptpr(304913931),computer-and-internet-info,medium,server-to-client,4340920733,0xa000000000000000,10.0.0.0-10.255.255.255,United States,0,,0,,,1,,,,,,,,0,11,0,0,0,,srsdifw01-m,,,,,0,,0,,N/A,pe,Antivirus-3135-3646,0x0,0,0,",
+    "_time": 1666104525,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "<130>Jan 28 18:21:01 WMVLPAN01.inside.becu.org 1,2020/01/28 18:21:01,012801034950,THREAT,flood,2049,2020/01/28 18:20:32,0.0.0.0,0.0.0.0,0.0.0.0,0.0.0.0,,,,not-applicable,vsys1,Untrust_L3,Untrust_L3,,,Panorama,2020/01/28 18:20:32,0,1,0,0,0,0,0x2000,udp,random-drop,\"\",UDP Flood(8502),any,critical,client-to-server,2396277,0xa000000000000000,0.0.0.0-0.255.255.255,0.0.0.0-0.255.255.255,0,,0,,,0,,,,,,,,0,0,0,0,0,,PA-TukWireless,,,,,0,,0,,N/A,flood,AppThreat-0-0,0x0,0,4294967295,",
+    "_time": 1674951661,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "<132>Jun 24 08:40:50 host1.inside.dom1.org 1,2019/06/24 08:40:50,001606028191,THREAT,virus,1,2019/06/24 08:31:22,10.252.6.60,2.2.2.2,3.3.3.3,4.4.4.4,Inside-Out,,,web-browsing,vsys1,Guest-emp-vend,L3-Untrust,ethernet1/2.292,ethernet1/1,,2019/06/24 08:31:22,39897,1,58689,80,49541,80,0x402000,tcp,reset-both,\"SetupImgBurn_2.5.8.0.exe\",Virus/Win32.WGeneric.yjiaw(244873731),shareware-and-freeware,medium,server-to-client,8629686,0xa000000000000000,10.0.0.0-10.255.255.255,United States,0,,0,,,1,,,,,,,,0,0,0,0,0,,PA-Gateway_South,,,,,0,,0,,N/A,unknown,Antivirus-3019-3529,0x0,0,0,",
+    "_time": 1656078050,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "<133>Aug 10 23:59:30 FWATLRCCINTP08A.domain.com 1,2022/08/10 23:59:30,010108000878,THREAT,file,2305,2022/08/10 23:59:30,1.2.3.4,2.3.4.5,3.4.5.6,4.5.6.7,Rule 49,,,ftp,vsys1,ATLINSIDE,ATLOUTSIDE,ethernet7/21.823,ethernet7/22.900,ATL_LogFWD,2022/08/10 23:59:30,1610839257,1,13247,41776,63949,41776,0x502000,tcp,alert,\"appver.txt\",TXT File Upload(52287),any,low,client-to-server,7130045306674030107,0xa000000000000000,10.0.0.0-10.255.255.255,Poland,0,,0,,,0,,,,,,,,0,33,0,0,0,vsys1,FWATLRCCINTP08A,,,,,0,,0,,N/A,unknown,AppThreat-8605-7511,0x0,0,4294967295,,,051fd09b-5d9c-4876-892b-7a9f53cb9a6d,0,",
+    "_time": 1660193970,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "<134>Aug 10 23:59:38 FWATLT5DCIP01B-NEW.domain.com 1,2022/08/10 23:59:38,012501002347,THREAT,vulnerability,2305,2022/08/10 23:59:38,10.46.56.32,10.168.56.26,0.0.0.0,0.0.0.0,Rule 1914,,,msrpc-base,vsys1,ATLT5INSIDE,ATLT5OUTSIDE,ethernet1/17,ethernet1/18,ATLT5_LogFWD,2022/08/10 23:59:38,2412522,1,14322,6128,0,0,0x6000,tcp,alert,\"\",Microsoft Windows NTLMSSP Detection(92322),any,informational,client-to-server,7117845782763338515,0xa000000000000000,10.0.0.0-10.255.255.255,10.0.0.0-10.255.255.255,0,,0,,,0,,,,,,,,0,99,0,0,0,,FWATLT5DCIP01B-NEW,,,,,0,,0,,N/A,info-leak,AppThreat-8605-7511,0x0,0,4294967295,,,313cdf01-5125-42e3-8755-4785c311eaf5,0,",
+    "_time": 1660193978,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "<13>Apr 12 16:59:21 10.253.8.10 716 <14>1 2021-04-12T21:59:43.265Z stream-logfwd20-1077002-12181212-i215-harness-s0w1 logforwarder - panwlogs - 1,2021-04-12T21:59:40.000000Z,no-serial,THREAT,spyware,9.1,2021-04-12T21:59:21.000000Z,10.226.5.47,10.8.140.140,,,GPC Required-DNS,user.email@domain.com,,dns,vsys1,trust,inter-fw,tunnel.1,tunnel.2001,DSOSC_Log_Forward_NOT_TO_Splunk,,458274,1,56411,53,0,0,0x80002000,udp,sinkhole,,159030093,any,Medium,client to server,1366714565,0xa800000000000000,10.0.0.0-10.255.255.255,10.0.0.0-10.255.255.255,,,1152921504606850072,,,0,,,,,,,,0,216,203,0,0,,GP cloud service,,,,,0,,0,1970-01-01T00:00:00.000000Z,N/A,dns,241307745,0x0,,,,,a22dcc00-27b4-47aa-a532-ce674a5af6fb,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+    "_time": 1649800761,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "<13>Aug  8 16:28:26 10.53.98.121 1,2022/08/08 16:28:26,016201003814,THREAT,file,2560,2022/08/08 16:24:19,10.23.36.141,72.21.91.29,104.232.54.34,72.21.91.29,Webex_Media_Services_URLs,,,ocsp,vsys1,Inside,Internet,ethernet1/2,ethernet1/17,Panorama_Centralized_Logging,2022/08/08 16:24:19,388719,1,56057,80,56728,80,0x402000,tcp,alert,\"ocsp.digicert.com/\",DER Encoded X509 Certificate(52209),Webex_Media_Services_URLs,low,server-to-client,5876695827,0xa000000000000000,10.0.0.0-10.255.255.255,United States,,,0,,,1,,,,,,,,0,52,11,218,24,,CA-ELE-PA-FW1a,,,,,0,,0,,N/A,unknown,AppThreat-8603-7503,0x0,0,4294967295,,,02aec0fa-955a-43ef-badb-7dfc7a3d534e,0,,0.0.0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,0,2022-08-08T16:24:20.454+00:00,,,,infrastructure,networking,client-server,2,\"has-known-vulnerability,pervasive-use\",,ocsp,no,no",
+    "_time": 1659994106,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "<13>Aug 20 02:06:55 UEFA1-CPE-262646.uefa.local 1,2020/08/20 02:06:55,016401001467,THREAT,vulnerability,2304,2020/08/20 02:06:55,172.21.34.217,172.16.69.20,0.0.0.0,0.0.0.0,GP-Users-to-Corporate-Staff,uefa-oa\\inio,,ms-local-security-management,vsys1,GP-Zone-Users,UEFA-Trusted,tunnel.1,ae2.3112,QRadar,2020/08/20 02:06:55,91213,1,58712,49671,0,0,0x80002000,tcp,alert,\"\"\"\"\"\",Windows Local Security Architect lsardelete access(30857),any,low,client-to-server,3573380878,0xa000000000000000,GVA-Datacenter-AMS,Nyon_CL,0,,1206435646936211875,,,0,,,,,,,,0,0,0,0,0,,UEFA1-CPE-262646,,,,,0,,0,,N/A,info-leak,AppThreat-8307-6263,0x0,0,4294967295,,,e7a39f81-a0f1-4a44-ba87-8dfe071f186c,0",
+    "_time": 1660979215,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "<13>Jan 21 06:40:02 10.2.37.170 LOGSTASH[-]: 2022-01-21T06:40:02.000Z 10.2.37.170 1,2022/01/21 06:40:02,012501005036,THREAT,url,2305,2022/01/21 06:40:02,1.2.3.4,2.3.4.5,3.4.5.6,4.5.6.7,sec_t2u_allow_web-browsing,intra\\ts-ko.b.miyamoto,,web-browsing,vsys1,trust,untrust,ethernet1/24,ethernet1/21,logfwd_all_panorama_syslog,2022/01/21 06:40:02,69746582,1,54094,443,37316,443,0x140b000,tcp,block-url,\"\"www.test.com/watch.1188651441204?key=24b28282ecc8f3e5aa4058c817ce4cec&kw=[\"\"%e3%82%b3%e3%83%b3%e3%83%97%e3%83%aa%e3%83%bc%e3%83%88%ef%bc%81\"\",\"\"%e3%83%98%e3%82%a2%e3%83%bc\"\",\"\"%e3%82%b9%e3%82%bf%e3%82%b8%e3%82%aa\"\",\"\"asa\"\",\"\"%e6%96%99%e9%87%91\"\",\"\"100710-%e3%83%98%e3%82%a2%e3%83%bc\"\",\"\"%e3%82%b9%e3%82%bf%e3%82%b8%e3%82%aa\"\",\"\"asa\"\",\"\"%e6%96%99%e9%87%91\"\",\"\"-\"\",\"\"webwalljp\"\"]&refer=https://test.com/2021/02/asa-100710-asa.html&tz=9&dev=r&res=12.31&uuid=435c8cc7-7367-4761-93c0-f8d2b89c4463:2:1\",(9999),malware,informational,client-to-server,6882628857756638545,0xa000000000000000,10.0.0.0-10.255.255.255,United States,0,,0,,,1,\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36\",,,\"https://test.blogspot.com/\",,,,0,76,79,299,300,,JPUKBD1FW02,,,,get,0,,0,2022/01/21 06:39:51,N/A,unknown,AppThreat-0-0,0x0,0,4294967295,,\" urlcategory_deny_catchall,malware\",45da0d90-2b5d-4f37-a965-9b5a7c8e3477,75651956,",
+    "_time": 1674304802,
+    "cribl_breaker": "Break on newlines"
+  }
+]

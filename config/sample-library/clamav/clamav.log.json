@@ -1,0 +1,30 @@
+[
+  {
+    "_raw": "----------- SCAN SUMMARY -----------\nKnown viruses: 8577545\nEngine version: 0.103.3\nScanned directories: 18384\nScanned files: 146973\nInfected files: 0\nData scanned: 10620.25 MB\nData read: 468265.97 MB (ratio 0.02:1)\nTime: 4598.959 sec (76 m 38 s)\nStart Date: 2021:11:16 12:00:01\nEnd Date:   2021:11:16 13:16:40\n",
+    "_time": 1637855308.55,
+    "source": "/var/log/clamav/clamav.log",
+    "sourcetype": "clamav:clamav",
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "\n\n----------- SCAN SUMMARY -----------\nKnown viruses: 8577545\nEngine version: 0.103.3\nScanned directories: 18364\nScanned files: 146975\nInfected files: 0\nData scanned: 10631.24 MB\nData read: 468266.57 MB (ratio 0.02:1)\nTime: 4574.277 sec (76 m 14 s)\nStart Date: 2021:11:17 08:00:01\nEnd Date:   2021:11:17 09:16:16\n",
+    "_time": 1637855308.552,
+    "source": "/var/log/clamav/clamav.log",
+    "sourcetype": "clamav:clamav",
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "\n/usr/lib64/libcurl.so.4.5.0: Unix.Trojan.Coinminer-9910195-0 FOUND\n\n----------- SCAN SUMMARY -----------\nKnown viruses: 8577905\nEngine version: 0.103.3\nScanned directories: 18364\nScanned files: 146977\nInfected files: 1\nData scanned: 10574.78 MB\nData read: 468275.68 MB (ratio 0.02:1)\nTime: 4574.319 sec (76 m 14 s)\nStart Date: 2021:11:17 12:00:01\nEnd Date:   2021:11:17 13:16:15\n",
+    "_time": 1637855308.552,
+    "source": "/var/log/clamav/clamav.log",
+    "sourcetype": "clamav:clamav",
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "\n/tmp/libcurl.so.4.5.0: Unix.Trojan.Coinminer-9910195-0 FOUND\n/usr/lib64/libcurl.so.4.5.0: Unix.Trojan.Coinminer-9910195-0 FOUND\n/home/user/libcurl.so.4.5.0: Unix.Trojan.Coinminer-9910195-0 FOUND\n\n----------- SCAN SUMMARY -----------\nKnown viruses: 8577905\nEngine version: 0.103.3\nScanned directories: 18344\nScanned files: 146983\nInfected files: 3\nData scanned: 10645.17 MB\nData read: 468280.21 MB (ratio 0.02:1)\nTime: 4754.892 sec (79 m 14 s)\nStart Date: 2021:11:18 08:00:01\nEnd Date:   2021:11:18 09:19:16\n\n-------------------------------------------------------------------------------",
+    "_time": 1637855308.552,
+    "source": "/var/log/clamav/clamav.log",
+    "sourcetype": "clamav:clamav",
+    "cribl_breaker": "Break on newlines"
+  }
+]

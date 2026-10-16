@@ -1,0 +1,13 @@
+[
+  {
+    "_raw": "{\"userId\":\"anonymized|00000000e7e8502e4894f8f1b50000000000000\",\"deviceId\":\"00000000-4c5b-4603-bb1f-000000000000\",\"clientEventId\":\"00000000-bf7b-4baa-980a-000000000000\",\"userName\":\"Anonymized_00000000e7e8502e4894f8f1b50000000000000\",\"email\":\"****\",\"type\":\"Navigation\",\"verdict\":\"Allowed\",\"timestamp\":\"2026-02-10T20:38:17.584Z\",\"processedDate\":\"2026-02-10T20:39:44.22326Z\",\"topLevelUrl\":\"https://dmv.nv.gov/ced.htm\",\"country\":\"United States\",\"region\":\"Nevada\",\"urlWebCategories\":[\"Motor Vehicles\"],\"urlWebReputation\":100,\"tabId\":00000000,\"ruleId\":\"00000000-eb43-4839-8e15-00000000000\",\"ruleName\":\"AFOS Trusted Websites\",\"details\":\"{\\n  \\\"application_parameters_details_list\\\": [\\n    {\\n      \\\"application_id\\\": \\\"00000000-14f2-55e0-e57f-000000000000\\\",\\n      \\\"parameters\\\": [\\n        {\\n          \\\"parameter_name\\\": \\\"tenant\\\"\\n        }\\n      ]\\n    }\\n  ],\\n  \\\"navigation_details\\\": {\\n    \\\"is_iframe\\\": false\\n  }\\n}\",\"sourceIp\":\"10.133.146.10\",\"publicIp\":\"24.1.1.1\",\"machineName\":\"IRSFA1981.CORP.afos.io\",\"matchedDevicePosture\":\"{\\n  \\\"browser_name\\\": \\\"Island\\\",\\n  \\\"browser_version\\\": \\\"1.69.29\\\",\\n  \\\"chromium_version\\\": \\\"138.0.7204.97\\\",\\n  \\\"cpu_model\\\": \\\"Intel(R) Xeon(R) E E-2414\\\",\\n  \\\"is_default_browser\\\": false,\\n  \\\"island_platform\\\": \\\"Browser\\\",\\n  \\\"machine_id\\\": \\\"00000000-d102-4f59-958f-000000000000\\\",\\n  \\\"machine_name\\\": \\\"IRSFA1981.CORP.afos.io\\\",\\n  \\\"os_user_name\\\": \\\"AFOSCORP\\\\\\\\i1982\\\",\\n  \\\"os_version\\\": \\\"10.0.20348\\\",\\n  \\\"serial_number\\\": \\\"2QQCZ80\\\"\\n}\",\"countryCode\":\"US\",\"origin\":\"Island\",\"isIslandPrivateAccess\":false,\"shortTopLevelUrl\":\"https://dmv.nv.gov/ced.htm\",\"websiteTopLevelUrl\":\"https://dmv.nv.gov\",\"frameUrl\":\"https://dmv.nv.gov/ced.htm\",\"compatibilityMode\":\"None\",\"osUserName\":\"AFOSCORP\\\\i1982\",\"machineId\":\"00000000-d102-4f59-958f-000000000000\",\"osPlatform\":\"Windows\",\"lineageIds\":[],\"tenantId\":\"afos\",\"id\":\"00000000-5fea-47a5-b56c-000000000000\",\"createdDate\":\"2026-02-10T20:42:18.838053Z\",\"updatedDate\":\"2026-02-10T20:42:18.838053Z\"}",
+    "host": "ip-10-254-0-140",
+    "source": "https://management.island.io/api/external/v1/timeline",
+    "_time": 1770756138.838053,
+    "cribl_breaker": [
+      "Island Browser API Ruleset:Audit",
+      "ndjson"
+    ],
+    "sourcetype": "island:browser:audit"
+  }
+]

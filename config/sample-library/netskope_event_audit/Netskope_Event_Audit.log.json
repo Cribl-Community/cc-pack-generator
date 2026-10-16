@@ -1,0 +1,22 @@
+[
+  {
+    "_raw": "{\n      \"type\": \"admin_audit_logs\",\n      \"supporting_data\": {\n        \"data_values\": [\n          400,\n          \"POST\",\n          \"/api/v2/steering/ipsec/tunnels\",\n          \"trid=ceeoed298edji6dbe9qg\"\n        ],\n        \"data_type\": \"steering\"\n      },\n      \"timestamp\": 1711378583,\n      \"severity_level\": 2,\n      \"user\": \"Alliance-EU Token\",\n      \"audit_log_event\": \"Rest API V2 Call\",\n      \"organization_unit\": \"\",\n      \"ur_normalized\": \"alliance-eu token\",\n      \"count\": 1,\n      \"_id\": \"395c302cc6ff02d2538fbe3d\",\n      \"details\": [],\n      \"sAMAccountName\": \"\",\n      \"ccl\": \"\",\n      \"userPrincipalName\": \"\"\n    }",
+    "_time": 1711378583,
+    "cribl_breaker": "netskope"
+  },
+  {
+    "_raw": "{\n      \"type\": \"admin_audit_logs\",\n      \"supporting_data\": {\n        \"data_values\": [\n          201,\n          \"POST\",\n          \"/api/v2/steering/ipsec/tunnels\",\n          \"trid=ceeoeh9ghfjeae51euu0\"\n        ],\n        \"data_type\": \"steering\"\n      },\n      \"timestamp\": 1711378601,\n      \"severity_level\": 2,\n      \"user\": \"Alliance-EU Token\",\n      \"audit_log_event\": \"Rest API V2 Call\",\n      \"organization_unit\": \"\",\n      \"ur_normalized\": \"alliance-eu token\",\n      \"count\": 1,\n      \"_id\": \"f963839068fb07adbd63d836\",\n      \"details\": [],\n      \"sAMAccountName\": \"\",\n      \"ccl\": \"\",\n      \"userPrincipalName\": \"\"\n    }",
+    "_time": 1711378601,
+    "cribl_breaker": "netskope"
+  },
+  {
+    "_raw": "{\n      \"timestamp\": 1711381120,\n      \"type\": \"admin_audit_logs\",\n      \"user\": \"xtesta@networks.com\",\n      \"severity_level\": 2,\n      \"audit_log_event\": \"Logout Successful\",\n      \"supporting_data\": {\n        \"data_type\": \"reason\",\n        \"data_values\": [\n          \"Logged out due to inactivity\"\n        ]\n      },\n      \"organization_unit\": \"\",\n      \"ur_normalized\": \"xtesta@networks.com\",\n      \"count\": 1,\n      \"_id\": \"0ccd09d7aeb88475054cbd34\",\n      \"details\": [],\n      \"sAMAccountName\": \"\",\n      \"ccl\": \"\",\n      \"userPrincipalName\": \"\"\n    }",
+    "_time": 1711381120,
+    "cribl_breaker": "netskope"
+  },
+  {
+    "_raw": "{\n      \"timestamp\": 1711387341,\n      \"type\": \"admin_audit_logs\",\n      \"user\": \"leeroy.jenkins@test.com\",\n      \"severity_level\": 2,\n      \"audit_log_event\": \"SSO Login Successful\",\n      \"supporting_data\": {\n        \"data_type\": \"user\",\n        \"data_values\": [\n          \"leeroy.jenkins@test.com\"\n        ]\n      },\n      \"organization_unit\": \"\",\n      \"ur_normalized\": \"leeroy.jenkins@test.com\",\n      \"count\": 1,\n      \"_id\": \"1efbb18b7fd5e2534e5300ce\",\n      \"details\": [],\n      \"sAMAccountName\": \"\",\n      \"ccl\": \"\",\n      \"userPrincipalName\": \"\"\n    }",
+    "_time": 1711387341,
+    "cribl_breaker": "netskope"
+  }
+]

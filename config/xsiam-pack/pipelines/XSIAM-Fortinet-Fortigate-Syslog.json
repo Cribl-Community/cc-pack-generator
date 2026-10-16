@@ -1,0 +1,65 @@
+{
+  "name": "XSIAM-Fortinet-Fortigate-Syslog",
+  "kind": "source-specific",
+  "pattern": "tag_vendor_product",
+  "sourceIdField": "__sourceIdentifier",
+  "sourceIdentifier": "af01292940d7426594d3d3e55ae17ee0",
+  "vendor": "Fortinet",
+  "product": "Fortigate",
+  "reshapesRaw": false,
+  "sample": {
+    "name": "XSIAM-Fortinet-Fortigate-CEF.log",
+    "format": "cef",
+    "formatLabel": "CEF",
+    "events": 1
+  },
+  "upstream": {
+    "pack": "cribl-paloalto-xsiam",
+    "version": "2.1.1",
+    "path": "default/pipelines/XSIAM-Fortinet-Fortigate-Syslog/conf.yml",
+    "sha256": "7a06dc2e8aba85922fda3b19cc7a64058606d1714e8e7c48f987c6a21f7f2af0",
+    "source": "https://packs.cribl.io/packs/cribl-paloalto-xsiam"
+  },
+  "conf": {
+    "output": "default",
+    "streamtags": [],
+    "groups": {},
+    "asyncFuncTimeout": 1000,
+    "description": ""
+  },
+  "functions": [
+    {
+      "id": "comment",
+      "filter": "true",
+      "disabled": null,
+      "conf": {
+        "comment": "Assign the Source-Identifier, vendor, and product"
+      }
+    },
+    {
+      "id": "eval",
+      "filter": "true",
+      "disabled": false,
+      "conf": {
+        "add": [
+          {
+            "disabled": false,
+            "name": "__sourceIdentifier",
+            "value": "'af01292940d7426594d3d3e55ae17ee0'"
+          },
+          {
+            "disabled": false,
+            "name": "__vendor",
+            "value": "'Fortinet'"
+          },
+          {
+            "disabled": false,
+            "name": "__product",
+            "value": "'Fortigate'"
+          }
+        ]
+      },
+      "description": "Assign the Source-Identifier, vendor, and product"
+    }
+  ]
+}

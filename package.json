@@ -1,0 +1,46 @@
+{
+  "name": "cc-pack-generator",
+  "private": true,
+  "version": "1.0.299",
+  "buildNumber": 923,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "oxlint",
+    "preview": "vite preview",
+    "package": "npm run build && node scripts/package.mjs",
+    "test": "node --import tsx --test tests/*.mjs"
+  },
+  "dependencies": {
+    "@aws-crypto/sha256-js": "^5.2.0",
+    "@smithy/protocol-http": "^5.5.2",
+    "@smithy/signature-v4": "^5.5.2",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "yaml": "^2.9.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.13.2",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.2",
+    "esbuild": "^0.28.2",
+    "oxlint": "^1.69.0",
+    "tsx": "^4.23.1",
+    "typescript": "~6.0.2",
+    "vite": "^8.1.0"
+  },
+  "displayName": "Cribl Pack Generator",
+  "description": "AI-powered wizard that creates and deploys Cribl Stream Packs. Select a sourcetype, provide sample events, pick a destination schema (OCSF, CIM, ECS, ASIM, Chronicle, CEF, JSON), and deploy a complete pipeline with parsing, noise reduction, and field mapping — all in one click.",
+  "author": "Wilfred van der Linde - fakeuser@cribl.io",
+  "license": "Apache-2.0",
+  "cribl": {
+    "type": "app"
+  },
+  "tags": {
+    "product": [
+      "stream"
+    ]
+  }
+}

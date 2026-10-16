@@ -1,0 +1,12 @@
+[
+  {
+    "_raw": "{\"id\":\"00000000-0000-0000-0000-000000000000\",\"deletedDateTime\":null,\"accountEnabled\":true,\"approximateLastSignInDateTime\":\"2025-08-14T00:34:53Z\",\"complianceExpirationDateTime\":null,\"createdDateTime\":\"2024-04-22T19:03:39Z\",\"deviceCategory\":null,\"deviceId\":\"00000000-0000-0000-0000-000000000000\",\"deviceMetadata\":null,\"deviceOwnership\":null,\"deviceVersion\":2,\"displayName\":\"mscore-mini\",\"domainName\":null,\"enrollmentProfileName\":null,\"enrollmentType\":null,\"externalSourceName\":null,\"isCompliant\":null,\"isManaged\":null,\"isRooted\":null,\"managementType\":null,\"manufacturer\":null,\"mdmAppId\":null,\"model\":null,\"onPremisesLastSyncDateTime\":null,\"onPremisesSyncEnabled\":null,\"operatingSystem\":\"Windows\",\"operatingSystemVersion\":\"10.0.22631.3958\",\"physicalIds\":[\"[USER-GID]:00000000-0000-0000-0000-000000000000\",\"[GID]:g:000000000000\",\"[USER-HWID]:00000000-0000-0000-0000-000000000000\",\"[HWID]:h:00000000000000\"],\"profileType\":\"RegisteredDevice\",\"registrationDateTime\":\"2024-08-13T00:23:24Z\",\"sourceType\":null,\"systemLabels\":[],\"trustType\":\"Workplace\",\"extensionAttributes\":{\"extensionAttribute1\":null,\"extensionAttribute2\":null,\"extensionAttribute3\":null,\"extensionAttribute4\":null,\"extensionAttribute5\":null,\"extensionAttribute6\":null,\"extensionAttribute7\":null,\"extensionAttribute8\":null,\"extensionAttribute9\":null,\"extensionAttribute10\":null,\"extensionAttribute11\":null,\"extensionAttribute12\":null,\"extensionAttribute13\":null,\"extensionAttribute14\":null,\"extensionAttribute15\":null},\"alternativeSecurityIds\":[{\"type\":2,\"identityProvider\":null,\"key\":\"REALLYBIGSTRINGAAAAAAAA\"}]}",
+    "host": "main-cribl000000",
+    "source": "https://graph.microsoft.com/v1.0/devices",
+    "_time": 1755131693,
+    "cribl_breaker": [
+      "Azure Graph API Ruleset:Azure Graph API",
+      "ndjson"
+    ]
+  }
+]

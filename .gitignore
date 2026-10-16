@@ -1,0 +1,13 @@
+node_modules
+dist
+build
+package-build
+# Written on release tags only, by scripts/prepare-git-pack.mjs (git add -f).
+static
+default
+.env
+*.local
+.DS_Store
+logs
+*.log
+!config/ocsf-samples/source-fixtures/*.log

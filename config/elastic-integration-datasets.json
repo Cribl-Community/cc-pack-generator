@@ -1,0 +1,43 @@
+{
+  "_comment": "App sourcetype -> the Elastic integration data stream the Elastic `cribl` integration reroutes it to. Read by src/elastic-integration.ts. dataId = the app's canonical sourcetype, so the route_entries the app renders and the _dataId the pack stamps always agree. `via: cribl` = the integration's ingest pipeline parses `message` itself, so the cribl integration can feed it. `via: agent` = parsing happens in Elastic Agent (Winlogbeat winlog.*, decode_cef, an S3 object path), so nothing Cribl sends parses: no route is stamped and the card says to use Elastic Agent. `expects` = the line shape the dataset's own ingest pipeline parses (a JS regex, matched per line); `fit` = whether the app's reference sample for the sourcetype has that shape, checked by tests/elastic-integration-test.mjs. Verified 2026-10-01 against each package's data_stream/<ds>/elasticsearch/ingest_pipeline/default.yml (elastic/integrations main).",
+  "integration": {
+    "package": "cribl",
+    "version": "1.1.1",
+    "kibana": "^9.4.0",
+    "index": "logs-cribl-default",
+    "dataIdField": "_dataId",
+    "docs": "https://www.elastic.co/docs/reference/integrations/cribl"
+  },
+  "routes": {
+    "fortinet_fortigate": { "datastream": "logs-fortinet_fortigate.log", "via": "cribl", "fit": "native", "expects": "\\b(?:logid|devid|type)=", "shape": "FortiGate key=value syslog" },
+    "palo_alto_traffic": { "datastream": "logs-panw.panos", "via": "cribl", "fit": "native", "expects": ",(?:TRAFFIC|THREAT|SYSTEM|CONFIG|HIPMATCH|GLOBALPROTECT|USERID|DECRYPTION|AUTHENTICATION|CORRELATION),", "shape": "PAN-OS native CSV syslog" },
+    "palo_alto_threat": { "datastream": "logs-panw.panos", "via": "cribl", "fit": "native", "expects": ",(?:TRAFFIC|THREAT|SYSTEM|CONFIG|HIPMATCH|GLOBALPROTECT|USERID|DECRYPTION|AUTHENTICATION|CORRELATION),", "shape": "PAN-OS native CSV syslog" },
+    "palo_alto_system": { "datastream": "logs-panw.panos", "via": "cribl", "fit": "native", "expects": ",(?:TRAFFIC|THREAT|SYSTEM|CONFIG|HIPMATCH|GLOBALPROTECT|USERID|DECRYPTION|AUTHENTICATION|CORRELATION),", "shape": "PAN-OS native CSV syslog" },
+    "cisco_asa": { "datastream": "logs-cisco_asa.log", "via": "cribl", "fit": "native", "expects": "%(?:ASA|FTD)-\\d-\\d+", "shape": "ASA syslog with the %ASA-<sev>-<id> tag" },
+    "checkpoint_firewall": { "datastream": "logs-checkpoint.firewall", "via": "cribl", "fit": "reshape", "expects": "\\w+:\"[^\"]*\";|\\w+=\"[^\"]*\" +\\w+=\"", "shape": "Log Exporter syslog format (RFC 5424 structured data, key:\"value\";)", "note": "The pipe-delimited Log Exporter export (key=value|key=value) is not parsed: set the Log Exporter format to syslog." },
+    "sonicwall_firewall": { "datastream": "logs-sonicwall_firewall.log", "via": "cribl", "fit": "native", "expects": "\\bid=\\S+ +sn=", "shape": "SonicOS id=… sn=… syslog" },
+    "sophos_xg": { "datastream": "logs-sophos.xg", "via": "cribl", "fit": "native", "expects": "\\blog_id=", "shape": "Sophos XG key=value syslog" },
+    "pfsense": { "datastream": "logs-pfsense.log", "via": "cribl", "fit": "native", "expects": "^<\\d+>", "shape": "pfSense syslog with priority" },
+    "juniper_srx": { "datastream": "logs-juniper_srx.log", "via": "cribl", "fit": "native", "expects": "^(?:<\\d+>\\d* *)?\\d{4}-\\d\\d-\\d\\dT", "shape": "Junos structured syslog (RFC 5424)" },
+    "infoblox_dns": { "datastream": "logs-infoblox_nios.log", "via": "cribl", "fit": "reshape", "expects": "^<\\d+>", "shape": "NIOS syslog with <priority> and the member IP after the hostname", "note": "Every grok pattern is anchored on ^<priority>: a line forwarded without its syslog priority is not parsed." },
+    "zscaler_web": { "datastream": "logs-zscaler_zia.web", "via": "cribl", "fit": "reshape", "expects": "^\\s*\\{", "shape": "NSS web feed in JSON output format", "note": "The ZIA pipelines json-parse the line: a key=value or CSV NSS feed is not parsed. Set the NSS feed output type to JSON." },
+    "f5_bigip": { "datastream": "logs-f5_bigip.log", "via": "cribl", "fit": "reshape", "expects": "^\\s*\\{", "shape": "BIG-IP Telemetry Streaming JSON", "note": "The pipeline json-parses the line (ASM CEF aside): plain BIG-IP syslog is not parsed." },
+    "okta_system": { "datastream": "logs-okta.system", "via": "cribl", "fit": "native", "expects": "^\\s*\\{.*\"eventType\"", "shape": "one Okta System Log event as JSON" },
+    "aws_cloudtrail": { "datastream": "logs-aws.cloudtrail", "via": "cribl", "fit": "native", "expects": "^\\s*\\{.*\"eventName\"", "shape": "one CloudTrail record as JSON (not a Records[] file)" },
+    "aws_vpc_v5": { "datastream": "logs-aws.vpcflow", "via": "cribl", "fit": "native", "expects": "^\\s*\\d+ (?:\\d{12}|-) ", "shape": "VPC flow log line in a default field order (v2-v5 and the ECS variant)" },
+    "gcp_audit": { "datastream": "logs-gcp.audit", "via": "cribl", "fit": "native", "expects": "^\\s*\\{.*\"protoPayload\"", "shape": "one Cloud Audit LogEntry as JSON" },
+    "zeek_conn": { "datastream": "logs-zeek.connection", "via": "cribl", "fit": "reshape", "expects": "^\\s*\\{.*\"ts\"", "shape": "bare Zeek JSON (conn.log)", "note": "The pipeline json-parses the whole line: strip a syslog header before sending, or the event is dropped." },
+    "linux_secure": { "datastream": "logs-system.auth", "via": "cribl", "fit": "native", "inputType": "log", "expects": "^(?:<\\d+>)?(?:[A-Z][a-z]{2} +\\d+ \\d\\d:\\d\\d:\\d\\d|\\d{4}-\\d\\d-\\d\\dT\\S+) \\S+ ", "shape": "auth.log syslog line" },
+    "linux_syslog": { "datastream": "logs-system.syslog", "via": "cribl", "fit": "native", "inputType": "log", "expects": "^(?:<\\d+>)?(?:[A-Z][a-z]{2} +\\d+ \\d\\d:\\d\\d:\\d\\d|\\d{4}-\\d\\d-\\d\\dT\\S+) \\S+ ", "shape": "syslog line" },
+    "linux_audit": { "datastream": "logs-auditd.log", "via": "cribl", "fit": "native", "expects": "\\btype=\\w+ msg=audit\\(", "shape": "raw audit.log record" },
+    "cisco_esa": { "datastream": "logs-cisco_secure_email_gateway.log", "via": "cribl", "fit": "native", "expects": "\\b(?:Info|Warning|Debug|Critical|Trace):", "shape": "Secure Email Gateway text log", "note": "The log category comes from the syslog tag or the file name: a bare line lands without cisco_secure_email_gateway.log.category." },
+    "vsphere": { "datastream": "logs-vsphere.log", "via": "cribl", "fit": "native", "expects": "^(?:<\\d+>\\d* *)?\\d{4}-\\d\\d-\\d\\dT", "shape": "vCenter RFC 5424 syslog" },
+    "windows_security": { "datastream": "logs-system.security", "via": "agent", "shape": "Winlogbeat winlog.* fields", "note": "The ingest pipeline reads winlog.* (Elastic Agent's Windows input), not event XML or text." },
+    "windows_application": { "datastream": "logs-system.application", "via": "agent", "shape": "Winlogbeat winlog.* fields", "note": "The ingest pipeline reads winlog.* (Elastic Agent's Windows input), not event XML or text." },
+    "windows_system": { "datastream": "logs-system.system", "via": "agent", "shape": "Winlogbeat winlog.* fields", "note": "The ingest pipeline reads winlog.* (Elastic Agent's Windows input), not event XML or text." },
+    "windows_sysmon": { "datastream": "logs-windows.sysmon_operational", "via": "agent", "shape": "Winlogbeat winlog.* fields", "note": "The ingest pipeline reads winlog.* (Elastic Agent's Windows input), not event XML or text." },
+    "windows_powershell": { "datastream": "logs-windows.powershell", "via": "agent", "shape": "Winlogbeat winlog.* fields", "note": "The ingest pipeline reads winlog.* (Elastic Agent's Windows input), not event XML or text." },
+    "cef": { "datastream": "logs-cef.log", "via": "agent", "shape": "cef.* fields decoded by Elastic Agent", "note": "CEF is decoded by the agent's decode_cef processor; the cef.log ingest pipeline only post-processes cef.* fields." },
+    "cisco_umbrella": { "datastream": "logs-cisco_umbrella.log", "via": "agent", "shape": "Umbrella S3 export read by Elastic Agent", "note": "Every parse step is gated on log.file.path (dnslogs/proxylogs/…), the S3 object key the agent's input sets." }
+  }
+}

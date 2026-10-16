@@ -1,0 +1,15 @@
+[
+  {
+    "_raw": "Mar 1 20:35:56 xxx.xx.x.xx 928 <14>1 2021-03-01T20:35:56.500Z stream-logfwd20-587718190-02280003-lvod-harness-mjdh logforwarder - panwlogs - CEF:0|Palo Alto Networks|LF|2.0|CONFIG|config|3|ProfileToken=xxxxx dtz=UTC rt=Mar 01 2021 20:35:54 deviceExternalId=xxxxxxxxxxxxx PanOSEventTime=Jul 25 2019 23:30:12 duser= dntdom= duid= PanOSEventDetails= PanOSIsDuplicateLog=false PanOSIsPrismaNetwork=false PanOSIsPrismaUsers=false cat=xxxxx PanOSLogExported=false PanOSLogSource=firewall PanOSLogSourceTimeZoneOffset= PanOSSeverity= PanOSTenantID=xxxxxxxxxxxxx PanOSVirtualSystemID=0 src=xxx.xx.x.xx cs3= cs3Label=VirtualLocation act=commit-all duser0=Panorama-admin destinationServiceName= PanOSEventResult=submitted msg= externalId=xxxxxxxxxxxxx PanOSDGHierarchyLevel1=0 PanOSDGHierarchyLevel2=0 PanOSDGHierarchyLevel3=0 PanOSDGHierarchyLevel4=0 PanOSVirtualSystemName=<{xwo X dvchost=PA-VM PanOSEventDescription=\r_IYr0r PanOSTimeGeneratedHighResolution=Jul 25 2019 23:30:12",
+    "_time": 1626825542,
+    "cribl_breaker": [
+      "Break on newlines",
+      "noBreak1MB"
+    ],
+    "severity": 6,
+    "facility": 1,
+    "host": "firewall",
+    "severityName": "info",
+    "facilityName": "user"
+  }
+]

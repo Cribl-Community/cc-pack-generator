@@ -1,0 +1,426 @@
+{
+  "generated_by": "scripts/qualify-ocsf-optimization-rule.mjs --bundle",
+  "build": 832,
+  "updated_at": "2026-09-29T19:04:07.191Z",
+  "docs": [
+    {
+      "key": "authentication::microsoft::__ocsf_optimization__",
+      "category": "authentication",
+      "source": "microsoft",
+      "part": "ocsf_optimization",
+      "author": "curated",
+      "build": 832,
+      "updated_at": "2026-09-29T19:04:07.191Z",
+      "rules": [
+        {
+          "key": "authentication::microsoft::keep_only_security_relevant_event_ids",
+          "category": "authentication",
+          "source": "microsoft",
+          "ocsfField": "unmapped.EventCode",
+          "action": "drop",
+          "impact": "filter",
+          "defaultState": "inactive",
+          "description": "Drop Windows security events outside a curated ~18-ID security-relevant set",
+          "rule": "(unmapped||{}).EventCode !== undefined && !/^(4624|4625|4648|4672|4688|4697|4720|4728|4732|4740|1102|4768|4769|4771|4776|5140|5145|7045)$/.test(String((unmapped||{}).EventCode||''))",
+          "rationale": "Windows Security logs are extremely high-volume; most Event IDs carry little independent analytic value once the curated set (logons, privilege use, account/group changes, Kerberos, ACL changes, service installs) is kept. Enable only if the dropped Event IDs are not needed for your detections.",
+          "provenance": {
+            "authored": "Translated from xsiam-rule-contracts-phase1:config/optimization-rules.json + src/normalize-stage.ts (read-only reference per design §3d — not imported, not merged). Branch rule `win_keep_security_eventids`, atom `event_code notIn [...]` (18 numeric IDs). Cribl's OCSF Authentication mapping for Windows Security carries the raw code as a STRING under `unmapped.EventCode` (verified against config/ocsf-samples/ocsf_windows.json, `unmapped.EventCode: \"4624\"`), not a numeric `metadata.original_event_id` leaf — the ID list itself is unchanged, ported as a string-set regex test instead of a numeric notIn. Category is `authentication` (not `endpoint`) because that is how this app's own OCSF class model routes Windows security events (see pack-builder.ts's dataclass-to-OCSF-class comment); source `microsoft` matches the sample's `metadata.product.vendor_name`."
+          },
+          "measuredReductionPct": 17,
+          "validationEvidence": {
+            "sampleSize": 6,
+            "matchedCount": 1,
+            "hasCounterExample": true
+          }
+        }
+      ]
+    },
+    {
+      "key": "cloud_audit::generic::__ocsf_optimization__",
+      "category": "cloud_audit",
+      "source": "generic",
+      "part": "ocsf_optimization",
+      "author": "curated",
+      "build": 832,
+      "updated_at": "2026-09-29T19:04:07.191Z",
+      "rules": [
+        {
+          "key": "cloud_audit::generic::drop_readonly_api_calls",
+          "category": "cloud_audit",
+          "source": "generic",
+          "ocsfField": "api.operation",
+          "action": "drop",
+          "impact": "filter",
+          "defaultState": "inactive",
+          "description": "Drop read-only cloud API calls (Describe/List/Get/Head), keeping secret, token and key reads",
+          "rule": "(api||{}).operation && /^(Describe|List|Get|Head)/.test(String((api||{}).operation||'')) && !/(Secret|Token|Password|Credential|Decrypt|Key)/i.test(String((api||{}).operation||''))",
+          "rationale": "Drops inventory chatter that dominates CloudTrail-style audit feeds. Keep Create, Delete, Put and AssumeRole at full fidelity. Enable only if read-only API call visibility is out of scope. GetSecretValue, GetSessionToken, Decrypt and Get*Key are read-only too, but they are exactly what a credential-access investigation looks for, so they are never dropped.",
+          "provenance": {
+            "authored": "Translated from xsiam-rule-contracts-phase1:config/optimization-rules.json + src/normalize-stage.ts (read-only reference per design §3d — not imported, not merged). Branch rule `cloud_drop_readonly_api`, atom `is_readonly_api` reading `eventName || event_name || method_name`. `api.operation` is the OCSF API Activity canonicalMap leaf (pack-builder.ts OCSF_CLASSES.cloud_audit) — verified populated in config/ocsf-samples/ocsf_cloud_audit.json (real GCP audit `methodName` values like `google.pubsub.v1.Subscriber.GetSubscription`, `storage.objects.list`).",
+            "revisited": "Build 833: secret/credential guard carried over from the Stream aws_cloudtrail ct_drop_readonly rule."
+          },
+          "measuredReductionPct": 5,
+          "validationEvidence": {
+            "sampleSize": 21,
+            "matchedCount": 1,
+            "hasCounterExample": true
+          }
+        }
+      ]
+    },
+    {
+      "key": "dns::generic::__ocsf_optimization__",
+      "category": "dns",
+      "source": "generic",
+      "part": "ocsf_optimization",
+      "author": "curated",
+      "build": 832,
+      "updated_at": "2026-09-29T19:04:07.191Z",
+      "rules": [
+        {
+          "key": "dns::generic::suppress_repeated_popular_domain_queries",
+          "category": "dns",
+          "source": "generic",
+          "ocsfField": "query.hostname",
+          "lookup": {
+            "file": "dns-top-domains.csv",
+            "matchField": "query.hostname",
+            "lookupField": "domain",
+            "mode": "deny",
+            "rows": [
+              "google.com",
+              "youtube.com",
+              "facebook.com",
+              "instagram.com",
+              "x.com",
+              "wikipedia.org",
+              "amazon.com",
+              "yahoo.com",
+              "whatsapp.com",
+              "tiktok.com",
+              "netflix.com",
+              "linkedin.com",
+              "reddit.com",
+              "microsoft.com",
+              "live.com",
+              "office.com",
+              "bing.com",
+              "apple.com",
+              "icloud.com",
+              "github.com",
+              "gitlab.com",
+              "stackoverflow.com",
+              "cloudflare.com",
+              "akamai.net",
+              "akamaiedge.net",
+              "fastly.net",
+              "amazonaws.com",
+              "googleapis.com",
+              "googleusercontent.com",
+              "gstatic.com",
+              "doubleclick.net",
+              "googlesyndication.com",
+              "google-analytics.com",
+              "ytimg.com",
+              "jsdelivr.net",
+              "jquery.com",
+              "bootstrapcdn.com",
+              "npmjs.org",
+              "npmjs.com",
+              "docker.com",
+              "docker.io",
+              "nvidia.com",
+              "adobe.com",
+              "salesforce.com",
+              "force.com",
+              "zoom.us",
+              "slack.com",
+              "dropbox.com",
+              "box.com",
+              "spotify.com",
+              "pandora.com",
+              "ebay.com",
+              "paypal.com",
+              "stripe.com",
+              "shopify.com",
+              "wordpress.com",
+              "wordpress.org",
+              "wix.com",
+              "squarespace.com",
+              "godaddy.com",
+              "namecheap.com",
+              "cloudfront.net",
+              "azureedge.net",
+              "windows.net",
+              "azure.com",
+              "oracle.com",
+              "ibm.com",
+              "sap.com",
+              "cisco.com",
+              "intel.com",
+              "samsung.com",
+              "huawei.com",
+              "tencent.com",
+              "baidu.com",
+              "alibaba.com",
+              "aliyun.com",
+              "qq.com",
+              "weibo.com",
+              "vk.com",
+              "telegram.org",
+              "discord.com",
+              "pinterest.com",
+              "snapchat.com",
+              "twitch.tv",
+              "hulu.com",
+              "disneyplus.com",
+              "hbomax.com",
+              "nytimes.com",
+              "cnn.com",
+              "bbc.co.uk",
+              "weather.com",
+              "imdb.com",
+              "craigslist.org",
+              "booking.com",
+              "expedia.com",
+              "airbnb.com",
+              "uber.com",
+              "lyft.com",
+              "doordash.com",
+              "letsencrypt.org"
+            ]
+          },
+          "action": "suppress",
+          "suppressWindowSec": 300,
+          "impact": "filter",
+          "defaultState": "inactive",
+          "description": "Keep one query per popular domain per 5 minutes (suppress the repeats)",
+          "rationale": "DNS is the highest-cardinality, highest-volume feed in most estates, and the overwhelming majority of it is the same few hundred domains resolved over and over. Suppressing to one event per domain per window keeps the fact that the domain was queried while dropping the repeats — but it gives up per-query timing and per-client attribution for those domains, so beaconing to a popular CDN-hosted domain and a spike in queries from one host both become invisible. `query.hostname` is the suppress key, so the window is per-domain and a rare domain is never touched.",
+          "provenance": {
+            "authored": "Hand-authored from design §3b's top-domains example. Reads `query.hostname` rather than the design's `unmapped.query` because that is the field the ocsf#dns golden spec actually populates. The CSV ships through the existing reference-lookup mechanism (config/golden-lookups/dns-top-domains.csv), which is where its source and license are recorded; lookupCorpusAgreement() asserts the two never drift. The list is a hand-curated set of 100 globally well-known domains (product decision 2026-09-24) rather than a pinned Tranco snapshot — domain names are public facts, not a licensed ranked dataset, so no attribution obligation applies and the earlier UNVERIFIED-license blocker no longer applies."
+          },
+          "measuredReductionPct": 20,
+          "validationEvidence": {
+            "sampleSize": 10,
+            "matchedCount": 2,
+            "hasCounterExample": true
+          }
+        },
+        {
+          "key": "dns::generic::sample_noerror_a_records",
+          "category": "dns",
+          "source": "generic",
+          "ocsfField": "rcode",
+          "action": "sample",
+          "impact": "filter",
+          "defaultState": "inactive",
+          "description": "Sample successful A-record DNS lookups 1-in-25",
+          "rule": "/^(noerror|0)$/i.test(String(rcode||'')) && /^(a|1)$/i.test(String((query||{}).type||''))",
+          "sampleRate": 0.04,
+          "rationale": "NOERROR A-record lookups are the highest-volume, lowest-value DNS signal once popular-domain suppression is in place. NXDOMAIN, TXT and other types stay at full fidelity. Enable only if full-fidelity A-record logging is not otherwise required.",
+          "provenance": {
+            "authored": "Translated from xsiam-rule-contracts-phase1:config/optimization-rules.json + src/normalize-stage.ts (read-only reference per design §3d — not imported, not merged). Branch rule `dns_sample_noerror_a`, atom `dns_noerror_a` reading `rcode_name||rcode` and `qtype_name||qtype||rrtype`.",
+            "revisited": "Build 833: the unmeasurable claim was stale — the by-source infoblox_dns and corelight_dns OCSF samples populate `rcode` and `query.type`, so the gate now measures it."
+          },
+          "measuredReductionPct": 10,
+          "validationEvidence": {
+            "sampleSize": 10,
+            "matchedCount": 1,
+            "hasCounterExample": true
+          }
+        }
+      ]
+    },
+    {
+      "key": "endpoint::generic::__ocsf_optimization__",
+      "category": "endpoint",
+      "source": "generic",
+      "part": "ocsf_optimization",
+      "author": "curated",
+      "build": 832,
+      "updated_at": "2026-09-29T19:04:07.191Z",
+      "rules": [
+        {
+          "key": "endpoint::generic::drop_common_process_noise",
+          "category": "endpoint",
+          "source": "generic",
+          "ocsfField": "process.name",
+          "action": "drop",
+          "impact": "filter",
+          "defaultState": "inactive",
+          "description": "Drop process-create noise for a curated allowlist of high-volume OS and browser binaries",
+          "rule": "/(svchost|chrome|msedge|firefox|explorer|searchindexer|csrss|services|lsass|dwm|runtimebroker|sihost|conhost|onedrive|outlook)\\.exe/i.test(String((process||{}).name||''))",
+          "rationale": "Allowlists known-good noisy processes (svchost, chrome, explorer, …). Unusual binaries are kept. Enable only where an EDR already covers process-create telemetry for these binaries.",
+          "provenance": {
+            "authored": "Translated from xsiam-rule-contracts-phase1:config/optimization-rules.json + src/normalize-stage.ts (read-only reference per design §3d — not imported, not merged). Branch rule `endpoint_drop_common_processes`, atom `is_common_process` reading `process_name || process || Image || NewProcessName`. `process.name` is the OCSF Process Activity canonicalMap leaf (pack-builder.ts OCSF_CLASSES.endpoint). Design §3d flags this allowlist as a lookup-ification candidate (customer-extensible, like the firewall IP list) — kept as an inline regex for v1; a future revision can migrate it to an editable CSV without changing the golden key."
+          },
+          "measuredReductionPct": 7,
+          "validationEvidence": {
+            "sampleSize": 15,
+            "matchedCount": 1,
+            "hasCounterExample": true
+          }
+        }
+      ]
+    },
+    {
+      "key": "network::fortinet::__ocsf_optimization__",
+      "category": "network",
+      "source": "fortinet",
+      "part": "ocsf_optimization",
+      "author": "curated",
+      "build": 832,
+      "updated_at": "2026-09-29T19:04:07.191Z",
+      "rules": [
+        {
+          "key": "network::fortinet::drop_ping_health_checks",
+          "category": "network",
+          "source": "fortinet",
+          "ocsfField": "connection_info.protocol_name",
+          "action": "drop",
+          "impact": "filter",
+          "defaultState": "inactive",
+          "description": "Drop FortiGate accepted PING health-check traffic",
+          "rule": "String((connection_info||{}).protocol_name||'').toLowerCase()=='icmp' && activity_id==1",
+          "rationale": "Enable only when health-check traffic is out of scope.",
+          "provenance": {
+            "authored": "Translated from xsiam-rule-contracts-phase1:config/optimization-rules.json + src/normalize-stage.ts (read-only reference per design §3d — not imported, not merged). Branch rule `fortigate_drop_ping_health_checks`, atom `fortigate_ping_health_check = action==accept && app==PING`. The golden OCSF network mapping does not emit `unmapped.app` or `disposition`. Measured against the real FortiGate→OCSF pipeline: `service=PING` is proto=1 → `connection_info.protocol_name='icmp'`, and `action=accept` is `activity_id=1`."
+          },
+          "measuredReductionPct": 33,
+          "validationEvidence": {
+            "sampleSize": 3,
+            "matchedCount": 1,
+            "hasCounterExample": true
+          }
+        }
+      ]
+    },
+    {
+      "key": "network::generic::__ocsf_optimization__",
+      "category": "network",
+      "source": "generic",
+      "part": "ocsf_optimization",
+      "author": "curated",
+      "build": 832,
+      "updated_at": "2026-09-29T19:04:07.191Z",
+      "rules": [
+        {
+          "key": "network::generic::drop_east_west_rfc1918_traffic",
+          "category": "network",
+          "source": "generic",
+          "ocsfField": "src_endpoint.ip",
+          "rule": "(src_endpoint||{}).ip && (dst_endpoint||{}).ip && /^(10\\.|172\\.(1[6-9]|2[0-9]|3[01])\\.|192\\.168\\.)/.test((src_endpoint||{}).ip) && /^(10\\.|172\\.(1[6-9]|2[0-9]|3[01])\\.|192\\.168\\.)/.test((dst_endpoint||{}).ip)",
+          "action": "drop",
+          "impact": "filter",
+          "defaultState": "inactive",
+          "description": "Drop internal-to-internal traffic between RFC1918 address ranges",
+          "rationale": "East-west flow records are usually the highest-volume slice of a firewall feed and the least used in a SIEM whose detections are perimeter-facing. Enabling this gives up lateral-movement visibility entirely — internal reconnaissance, internal C2 and internal data staging all look like exactly these events. Enable only where east-west traffic is covered by another sensor (EDR, network sensor, flow collector).",
+          "provenance": {
+            "authored": "Hand-authored from design §3b: no harvested pack expressed an RFC1918-both-ends predicate, and the mined FortiGate/Palo drops only covered src==dst loopback and link-local. Ranges are RFC1918 exactly (10/8, 172.16/12, 192.168/16) — loopback and link-local are deliberately excluded because that traffic is not east-west and is already covered by the mined rules."
+          },
+          "measuredReductionPct": 7,
+          "validationEvidence": {
+            "sampleSize": 73,
+            "matchedCount": 5,
+            "hasCounterExample": true
+          }
+        },
+        {
+          "key": "network::generic::drop_east_west_broad_internal_ranges",
+          "category": "network",
+          "source": "generic",
+          "ocsfField": "src_endpoint.ip",
+          "action": "drop",
+          "impact": "filter",
+          "defaultState": "inactive",
+          "description": "Drop internal-to-internal traffic across RFC1918, CGNAT, loopback and link-local ranges (IPv4 and IPv6)",
+          "rule": "(src_endpoint||{}).ip && (dst_endpoint||{}).ip && /^(10\\.|127\\.|169\\.254\\.|192\\.168\\.|172\\.(1[6-9]|2[0-9]|3[01])\\.|100\\.(6[4-9]|[7-9][0-9]|1[01][0-9]|12[0-7])\\.|fd|fe80:)/i.test((src_endpoint||{}).ip) && /^(10\\.|127\\.|169\\.254\\.|192\\.168\\.|172\\.(1[6-9]|2[0-9]|3[01])\\.|100\\.(6[4-9]|[7-9][0-9]|1[01][0-9]|12[0-7])\\.|fd|fe80:)/i.test((dst_endpoint||{}).ip)",
+          "rationale": "Broader than the RFC1918-only east-west rule (build 764): also covers CGNAT (100.64/10), loopback and link-local, which the branch's own east-west atom treated as internal. Same tradeoff — enable only where east-west traffic is covered by another sensor.",
+          "provenance": {
+            "authored": "Translated from xsiam-rule-contracts-phase1:config/optimization-rules.json + src/normalize-stage.ts (read-only reference per design §3d — not imported, not merged). Branch atom: `east_west = src_internal && dst_internal`, where `internal()` tests the union of ranges above. Ported as a SEPARATE rule from the RFC1918-only one (build 764) rather than replacing it — the two overlap on RFC1918 traffic by design, and an operator can enable either or both independently."
+          },
+          "measuredReductionPct": 10,
+          "validationEvidence": {
+            "sampleSize": 73,
+            "matchedCount": 7,
+            "hasCounterExample": true
+          }
+        },
+        {
+          "key": "network::generic::drop_icmp_traffic",
+          "category": "network",
+          "source": "generic",
+          "ocsfField": "connection_info.protocol_name",
+          "action": "drop",
+          "impact": "filter",
+          "defaultState": "inactive",
+          "description": "Drop ICMP and ICMPv6 network events",
+          "rule": "/^(icmp|icmpv6|1|58)$/i.test(String((connection_info||{}).protocol_name||''))",
+          "rationale": "ICMP volume (especially echo/ping) is usually background noise for a perimeter-facing SIEM. Enable only if ICMP-based reconnaissance/tunneling detection is out of scope.",
+          "provenance": {
+            "authored": "Translated from xsiam-rule-contracts-phase1:config/optimization-rules.json + src/normalize-stage.ts (read-only reference per design §3d — not imported, not merged). Branch atom: `is_icmp = /^(icmp|icmpv6|1|58)$/i.test(transport)`, where `transport` resolves from `connection_info.protocol_name || transport || protocol`. `connection_info.protocol_name` is the OCSF Network Activity canonicalMap leaf (pack-builder.ts OCSF_CLASSES.network), so this is measurable directly."
+          },
+          "measuredReductionPct": 1,
+          "validationEvidence": {
+            "sampleSize": 73,
+            "matchedCount": 1,
+            "hasCounterExample": true
+          }
+        }
+      ]
+    },
+    {
+      "key": "web_proxy::generic::__ocsf_optimization__",
+      "category": "web_proxy",
+      "source": "generic",
+      "part": "ocsf_optimization",
+      "author": "curated",
+      "build": 832,
+      "updated_at": "2026-09-29T19:04:07.191Z",
+      "rules": [
+        {
+          "key": "web_proxy::generic::drop_static_asset_requests",
+          "category": "web_proxy",
+          "source": "generic",
+          "ocsfField": "http_request.url.text",
+          "action": "drop",
+          "impact": "filter",
+          "defaultState": "inactive",
+          "description": "Drop proxy requests for static assets or common CDN hosts",
+          "rule": "(http_request||{}).url && String(((http_request||{}).url||{}).text||'') ? (/\\.(css|js|mjs|png|jpe?g|gif|svg|webp|ico|woff2?|ttf|eot|map)(\\?|$)/i.test(String(((http_request||{}).url||{}).text||'')) || /(^|\\.)(cloudfront\\.net|akamaihd\\.net|akamaized\\.net|fastly\\.net|cloudflare\\.com|cdn\\.)/i.test(String(((http_request||{}).url||{}).text||''))) : false",
+          "rationale": "Static content and CDN fetches are high-volume and low SIEM value. Enable only if static content is out of scope.",
+          "provenance": {
+            "authored": "Translated from xsiam-rule-contracts-phase1:config/optimization-rules.json + src/normalize-stage.ts (read-only reference per design §3d — not imported, not merged). Branch rule `proxy_drop_static_assets`, atom `is_static_asset` reading `url || uri || path`. `http_request.url.text` is the OCSF HTTP Activity canonicalMap leaf (pack-builder.ts OCSF_CLASSES.web_proxy, dest 'http_request.url.text')."
+          },
+          "measuredReductionPct": 4,
+          "validationEvidence": {
+            "sampleSize": 23,
+            "matchedCount": 1,
+            "hasCounterExample": true
+          }
+        },
+        {
+          "key": "web_proxy::generic::drop_health_check_requests",
+          "category": "web_proxy",
+          "source": "generic",
+          "ocsfField": "http_request.url",
+          "action": "drop",
+          "impact": "noise",
+          "defaultState": "inactive",
+          "description": "Drop load-balancer health checks and favicon requests",
+          "rule": "/^([a-z]+:\\/\\/)?[^\\/?]*\\/(health|healthz|healthcheck|health-check|ready|readyz|livez|favicon\\.ico)\\/?(\\?|$)/i.test(String((((http_request||{}).url||{}).path) || (((http_request||{}).url||{}).text) || (http_request||{}).url || ''))",
+          "rationale": "Load-balancer and orchestrator probes (/health, /healthz, /readyz, /livez) and /favicon.ico repeat every few seconds per backend and say nothing about users. Enable only if probe failures are monitored from access logs rather than the load balancer.",
+          "provenance": {
+            "authored": "Generalized (build 833) from the Stream source-optimization rule `apache/nginx web_drop_health / web_drop_health_checks` (src/source-optimization.ts), which ships for mapped destinations; restated over the OCSF leaf so OCSF packs get the same lever. See docs/optimization-catalog.md. Reads the url as an OCSF object (path/text) or, for by-source captures that flatten it, a string."
+          },
+          "measuredReductionPct": 9,
+          "validationEvidence": {
+            "sampleSize": 23,
+            "matchedCount": 2,
+            "hasCounterExample": true
+          }
+        }
+      ]
+    }
+  ]
+}

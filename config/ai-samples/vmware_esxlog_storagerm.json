@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "key": "vmware_esxlog_storagerm",
+  "sourcetype": "vmware_esxlog_storagerm",
+  "events": [
+    "2024-06-10T14:22:31.482Z esxi-prod-03.corp.local Storagerm[2103456]: [Res3dExe] IOPS threshold exceeded on datastore ds_prod01: latency 45ms, limit 30ms, device naa.6000c29a1b2c3d4e5f6a7b8c9d0e1f2a",
+    "2024-06-10T14:23:02.117Z esxi-prod-03.corp.local Storagerm[2103457]: [Res3dSchedInject] Injecting IO throttle for VM vm-finance-db-01, world 2104590, reason: latency SLO breach",
+    "2024-06-10T15:01:44.900Z esxi-hostA1.dmz.local Storagerm[219033]: [Res3dNormalize] WARNING: Normalization failed for device naa.5000cca0b1c2d3e4, insufficient sample data",
+    "2024-06-10T15:05:12.331Z esxi-hostA1.dmz.local Storagerm[219034]: [Res3dExe] Datastore ds_backup02 latency stabilized: 8ms avg, within SLO of 20ms",
+    "2024-06-10T16:12:59.775Z esxi-labhost02.internal.corp Storagerm[300221]: [Res3dConfig] Configuration reload triggered by user root via vim-cmd, host 10.20.5.12",
+    "2024-06-10T16:13:00.001Z esxi-labhost02.internal.corp Storagerm[300222]: ERROR: [Res3dConfig] Failed to apply IOPS limit config for VM vm-test-legacy-07: invalid mclock parameters",
+    "2024-06-10T17:44:22.663Z esxi-hostB7.corp.local Storagerm[411002]: [Res3dExe] SECURITY: Unauthorized attempt to modify SIOC settings on datastore ds_secure_vol from IP 203.0.113.44, denied",
+    "2024-06-10T18:02:15.204Z esxi-hostB7.corp.local Storagerm[411003]: [Res3dSchedInject] VM vm-webapp-cluster-12 exceeded 500 IOPS burst limit, throttling applied",
+    "2024-06-10T18:30:47.512Z esxi-remote-eu01.branch.local Storagerm[502991]: [Res3dExe] Device naa.6001405abcdef1234567890abcdef12 latency spike detected: 220ms (threshold 50ms), possible storage array degradation",
+    "2024-06-10T19:11:33.888Z esxi-remote-eu01.branch.local Storagerm[502992]: [Res3dNormalize] Recalibration complete for datastore ds_eu_archive, new baseline 12ms",
+    "2024-06-10T19:45:09.001Z esxi-vdi-host04.vdi.local Storagerm[601122]: WARNING: [Res3dConfig] SIOC disabled manually by admin jsmith on datastore ds_vdi_pool, override active",
+    "2024-06-10T20:05:55.412Z 2001:db8:85a3::8a2e:370:7334 Storagerm[601123]: [Res3dExe] Congestion detected on datastore ds_vdi_pool, entitlement recalculation in progress",
+    "2024-06-10T20:22:18.777Z esxi-hostC9.corp.local Storagerm[700456]: [Res3dSchedInject] Failed to inject throttle for VM vm-orphaned-99: world lookup failed, PID 700457 stale",
+    "2024-06-10T21:03:41.290Z esxi-hostC9.corp.local Storagerm[700457]: [Res3dExe] Datastore ds_prod01 IOPS restored to normal operating range, 1200 IOPS avg",
+    "2024-06-10T21:47:02.556Z esxi-hostD2.corp.local Storagerm[812009]: CRITICAL: [Res3dConfig] Repeated failed authentication attempts detected for storagerm API from 198.51.100.23, potential brute force",
+    "2024-06-10T22:10:14.999Z esxi-hostD2.corp.local Storagerm[812010]: [Res3dNormalize] Baseline recalculation skipped for device naa.6000c29d9f8e7d6c5b4a3928, host in maintenance mode",
+    "2024-06-10T22:55:39.140Z esxi-cluster-node05.corp.local Storagerm[900112]: [Res3dExe] Large payload detected on datastore ds_media_render: 1.2GB write burst from VM vm-render-farm-22, monitoring",
+    "2024-06-10T23:18:47.001Z esxi-cluster-node05.corp.local Storagerm[900113]: [Res3dSchedInject] Entitlement shares adjusted for VM vm-hr-portal-03: shares 1000 -> 2000 per admin request",
+    "2024-06-11T00:02:29.333Z esxi-hostE6.corp.local Storagerm[1002234]: ERROR: [Res3dConfig] Unable to reach storage array controller at 172.16.9.201, port 3260, connection timeout",
+    "2024-06-11T01:14:56.482Z esxi-hostE6.corp.local Storagerm[1002235]: [Res3dExe] Datastore ds_dr_site latency within normal bounds: 5ms avg, no throttling required"
+  ],
+  "fingerprint": "1bba70bf-3520",
+  "verification": {
+    "verdict": "unverified",
+    "method": "none",
+    "eventsParsed": 0,
+    "eventsChecked": 20,
+    "fields": [],
+    "reasons": [
+      "vmware_esxlog_storagerm has no parser and the events are unstructured text — nothing to verify against"
+    ],
+    "offendingEvents": [],
+    "keyEcho": null
+  },
+  "provenance": {
+    "model": "us.anthropic.claude-sonnet-5",
+    "buildNumber": 529,
+    "generatedAt": "2026-08-18T08:33:04.388Z",
+    "grounding": "KNOWN FACTS ABOUT THIS SOURCE (from sourcetype recognition — match these exactly):\n- Product: VMware ESXi host log\n- Log family: syslog"
+  }
+}

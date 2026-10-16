@@ -1,0 +1,13 @@
+[
+  {
+    "_raw": "{\"application\":\"bluez 5.72-0ubuntu5.1\",\"applicationName\":\"bluez\",\"applicationVendor\":\"Ubuntu Developers &lt;ubuntu-devel-discuss@lists.ubuntu.com&gt;\",\"applicationVersion\":\"5.72-0ubuntu5.1\",\"baseScore\":\"8.00\",\"cveId\":\"CVE-2023-44431\",\"cvssVersion\":\"3.1\",\"daysDetected\":1,\"detectionDate\":\"2025-08-20T15:53:15.503440Z\",\"endpointId\":\"0000199168250337042\",\"endpointName\":\"s1-ubuntu\",\"endpointType\":\"server\",\"id\":\"0000697681416377574\",\"lastScanDate\":\"2025-08-21T21:19:16Z\",\"lastScanResult\":\"Succeeded\",\"markType\":\"\",\"markedBy\":null,\"markedDate\":null,\"osType\":\"linux\",\"publishedDate\":\"2023-12-22T06:32:52Z\",\"reason\":null,\"severity\":\"HIGH\",\"status\":\"Detected\"}",
+    "host": "ip-10-255-0-219",
+    "source": "https://tenant.sentinelone.net/web/api/v2.1/application-management/risks",
+    "_time": 1755815190.841,
+    "cribl_breaker": [
+      "SentinelOne API Ruleset:SentinelOne-API",
+      "ndjson"
+    ],
+    "ctype": "collect.0:0"
+  }
+]

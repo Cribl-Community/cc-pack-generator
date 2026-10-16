@@ -1,0 +1,7 @@
+[
+  {
+    "_raw": "<166>Tue Apr 20 22:23:25 2021 zscaler.privateaccess.test LEEF:1.0|Zscaler|ZPA|4.1|ZPN_STATUS_AUTHENTICATED|cat=ZPA User Status\tCustomer=Zscaler Test\tusrName=testuser2@domain.test\tSessionID=VbPnANNR+Ua/B2OHOMwx\tSessionStatus=ZPN_STATUS_AUTHENTICATED\tVersion=2.1.2.81.225296\tZEN=BETA-CA-7987\tCertificateCN=aaaaabbbbbccccceeeee1111122222=@domain.test\tsrcPreNAT=10.2.3.4\tsrc=10.2.2.2\tLatitude=44.972686\tLongitude=-65.860879\tCountryCode=CA\tTimestampAuthentication:iso8601=2021-04-20T10:35:15.000Z\tTimestampUnAuthentication:iso8601=\tdstBytes=175590\tsrcBytes=109370\tIdp=TestIdp\tidentHostName=ws1client1\tPlatform=windows\tClientType=zpn_client_type_zapp\tTrustedNetworks=\tTrustedNetworksNames=\tSAMLAttributes={\"FirstName\":[\"testuser2\"],\"LastName\":[\"testuser2\"],\"Email\":[\"testuser2@domain.test\"]}\tPosturesHit=\tPosturesMiss=72057767984103498,72057767984103503,72057767984103590,72057767984103745\tZENLatitude=0.000000\tZENLongitude=0.000000\tZENCountryCode=",
+    "_time": 1618971805,
+    "cribl_breaker": "Break on newlines"
+  }
+]

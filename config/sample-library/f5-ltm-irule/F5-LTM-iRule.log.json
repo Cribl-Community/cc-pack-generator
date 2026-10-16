@@ -1,0 +1,102 @@
+[
+  {
+    "_raw": "Apr 14 12:07:47 10.117.26.5 ,f5_irule=Splunk-iRule-HTTP,src_ip=2.48.216.31,vip=10.117.24.22,http_method=GET,http_host=goat.cribl.io:443,http_uri=/criblGoatApi/api/ping,http_url=goat.cribl.io:443/criblGoatApi/api/ping,http_version=1.1,http_user_agent=\"UnityPlayer/2021.3.3f1 (UnityWebRequest/1.0, libcurl/7.80.0-DEV)\",http_content_type=application/json,http_referrer=\"\",req_start_time=2025/04/14 16:17:41,cookie=\"BIGipServergoat.cribl.io-POOL TS01ebab87\",user=,virtual_server=\"/Common/goat.cribl.io-POOL 10.112.69.29 80\",bytes_in=0,res_start_time=2025/04/14 16:17:41,node=10.112.69.29,node_port=80,http_status=200,req_elapsed_time=13,bytes_out=125",
+    "_time": 1744646867,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Apr 14 12:07:47 10.117.26.5 ,f5_irule=Splunk-iRule-HTTP,src_ip=2.48.216.31,vip=10.117.24.22,http_method=GET,http_host=goat.cribl.io:443,http_uri=/criblGoatApi/api/ping,http_url=goat.cribl.io:443/criblGoatApi/api/ping,http_version=1.1,http_user_agent=\"UnityPlayer/2021.3.3f1 (UnityWebRequest/1.0, libcurl/7.80.0-DEV)\",http_content_type=application/json,http_referrer=\"\",req_start_time=2025/04/14 16:17:41,cookie=\"BIGipServergoat.cribl.io-POOL TS01ebab87\",user=,virtual_server=\"/Common/goat.cribl.io-POOL 10.112.69.29 80\",bytes_in=0,res_start_time=2025/04/14 16:17:41,node=10.112.69.29,node_port=80,http_status=200,req_elapsed_time=17,bytes_out=125",
+    "_time": 1744646867,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Apr 14 12:07:47 10.117.26.5 ,f5_irule=Splunk-iRule-HTTP,src_ip=2.48.216.31,vip=10.117.24.22,http_method=GET,http_host=goat.cribl.io:443,http_uri=/criblGoatApi/api/ping,http_url=goat.cribl.io:443/criblGoatApi/api/ping,http_version=1.1,http_user_agent=\"UnityPlayer/2021.3.3f1 (UnityWebRequest/1.0, libcurl/7.80.0-DEV)\",http_content_type=application/json,http_referrer=\"\",req_start_time=2025/04/14 16:17:41,cookie=\"BIGipServergoat.cribl.io-POOL TS01ebab87\",user=,virtual_server=\"/Common/goat.cribl.io-POOL 10.112.69.29 80\",bytes_in=0,res_start_time=2025/04/14 16:17:41,node=10.112.69.29,node_port=80,http_status=200,req_elapsed_time=14,bytes_out=125",
+    "_time": 1744646867,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Apr 14 12:07:46 10.117.26.5 ,f5_irule=Splunk-iRule-HTTP,src_ip=2.48.216.31,vip=10.117.24.22,http_method=GET,http_host=goat.cribl.io:443,http_uri=/criblGoatApi/api/ping,http_url=goat.cribl.io:443/criblGoatApi/api/ping,http_version=1.1,http_user_agent=\"UnityPlayer/2021.3.3f1 (UnityWebRequest/1.0, libcurl/7.80.0-DEV)\",http_content_type=application/json,http_referrer=\"\",req_start_time=2025/04/14 16:17:40,cookie=\"BIGipServergoat.cribl.io-POOL TS01ebab87\",user=,virtual_server=\"/Common/goat.cribl.io-POOL 10.112.69.29 80\",bytes_in=0,res_start_time=2025/04/14 16:17:40,node=10.112.69.29,node_port=80,http_status=200,req_elapsed_time=11,bytes_out=125",
+    "_time": 1744646866,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Apr 14 12:07:46 10.117.26.5 ,f5_irule=Splunk-iRule-HTTP,src_ip=2.48.216.31,vip=10.117.24.22,http_method=GET,http_host=goat.cribl.io:443,http_uri=/criblGoatApi/api/ping,http_url=goat.cribl.io:443/criblGoatApi/api/ping,http_version=1.1,http_user_agent=\"UnityPlayer/2021.3.3f1 (UnityWebRequest/1.0, libcurl/7.80.0-DEV)\",http_content_type=application/json,http_referrer=\"\",req_start_time=2025/04/14 16:17:40,cookie=\"BIGipServergoat.cribl.io-POOL TS01ebab87\",user=,virtual_server=\"/Common/goat.cribl.io-POOL 10.112.69.29 80\",bytes_in=0,res_start_time=2025/04/14 16:17:40,node=10.112.69.29,node_port=80,http_status=200,req_elapsed_time=19,bytes_out=125",
+    "_time": 1744646866,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Apr 14 12:07:46 10.117.26.5 ,f5_irule=Splunk-iRule-HTTP,src_ip=2.48.216.31,vip=10.117.24.22,http_method=GET,http_host=goat.cribl.io:443,http_uri=/criblGoatApi/api/ping,http_url=goat.cribl.io:443/criblGoatApi/api/ping,http_version=1.1,http_user_agent=\"UnityPlayer/2021.3.3f1 (UnityWebRequest/1.0, libcurl/7.80.0-DEV)\",http_content_type=application/json,http_referrer=\"\",req_start_time=2025/04/14 16:17:40,cookie=\"BIGipServergoat.cribl.io-POOL TS01ebab87\",user=,virtual_server=\"/Common/goat.cribl.io-POOL 10.112.69.29 80\",bytes_in=0,res_start_time=2025/04/14 16:17:40,node=10.112.69.29,node_port=80,http_status=200,req_elapsed_time=10,bytes_out=125",
+    "_time": 1744646866,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Apr 14 12:07:45 10.117.26.5 ,f5_irule=Splunk-iRule-HTTP,src_ip=2.48.216.31,vip=10.117.24.22,http_method=GET,http_host=goat.cribl.io:443,http_uri=/criblGoatApi/api/ping,http_url=goat.cribl.io:443/criblGoatApi/api/ping,http_version=1.1,http_user_agent=\"UnityPlayer/2021.3.3f1 (UnityWebRequest/1.0, libcurl/7.80.0-DEV)\",http_content_type=application/json,http_referrer=\"\",req_start_time=2025/04/14 16:17:39,cookie=\"BIGipServergoat.cribl.io-POOL TS01ebab87\",user=,virtual_server=\"/Common/goat.cribl.io-POOL 10.112.69.29 80\",bytes_in=0,res_start_time=2025/04/14 16:17:39,node=10.112.69.29,node_port=80,http_status=200,req_elapsed_time=11,bytes_out=125",
+    "_time": 1744646865,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Apr 14 12:07:45 10.117.26.5 ,f5_irule=Splunk-iRule-HTTP,src_ip=2.48.216.31,vip=10.117.24.22,http_method=GET,http_host=goat.cribl.io:443,http_uri=/criblGoatApi/api/ping,http_url=goat.cribl.io:443/criblGoatApi/api/ping,http_version=1.1,http_user_agent=\"UnityPlayer/2021.3.3f1 (UnityWebRequest/1.0, libcurl/7.80.0-DEV)\",http_content_type=application/json,http_referrer=\"\",req_start_time=2025/04/14 16:17:39,cookie=\"BIGipServergoat.cribl.io-POOL TS01ebab87\",user=,virtual_server=\"/Common/goat.cribl.io-POOL 10.112.69.29 80\",bytes_in=0,res_start_time=2025/04/14 16:17:39,node=10.112.69.29,node_port=80,http_status=200,req_elapsed_time=11,bytes_out=125",
+    "_time": 1744646865,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Apr 14 12:07:45 10.117.26.5 ,f5_irule=Splunk-iRule-HTTP,src_ip=2.48.216.31,vip=10.117.24.22,http_method=GET,http_host=goat.cribl.io:443,http_uri=/criblGoatApi/api/ping,http_url=goat.cribl.io:443/criblGoatApi/api/ping,http_version=1.1,http_user_agent=\"UnityPlayer/2021.3.3f1 (UnityWebRequest/1.0, libcurl/7.80.0-DEV)\",http_content_type=application/json,http_referrer=\"\",req_start_time=2025/04/14 16:17:39,cookie=\"BIGipServergoat.cribl.io-POOL TS01ebab87\",user=,virtual_server=\"/Common/goat.cribl.io-POOL 10.112.69.29 80\",bytes_in=0,res_start_time=2025/04/14 16:17:39,node=10.112.69.29,node_port=80,http_status=200,req_elapsed_time=11,bytes_out=125",
+    "_time": 1744646865,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Apr 14 12:07:44 10.117.26.5 ,f5_irule=Splunk-iRule-HTTP,src_ip=2.48.216.31,vip=10.117.24.22,http_method=GET,http_host=goat.cribl.io:443,http_uri=/criblGoatApi/api/ping,http_url=goat.cribl.io:443/criblGoatApi/api/ping,http_version=1.1,http_user_agent=\"UnityPlayer/2021.3.3f1 (UnityWebRequest/1.0, libcurl/7.80.0-DEV)\",http_content_type=application/json,http_referrer=\"\",req_start_time=2025/04/14 16:17:38,cookie=\"BIGipServergoat.cribl.io-POOL TS01ebab87\",user=,virtual_server=\"/Common/goat.cribl.io-POOL 10.112.69.29 80\",bytes_in=0,res_start_time=2025/04/14 16:17:38,node=10.112.69.29,node_port=80,http_status=200,req_elapsed_time=13,bytes_out=125",
+    "_time": 1744646864,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Apr 14 12:07:44 10.117.26.5 ,f5_irule=Splunk-iRule-HTTP,src_ip=2.48.216.31,vip=10.117.24.22,http_method=GET,http_host=goat.cribl.io:443,http_uri=/criblGoatApi/api/ping,http_url=goat.cribl.io:443/criblGoatApi/api/ping,http_version=1.1,http_user_agent=\"UnityPlayer/2021.3.3f1 (UnityWebRequest/1.0, libcurl/7.80.0-DEV)\",http_content_type=application/json,http_referrer=\"\",req_start_time=2025/04/14 16:17:38,cookie=\"BIGipServergoat.cribl.io-POOL TS01ebab87\",user=,virtual_server=\"/Common/goat.cribl.io-POOL 10.112.69.29 80\",bytes_in=0,res_start_time=2025/04/14 16:17:38,node=10.112.69.29,node_port=80,http_status=200,req_elapsed_time=11,bytes_out=125",
+    "_time": 1744646864,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Apr 14 12:07:44 10.117.26.5 ,f5_irule=Splunk-iRule-HTTP,src_ip=2.48.216.31,vip=10.117.24.22,http_method=GET,http_host=goat.cribl.io:443,http_uri=/criblGoatApi/api/ping,http_url=goat.cribl.io:443/criblGoatApi/api/ping,http_version=1.1,http_user_agent=\"UnityPlayer/2021.3.3f1 (UnityWebRequest/1.0, libcurl/7.80.0-DEV)\",http_content_type=application/json,http_referrer=\"\",req_start_time=2025/04/14 16:17:38,cookie=\"BIGipServergoat.cribl.io-POOL TS01ebab87\",user=,virtual_server=\"/Common/goat.cribl.io-POOL 10.112.69.29 80\",bytes_in=0,res_start_time=2025/04/14 16:17:38,node=10.112.69.29,node_port=80,http_status=200,req_elapsed_time=16,bytes_out=125",
+    "_time": 1744646864,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Apr 14 12:07:44 10.117.26.5 ,f5_irule=Splunk-iRule-HTTP,src_ip=2.48.216.31,vip=10.117.24.22,http_method=GET,http_host=goat.cribl.io:443,http_uri=/criblGoatApi/api/ping,http_url=goat.cribl.io:443/criblGoatApi/api/ping,http_version=1.1,http_user_agent=\"UnityPlayer/2021.3.3f1 (UnityWebRequest/1.0, libcurl/7.80.0-DEV)\",http_content_type=application/json,http_referrer=\"\",req_start_time=2025/04/14 16:17:38,cookie=\"BIGipServergoat.cribl.io-POOL TS01ebab87\",user=,virtual_server=\"/Common/goat.cribl.io-POOL 10.112.69.29 80\",bytes_in=0,res_start_time=2025/04/14 16:17:38,node=10.112.69.29,node_port=80,http_status=200,req_elapsed_time=11,bytes_out=125",
+    "_time": 1744646864,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Apr 14 12:07:43 10.117.26.5 ,f5_irule=Splunk-iRule-HTTP,src_ip=2.48.216.31,vip=10.117.24.22,http_method=GET,http_host=goat.cribl.io:443,http_uri=/criblGoatApi/api/ping,http_url=goat.cribl.io:443/criblGoatApi/api/ping,http_version=1.1,http_user_agent=\"UnityPlayer/2021.3.3f1 (UnityWebRequest/1.0, libcurl/7.80.0-DEV)\",http_content_type=application/json,http_referrer=\"\",req_start_time=2025/04/14 16:17:37,cookie=\"BIGipServergoat.cribl.io-POOL TS01ebab87\",user=,virtual_server=\"/Common/goat.cribl.io-POOL 10.112.69.29 80\",bytes_in=0,res_start_time=2025/04/14 16:17:37,node=10.112.69.29,node_port=80,http_status=200,req_elapsed_time=12,bytes_out=125",
+    "_time": 1744646863,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Apr 14 12:07:43 10.117.26.5 ,f5_irule=Splunk-iRule-HTTP,src_ip=2.48.216.31,vip=10.117.24.22,http_method=GET,http_host=goat.cribl.io:443,http_uri=/criblGoatApi/api/ping,http_url=goat.cribl.io:443/criblGoatApi/api/ping,http_version=1.1,http_user_agent=\"UnityPlayer/2021.3.3f1 (UnityWebRequest/1.0, libcurl/7.80.0-DEV)\",http_content_type=application/json,http_referrer=\"\",req_start_time=2025/04/14 16:17:37,cookie=\"BIGipServergoat.cribl.io-POOL TS01ebab87\",user=,virtual_server=\"/Common/goat.cribl.io-POOL 10.112.69.29 80\",bytes_in=0,res_start_time=2025/04/14 16:17:37,node=10.112.69.29,node_port=80,http_status=200,req_elapsed_time=12,bytes_out=125",
+    "_time": 1744646863,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Apr 14 12:07:43 10.117.26.5 ,f5_irule=Splunk-iRule-HTTP,src_ip=2.48.216.31,vip=10.117.24.22,http_method=GET,http_host=goat.cribl.io:443,http_uri=/criblGoatApi/api/ping,http_url=goat.cribl.io:443/criblGoatApi/api/ping,http_version=1.1,http_user_agent=\"UnityPlayer/2021.3.3f1 (UnityWebRequest/1.0, libcurl/7.80.0-DEV)\",http_content_type=application/json,http_referrer=\"\",req_start_time=2025/04/14 16:17:37,cookie=\"BIGipServergoat.cribl.io-POOL TS01ebab87\",user=,virtual_server=\"/Common/goat.cribl.io-POOL 10.112.69.29 80\",bytes_in=0,res_start_time=2025/04/14 16:17:37,node=10.112.69.29,node_port=80,http_status=200,req_elapsed_time=11,bytes_out=125",
+    "_time": 1744646863,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Apr 14 12:07:42 10.117.26.5 ,f5_irule=Splunk-iRule-HTTP,src_ip=2.48.216.31,vip=10.117.24.22,http_method=GET,http_host=goat.cribl.io:443,http_uri=/criblGoatApi/api/ping,http_url=goat.cribl.io:443/criblGoatApi/api/ping,http_version=1.1,http_user_agent=\"UnityPlayer/2021.3.3f1 (UnityWebRequest/1.0, libcurl/7.80.0-DEV)\",http_content_type=application/json,http_referrer=\"\",req_start_time=2025/04/14 16:17:36,cookie=\"BIGipServergoat.cribl.io-POOL TS01ebab87\",user=,virtual_server=\"/Common/goat.cribl.io-POOL 10.112.69.29 80\",bytes_in=0,res_start_time=2025/04/14 16:17:36,node=10.112.69.29,node_port=80,http_status=200,req_elapsed_time=10,bytes_out=125",
+    "_time": 1744646862,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Apr 14 12:07:42 10.117.26.5 ,f5_irule=Splunk-iRule-HTTP,src_ip=2.48.216.31,vip=10.117.24.22,http_method=GET,http_host=goat.cribl.io:443,http_uri=/criblGoatApi/api/ping,http_url=goat.cribl.io:443/criblGoatApi/api/ping,http_version=1.1,http_user_agent=\"UnityPlayer/2021.3.3f1 (UnityWebRequest/1.0, libcurl/7.80.0-DEV)\",http_content_type=application/json,http_referrer=\"\",req_start_time=2025/04/14 16:17:36,cookie=\"BIGipServergoat.cribl.io-POOL TS01ebab87\",user=,virtual_server=\"/Common/goat.cribl.io-POOL 10.112.69.29 80\",bytes_in=0,res_start_time=2025/04/14 16:17:36,node=10.112.69.29,node_port=80,http_status=200,req_elapsed_time=11,bytes_out=125",
+    "_time": 1744646862,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Apr 14 12:07:42 10.117.26.5 ,f5_irule=Splunk-iRule-HTTP,src_ip=2.48.216.31,vip=10.117.24.22,http_method=GET,http_host=goat.cribl.io:443,http_uri=/criblGoatApi/api/ping,http_url=goat.cribl.io:443/criblGoatApi/api/ping,http_version=1.1,http_user_agent=\"UnityPlayer/2021.3.3f1 (UnityWebRequest/1.0, libcurl/7.80.0-DEV)\",http_content_type=application/json,http_referrer=\"\",req_start_time=2025/04/14 16:17:36,cookie=\"BIGipServergoat.cribl.io-POOL TS01ebab87\",user=,virtual_server=\"/Common/goat.cribl.io-POOL 10.112.69.29 80\",bytes_in=0,res_start_time=2025/04/14 16:17:36,node=10.112.69.29,node_port=80,http_status=200,req_elapsed_time=10,bytes_out=125",
+    "_time": 1744646862,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Apr 14 12:07:41 10.117.26.5 ,f5_irule=Splunk-iRule-HTTP,src_ip=2.48.216.31,vip=10.117.24.22,http_method=GET,http_host=goat.cribl.io:443,http_uri=/criblGoatApi/api/ping,http_url=goat.cribl.io:443/criblGoatApi/api/ping,http_version=1.1,http_user_agent=\"UnityPlayer/2021.3.3f1 (UnityWebRequest/1.0, libcurl/7.80.0-DEV)\",http_content_type=application/json,http_referrer=\"\",req_start_time=2025/04/14 16:17:35,cookie=\"BIGipServergoat.cribl.io-POOL TS01ebab87\",user=,virtual_server=\"/Common/goat.cribl.io-POOL 10.112.69.29 80\",bytes_in=0,res_start_time=2025/04/14 16:17:35,node=10.112.69.29,node_port=80,http_status=200,req_elapsed_time=11,bytes_out=125",
+    "_time": 1744646861,
+    "cribl_breaker": "Break on newlines"
+  }
+]

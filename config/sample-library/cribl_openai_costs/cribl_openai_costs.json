@@ -1,0 +1,222 @@
+[
+  {
+    "_raw": "{\n      \"object\": \"bucket\",\n      \"start_time\": 1752624000,\n      \"end_time\": 1752710400,\n      \"results\": [\n        {\n          \"object\": \"organization.costs.result\",\n          \"amount\": {\n            \"value\": 0.5106234999999999,\n            \"currency\": \"usd\"\n          },\n          \"line_item\": null,\n          \"project_id\": \"testID\",\n          \"organization_id\": \"org-ABCDEFGHIJKLMNOot\"\n        }\n      ]\n    }",
+    "host": "ip-10-255-9-252",
+    "source": "https://api.openai.com/v1/organization/costs",
+    "_time": 1752710400,
+    "cribl_breaker": [
+      "OpenAI API Ruleset:other_logs",
+      "ndjson"
+    ],
+    "bucket_width": "1d"
+  },
+  {
+    "_raw": "{\n      \"object\": \"bucket\",\n      \"start_time\": 1752710400,\n      \"end_time\": 1752796800,\n      \"results\": [\n        {\n          \"object\": \"organization.costs.result\",\n          \"amount\": {\n            \"value\": 0.015390000000000001,\n            \"currency\": \"usd\"\n          },\n          \"line_item\": null,\n          \"project_id\": \"testID\",\n          \"organization_id\": \"org-ABCDEFGHIJKLMNOot\"\n        }\n      ]\n    }",
+    "host": "ip-10-255-9-252",
+    "source": "https://api.openai.com/v1/organization/costs",
+    "_time": 1752796800,
+    "cribl_breaker": [
+      "OpenAI API Ruleset:other_logs",
+      "ndjson"
+    ],
+    "bucket_width": "1d"
+  },
+  {
+    "_raw": "{\n      \"object\": \"bucket\",\n      \"start_time\": 1752796800,\n      \"end_time\": 1752883200,\n      \"results\": []\n    }",
+    "host": "ip-10-255-9-252",
+    "source": "https://api.openai.com/v1/organization/costs",
+    "_time": 1752883200,
+    "cribl_breaker": [
+      "OpenAI API Ruleset:other_logs",
+      "ndjson"
+    ],
+    "bucket_width": "1d"
+  },
+  {
+    "_raw": "{\n      \"object\": \"bucket\",\n      \"start_time\": 1752883200,\n      \"end_time\": 1752969600,\n      \"results\": []\n    }",
+    "host": "ip-10-255-9-252",
+    "source": "https://api.openai.com/v1/organization/costs",
+    "_time": 1752969600,
+    "cribl_breaker": [
+      "OpenAI API Ruleset:other_logs",
+      "ndjson"
+    ],
+    "bucket_width": "1d"
+  },
+  {
+    "_raw": "{\n      \"object\": \"bucket\",\n      \"start_time\": 1752969600,\n      \"end_time\": 1753056000,\n      \"results\": []\n    }",
+    "host": "ip-10-255-9-252",
+    "source": "https://api.openai.com/v1/organization/costs",
+    "_time": 1753056000,
+    "cribl_breaker": [
+      "OpenAI API Ruleset:other_logs",
+      "ndjson"
+    ],
+    "bucket_width": "1d"
+  },
+  {
+    "_raw": "{\n      \"object\": \"bucket\",\n      \"start_time\": 1753056000,\n      \"end_time\": 1753142400,\n      \"results\": [\n        {\n          \"object\": \"organization.costs.result\",\n          \"amount\": {\n            \"value\": 0.8326275,\n            \"currency\": \"usd\"\n          },\n          \"line_item\": null,\n          \"project_id\": \"testID\",\n          \"organization_id\": \"org-ABCDEFGHIJKLMNOot\"\n        }\n      ]\n    }",
+    "host": "ip-10-255-9-252",
+    "source": "https://api.openai.com/v1/organization/costs",
+    "_time": 1753142400,
+    "cribl_breaker": [
+      "OpenAI API Ruleset:other_logs",
+      "ndjson"
+    ],
+    "bucket_width": "1d"
+  },
+  {
+    "_raw": "{\n      \"object\": \"bucket\",\n      \"start_time\": 1753142400,\n      \"end_time\": 1753228800,\n      \"results\": [\n        {\n          \"object\": \"organization.costs.result\",\n          \"amount\": {\n            \"value\": 0.3124521,\n            \"currency\": \"usd\"\n          },\n          \"line_item\": null,\n          \"project_id\": \"testID\",\n          \"organization_id\": \"org-ABCDEFGHIJKLMNOot\"\n        }\n      ]\n    }",
+    "host": "ip-10-255-9-252",
+    "source": "https://api.openai.com/v1/organization/costs",
+    "_time": 1753228800,
+    "cribl_breaker": [
+      "OpenAI API Ruleset:other_logs",
+      "ndjson"
+    ],
+    "bucket_width": "1d"
+  },
+  {
+    "_raw": "{\n      \"object\": \"bucket\",\n      \"start_time\": 1753228800,\n      \"end_time\": 1753315200,\n      \"results\": [\n        {\n          \"object\": \"organization.costs.result\",\n          \"amount\": {\n            \"value\": 0.1790325,\n            \"currency\": \"usd\"\n          },\n          \"line_item\": null,\n          \"project_id\": \"testID\",\n          \"organization_id\": \"org-ABCDEFGHIJKLMNOot\"\n        }\n      ]\n    }",
+    "host": "ip-10-255-9-252",
+    "source": "https://api.openai.com/v1/organization/costs",
+    "_time": 1753315200,
+    "cribl_breaker": [
+      "OpenAI API Ruleset:other_logs",
+      "ndjson"
+    ],
+    "bucket_width": "1d"
+  },
+  {
+    "_raw": "{\n      \"object\": \"bucket\",\n      \"start_time\": 1753315200,\n      \"end_time\": 1753401600,\n      \"results\": [\n        {\n          \"object\": \"organization.costs.result\",\n          \"amount\": {\n            \"value\": 0.2702825,\n            \"currency\": \"usd\"\n          },\n          \"line_item\": null,\n          \"project_id\": \"testID\",\n          \"organization_id\": \"org-ABCDEFGHIJKLMNOot\"\n        }\n      ]\n    }",
+    "host": "ip-10-255-9-252",
+    "source": "https://api.openai.com/v1/organization/costs",
+    "_time": 1753401600,
+    "cribl_breaker": [
+      "OpenAI API Ruleset:other_logs",
+      "ndjson"
+    ],
+    "bucket_width": "1d"
+  },
+  {
+    "_raw": "{\n      \"object\": \"bucket\",\n      \"start_time\": 1753401600,\n      \"end_time\": 1753488000,\n      \"results\": []\n    }",
+    "host": "ip-10-255-9-252",
+    "source": "https://api.openai.com/v1/organization/costs",
+    "_time": 1753488000,
+    "cribl_breaker": [
+      "OpenAI API Ruleset:other_logs",
+      "ndjson"
+    ],
+    "bucket_width": "1d"
+  },
+  {
+    "_raw": "{\n      \"object\": \"bucket\",\n      \"start_time\": 1753488000,\n      \"end_time\": 1753574400,\n      \"results\": []\n    }",
+    "host": "ip-10-255-9-252",
+    "source": "https://api.openai.com/v1/organization/costs",
+    "_time": 1753574400,
+    "cribl_breaker": [
+      "OpenAI API Ruleset:other_logs",
+      "ndjson"
+    ],
+    "bucket_width": "1d"
+  },
+  {
+    "_raw": "{\n      \"object\": \"bucket\",\n      \"start_time\": 1753574400,\n      \"end_time\": 1753660800,\n      \"results\": []\n    }",
+    "host": "ip-10-255-9-252",
+    "source": "https://api.openai.com/v1/organization/costs",
+    "_time": 1753660800,
+    "cribl_breaker": [
+      "OpenAI API Ruleset:other_logs",
+      "ndjson"
+    ],
+    "bucket_width": "1d"
+  },
+  {
+    "_raw": "{\n      \"object\": \"bucket\",\n      \"start_time\": 1753660800,\n      \"end_time\": 1753747200,\n      \"results\": [\n        {\n          \"object\": \"organization.costs.result\",\n          \"amount\": {\n            \"value\": 0.3664474999999999,\n            \"currency\": \"usd\"\n          },\n          \"line_item\": null,\n          \"project_id\": \"testID\",\n          \"organization_id\": \"org-ABCDEFGHIJKLMNOot\"\n        }\n      ]\n    }",
+    "host": "ip-10-255-9-252",
+    "source": "https://api.openai.com/v1/organization/costs",
+    "_time": 1753747200,
+    "cribl_breaker": [
+      "OpenAI API Ruleset:other_logs",
+      "ndjson"
+    ],
+    "bucket_width": "1d"
+  },
+  {
+    "_raw": "{\n      \"object\": \"bucket\",\n      \"start_time\": 1753747200,\n      \"end_time\": 1753833600,\n      \"results\": [\n        {\n          \"object\": \"organization.costs.result\",\n          \"amount\": {\n            \"value\": 0.5869575,\n            \"currency\": \"usd\"\n          },\n          \"line_item\": null,\n          \"project_id\": \"testID\",\n          \"organization_id\": \"org-ABCDEFGHIJKLMNOot\"\n        }\n      ]\n    }",
+    "host": "ip-10-255-9-252",
+    "source": "https://api.openai.com/v1/organization/costs",
+    "_time": 1753833600,
+    "cribl_breaker": [
+      "OpenAI API Ruleset:other_logs",
+      "ndjson"
+    ],
+    "bucket_width": "1d"
+  },
+  {
+    "_raw": "{\n      \"object\": \"bucket\",\n      \"start_time\": 1753833600,\n      \"end_time\": 1753920000,\n      \"results\": [\n        {\n          \"object\": \"organization.costs.result\",\n          \"amount\": {\n            \"value\": 0.32929500000000006,\n            \"currency\": \"usd\"\n          },\n          \"line_item\": null,\n          \"project_id\": \"testID\",\n          \"organization_id\": \"org-ABCDEFGHIJKLMNOot\"\n        }\n      ]\n    }",
+    "host": "ip-10-255-9-252",
+    "source": "https://api.openai.com/v1/organization/costs",
+    "_time": 1753920000,
+    "cribl_breaker": [
+      "OpenAI API Ruleset:other_logs",
+      "ndjson"
+    ],
+    "bucket_width": "1d"
+  },
+  {
+    "_raw": "{\n      \"object\": \"bucket\",\n      \"start_time\": 1753920000,\n      \"end_time\": 1754006400,\n      \"results\": [\n        {\n          \"object\": \"organization.costs.result\",\n          \"amount\": {\n            \"value\": 0.37700500000000003,\n            \"currency\": \"usd\"\n          },\n          \"line_item\": null,\n          \"project_id\": \"testID\",\n          \"organization_id\": \"org-ABCDEFGHIJKLMNOot\"\n        }\n      ]\n    }",
+    "host": "ip-10-255-9-252",
+    "source": "https://api.openai.com/v1/organization/costs",
+    "_time": 1754006400,
+    "cribl_breaker": [
+      "OpenAI API Ruleset:other_logs",
+      "ndjson"
+    ],
+    "bucket_width": "1d"
+  },
+  {
+    "_raw": "{\n      \"object\": \"bucket\",\n      \"start_time\": 1754006400,\n      \"end_time\": 1754092800,\n      \"results\": [\n        {\n          \"object\": \"organization.costs.result\",\n          \"amount\": {\n            \"value\": 1.1897625,\n            \"currency\": \"usd\"\n          },\n          \"line_item\": null,\n          \"project_id\": \"testID\",\n          \"organization_id\": \"org-ABCDEFGHIJKLMNOot\"\n        }\n      ]\n    }",
+    "host": "ip-10-255-9-252",
+    "source": "https://api.openai.com/v1/organization/costs",
+    "_time": 1754092800,
+    "cribl_breaker": [
+      "OpenAI API Ruleset:other_logs",
+      "ndjson"
+    ],
+    "bucket_width": "1d"
+  },
+  {
+    "_raw": "{\n      \"object\": \"bucket\",\n      \"start_time\": 1754092800,\n      \"end_time\": 1754179200,\n      \"results\": []\n    }",
+    "host": "ip-10-255-9-252",
+    "source": "https://api.openai.com/v1/organization/costs",
+    "_time": 1754179200,
+    "cribl_breaker": [
+      "OpenAI API Ruleset:other_logs",
+      "ndjson"
+    ],
+    "bucket_width": "1d"
+  },
+  {
+    "_raw": "{\n      \"object\": \"bucket\",\n      \"start_time\": 1754179200,\n      \"end_time\": 1754265600,\n      \"results\": [\n        {\n          \"object\": \"organization.costs.result\",\n          \"amount\": {\n            \"value\": 0.15970679999999998,\n            \"currency\": \"usd\"\n          },\n          \"line_item\": null,\n          \"project_id\": \"testID\",\n          \"organization_id\": \"org-ABCDEFGHIJKLMNOot\"\n        }\n      ]\n    }",
+    "host": "ip-10-255-9-252",
+    "source": "https://api.openai.com/v1/organization/costs",
+    "_time": 1754265600,
+    "cribl_breaker": [
+      "OpenAI API Ruleset:other_logs",
+      "ndjson"
+    ],
+    "bucket_width": "1d"
+  },
+  {
+    "_raw": "{\n      \"object\": \"bucket\",\n      \"start_time\": 1754265600,\n      \"end_time\": 1754352000,\n      \"results\": [\n        {\n          \"object\": \"organization.costs.result\",\n          \"amount\": {\n            \"value\": 0.00292,\n            \"currency\": \"usd\"\n          },\n          \"line_item\": null,\n          \"project_id\": \"testID\",\n          \"organization_id\": \"org-ABCDEFGHIJKLMNOot\"\n        }\n      ]\n    }",
+    "host": "ip-10-255-9-252",
+    "source": "https://api.openai.com/v1/organization/costs",
+    "_time": 1754352000,
+    "cribl_breaker": [
+      "OpenAI API Ruleset:other_logs",
+      "ndjson"
+    ],
+    "bucket_width": "1d"
+  }
+]

@@ -1,0 +1,12 @@
+[
+  {
+    "_raw": "{\n  \"host\": \"ip-10-255-1-184\",\n  \"source\": \"netskope/batches-events/data-1742774579808619-ba5a28baa3784e9683b07713f914ed54.csv.gz\",\n  \"_raw\": \"f3fa66e733a2137e0fdc701e,Client,-,-,-,-,Download,-,no,-,-,-,-,IaaS/PaaS,-,Google Cloud Platform,2325440321636558760,-,-,Go,2757838491584443832,-,-,-,89,high,-,-,-,-,0,US,-,-,-,-,US,-,-,142.251.33.78,Seattle,443,Washington,America/Los_Angeles,N/A,-,Windows Device,unmanaged,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,packages.cloud.google.com,-,-,-,-,-,-,-,-,-,Archive and Compressed,-,-,-,-,-,-,-,-,-,-,-,-,8399,GZ Compress,-,-,-,-,-,instance-ngcc1,-,3534283737007871170,-,-,-,-,-,-,-122.32984161376953|47.60430908203125,-121.1871|45.599899999999998,-,-,-,-,-,The Dalles,-122.32984161376953|47.60430908203125,-121.1871|45.599899999999998,-,-,-,-,-,-,no,-,-,36801615c4d269b4d2b9360b20c87c2b,-,-,-,-,-,-,-,dl-ngcc-engg@exabeamengineering2.onmicrosoft.com,-,index.gz,-,-,File,-,-,Windows Server 2016,-,Windows Server,-,Windows Server 10.0,packages.cloud.google.com/yuck/repos/google-compute-engine-stable/index.gz,-,-,-,-,-,-,US-SEA2,443,-,-,-,-,-,-,-,-,-,-,-,Oregon,-,-,-,-,-,-,-,3068235990939576064,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,34.82.190.203,-,-,-,-,-,-,-,-,1742774578,America/Los_Angeles,-,-,CloudApp,3534283737007871170,-,-,nspolicy,-,-,packages.cloud.google.com/yuck/repos/google-compute-engine-stable/index.gz,DL-NGCC-ENGG@exabeamengineering2.onmicrosoft.com,Go-http-client/1.1,-,-,-,10.70.0.19,DL-NGCC-ENGG@exabeamengineering2.onmicrosoft.com,-,Google Cloud Platform,97058,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,application\",\n  \"_time\": 1743438903.055,\n  \"cribl_breaker\": \"fallback\",\n  \"cribl_pipe\": \"Netskope_Alerts_Policy\"",
+    "_time": 1747101335.294,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "}",
+    "_time": 1747101335.294,
+    "cribl_breaker": "Break on newlines"
+  }
+]

@@ -1,0 +1,102 @@
+[
+  {
+    "_raw": "Apr 29 2013 12:59:50: %ASA-6-305011: Built dynamic TCP translation from outside:10.123.3.42/4952 to outside:192.0.2.130/12834",
+    "_time": 1625755684.85,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Apr 29 2013 12:59:50: %ASA-6-302013: Built outbound TCP connection 89743274 for outside:192.0.2.43/443 (192.0.2.43/443) to outside:10.123.3.42/4952 (10.123.3.42/12834)",
+    "_time": 1625755684.85,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Apr 29 2013 12:59:50: %ASA-6-305011: Built dynamic UDP translation from outside:10.123.1.35/52925 to outside:192.0.2.130/25882",
+    "_time": 1625755684.85,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Apr 29 2013 12:59:50: %ASA-6-302015: Built outbound UDP connection 89743275 for outside:192.0.2.222/53 (192.0.2.43/53) to outside:10.123.1.35/52925 (10.123.1.35/25882)",
+    "_time": 1625755684.85,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Apr 29 2013 12:59:50: %ASA-6-305011: Built dynamic TCP translation from outside:10.123.3.42/4953 to outside:192.0.2.130/45392",
+    "_time": 1625755684.85,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Apr 29 2013 12:59:50: %ASA-6-302013: Built outbound TCP connection 89743276 for outside:192.0.2.1/80 (192.0.2.1/80) to outside:10.123.3.42/4953 (10.123.3.130/45392)",
+    "_time": 1625755684.85,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Apr 29 2013 12:59:50: %ASA-6-302016: Teardown UDP connection 89743275 for outside:192.0.2.222/53 to inside:10.123.1.35/52925 duration 1:23:45 bytes 140",
+    "_time": 1625755684.85,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Apr 29 2013 12:59:50: %ASA-6-302016: Teardown UDP connection 666 for outside:192.0.2.222/53 user1 to inside:10.123.1.35/52925 user2 duration 10:00:00 bytes 9999999",
+    "_time": 1625755684.85,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Jun 04 2011 21:59:52 FJSG2NRFW01 : %ASA-6-302021: Teardown ICMP connection for faddr 172.24.177.29/0 gaddr 192.168.132.46/17233 laddr 192.168.132.46/17233",
+    "_time": 1625755684.85,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Apr 29 2013 12:59:50: %ASA-6-305011: Built dynamic TCP translation from inside:192.168.3.42/4954 to outside:192.0.0.130/10879",
+    "_time": 1625755684.85,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Apr 29 2013 12:59:50: %ASA-6-302013: Built outbound TCP connection 89743277 for outside:192.0.0.17/80 (192.0.0.17/80) to inside:192.168.3.42/4954 (10.0.0.130/10879)",
+    "_time": 1625755684.85,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Apr 30 2013 09:22:33: %ASA-2-106007: Deny inbound UDP from 192.0.0.66/12981 to 10.1.2.60/53 due to DNS Query",
+    "_time": 1625755684.85,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Apr 30 2013 09:22:38: %ASA-5-106100: access-list acl_in permitted tcp inside/10.0.0.16(2006) -> outside/192.0.0.89(2000) hit-cnt 1 first hit [0x71a87d94, 0x0]",
+    "_time": 1625755684.85,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Apr 30 2013 09:22:38: %ASA-5-106100: access-list acl_in permitted tcp inside/10.0.0.46(49734) -> outside/192.0.0.88(40443) hit-cnt 1 first hit [0x71a87d94, 0x0]",
+    "_time": 1625755684.85,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Apr 30 2013 09:22:39: %ASA-5-106100: access-list acl_in permitted tcp inside/10.0.0.46(49735) -> outside/192.0.0.88(40443) hit-cnt 1 first hit [0x71a87d94, 0x0]",
+    "_time": 1625755684.85,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Apr 30 2013 09:22:39: %ASA-5-106100: access-list acl_in permitted tcp inside/10.0.0.46(49736) -> outside/192.0.0.88(40443) hit-cnt 1 first hit [0x71a87d94, 0x0]",
+    "_time": 1625755684.85,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Apr 30 2013 09:22:39: %ASA-5-106100: access-list acl_in permitted tcp inside/10.0.0.46(49737) -> outside/192.0.0.88(40443) hit-cnt 1 first hit [0x71a87d94, 0x0]",
+    "_time": 1625755684.85,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Apr 30 2013 09:22:40: %ASA-5-106100: access-list acl_in permitted tcp inside/10.0.0.46(49738) -> outside/192.0.0.88(40443) hit-cnt 1 first hit [0x71a87d94, 0x0]",
+    "_time": 1625755684.85,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Apr 30 2013 09:22:41: %ASA-5-106100: access-list acl_in permitted tcp inside/10.0.0.46(49746) -> outside/192.0.0.88(40443) hit-cnt 1 first hit [0x71a87d94, 0x0]",
+    "_time": 1625755684.85,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Apr 30 2013 09:22:47: %ASA-5-106100: access-list acl_in permitted tcp inside/10.0.0.16(2007) -> outside/192.0.0.89(2000) hit-cnt 1 first hit [0x71a87d94, 0x0]",
+    "_time": 1625755684.85,
+    "cribl_breaker": "Break on newlines"
+  }
+]

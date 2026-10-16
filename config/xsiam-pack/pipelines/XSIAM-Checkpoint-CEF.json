@@ -1,0 +1,75 @@
+{
+  "name": "XSIAM-Checkpoint-CEF",
+  "kind": "source-specific",
+  "pattern": "cef_extract",
+  "sourceIdField": "__sourceIdentifier",
+  "sourceIdentifier": "af01292940d7426594d3d3e55ae17ee0",
+  "vendor": null,
+  "product": null,
+  "reshapesRaw": false,
+  "sample": {
+    "name": "XSIAM-Checkpoint-CEF.log",
+    "format": "cef",
+    "formatLabel": "CEF",
+    "events": 2
+  },
+  "upstream": {
+    "pack": "cribl-paloalto-xsiam",
+    "version": "2.1.1",
+    "path": "default/pipelines/XSIAM-Checkpoint-CEF/conf.yml",
+    "sha256": "43d919fe3b598f7c6f7f2c4df2c24840eebd016830d739a37b2d423806b3c57f",
+    "source": "https://packs.cribl.io/packs/cribl-paloalto-xsiam"
+  },
+  "conf": {
+    "output": "default",
+    "streamtags": [],
+    "groups": {},
+    "asyncFuncTimeout": 1000,
+    "description": ""
+  },
+  "functions": [
+    {
+      "id": "comment",
+      "filter": "true",
+      "disabled": null,
+      "conf": {
+        "comment": "Capture Vendor and Product from event"
+      }
+    },
+    {
+      "id": "regex_extract",
+      "filter": "true",
+      "disabled": false,
+      "conf": {
+        "source": "_raw",
+        "iterations": 100,
+        "overwrite": false,
+        "regex": "/^.*?\\|(?<__vendor>.*?)\\|(?<__product>.*?)\\|/"
+      },
+      "description": "You may need to change the below Regex depending on your data formatting."
+    },
+    {
+      "id": "comment",
+      "filter": "true",
+      "disabled": null,
+      "conf": {
+        "comment": "Assign the Source-Identifier"
+      }
+    },
+    {
+      "id": "eval",
+      "filter": "true",
+      "disabled": false,
+      "conf": {
+        "add": [
+          {
+            "disabled": false,
+            "name": "__sourceIdentifier",
+            "value": "'af01292940d7426594d3d3e55ae17ee0'"
+          }
+        ]
+      },
+      "description": "Assign the Source-Identifier"
+    }
+  ]
+}

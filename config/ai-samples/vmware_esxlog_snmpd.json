@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "key": "vmware_esxlog_snmpd",
+  "sourcetype": "vmware_esxlog_snmpd",
+  "events": [
+    "2024-06-14T00:12:03.441Z esx01.dc1.local snmpd[2103421]: [info] snmpd started, listening on UDP port 161",
+    "2024-06-14T00:47:19.882Z esx03.dc1.local snmpd[2109871]: [warning] Received SNMP GET request from 10.20.4.15 with invalid community string 'public1'",
+    "2024-06-14T01:15:52.003Z esx07.branch.local snmpd[2110044]: [error] Failed to bind to UDP port 161: Address already in use",
+    "2024-06-14T02:03:44.567Z esx01.dc1.local snmpd[2103421]: [info] SNMP trap sent to 172.16.5.10:162 for coldStart event",
+    "2024-06-14T02:41:09.129Z esx12.remote.local snmpd[2118832]: [warning] Access denied for SNMPv2c request from 203.0.113.44 - community mismatch",
+    "2024-06-14T03:22:37.771Z esx05.dc2.local snmpd[2107765]: [info] SNMP walk completed successfully by user 'monitor01' from 10.10.2.7",
+    "2024-06-14T04:09:12.994Z esx01.dc1.local snmpd[2103421]: [notice] Configuration reloaded via hostd request",
+    "2024-06-14T05:33:48.310Z esx09.dc1.local snmpd[2112298]: [critical] Repeated unauthorized SNMPv1 queries from 198.51.100.23 - possible scan detected",
+    "2024-06-14T06:14:29.882Z esx03.dc1.local snmpd[2109871]: [info] SNMP GET request served for OID 1.3.6.1.4.1.6876.2.1 from 10.20.4.15",
+    "2024-06-14T07:02:55.446Z esx11.branch.local snmpd[2117654]: [warning] Malformed SNMP packet received from fe80::1a2b:3c4d:5e6f:7a8b, dropping",
+    "2024-06-14T07:48:11.220Z esx02.dc1.local snmpd[2104512]: [info] SNMP trap sent to [2001:db8::5]:162 for linkDown notification on vmnic2",
+    "2024-06-14T08:31:03.678Z esx06.dc2.local snmpd[2108211]: [error] snmpd daemon restarted unexpectedly, exit code 137",
+    "2024-06-14T09:17:26.113Z esx01.dc1.local snmpd[2103421]: [info] SNMPv3 authentication succeeded for user 'snmpadmin' from 10.0.1.9",
+    "2024-06-14T10:05:41.902Z esx08.dc3.local snmpd[2110987]: [warning] SNMPv3 authentication failed for user 'snmpadmin' from 45.33.32.156 - incorrect passphrase",
+    "2024-06-14T10:52:14.335Z esx04.dc1.local snmpd[2106654]: [info] SNMP GETBULK request completed in 42ms for host status table",
+    "2024-06-14T11:39:58.771Z esx01.dc1.local snmpd[2103421]: [notice] SNMP community string changed by administrator via vim-cmd",
+    "2024-06-14T12:26:33.204Z esx13.remote.local snmpd[2119045]: [critical] Excessive SNMP request rate from 91.198.174.192 (1200 req/min), possible DoS attempt",
+    "2024-06-14T13:14:07.559Z esx05.dc2.local snmpd[2107765]: [info] SNMP trap sent to 172.16.5.10:162 for storage latency threshold exceeded on datastore1",
+    "2024-06-14T13:58:49.916Z esx02.dc1.local snmpd[2104512]: [warning] SNMP request from 192.168.99.201 rejected - source not in allowed hosts list",
+    "2024-06-14T14:42:22.481Z esx01.dc1.local snmpd[2103421]: [info] snmpd gracefully shut down for scheduled host maintenance"
+  ],
+  "fingerprint": "5dd38dcb-2664",
+  "verification": {
+    "verdict": "unverified",
+    "method": "none",
+    "eventsParsed": 0,
+    "eventsChecked": 20,
+    "fields": [],
+    "reasons": [
+      "vmware_esxlog_snmpd has no parser and the events are unstructured text — nothing to verify against"
+    ],
+    "offendingEvents": [],
+    "keyEcho": null
+  },
+  "provenance": {
+    "model": "us.anthropic.claude-sonnet-5",
+    "buildNumber": 529,
+    "generatedAt": "2026-08-18T07:47:24.293Z",
+    "grounding": "KNOWN FACTS ABOUT THIS SOURCE (from sourcetype recognition — match these exactly):\n- Product: VMware ESXi host log\n- Log family: syslog"
+  }
+}

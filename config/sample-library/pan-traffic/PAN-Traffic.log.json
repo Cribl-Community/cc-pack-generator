@@ -1,0 +1,52 @@
+[
+  {
+    "_raw": "Nov 30 16:09:08 PA-220 1,2018/11/30 16:09:07,012801096514,TRAFFIC,end,2049,2018/11/30 16:09:07,192.168.15.207,175.16.199.1,192.168.1.63,175.16.199.1,new_outbound_from_trust,,,apple-maps,vsys1,trust,untrust,ethernet1/2,ethernet1/1,send_to_mac,2018/11/30 16:09:07,22751,1,55113,443,16418,443,0x400053,tcp,allow,7734,1758,5976,36,2018/11/30 15:59:04,586,computer-and-internet-info,0,32091112,0x0,192.168.0.0-192.168.255.255,United States,0,16,20,tcp-fin,0,0,0,0,,PA-220,from-policy,,,0,,0,,N/A,0,0,0,0",
+    "_time": 1701378548,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Nov 30 16:09:10 PA-220 1,2018/11/30 16:09:09,012801096514,TRAFFIC,end,2049,2018/11/30 16:09:09,192.168.15.224,175.16.199.1,192.168.1.63,175.16.199.1,new_outbound_from_trust,,,ping,vsys1,trust,untrust,ethernet1/2,ethernet1/1,send_to_mac,2018/11/30 16:09:09,24223,6,0,0,0,0,0x500019,icmp,allow,1176,588,588,12,2018/11/30 16:08:55,0,any,0,32091113,0x0,192.168.0.0-192.168.255.255,United States,0,6,6,aged-out,0,0,0,0,,PA-220,from-policy,,,0,,0,,N/A,0,0,0,0",
+    "_time": 1701378550,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Nov 30 16:09:10 PA-220 1,2018/11/30 16:09:09,012801096514,TRAFFIC,end,2049,2018/11/30 16:09:09,192.168.15.207,175.16.199.1,192.168.1.63,175.16.199.1,new_outbound_from_trust,,,web-browsing,vsys1,trust,untrust,ethernet1/2,ethernet1/1,send_to_mac,2018/11/30 16:09:09,24138,1,55114,80,51990,80,0x40001c,tcp,allow,1574,539,1035,11,2018/11/30 16:08:51,1,computer-and-internet-info,0,32091114,0x0,192.168.0.0-192.168.255.255,United States,0,6,5,tcp-fin,0,0,0,0,,PA-220,from-policy,,,0,,0,,N/A,0,0,0,0",
+    "_time": 1701378550,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Nov 30 16:09:16 PA-220 1,2018/11/30 16:09:15,012801096514,TRAFFIC,end,2049,2018/11/30 16:09:15,192.168.15.224,175.16.199.1,192.168.1.63,175.16.199.1,new_outbound_from_trust,,,ping,vsys1,trust,untrust,ethernet1/2,ethernet1/1,send_to_mac,2018/11/30 16:09:15,24043,6,0,0,0,0,0x500019,icmp,allow,1176,588,588,12,2018/11/30 16:09:01,0,any,0,32091115,0x0,192.168.0.0-192.168.255.255,United States,0,6,6,aged-out,0,0,0,0,,PA-220,from-policy,,,0,,0,,N/A,0,0,0,0",
+    "_time": 1701378556,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Nov 30 16:09:16 PA-220 1,2018/11/30 16:09:15,012801096514,TRAFFIC,end,2049,2018/11/30 16:09:15,192.168.15.196,175.16.199.1,192.168.1.63,175.16.199.1,new_outbound_from_trust,,,quic,vsys1,trust,untrust,ethernet1/2,ethernet1/1,send_to_mac,2018/11/30 16:09:15,23003,1,46774,443,15252,443,0x400019,udp,allow,3627,2014,1613,8,2018/11/30 16:07:13,0,any,0,32091116,0x0,192.168.0.0-192.168.255.255,United States,0,5,3,aged-out,0,0,0,0,,PA-220,from-policy,,,0,,0,,N/A,0,0,0,0",
+    "_time": 1701378556,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Nov 30 16:09:16 PA-220 1,2018/11/30 16:09:15,012801096514,TRAFFIC,end,2049,2018/11/30 16:09:15,192.168.15.224,175.16.199.1,192.168.1.63,175.16.199.1,new_outbound_from_trust,,,ssl,vsys1,trust,untrust,ethernet1/2,ethernet1/1,send_to_mac,2018/11/30 16:09:15,23919,1,52408,443,40763,443,0x400053,tcp,allow,41753,20642,21111,113,2018/11/30 16:07:33,85,web-advertisements,0,32091117,0x0,192.168.0.0-192.168.255.255,United States,0,62,51,tcp-fin,0,0,0,0,,PA-220,from-policy,,,0,,0,,N/A,0,0,0,0",
+    "_time": 1701378556,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Nov 30 16:09:22 PA-220 1,2018/11/30 16:09:21,012801096514,TRAFFIC,end,2049,2018/11/30 16:09:21,192.168.15.224,175.16.199.1,192.168.1.63,175.16.199.1,new_outbound_from_trust,,,ping,vsys1,trust,untrust,ethernet1/2,ethernet1/1,send_to_mac,2018/11/30 16:09:21,21394,6,0,0,0,0,0x500019,icmp,allow,1176,588,588,12,2018/11/30 16:09:07,0,any,0,32091118,0x0,192.168.0.0-192.168.255.255,United States,0,6,6,aged-out,0,0,0,0,,PA-220,from-policy,,,0,,0,,N/A,0,0,0,0",
+    "_time": 1701378562,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Nov 30 16:09:22 PA-220 1,2018/11/30 16:09:21,012801096514,TRAFFIC,end,2049,2018/11/30 16:09:21,192.168.15.224,175.16.199.1,192.168.1.63,175.16.199.1,new_outbound_from_trust,,,quic,vsys1,trust,untrust,ethernet1/2,ethernet1/1,send_to_mac,2018/11/30 16:09:21,23698,1,59190,443,52881,443,0x400019,udp,allow,7097,3365,3732,16,2018/11/30 16:07:04,15,any,0,32091119,0x0,192.168.0.0-192.168.255.255,United States,0,7,9,aged-out,0,0,0,0,,PA-220,from-policy,,,0,,0,,N/A,0,0,0,0",
+    "_time": 1701378562,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Nov 30 16:09:23 PA-220 1,2018/11/30 16:09:22,012801096514,TRAFFIC,end,2049,2018/11/30 16:09:22,192.168.15.207,175.16.199.1,192.168.1.63,175.16.199.1,new_outbound_from_trust,,,dns,vsys1,trust,untrust,ethernet1/2,ethernet1/1,send_to_mac,2018/11/30 16:09:22,24179,1,49728,53,26654,53,0x400019,udp,allow,301,80,221,2,2018/11/30 16:08:50,0,any,0,32091120,0x0,192.168.0.0-192.168.255.255,United States,0,1,1,aged-out,0,0,0,0,,PA-220,from-policy,,,0,,0,,N/A,0,0,0,0",
+    "_time": 1701378563,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "Nov 30 16:09:24 PA-220 1,2018/11/30 16:09:23,012801096514,TRAFFIC,end,2049,2018/11/30 16:09:23,192.168.15.207,175.16.199.1,192.168.1.63,175.16.199.1,new_outbound_from_trust,,,dns,vsys1,trust,untrust,ethernet1/2,ethernet1/1,send_to_mac,2018/11/30 16:09:23,23933,1,50500,53,2486,53,0x400019,udp,allow,298,77,221,2,2018/11/30 16:08:51,0,any,0,32091121,0x0,192.168.0.0-192.168.255.255,United States,0,1,1,aged-out,0,0,0,0,,PA-220,from-policy,,,0,,0,,N/A,0,0,0,0",
+    "_time": 1701378564,
+    "cribl_breaker": "Break on newlines"
+  }
+]

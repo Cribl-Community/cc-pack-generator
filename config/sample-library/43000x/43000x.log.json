@@ -1,0 +1,22 @@
+[
+  {
+    "_raw": "<118>Mar 22 2019 16:51:29 firepower %ASA-6-430003: AccessControlRuleAction: Allow, SrcIP: 10.101.11.21, DstIP: 10.178.219.10, SrcPort: 46915, DstPort: 391, Protocol: udp, IngressZone: Inside, EgressZone: R7_Outside, ACPolicy: Access_Control, AccessControlRuleName: Allow_All_Outbound, Prefilter Policy: Prefilter, User: Unknown, Client: CLDAP client, ApplicationProtocol: CLDAP, ConnectionDuration: 0, InitiatorPackets: 1, ResponderPackets: 0, InitiatorBytes: 131, ResponderBytes: 0, NAPPolicy: Unknown",
+    "_time": 1553298689,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "<118>2020-02-04T11:00:54Z %ASA-6-430003: DeviceUUID: 90e14378-2081-11e8-a7fa-d34972ba379f, AccessControlRuleAction: Allow, SrcIP: 75.150.94.75, DstIP: 172.30.0.2, SrcPort: 59698, DstPort: 8027, Protocol: tcp, IngressInterface: Outside2, EgressInterface: DMZ, IngressZone: Outside, EgressZone: DMZ, ACPolicy: Rapid7 5525X, AccessControlRuleName: Allow MDM - Out to DMZ, Prefilter Policy: Default Prefilter Policy, User: No Authentication Required, ConnectionDuration: 600, InitiatorPackets: 0, ResponderPackets: 0, InitiatorBytes: 31, ResponderBytes: 0, NAPPolicy: Balanced Security and Connectivity",
+    "_time": 1580814054,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "<113>Apr 14 2019 12:52:31 firepower %ASA-6-430002: AccessControlRuleAction: Block with reset, SrcIP: 10.10.5.76, DstIP: 53.119.122.22, SrcPort: 49905, DstPort: 443, Protocol: tcp, IngressInterface: 0005_Inside, EgressInterface: 0005_Outside, IngressZone: Inside, EgressZone: Outside, ACPolicy: IZ1235WH02_Access_Control, AccessControlRuleName: Blocked Countries Outbound, Prefilter Policy: IZ1235WH02_Prefilter, User: Unknown, Client: SSL client, ApplicationProtocol: HTTPS, WebApplication: Office 365, InitiatorPackets: 3, ResponderPackets: 1, InitiatorBytes: 459, ResponderBytes: 78, NAPPolicy: Unknown, URL: https://nexus.randomapps.live.com",
+    "_time": 1555271551,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "<113>Mar 22 2019 16:50:24 firepower %ASA-6-430002: AccessControlRuleAction: Block with reset, SrcIP: 192.178.3.87, DstIP: 179.210.1.120, SrcPort: 60450, DstPort: 443, Protocol: tcp, IngressZone: Guest_Internet_DMZ, EgressZone: RandomCorp_Outside, ACPolicy: IZ1235WH02_Access_Control, AccessControlRuleName: Block High Risk Apps, Prefilter Policy: IZ1235WH02_Prefilter, User: Unknown, Client: SSL client, ApplicationProtocol: HTTPS, WebApplication: Doubleclick, InitiatorPackets: 3, ResponderPackets: 1, InitiatorBytes: 408, ResponderBytes: 78, NAPPolicy: Unknown, URL: https://sanitised.words.fakeclick.net",
+    "_time": 1553298624,
+    "cribl_breaker": "Break on newlines"
+  }
+]

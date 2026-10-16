@@ -1,0 +1,932 @@
+[
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_metric": "cribl.logstream.metrics_pool.num_metrics",
+    "_value": 134,
+    "_metric_type": "gauge",
+    "earliest": 1724818798219,
+    "latest": 1724818800219,
+    "group": "default",
+    "source": "cribl",
+    "host": "worker_01",
+    "event_source": "cribl",
+    "event_host": "worker_01",
+    "cribl_wp": "w1",
+    "_time": 1724818800.22,
+    "__criblMetrics": [
+      {
+        "nameExpr": [
+          "_metric"
+        ],
+        "values": [
+          "_value"
+        ],
+        "types": [
+          "gauge"
+        ],
+        "dims": [
+          "group",
+          "source",
+          "host",
+          "event_source",
+          "event_host",
+          "cribl_wp"
+        ],
+        "updateTypes": [
+          "LAST"
+        ]
+      }
+    ],
+    "index": "cribl_metrics",
+    "__inputId": "cribl:CriblMetrics"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_metric": "cribl.logstream.cluster.metrics.sender.inflight",
+    "_value": 1,
+    "_metric_type": "gauge",
+    "earliest": 1724818798219,
+    "latest": 1724818800219,
+    "group": "default",
+    "source": "cribl",
+    "host": "worker_01",
+    "event_source": "cribl",
+    "event_host": "worker_01",
+    "cribl_wp": "w1",
+    "_time": 1724818800.22,
+    "__criblMetrics": [
+      {
+        "nameExpr": [
+          "_metric"
+        ],
+        "values": [
+          "_value"
+        ],
+        "types": [
+          "gauge"
+        ],
+        "dims": [
+          "group",
+          "source",
+          "host",
+          "event_source",
+          "event_host",
+          "cribl_wp"
+        ],
+        "updateTypes": [
+          "LAST"
+        ]
+      }
+    ],
+    "index": "cribl_metrics",
+    "__inputId": "cribl:CriblMetrics"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_metric": "cribl.logstream.collector_cache.size",
+    "_value": 3,
+    "_metric_type": "gauge",
+    "earliest": 1724818798219,
+    "latest": 1724818800219,
+    "group": "default",
+    "source": "cribl",
+    "host": "worker_01",
+    "event_source": "cribl",
+    "event_host": "worker_01",
+    "cribl_wp": "w1",
+    "_time": 1724818800.22,
+    "__criblMetrics": [
+      {
+        "nameExpr": [
+          "_metric"
+        ],
+        "values": [
+          "_value"
+        ],
+        "types": [
+          "gauge"
+        ],
+        "dims": [
+          "group",
+          "source",
+          "host",
+          "event_source",
+          "event_host",
+          "cribl_wp"
+        ],
+        "updateTypes": [
+          "LAST"
+        ]
+      }
+    ],
+    "index": "cribl_metrics",
+    "__inputId": "cribl:CriblMetrics"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_metric": "cribl.logstream.health.inputs",
+    "_value": 0,
+    "_metric_type": "gauge",
+    "earliest": 1724818798219,
+    "latest": 1724818800219,
+    "ci": "splunk:in_splunk_tcp",
+    "input": "splunk:in_splunk_tcp",
+    "input_type": "splunk",
+    "group": "default",
+    "source": "cribl",
+    "host": "worker_01",
+    "event_source": "cribl",
+    "event_host": "worker_01",
+    "cribl_wp": "w1",
+    "_time": 1724818800.22,
+    "__criblMetrics": [
+      {
+        "nameExpr": [
+          "_metric"
+        ],
+        "values": [
+          "_value"
+        ],
+        "types": [
+          "gauge"
+        ],
+        "dims": [
+          "ci",
+          "input",
+          "input_type",
+          "group",
+          "source",
+          "host",
+          "event_source",
+          "event_host",
+          "cribl_wp"
+        ],
+        "updateTypes": [
+          "MAX"
+        ]
+      }
+    ],
+    "index": "cribl_metrics",
+    "__inputId": "cribl:CriblMetrics"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_metric": "cribl.logstream.total.activeCxn",
+    "_value": 0,
+    "_metric_type": "gauge",
+    "earliest": 1724818798219,
+    "latest": 1724818800219,
+    "group": "default",
+    "source": "cribl",
+    "host": "worker_01",
+    "event_source": "cribl",
+    "event_host": "worker_01",
+    "cribl_wp": "w1",
+    "_time": 1724818800.22,
+    "__criblMetrics": [
+      {
+        "nameExpr": [
+          "_metric"
+        ],
+        "values": [
+          "_value"
+        ],
+        "types": [
+          "gauge"
+        ],
+        "dims": [
+          "group",
+          "source",
+          "host",
+          "event_source",
+          "event_host",
+          "cribl_wp"
+        ],
+        "updateTypes": [
+          "LAST"
+        ]
+      }
+    ],
+    "index": "cribl_metrics",
+    "__inputId": "cribl:CriblMetrics"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_metric": "cribl.logstream.health.inputs",
+    "_value": 0,
+    "_metric_type": "gauge",
+    "earliest": 1724818798219,
+    "latest": 1724818800219,
+    "ci": "cribl:CriblLogs",
+    "input": "cribl:CriblLogs",
+    "input_type": "cribl",
+    "group": "default",
+    "source": "cribl",
+    "host": "worker_01",
+    "event_source": "cribl",
+    "event_host": "worker_01",
+    "cribl_wp": "w1",
+    "_time": 1724818800.22,
+    "__criblMetrics": [
+      {
+        "nameExpr": [
+          "_metric"
+        ],
+        "values": [
+          "_value"
+        ],
+        "types": [
+          "gauge"
+        ],
+        "dims": [
+          "ci",
+          "input",
+          "input_type",
+          "group",
+          "source",
+          "host",
+          "event_source",
+          "event_host",
+          "cribl_wp"
+        ],
+        "updateTypes": [
+          "MAX"
+        ]
+      }
+    ],
+    "index": "cribl_metrics",
+    "__inputId": "cribl:CriblMetrics"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_metric": "cribl.logstream.health.inputs",
+    "_value": 0,
+    "_metric_type": "gauge",
+    "earliest": 1724818798219,
+    "latest": 1724818800219,
+    "ci": "cribl:CriblMetrics",
+    "input": "cribl:CriblMetrics",
+    "input_type": "cribl",
+    "group": "default",
+    "source": "cribl",
+    "host": "worker_01",
+    "event_source": "cribl",
+    "event_host": "worker_01",
+    "cribl_wp": "w1",
+    "_time": 1724818800.22,
+    "__criblMetrics": [
+      {
+        "nameExpr": [
+          "_metric"
+        ],
+        "values": [
+          "_value"
+        ],
+        "types": [
+          "gauge"
+        ],
+        "dims": [
+          "ci",
+          "input",
+          "input_type",
+          "group",
+          "source",
+          "host",
+          "event_source",
+          "event_host",
+          "cribl_wp"
+        ],
+        "updateTypes": [
+          "MAX"
+        ]
+      }
+    ],
+    "index": "cribl_metrics",
+    "__inputId": "cribl:CriblMetrics"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_metric": "cribl.logstream.health.outputs",
+    "_value": 0,
+    "_metric_type": "gauge",
+    "earliest": 1724818798219,
+    "latest": 1724818800219,
+    "output": "devnull:devnull",
+    "group": "default",
+    "source": "cribl",
+    "host": "worker_01",
+    "event_source": "cribl",
+    "event_host": "worker_01",
+    "cribl_wp": "w1",
+    "_time": 1724818800.22,
+    "__criblMetrics": [
+      {
+        "nameExpr": [
+          "_metric"
+        ],
+        "values": [
+          "_value"
+        ],
+        "types": [
+          "gauge"
+        ],
+        "dims": [
+          "output",
+          "group",
+          "source",
+          "host",
+          "event_source",
+          "event_host",
+          "cribl_wp"
+        ],
+        "updateTypes": [
+          "MAX"
+        ]
+      }
+    ],
+    "index": "cribl_metrics",
+    "__inputId": "cribl:CriblMetrics"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_metric": "cribl.logstream.backpressure.outputs",
+    "_value": 0,
+    "_metric_type": "gauge",
+    "earliest": 1724818798219,
+    "latest": 1724818800219,
+    "name": "none",
+    "output": "devnull:devnull",
+    "group": "default",
+    "source": "cribl",
+    "host": "worker_01",
+    "event_source": "cribl",
+    "event_host": "worker_01",
+    "cribl_wp": "w1",
+    "_time": 1724818800.22,
+    "__criblMetrics": [
+      {
+        "nameExpr": [
+          "_metric"
+        ],
+        "values": [
+          "_value"
+        ],
+        "types": [
+          "gauge"
+        ],
+        "dims": [
+          "name",
+          "output",
+          "group",
+          "source",
+          "host",
+          "event_source",
+          "event_host",
+          "cribl_wp"
+        ],
+        "updateTypes": [
+          "MAX"
+        ]
+      }
+    ],
+    "index": "cribl_metrics",
+    "__inputId": "cribl:CriblMetrics"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_metric": "cribl.logstream.blocked.outputs",
+    "_value": 0,
+    "_metric_type": "gauge",
+    "earliest": 1724818798219,
+    "latest": 1724818800219,
+    "output": "devnull:devnull",
+    "group": "default",
+    "source": "cribl",
+    "host": "worker_01",
+    "event_source": "cribl",
+    "event_host": "worker_01",
+    "cribl_wp": "w1",
+    "_time": 1724818800.221,
+    "__criblMetrics": [
+      {
+        "nameExpr": [
+          "_metric"
+        ],
+        "values": [
+          "_value"
+        ],
+        "types": [
+          "gauge"
+        ],
+        "dims": [
+          "output",
+          "group",
+          "source",
+          "host",
+          "event_source",
+          "event_host",
+          "cribl_wp"
+        ],
+        "updateTypes": [
+          "MAX"
+        ]
+      }
+    ],
+    "index": "cribl_metrics",
+    "__inputId": "cribl:CriblMetrics"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_metric": "cribl.logstream.health.outputs",
+    "_value": 0,
+    "_metric_type": "gauge",
+    "earliest": 1724818798219,
+    "latest": 1724818800219,
+    "output": "splunk_hec:out_splunk_hec",
+    "group": "default",
+    "source": "cribl",
+    "host": "worker_01",
+    "event_source": "cribl",
+    "event_host": "worker_01",
+    "cribl_wp": "w1",
+    "_time": 1724818800.221,
+    "__criblMetrics": [
+      {
+        "nameExpr": [
+          "_metric"
+        ],
+        "values": [
+          "_value"
+        ],
+        "types": [
+          "gauge"
+        ],
+        "dims": [
+          "output",
+          "group",
+          "source",
+          "host",
+          "event_source",
+          "event_host",
+          "cribl_wp"
+        ],
+        "updateTypes": [
+          "MAX"
+        ]
+      }
+    ],
+    "index": "cribl_metrics",
+    "__inputId": "cribl:CriblMetrics"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_metric": "cribl.logstream.backpressure.outputs",
+    "_value": 0,
+    "_metric_type": "gauge",
+    "earliest": 1724818798219,
+    "latest": 1724818800219,
+    "name": "none",
+    "output": "splunk_hec:out_splunk_hec",
+    "group": "default",
+    "source": "cribl",
+    "host": "worker_01",
+    "event_source": "cribl",
+    "event_host": "worker_01",
+    "cribl_wp": "w1",
+    "_time": 1724818800.221,
+    "__criblMetrics": [
+      {
+        "nameExpr": [
+          "_metric"
+        ],
+        "values": [
+          "_value"
+        ],
+        "types": [
+          "gauge"
+        ],
+        "dims": [
+          "name",
+          "output",
+          "group",
+          "source",
+          "host",
+          "event_source",
+          "event_host",
+          "cribl_wp"
+        ],
+        "updateTypes": [
+          "MAX"
+        ]
+      }
+    ],
+    "index": "cribl_metrics",
+    "__inputId": "cribl:CriblMetrics"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_metric": "cribl.logstream.blocked.outputs",
+    "_value": 0,
+    "_metric_type": "gauge",
+    "earliest": 1724818798219,
+    "latest": 1724818800219,
+    "output": "splunk_hec:out_splunk_hec",
+    "group": "default",
+    "source": "cribl",
+    "host": "worker_01",
+    "event_source": "cribl",
+    "event_host": "worker_01",
+    "cribl_wp": "w1",
+    "_time": 1724818800.221,
+    "__criblMetrics": [
+      {
+        "nameExpr": [
+          "_metric"
+        ],
+        "values": [
+          "_value"
+        ],
+        "types": [
+          "gauge"
+        ],
+        "dims": [
+          "output",
+          "group",
+          "source",
+          "host",
+          "event_source",
+          "event_host",
+          "cribl_wp"
+        ],
+        "updateTypes": [
+          "MAX"
+        ]
+      }
+    ],
+    "index": "cribl_metrics",
+    "__inputId": "cribl:CriblMetrics"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_metric": "cribl.logstream.health.outputs",
+    "_value": 2,
+    "_metric_type": "gauge",
+    "earliest": 1724818798219,
+    "latest": 1724818800219,
+    "output": "splunk:out_splunk_tcp",
+    "group": "default",
+    "source": "cribl",
+    "host": "worker_01",
+    "event_source": "cribl",
+    "event_host": "worker_01",
+    "cribl_wp": "w1",
+    "_time": 1724818800.221,
+    "__criblMetrics": [
+      {
+        "nameExpr": [
+          "_metric"
+        ],
+        "values": [
+          "_value"
+        ],
+        "types": [
+          "gauge"
+        ],
+        "dims": [
+          "output",
+          "group",
+          "source",
+          "host",
+          "event_source",
+          "event_host",
+          "cribl_wp"
+        ],
+        "updateTypes": [
+          "MAX"
+        ]
+      }
+    ],
+    "index": "cribl_metrics",
+    "__inputId": "cribl:CriblMetrics"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_metric": "cribl.logstream.backpressure.outputs",
+    "_value": 0,
+    "_metric_type": "gauge",
+    "earliest": 1724818798219,
+    "latest": 1724818800219,
+    "name": "none",
+    "output": "splunk:out_splunk_tcp",
+    "group": "default",
+    "source": "cribl",
+    "host": "worker_01",
+    "event_source": "cribl",
+    "event_host": "worker_01",
+    "cribl_wp": "w1",
+    "_time": 1724818800.221,
+    "__criblMetrics": [
+      {
+        "nameExpr": [
+          "_metric"
+        ],
+        "values": [
+          "_value"
+        ],
+        "types": [
+          "gauge"
+        ],
+        "dims": [
+          "name",
+          "output",
+          "group",
+          "source",
+          "host",
+          "event_source",
+          "event_host",
+          "cribl_wp"
+        ],
+        "updateTypes": [
+          "MAX"
+        ]
+      }
+    ],
+    "index": "cribl_metrics",
+    "__inputId": "cribl:CriblMetrics"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_metric": "cribl.logstream.blocked.outputs",
+    "_value": 0,
+    "_metric_type": "gauge",
+    "earliest": 1724818798219,
+    "latest": 1724818800219,
+    "output": "splunk:out_splunk_tcp",
+    "group": "default",
+    "source": "cribl",
+    "host": "worker_01",
+    "event_source": "cribl",
+    "event_host": "worker_01",
+    "cribl_wp": "w1",
+    "_time": 1724818800.221,
+    "__criblMetrics": [
+      {
+        "nameExpr": [
+          "_metric"
+        ],
+        "values": [
+          "_value"
+        ],
+        "types": [
+          "gauge"
+        ],
+        "dims": [
+          "output",
+          "group",
+          "source",
+          "host",
+          "event_source",
+          "event_host",
+          "cribl_wp"
+        ],
+        "updateTypes": [
+          "MAX"
+        ]
+      }
+    ],
+    "index": "cribl_metrics",
+    "__inputId": "cribl:CriblMetrics"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_metric": "cribl.logstream.total.in_events",
+    "_value": 29,
+    "_metric_type": "counter",
+    "earliest": 1724818798220,
+    "latest": 1724818800220,
+    "ci": "cribl:CriblMetrics",
+    "input": "cribl:CriblMetrics",
+    "input_type": "cribl",
+    "group": "default",
+    "source": "cribl",
+    "host": "worker_01",
+    "event_source": "cribl",
+    "event_host": "worker_01",
+    "cribl_wp": "w1",
+    "_time": 1724818800.221,
+    "__criblMetrics": [
+      {
+        "nameExpr": [
+          "_metric"
+        ],
+        "values": [
+          "_value"
+        ],
+        "types": [
+          "counter"
+        ],
+        "dims": [
+          "ci",
+          "input",
+          "input_type",
+          "group",
+          "source",
+          "host",
+          "event_source",
+          "event_host",
+          "cribl_wp"
+        ]
+      }
+    ],
+    "index": "cribl_metrics",
+    "__inputId": "cribl:CriblMetrics"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_metric": "cribl.logstream.total.dropped_events",
+    "_value": 29,
+    "_metric_type": "counter",
+    "earliest": 1724818798220,
+    "latest": 1724818800220,
+    "co": "null",
+    "output": "null",
+    "output_type": "null",
+    "group": "default",
+    "source": "cribl",
+    "host": "worker_01",
+    "event_source": "cribl",
+    "event_host": "worker_01",
+    "cribl_wp": "w1",
+    "_time": 1724818800.221,
+    "__criblMetrics": [
+      {
+        "nameExpr": [
+          "_metric"
+        ],
+        "values": [
+          "_value"
+        ],
+        "types": [
+          "counter"
+        ],
+        "dims": [
+          "co",
+          "output",
+          "output_type",
+          "group",
+          "source",
+          "host",
+          "event_source",
+          "event_host",
+          "cribl_wp"
+        ]
+      }
+    ],
+    "index": "cribl_metrics",
+    "__inputId": "cribl:CriblMetrics"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_metric": "cribl.logstream.system.cpu_perc",
+    "_value": 0.53,
+    "_metric_type": "gauge",
+    "earliest": 1724818798220,
+    "latest": 1724818800220,
+    "__worker_process": "1",
+    "group": "default",
+    "source": "cribl",
+    "host": "worker_01",
+    "event_source": "cribl",
+    "event_host": "worker_01",
+    "cribl_wp": "w1",
+    "_time": 1724818800.221,
+    "__criblMetrics": [
+      {
+        "nameExpr": [
+          "_metric"
+        ],
+        "values": [
+          "_value"
+        ],
+        "types": [
+          "gauge"
+        ],
+        "dims": [
+          "__worker_process",
+          "group",
+          "source",
+          "host",
+          "event_source",
+          "event_host",
+          "cribl_wp"
+        ],
+        "updateTypes": [
+          "LAST"
+        ]
+      }
+    ],
+    "index": "cribl_metrics",
+    "__inputId": "cribl:CriblMetrics"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_metric": "cribl.logstream.system.mem_rss",
+    "_value": 198029312,
+    "_metric_type": "gauge",
+    "earliest": 1724818798220,
+    "latest": 1724818800220,
+    "group": "default",
+    "source": "cribl",
+    "host": "worker_01",
+    "event_source": "cribl",
+    "event_host": "worker_01",
+    "cribl_wp": "w1",
+    "_time": 1724818800.221,
+    "__criblMetrics": [
+      {
+        "nameExpr": [
+          "_metric"
+        ],
+        "values": [
+          "_value"
+        ],
+        "types": [
+          "gauge"
+        ],
+        "dims": [
+          "group",
+          "source",
+          "host",
+          "event_source",
+          "event_host",
+          "cribl_wp"
+        ],
+        "updateTypes": [
+          "LAST"
+        ]
+      }
+    ],
+    "index": "cribl_metrics",
+    "__inputId": "cribl:CriblMetrics"
+  }
+]

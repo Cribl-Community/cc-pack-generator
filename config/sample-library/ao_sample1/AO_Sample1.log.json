@@ -1,0 +1,825 @@
+[
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "event": {
+      "@timestamp": "2023-03-09T13:35:32.110Z",
+      "tags": [
+        "appomni_source"
+      ],
+      "cloud": {
+        "account": {
+          "id": "13ee224d-1dbf-44b8-b5bb-8a2764f65d48"
+        }
+      },
+      "ecs": {
+        "version": "1.9.0"
+      },
+      "event": {
+        "action": "connect_app",
+        "category": [
+          "audit",
+          "cloud"
+        ],
+        "code": "streamStarted",
+        "created": "2023-03-09T13:27:52.503Z",
+        "dataset": "crowdstrike_auth_activity",
+        "ingested": "2023-03-09T13:35:32.110Z",
+        "kind": "alert",
+        "module": "Crowdstrike Streaming API",
+        "original": "{\"metadata\":{\"offset\":117022,\"eventType\":\"AuthActivityAuditEvent\",\"eventCreationTime\":1678368471870,\"version\":\"1.0\",\"customerIDString\":\"79d3841b572a44fea47fcd425fe2e660\"},\"event\":{\"UserIp\":\"35.202.83.250\",\"OperationName\":\"streamStarted\",\"ServiceName\":\"Crowdstrike Streaming API\",\"Success\":true,\"UTCTimestamp\":1678368471,\"AuditKeyValues\":[{\"Key\":\"eventType\",\"ValueString\":\"All event type(s)\"},{\"Key\":\"APIClientID\",\"ValueString\":\"54d4bba33e7f40c9acd09de9d156f6ae\"},{\"ValueString\":\"0\",\"Key\":\"partition\"},{\"Key\":\"offset\",\"ValueString\":\"117010\"},{\"Key\":\"appId\",\"ValueString\":\"ao_event_collector-e4fe030a\"}],\"UserId\":\"api-client-id:54d4bba33e7f40c9acd09de9d156f6ae\"}}",
+        "outcome": "success",
+        "provider": "AuthActivityAuditEvent"
+      },
+      "related": {
+        "ip": [
+          "35.202.83.250"
+        ],
+        "user": [
+          "api-client-id:54d4bba33e7f40c9acd09de9d156f6ae"
+        ]
+      },
+      "service": {
+        "type": "crowdstrike"
+      },
+      "source": {
+        "address": "35.202.83.250",
+        "ip": "35.202.83.250"
+      },
+      "user": {
+        "name": "api-client-id:54d4bba33e7f40c9acd09de9d156f6ae"
+      },
+      "appomni": {
+        "event": {
+          "id": "04fa6867-4993-5991-887c-093fd11d86a9",
+          "dataset": "crowdstrike_auth_activity",
+          "sortable_ingest_id": "01GV39B09PNR2NA1BRKPKA8MGE",
+          "ingestion_time": "2023-03-09T13:35:32.110Z",
+          "collected_time": "2023-03-09T13:27:52.503Z"
+        },
+        "organization": {
+          "id": 25
+        },
+        "service": {
+          "id": [
+            15022
+          ],
+          "account_id": [
+            "13ee224d-1dbf-44b8-b5bb-8a2764f65d48"
+          ],
+          "type": [
+            "crowdstrike"
+          ],
+          "name": [
+            "CrowdStrike - Prod"
+          ]
+        }
+      }
+    },
+    "source": "appomni",
+    "time": 1678368932.11,
+    "__raw": "{\"event\":{\"@timestamp\":\"2023-03-09T13:35:32.110Z\",\"tags\":[\"appomni_source\"],\"cloud\":{\"account\":{\"id\":\"13ee224d-1dbf-44b8-b5bb-8a2764f65d48\"}},\"ecs\":{\"version\":\"1.9.0\"},\"event\":{\"action\":\"connect_app\",\"category\":[\"audit\",\"cloud\"],\"code\":\"streamStarted\",\"created\":\"2023-03-09T13:27:52.503Z\",\"dataset\":\"crowdstrike_auth_activity\",\"ingested\":\"2023-03-09T13:35:32.110Z\",\"kind\":\"alert\",\"module\":\"Crowdstrike Streaming API\",\"original\":\"{\\\"metadata\\\":{\\\"offset\\\":117022,\\\"eventType\\\":\\\"AuthActivityAuditEvent\\\",\\\"eventCreationTime\\\":1678368471870,\\\"version\\\":\\\"1.0\\\",\\\"customerIDString\\\":\\\"79d3841b572a44fea47fcd425fe2e660\\\"},\\\"event\\\":{\\\"UserIp\\\":\\\"35.202.83.250\\\",\\\"OperationName\\\":\\\"streamStarted\\\",\\\"ServiceName\\\":\\\"Crowdstrike Streaming API\\\",\\\"Success\\\":true,\\\"UTCTimestamp\\\":1678368471,\\\"AuditKeyValues\\\":[{\\\"Key\\\":\\\"eventType\\\",\\\"ValueString\\\":\\\"All event type(s)\\\"},{\\\"Key\\\":\\\"APIClientID\\\",\\\"ValueString\\\":\\\"54d4bba33e7f40c9acd09de9d156f6ae\\\"},{\\\"ValueString\\\":\\\"0\\\",\\\"Key\\\":\\\"partition\\\"},{\\\"Key\\\":\\\"offset\\\",\\\"ValueString\\\":\\\"117010\\\"},{\\\"Key\\\":\\\"appId\\\",\\\"ValueString\\\":\\\"ao_event_collector-e4fe030a\\\"}],\\\"UserId\\\":\\\"api-client-id:54d4bba33e7f40c9acd09de9d156f6ae\\\"}}\",\"outcome\":\"success\",\"provider\":\"AuthActivityAuditEvent\"},\"related\":{\"ip\":[\"35.202.83.250\"],\"user\":[\"api-client-id:54d4bba33e7f40c9acd09de9d156f6ae\"]},\"service\":{\"type\":\"crowdstrike\"},\"source\":{\"address\":\"35.202.83.250\",\"ip\":\"35.202.83.250\"},\"user\":{\"name\":\"api-client-id:54d4bba33e7f40c9acd09de9d156f6ae\"},\"appomni\":{\"event\":{\"id\":\"04fa6867-4993-5991-887c-093fd11d86a9\",\"dataset\":\"crowdstrike_auth_activity\",\"sortable_ingest_id\":\"01GV39B09PNR2NA1BRKPKA8MGE\",\"ingestion_time\":\"2023-03-09T13:35:32.110Z\",\"collected_time\":\"2023-03-09T13:27:52.503Z\"},\"organization\":{\"id\":25},\"service\":{\"id\":[15022],\"account_id\":[\"13ee224d-1dbf-44b8-b5bb-8a2764f65d48\"],\"type\":[\"crowdstrike\"],\"name\":[\"CrowdStrike - Prod\"]}}},\"source\":\"appomni\",\"time\":1678368932.11}",
+    "__srcIpPort": "34.66.125.100:48081",
+    "__hecToken": "364f774f-6969-314c-5941-693732544975",
+    "__inputId": "http:http:cribl",
+    "_time": 1679351759.009
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "event": {
+      "@timestamp": "2023-03-09T13:24:56.000Z",
+      "labels": {
+        "table": "sys_flow_context"
+      },
+      "message": "Fires when a Flow is ran",
+      "cloud": {
+        "account": {
+          "id": "ven04337"
+        }
+      },
+      "ecs": {
+        "version": "1.9.0"
+      },
+      "event": {
+        "action": "unknown",
+        "category": [
+          "audit",
+          "cloud"
+        ],
+        "created": "2023-03-09T13:24:59.481Z",
+        "dataset": "snow_sysevent",
+        "id": "9a0bab101be1a11008e154e4604bcb8d",
+        "ingested": "2023-03-09T13:31:41.742Z",
+        "kind": "event",
+        "module": "snow",
+        "original": "{\"sys_id\":\"9a0bab101be1a11008e154e4604bcb8d\",\"parm2\":\"5a0bab105de1a11044dfab8e244dd58d\",\"table\":\"sys_flow_context\",\"instance\":\"1a0bab103ee1a110b26811309db6608c\",\"sys_created_on\":\"2023-03-09 13:24:56\",\"sys_updated_by\":\"system\",\"user_id\":\"8e04d7921b276490a7c052c2604bcba7\",\"user_name\":\"service.appomni\",\"name\":\"flow.fire\",\"parm1\":null,\"sys_created_by\":\"service.appomni\",\"sys_updated_on\":\"2023-03-09 13:24:56\"}"
+      },
+      "related": {
+        "user": [
+          "service.appomni"
+        ]
+      },
+      "resource": {
+        "id": "1a0bab103ee1a110b26811309db6608c"
+      },
+      "service": {
+        "type": "snow"
+      },
+      "user": {
+        "name": "service.appomni"
+      },
+      "appomni": {
+        "event": {
+          "id": "0c0d964d-d6da-54d0-b593-a421b100d268",
+          "dataset": "snow_sysevent",
+          "sortable_ingest_id": "01GV393ZADTAP1FTGXFR6XRTXW",
+          "ingestion_time": "2023-03-09T13:31:41.742Z",
+          "collected_time": "2023-03-09T13:24:59.481Z"
+        },
+        "organization": {
+          "id": 25
+        },
+        "service": {
+          "id": [
+            13619
+          ],
+          "account_id": [
+            "ven04337"
+          ],
+          "type": [
+            "snow"
+          ],
+          "name": [
+            "ServiceNow - Prod"
+          ]
+        }
+      }
+    },
+    "source": "appomni",
+    "time": 1678368296,
+    "__raw": "{\"event\":{\"@timestamp\":\"2023-03-09T13:24:56.000Z\",\"labels\":{\"table\":\"sys_flow_context\"},\"message\":\"Fires when a Flow is ran\",\"cloud\":{\"account\":{\"id\":\"ven04337\"}},\"ecs\":{\"version\":\"1.9.0\"},\"event\":{\"action\":\"unknown\",\"category\":[\"audit\",\"cloud\"],\"created\":\"2023-03-09T13:24:59.481Z\",\"dataset\":\"snow_sysevent\",\"id\":\"9a0bab101be1a11008e154e4604bcb8d\",\"ingested\":\"2023-03-09T13:31:41.742Z\",\"kind\":\"event\",\"module\":\"snow\",\"original\":\"{\\\"sys_id\\\":\\\"9a0bab101be1a11008e154e4604bcb8d\\\",\\\"parm2\\\":\\\"5a0bab105de1a11044dfab8e244dd58d\\\",\\\"table\\\":\\\"sys_flow_context\\\",\\\"instance\\\":\\\"1a0bab103ee1a110b26811309db6608c\\\",\\\"sys_created_on\\\":\\\"2023-03-09 13:24:56\\\",\\\"sys_updated_by\\\":\\\"system\\\",\\\"user_id\\\":\\\"8e04d7921b276490a7c052c2604bcba7\\\",\\\"user_name\\\":\\\"service.appomni\\\",\\\"name\\\":\\\"flow.fire\\\",\\\"parm1\\\":null,\\\"sys_created_by\\\":\\\"service.appomni\\\",\\\"sys_updated_on\\\":\\\"2023-03-09 13:24:56\\\"}\"},\"related\":{\"user\":[\"service.appomni\"]},\"resource\":{\"id\":\"1a0bab103ee1a110b26811309db6608c\"},\"service\":{\"type\":\"snow\"},\"user\":{\"name\":\"service.appomni\"},\"appomni\":{\"event\":{\"id\":\"0c0d964d-d6da-54d0-b593-a421b100d268\",\"dataset\":\"snow_sysevent\",\"sortable_ingest_id\":\"01GV393ZADTAP1FTGXFR6XRTXW\",\"ingestion_time\":\"2023-03-09T13:31:41.742Z\",\"collected_time\":\"2023-03-09T13:24:59.481Z\"},\"organization\":{\"id\":25},\"service\":{\"id\":[13619],\"account_id\":[\"ven04337\"],\"type\":[\"snow\"],\"name\":[\"ServiceNow - Prod\"]}}},\"source\":\"appomni\",\"time\":1678368296.0}",
+    "__srcIpPort": "34.66.125.100:48081",
+    "__hecToken": "364f774f-6969-314c-5941-693732544975",
+    "__inputId": "http:http:cribl",
+    "_time": 1679351759.009
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "event": {
+      "@timestamp": "2023-03-09T13:35:36.124Z",
+      "tags": [
+        "appomni_source"
+      ],
+      "cloud": {
+        "account": {
+          "id": "13ee224d-1dbf-44b8-b5bb-8a2764f65d48"
+        }
+      },
+      "ecs": {
+        "version": "1.9.0"
+      },
+      "event": {
+        "action": "connect_app",
+        "category": [
+          "audit",
+          "cloud"
+        ],
+        "code": "streamStarted",
+        "created": "2023-03-09T13:27:52.007Z",
+        "dataset": "crowdstrike_auth_activity",
+        "ingested": "2023-03-09T13:35:36.124Z",
+        "kind": "event",
+        "module": "Crowdstrike Streaming API",
+        "original": "{\"metadata\":{\"customerIDString\":\"79d3841b572a44fea47fcd425fe2e660\",\"offset\":117014,\"eventType\":\"AuthActivityAuditEvent\",\"eventCreationTime\":1678368007081,\"version\":\"1.0\"},\"event\":{\"OperationName\":\"streamStarted\",\"ServiceName\":\"Crowdstrike Streaming API\",\"Success\":true,\"UTCTimestamp\":1678368007,\"AuditKeyValues\":[{\"Key\":\"APIClientID\",\"ValueString\":\"82405738695b4e5e824db1481f049b9e\"},{\"Key\":\"partition\",\"ValueString\":\"0\"},{\"Key\":\"offset\",\"ValueString\":\"117003\"},{\"Key\":\"appId\",\"ValueString\":\"ao_event_collector-de01cd3e\"},{\"Key\":\"eventType\",\"ValueString\":\"All event type(s)\"}],\"UserId\":\"api-client-id:82405738695b4e5e824db1481f049b9e\",\"UserIp\":\"34.71.252.238\"}}",
+        "outcome": "success",
+        "provider": "AuthActivityAuditEvent"
+      },
+      "related": {
+        "ip": [
+          "34.71.252.238"
+        ],
+        "user": [
+          "api-client-id:82405738695b4e5e824db1481f049b9e"
+        ]
+      },
+      "service": {
+        "type": "crowdstrike"
+      },
+      "source": {
+        "address": "34.71.252.238",
+        "ip": "34.71.252.238"
+      },
+      "user": {
+        "name": "api-client-id:82405738695b4e5e824db1481f049b9e"
+      },
+      "appomni": {
+        "event": {
+          "id": "12fd38e0-41e0-5904-92c9-9594b34b692b",
+          "dataset": "crowdstrike_auth_activity",
+          "sortable_ingest_id": "01GV39B47PH57Z9BZSYB9WVQTB",
+          "ingestion_time": "2023-03-09T13:35:36.124Z",
+          "collected_time": "2023-03-09T13:27:52.007Z"
+        },
+        "organization": {
+          "id": 25
+        },
+        "service": {
+          "id": [
+            15022
+          ],
+          "account_id": [
+            "13ee224d-1dbf-44b8-b5bb-8a2764f65d48"
+          ],
+          "type": [
+            "crowdstrike"
+          ],
+          "name": [
+            "CrowdStrike - Prod"
+          ]
+        }
+      }
+    },
+    "source": "appomni",
+    "time": 1678368936.124,
+    "__raw": "{\"event\":{\"@timestamp\":\"2023-03-09T13:35:36.124Z\",\"tags\":[\"appomni_source\"],\"cloud\":{\"account\":{\"id\":\"13ee224d-1dbf-44b8-b5bb-8a2764f65d48\"}},\"ecs\":{\"version\":\"1.9.0\"},\"event\":{\"action\":\"connect_app\",\"category\":[\"audit\",\"cloud\"],\"code\":\"streamStarted\",\"created\":\"2023-03-09T13:27:52.007Z\",\"dataset\":\"crowdstrike_auth_activity\",\"ingested\":\"2023-03-09T13:35:36.124Z\",\"kind\":\"event\",\"module\":\"Crowdstrike Streaming API\",\"original\":\"{\\\"metadata\\\":{\\\"customerIDString\\\":\\\"79d3841b572a44fea47fcd425fe2e660\\\",\\\"offset\\\":117014,\\\"eventType\\\":\\\"AuthActivityAuditEvent\\\",\\\"eventCreationTime\\\":1678368007081,\\\"version\\\":\\\"1.0\\\"},\\\"event\\\":{\\\"OperationName\\\":\\\"streamStarted\\\",\\\"ServiceName\\\":\\\"Crowdstrike Streaming API\\\",\\\"Success\\\":true,\\\"UTCTimestamp\\\":1678368007,\\\"AuditKeyValues\\\":[{\\\"Key\\\":\\\"APIClientID\\\",\\\"ValueString\\\":\\\"82405738695b4e5e824db1481f049b9e\\\"},{\\\"Key\\\":\\\"partition\\\",\\\"ValueString\\\":\\\"0\\\"},{\\\"Key\\\":\\\"offset\\\",\\\"ValueString\\\":\\\"117003\\\"},{\\\"Key\\\":\\\"appId\\\",\\\"ValueString\\\":\\\"ao_event_collector-de01cd3e\\\"},{\\\"Key\\\":\\\"eventType\\\",\\\"ValueString\\\":\\\"All event type(s)\\\"}],\\\"UserId\\\":\\\"api-client-id:82405738695b4e5e824db1481f049b9e\\\",\\\"UserIp\\\":\\\"34.71.252.238\\\"}}\",\"outcome\":\"success\",\"provider\":\"AuthActivityAuditEvent\"},\"related\":{\"ip\":[\"34.71.252.238\"],\"user\":[\"api-client-id:82405738695b4e5e824db1481f049b9e\"]},\"service\":{\"type\":\"crowdstrike\"},\"source\":{\"address\":\"34.71.252.238\",\"ip\":\"34.71.252.238\"},\"user\":{\"name\":\"api-client-id:82405738695b4e5e824db1481f049b9e\"},\"appomni\":{\"event\":{\"id\":\"12fd38e0-41e0-5904-92c9-9594b34b692b\",\"dataset\":\"crowdstrike_auth_activity\",\"sortable_ingest_id\":\"01GV39B47PH57Z9BZSYB9WVQTB\",\"ingestion_time\":\"2023-03-09T13:35:36.124Z\",\"collected_time\":\"2023-03-09T13:27:52.007Z\"},\"organization\":{\"id\":25},\"service\":{\"id\":[15022],\"account_id\":[\"13ee224d-1dbf-44b8-b5bb-8a2764f65d48\"],\"type\":[\"crowdstrike\"],\"name\":[\"CrowdStrike - Prod\"]}}},\"source\":\"appomni\",\"time\":1678368936.124}",
+    "__srcIpPort": "34.66.125.100:48081",
+    "__hecToken": "364f774f-6969-314c-5941-693732544975",
+    "__inputId": "http:http:cribl",
+    "_time": 1679351759.009
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "event": {
+      "@timestamp": "2023-03-09T13:35:35.026Z",
+      "tags": [
+        "appomni_source"
+      ],
+      "cloud": {
+        "account": {
+          "id": "13ee224d-1dbf-44b8-b5bb-8a2764f65d48"
+        }
+      },
+      "ecs": {
+        "version": "1.9.0"
+      },
+      "event": {
+        "action": "disconnect_app",
+        "category": [
+          "audit",
+          "cloud"
+        ],
+        "code": "streamStopped",
+        "created": "2023-03-09T13:27:52.006Z",
+        "dataset": "crowdstrike_auth_activity",
+        "ingested": "2023-03-09T13:35:35.026Z",
+        "kind": "event",
+        "module": "Crowdstrike Streaming API",
+        "original": "{\"metadata\":{\"eventCreationTime\":1678367958022,\"version\":\"1.0\",\"customerIDString\":\"79d3841b572a44fea47fcd425fe2e660\",\"offset\":117013,\"eventType\":\"AuthActivityAuditEvent\"},\"event\":{\"ServiceName\":\"Crowdstrike Streaming API\",\"Success\":true,\"UTCTimestamp\":1678367958,\"AuditKeyValues\":[{\"Key\":\"appId\",\"ValueString\":\"ao_event_collector-9c220d05\"},{\"Key\":\"eventType\",\"ValueString\":\"All event type(s)\"},{\"Key\":\"APIClientID\",\"ValueString\":\"82405738695b4e5e824db1481f049b9e\"},{\"Key\":\"partition\",\"ValueString\":\"0\"},{\"Key\":\"offset\",\"ValueString\":\"117001\"}],\"UserId\":\"api-client-id:82405738695b4e5e824db1481f049b9e\",\"UserIp\":\"34.71.252.238\",\"OperationName\":\"streamStopped\"}}",
+        "outcome": "success",
+        "provider": "AuthActivityAuditEvent"
+      },
+      "related": {
+        "ip": [
+          "34.71.252.238"
+        ],
+        "user": [
+          "api-client-id:82405738695b4e5e824db1481f049b9e"
+        ]
+      },
+      "service": {
+        "type": "crowdstrike"
+      },
+      "source": {
+        "address": "34.71.252.238",
+        "ip": "34.71.252.238"
+      },
+      "user": {
+        "name": "api-client-id:82405738695b4e5e824db1481f049b9e"
+      },
+      "appomni": {
+        "event": {
+          "id": "14d5149e-a5e8-5b79-9a07-55a8b0540a68",
+          "dataset": "crowdstrike_auth_activity",
+          "sortable_ingest_id": "01GV39BN82EBR0AXZ1TJ0NTJFV",
+          "ingestion_time": "2023-03-09T13:35:35.026Z",
+          "collected_time": "2023-03-09T13:27:52.006Z"
+        },
+        "organization": {
+          "id": 25
+        },
+        "service": {
+          "id": [
+            15022
+          ],
+          "account_id": [
+            "13ee224d-1dbf-44b8-b5bb-8a2764f65d48"
+          ],
+          "type": [
+            "crowdstrike"
+          ],
+          "name": [
+            "CrowdStrike - Prod"
+          ]
+        }
+      }
+    },
+    "source": "appomni",
+    "time": 1678368935.026,
+    "__raw": "{\"event\":{\"@timestamp\":\"2023-03-09T13:35:35.026Z\",\"tags\":[\"appomni_source\"],\"cloud\":{\"account\":{\"id\":\"13ee224d-1dbf-44b8-b5bb-8a2764f65d48\"}},\"ecs\":{\"version\":\"1.9.0\"},\"event\":{\"action\":\"disconnect_app\",\"category\":[\"audit\",\"cloud\"],\"code\":\"streamStopped\",\"created\":\"2023-03-09T13:27:52.006Z\",\"dataset\":\"crowdstrike_auth_activity\",\"ingested\":\"2023-03-09T13:35:35.026Z\",\"kind\":\"event\",\"module\":\"Crowdstrike Streaming API\",\"original\":\"{\\\"metadata\\\":{\\\"eventCreationTime\\\":1678367958022,\\\"version\\\":\\\"1.0\\\",\\\"customerIDString\\\":\\\"79d3841b572a44fea47fcd425fe2e660\\\",\\\"offset\\\":117013,\\\"eventType\\\":\\\"AuthActivityAuditEvent\\\"},\\\"event\\\":{\\\"ServiceName\\\":\\\"Crowdstrike Streaming API\\\",\\\"Success\\\":true,\\\"UTCTimestamp\\\":1678367958,\\\"AuditKeyValues\\\":[{\\\"Key\\\":\\\"appId\\\",\\\"ValueString\\\":\\\"ao_event_collector-9c220d05\\\"},{\\\"Key\\\":\\\"eventType\\\",\\\"ValueString\\\":\\\"All event type(s)\\\"},{\\\"Key\\\":\\\"APIClientID\\\",\\\"ValueString\\\":\\\"82405738695b4e5e824db1481f049b9e\\\"},{\\\"Key\\\":\\\"partition\\\",\\\"ValueString\\\":\\\"0\\\"},{\\\"Key\\\":\\\"offset\\\",\\\"ValueString\\\":\\\"117001\\\"}],\\\"UserId\\\":\\\"api-client-id:82405738695b4e5e824db1481f049b9e\\\",\\\"UserIp\\\":\\\"34.71.252.238\\\",\\\"OperationName\\\":\\\"streamStopped\\\"}}\",\"outcome\":\"success\",\"provider\":\"AuthActivityAuditEvent\"},\"related\":{\"ip\":[\"34.71.252.238\"],\"user\":[\"api-client-id:82405738695b4e5e824db1481f049b9e\"]},\"service\":{\"type\":\"crowdstrike\"},\"source\":{\"address\":\"34.71.252.238\",\"ip\":\"34.71.252.238\"},\"user\":{\"name\":\"api-client-id:82405738695b4e5e824db1481f049b9e\"},\"appomni\":{\"event\":{\"id\":\"14d5149e-a5e8-5b79-9a07-55a8b0540a68\",\"dataset\":\"crowdstrike_auth_activity\",\"sortable_ingest_id\":\"01GV39BN82EBR0AXZ1TJ0NTJFV\",\"ingestion_time\":\"2023-03-09T13:35:35.026Z\",\"collected_time\":\"2023-03-09T13:27:52.006Z\"},\"organization\":{\"id\":25},\"service\":{\"id\":[15022],\"account_id\":[\"13ee224d-1dbf-44b8-b5bb-8a2764f65d48\"],\"type\":[\"crowdstrike\"],\"name\":[\"CrowdStrike - Prod\"]}}},\"source\":\"appomni\",\"time\":1678368935.026}",
+    "__srcIpPort": "34.66.125.100:48081",
+    "__hecToken": "364f774f-6969-314c-5941-693732544975",
+    "__inputId": "http:http:cribl",
+    "_time": 1679351759.009
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "event": {
+      "@timestamp": "2023-03-09T13:12:40.000Z",
+      "labels": {
+        "table": "sys_flow_context"
+      },
+      "message": "Fires when a Flow is ran",
+      "cloud": {
+        "account": {
+          "id": "ven04337"
+        }
+      },
+      "ecs": {
+        "version": "1.9.0"
+      },
+      "event": {
+        "action": "unknown",
+        "category": [
+          "audit",
+          "cloud"
+        ],
+        "created": "2023-03-09T13:24:59.480Z",
+        "dataset": "snow_sysevent",
+        "id": "fe38a79c1ba1a11008e154e4604bcbbe",
+        "ingested": "2023-03-09T13:30:56.143Z",
+        "kind": "event",
+        "module": "snow",
+        "original": "{\"sys_id\":\"fe38a79c1ba1a11008e154e4604bcbbe\",\"table\":\"sys_flow_context\",\"user_id\":\"8e04d7921b276490a7c052c2604bcba7\",\"user_name\":\"service.appomni\",\"instance\":\"7e38a79cbda1a11061ec985cd771b8bd\",\"sys_created_by\":\"service.appomni\",\"sys_created_on\":\"2023-03-09 13:12:40\",\"sys_updated_by\":\"system\",\"sys_updated_on\":\"2023-03-09 13:12:42\",\"name\":\"flow.fire\",\"parm1\":null,\"parm2\":\"be38a79caba1a110d429b5e7f14cfbbe\"}"
+      },
+      "related": {
+        "user": [
+          "service.appomni"
+        ]
+      },
+      "resource": {
+        "id": "7e38a79cbda1a11061ec985cd771b8bd"
+      },
+      "service": {
+        "type": "snow"
+      },
+      "user": {
+        "name": "service.appomni"
+      },
+      "appomni": {
+        "event": {
+          "id": "1573c35f-6796-578a-947d-38b35a67c253",
+          "dataset": "snow_sysevent",
+          "sortable_ingest_id": "01GV392JTA7A7NRBKF48H9P0TC",
+          "ingestion_time": "2023-03-09T13:30:56.143Z",
+          "collected_time": "2023-03-09T13:24:59.480Z"
+        },
+        "organization": {
+          "id": 25
+        },
+        "service": {
+          "id": [
+            13619
+          ],
+          "account_id": [
+            "ven04337"
+          ],
+          "type": [
+            "snow"
+          ],
+          "name": [
+            "ServiceNow - Prod"
+          ]
+        }
+      }
+    },
+    "source": "appomni",
+    "time": 1678367560,
+    "__raw": "{\"event\":{\"@timestamp\":\"2023-03-09T13:12:40.000Z\",\"labels\":{\"table\":\"sys_flow_context\"},\"message\":\"Fires when a Flow is ran\",\"cloud\":{\"account\":{\"id\":\"ven04337\"}},\"ecs\":{\"version\":\"1.9.0\"},\"event\":{\"action\":\"unknown\",\"category\":[\"audit\",\"cloud\"],\"created\":\"2023-03-09T13:24:59.480Z\",\"dataset\":\"snow_sysevent\",\"id\":\"fe38a79c1ba1a11008e154e4604bcbbe\",\"ingested\":\"2023-03-09T13:30:56.143Z\",\"kind\":\"event\",\"module\":\"snow\",\"original\":\"{\\\"sys_id\\\":\\\"fe38a79c1ba1a11008e154e4604bcbbe\\\",\\\"table\\\":\\\"sys_flow_context\\\",\\\"user_id\\\":\\\"8e04d7921b276490a7c052c2604bcba7\\\",\\\"user_name\\\":\\\"service.appomni\\\",\\\"instance\\\":\\\"7e38a79cbda1a11061ec985cd771b8bd\\\",\\\"sys_created_by\\\":\\\"service.appomni\\\",\\\"sys_created_on\\\":\\\"2023-03-09 13:12:40\\\",\\\"sys_updated_by\\\":\\\"system\\\",\\\"sys_updated_on\\\":\\\"2023-03-09 13:12:42\\\",\\\"name\\\":\\\"flow.fire\\\",\\\"parm1\\\":null,\\\"parm2\\\":\\\"be38a79caba1a110d429b5e7f14cfbbe\\\"}\"},\"related\":{\"user\":[\"service.appomni\"]},\"resource\":{\"id\":\"7e38a79cbda1a11061ec985cd771b8bd\"},\"service\":{\"type\":\"snow\"},\"user\":{\"name\":\"service.appomni\"},\"appomni\":{\"event\":{\"id\":\"1573c35f-6796-578a-947d-38b35a67c253\",\"dataset\":\"snow_sysevent\",\"sortable_ingest_id\":\"01GV392JTA7A7NRBKF48H9P0TC\",\"ingestion_time\":\"2023-03-09T13:30:56.143Z\",\"collected_time\":\"2023-03-09T13:24:59.480Z\"},\"organization\":{\"id\":25},\"service\":{\"id\":[13619],\"account_id\":[\"ven04337\"],\"type\":[\"snow\"],\"name\":[\"ServiceNow - Prod\"]}}},\"source\":\"appomni\",\"time\":1678367560.0}",
+    "__srcIpPort": "34.66.125.100:48081",
+    "__hecToken": "364f774f-6969-314c-5941-693732544975",
+    "__inputId": "http:http:cribl",
+    "_time": 1679351759.009
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "event": {
+      "@timestamp": "2023-03-09T13:24:29.486Z",
+      "cloud": {
+        "account": {
+          "id": "25"
+        },
+        "provider": "appomni"
+      },
+      "ecs": {
+        "version": "1.9.0"
+      },
+      "event": {
+        "action": "start_scan",
+        "category": [
+          "audit",
+          "cloud"
+        ],
+        "created": "2023-03-09T13:24:29.508Z",
+        "dataset": "ao_auditlogs",
+        "id": "cb119c3b-df0b-411d-bd4d-d5b230f4e8e2",
+        "ingested": "2023-03-09T13:34:29.171Z",
+        "kind": "event",
+        "module": "appomni",
+        "original": "{\"log_id\":\"cb119c3b-df0b-411d-bd4d-d5b230f4e8e2\",\"action_at\":\"2023-03-09T13:24:29.486509+00:00\",\"service_type\":\"None\",\"service_id\":null,\"perspective_id\":null,\"perspective_name\":null,\"policy_id\":43567,\"org_id\":25,\"user_id\":null,\"action_type\":\"policy_scan_started\",\"service_name\":null,\"omnitab_user_id\":null,\"action_data\":{\"external_entity_id\":null,\"sink_name\":null,\"element_list_id\":null,\"workflow_instance_id\":null,\"third_party_application_id\":null,\"type_str\":null,\"error_str\":null,\"md_kind\":\"core.aoaudit.auditdata\",\"rule_id\":null,\"ruleexception_id\":null,\"policy_name\":\"Classification Policy (External Users  - Allow Policy)\",\"user_username\":null,\"old_value\":null,\"element_type\":null,\"email_reason\":null,\"ruleevent_id\":null,\"policy_id\":43567,\"policy_assessment_id\":null,\"detail_str\":null,\"user_ip\":null,\"detection_ruleset_id\":null,\"detection_alert_id\":null,\"email_identifier\":null,\"policy_assessment_completion_date\":null,\"third_party_application_name\":null,\"tag_name\":null,\"detection_rule_id\":null,\"detection_rule_name\":null,\"global_value_list_collection_id\":null,\"tag_id\":null,\"reason_str\":null,\"unified_identity_email\":null,\"target_user_username\":null,\"element_id\":null,\"workflow_instance_name\":null,\"file_id\":null,\"group_id\":null,\"md_version\":1,\"target_user_id\":null,\"setting_name\":null,\"unified_identity_id\":null,\"new_value\":null,\"sink_id\":null,\"detection_ruleset_name\":null,\"email_addresses\":null,\"platform_ingest_job_id\":null,\"group_name\":null,\"user_agent\":null}}",
+        "type": [
+          "start"
+        ]
+      },
+      "service": {
+        "type": "appomni"
+      },
+      "appomni": {
+        "event": {
+          "id": "211f4d8a-e41f-52f8-8397-04c6bbf78e30",
+          "dataset": "ao_auditlogs",
+          "sortable_ingest_id": "01GV3999PPF0PAGVB7XKPFJPFK",
+          "ingestion_time": "2023-03-09T13:34:29.171Z",
+          "collected_time": "2023-03-09T13:24:29.508Z"
+        },
+        "organization": {
+          "id": 25
+        },
+        "service": {
+          "id": [
+            0
+          ],
+          "account_id": [
+            "25"
+          ],
+          "type": [
+            "appomni"
+          ],
+          "name": [
+            "AppOmni"
+          ]
+        }
+      }
+    },
+    "source": "appomni",
+    "time": 1678368269.486,
+    "__raw": "{\"event\":{\"@timestamp\":\"2023-03-09T13:24:29.486Z\",\"cloud\":{\"account\":{\"id\":\"25\"},\"provider\":\"appomni\"},\"ecs\":{\"version\":\"1.9.0\"},\"event\":{\"action\":\"start_scan\",\"category\":[\"audit\",\"cloud\"],\"created\":\"2023-03-09T13:24:29.508Z\",\"dataset\":\"ao_auditlogs\",\"id\":\"cb119c3b-df0b-411d-bd4d-d5b230f4e8e2\",\"ingested\":\"2023-03-09T13:34:29.171Z\",\"kind\":\"event\",\"module\":\"appomni\",\"original\":\"{\\\"log_id\\\":\\\"cb119c3b-df0b-411d-bd4d-d5b230f4e8e2\\\",\\\"action_at\\\":\\\"2023-03-09T13:24:29.486509+00:00\\\",\\\"service_type\\\":\\\"None\\\",\\\"service_id\\\":null,\\\"perspective_id\\\":null,\\\"perspective_name\\\":null,\\\"policy_id\\\":43567,\\\"org_id\\\":25,\\\"user_id\\\":null,\\\"action_type\\\":\\\"policy_scan_started\\\",\\\"service_name\\\":null,\\\"omnitab_user_id\\\":null,\\\"action_data\\\":{\\\"external_entity_id\\\":null,\\\"sink_name\\\":null,\\\"element_list_id\\\":null,\\\"workflow_instance_id\\\":null,\\\"third_party_application_id\\\":null,\\\"type_str\\\":null,\\\"error_str\\\":null,\\\"md_kind\\\":\\\"core.aoaudit.auditdata\\\",\\\"rule_id\\\":null,\\\"ruleexception_id\\\":null,\\\"policy_name\\\":\\\"Classification Policy (External Users  - Allow Policy)\\\",\\\"user_username\\\":null,\\\"old_value\\\":null,\\\"element_type\\\":null,\\\"email_reason\\\":null,\\\"ruleevent_id\\\":null,\\\"policy_id\\\":43567,\\\"policy_assessment_id\\\":null,\\\"detail_str\\\":null,\\\"user_ip\\\":null,\\\"detection_ruleset_id\\\":null,\\\"detection_alert_id\\\":null,\\\"email_identifier\\\":null,\\\"policy_assessment_completion_date\\\":null,\\\"third_party_application_name\\\":null,\\\"tag_name\\\":null,\\\"detection_rule_id\\\":null,\\\"detection_rule_name\\\":null,\\\"global_value_list_collection_id\\\":null,\\\"tag_id\\\":null,\\\"reason_str\\\":null,\\\"unified_identity_email\\\":null,\\\"target_user_username\\\":null,\\\"element_id\\\":null,\\\"workflow_instance_name\\\":null,\\\"file_id\\\":null,\\\"group_id\\\":null,\\\"md_version\\\":1,\\\"target_user_id\\\":null,\\\"setting_name\\\":null,\\\"unified_identity_id\\\":null,\\\"new_value\\\":null,\\\"sink_id\\\":null,\\\"detection_ruleset_name\\\":null,\\\"email_addresses\\\":null,\\\"platform_ingest_job_id\\\":null,\\\"group_name\\\":null,\\\"user_agent\\\":null}}\",\"type\":[\"start\"]},\"service\":{\"type\":\"appomni\"},\"appomni\":{\"event\":{\"id\":\"211f4d8a-e41f-52f8-8397-04c6bbf78e30\",\"dataset\":\"ao_auditlogs\",\"sortable_ingest_id\":\"01GV3999PPF0PAGVB7XKPFJPFK\",\"ingestion_time\":\"2023-03-09T13:34:29.171Z\",\"collected_time\":\"2023-03-09T13:24:29.508Z\"},\"organization\":{\"id\":25},\"service\":{\"id\":[0],\"account_id\":[\"25\"],\"type\":[\"appomni\"],\"name\":[\"AppOmni\"]}}},\"source\":\"appomni\",\"time\":1678368269.486}",
+    "__srcIpPort": "34.66.125.100:48081",
+    "__hecToken": "364f774f-6969-314c-5941-693732544975",
+    "__inputId": "http:http:cribl",
+    "_time": 1679351759.009
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "event": {
+      "@timestamp": "2023-03-09T13:35:29.290Z",
+      "tags": [
+        "appomni_source"
+      ],
+      "cloud": {
+        "account": {
+          "id": "13ee224d-1dbf-44b8-b5bb-8a2764f65d48"
+        }
+      },
+      "ecs": {
+        "version": "1.9.0"
+      },
+      "event": {
+        "action": "disconnect_app",
+        "category": [
+          "audit",
+          "cloud"
+        ],
+        "code": "streamStopped",
+        "created": "2023-03-09T13:27:52.000Z",
+        "dataset": "crowdstrike_auth_activity",
+        "ingested": "2023-03-09T13:35:29.290Z",
+        "kind": "event",
+        "module": "Crowdstrike Streaming API",
+        "original": "{\"event\":{\"UTCTimestamp\":1678367794,\"AuditKeyValues\":[{\"Key\":\"appId\",\"ValueString\":\"ao_event_collector-619b2626\"},{\"ValueString\":\"All event type(s)\",\"Key\":\"eventType\"},{\"Key\":\"APIClientID\",\"ValueString\":\"54d4bba33e7f40c9acd09de9d156f6ae\"},{\"ValueString\":\"0\",\"Key\":\"partition\"},{\"Key\":\"offset\",\"ValueString\":\"116999\"}],\"UserId\":\"api-client-id:54d4bba33e7f40c9acd09de9d156f6ae\",\"UserIp\":\"35.202.83.250\",\"OperationName\":\"streamStopped\",\"ServiceName\":\"Crowdstrike Streaming API\",\"Success\":true},\"metadata\":{\"eventCreationTime\":1678367794293,\"version\":\"1.0\",\"customerIDString\":\"79d3841b572a44fea47fcd425fe2e660\",\"offset\":117010,\"eventType\":\"AuthActivityAuditEvent\"}}",
+        "outcome": "success",
+        "provider": "AuthActivityAuditEvent"
+      },
+      "related": {
+        "ip": [
+          "35.202.83.250"
+        ],
+        "user": [
+          "api-client-id:54d4bba33e7f40c9acd09de9d156f6ae"
+        ]
+      },
+      "service": {
+        "type": "crowdstrike"
+      },
+      "source": {
+        "address": "35.202.83.250",
+        "ip": "35.202.83.250"
+      },
+      "user": {
+        "name": "api-client-id:54d4bba33e7f40c9acd09de9d156f6ae"
+      },
+      "appomni": {
+        "event": {
+          "id": "35ca8d42-a52e-5f1e-b637-06a7e40ce758",
+          "dataset": "crowdstrike_auth_activity",
+          "sortable_ingest_id": "01GV39B5B49J2C82Q02JJAKN0Q",
+          "ingestion_time": "2023-03-09T13:35:29.290Z",
+          "collected_time": "2023-03-09T13:27:52.000Z"
+        },
+        "organization": {
+          "id": 25
+        },
+        "service": {
+          "id": [
+            15022
+          ],
+          "account_id": [
+            "13ee224d-1dbf-44b8-b5bb-8a2764f65d48"
+          ],
+          "type": [
+            "crowdstrike"
+          ],
+          "name": [
+            "CrowdStrike - Prod"
+          ]
+        }
+      }
+    },
+    "source": "appomni",
+    "time": 1678368929.29,
+    "__raw": "{\"event\":{\"@timestamp\":\"2023-03-09T13:35:29.290Z\",\"tags\":[\"appomni_source\"],\"cloud\":{\"account\":{\"id\":\"13ee224d-1dbf-44b8-b5bb-8a2764f65d48\"}},\"ecs\":{\"version\":\"1.9.0\"},\"event\":{\"action\":\"disconnect_app\",\"category\":[\"audit\",\"cloud\"],\"code\":\"streamStopped\",\"created\":\"2023-03-09T13:27:52.000Z\",\"dataset\":\"crowdstrike_auth_activity\",\"ingested\":\"2023-03-09T13:35:29.290Z\",\"kind\":\"event\",\"module\":\"Crowdstrike Streaming API\",\"original\":\"{\\\"event\\\":{\\\"UTCTimestamp\\\":1678367794,\\\"AuditKeyValues\\\":[{\\\"Key\\\":\\\"appId\\\",\\\"ValueString\\\":\\\"ao_event_collector-619b2626\\\"},{\\\"ValueString\\\":\\\"All event type(s)\\\",\\\"Key\\\":\\\"eventType\\\"},{\\\"Key\\\":\\\"APIClientID\\\",\\\"ValueString\\\":\\\"54d4bba33e7f40c9acd09de9d156f6ae\\\"},{\\\"ValueString\\\":\\\"0\\\",\\\"Key\\\":\\\"partition\\\"},{\\\"Key\\\":\\\"offset\\\",\\\"ValueString\\\":\\\"116999\\\"}],\\\"UserId\\\":\\\"api-client-id:54d4bba33e7f40c9acd09de9d156f6ae\\\",\\\"UserIp\\\":\\\"35.202.83.250\\\",\\\"OperationName\\\":\\\"streamStopped\\\",\\\"ServiceName\\\":\\\"Crowdstrike Streaming API\\\",\\\"Success\\\":true},\\\"metadata\\\":{\\\"eventCreationTime\\\":1678367794293,\\\"version\\\":\\\"1.0\\\",\\\"customerIDString\\\":\\\"79d3841b572a44fea47fcd425fe2e660\\\",\\\"offset\\\":117010,\\\"eventType\\\":\\\"AuthActivityAuditEvent\\\"}}\",\"outcome\":\"success\",\"provider\":\"AuthActivityAuditEvent\"},\"related\":{\"ip\":[\"35.202.83.250\"],\"user\":[\"api-client-id:54d4bba33e7f40c9acd09de9d156f6ae\"]},\"service\":{\"type\":\"crowdstrike\"},\"source\":{\"address\":\"35.202.83.250\",\"ip\":\"35.202.83.250\"},\"user\":{\"name\":\"api-client-id:54d4bba33e7f40c9acd09de9d156f6ae\"},\"appomni\":{\"event\":{\"id\":\"35ca8d42-a52e-5f1e-b637-06a7e40ce758\",\"dataset\":\"crowdstrike_auth_activity\",\"sortable_ingest_id\":\"01GV39B5B49J2C82Q02JJAKN0Q\",\"ingestion_time\":\"2023-03-09T13:35:29.290Z\",\"collected_time\":\"2023-03-09T13:27:52.000Z\"},\"organization\":{\"id\":25},\"service\":{\"id\":[15022],\"account_id\":[\"13ee224d-1dbf-44b8-b5bb-8a2764f65d48\"],\"type\":[\"crowdstrike\"],\"name\":[\"CrowdStrike - Prod\"]}}},\"source\":\"appomni\",\"time\":1678368929.29}",
+    "__srcIpPort": "34.66.125.100:48081",
+    "__hecToken": "364f774f-6969-314c-5941-693732544975",
+    "__inputId": "http:http:cribl",
+    "_time": 1679351759.009
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "event": {
+      "@timestamp": "2023-03-09T13:24:56.000Z",
+      "labels": {
+        "table": "sys_flow_context"
+      },
+      "message": "Fires when a Flow is ran",
+      "cloud": {
+        "account": {
+          "id": "ven04337"
+        }
+      },
+      "ecs": {
+        "version": "1.9.0"
+      },
+      "event": {
+        "action": "unknown",
+        "category": [
+          "audit",
+          "cloud"
+        ],
+        "created": "2023-03-09T13:24:59.481Z",
+        "dataset": "snow_sysevent",
+        "id": "ae0be7d01ba52510758a11f1b24bcb8d",
+        "ingested": "2023-03-09T13:35:58.516Z",
+        "kind": "event",
+        "module": "snow",
+        "original": "{\"user_name\":\"service.appomni\",\"sys_id\":\"ae0be7d01ba52510758a11f1b24bcb8d\",\"parm1\":null,\"instance\":\"2e0be7d063a52510f8af6954c114938c\",\"sys_created_by\":\"service.appomni\",\"sys_created_on\":\"2023-03-09 13:24:56\",\"sys_updated_by\":\"system\",\"sys_updated_on\":\"2023-03-09 13:24:58\",\"user_id\":\"8e04d7921b276490a7c052c2604bcba7\",\"name\":\"flow.fire\",\"parm2\":\"6e0be7d09da5251094a8f0378097dd8d\",\"table\":\"sys_flow_context\"}"
+      },
+      "related": {
+        "user": [
+          "service.appomni"
+        ]
+      },
+      "resource": {
+        "id": "2e0be7d063a52510f8af6954c114938c"
+      },
+      "service": {
+        "type": "snow"
+      },
+      "user": {
+        "name": "service.appomni"
+      },
+      "appomni": {
+        "event": {
+          "id": "3f9b1e64-b46c-5411-8822-ff3cd090ab40",
+          "dataset": "snow_sysevent",
+          "sortable_ingest_id": "01GV39BT322TGP2509K7BDME4T",
+          "ingestion_time": "2023-03-09T13:35:58.516Z",
+          "collected_time": "2023-03-09T13:24:59.481Z"
+        },
+        "organization": {
+          "id": 25
+        },
+        "service": {
+          "id": [
+            13619
+          ],
+          "account_id": [
+            "ven04337"
+          ],
+          "type": [
+            "snow"
+          ],
+          "name": [
+            "ServiceNow - Prod"
+          ]
+        }
+      }
+    },
+    "source": "appomni",
+    "time": 1678368296,
+    "__raw": "{\"event\":{\"@timestamp\":\"2023-03-09T13:24:56.000Z\",\"labels\":{\"table\":\"sys_flow_context\"},\"message\":\"Fires when a Flow is ran\",\"cloud\":{\"account\":{\"id\":\"ven04337\"}},\"ecs\":{\"version\":\"1.9.0\"},\"event\":{\"action\":\"unknown\",\"category\":[\"audit\",\"cloud\"],\"created\":\"2023-03-09T13:24:59.481Z\",\"dataset\":\"snow_sysevent\",\"id\":\"ae0be7d01ba52510758a11f1b24bcb8d\",\"ingested\":\"2023-03-09T13:35:58.516Z\",\"kind\":\"event\",\"module\":\"snow\",\"original\":\"{\\\"user_name\\\":\\\"service.appomni\\\",\\\"sys_id\\\":\\\"ae0be7d01ba52510758a11f1b24bcb8d\\\",\\\"parm1\\\":null,\\\"instance\\\":\\\"2e0be7d063a52510f8af6954c114938c\\\",\\\"sys_created_by\\\":\\\"service.appomni\\\",\\\"sys_created_on\\\":\\\"2023-03-09 13:24:56\\\",\\\"sys_updated_by\\\":\\\"system\\\",\\\"sys_updated_on\\\":\\\"2023-03-09 13:24:58\\\",\\\"user_id\\\":\\\"8e04d7921b276490a7c052c2604bcba7\\\",\\\"name\\\":\\\"flow.fire\\\",\\\"parm2\\\":\\\"6e0be7d09da5251094a8f0378097dd8d\\\",\\\"table\\\":\\\"sys_flow_context\\\"}\"},\"related\":{\"user\":[\"service.appomni\"]},\"resource\":{\"id\":\"2e0be7d063a52510f8af6954c114938c\"},\"service\":{\"type\":\"snow\"},\"user\":{\"name\":\"service.appomni\"},\"appomni\":{\"event\":{\"id\":\"3f9b1e64-b46c-5411-8822-ff3cd090ab40\",\"dataset\":\"snow_sysevent\",\"sortable_ingest_id\":\"01GV39BT322TGP2509K7BDME4T\",\"ingestion_time\":\"2023-03-09T13:35:58.516Z\",\"collected_time\":\"2023-03-09T13:24:59.481Z\"},\"organization\":{\"id\":25},\"service\":{\"id\":[13619],\"account_id\":[\"ven04337\"],\"type\":[\"snow\"],\"name\":[\"ServiceNow - Prod\"]}}},\"source\":\"appomni\",\"time\":1678368296.0}",
+    "__srcIpPort": "34.66.125.100:48081",
+    "__hecToken": "364f774f-6969-314c-5941-693732544975",
+    "__inputId": "http:http:cribl",
+    "_time": 1679351759.009
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "event": {
+      "@timestamp": "2023-03-09T13:35:51.270Z",
+      "tags": [
+        "appomni_source"
+      ],
+      "cloud": {
+        "account": {
+          "id": "13ee224d-1dbf-44b8-b5bb-8a2764f65d48"
+        }
+      },
+      "ecs": {
+        "version": "1.9.0"
+      },
+      "event": {
+        "action": "connect_app",
+        "category": [
+          "audit",
+          "cloud"
+        ],
+        "code": "streamStarted",
+        "created": "2023-03-09T13:27:52.013Z",
+        "dataset": "crowdstrike_auth_activity",
+        "ingested": "2023-03-09T13:35:51.270Z",
+        "kind": "event",
+        "module": "Crowdstrike Streaming API",
+        "original": "{\"metadata\":{\"eventCreationTime\":1678368359239,\"version\":\"1.0\",\"customerIDString\":\"79d3841b572a44fea47fcd425fe2e660\",\"offset\":117018,\"eventType\":\"AuthActivityAuditEvent\"},\"event\":{\"UserIp\":\"34.71.252.238\",\"OperationName\":\"streamStarted\",\"ServiceName\":\"Crowdstrike Streaming API\",\"Success\":true,\"UTCTimestamp\":1678368359,\"AuditKeyValues\":[{\"Key\":\"APIClientID\",\"ValueString\":\"82405738695b4e5e824db1481f049b9e\"},{\"Key\":\"partition\",\"ValueString\":\"0\"},{\"Key\":\"offset\",\"ValueString\":\"117008\"},{\"Key\":\"appId\",\"ValueString\":\"ao_event_collector-77da9c89\"},{\"Key\":\"eventType\",\"ValueString\":\"All event type(s)\"}],\"UserId\":\"api-client-id:82405738695b4e5e824db1481f049b9e\"}}",
+        "outcome": "success",
+        "provider": "AuthActivityAuditEvent"
+      },
+      "related": {
+        "ip": [
+          "34.71.252.238"
+        ],
+        "user": [
+          "api-client-id:82405738695b4e5e824db1481f049b9e"
+        ]
+      },
+      "service": {
+        "type": "crowdstrike"
+      },
+      "source": {
+        "address": "34.71.252.238",
+        "ip": "34.71.252.238"
+      },
+      "user": {
+        "name": "api-client-id:82405738695b4e5e824db1481f049b9e"
+      },
+      "appomni": {
+        "event": {
+          "id": "44d65ebe-98ec-51a4-9fa3-64881fb7276f",
+          "dataset": "crowdstrike_auth_activity",
+          "sortable_ingest_id": "01GV39BK0P5VRA46QY6YRX04C6",
+          "ingestion_time": "2023-03-09T13:35:51.270Z",
+          "collected_time": "2023-03-09T13:27:52.013Z"
+        },
+        "organization": {
+          "id": 25
+        },
+        "service": {
+          "id": [
+            15022
+          ],
+          "account_id": [
+            "13ee224d-1dbf-44b8-b5bb-8a2764f65d48"
+          ],
+          "type": [
+            "crowdstrike"
+          ],
+          "name": [
+            "CrowdStrike - Prod"
+          ]
+        }
+      }
+    },
+    "source": "appomni",
+    "time": 1678368951.27,
+    "__raw": "{\"event\":{\"@timestamp\":\"2023-03-09T13:35:51.270Z\",\"tags\":[\"appomni_source\"],\"cloud\":{\"account\":{\"id\":\"13ee224d-1dbf-44b8-b5bb-8a2764f65d48\"}},\"ecs\":{\"version\":\"1.9.0\"},\"event\":{\"action\":\"connect_app\",\"category\":[\"audit\",\"cloud\"],\"code\":\"streamStarted\",\"created\":\"2023-03-09T13:27:52.013Z\",\"dataset\":\"crowdstrike_auth_activity\",\"ingested\":\"2023-03-09T13:35:51.270Z\",\"kind\":\"event\",\"module\":\"Crowdstrike Streaming API\",\"original\":\"{\\\"metadata\\\":{\\\"eventCreationTime\\\":1678368359239,\\\"version\\\":\\\"1.0\\\",\\\"customerIDString\\\":\\\"79d3841b572a44fea47fcd425fe2e660\\\",\\\"offset\\\":117018,\\\"eventType\\\":\\\"AuthActivityAuditEvent\\\"},\\\"event\\\":{\\\"UserIp\\\":\\\"34.71.252.238\\\",\\\"OperationName\\\":\\\"streamStarted\\\",\\\"ServiceName\\\":\\\"Crowdstrike Streaming API\\\",\\\"Success\\\":true,\\\"UTCTimestamp\\\":1678368359,\\\"AuditKeyValues\\\":[{\\\"Key\\\":\\\"APIClientID\\\",\\\"ValueString\\\":\\\"82405738695b4e5e824db1481f049b9e\\\"},{\\\"Key\\\":\\\"partition\\\",\\\"ValueString\\\":\\\"0\\\"},{\\\"Key\\\":\\\"offset\\\",\\\"ValueString\\\":\\\"117008\\\"},{\\\"Key\\\":\\\"appId\\\",\\\"ValueString\\\":\\\"ao_event_collector-77da9c89\\\"},{\\\"Key\\\":\\\"eventType\\\",\\\"ValueString\\\":\\\"All event type(s)\\\"}],\\\"UserId\\\":\\\"api-client-id:82405738695b4e5e824db1481f049b9e\\\"}}\",\"outcome\":\"success\",\"provider\":\"AuthActivityAuditEvent\"},\"related\":{\"ip\":[\"34.71.252.238\"],\"user\":[\"api-client-id:82405738695b4e5e824db1481f049b9e\"]},\"service\":{\"type\":\"crowdstrike\"},\"source\":{\"address\":\"34.71.252.238\",\"ip\":\"34.71.252.238\"},\"user\":{\"name\":\"api-client-id:82405738695b4e5e824db1481f049b9e\"},\"appomni\":{\"event\":{\"id\":\"44d65ebe-98ec-51a4-9fa3-64881fb7276f\",\"dataset\":\"crowdstrike_auth_activity\",\"sortable_ingest_id\":\"01GV39BK0P5VRA46QY6YRX04C6\",\"ingestion_time\":\"2023-03-09T13:35:51.270Z\",\"collected_time\":\"2023-03-09T13:27:52.013Z\"},\"organization\":{\"id\":25},\"service\":{\"id\":[15022],\"account_id\":[\"13ee224d-1dbf-44b8-b5bb-8a2764f65d48\"],\"type\":[\"crowdstrike\"],\"name\":[\"CrowdStrike - Prod\"]}}},\"source\":\"appomni\",\"time\":1678368951.27}",
+    "__srcIpPort": "34.66.125.100:48081",
+    "__hecToken": "364f774f-6969-314c-5941-693732544975",
+    "__inputId": "http:http:cribl",
+    "_time": 1679351759.009
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "event": {
+      "@timestamp": "2023-03-09T13:24:29.902Z",
+      "cloud": {
+        "account": {
+          "id": "25"
+        },
+        "provider": "appomni"
+      },
+      "ecs": {
+        "version": "1.9.0"
+      },
+      "event": {
+        "action": "start_assessment",
+        "category": [
+          "audit",
+          "cloud"
+        ],
+        "created": "2023-03-09T13:24:29.942Z",
+        "dataset": "ao_auditlogs",
+        "id": "5e26ef77-0bb0-4366-95cb-ebdcd112c252",
+        "ingested": "2023-03-09T13:31:05.728Z",
+        "kind": "event",
+        "module": "appomni",
+        "original": "{\"policy_id\":null,\"omnitab_user_id\":null,\"user_id\":null,\"service_id\":13321,\"perspective_id\":null,\"service_name\":\"PingOne - Prod\",\"perspective_name\":null,\"action_data\":{\"tag_id\":null,\"error_str\":null,\"unified_identity_id\":null,\"new_value\":null,\"element_id\":null,\"ruleevent_id\":null,\"policy_assessment_completion_date\":null,\"old_value\":null,\"detection_ruleset_id\":null,\"element_type\":null,\"user_ip\":null,\"user_username\":null,\"detection_rule_id\":null,\"element_list_id\":null,\"group_id\":null,\"tag_name\":null,\"setting_name\":null,\"detection_ruleset_name\":null,\"global_value_list_collection_id\":null,\"md_version\":1,\"unified_identity_email\":null,\"detection_rule_name\":null,\"md_kind\":\"core.aoaudit.auditdata\",\"policy_id\":null,\"policy_assessment_id\":null,\"third_party_application_id\":null,\"detection_alert_id\":null,\"email_addresses\":null,\"email_identifier\":null,\"target_user_username\":null,\"sink_name\":null,\"rule_id\":null,\"ruleexception_id\":null,\"policy_name\":null,\"external_entity_id\":null,\"reason_str\":null,\"target_user_id\":null,\"email_reason\":null,\"type_str\":null,\"detail_str\":null,\"workflow_instance_id\":null,\"workflow_instance_name\":null,\"platform_ingest_job_id\":null,\"file_id\":null,\"third_party_application_name\":null,\"group_name\":null,\"user_agent\":null,\"sink_id\":null},\"org_id\":25,\"log_id\":\"5e26ef77-0bb0-4366-95cb-ebdcd112c252\",\"action_at\":\"2023-03-09T13:24:29.902972+00:00\",\"action_type\":\"asmt_started_ms\",\"service_type\":\"ping\"}",
+        "type": [
+          "start"
+        ]
+      },
+      "service": {
+        "type": "appomni"
+      },
+      "appomni": {
+        "event": {
+          "id": "53f4aa84-8181-58ce-a34c-8cace0001015",
+          "dataset": "ao_auditlogs",
+          "sortable_ingest_id": "01GV392W5W61FAY047CBGS4C34",
+          "ingestion_time": "2023-03-09T13:31:05.728Z",
+          "collected_time": "2023-03-09T13:24:29.942Z"
+        },
+        "organization": {
+          "id": 25
+        },
+        "service": {
+          "id": [
+            0
+          ],
+          "account_id": [
+            "25"
+          ],
+          "type": [
+            "appomni"
+          ],
+          "name": [
+            "AppOmni"
+          ]
+        }
+      }
+    },
+    "source": "appomni",
+    "time": 1678368269.902,
+    "__raw": "{\"event\":{\"@timestamp\":\"2023-03-09T13:24:29.902Z\",\"cloud\":{\"account\":{\"id\":\"25\"},\"provider\":\"appomni\"},\"ecs\":{\"version\":\"1.9.0\"},\"event\":{\"action\":\"start_assessment\",\"category\":[\"audit\",\"cloud\"],\"created\":\"2023-03-09T13:24:29.942Z\",\"dataset\":\"ao_auditlogs\",\"id\":\"5e26ef77-0bb0-4366-95cb-ebdcd112c252\",\"ingested\":\"2023-03-09T13:31:05.728Z\",\"kind\":\"event\",\"module\":\"appomni\",\"original\":\"{\\\"policy_id\\\":null,\\\"omnitab_user_id\\\":null,\\\"user_id\\\":null,\\\"service_id\\\":13321,\\\"perspective_id\\\":null,\\\"service_name\\\":\\\"PingOne - Prod\\\",\\\"perspective_name\\\":null,\\\"action_data\\\":{\\\"tag_id\\\":null,\\\"error_str\\\":null,\\\"unified_identity_id\\\":null,\\\"new_value\\\":null,\\\"element_id\\\":null,\\\"ruleevent_id\\\":null,\\\"policy_assessment_completion_date\\\":null,\\\"old_value\\\":null,\\\"detection_ruleset_id\\\":null,\\\"element_type\\\":null,\\\"user_ip\\\":null,\\\"user_username\\\":null,\\\"detection_rule_id\\\":null,\\\"element_list_id\\\":null,\\\"group_id\\\":null,\\\"tag_name\\\":null,\\\"setting_name\\\":null,\\\"detection_ruleset_name\\\":null,\\\"global_value_list_collection_id\\\":null,\\\"md_version\\\":1,\\\"unified_identity_email\\\":null,\\\"detection_rule_name\\\":null,\\\"md_kind\\\":\\\"core.aoaudit.auditdata\\\",\\\"policy_id\\\":null,\\\"policy_assessment_id\\\":null,\\\"third_party_application_id\\\":null,\\\"detection_alert_id\\\":null,\\\"email_addresses\\\":null,\\\"email_identifier\\\":null,\\\"target_user_username\\\":null,\\\"sink_name\\\":null,\\\"rule_id\\\":null,\\\"ruleexception_id\\\":null,\\\"policy_name\\\":null,\\\"external_entity_id\\\":null,\\\"reason_str\\\":null,\\\"target_user_id\\\":null,\\\"email_reason\\\":null,\\\"type_str\\\":null,\\\"detail_str\\\":null,\\\"workflow_instance_id\\\":null,\\\"workflow_instance_name\\\":null,\\\"platform_ingest_job_id\\\":null,\\\"file_id\\\":null,\\\"third_party_application_name\\\":null,\\\"group_name\\\":null,\\\"user_agent\\\":null,\\\"sink_id\\\":null},\\\"org_id\\\":25,\\\"log_id\\\":\\\"5e26ef77-0bb0-4366-95cb-ebdcd112c252\\\",\\\"action_at\\\":\\\"2023-03-09T13:24:29.902972+00:00\\\",\\\"action_type\\\":\\\"asmt_started_ms\\\",\\\"service_type\\\":\\\"ping\\\"}\",\"type\":[\"start\"]},\"service\":{\"type\":\"appomni\"},\"appomni\":{\"event\":{\"id\":\"53f4aa84-8181-58ce-a34c-8cace0001015\",\"dataset\":\"ao_auditlogs\",\"sortable_ingest_id\":\"01GV392W5W61FAY047CBGS4C34\",\"ingestion_time\":\"2023-03-09T13:31:05.728Z\",\"collected_time\":\"2023-03-09T13:24:29.942Z\"},\"organization\":{\"id\":25},\"service\":{\"id\":[0],\"account_id\":[\"25\"],\"type\":[\"appomni\"],\"name\":[\"AppOmni\"]}}},\"source\":\"appomni\",\"time\":1678368269.902}",
+    "__srcIpPort": "34.66.125.100:48081",
+    "__hecToken": "364f774f-6969-314c-5941-693732544975",
+    "__inputId": "http:http:cribl",
+    "_time": 1679351759.009
+  }
+]

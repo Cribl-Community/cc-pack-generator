@@ -1,0 +1,69 @@
+{
+  "version": 1,
+  "key": "mcafee_epo_threatevents_ens",
+  "sourcetype": "mcafee_epo_threatevents_ens",
+  "events": [
+    "CEF:0|McAfee|ePolicy Orchestrator|5.10.0|1092|Anti-malware alert|8|rt=Feb 03 2025 08:12:44 src=10.14.22.31 dst=10.14.22.31 dhost=WKS-FIN-0042 suser=jsmith cs1=C:\\Users\\jsmith\\Downloads\\invoice_final.exe cs1Label=FilePath cs2=Trojan-GenericKD.45211 cs2Label=ThreatName cs3=Generic Trojan cs3Label=ThreatType cn1=8 cn1Label=ThreatSeverity act=Deleted cs4=On-Access Scan cs4Label=AnalyzerDetectionMethod cs5=ENS 10.7.0 cs5Label=ProductVersion",
+    "CEF:0|McAfee|ePolicy Orchestrator|5.10.0|1027|Anti-malware alert|3|rt=Feb 03 2025 09:44:12 src=192.168.10.55 dst=192.168.10.55 dhost=LAPTOP-HR-17 suser=mkovac cs1=C:\\Windows\\Temp\\update.dll cs1Label=FilePath cs2=PUP-Optional.Adware.Gen cs2Label=ThreatName cs3=Potentially Unwanted Program cs3Label=ThreatType cn1=3 cn1Label=ThreatSeverity act=Cleaned cs4=On-Demand Scan cs4Label=AnalyzerDetectionMethod cs5=ENS 10.7.0 cs5Label=ProductVersion",
+    "CEF:0|McAfee|ePolicy Orchestrator|5.10.0|1059|Firewall event|6|rt=Feb 03 2025 10:02:57 src=203.0.113.88 dst=172.16.4.12 dpt=3389 proto=TCP dhost=SRV-RDP-02 suser= cs1=Blocked Inbound Connection cs1Label=Action cs2=Suspicious RDP Attempt cs2Label=ThreatName cn1=6 cn1Label=ThreatSeverity act=Blocked cs4=Firewall Rule 4471 cs4Label=RuleName",
+    "CEF:0|McAfee|ePolicy Orchestrator|5.10.0|1092|Anti-malware alert|9|rt=Feb 03 2025 10:15:33 src=10.0.0.14 dst=10.0.0.14 dhost=DC-CORP-01 suser=SYSTEM cs1=C:\\Windows\\System32\\svch0st.exe cs1Label=FilePath cs2=Ransom-BitPaymer cs2Label=ThreatName cs3=Ransomware cs3Label=ThreatType cn1=9 cn1Label=ThreatSeverity act=Quarantined cs4=Behavioral Detection cs4Label=AnalyzerDetectionMethod cs5=ENS 10.7.0 cs5Label=ProductVersion sha256=a1b2c3d4e5f60718293a4b5c6d7e8f9012345678901234567890abcdef1234",
+    "CEF:0|McAfee|ePolicy Orchestrator|5.10.0|1090|Access Protection|4|rt=Feb 03 2025 11:03:21 src=10.14.30.7 dst=10.14.30.7 dhost=WKS-DEV-09 suser=akhan cs1=Access Protection Rule Violation cs1Label=Action cs2=Prevent Termination of AV Processes cs2Label=RuleName cn1=4 cn1Label=ThreatSeverity act=Blocked cs4=Access Protection cs4Label=AnalyzerDetectionMethod",
+    "CEF:0|McAfee|ePolicy Orchestrator|5.10.0|1092|Anti-malware alert|2|rt=Feb 03 2025 12:19:05 src=10.10.5.201 dst=10.10.5.201 dhost=WKS-SALES-22 suser=tng cs1=C:\\Users\\tng\\AppData\\Local\\Temp\\setup_v2.exe cs1Label=FilePath cs2=EICAR test file cs2Label=ThreatName cs3=Test File cs3Label=ThreatType cn1=2 cn1Label=ThreatSeverity act=Deleted cs4=On-Access Scan cs4Label=AnalyzerDetectionMethod cs5=ENS 10.7.0 cs5Label=ProductVersion",
+    "CEF:0|McAfee|ePolicy Orchestrator|5.10.0|1203|Web Control alert|5|rt=Feb 03 2025 13:47:58 src=192.168.1.44 dst=185.220.101.42 dpt=443 proto=TCP dhost=LAPTOP-MKT-03 suser=rlopez cs1=http://malicious-c2domain.example/beacon cs1Label=URL cs2=Malicious Site Blocked cs2Label=ThreatName cn1=5 cn1Label=ThreatSeverity act=Blocked cs4=Web Control cs4Label=AnalyzerDetectionMethod",
+    "CEF:0|McAfee|ePolicy Orchestrator|5.10.0|1092|Anti-malware alert|7|rt=Feb 03 2025 14:29:41 src=fe80::a1b2:c3d4:e5f6:7890 dst=fe80::a1b2:c3d4:e5f6:7890 dhost=SRV-EXCH-05 suser=svc_backup cs1=D:\\Backups\\archive_2025.zip cs1Label=FilePath cs2=JS/Downloader.Agent cs2Label=ThreatName cs3=Downloader cs3Label=ThreatType cn1=7 cn1Label=ThreatSeverity act=Quarantined cs4=On-Demand Scan cs4Label=AnalyzerDetectionMethod cs5=ENS 10.7.0 cs5Label=ProductVersion",
+    "CEF:0|McAfee|ePolicy Orchestrator|5.10.0|1300|HIPS Event|1|rt=Feb 03 2025 15:02:19 src=10.20.2.9 dst=10.20.2.9 dhost=WKS-ENG-14 suser=dsingh cs1=Buffer Overflow Attempt cs1Label=ThreatName cs2=Signature 6053 cs2Label=SignatureName cn1=1 cn1Label=ThreatSeverity act=Blocked cs4=Host IPS cs4Label=AnalyzerDetectionMethod",
+    "CEF:0|McAfee|ePolicy Orchestrator|5.10.0|1092|Anti-malware alert|10|rt=Feb 03 2025 15:58:03 src=10.0.44.2 dst=10.0.44.2 dhost=SRV-DB-PROD01 suser=SYSTEM cs1=C:\\ProgramData\\svc\\worker.exe cs1Label=FilePath cs2=Ransom-Locky.gen cs2Label=ThreatName cs3=Ransomware cs3Label=ThreatType cn1=10 cn1Label=ThreatSeverity act=Access Denied cs4=Real Protect cs4Label=AnalyzerDetectionMethod cs5=ENS 10.7.0 cs5Label=ProductVersion sha256=ff11ee22dd33cc44bb55aa669988776655443322110099887766554433aabb",
+    "CEF:0|McAfee|ePolicy Orchestrator|5.10.0|1092|Anti-malware alert|3|rt=Feb 03 2025 16:33:47 src=172.16.9.130 dst=172.16.9.130 dhost=WKS-QA-08 suser=lwong cs1=C:\\Users\\lwong\\Desktop\\test_sample.exe cs1Label=FilePath cs2=Application:Win32/Bundler cs2Label=ThreatName cs3=Adware cs3Label=ThreatType cn1=3 cn1Label=ThreatSeverity act=Cleaned cs4=On-Access Scan cs4Label=AnalyzerDetectionMethod cs5=ENS 10.7.0 cs5Label=ProductVersion",
+    "CEF:0|McAfee|ePolicy Orchestrator|5.10.0|1059|Firewall event|8|rt=Feb 03 2025 17:11:26 src=45.33.32.156 dst=10.14.22.31 dpt=22 proto=TCP dhost=WKS-FIN-0042 suser= cs1=Blocked Inbound Connection cs1Label=Action cs2=Port Scan Detected cs2Label=ThreatName cn1=8 cn1Label=ThreatSeverity act=Blocked cs4=Firewall Rule 1102 cs4Label=RuleName",
+    "CEF:0|McAfee|ePolicy Orchestrator|5.10.0|1092|Anti-malware alert|5|rt=Feb 03 2025 18:04:12 src=10.10.60.90 dst=10.10.60.90 dhost=WKS-LEGAL-03 suser=pgomez cs1=C:\\Users\\pgomez\\Downloads\\resume.docm cs1Label=FilePath cs2=W97M/Downloader cs2Label=ThreatName cs3=Macro Downloader cs3Label=ThreatType cn1=5 cn1Label=ThreatSeverity act=Deleted cs4=Global Threat Intelligence cs4Label=AnalyzerDetectionMethod cs5=ENS 10.7.0 cs5Label=ProductVersion",
+    "CEF:0|McAfee|ePolicy Orchestrator|5.10.0|1092|Anti-malware alert|0|rt=Feb 03 2025 19:22:58 src=192.168.50.14 dst=192.168.50.14 dhost=WKS-IT-01 suser=admin cs1=C:\\Tools\\psexec.exe cs1Label=FilePath cs2=RemoteAdmin-PSExec cs2Label=ThreatName cs3=Potentially Unwanted Tool cs3Label=ThreatType cn1=0 cn1Label=ThreatSeverity act=Allowed (Excluded) cs4=On-Access Scan cs4Label=AnalyzerDetectionMethod cs5=ENS 10.7.0 cs5Label=ProductVersion",
+    "CEF:0|McAfee|ePolicy Orchestrator|5.10.0|1401|Application Control|6|rt=Feb 03 2025 20:37:15 src=10.30.5.201 dst=10.30.5.201 dhost=SRV-WEB-11 suser=svc_web cs1=/opt/app/bin/unknown_binary cs1Label=FilePath cs2=Unauthorized Execution Attempt cs2Label=ThreatName cn1=6 cn1Label=ThreatSeverity act=Blocked cs4=Application Control cs4Label=AnalyzerDetectionMethod",
+    "CEF:0|McAfee|ePolicy Orchestrator|5.10.0|1092|Anti-malware alert|9|rt=Feb 03 2025 21:14:49 src=10.14.22.99 dst=91.198.174.192 dpt=8080 proto=TCP dhost=WKS-OPS-19 suser=fharris cs1=C:\\Users\\fharris\\AppData\\Roaming\\clientupdate.exe cs1Label=FilePath cs2=Backdoor.Generic.KDV cs2Label=ThreatName cs3=Backdoor cs3Label=ThreatType cn1=9 cn1Label=ThreatSeverity act=Quarantined cs4=Real Protect cs4Label=AnalyzerDetectionMethod cs5=ENS 10.7.0 cs5Label=ProductVersion sha256=0011223344556677889900aabbccddeeff00112233445566778899aabbccdd",
+    "CEF:0|McAfee|ePolicy Orchestrator|5.10.0|1092|Anti-malware alert|2|rt=Feb 03 2025 22:05:33 src=10.0.9.44 dst=10.0.9.44 dhost=WKS-SUPPORT-06 suser=bnair cs1=C:\\ProgramData\\Temp\\cleaner_tool.exe cs1Label=FilePath cs2=PUP-Optimizer cs2Label=ThreatName cs3=Potentially Unwanted Program cs3Label=ThreatType cn1=2 cn1Label=ThreatSeverity act=Cleaned cs4=On-Demand Scan cs4Label=AnalyzerDetectionMethod cs5=ENS 10.7.0 cs5Label=ProductVersion",
+    "CEF:0|McAfee|ePolicy Orchestrator|5.10.0|1092|Anti-malware alert|10|rt=Feb 03 2025 23:41:07 src=172.16.4.12 dst=172.16.4.12 dhost=SRV-RDP-02 suser=administrator cs1=C:\\Windows\\Temp\\explorer_svc.exe cs1Label=FilePath cs2=Ransom-WannaCry.gen cs2Label=ThreatName cs3=Ransomware cs3Label=ThreatType cn1=10 cn1Label=ThreatSeverity act=Blocked cs4=Exploit Prevention cs4Label=AnalyzerDetectionMethod cs5=ENS 10.7.0 cs5Label=ProductVersion sha256=99887766554433221100ffeeddccbbaa99887766554433221100ffeeddccbb",
+    "CEF:0|McAfee|ePolicy Orchestrator|5.10.0|1203|Web Control alert|4|rt=Feb 04 2025 00:58:22 src=10.14.30.7 dst=104.244.42.129 dpt=443 proto=TCP dhost=WKS-DEV-09 suser=akhan cs1=http://freehosting-torrentz.example/download cs1Label=URL cs2=Risky Site Warning cs2Label=ThreatName cn1=4 cn1Label=ThreatSeverity act=Warned cs4=Web Control cs4Label=AnalyzerDetectionMethod",
+    "CEF:0|McAfee|ePolicy Orchestrator|5.10.0|1092|Anti-malware alert|6|rt=Feb 04 2025 01:33:59 src=10.5.60.211 dst=10.5.60.211 dhost=SRV-FILESHARE-03 suser=svc_fileindex cs1=\\\\SRV-FILESHARE-03\\Shared\\reports\\Q4_summary.xls cs1Label=FilePath cs2=X97M/Laroux cs2Label=ThreatName cs3=Macro Virus cs3Label=ThreatType cn1=6 cn1Label=ThreatSeverity act=Cleaned cs4=On-Access Scan cs4Label=AnalyzerDetectionMethod cs5=ENS 10.7.0 cs5Label=ProductVersion",
+    "CEF:0|McAfee|ePolicy Orchestrator|5.10.0|1092|Anti-malware alert|1|rt=Feb 04 2025 02:47:14 src=192.168.100.23 dst=192.168.100.23 dhost=WKS-REMOTE-27 suser=guest cs1= cs1Label=FilePath cs2=Unknown-HeuristicMatch cs2Label=ThreatName cs3=Unclassified cs3Label=ThreatType cn1=1 cn1Label=ThreatSeverity act=Continue Scanning cs4=Artemis Heuristic cs4Label=AnalyzerDetectionMethod cs5=ENS 10.7.0 cs5Label=ProductVersion"
+  ],
+  "fingerprint": "d2e93f9a-8818",
+  "verification": {
+    "verdict": "pass",
+    "method": "structure",
+    "eventsParsed": 21,
+    "eventsChecked": 21,
+    "fields": [
+      "act",
+      "cn1",
+      "cn1label",
+      "cs1",
+      "cs1label",
+      "cs2",
+      "cs2label",
+      "cs3",
+      "cs3label",
+      "cs4",
+      "cs4label",
+      "cs5",
+      "cs5label",
+      "dhost",
+      "dpt",
+      "dst",
+      "proto",
+      "rt",
+      "sha256",
+      "src",
+      "suser"
+    ],
+    "reasons": [
+      "no parser for mcafee_epo_threatevents_ens; the events are well-formed cef with 21 distinct keys"
+    ],
+    "offendingEvents": [],
+    "keyEcho": null
+  },
+  "provenance": {
+    "model": "us.anthropic.claude-sonnet-5",
+    "buildNumber": 529,
+    "generatedAt": "2026-08-18T07:04:58.538Z",
+    "grounding": "KNOWN FACTS ABOUT THIS SOURCE (from sourcetype recognition — match these exactly):\n- Product: McAfee ePO\n- Log family: endpoint"
+  }
+}

@@ -1,0 +1,102 @@
+[
+  {
+    "_raw": "{\"LocalAddressIP4\":\"172.17.0.30\",\"event_simpleName\":\"NetworkReceiveAcceptIP4\",\"ContextTimeStamp\":\"1633192459.682\",\"ConfigStateHash\":\"2120503598\",\"ConnectionFlags\":\"0\",\"ContextProcessId\":\"32582297\",\"RemotePort\":\"51216\",\"aip\":\"212.102.47.3\",\"ConfigBuild\":\"1007.3.0014304.11\",\"event_platform\":\"Win\",\"LocalPort\":\"7680\",\"Entitlements\":\"15\",\"name\":\"NetworkReceiveAcceptIP4V10\",\"EventOrigin\":\"1\",\"id\":\"9858912c-239e-11ec-b8b8-0ae726bcc709\",\"Protocol\":\"6\",\"EffectiveTransmissionClass\":\"3\",\"aid\":\"16e8a488b32f43ce80282a49705cf628\",\"RemoteAddressIP4\":\"172.17.0.26\",\"ConnectionDirection\":\"1\",\"InContext\":\"0\",\"timestamp\":\"1633192460938\",\"cid\":\"56879ccf959c4afc96dd17e8bb1dcbb5\"}",
+    "_time": 1633192459.682,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "{\"LocalAddressIP4\":\"172.17.0.30\",\"event_simpleName\":\"NetworkReceiveAcceptIP4\",\"ContextTimeStamp\":\"1633191879.621\",\"ConfigStateHash\":\"2120503598\",\"ConnectionFlags\":\"0\",\"ContextProcessId\":\"16708582\",\"RemotePort\":\"60879\",\"aip\":\"94.140.8.197\",\"ConfigBuild\":\"1007.3.0014304.11\",\"event_platform\":\"Win\",\"LocalPort\":\"7680\",\"Entitlements\":\"15\",\"name\":\"NetworkReceiveAcceptIP4V10\",\"EventOrigin\":\"1\",\"id\":\"3d45d431-239d-11ec-ac50-0268b0617f0d\",\"Protocol\":\"6\",\"EffectiveTransmissionClass\":\"3\",\"aid\":\"1b7d4858b6594b15aca30d2364d8b7b9\",\"RemoteAddressIP4\":\"172.17.0.29\",\"ConnectionDirection\":\"1\",\"InContext\":\"0\",\"timestamp\":\"1633191878646\",\"cid\":\"56879ccf959c4afc96dd17e8bb1dcbb5\"}",
+    "_time": 1633191879.621,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "{\"LocalAddressIP4\":\"172.17.0.26\",\"event_simpleName\":\"NetworkReceiveAcceptIP4\",\"ContextTimeStamp\":\"1633191877.589\",\"ConfigStateHash\":\"2317671491\",\"ConnectionFlags\":\"0\",\"ContextProcessId\":\"17618430\",\"RemotePort\":\"60878\",\"aip\":\"94.140.8.197\",\"ConfigBuild\":\"1007.3.0014304.11\",\"event_platform\":\"Win\",\"LocalPort\":\"7680\",\"Entitlements\":\"15\",\"name\":\"NetworkReceiveAcceptIP4V10\",\"EventOrigin\":\"1\",\"id\":\"3d441fb6-239d-11ec-96ac-06aea91b48a7\",\"Protocol\":\"6\",\"EffectiveTransmissionClass\":\"3\",\"aid\":\"0b498f9ea85e4d778b9abcbacc5640ef\",\"RemoteAddressIP4\":\"172.17.0.29\",\"ConnectionDirection\":\"1\",\"InContext\":\"0\",\"timestamp\":\"1633191878635\",\"cid\":\"56879ccf959c4afc96dd17e8bb1dcbb5\"}",
+    "_time": 1633191877.589,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "{\"LocalAddressIP4\":\"172.17.0.30\",\"event_simpleName\":\"NetworkReceiveAcceptIP4\",\"ContextTimeStamp\":\"1633184693.836\",\"ConfigStateHash\":\"2120503598\",\"ConnectionFlags\":\"0\",\"ContextProcessId\":\"16708582\",\"RemotePort\":\"62736\",\"aip\":\"94.140.8.197\",\"ConfigBuild\":\"1007.3.0014304.11\",\"event_platform\":\"Win\",\"LocalPort\":\"7680\",\"Entitlements\":\"15\",\"name\":\"NetworkReceiveAcceptIP4V10\",\"EventOrigin\":\"1\",\"id\":\"825476eb-238c-11ec-8ebb-0644b9b11e63\",\"Protocol\":\"6\",\"EffectiveTransmissionClass\":\"3\",\"aid\":\"1b7d4858b6594b15aca30d2364d8b7b9\",\"RemoteAddressIP4\":\"172.17.0.26\",\"ConnectionDirection\":\"1\",\"InContext\":\"0\",\"timestamp\":\"1633184693060\",\"cid\":\"56879ccf959c4afc96dd17e8bb1dcbb5\"}",
+    "_time": 1633184693.836,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "{\"LocalAddressIP4\":\"172.17.0.29\",\"event_simpleName\":\"NetworkReceiveAcceptIP4\",\"ContextTimeStamp\":\"1633184692.442\",\"ConfigStateHash\":\"921666360\",\"ConnectionFlags\":\"0\",\"ContextProcessId\":\"490130051\",\"RemotePort\":\"62737\",\"aip\":\"94.140.8.197\",\"ConfigBuild\":\"1007.3.0014304.11\",\"event_platform\":\"Win\",\"LocalPort\":\"7680\",\"Entitlements\":\"15\",\"name\":\"NetworkReceiveAcceptIP4V10\",\"EventOrigin\":\"1\",\"id\":\"8f809cc8-238c-11ec-989f-023d9b18a6a7\",\"Protocol\":\"6\",\"EffectiveTransmissionClass\":\"3\",\"aid\":\"19f034c511554af89a04fc39bd8a4645\",\"RemoteAddressIP4\":\"172.17.0.26\",\"ConnectionDirection\":\"1\",\"InContext\":\"0\",\"timestamp\":\"1633184715160\",\"cid\":\"56879ccf959c4afc96dd17e8bb1dcbb5\"}",
+    "_time": 1633184692.442,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "{\"LocalAddressIP4\":\"172.17.0.29\",\"event_simpleName\":\"NetworkReceiveAcceptIP4\",\"ContextTimeStamp\":\"1633177231.802\",\"ConfigStateHash\":\"3575006994\",\"ConnectionFlags\":\"0\",\"ContextProcessId\":\"6388308404\",\"RemotePort\":\"123\",\"aip\":\"94.140.8.197\",\"ConfigBuild\":\"1007.3.0014304.11\",\"event_platform\":\"Win\",\"LocalPort\":\"123\",\"Entitlements\":\"15\",\"name\":\"NetworkReceiveAcceptIP4V10\",\"EventOrigin\":\"1\",\"id\":\"23ce8f81-237b-11ec-bfce-020aa1f62735\",\"Protocol\":\"17\",\"EffectiveTransmissionClass\":\"3\",\"aid\":\"19f034c511554af89a04fc39bd8a4645\",\"RemoteAddressIP4\":\"168.61.215.74\",\"ConnectionDirection\":\"1\",\"InContext\":\"0\",\"timestamp\":\"1633177233033\",\"cid\":\"56879ccf959c4afc96dd17e8bb1dcbb5\"}",
+    "_time": 1633177231.802,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "{\"LocalAddressIP4\":\"172.17.0.26\",\"event_simpleName\":\"NetworkReceiveAcceptIP4\",\"ContextTimeStamp\":\"1633131282.575\",\"ConfigStateHash\":\"2317671491\",\"ConnectionFlags\":\"0\",\"ContextProcessId\":\"187807125\",\"RemotePort\":\"63887\",\"aip\":\"94.140.8.197\",\"ConfigBuild\":\"1007.3.0014304.11\",\"event_platform\":\"Win\",\"LocalPort\":\"7680\",\"Entitlements\":\"15\",\"name\":\"NetworkReceiveAcceptIP4V10\",\"EventOrigin\":\"1\",\"id\":\"27f84662-2310-11ec-8fff-0218bf661f6d\",\"Protocol\":\"6\",\"EffectiveTransmissionClass\":\"3\",\"aid\":\"8ecdc18f83504925a21f063c02f54f70\",\"RemoteAddressIP4\":\"172.17.0.30\",\"ConnectionDirection\":\"1\",\"InContext\":\"0\",\"timestamp\":\"1633131283867\",\"cid\":\"56879ccf959c4afc96dd17e8bb1dcbb5\"}",
+    "_time": 1633131282.575,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "{\"LocalAddressIP4\":\"172.17.0.29\",\"event_simpleName\":\"NetworkReceiveAcceptIP4\",\"ContextTimeStamp\":\"1633130041.395\",\"ConfigStateHash\":\"3575006994\",\"ConnectionFlags\":\"0\",\"ContextProcessId\":\"4327562921\",\"RemotePort\":\"63826\",\"aip\":\"94.140.8.197\",\"ConfigBuild\":\"1007.3.0014304.11\",\"event_platform\":\"Win\",\"LocalPort\":\"7680\",\"Entitlements\":\"15\",\"name\":\"NetworkReceiveAcceptIP4V10\",\"EventOrigin\":\"1\",\"id\":\"44585b3a-230d-11ec-ae4e-0a436fff9fdf\",\"Protocol\":\"6\",\"EffectiveTransmissionClass\":\"3\",\"aid\":\"34e1b5abd72a4f7ba3b998ad12e8c75e\",\"RemoteAddressIP4\":\"172.17.0.30\",\"ConnectionDirection\":\"1\",\"InContext\":\"0\",\"timestamp\":\"1633130042983\",\"cid\":\"56879ccf959c4afc96dd17e8bb1dcbb5\"}",
+    "_time": 1633130041.395,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "{\"LocalAddressIP4\":\"224.0.0.251\",\"event_simpleName\":\"NetworkReceiveAcceptIP4\",\"ContextTimeStamp\":\"1633129308.570\",\"ConfigStateHash\":\"1795690134\",\"ConnectionFlags\":\"0\",\"ContextProcessId\":\"66584588\",\"RemotePort\":\"5353\",\"aip\":\"94.140.8.197\",\"ConfigBuild\":\"1007.3.0014304.11\",\"event_platform\":\"Win\",\"LocalPort\":\"5353\",\"Entitlements\":\"15\",\"name\":\"NetworkReceiveAcceptIP4V10\",\"EventOrigin\":\"1\",\"id\":\"8ee78f93-230b-11ec-898c-06d9b1c45b8f\",\"Protocol\":\"17\",\"EffectiveTransmissionClass\":\"3\",\"aid\":\"0596cc68066547ef883691773704000a\",\"RemoteAddressIP4\":\"172.17.0.34\",\"ConnectionDirection\":\"1\",\"InContext\":\"0\",\"timestamp\":\"1633129309079\",\"cid\":\"56879ccf959c4afc96dd17e8bb1dcbb5\"}",
+    "_time": 1633129308.57,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "{\"LocalAddressIP4\":\"224.0.0.251\",\"event_simpleName\":\"NetworkReceiveAcceptIP4\",\"ContextTimeStamp\":\"1633128986.403\",\"ConfigStateHash\":\"2120503598\",\"ConnectionFlags\":\"0\",\"ContextProcessId\":\"69970236\",\"RemotePort\":\"5353\",\"aip\":\"94.140.8.197\",\"ConfigBuild\":\"1007.3.0014304.11\",\"event_platform\":\"Win\",\"LocalPort\":\"5353\",\"Entitlements\":\"15\",\"name\":\"NetworkReceiveAcceptIP4V10\",\"EventOrigin\":\"1\",\"id\":\"cd888db2-230a-11ec-b969-0a6263e1d007\",\"Protocol\":\"17\",\"EffectiveTransmissionClass\":\"3\",\"aid\":\"1b7d4858b6594b15aca30d2364d8b7b9\",\"RemoteAddressIP4\":\"172.17.0.30\",\"ConnectionDirection\":\"1\",\"InContext\":\"0\",\"timestamp\":\"1633128984656\",\"cid\":\"56879ccf959c4afc96dd17e8bb1dcbb5\"}",
+    "_time": 1633128986.403,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "{\"LocalAddressIP4\":\"239.255.255.250\",\"event_simpleName\":\"NetworkReceiveAcceptIP4\",\"ContextTimeStamp\":\"1633128986.403\",\"ConfigStateHash\":\"2120503598\",\"ConnectionFlags\":\"0\",\"ContextProcessId\":\"97885267\",\"RemotePort\":\"57768\",\"aip\":\"94.140.8.197\",\"ConfigBuild\":\"1007.3.0014304.11\",\"event_platform\":\"Win\",\"LocalPort\":\"1900\",\"Entitlements\":\"15\",\"name\":\"NetworkReceiveAcceptIP4V10\",\"EventOrigin\":\"1\",\"id\":\"cd888cb7-230a-11ec-b969-0a6263e1d007\",\"Protocol\":\"17\",\"EffectiveTransmissionClass\":\"3\",\"aid\":\"1b7d4858b6594b15aca30d2364d8b7b9\",\"RemoteAddressIP4\":\"127.0.0.1\",\"ConnectionDirection\":\"1\",\"InContext\":\"0\",\"timestamp\":\"1633128984656\",\"cid\":\"56879ccf959c4afc96dd17e8bb1dcbb5\"}",
+    "_time": 1633128986.403,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "{\"LocalAddressIP4\":\"239.255.255.250\",\"event_simpleName\":\"NetworkReceiveAcceptIP4\",\"ContextTimeStamp\":\"1633128940.447\",\"ConfigStateHash\":\"2317671491\",\"ConnectionFlags\":\"0\",\"ContextProcessId\":\"96639609\",\"RemotePort\":\"55362\",\"aip\":\"94.140.8.197\",\"ConfigBuild\":\"1007.3.0014304.11\",\"event_platform\":\"Win\",\"LocalPort\":\"1900\",\"Entitlements\":\"15\",\"name\":\"NetworkReceiveAcceptIP4V10\",\"EventOrigin\":\"1\",\"id\":\"b4271ede-230a-11ec-816d-067af76f9459\",\"Protocol\":\"17\",\"EffectiveTransmissionClass\":\"3\",\"aid\":\"0b498f9ea85e4d778b9abcbacc5640ef\",\"RemoteAddressIP4\":\"127.0.0.1\",\"ConnectionDirection\":\"1\",\"InContext\":\"0\",\"timestamp\":\"1633128942075\",\"cid\":\"56879ccf959c4afc96dd17e8bb1dcbb5\"}",
+    "_time": 1633128940.447,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "{\"LocalAddressIP4\":\"224.0.0.251\",\"event_simpleName\":\"NetworkReceiveAcceptIP4\",\"ContextTimeStamp\":\"1633128940.447\",\"ConfigStateHash\":\"2317671491\",\"ConnectionFlags\":\"0\",\"ContextProcessId\":\"74802028\",\"RemotePort\":\"5353\",\"aip\":\"94.140.8.197\",\"ConfigBuild\":\"1007.3.0014304.11\",\"event_platform\":\"Win\",\"LocalPort\":\"5353\",\"Entitlements\":\"15\",\"name\":\"NetworkReceiveAcceptIP4V10\",\"EventOrigin\":\"1\",\"id\":\"b4273016-230a-11ec-816d-067af76f9459\",\"Protocol\":\"17\",\"EffectiveTransmissionClass\":\"3\",\"aid\":\"0b498f9ea85e4d778b9abcbacc5640ef\",\"RemoteAddressIP4\":\"172.17.0.26\",\"ConnectionDirection\":\"1\",\"InContext\":\"0\",\"timestamp\":\"1633128942075\",\"cid\":\"56879ccf959c4afc96dd17e8bb1dcbb5\"}",
+    "_time": 1633128940.447,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "{\"LocalAddressIP4\":\"239.255.255.250\",\"event_simpleName\":\"NetworkReceiveAcceptIP4\",\"ContextTimeStamp\":\"1633128352.867\",\"ConfigStateHash\":\"3575006994\",\"ConnectionFlags\":\"0\",\"ContextProcessId\":\"94573298\",\"RemotePort\":\"55663\",\"aip\":\"94.140.8.197\",\"ConfigBuild\":\"1007.3.0014304.11\",\"event_platform\":\"Win\",\"LocalPort\":\"1900\",\"Entitlements\":\"15\",\"name\":\"NetworkReceiveAcceptIP4V10\",\"EventOrigin\":\"1\",\"id\":\"5588d323-2309-11ec-9f65-020aefe3cdc5\",\"Protocol\":\"17\",\"EffectiveTransmissionClass\":\"3\",\"aid\":\"19f034c511554af89a04fc39bd8a4645\",\"RemoteAddressIP4\":\"127.0.0.1\",\"ConnectionDirection\":\"1\",\"InContext\":\"0\",\"timestamp\":\"1633128353835\",\"cid\":\"56879ccf959c4afc96dd17e8bb1dcbb5\"}",
+    "_time": 1633128352.867,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "{\"LocalAddressIP4\":\"224.0.0.251\",\"event_simpleName\":\"NetworkReceiveAcceptIP4\",\"ContextTimeStamp\":\"1633128352.867\",\"ConfigStateHash\":\"3575006994\",\"ConnectionFlags\":\"0\",\"ContextProcessId\":\"68307277\",\"RemotePort\":\"5353\",\"aip\":\"94.140.8.197\",\"ConfigBuild\":\"1007.3.0014304.11\",\"event_platform\":\"Win\",\"LocalPort\":\"5353\",\"Entitlements\":\"15\",\"name\":\"NetworkReceiveAcceptIP4V10\",\"EventOrigin\":\"1\",\"id\":\"5588d3ab-2309-11ec-9f65-020aefe3cdc5\",\"Protocol\":\"17\",\"EffectiveTransmissionClass\":\"3\",\"aid\":\"19f034c511554af89a04fc39bd8a4645\",\"RemoteAddressIP4\":\"172.17.0.29\",\"ConnectionDirection\":\"1\",\"InContext\":\"0\",\"timestamp\":\"1633128353835\",\"cid\":\"56879ccf959c4afc96dd17e8bb1dcbb5\"}",
+    "_time": 1633128352.867,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "{\"LocalAddressIP4\":\"239.255.255.250\",\"event_simpleName\":\"NetworkReceiveAcceptIP4\",\"ContextTimeStamp\":\"1633128270.176\",\"ConfigStateHash\":\"2120503598\",\"ConnectionFlags\":\"0\",\"ContextProcessId\":\"95600761\",\"RemotePort\":\"56647\",\"aip\":\"94.140.8.197\",\"ConfigBuild\":\"1007.3.0014304.11\",\"event_platform\":\"Win\",\"LocalPort\":\"1900\",\"Entitlements\":\"15\",\"name\":\"NetworkReceiveAcceptIP4V10\",\"EventOrigin\":\"1\",\"id\":\"24cda843-2309-11ec-adfa-0667ce9b0d3d\",\"Protocol\":\"17\",\"EffectiveTransmissionClass\":\"3\",\"aid\":\"16e8a488b32f43ce80282a49705cf628\",\"RemoteAddressIP4\":\"127.0.0.1\",\"ConnectionDirection\":\"1\",\"InContext\":\"0\",\"timestamp\":\"1633128272077\",\"cid\":\"56879ccf959c4afc96dd17e8bb1dcbb5\"}",
+    "_time": 1633128270.176,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "{\"LocalAddressIP4\":\"224.0.0.251\",\"event_simpleName\":\"NetworkReceiveAcceptIP4\",\"ContextTimeStamp\":\"1633128270.176\",\"ConfigStateHash\":\"2120503598\",\"ConnectionFlags\":\"0\",\"ContextProcessId\":\"71854888\",\"RemotePort\":\"5353\",\"aip\":\"94.140.8.197\",\"ConfigBuild\":\"1007.3.0014304.11\",\"event_platform\":\"Win\",\"LocalPort\":\"5353\",\"Entitlements\":\"15\",\"name\":\"NetworkReceiveAcceptIP4V10\",\"EventOrigin\":\"1\",\"id\":\"24cda941-2309-11ec-adfa-0667ce9b0d3d\",\"Protocol\":\"17\",\"EffectiveTransmissionClass\":\"3\",\"aid\":\"16e8a488b32f43ce80282a49705cf628\",\"RemoteAddressIP4\":\"172.17.0.30\",\"ConnectionDirection\":\"1\",\"InContext\":\"0\",\"timestamp\":\"1633128272077\",\"cid\":\"56879ccf959c4afc96dd17e8bb1dcbb5\"}",
+    "_time": 1633128270.176,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "{\"LocalAddressIP4\":\"239.255.255.250\",\"event_simpleName\":\"NetworkReceiveAcceptIP4\",\"ContextTimeStamp\":\"1633128209.387\",\"ConfigStateHash\":\"2317671491\",\"ConnectionFlags\":\"0\",\"ContextProcessId\":\"103403565\",\"RemotePort\":\"63883\",\"aip\":\"94.140.8.197\",\"ConfigBuild\":\"1007.3.0014304.11\",\"event_platform\":\"Win\",\"LocalPort\":\"1900\",\"Entitlements\":\"15\",\"name\":\"NetworkReceiveAcceptIP4V10\",\"EventOrigin\":\"1\",\"id\":\"0074c0da-2309-11ec-8fff-0218bf661f6d\",\"Protocol\":\"17\",\"EffectiveTransmissionClass\":\"3\",\"aid\":\"8ecdc18f83504925a21f063c02f54f70\",\"RemoteAddressIP4\":\"127.0.0.1\",\"ConnectionDirection\":\"1\",\"InContext\":\"0\",\"timestamp\":\"1633128211097\",\"cid\":\"56879ccf959c4afc96dd17e8bb1dcbb5\"}",
+    "_time": 1633128209.387,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "{\"LocalAddressIP4\":\"224.0.0.251\",\"event_simpleName\":\"NetworkReceiveAcceptIP4\",\"ContextTimeStamp\":\"1633128209.387\",\"ConfigStateHash\":\"2317671491\",\"ConnectionFlags\":\"0\",\"ContextProcessId\":\"41866406\",\"RemotePort\":\"5353\",\"aip\":\"94.140.8.197\",\"ConfigBuild\":\"1007.3.0014304.11\",\"event_platform\":\"Win\",\"LocalPort\":\"5353\",\"Entitlements\":\"15\",\"name\":\"NetworkReceiveAcceptIP4V10\",\"EventOrigin\":\"1\",\"id\":\"0074c1f1-2309-11ec-8fff-0218bf661f6d\",\"Protocol\":\"17\",\"EffectiveTransmissionClass\":\"3\",\"aid\":\"8ecdc18f83504925a21f063c02f54f70\",\"RemoteAddressIP4\":\"172.17.0.26\",\"ConnectionDirection\":\"1\",\"InContext\":\"0\",\"timestamp\":\"1633128211097\",\"cid\":\"56879ccf959c4afc96dd17e8bb1dcbb5\"}",
+    "_time": 1633128209.387,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "{\"LocalAddressIP4\":\"172.17.0.255\",\"event_simpleName\":\"NetworkReceiveAcceptIP4\",\"ContextTimeStamp\":\"1633127815.764\",\"ConfigStateHash\":\"1795690134\",\"ConnectionFlags\":\"0\",\"ContextProcessId\":\"1194027\",\"RemotePort\":\"138\",\"aip\":\"94.140.8.197\",\"ConfigBuild\":\"1007.3.0014304.11\",\"event_platform\":\"Win\",\"LocalPort\":\"138\",\"Entitlements\":\"15\",\"name\":\"NetworkReceiveAcceptIP4V10\",\"EventOrigin\":\"1\",\"id\":\"151ed915-2308-11ec-898c-06d9b1c45b8f\",\"Protocol\":\"17\",\"EffectiveTransmissionClass\":\"3\",\"aid\":\"0596cc68066547ef883691773704000a\",\"RemoteAddressIP4\":\"172.17.0.34\",\"ConnectionDirection\":\"1\",\"InContext\":\"0\",\"timestamp\":\"1633127816269\",\"cid\":\"56879ccf959c4afc96dd17e8bb1dcbb5\"}",
+    "_time": 1633127815.764,
+    "cribl_breaker": "Break on newlines"
+  }
+]

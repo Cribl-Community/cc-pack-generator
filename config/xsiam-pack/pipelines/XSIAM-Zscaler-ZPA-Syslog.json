@@ -1,0 +1,65 @@
+{
+  "name": "XSIAM-Zscaler-ZPA-Syslog",
+  "kind": "source-specific",
+  "pattern": "tag_vendor_product",
+  "sourceIdField": "__sourceidentifier",
+  "sourceIdentifier": "af01292940d7426594d3d3e55ae17ee0",
+  "vendor": "Zscaler",
+  "product": "ZPA",
+  "reshapesRaw": false,
+  "sample": {
+    "name": "XSIAM-Zscaler-ZPA-Syslog.log",
+    "format": "leef",
+    "formatLabel": "LEEF",
+    "events": 1
+  },
+  "upstream": {
+    "pack": "cribl-paloalto-xsiam",
+    "version": "2.1.1",
+    "path": "default/pipelines/XSIAM-Zscaler-ZPA-Syslog/conf.yml",
+    "sha256": "7aa6a55f91a1652b252e9c764f60846f9d9cdf41c3ae346a6480f6f291aceb32",
+    "source": "https://packs.cribl.io/packs/cribl-paloalto-xsiam"
+  },
+  "conf": {
+    "output": "default",
+    "streamtags": [],
+    "groups": {},
+    "asyncFuncTimeout": 1000,
+    "description": ""
+  },
+  "functions": [
+    {
+      "id": "comment",
+      "filter": "true",
+      "disabled": null,
+      "conf": {
+        "comment": "Statically assign the __sourceIdentifier, __vendor, and __product fields"
+      }
+    },
+    {
+      "id": "eval",
+      "filter": "true",
+      "disabled": null,
+      "conf": {
+        "add": [
+          {
+            "disabled": false,
+            "name": "__sourceidentifier",
+            "value": "'af01292940d7426594d3d3e55ae17ee0'"
+          },
+          {
+            "disabled": false,
+            "name": "__vendor",
+            "value": "'Zscaler'"
+          },
+          {
+            "disabled": false,
+            "name": "__product",
+            "value": "'ZPA'"
+          }
+        ]
+      },
+      "final": true
+    }
+  ]
+}

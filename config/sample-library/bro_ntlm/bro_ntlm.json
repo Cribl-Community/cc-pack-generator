@@ -1,0 +1,122 @@
+[
+  {
+    "_raw": "#separator \\x09",
+    "_time": 1521911721.608646,
+    "sourcetype": "bro_ntlm",
+    "source": "/opt/zeek/logs/current/ntlm.log"
+  },
+  {
+    "_raw": "#set_separator\t,",
+    "_time": 1521911721.608646,
+    "sourcetype": "bro_ntlm",
+    "source": "/opt/zeek/logs/current/ntlm.log"
+  },
+  {
+    "_raw": "#empty_field\t(empty)",
+    "_time": 1521911721.608646,
+    "sourcetype": "bro_ntlm",
+    "source": "/opt/zeek/logs/current/ntlm.log"
+  },
+  {
+    "_raw": "#unset_field\t-",
+    "_time": 1521911721.608646,
+    "sourcetype": "bro_ntlm",
+    "source": "/opt/zeek/logs/current/ntlm.log"
+  },
+  {
+    "_raw": "#path\tntlm",
+    "_time": 1521911721.608646,
+    "sourcetype": "bro_ntlm",
+    "source": "/opt/zeek/logs/current/ntlm.log"
+  },
+  {
+    "_raw": "#open\t2024-04-12-19-29-13",
+    "_time": 1521911721.608646,
+    "sourcetype": "bro_ntlm",
+    "source": "/opt/zeek/logs/current/ntlm.log"
+  },
+  {
+    "_raw": "#fields\tts\tuid\tid.orig_h\tid.orig_p\tid.resp_h\tid.resp_p\tusername\thostname\tdomainname\tserver_nb_computer_name\tserver_dns_computer_name\tserver_tree_name\tsuccess",
+    "_time": 1521911721.608646,
+    "sourcetype": "bro_ntlm",
+    "source": "/opt/zeek/logs/current/ntlm.log"
+  },
+  {
+    "_raw": "#types\ttime\tstring\taddr\tport\taddr\tport\tstring\tstring\tstring\tstring\tstring\tstring\tbool",
+    "_time": 1521911721.608646,
+    "sourcetype": "bro_ntlm",
+    "source": "/opt/zeek/logs/current/ntlm.log"
+  },
+  {
+    "_raw": "1521911721.608646\tCGLspW1BuwJH6YxjK6\t10.164.94.120\t36315\t10.47.8.208\t445\t-\t-\t-\tSNOZBERRY\tSnozberry.factory.oompa.loompa\tfactory.oompa.loompa\tT",
+    "_time": 1521911721.608646,
+    "sourcetype": "bro_ntlm",
+    "source": "/opt/zeek/logs/current/ntlm.log"
+  },
+  {
+    "_raw": "1521911724.174979\tCom0DqIPOu8FjMTma\t10.164.94.120\t36643\t10.47.3.151\t1030\t-\t-\t-\tCOTTONCANDY4\tCottonCandy4.factory.oompa.loompa\tfactory.oompa.loompa\t-",
+    "_time": 1521911724.174979,
+    "sourcetype": "bro_ntlm",
+    "source": "/opt/zeek/logs/current/ntlm.log"
+  },
+  {
+    "_raw": "1521911736.293895\tCKKAb2cF6j5v4sm52\t10.164.94.120\t33921\t10.47.23.166\t445\t-\t-\t-\tPARKINGGARAGE\tParkingGarage\t-\tT",
+    "_time": 1521911736.293895,
+    "sourcetype": "bro_ntlm",
+    "source": "/opt/zeek/logs/current/ntlm.log"
+  },
+  {
+    "_raw": "1521911741.136557\tCT1orU31pfzjVTClIh\t10.128.0.233\t33692\t10.47.21.25\t135\tAdministrator\tNULL\tJERRY\tKRAMER\tKramer.jerry.land\tjerry.land\t-",
+    "_time": 1521911741.136557,
+    "sourcetype": "bro_ntlm",
+    "source": "/opt/zeek/logs/current/ntlm.log"
+  },
+  {
+    "_raw": "1521911754.371836\tC6WWAQ2G8MqT1hrQHd\t10.128.0.214\t41717\t10.47.8.142\t445\tAdministrator\tZA3Mb5kF7rTTSw7N\tFACTORY\tGUMMYBACON\tgummybacon.factory.oompa.loompa\tfactory.oompa.loompa\t-",
+    "_time": 1521911754.371836,
+    "sourcetype": "bro_ntlm",
+    "source": "/opt/zeek/logs/current/ntlm.log"
+  },
+  {
+    "_raw": "1521911767.268545\tCPd22l18QxvwF9MS6f\t10.128.0.214\t36333\t10.47.8.154\t445\tAdministrator\t5AnPfQ1xCRaG8god\tFACTORY\tLICORICE\tlicorice.factory.oompa.loompa\tfactory.oompa.loompa\t-",
+    "_time": 1521911767.268545,
+    "sourcetype": "bro_ntlm",
+    "source": "/opt/zeek/logs/current/ntlm.log"
+  },
+  {
+    "_raw": "1521911788.602574\tCmCTDR9gcaxXiK988\t10.128.0.233\t49540\t10.47.21.80\t445\tHVU_SMARTIES\tNULL\tJERRY\tPC-NEWMAN\tPC-newman.jerry.land\tjerry.land\tT",
+    "_time": 1521911788.602574,
+    "sourcetype": "bro_ntlm",
+    "source": "/opt/zeek/logs/current/ntlm.log"
+  },
+  {
+    "_raw": "1521911775.293765\tCmsQ1mFlW0ekjZVzl\t10.128.0.233\t37332\t10.47.21.81\t445\tcyg_server\tNULL\tJERRY\tPC-SUSAN\tPC-susan.jerry.land\tjerry.land\t-",
+    "_time": 1521911775.293765,
+    "sourcetype": "bro_ntlm",
+    "source": "/opt/zeek/logs/current/ntlm.log"
+  },
+  {
+    "_raw": "1521912155.009811\tC9a5piBUX7GvQIDLa\t10.150.0.20\t42314\t10.47.22.25\t445\tguest\tWORKSTATION\tWORKSTATION\tKRAMER\tKramer.jerry.land\tjerry.land\tT",
+    "_time": 1521912155.009811,
+    "sourcetype": "bro_ntlm",
+    "source": "/opt/zeek/logs/current/ntlm.log"
+  },
+  {
+    "_raw": "1521912416.387455\tCyFsFT3ac7W0mUSA97\t10.128.0.233\t44734\t10.47.21.82\t445\tUpdatusUser\tNULL\tJERRY\tPC-HELEN\tPC-helen.jerry.land\tjerry.land\t-",
+    "_time": 1521912416.387455,
+    "sourcetype": "bro_ntlm",
+    "source": "/opt/zeek/logs/current/ntlm.log"
+  },
+  {
+    "_raw": "1521912604.987909\tC2iEQa33X6xgXoissc\t10.128.0.214\t36131\t10.47.8.19\t445\tAdministrator\tgAZ0s8HV0doFg1Cz\tFACTORY\tNU019\tNU019.factory.oompa.loompa\tfactory.oompa.loompa\t-",
+    "_time": 1521912604.987909,
+    "sourcetype": "bro_ntlm",
+    "source": "/opt/zeek/logs/current/ntlm.log"
+  },
+  {
+    "_raw": "1521912706.176335\tCOaH8f4sXYuyNmSY5a\t10.128.0.214\t44094\t10.47.8.152\t445\tAdministrator\t-\tCOTTONCANDY\tCOTTONCANDY\tCottonCandy\t-\t-",
+    "_time": 1521912706.176335,
+    "sourcetype": "bro_ntlm",
+    "source": "/opt/zeek/logs/current/ntlm.log"
+  }
+]

@@ -1,0 +1,71 @@
+{
+  "key": "openai_users",
+  "sourcetype": "openai_users",
+  "classUid": 4001,
+  "destFormat": "ocsf#network",
+  "source": "generic",
+  "vendorNames": [
+    "openai users"
+  ],
+  "provenance": {
+    "samplePack": "cribl-openai-rest-io",
+    "sampleName": "cribl_openai_users",
+    "tier": "reference",
+    "sampleEvents": 5,
+    "emulated": "golden OCSF pipeline, offline emulation of scripts/build-source-ocsf-samples.mjs",
+    "rejected": []
+  },
+  "events": [
+    {
+      "device": {
+        "hostname": "ip-10-255-0-219"
+      },
+      "metadata": {
+        "product": {
+          "name": "Security",
+          "vendor_name": "openai users"
+        },
+        "version": "1.9.0"
+      },
+      "class_uid": 4001,
+      "category_uid": 4,
+      "activity_id": 1,
+      "type_uid": 400101,
+      "severity_id": 1
+    },
+    {
+      "device": {
+        "hostname": "ip-10-255-0-219"
+      },
+      "metadata": {
+        "product": {
+          "name": "Security",
+          "vendor_name": "openai users"
+        },
+        "version": "1.9.0"
+      },
+      "class_uid": 4001,
+      "category_uid": 4,
+      "activity_id": 1,
+      "type_uid": 400101,
+      "severity_id": 1
+    },
+    {
+      "device": {
+        "hostname": "ip-10-255-0-219"
+      },
+      "metadata": {
+        "product": {
+          "name": "Security",
+          "vendor_name": "openai users"
+        },
+        "version": "1.9.0"
+      },
+      "class_uid": 4001,
+      "category_uid": 4,
+      "activity_id": 1,
+      "type_uid": 400101,
+      "severity_id": 1
+    }
+  ]
+}

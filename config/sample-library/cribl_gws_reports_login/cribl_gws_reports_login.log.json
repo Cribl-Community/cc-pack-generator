@@ -1,0 +1,1213 @@
+[
+  {
+    "_raw": "{\n      \"kind\": \"admin#reports#activity\",\n      \"id\": {\n        \"time\": \"2025-10-09T17:08:36.022Z\",\n        \"uniqueQualifier\": \"-7768543888321113489\",\n        \"applicationName\": \"login\",\n        \"customerId\": \"D03cdmbi0\"\n      },\n      \"etag\": \"\\\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/q0kOZa4S51TKNh-KdHs_iro75TU\\\"\",\n      \"actor\": {\n        \"email\": \"admin@acmecorp.com\",\n        \"profileId\": \"116666192297935290365\"\n      },\n      \"ipAddress\": \"2601:280:5d80:af00:fddd:ec:309b:adbd\",\n      \"networkInfo\": {\n        \"ipAsn\": [\n          33652\n        ],\n        \"regionCode\": \"US\",\n        \"subdivisionCode\": \"US-CO\"\n      },\n      \"events\": [\n        {\n          \"type\": \"login\",\n          \"name\": \"login_success\",\n          \"parameters\": [\n            {\n              \"name\": \"login_type\",\n              \"value\": \"reauth\"\n            },\n            {\n              \"name\": \"login_challenge_method\",\n              \"multiValue\": [\n                \"none\"\n              ]\n            },\n            {\n              \"name\": \"is_suspicious\",\n              \"boolValue\": false\n            }\n          ],\n          \"resourceIds\": [\n            \"311281040670\"\n          ]\n        }\n      ],\n      \"resourceDetails\": [\n        {\n          \"id\": \"311281040670\",\n          \"type\": \"USER\"\n        }\n      ]\n    }",
+    "host": "ip-10-255-0-219",
+    "source": "https://admin.googleapis.com/admin/reports/v1/activity/users/all/applications/login",
+    "kind": "admin#reports#activity",
+    "id": {
+      "time": "2025-10-09T17:08:36.022Z",
+      "uniqueQualifier": "-7768543888321113489",
+      "applicationName": "login",
+      "customerId": "D03cdmbi0"
+    },
+    "etag": "\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/q0kOZa4S51TKNh-KdHs_iro75TU\"",
+    "actor": {
+      "email": "admin@acmecorp.com",
+      "profileId": "116666192297935290365"
+    },
+    "ipAddress": "2601:280:5d80:af00:fddd:ec:309b:adbd",
+    "networkInfo": {
+      "ipAsn": [
+        33652
+      ],
+      "regionCode": "US",
+      "subdivisionCode": "US-CO"
+    },
+    "events": [
+      {
+        "type": "login",
+        "name": "login_success",
+        "parameters": [
+          {
+            "name": "login_type",
+            "value": "reauth"
+          },
+          {
+            "name": "login_challenge_method",
+            "multiValue": [
+              "none"
+            ]
+          },
+          {
+            "name": "is_suspicious",
+            "boolValue": false
+          }
+        ],
+        "resourceIds": [
+          "311281040670"
+        ]
+      }
+    ],
+    "resourceDetails": [
+      {
+        "id": "311281040670",
+        "type": "USER"
+      }
+    ],
+    "_time": 1760029716.022,
+    "_data_source": "http_google_workspace_admin",
+    "cribl_breaker": [
+      "google_sdk:get_items",
+      "ndjson"
+    ]
+  },
+  {
+    "_raw": "{\n      \"kind\": \"admin#reports#activity\",\n      \"id\": {\n        \"time\": \"2025-10-09T17:04:17.993Z\",\n        \"uniqueQualifier\": \"2933327565724667484\",\n        \"applicationName\": \"login\",\n        \"customerId\": \"D03cdmbi0\"\n      },\n      \"etag\": \"\\\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/atGX21ilx1Xk0FYMx5Y79kS7NsE\\\"\",\n      \"actor\": {\n        \"email\": \"admin@acmecorp.com\",\n        \"profileId\": \"116666192297935290365\"\n      },\n      \"ipAddress\": \"2601:280:5d80:af00:fddd:ec:309b:adbd\",\n      \"networkInfo\": {\n        \"ipAsn\": [\n          33652\n        ],\n        \"regionCode\": \"US\",\n        \"subdivisionCode\": \"US-CO\"\n      },\n      \"events\": [\n        {\n          \"type\": \"login\",\n          \"name\": \"login_success\",\n          \"parameters\": [\n            {\n              \"name\": \"login_type\",\n              \"value\": \"reauth\"\n            },\n            {\n              \"name\": \"login_challenge_method\",\n              \"multiValue\": [\n                \"none\"\n              ]\n            },\n            {\n              \"name\": \"is_suspicious\",\n              \"boolValue\": false\n            }\n          ],\n          \"resourceIds\": [\n            \"0ihv6363xd6pim\"\n          ]\n        }\n      ],\n      \"resourceDetails\": [\n        {\n          \"id\": \"0ihv6363xd6pim\",\n          \"type\": \"USER\"\n        }\n      ]\n    }",
+    "host": "ip-10-255-0-219",
+    "source": "https://admin.googleapis.com/admin/reports/v1/activity/users/all/applications/login",
+    "kind": "admin#reports#activity",
+    "id": {
+      "time": "2025-10-09T17:04:17.993Z",
+      "uniqueQualifier": "2933327565724667484",
+      "applicationName": "login",
+      "customerId": "D03cdmbi0"
+    },
+    "etag": "\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/atGX21ilx1Xk0FYMx5Y79kS7NsE\"",
+    "actor": {
+      "email": "admin@acmecorp.com",
+      "profileId": "116666192297935290365"
+    },
+    "ipAddress": "2601:280:5d80:af00:fddd:ec:309b:adbd",
+    "networkInfo": {
+      "ipAsn": [
+        33652
+      ],
+      "regionCode": "US",
+      "subdivisionCode": "US-CO"
+    },
+    "events": [
+      {
+        "type": "login",
+        "name": "login_success",
+        "parameters": [
+          {
+            "name": "login_type",
+            "value": "reauth"
+          },
+          {
+            "name": "login_challenge_method",
+            "multiValue": [
+              "none"
+            ]
+          },
+          {
+            "name": "is_suspicious",
+            "boolValue": false
+          }
+        ],
+        "resourceIds": [
+          "0ihv6363xd6pim"
+        ]
+      }
+    ],
+    "resourceDetails": [
+      {
+        "id": "0ihv6363xd6pim",
+        "type": "USER"
+      }
+    ],
+    "_time": 1760029457.993,
+    "_data_source": "http_google_workspace_admin",
+    "cribl_breaker": [
+      "google_sdk:get_items",
+      "ndjson"
+    ]
+  },
+  {
+    "_raw": "{\n      \"kind\": \"admin#reports#activity\",\n      \"id\": {\n        \"time\": \"2025-10-09T13:48:53.580Z\",\n        \"uniqueQualifier\": \"-7561734531923975758\",\n        \"applicationName\": \"login\",\n        \"customerId\": \"D03cdmbi0\"\n      },\n      \"etag\": \"\\\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/uFlfSQYnhCRvjnxtw08JG-pFRhE\\\"\",\n      \"actor\": {\n        \"email\": \"user@acmecorp.com\",\n        \"profileId\": \"117329556664445035546\"\n      },\n      \"ipAddress\": \"69.122.43.179\",\n      \"networkInfo\": {\n        \"ipAsn\": [\n          701\n        ],\n        \"regionCode\": \"US\",\n        \"subdivisionCode\": \"US-NY\"\n      },\n      \"events\": [\n        {\n          \"type\": \"login\",\n          \"name\": \"logout\",\n          \"parameters\": [\n            {\n              \"name\": \"login_type\",\n              \"value\": \"google_password\"\n            }\n          ],\n          \"resourceIds\": [\n            \"763488857609\"\n          ]\n        }\n      ],\n      \"resourceDetails\": [\n        {\n          \"id\": \"763488857609\",\n          \"type\": \"USER\"\n        }\n      ]\n    }",
+    "host": "ip-10-255-0-219",
+    "source": "https://admin.googleapis.com/admin/reports/v1/activity/users/all/applications/login",
+    "kind": "admin#reports#activity",
+    "id": {
+      "time": "2025-10-09T13:48:53.580Z",
+      "uniqueQualifier": "-7561734531923975758",
+      "applicationName": "login",
+      "customerId": "D03cdmbi0"
+    },
+    "etag": "\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/uFlfSQYnhCRvjnxtw08JG-pFRhE\"",
+    "actor": {
+      "email": "user@acmecorp.com",
+      "profileId": "117329556664445035546"
+    },
+    "ipAddress": "69.122.43.179",
+    "networkInfo": {
+      "ipAsn": [
+        701
+      ],
+      "regionCode": "US",
+      "subdivisionCode": "US-NY"
+    },
+    "events": [
+      {
+        "type": "login",
+        "name": "logout",
+        "parameters": [
+          {
+            "name": "login_type",
+            "value": "google_password"
+          }
+        ],
+        "resourceIds": [
+          "763488857609"
+        ]
+      }
+    ],
+    "resourceDetails": [
+      {
+        "id": "763488857609",
+        "type": "USER"
+      }
+    ],
+    "_time": 1760017733.58,
+    "_data_source": "http_google_workspace_admin",
+    "cribl_breaker": [
+      "google_sdk:get_items",
+      "ndjson"
+    ]
+  },
+  {
+    "_raw": "{\n      \"kind\": \"admin#reports#activity\",\n      \"id\": {\n        \"time\": \"2025-10-09T13:33:15.284Z\",\n        \"uniqueQualifier\": \"-2508064593527830779\",\n        \"applicationName\": \"login\",\n        \"customerId\": \"D03cdmbi0\"\n      },\n      \"etag\": \"\\\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/4mcvUC8RbUA0B1vJfODH_RO1_wo\\\"\",\n      \"actor\": {\n        \"email\": \"admin@acmecorp.com\",\n        \"profileId\": \"116666192297935290365\"\n      },\n      \"ipAddress\": \"2601:280:5d80:af00:ec49:5e15:ffe5:3c02\",\n      \"networkInfo\": {\n        \"ipAsn\": [\n          33652\n        ],\n        \"regionCode\": \"US\",\n        \"subdivisionCode\": \"US-CO\"\n      },\n      \"events\": [\n        {\n          \"type\": \"login\",\n          \"name\": \"login_success\",\n          \"parameters\": [\n            {\n              \"name\": \"login_type\",\n              \"value\": \"reauth\"\n            },\n            {\n              \"name\": \"login_challenge_method\",\n              \"multiValue\": [\n                \"none\"\n              ]\n            },\n            {\n              \"name\": \"is_suspicious\",\n              \"boolValue\": false\n            }\n          ],\n          \"resourceIds\": [\n            \"0ihv6363xd6pim\"\n          ]\n        }\n      ],\n      \"resourceDetails\": [\n        {\n          \"id\": \"0ihv6363xd6pim\",\n          \"type\": \"USER\"\n        }\n      ]\n    }",
+    "host": "ip-10-255-0-219",
+    "source": "https://admin.googleapis.com/admin/reports/v1/activity/users/all/applications/login",
+    "kind": "admin#reports#activity",
+    "id": {
+      "time": "2025-10-09T13:33:15.284Z",
+      "uniqueQualifier": "-2508064593527830779",
+      "applicationName": "login",
+      "customerId": "D03cdmbi0"
+    },
+    "etag": "\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/4mcvUC8RbUA0B1vJfODH_RO1_wo\"",
+    "actor": {
+      "email": "admin@acmecorp.com",
+      "profileId": "116666192297935290365"
+    },
+    "ipAddress": "2601:280:5d80:af00:ec49:5e15:ffe5:3c02",
+    "networkInfo": {
+      "ipAsn": [
+        33652
+      ],
+      "regionCode": "US",
+      "subdivisionCode": "US-CO"
+    },
+    "events": [
+      {
+        "type": "login",
+        "name": "login_success",
+        "parameters": [
+          {
+            "name": "login_type",
+            "value": "reauth"
+          },
+          {
+            "name": "login_challenge_method",
+            "multiValue": [
+              "none"
+            ]
+          },
+          {
+            "name": "is_suspicious",
+            "boolValue": false
+          }
+        ],
+        "resourceIds": [
+          "0ihv6363xd6pim"
+        ]
+      }
+    ],
+    "resourceDetails": [
+      {
+        "id": "0ihv6363xd6pim",
+        "type": "USER"
+      }
+    ],
+    "_time": 1760016795.284,
+    "_data_source": "http_google_workspace_admin",
+    "cribl_breaker": [
+      "google_sdk:get_items",
+      "ndjson"
+    ]
+  },
+  {
+    "_raw": "{\n      \"kind\": \"admin#reports#activity\",\n      \"id\": {\n        \"time\": \"2025-10-08T17:50:03.259Z\",\n        \"uniqueQualifier\": \"6589536074478099740\",\n        \"applicationName\": \"login\",\n        \"customerId\": \"D03cdmbi0\"\n      },\n      \"etag\": \"\\\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/vIrpqt4EGhHeVRQGtgzF5ZO1wu0\\\"\",\n      \"actor\": {\n        \"email\": \"user@acmecorp.com\",\n        \"profileId\": \"117329556664445035546\"\n      },\n      \"ipAddress\": \"69.122.43.179\",\n      \"networkInfo\": {\n        \"ipAsn\": [\n          701\n        ],\n        \"regionCode\": \"US\",\n        \"subdivisionCode\": \"US-NY\"\n      },\n      \"events\": [\n        {\n          \"type\": \"login\",\n          \"name\": \"login_success\",\n          \"parameters\": [\n            {\n              \"name\": \"login_type\",\n              \"value\": \"reauth\"\n            },\n            {\n              \"name\": \"login_challenge_method\",\n              \"multiValue\": [\n                \"password\"\n              ]\n            },\n            {\n              \"name\": \"is_suspicious\",\n              \"boolValue\": false\n            }\n          ],\n          \"resourceIds\": [\n            \"763488857609\"\n          ]\n        }\n      ],\n      \"resourceDetails\": [\n        {\n          \"id\": \"763488857609\",\n          \"type\": \"USER\"\n        }\n      ]\n    }",
+    "host": "ip-10-255-0-219",
+    "source": "https://admin.googleapis.com/admin/reports/v1/activity/users/all/applications/login",
+    "kind": "admin#reports#activity",
+    "id": {
+      "time": "2025-10-08T17:50:03.259Z",
+      "uniqueQualifier": "6589536074478099740",
+      "applicationName": "login",
+      "customerId": "D03cdmbi0"
+    },
+    "etag": "\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/vIrpqt4EGhHeVRQGtgzF5ZO1wu0\"",
+    "actor": {
+      "email": "user@acmecorp.com",
+      "profileId": "117329556664445035546"
+    },
+    "ipAddress": "69.122.43.179",
+    "networkInfo": {
+      "ipAsn": [
+        701
+      ],
+      "regionCode": "US",
+      "subdivisionCode": "US-NY"
+    },
+    "events": [
+      {
+        "type": "login",
+        "name": "login_success",
+        "parameters": [
+          {
+            "name": "login_type",
+            "value": "reauth"
+          },
+          {
+            "name": "login_challenge_method",
+            "multiValue": [
+              "password"
+            ]
+          },
+          {
+            "name": "is_suspicious",
+            "boolValue": false
+          }
+        ],
+        "resourceIds": [
+          "763488857609"
+        ]
+      }
+    ],
+    "resourceDetails": [
+      {
+        "id": "763488857609",
+        "type": "USER"
+      }
+    ],
+    "_time": 1759945803.259,
+    "_data_source": "http_google_workspace_admin",
+    "cribl_breaker": [
+      "google_sdk:get_items",
+      "ndjson"
+    ]
+  },
+  {
+    "_raw": "{\n      \"kind\": \"admin#reports#activity\",\n      \"id\": {\n        \"time\": \"2025-10-08T13:29:17.650Z\",\n        \"uniqueQualifier\": \"-1424197332328422963\",\n        \"applicationName\": \"login\",\n        \"customerId\": \"D03cdmbi0\"\n      },\n      \"etag\": \"\\\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/1hyE2ASAsoxzWV-wexMTU85gd-8\\\"\",\n      \"actor\": {\n        \"email\": \"admin@acmecorp.com\",\n        \"profileId\": \"116666192297935290365\"\n      },\n      \"ipAddress\": \"2601:280:5d80:af00:21b2:f06:30f5:a9f7\",\n      \"networkInfo\": {\n        \"ipAsn\": [\n          33652\n        ],\n        \"regionCode\": \"US\",\n        \"subdivisionCode\": \"US-CO\"\n      },\n      \"events\": [\n        {\n          \"type\": \"login\",\n          \"name\": \"login_success\",\n          \"parameters\": [\n            {\n              \"name\": \"login_type\",\n              \"value\": \"reauth\"\n            },\n            {\n              \"name\": \"login_challenge_method\",\n              \"multiValue\": [\n                \"password\",\n                \"password\"\n              ]\n            },\n            {\n              \"name\": \"is_suspicious\",\n              \"boolValue\": false\n            }\n          ],\n          \"resourceIds\": [\n            \"311281040670\"\n          ]\n        }\n      ],\n      \"resourceDetails\": [\n        {\n          \"id\": \"311281040670\",\n          \"type\": \"USER\"\n        }\n      ]\n    }",
+    "host": "ip-10-255-0-219",
+    "source": "https://admin.googleapis.com/admin/reports/v1/activity/users/all/applications/login",
+    "kind": "admin#reports#activity",
+    "id": {
+      "time": "2025-10-08T13:29:17.650Z",
+      "uniqueQualifier": "-1424197332328422963",
+      "applicationName": "login",
+      "customerId": "D03cdmbi0"
+    },
+    "etag": "\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/1hyE2ASAsoxzWV-wexMTU85gd-8\"",
+    "actor": {
+      "email": "admin@acmecorp.com",
+      "profileId": "116666192297935290365"
+    },
+    "ipAddress": "2601:280:5d80:af00:21b2:f06:30f5:a9f7",
+    "networkInfo": {
+      "ipAsn": [
+        33652
+      ],
+      "regionCode": "US",
+      "subdivisionCode": "US-CO"
+    },
+    "events": [
+      {
+        "type": "login",
+        "name": "login_success",
+        "parameters": [
+          {
+            "name": "login_type",
+            "value": "reauth"
+          },
+          {
+            "name": "login_challenge_method",
+            "multiValue": [
+              "password",
+              "password"
+            ]
+          },
+          {
+            "name": "is_suspicious",
+            "boolValue": false
+          }
+        ],
+        "resourceIds": [
+          "311281040670"
+        ]
+      }
+    ],
+    "resourceDetails": [
+      {
+        "id": "311281040670",
+        "type": "USER"
+      }
+    ],
+    "_time": 1759930157.65,
+    "_data_source": "http_google_workspace_admin",
+    "cribl_breaker": [
+      "google_sdk:get_items",
+      "ndjson"
+    ]
+  },
+  {
+    "_raw": "{\n      \"kind\": \"admin#reports#activity\",\n      \"id\": {\n        \"time\": \"2025-10-07T19:26:35.709Z\",\n        \"uniqueQualifier\": \"2828668222644256791\",\n        \"applicationName\": \"login\",\n        \"customerId\": \"D03cdmbi0\"\n      },\n      \"etag\": \"\\\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/BloaAakVtAD0azTqrbkDQL2530U\\\"\",\n      \"actor\": {\n        \"email\": \"user@acmecorp.com\",\n        \"profileId\": \"117329556664445035546\"\n      },\n      \"ipAddress\": \"69.122.43.179\",\n      \"networkInfo\": {\n        \"ipAsn\": [\n          701\n        ],\n        \"regionCode\": \"US\",\n        \"subdivisionCode\": \"US-NY\"\n      },\n      \"events\": [\n        {\n          \"type\": \"login\",\n          \"name\": \"login_success\",\n          \"parameters\": [\n            {\n              \"name\": \"login_type\",\n              \"value\": \"reauth\"\n            },\n            {\n              \"name\": \"login_challenge_method\",\n              \"multiValue\": [\n                \"none\"\n              ]\n            },\n            {\n              \"name\": \"is_suspicious\",\n              \"boolValue\": false\n            }\n          ],\n          \"resourceIds\": [\n            \"763488857609\"\n          ]\n        }\n      ],\n      \"resourceDetails\": [\n        {\n          \"id\": \"763488857609\",\n          \"type\": \"USER\"\n        }\n      ]\n    }",
+    "host": "ip-10-255-0-219",
+    "source": "https://admin.googleapis.com/admin/reports/v1/activity/users/all/applications/login",
+    "kind": "admin#reports#activity",
+    "id": {
+      "time": "2025-10-07T19:26:35.709Z",
+      "uniqueQualifier": "2828668222644256791",
+      "applicationName": "login",
+      "customerId": "D03cdmbi0"
+    },
+    "etag": "\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/BloaAakVtAD0azTqrbkDQL2530U\"",
+    "actor": {
+      "email": "user@acmecorp.com",
+      "profileId": "117329556664445035546"
+    },
+    "ipAddress": "69.122.43.179",
+    "networkInfo": {
+      "ipAsn": [
+        701
+      ],
+      "regionCode": "US",
+      "subdivisionCode": "US-NY"
+    },
+    "events": [
+      {
+        "type": "login",
+        "name": "login_success",
+        "parameters": [
+          {
+            "name": "login_type",
+            "value": "reauth"
+          },
+          {
+            "name": "login_challenge_method",
+            "multiValue": [
+              "none"
+            ]
+          },
+          {
+            "name": "is_suspicious",
+            "boolValue": false
+          }
+        ],
+        "resourceIds": [
+          "763488857609"
+        ]
+      }
+    ],
+    "resourceDetails": [
+      {
+        "id": "763488857609",
+        "type": "USER"
+      }
+    ],
+    "_time": 1759865195.709,
+    "_data_source": "http_google_workspace_admin",
+    "cribl_breaker": [
+      "google_sdk:get_items",
+      "ndjson"
+    ]
+  },
+  {
+    "_raw": "{\n      \"kind\": \"admin#reports#activity\",\n      \"id\": {\n        \"time\": \"2025-10-07T19:22:47.423Z\",\n        \"uniqueQualifier\": \"-2387047032637269980\",\n        \"applicationName\": \"login\",\n        \"customerId\": \"D03cdmbi0\"\n      },\n      \"etag\": \"\\\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/OHebFtyptIIsQ_dHDvxkmLKYFNQ\\\"\",\n      \"actor\": {\n        \"email\": \"user@acmecorp.com\",\n        \"profileId\": \"117329556664445035546\"\n      },\n      \"ipAddress\": \"69.122.43.179\",\n      \"networkInfo\": {\n        \"ipAsn\": [\n          701\n        ],\n        \"regionCode\": \"US\",\n        \"subdivisionCode\": \"US-NY\"\n      },\n      \"events\": [\n        {\n          \"type\": \"login\",\n          \"name\": \"login_success\",\n          \"parameters\": [\n            {\n              \"name\": \"login_type\",\n              \"value\": \"reauth\"\n            },\n            {\n              \"name\": \"login_challenge_method\",\n              \"multiValue\": [\n                \"password\"\n              ]\n            },\n            {\n              \"name\": \"is_suspicious\",\n              \"boolValue\": false\n            }\n          ],\n          \"resourceIds\": [\n            \"763488857609\"\n          ]\n        }\n      ],\n      \"resourceDetails\": [\n        {\n          \"id\": \"763488857609\",\n          \"type\": \"USER\"\n        }\n      ]\n    }",
+    "host": "ip-10-255-0-219",
+    "source": "https://admin.googleapis.com/admin/reports/v1/activity/users/all/applications/login",
+    "kind": "admin#reports#activity",
+    "id": {
+      "time": "2025-10-07T19:22:47.423Z",
+      "uniqueQualifier": "-2387047032637269980",
+      "applicationName": "login",
+      "customerId": "D03cdmbi0"
+    },
+    "etag": "\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/OHebFtyptIIsQ_dHDvxkmLKYFNQ\"",
+    "actor": {
+      "email": "user@acmecorp.com",
+      "profileId": "117329556664445035546"
+    },
+    "ipAddress": "69.122.43.179",
+    "networkInfo": {
+      "ipAsn": [
+        701
+      ],
+      "regionCode": "US",
+      "subdivisionCode": "US-NY"
+    },
+    "events": [
+      {
+        "type": "login",
+        "name": "login_success",
+        "parameters": [
+          {
+            "name": "login_type",
+            "value": "reauth"
+          },
+          {
+            "name": "login_challenge_method",
+            "multiValue": [
+              "password"
+            ]
+          },
+          {
+            "name": "is_suspicious",
+            "boolValue": false
+          }
+        ],
+        "resourceIds": [
+          "763488857609"
+        ]
+      }
+    ],
+    "resourceDetails": [
+      {
+        "id": "763488857609",
+        "type": "USER"
+      }
+    ],
+    "_time": 1759864967.423,
+    "_data_source": "http_google_workspace_admin",
+    "cribl_breaker": [
+      "google_sdk:get_items",
+      "ndjson"
+    ]
+  },
+  {
+    "_raw": "{\n      \"kind\": \"admin#reports#activity\",\n      \"id\": {\n        \"time\": \"2025-10-07T17:07:56.412Z\",\n        \"uniqueQualifier\": \"-6228703105076960720\",\n        \"applicationName\": \"login\",\n        \"customerId\": \"D03cdmbi0\"\n      },\n      \"etag\": \"\\\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/G7aFcN1J61HRK4sou-LVhjB59vo\\\"\",\n      \"actor\": {\n        \"email\": \"admin@acmecorp.com\",\n        \"profileId\": \"116666192297935290365\"\n      },\n      \"ipAddress\": \"174.51.71.165\",\n      \"networkInfo\": {\n        \"ipAsn\": [\n          33652\n        ],\n        \"regionCode\": \"US\",\n        \"subdivisionCode\": \"US-CO\"\n      },\n      \"events\": [\n        {\n          \"type\": \"login\",\n          \"name\": \"login_success\",\n          \"parameters\": [\n            {\n              \"name\": \"login_type\",\n              \"value\": \"google_password\"\n            },\n            {\n              \"name\": \"login_challenge_method\",\n              \"multiValue\": [\n                \"password\"\n              ]\n            },\n            {\n              \"name\": \"is_suspicious\",\n              \"boolValue\": false\n            }\n          ],\n          \"resourceIds\": [\n            \"311281040670\"\n          ]\n        }\n      ],\n      \"resourceDetails\": [\n        {\n          \"id\": \"311281040670\",\n          \"type\": \"USER\"\n        }\n      ]\n    }",
+    "host": "ip-10-255-0-219",
+    "source": "https://admin.googleapis.com/admin/reports/v1/activity/users/all/applications/login",
+    "kind": "admin#reports#activity",
+    "id": {
+      "time": "2025-10-07T17:07:56.412Z",
+      "uniqueQualifier": "-6228703105076960720",
+      "applicationName": "login",
+      "customerId": "D03cdmbi0"
+    },
+    "etag": "\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/G7aFcN1J61HRK4sou-LVhjB59vo\"",
+    "actor": {
+      "email": "admin@acmecorp.com",
+      "profileId": "116666192297935290365"
+    },
+    "ipAddress": "174.51.71.165",
+    "networkInfo": {
+      "ipAsn": [
+        33652
+      ],
+      "regionCode": "US",
+      "subdivisionCode": "US-CO"
+    },
+    "events": [
+      {
+        "type": "login",
+        "name": "login_success",
+        "parameters": [
+          {
+            "name": "login_type",
+            "value": "google_password"
+          },
+          {
+            "name": "login_challenge_method",
+            "multiValue": [
+              "password"
+            ]
+          },
+          {
+            "name": "is_suspicious",
+            "boolValue": false
+          }
+        ],
+        "resourceIds": [
+          "311281040670"
+        ]
+      }
+    ],
+    "resourceDetails": [
+      {
+        "id": "311281040670",
+        "type": "USER"
+      }
+    ],
+    "_time": 1759856876.412,
+    "_data_source": "http_google_workspace_admin",
+    "cribl_breaker": [
+      "google_sdk:get_items",
+      "ndjson"
+    ]
+  },
+  {
+    "_raw": "{\n      \"kind\": \"admin#reports#activity\",\n      \"id\": {\n        \"time\": \"2025-10-07T17:07:50.834Z\",\n        \"uniqueQualifier\": \"-3861772780103655772\",\n        \"applicationName\": \"login\",\n        \"customerId\": \"D03cdmbi0\"\n      },\n      \"etag\": \"\\\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/GlruSkU_GAiE-4BczhKGhfHspyk\\\"\",\n      \"actor\": {\n        \"email\": \"admin@acmecorp.com\",\n        \"profileId\": \"116666192297935290365\"\n      },\n      \"ipAddress\": \"174.51.71.165\",\n      \"networkInfo\": {\n        \"ipAsn\": [\n          33652\n        ],\n        \"regionCode\": \"US\",\n        \"subdivisionCode\": \"US-CO\"\n      },\n      \"events\": [\n        {\n          \"type\": \"login\",\n          \"name\": \"logout\",\n          \"parameters\": [\n            {\n              \"name\": \"login_type\",\n              \"value\": \"google_password\"\n            }\n          ],\n          \"resourceIds\": [\n            \"311281040670\"\n          ]\n        }\n      ],\n      \"resourceDetails\": [\n        {\n          \"id\": \"311281040670\",\n          \"type\": \"USER\"\n        }\n      ]\n    }",
+    "host": "ip-10-255-0-219",
+    "source": "https://admin.googleapis.com/admin/reports/v1/activity/users/all/applications/login",
+    "kind": "admin#reports#activity",
+    "id": {
+      "time": "2025-10-07T17:07:50.834Z",
+      "uniqueQualifier": "-3861772780103655772",
+      "applicationName": "login",
+      "customerId": "D03cdmbi0"
+    },
+    "etag": "\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/GlruSkU_GAiE-4BczhKGhfHspyk\"",
+    "actor": {
+      "email": "admin@acmecorp.com",
+      "profileId": "116666192297935290365"
+    },
+    "ipAddress": "174.51.71.165",
+    "networkInfo": {
+      "ipAsn": [
+        33652
+      ],
+      "regionCode": "US",
+      "subdivisionCode": "US-CO"
+    },
+    "events": [
+      {
+        "type": "login",
+        "name": "logout",
+        "parameters": [
+          {
+            "name": "login_type",
+            "value": "google_password"
+          }
+        ],
+        "resourceIds": [
+          "311281040670"
+        ]
+      }
+    ],
+    "resourceDetails": [
+      {
+        "id": "311281040670",
+        "type": "USER"
+      }
+    ],
+    "_time": 1759856870.834,
+    "_data_source": "http_google_workspace_admin",
+    "cribl_breaker": [
+      "google_sdk:get_items",
+      "ndjson"
+    ]
+  },
+  {
+    "_raw": "{\n      \"kind\": \"admin#reports#activity\",\n      \"id\": {\n        \"time\": \"2025-10-07T16:45:30.572Z\",\n        \"uniqueQualifier\": \"4716907284916871276\",\n        \"applicationName\": \"login\",\n        \"customerId\": \"D03cdmbi0\"\n      },\n      \"etag\": \"\\\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/2dWlpjN3MwwJIHYsJdcgXAmBosk\\\"\",\n      \"actor\": {\n        \"email\": \"admin@acmecorp.com\",\n        \"profileId\": \"116666192297935290365\"\n      },\n      \"ipAddress\": \"2601:280:5d80:af00:b9d3:80a0:6ccb:f2ad\",\n      \"networkInfo\": {\n        \"ipAsn\": [\n          33652\n        ],\n        \"regionCode\": \"US\",\n        \"subdivisionCode\": \"US-CO\"\n      },\n      \"events\": [\n        {\n          \"type\": \"login\",\n          \"name\": \"login_success\",\n          \"parameters\": [\n            {\n              \"name\": \"login_type\",\n              \"value\": \"reauth\"\n            },\n            {\n              \"name\": \"login_challenge_method\",\n              \"multiValue\": [\n                \"password\"\n              ]\n            },\n            {\n              \"name\": \"is_suspicious\",\n              \"boolValue\": false\n            }\n          ],\n          \"resourceIds\": [\n            \"311281040670\"\n          ]\n        }\n      ],\n      \"resourceDetails\": [\n        {\n          \"id\": \"311281040670\",\n          \"type\": \"USER\"\n        }\n      ]\n    }",
+    "host": "ip-10-255-0-219",
+    "source": "https://admin.googleapis.com/admin/reports/v1/activity/users/all/applications/login",
+    "kind": "admin#reports#activity",
+    "id": {
+      "time": "2025-10-07T16:45:30.572Z",
+      "uniqueQualifier": "4716907284916871276",
+      "applicationName": "login",
+      "customerId": "D03cdmbi0"
+    },
+    "etag": "\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/2dWlpjN3MwwJIHYsJdcgXAmBosk\"",
+    "actor": {
+      "email": "admin@acmecorp.com",
+      "profileId": "116666192297935290365"
+    },
+    "ipAddress": "2601:280:5d80:af00:b9d3:80a0:6ccb:f2ad",
+    "networkInfo": {
+      "ipAsn": [
+        33652
+      ],
+      "regionCode": "US",
+      "subdivisionCode": "US-CO"
+    },
+    "events": [
+      {
+        "type": "login",
+        "name": "login_success",
+        "parameters": [
+          {
+            "name": "login_type",
+            "value": "reauth"
+          },
+          {
+            "name": "login_challenge_method",
+            "multiValue": [
+              "password"
+            ]
+          },
+          {
+            "name": "is_suspicious",
+            "boolValue": false
+          }
+        ],
+        "resourceIds": [
+          "311281040670"
+        ]
+      }
+    ],
+    "resourceDetails": [
+      {
+        "id": "311281040670",
+        "type": "USER"
+      }
+    ],
+    "_time": 1759855530.572,
+    "_data_source": "http_google_workspace_admin",
+    "cribl_breaker": [
+      "google_sdk:get_items",
+      "ndjson"
+    ]
+  },
+  {
+    "_raw": "{\n      \"kind\": \"admin#reports#activity\",\n      \"id\": {\n        \"time\": \"2025-10-07T16:23:13.621Z\",\n        \"uniqueQualifier\": \"-1710733018150190826\",\n        \"applicationName\": \"login\",\n        \"customerId\": \"D03cdmbi0\"\n      },\n      \"etag\": \"\\\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/wNDpXMp55jBFWgMHzofrqr7OVXg\\\"\",\n      \"actor\": {\n        \"email\": \"user@acmecorp.com\",\n        \"profileId\": \"117329556664445035546\"\n      },\n      \"ipAddress\": \"69.122.43.179\",\n      \"networkInfo\": {\n        \"ipAsn\": [\n          701\n        ],\n        \"regionCode\": \"US\",\n        \"subdivisionCode\": \"US-NY\"\n      },\n      \"events\": [\n        {\n          \"type\": \"login\",\n          \"name\": \"login_success\",\n          \"parameters\": [\n            {\n              \"name\": \"login_type\",\n              \"value\": \"reauth\"\n            },\n            {\n              \"name\": \"login_challenge_method\",\n              \"multiValue\": [\n                \"password\"\n              ]\n            },\n            {\n              \"name\": \"is_suspicious\",\n              \"boolValue\": false\n            }\n          ],\n          \"resourceIds\": [\n            \"763488857609\"\n          ]\n        }\n      ],\n      \"resourceDetails\": [\n        {\n          \"id\": \"763488857609\",\n          \"type\": \"USER\"\n        }\n      ]\n    }",
+    "host": "ip-10-255-0-219",
+    "source": "https://admin.googleapis.com/admin/reports/v1/activity/users/all/applications/login",
+    "kind": "admin#reports#activity",
+    "id": {
+      "time": "2025-10-07T16:23:13.621Z",
+      "uniqueQualifier": "-1710733018150190826",
+      "applicationName": "login",
+      "customerId": "D03cdmbi0"
+    },
+    "etag": "\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/wNDpXMp55jBFWgMHzofrqr7OVXg\"",
+    "actor": {
+      "email": "user@acmecorp.com",
+      "profileId": "117329556664445035546"
+    },
+    "ipAddress": "69.122.43.179",
+    "networkInfo": {
+      "ipAsn": [
+        701
+      ],
+      "regionCode": "US",
+      "subdivisionCode": "US-NY"
+    },
+    "events": [
+      {
+        "type": "login",
+        "name": "login_success",
+        "parameters": [
+          {
+            "name": "login_type",
+            "value": "reauth"
+          },
+          {
+            "name": "login_challenge_method",
+            "multiValue": [
+              "password"
+            ]
+          },
+          {
+            "name": "is_suspicious",
+            "boolValue": false
+          }
+        ],
+        "resourceIds": [
+          "763488857609"
+        ]
+      }
+    ],
+    "resourceDetails": [
+      {
+        "id": "763488857609",
+        "type": "USER"
+      }
+    ],
+    "_time": 1759854193.621,
+    "_data_source": "http_google_workspace_admin",
+    "cribl_breaker": [
+      "google_sdk:get_items",
+      "ndjson"
+    ]
+  },
+  {
+    "_raw": "{\n      \"kind\": \"admin#reports#activity\",\n      \"id\": {\n        \"time\": \"2025-10-06T20:24:30.567Z\",\n        \"uniqueQualifier\": \"-1537213818727955452\",\n        \"applicationName\": \"login\",\n        \"customerId\": \"D03cdmbi0\"\n      },\n      \"etag\": \"\\\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/EzzXY3tPyXsmrlJ12USFOte9N6I\\\"\",\n      \"actor\": {\n        \"email\": \"user@acmecorp.com\",\n        \"profileId\": \"117329556664445035546\"\n      },\n      \"ipAddress\": \"69.122.43.179\",\n      \"networkInfo\": {\n        \"ipAsn\": [\n          701\n        ],\n        \"regionCode\": \"US\",\n        \"subdivisionCode\": \"US-NY\"\n      },\n      \"events\": [\n        {\n          \"type\": \"login\",\n          \"name\": \"login_success\",\n          \"parameters\": [\n            {\n              \"name\": \"login_type\",\n              \"value\": \"google_password\"\n            },\n            {\n              \"name\": \"login_challenge_method\",\n              \"multiValue\": [\n                \"password\"\n              ]\n            },\n            {\n              \"name\": \"is_suspicious\",\n              \"boolValue\": false\n            }\n          ],\n          \"resourceIds\": [\n            \"763488857609\"\n          ]\n        }\n      ],\n      \"resourceDetails\": [\n        {\n          \"id\": \"763488857609\",\n          \"type\": \"USER\"\n        }\n      ]\n    }",
+    "host": "ip-10-255-0-219",
+    "source": "https://admin.googleapis.com/admin/reports/v1/activity/users/all/applications/login",
+    "kind": "admin#reports#activity",
+    "id": {
+      "time": "2025-10-06T20:24:30.567Z",
+      "uniqueQualifier": "-1537213818727955452",
+      "applicationName": "login",
+      "customerId": "D03cdmbi0"
+    },
+    "etag": "\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/EzzXY3tPyXsmrlJ12USFOte9N6I\"",
+    "actor": {
+      "email": "user@acmecorp.com",
+      "profileId": "117329556664445035546"
+    },
+    "ipAddress": "69.122.43.179",
+    "networkInfo": {
+      "ipAsn": [
+        701
+      ],
+      "regionCode": "US",
+      "subdivisionCode": "US-NY"
+    },
+    "events": [
+      {
+        "type": "login",
+        "name": "login_success",
+        "parameters": [
+          {
+            "name": "login_type",
+            "value": "google_password"
+          },
+          {
+            "name": "login_challenge_method",
+            "multiValue": [
+              "password"
+            ]
+          },
+          {
+            "name": "is_suspicious",
+            "boolValue": false
+          }
+        ],
+        "resourceIds": [
+          "763488857609"
+        ]
+      }
+    ],
+    "resourceDetails": [
+      {
+        "id": "763488857609",
+        "type": "USER"
+      }
+    ],
+    "_time": 1759782270.567,
+    "_data_source": "http_google_workspace_admin",
+    "cribl_breaker": [
+      "google_sdk:get_items",
+      "ndjson"
+    ]
+  },
+  {
+    "_raw": "{\n      \"kind\": \"admin#reports#activity\",\n      \"id\": {\n        \"time\": \"2025-10-06T20:24:17.238Z\",\n        \"uniqueQualifier\": \"5158925177581618351\",\n        \"applicationName\": \"login\",\n        \"customerId\": \"D03cdmbi0\"\n      },\n      \"etag\": \"\\\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/aetKey9BMBXwLJNoZuf7-mW2Qh4\\\"\",\n      \"actor\": {\n        \"email\": \"user@acmecorp.com\",\n        \"profileId\": \"117329556664445035546\"\n      },\n      \"ipAddress\": \"69.122.43.179\",\n      \"networkInfo\": {\n        \"ipAsn\": [\n          701\n        ],\n        \"regionCode\": \"US\",\n        \"subdivisionCode\": \"US-NY\"\n      },\n      \"events\": [\n        {\n          \"type\": \"login\",\n          \"name\": \"logout\",\n          \"parameters\": [\n            {\n              \"name\": \"login_type\",\n              \"value\": \"google_password\"\n            }\n          ],\n          \"resourceIds\": [\n            \"763488857609\"\n          ]\n        }\n      ],\n      \"resourceDetails\": [\n        {\n          \"id\": \"763488857609\",\n          \"type\": \"USER\"\n        }\n      ]\n    }",
+    "host": "ip-10-255-0-219",
+    "source": "https://admin.googleapis.com/admin/reports/v1/activity/users/all/applications/login",
+    "kind": "admin#reports#activity",
+    "id": {
+      "time": "2025-10-06T20:24:17.238Z",
+      "uniqueQualifier": "5158925177581618351",
+      "applicationName": "login",
+      "customerId": "D03cdmbi0"
+    },
+    "etag": "\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/aetKey9BMBXwLJNoZuf7-mW2Qh4\"",
+    "actor": {
+      "email": "user@acmecorp.com",
+      "profileId": "117329556664445035546"
+    },
+    "ipAddress": "69.122.43.179",
+    "networkInfo": {
+      "ipAsn": [
+        701
+      ],
+      "regionCode": "US",
+      "subdivisionCode": "US-NY"
+    },
+    "events": [
+      {
+        "type": "login",
+        "name": "logout",
+        "parameters": [
+          {
+            "name": "login_type",
+            "value": "google_password"
+          }
+        ],
+        "resourceIds": [
+          "763488857609"
+        ]
+      }
+    ],
+    "resourceDetails": [
+      {
+        "id": "763488857609",
+        "type": "USER"
+      }
+    ],
+    "_time": 1759782257.238,
+    "_data_source": "http_google_workspace_admin",
+    "cribl_breaker": [
+      "google_sdk:get_items",
+      "ndjson"
+    ]
+  },
+  {
+    "_raw": "{\n      \"kind\": \"admin#reports#activity\",\n      \"id\": {\n        \"time\": \"2025-10-06T19:56:53.563Z\",\n        \"uniqueQualifier\": \"4433989976599941581\",\n        \"applicationName\": \"login\",\n        \"customerId\": \"D03cdmbi0\"\n      },\n      \"etag\": \"\\\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/ftq8yYaJvZ47wdBlggLGQvWsfUE\\\"\",\n      \"actor\": {\n        \"email\": \"admin@acmecorp.com\",\n        \"profileId\": \"116666192297935290365\"\n      },\n      \"ipAddress\": \"2601:280:5d80:af00:8822:695b:3f35:caa9\",\n      \"networkInfo\": {\n        \"ipAsn\": [\n          33652\n        ],\n        \"regionCode\": \"US\",\n        \"subdivisionCode\": \"US-CO\"\n      },\n      \"events\": [\n        {\n          \"type\": \"login\",\n          \"name\": \"login_success\",\n          \"parameters\": [\n            {\n              \"name\": \"login_type\",\n              \"value\": \"reauth\"\n            },\n            {\n              \"name\": \"login_challenge_method\",\n              \"multiValue\": [\n                \"password\"\n              ]\n            },\n            {\n              \"name\": \"is_suspicious\",\n              \"boolValue\": false\n            }\n          ],\n          \"resourceIds\": [\n            \"311281040670\"\n          ]\n        }\n      ],\n      \"resourceDetails\": [\n        {\n          \"id\": \"311281040670\",\n          \"type\": \"USER\"\n        }\n      ]\n    }",
+    "host": "ip-10-255-0-219",
+    "source": "https://admin.googleapis.com/admin/reports/v1/activity/users/all/applications/login",
+    "kind": "admin#reports#activity",
+    "id": {
+      "time": "2025-10-06T19:56:53.563Z",
+      "uniqueQualifier": "4433989976599941581",
+      "applicationName": "login",
+      "customerId": "D03cdmbi0"
+    },
+    "etag": "\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/ftq8yYaJvZ47wdBlggLGQvWsfUE\"",
+    "actor": {
+      "email": "admin@acmecorp.com",
+      "profileId": "116666192297935290365"
+    },
+    "ipAddress": "2601:280:5d80:af00:8822:695b:3f35:caa9",
+    "networkInfo": {
+      "ipAsn": [
+        33652
+      ],
+      "regionCode": "US",
+      "subdivisionCode": "US-CO"
+    },
+    "events": [
+      {
+        "type": "login",
+        "name": "login_success",
+        "parameters": [
+          {
+            "name": "login_type",
+            "value": "reauth"
+          },
+          {
+            "name": "login_challenge_method",
+            "multiValue": [
+              "password"
+            ]
+          },
+          {
+            "name": "is_suspicious",
+            "boolValue": false
+          }
+        ],
+        "resourceIds": [
+          "311281040670"
+        ]
+      }
+    ],
+    "resourceDetails": [
+      {
+        "id": "311281040670",
+        "type": "USER"
+      }
+    ],
+    "_time": 1759780613.563,
+    "_data_source": "http_google_workspace_admin",
+    "cribl_breaker": [
+      "google_sdk:get_items",
+      "ndjson"
+    ]
+  },
+  {
+    "_raw": "{\n      \"kind\": \"admin#reports#activity\",\n      \"id\": {\n        \"time\": \"2025-10-06T19:51:38.775Z\",\n        \"uniqueQualifier\": \"-3937612590117895104\",\n        \"applicationName\": \"login\",\n        \"customerId\": \"D03cdmbi0\"\n      },\n      \"etag\": \"\\\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/Psi3OwDJoyyuLH9RSNCgC5buwws\\\"\",\n      \"actor\": {\n        \"email\": \"user@acmecorp.com\",\n        \"profileId\": \"117329556664445035546\"\n      },\n      \"ipAddress\": \"69.122.43.179\",\n      \"networkInfo\": {\n        \"ipAsn\": [\n          701\n        ],\n        \"regionCode\": \"US\",\n        \"subdivisionCode\": \"US-NY\"\n      },\n      \"events\": [\n        {\n          \"type\": \"login\",\n          \"name\": \"login_success\",\n          \"parameters\": [\n            {\n              \"name\": \"login_type\",\n              \"value\": \"reauth\"\n            },\n            {\n              \"name\": \"login_challenge_method\",\n              \"multiValue\": [\n                \"none\"\n              ]\n            },\n            {\n              \"name\": \"is_suspicious\",\n              \"boolValue\": false\n            }\n          ],\n          \"resourceIds\": [\n            \"763488857609\"\n          ]\n        }\n      ],\n      \"resourceDetails\": [\n        {\n          \"id\": \"763488857609\",\n          \"type\": \"USER\"\n        }\n      ]\n    }",
+    "host": "ip-10-255-0-219",
+    "source": "https://admin.googleapis.com/admin/reports/v1/activity/users/all/applications/login",
+    "kind": "admin#reports#activity",
+    "id": {
+      "time": "2025-10-06T19:51:38.775Z",
+      "uniqueQualifier": "-3937612590117895104",
+      "applicationName": "login",
+      "customerId": "D03cdmbi0"
+    },
+    "etag": "\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/Psi3OwDJoyyuLH9RSNCgC5buwws\"",
+    "actor": {
+      "email": "user@acmecorp.com",
+      "profileId": "117329556664445035546"
+    },
+    "ipAddress": "69.122.43.179",
+    "networkInfo": {
+      "ipAsn": [
+        701
+      ],
+      "regionCode": "US",
+      "subdivisionCode": "US-NY"
+    },
+    "events": [
+      {
+        "type": "login",
+        "name": "login_success",
+        "parameters": [
+          {
+            "name": "login_type",
+            "value": "reauth"
+          },
+          {
+            "name": "login_challenge_method",
+            "multiValue": [
+              "none"
+            ]
+          },
+          {
+            "name": "is_suspicious",
+            "boolValue": false
+          }
+        ],
+        "resourceIds": [
+          "763488857609"
+        ]
+      }
+    ],
+    "resourceDetails": [
+      {
+        "id": "763488857609",
+        "type": "USER"
+      }
+    ],
+    "_time": 1759780298.775,
+    "_data_source": "http_google_workspace_admin",
+    "cribl_breaker": [
+      "google_sdk:get_items",
+      "ndjson"
+    ]
+  },
+  {
+    "_raw": "{\n      \"kind\": \"admin#reports#activity\",\n      \"id\": {\n        \"time\": \"2025-10-06T19:36:41.214Z\",\n        \"uniqueQualifier\": \"-3401345054623301956\",\n        \"applicationName\": \"login\",\n        \"customerId\": \"D03cdmbi0\"\n      },\n      \"etag\": \"\\\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/1Ihsrq1kIZt8DVZdpd4xvzbU4rQ\\\"\",\n      \"actor\": {\n        \"email\": \"user@acmecorp.com\",\n        \"profileId\": \"117329556664445035546\"\n      },\n      \"ipAddress\": \"69.122.43.179\",\n      \"networkInfo\": {\n        \"ipAsn\": [\n          701\n        ],\n        \"regionCode\": \"US\",\n        \"subdivisionCode\": \"US-NY\"\n      },\n      \"events\": [\n        {\n          \"type\": \"login\",\n          \"name\": \"login_success\",\n          \"parameters\": [\n            {\n              \"name\": \"login_type\",\n              \"value\": \"reauth\"\n            },\n            {\n              \"name\": \"login_challenge_method\",\n              \"multiValue\": [\n                \"none\"\n              ]\n            },\n            {\n              \"name\": \"is_suspicious\",\n              \"boolValue\": false\n            }\n          ],\n          \"resourceIds\": [\n            \"763488857609\"\n          ]\n        }\n      ],\n      \"resourceDetails\": [\n        {\n          \"id\": \"763488857609\",\n          \"type\": \"USER\"\n        }\n      ]\n    }",
+    "host": "ip-10-255-0-219",
+    "source": "https://admin.googleapis.com/admin/reports/v1/activity/users/all/applications/login",
+    "kind": "admin#reports#activity",
+    "id": {
+      "time": "2025-10-06T19:36:41.214Z",
+      "uniqueQualifier": "-3401345054623301956",
+      "applicationName": "login",
+      "customerId": "D03cdmbi0"
+    },
+    "etag": "\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/1Ihsrq1kIZt8DVZdpd4xvzbU4rQ\"",
+    "actor": {
+      "email": "user@acmecorp.com",
+      "profileId": "117329556664445035546"
+    },
+    "ipAddress": "69.122.43.179",
+    "networkInfo": {
+      "ipAsn": [
+        701
+      ],
+      "regionCode": "US",
+      "subdivisionCode": "US-NY"
+    },
+    "events": [
+      {
+        "type": "login",
+        "name": "login_success",
+        "parameters": [
+          {
+            "name": "login_type",
+            "value": "reauth"
+          },
+          {
+            "name": "login_challenge_method",
+            "multiValue": [
+              "none"
+            ]
+          },
+          {
+            "name": "is_suspicious",
+            "boolValue": false
+          }
+        ],
+        "resourceIds": [
+          "763488857609"
+        ]
+      }
+    ],
+    "resourceDetails": [
+      {
+        "id": "763488857609",
+        "type": "USER"
+      }
+    ],
+    "_time": 1759779401.214,
+    "_data_source": "http_google_workspace_admin",
+    "cribl_breaker": [
+      "google_sdk:get_items",
+      "ndjson"
+    ]
+  },
+  {
+    "_raw": "{\n      \"kind\": \"admin#reports#activity\",\n      \"id\": {\n        \"time\": \"2025-10-06T19:35:46.957Z\",\n        \"uniqueQualifier\": \"6111188781949124944\",\n        \"applicationName\": \"login\",\n        \"customerId\": \"D03cdmbi0\"\n      },\n      \"etag\": \"\\\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/MHPPwlDt_7_tZcBdSW-OXKd87Ew\\\"\",\n      \"actor\": {\n        \"email\": \"user@acmecorp.com\",\n        \"profileId\": \"117329556664445035546\"\n      },\n      \"ipAddress\": \"69.122.43.179\",\n      \"networkInfo\": {\n        \"ipAsn\": [\n          701\n        ],\n        \"regionCode\": \"US\",\n        \"subdivisionCode\": \"US-NY\"\n      },\n      \"events\": [\n        {\n          \"type\": \"login\",\n          \"name\": \"login_success\",\n          \"parameters\": [\n            {\n              \"name\": \"login_type\",\n              \"value\": \"reauth\"\n            },\n            {\n              \"name\": \"login_challenge_method\",\n              \"multiValue\": [\n                \"password\"\n              ]\n            },\n            {\n              \"name\": \"is_suspicious\",\n              \"boolValue\": false\n            }\n          ],\n          \"resourceIds\": [\n            \"763488857609\"\n          ]\n        }\n      ],\n      \"resourceDetails\": [\n        {\n          \"id\": \"763488857609\",\n          \"type\": \"USER\"\n        }\n      ]\n    }",
+    "host": "ip-10-255-0-219",
+    "source": "https://admin.googleapis.com/admin/reports/v1/activity/users/all/applications/login",
+    "kind": "admin#reports#activity",
+    "id": {
+      "time": "2025-10-06T19:35:46.957Z",
+      "uniqueQualifier": "6111188781949124944",
+      "applicationName": "login",
+      "customerId": "D03cdmbi0"
+    },
+    "etag": "\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/MHPPwlDt_7_tZcBdSW-OXKd87Ew\"",
+    "actor": {
+      "email": "user@acmecorp.com",
+      "profileId": "117329556664445035546"
+    },
+    "ipAddress": "69.122.43.179",
+    "networkInfo": {
+      "ipAsn": [
+        701
+      ],
+      "regionCode": "US",
+      "subdivisionCode": "US-NY"
+    },
+    "events": [
+      {
+        "type": "login",
+        "name": "login_success",
+        "parameters": [
+          {
+            "name": "login_type",
+            "value": "reauth"
+          },
+          {
+            "name": "login_challenge_method",
+            "multiValue": [
+              "password"
+            ]
+          },
+          {
+            "name": "is_suspicious",
+            "boolValue": false
+          }
+        ],
+        "resourceIds": [
+          "763488857609"
+        ]
+      }
+    ],
+    "resourceDetails": [
+      {
+        "id": "763488857609",
+        "type": "USER"
+      }
+    ],
+    "_time": 1759779346.957,
+    "_data_source": "http_google_workspace_admin",
+    "cribl_breaker": [
+      "google_sdk:get_items",
+      "ndjson"
+    ]
+  },
+  {
+    "_raw": "{\n      \"kind\": \"admin#reports#activity\",\n      \"id\": {\n        \"time\": \"2025-10-06T18:36:55.528Z\",\n        \"uniqueQualifier\": \"4510339168152087514\",\n        \"applicationName\": \"login\",\n        \"customerId\": \"D03cdmbi0\"\n      },\n      \"etag\": \"\\\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/nvNUAkrEpyPjPD_8R8rNXKRekmM\\\"\",\n      \"actor\": {\n        \"email\": \"user@acmecorp.com\",\n        \"profileId\": \"117329556664445035546\"\n      },\n      \"ipAddress\": \"69.122.43.179\",\n      \"networkInfo\": {\n        \"ipAsn\": [\n          701\n        ],\n        \"regionCode\": \"US\",\n        \"subdivisionCode\": \"US-NY\"\n      },\n      \"events\": [\n        {\n          \"type\": \"login\",\n          \"name\": \"login_success\",\n          \"parameters\": [\n            {\n              \"name\": \"login_type\",\n              \"value\": \"reauth\"\n            },\n            {\n              \"name\": \"login_challenge_method\",\n              \"multiValue\": [\n                \"password\"\n              ]\n            },\n            {\n              \"name\": \"is_suspicious\",\n              \"boolValue\": false\n            }\n          ],\n          \"resourceIds\": [\n            \"763488857609\"\n          ]\n        }\n      ],\n      \"resourceDetails\": [\n        {\n          \"id\": \"763488857609\",\n          \"type\": \"USER\"\n        }\n      ]\n    }",
+    "host": "ip-10-255-0-219",
+    "source": "https://admin.googleapis.com/admin/reports/v1/activity/users/all/applications/login",
+    "kind": "admin#reports#activity",
+    "id": {
+      "time": "2025-10-06T18:36:55.528Z",
+      "uniqueQualifier": "4510339168152087514",
+      "applicationName": "login",
+      "customerId": "D03cdmbi0"
+    },
+    "etag": "\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/nvNUAkrEpyPjPD_8R8rNXKRekmM\"",
+    "actor": {
+      "email": "user@acmecorp.com",
+      "profileId": "117329556664445035546"
+    },
+    "ipAddress": "69.122.43.179",
+    "networkInfo": {
+      "ipAsn": [
+        701
+      ],
+      "regionCode": "US",
+      "subdivisionCode": "US-NY"
+    },
+    "events": [
+      {
+        "type": "login",
+        "name": "login_success",
+        "parameters": [
+          {
+            "name": "login_type",
+            "value": "reauth"
+          },
+          {
+            "name": "login_challenge_method",
+            "multiValue": [
+              "password"
+            ]
+          },
+          {
+            "name": "is_suspicious",
+            "boolValue": false
+          }
+        ],
+        "resourceIds": [
+          "763488857609"
+        ]
+      }
+    ],
+    "resourceDetails": [
+      {
+        "id": "763488857609",
+        "type": "USER"
+      }
+    ],
+    "_time": 1759775815.528,
+    "_data_source": "http_google_workspace_admin",
+    "cribl_breaker": [
+      "google_sdk:get_items",
+      "ndjson"
+    ]
+  },
+  {
+    "_raw": "{\n      \"kind\": \"admin#reports#activity\",\n      \"id\": {\n        \"time\": \"2025-10-06T18:34:46.564Z\",\n        \"uniqueQualifier\": \"6539972471003301325\",\n        \"applicationName\": \"login\",\n        \"customerId\": \"D03cdmbi0\"\n      },\n      \"etag\": \"\\\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/ScuDT6utGU_WQ43d8YNQZVGTHto\\\"\",\n      \"actor\": {\n        \"email\": \"user@acmecorp.com\",\n        \"profileId\": \"117329556664445035546\"\n      },\n      \"ipAddress\": \"69.122.43.179\",\n      \"networkInfo\": {\n        \"ipAsn\": [\n          701\n        ],\n        \"regionCode\": \"US\",\n        \"subdivisionCode\": \"US-NY\"\n      },\n      \"events\": [\n        {\n          \"type\": \"login\",\n          \"name\": \"login_success\",\n          \"parameters\": [\n            {\n              \"name\": \"login_type\",\n              \"value\": \"reauth\"\n            },\n            {\n              \"name\": \"login_challenge_method\",\n              \"multiValue\": [\n                \"none\"\n              ]\n            },\n            {\n              \"name\": \"is_suspicious\",\n              \"boolValue\": false\n            }\n          ],\n          \"resourceIds\": [\n            \"763488857609\"\n          ]\n        }\n      ],\n      \"resourceDetails\": [\n        {\n          \"id\": \"763488857609\",\n          \"type\": \"USER\"\n        }\n      ]\n    }",
+    "host": "ip-10-255-0-219",
+    "source": "https://admin.googleapis.com/admin/reports/v1/activity/users/all/applications/login",
+    "kind": "admin#reports#activity",
+    "id": {
+      "time": "2025-10-06T18:34:46.564Z",
+      "uniqueQualifier": "6539972471003301325",
+      "applicationName": "login",
+      "customerId": "D03cdmbi0"
+    },
+    "etag": "\"yp-tnS_tLI5vIIYYkokli0akzFI7Qz9C608j47s9LXI/ScuDT6utGU_WQ43d8YNQZVGTHto\"",
+    "actor": {
+      "email": "user@acmecorp.com",
+      "profileId": "117329556664445035546"
+    },
+    "ipAddress": "69.122.43.179",
+    "networkInfo": {
+      "ipAsn": [
+        701
+      ],
+      "regionCode": "US",
+      "subdivisionCode": "US-NY"
+    },
+    "events": [
+      {
+        "type": "login",
+        "name": "login_success",
+        "parameters": [
+          {
+            "name": "login_type",
+            "value": "reauth"
+          },
+          {
+            "name": "login_challenge_method",
+            "multiValue": [
+              "none"
+            ]
+          },
+          {
+            "name": "is_suspicious",
+            "boolValue": false
+          }
+        ],
+        "resourceIds": [
+          "763488857609"
+        ]
+      }
+    ],
+    "resourceDetails": [
+      {
+        "id": "763488857609",
+        "type": "USER"
+      }
+    ],
+    "_time": 1759775686.564,
+    "_data_source": "http_google_workspace_admin",
+    "cribl_breaker": [
+      "google_sdk:get_items",
+      "ndjson"
+    ]
+  }
+]

@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "key": "ivanti_https_request",
+  "sourcetype": "ivanti_https_request",
+  "events": [
+    "2024-01-15 03:22:11 ivanti-vpn01 httpd[14522]: [203.0.113.45] \"GET /dana-na/auth/url_default/welcome.cgi HTTP/1.1\" 200 4521 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64)\" 0.042s user=jsmith realm=Users role=Employee-Role",
+    "2024-01-15 03:24:47 ivanti-vpn02 httpd[14890]: [10.20.30.41] \"POST /dana-na/auth/login.cgi HTTP/1.1\" 401 312 \"-\" \"Mozilla/5.0 (X11; Linux x86_64)\" 0.011s user=admin realm=Admin-Users role=- reason=\"invalid_credentials\"",
+    "2024-01-15 03:29:03 ivanti-vpn01 httpd[14522]: [198.51.100.77] \"GET /../../../../etc/passwd HTTP/1.1\" 403 128 \"-\" \"curl/7.68.0\" 0.003s user=- realm=- role=- reason=\"path_traversal_blocked\"",
+    "2024-01-15 04:01:55 ivanti-vpn03 httpd[15012]: [172.16.5.9] \"GET /dana/home/index.cgi HTTP/1.1\" 200 8842 \"https://ivanti-vpn03/dana-na/auth/url_default/welcome.cgi\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)\" 0.087s user=kwatson realm=Users role=Employee-Role",
+    "2024-01-15 04:15:32 ivanti-vpn02 httpd[14890]: [192.168.1.55] \"POST /dana-na/auth/url_admin/login.cgi HTTP/1.1\" 200 2103 \"-\" \"Mozilla/5.0 (Windows NT 6.1)\" 0.019s user=svc_backup realm=Admin-Users role=SysAdmin-Role",
+    "2024-01-15 04:47:09 ivanti-vpn01 httpd[14523]: [45.33.32.156] \"GET /dana-na/auth/url_default/welcome.cgi?SAMLRequest=%3D%3D%3D%3D HTTP/1.1\" 500 0 \"-\" \"python-requests/2.28.1\" 0.502s user=- realm=- role=- reason=\"malformed_saml_assertion\"",
+    "2024-01-15 05:02:44 ivanti-vpn03 httpd[15013]: [2001:db8::4f2a] \"GET /dana/fb/smb/wnf.cgi?url=\\\\\\\\10.0.0.5\\\\share HTTP/1.1\" 200 1204 \"-\" \"Mozilla/5.0 (Windows NT 10.0)\" 0.033s user=mgarcia realm=Users role=Employee-Role",
+    "2024-01-15 05:19:38 ivanti-vpn02 httpd[14891]: [203.0.113.88] \"POST /dana-na/auth/login.cgi HTTP/1.1\" 401 312 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64)\" 0.014s user=admin realm=Admin-Users role=- reason=\"invalid_credentials\"",
+    "2024-01-15 05:19:41 ivanti-vpn02 httpd[14891]: [203.0.113.88] \"POST /dana-na/auth/login.cgi HTTP/1.1\" 401 312 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64)\" 0.013s user=admin realm=Admin-Users role=- reason=\"invalid_credentials\"",
+    "2024-01-15 05:19:45 ivanti-vpn02 httpd[14891]: [203.0.113.88] \"POST /dana-na/auth/login.cgi HTTP/1.1\" 401 312 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64)\" 0.012s user=admin realm=Admin-Users role=- reason=\"invalid_credentials\"",
+    "2024-01-15 06:03:21 ivanti-vpn01 httpd[14524]: [10.20.30.42] \"GET /dana-na/css/dana.css HTTP/1.1\" 304 0 \"https://ivanti-vpn01/dana-na/auth/url_default/welcome.cgi\" \"Mozilla/5.0 (iPhone; CPU iPhone OS 16_5)\" 0.006s user=tlee realm=Users role=Employee-Role",
+    "2024-01-15 06:44:12 ivanti-vpn03 httpd[15014]: [185.220.101.33] \"GET /dana-na/auth/url_default/welcome.cgi?p=%3Cscript%3Ealert(1)%3C%2Fscript%3E HTTP/1.1\" 403 156 \"-\" \"Mozilla/5.0 (compatible; Baiduspider/2.0)\" 0.004s user=- realm=- role=- reason=\"xss_attempt_blocked\"",
+    "2024-01-15 07:12:59 ivanti-vpn02 httpd[14892]: [172.16.8.201] \"PUT /dana-admin/config/upload.cgi HTTP/1.1\" 200 15728640 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64)\" 4.821s user=netadmin realm=Admin-Users role=SysAdmin-Role bytes_in=15728640",
+    "2024-01-15 07:33:04 ivanti-vpn01 httpd[14525]: [10.20.30.43] \"GET /dana-na/auth/url_default/welcome.cgi HTTP/1.1\" 200 4521 \"-\" \"Mozilla/5.0 (Android 13; Mobile)\" 0.041s user=rjohnson realm=Users role=Contractor-Role",
+    "2024-01-15 08:05:17 ivanti-vpn03 httpd[15015]: [8.8.8.8] \"GET / HTTP/1.1\" 400 0 \"-\" \"-\" 0.001s user=- realm=- role=- reason=\"malformed_request_no_host_header\"",
+    "2024-01-15 08:41:29 ivanti-vpn02 httpd[14893]: [192.168.50.12] \"GET /dana-na/auth/url_default/logout.cgi HTTP/1.1\" 200 892 \"https://ivanti-vpn02/dana/home/index.cgi\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64)\" 0.019s user=jsmith realm=Users role=Employee-Role",
+    "2024-01-15 09:18:55 ivanti-vpn01 httpd[14526]: [91.108.4.211] \"GET /dana-na/auth/url_default/welcome.cgi?cmd=cat%20%2Fetc%2Fshadow HTTP/1.1\" 403 143 \"-\" \"Mozilla/5.0 (compatible)\" 0.005s user=- realm=- role=- reason=\"command_injection_blocked\"",
+    "2024-01-15 09:47:03 ivanti-vpn03 httpd[15016]: [10.20.30.44] \"GET /dana/meeting/list.cgi HTTP/1.1\" 200 3320 \"https://ivanti-vpn03/dana/home/index.cgi\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)\" 0.028s user=kwatson realm=Users role=Employee-Role",
+    "2024-01-15 10:12:38 ivanti-vpn02 httpd[14894]: [203.0.113.99] \"POST /dana-na/auth/url_admin/login.cgi HTTP/1.1\" 200 2091 \"-\" \"curl/8.1.2\" 0.022s user=svc_deploy realm=Admin-Users role=SysAdmin-Role",
+    "2024-01-15 10:55:47 ivanti-vpn01 httpd[14527]: [45.142.212.61] \"GET /dana-na/nc/nc_setup.cgi?os=win HTTP/1.1\" 200 41582 \"-\" \"Ivanti Secure Access Client/22.6.1\" 1.203s user=dpatel realm=Users role=Employee-Role bytes_out=41582"
+  ],
+  "fingerprint": "8e4e6ae9-4583",
+  "verification": {
+    "verdict": "pass",
+    "method": "structure",
+    "eventsParsed": 20,
+    "eventsChecked": 20,
+    "fields": [
+      "bytes_in",
+      "bytes_out",
+      "realm",
+      "reason",
+      "role",
+      "user"
+    ],
+    "reasons": [
+      "no parser for ivanti_https_request; the events are well-formed kvp with 6 distinct keys"
+    ],
+    "offendingEvents": [],
+    "keyEcho": null
+  },
+  "provenance": {
+    "model": "us.anthropic.claude-sonnet-5",
+    "buildNumber": 528,
+    "generatedAt": "2026-08-18T06:39:23.816Z",
+    "grounding": "KNOWN FACTS ABOUT THIS SOURCE (from sourcetype recognition — match these exactly):\n- Product: Web Server HTTPS request log\n- Log family: web"
+  }
+}

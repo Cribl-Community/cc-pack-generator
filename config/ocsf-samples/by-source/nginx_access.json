@@ -1,0 +1,101 @@
+{
+  "key": "nginx_access",
+  "sourcetype": "nginx_access",
+  "classUid": 4002,
+  "destFormat": "ocsf#web_proxy",
+  "source": "generic",
+  "vendorNames": [
+    "nginx access"
+  ],
+  "provenance": {
+    "samplePack": "vendor-samples",
+    "sampleName": "nginx_access_vendor_sample",
+    "tier": "reference",
+    "sampleEvents": 14,
+    "emulated": "golden OCSF pipeline, offline emulation of scripts/build-source-ocsf-samples.mjs",
+    "rejected": []
+  },
+  "events": [
+    {
+      "src_endpoint": {
+        "ip": "67.43.156.13"
+      },
+      "http_request": {
+        "url": "/"
+      },
+      "http_response": {
+        "code": 200
+      },
+      "traffic": {
+        "bytes_out": 612
+      },
+      "metadata": {
+        "product": {
+          "name": "Security",
+          "vendor_name": "nginx access"
+        },
+        "version": "1.9.0"
+      },
+      "class_uid": 4002,
+      "category_uid": 4,
+      "activity_id": 1,
+      "type_uid": 400201,
+      "severity_id": 1,
+      "time": 1477399773000
+    },
+    {
+      "src_endpoint": {
+        "ip": "67.43.156.13"
+      },
+      "http_request": {
+        "url": "/favicon.ico"
+      },
+      "http_response": {
+        "code": 404
+      },
+      "traffic": {
+        "bytes_out": 571
+      },
+      "metadata": {
+        "product": {
+          "name": "Security",
+          "vendor_name": "nginx access"
+        },
+        "version": "1.9.0"
+      },
+      "class_uid": 4002,
+      "category_uid": 4,
+      "activity_id": 2,
+      "type_uid": 400202,
+      "severity_id": 1,
+      "time": 1477399774000
+    },
+    {
+      "src_endpoint": {
+        "ip": "67.43.156.13"
+      },
+      "http_request": {
+        "url": "/adsasd"
+      },
+      "http_response": {
+        "code": 404
+      },
+      "traffic": {
+        "bytes_out": 571
+      },
+      "metadata": {
+        "product": {
+          "name": "Security",
+          "vendor_name": "nginx access"
+        },
+        "version": "1.9.0"
+      },
+      "class_uid": 4002,
+      "category_uid": 4,
+      "activity_id": 2,
+      "type_uid": 400202,
+      "severity_id": 1,
+      "time": 1477399844000
+    }
+  ]
+}

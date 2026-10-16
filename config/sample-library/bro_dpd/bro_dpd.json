@@ -1,0 +1,122 @@
+[
+  {
+    "_raw": "#separator \\x09",
+    "_time": 1521911721.155638,
+    "sourcetype": "bro_dpd",
+    "source": "/opt/zeek/logs/current/dpd.log"
+  },
+  {
+    "_raw": "#set_separator\t,",
+    "_time": 1521911721.155638,
+    "sourcetype": "bro_dpd",
+    "source": "/opt/zeek/logs/current/dpd.log"
+  },
+  {
+    "_raw": "#empty_field\t(empty)",
+    "_time": 1521911721.155638,
+    "sourcetype": "bro_dpd",
+    "source": "/opt/zeek/logs/current/dpd.log"
+  },
+  {
+    "_raw": "#unset_field\t-",
+    "_time": 1521911721.155638,
+    "sourcetype": "bro_dpd",
+    "source": "/opt/zeek/logs/current/dpd.log"
+  },
+  {
+    "_raw": "#path\tdpd",
+    "_time": 1521911721.155638,
+    "sourcetype": "bro_dpd",
+    "source": "/opt/zeek/logs/current/dpd.log"
+  },
+  {
+    "_raw": "#open\t2024-04-12-19-29-13",
+    "_time": 1521911721.155638,
+    "sourcetype": "bro_dpd",
+    "source": "/opt/zeek/logs/current/dpd.log"
+  },
+  {
+    "_raw": "#fields\tts\tuid\tid.orig_h\tid.orig_p\tid.resp_h\tid.resp_p\tproto\tanalyzer\tfailure_reason",
+    "_time": 1521911721.155638,
+    "sourcetype": "bro_dpd",
+    "source": "/opt/zeek/logs/current/dpd.log"
+  },
+  {
+    "_raw": "#types\ttime\tstring\taddr\tport\taddr\tport\tenum\tstring\tstring",
+    "_time": 1521911721.155638,
+    "sourcetype": "bro_dpd",
+    "source": "/opt/zeek/logs/current/dpd.log"
+  },
+  {
+    "_raw": "1521911721.155638\tC8pPAS1MvRUZRkBO18\t10.164.94.120\t36171\t10.47.8.218\t80\ttcp\tHTTP\tnot a http request line",
+    "_time": 1521911721.155638,
+    "sourcetype": "bro_dpd",
+    "source": "/opt/zeek/logs/current/dpd.log"
+  },
+  {
+    "_raw": "1521911722.776251\tCXbBd13BPVmJCp3PYf\t10.164.94.120\t35929\t10.47.3.142\t8080\ttcp\tSSL\tInvalid version late in TLS connection. Packet reported version: 21588",
+    "_time": 1521911722.776251,
+    "sourcetype": "bro_dpd",
+    "source": "/opt/zeek/logs/current/dpd.log"
+  },
+  {
+    "_raw": "1521911724.408071\tCJIH3SXBY7lZ1MnPd\t10.164.94.120\t34477\t10.47.8.200\t80\ttcp\tHTTP\tnot a http reply line",
+    "_time": 1521911724.408071,
+    "sourcetype": "bro_dpd",
+    "source": "/opt/zeek/logs/current/dpd.log"
+  },
+  {
+    "_raw": "1521911737.136036\tCrLUSG1DNyI2cq8ySl\t10.164.94.120\t36887\t10.47.3.200\t8000\ttcp\tHTTP\tnot a http request line",
+    "_time": 1521911737.136036,
+    "sourcetype": "bro_dpd",
+    "source": "/opt/zeek/logs/current/dpd.log"
+  },
+  {
+    "_raw": "1521911747.115968\tC0gYc04h3xhzgbAYE9\t10.164.94.120\t45969\t10.47.3.155\t2869\ttcp\tHTTP\tnot a http request line",
+    "_time": 1521911747.115968,
+    "sourcetype": "bro_dpd",
+    "source": "/opt/zeek/logs/current/dpd.log"
+  },
+  {
+    "_raw": "1521911748.663008\tCQQeZY1vuMMBKL2Xeg\t10.164.94.120\t44645\t10.47.3.218\t515\ttcp\tHTTP\tnot a http reply line",
+    "_time": 1521911748.663008,
+    "sourcetype": "bro_dpd",
+    "source": "/opt/zeek/logs/current/dpd.log"
+  },
+  {
+    "_raw": "1521911774.193266\tC02oGuFe0jadmU9Za\t10.164.94.120\t38451\t10.47.3.142\t515\ttcp\tXMPP\tBinpac exception: binpac exception: string mismatch at /usr/src/packages/BUILD/src/analyzer/protocol/xmpp/xmpp-protocol.pac:12: \\x0aexpected pattern: \"<\"\\x0aactual data: \"\\x01\"",
+    "_time": 1521911774.193266,
+    "sourcetype": "bro_dpd",
+    "source": "/opt/zeek/logs/current/dpd.log"
+  },
+  {
+    "_raw": "1521911878.119950\tC8VqqP16TQIXOieTVl\t10.164.94.120\t32777\t10.47.21.80\t47001\ttcp\tHTTP\tnot a http request line",
+    "_time": 1521911878.11995,
+    "sourcetype": "bro_dpd",
+    "source": "/opt/zeek/logs/current/dpd.log"
+  },
+  {
+    "_raw": "1521911890.612380\tCEj0sS2biDEHPNTnQ4\t10.128.0.241\t57304\t10.47.1.208\t139\ttcp\tKRB_TCP\tBinpac exception: binpac exception: out_of_bound: ASN1EncodingMeta:len: 2 > 0",
+    "_time": 1521911890.61238,
+    "sourcetype": "bro_dpd",
+    "source": "/opt/zeek/logs/current/dpd.log"
+  },
+  {
+    "_raw": "1521912064.890291\tCzXKB740Akg6da2Fd\t10.164.94.120\t37547\t10.47.8.151\t10243\ttcp\tHTTP\tnot a http request line",
+    "_time": 1521912064.890291,
+    "sourcetype": "bro_dpd",
+    "source": "/opt/zeek/logs/current/dpd.log"
+  },
+  {
+    "_raw": "1521912473.422827\tCsHoJfsCc2UDhjU0l\t10.128.0.207\t36058\t10.47.23.25\t139\ttcp\tHTTP\tnot a http reply line",
+    "_time": 1521912473.422827,
+    "sourcetype": "bro_dpd",
+    "source": "/opt/zeek/logs/current/dpd.log"
+  },
+  {
+    "_raw": "1521912835.962220\tCI3MHp2LOcbdibtbDa\t10.128.0.19\t60407\t10.47.26.55\t80\ttcp\tSSL\tInvalid version late in TLS connection. Packet reported version: 8516",
+    "_time": 1521912835.96222,
+    "sourcetype": "bro_dpd",
+    "source": "/opt/zeek/logs/current/dpd.log"
+  }
+]

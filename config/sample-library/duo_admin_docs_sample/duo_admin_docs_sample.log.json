@@ -1,0 +1,12 @@
+[
+  {
+    "_raw": "{\n      \"action\": \"user_update\",\n      \"description\": \"{\\\"notes\\\": \\\"Joe asked for their nickname to be displayed instead of Joseph.\\\", \\\"realname\\\": \\\"Joe Smith\\\"}\",\n      \"isotimestamp\": \"2020-01-24T15:09:42+00:00\",\n      \"object\": \"jsmith\",\n      \"timestamp\": 1579878582,\n      \"username\": \"admin\"\n    }",
+    "_time": 1759170646.194,
+    "cribl_breaker": "Duo JSON Logs"
+  },
+  {
+    "_raw": "{\n      \"action\": \"admin_login_error\",\n      \"description\": \"{\\\"ip_address\\\": \\\"10.1.23.116\\\", \\\"error\\\": \\\"SAML login is disabled\\\", \\\"email\\\": \\\"narroway@example.com\\\"}\",\n      \"isotimestamp\": \"2020-01-23T16:18:58+00:00\",\n      \"object\": null,\n      \"timestamp\": 1579796338,\n      \"username\": \"\"\n    }",
+    "_time": 1759170646.194,
+    "cribl_breaker": "Duo JSON Logs"
+  }
+]

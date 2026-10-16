@@ -1,0 +1,15 @@
+[
+  {
+    "_raw": "Feb 28 08:30:27 xxx.xx.x.xx 1442 <14>1 2021-02-28T08:30:27.339Z stream-logfwd20-587718190-02280003-lvod-harness-mjdh logforwarder - panwlogs - CEF:0|Palo Alto Networks|LF|2.0|SYSTEM|wildfire-appliance|1|ProfileToken=xxxxx dtz=UTC rt=Feb 28 2021 08:30:26 deviceExternalId=xxxxxxxxxxxxx PanOSConfigVersion=0.0 PanOSAgentContentVersion= PanOSAgentDataCollectionStatus= PanOSAgentID= PanOSAgentIsolationStatus= PanOSAgentStatus= PanOSAgentTimeZoneOffset= PanOSAgentVersion= PanOSEndpointCPUArchitecture= PanOSEndpointDeviceDomain= PanOSEndpointDeviceName= PanOSEndpointIPaddress= PanOSEndpointOSType= PanOSEndpointOSVersion= PanOSEndpointUserDomain= PanOSEndpointUserName=xxxxx PanOSEndpointUserUUID= PanOSIsDuplicateLog=false PanOSIsPrismaNetwork=false PanOSIsPrismaUsers=false cat= PanOSLogExported=false PanOSLogForwarded=true PanOSLogSource=firewall PanOSLogSourceTimeZoneOffset= PanOSSeverity=Informational PanOSTenantID=xxxxxxxxxxxxx PanOSVDIEndpoint= PanOSVirtualSystemID=0 PanOSEventTime=Feb 28 2021 08:30:17 cs3= cs3Label=VirtualLocation act= fname= msg=gRPC connection to f0d7d88a-0391-4899-a2e4-0938c4309e17.fei.lcaas-qa.us.paloaltonetworks.com:443 is established, xxx.xx.x.xx:48558 -> xxx.xx.x.xx:443 time: 2021-02-28 00:30:17 externalId=xxxxxxxxxxxxx PanOSDGHierarchyLevel1=0 PanOSDGHierarchyLevel2=0 PanOSDGHierarchyLevel3=0 PanOSDGHierarchyLevel4=0 PanOSVirtualSystemName= dvchost=xxxxx PanOSDeviceGroup= PanOSTemplate= PanOSTimeGeneratedHighResolution=Feb 28 2021 08:30:17",
+    "_time": 1626825542,
+    "cribl_breaker": [
+      "Break on newlines",
+      "noBreak1MB"
+    ],
+    "severity": 6,
+    "facility": 1,
+    "host": "firewall",
+    "severityName": "info",
+    "facilityName": "user"
+  }
+]

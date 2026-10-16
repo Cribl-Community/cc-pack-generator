@@ -1,0 +1,7 @@
+[
+  {
+    "_raw": "{\n      \"eventDate\": \"2023-05-19T07:05:24.585621Z\",\n      \"eventType\": \"events.cxiam.user.account.login\",\n      \"auditResource\": \"user.account\",\n      \"actionType\": \"login\",\n      \"actionUserId\": \"7e8d27e3-fa5b-46b2-a5d2-0af68d2a3b3e\",\n      \"ipAddress\": \"\",\n      \"data\": {\n        \"id\": \"7e8d27e3-fa5b-46b2-a5d2-0af68d2a3b3e\",\n        \"status\": \"OK\",\n        \"username\": \"eli\"\n      }\n    }",
+    "_time": 1684479924.585,
+    "cribl_breaker": "Break on newlines"
+  }
+]

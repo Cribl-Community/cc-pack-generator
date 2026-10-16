@@ -1,0 +1,15 @@
+ftnt_level,LogSeverity,LogSeverityLabel
+emergency,10,Very-High
+alert,9,Very-High
+critical,9,Very-High
+error,7,High
+warning,5,Medium
+notice,3,Low
+notification,3,Low
+information,1,Low
+informational,1,Low
+debug,0,Unknown
+high,8,High
+medium,5,Medium
+low,2,Low
+elevated,7,High

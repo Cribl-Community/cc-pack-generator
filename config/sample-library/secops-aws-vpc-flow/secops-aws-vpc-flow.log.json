@@ -1,0 +1,122 @@
+[
+  {
+    "_raw": "2 602320997947 eni-0858304751c757b2e 10.0.0.138 10.0.0.236 443 443 6 21 5355 1756923522 1756923538 ACCEPT OK",
+    "source": "s3://cribl-search-example/data/vpcflowlogs/2025/09/03/18/CriblOut-63j5jI.2.raw.gz",
+    "_time": 1756923522,
+    "cribl_breaker": "ndjson"
+  },
+  {
+    "_raw": "2 602320997947 eni-4kel3jir8abfnar2k 10.0.0.138 10.8.20.240 5554 80 6 46 12006 1756923511 1756923582 ACCEPT OK",
+    "source": "s3://cribl-search-example/data/vpcflowlogs/2025/09/03/18/CriblOut-0Jk68d.2.raw.gz",
+    "_time": 1756923511,
+    "cribl_breaker": "ndjson"
+  },
+  {
+    "_raw": "2 602320997947 eni-aay7nep03kqbijah0 172.16.2.201 54.239.152.25 5900 4200 6 28 3192 1756923466 1756923471 ACCEPT OK",
+    "source": "s3://cribl-search-example/data/vpcflowlogs/2025/09/03/18/CriblOut-63j5jI.2.raw.gz",
+    "_time": 1756923466,
+    "cribl_breaker": "ndjson"
+  },
+  {
+    "_raw": "2 602320997947 eni-0858304751c757b2e 52.216.176.35 10.8.42.121 1900 3389 6 27 22518 1756923537 1756923575 ACCEPT OK",
+    "source": "s3://cribl-search-example/data/vpcflowlogs/2025/09/03/18/CriblOut-0Jk68d.2.raw.gz",
+    "_time": 1756923537,
+    "cribl_breaker": "ndjson"
+  },
+  {
+    "_raw": "2 602320997947 eni-0858304751c757b2e 172.16.1.111 10.8.42.121 2222 443 6 8 3408 1756923469 1756923484 ACCEPT OK",
+    "source": "s3://cribl-search-example/data/vpcflowlogs/2025/09/03/18/CriblOut-63j5jI.2.raw.gz",
+    "_time": 1756923469,
+    "cribl_breaker": "ndjson"
+  },
+  {
+    "_raw": "2 602320997947 eni-5nxjlyb0xm0o96kgs 10.8.17.54 10.8.20.240 3127 4200 6 56 77448 1756923480 1756923530 ACCEPT OK",
+    "source": "s3://cribl-search-example/data/vpcflowlogs/2025/09/03/18/CriblOut-63j5jI.2.raw.gz",
+    "_time": 1756923480,
+    "cribl_breaker": "ndjson"
+  },
+  {
+    "_raw": "2 602320997947 eni-0b2fc5457066bc156 10.8.31.55 10.8.20.240 3222 40822 6 40 34120 1756923451 1756923457 ACCEPT OK",
+    "source": "s3://cribl-search-example/data/vpcflowlogs/2025/09/03/18/CriblOut-63j5jI.2.raw.gz",
+    "_time": 1756923451,
+    "cribl_breaker": "ndjson"
+  },
+  {
+    "_raw": "2 602320997947 eni-0b2fc5457066bc156 172.16.2.242 54.239.152.25 4545 50000 6 14 19768 1756923511 1756923522 ACCEPT OK",
+    "source": "s3://cribl-search-example/data/vpcflowlogs/2025/09/03/18/CriblOut-63j5jI.2.raw.gz",
+    "_time": 1756923511,
+    "cribl_breaker": "ndjson"
+  },
+  {
+    "_raw": "2 602320997947 eni-5nxjlyb0xm0o96kgs 172.16.2.201 10.0.0.17 6000 443 6 49 58457 1756923519 1756923555 ACCEPT OK",
+    "source": "s3://cribl-search-example/data/vpcflowlogs/2025/09/03/18/CriblOut-63j5jI.2.raw.gz",
+    "_time": 1756923519,
+    "cribl_breaker": "ndjson"
+  },
+  {
+    "_raw": "2 602320997947 eni-0858304751c757b2e 51.15.82.93 54.239.152.25 2002 53 6 12 10692 1756923516 1756923545 ACCEPT OK",
+    "source": "s3://cribl-search-example/data/vpcflowlogs/2025/09/03/18/CriblOut-63j5jI.2.raw.gz",
+    "_time": 1756923516,
+    "cribl_breaker": "ndjson"
+  },
+  {
+    "_raw": "2 602320997947 eni-aay7nep03kqbijah0 172.16.2.170 10.8.28.3 5004 3389 6 43 23951 1756923484 1756923501 ACCEPT OK",
+    "source": "s3://cribl-search-example/data/vpcflowlogs/2025/09/03/18/CriblOut-63j5jI.2.raw.gz",
+    "_time": 1756923484,
+    "cribl_breaker": "ndjson"
+  },
+  {
+    "_raw": "2 602320997947 eni-0858304751c757b2e 172.16.2.102 10.0.0.138 993 4200 6 48 57312 1756923523 1756923540 ACCEPT OK",
+    "source": "s3://cribl-search-example/data/vpcflowlogs/2025/09/03/18/CriblOut-63j5jI.2.raw.gz",
+    "_time": 1756923523,
+    "cribl_breaker": "ndjson"
+  },
+  {
+    "_raw": "2 602320997947 eni-0858304751c757b2e 172.16.2.199 10.0.0.33 4664 28009 6 24 33576 1756923448 1756923516 ACCEPT OK",
+    "source": "s3://cribl-search-example/data/vpcflowlogs/2025/09/03/18/CriblOut-63j5jI.2.raw.gz",
+    "_time": 1756923448,
+    "cribl_breaker": "ndjson"
+  },
+  {
+    "_raw": "2 602320997947 eni-0bf22c72ebe087ac9 172.16.2.217 10.0.0.138 443 4545 6 34 42228 1756923535 1756923550 ACCEPT OK",
+    "source": "s3://cribl-search-example/data/vpcflowlogs/2025/09/03/18/CriblOut-63j5jI.2.raw.gz",
+    "_time": 1756923535,
+    "cribl_breaker": "ndjson"
+  },
+  {
+    "_raw": "2 602320997947 eni-7vv3s9v4cng64k53i 172.16.2.102 99.84.189.121 3127 4200 6 47 45778 1756923523 1756923535 ACCEPT OK",
+    "source": "s3://cribl-search-example/data/vpcflowlogs/2025/09/03/18/CriblOut-63j5jI.2.raw.gz",
+    "_time": 1756923523,
+    "cribl_breaker": "ndjson"
+  },
+  {
+    "_raw": "2 602320997947 eni-07e5d76940fbaa5c6 172.16.2.199 10.8.28.3 1194 53 6 43 27692 1756923521 1756923527 ACCEPT OK",
+    "source": "s3://cribl-search-example/data/vpcflowlogs/2025/09/03/18/CriblOut-63j5jI.2.raw.gz",
+    "_time": 1756923521,
+    "cribl_breaker": "ndjson"
+  },
+  {
+    "_raw": "2 602320997947 eni-4kel3jir8abfnar2k 172.16.1.111 99.84.189.121 8551 38994 6 43 34486 1756923454 1756923533 ACCEPT OK",
+    "source": "s3://cribl-search-example/data/vpcflowlogs/2025/09/03/18/CriblOut-63j5jI.2.raw.gz",
+    "_time": 1756923454,
+    "cribl_breaker": "ndjson"
+  },
+  {
+    "_raw": "2 602320997947 eni-5nxjlyb0xm0o96kgs 10.8.31.55 10.8.42.121 1241 3389 6 52 26728 1756923535 1756923546 ACCEPT OK",
+    "source": "s3://cribl-search-example/data/vpcflowlogs/2025/09/03/18/CriblOut-63j5jI.2.raw.gz",
+    "_time": 1756923535,
+    "cribl_breaker": "ndjson"
+  },
+  {
+    "_raw": "2 602320997947 eni-07e5d76940fbaa5c6 10.8.17.54 10.8.28.3 1311 38994 6 44 57068 1756923454 1756923475 ACCEPT OK",
+    "source": "s3://cribl-search-example/data/vpcflowlogs/2025/09/03/18/CriblOut-63j5jI.2.raw.gz",
+    "_time": 1756923454,
+    "cribl_breaker": "ndjson"
+  },
+  {
+    "_raw": "2 602320997947 eni-5nxjlyb0xm0o96kgs 172.16.2.170 10.8.20.240 53 3389 6 44 15312 1756923516 1756923561 ACCEPT OK",
+    "source": "s3://cribl-search-example/data/vpcflowlogs/2025/09/03/18/CriblOut-63j5jI.2.raw.gz",
+    "_time": 1756923516,
+    "cribl_breaker": "ndjson"
+  }
+]

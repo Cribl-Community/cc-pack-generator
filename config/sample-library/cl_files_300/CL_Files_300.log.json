@@ -1,0 +1,855 @@
+[
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_path": "files",
+    "_system_name": "Lab-02-VM-01",
+    "_write_ts": "2023-07-20T15:34:49.170700Z",
+    "ts": "2023-07-20T15:34:49.170700Z",
+    "fuid": "FuIrZB2MNlxyjLh7G9",
+    "tx_hosts": [
+      "137.116.224.167"
+    ],
+    "rx_hosts": [
+      "192.168.0.54"
+    ],
+    "conn_uids": [
+      "C7bDn93NLgpoNhO0i1"
+    ],
+    "source": "SSL",
+    "depth": 0,
+    "analyzers": [
+      "SHA1",
+      "SHA256",
+      "OCSP_REPLY",
+      "MD5"
+    ],
+    "mime_type": "application/ocsp-response",
+    "duration": 0,
+    "local_orig": false,
+    "is_orig": false,
+    "seen_bytes": 1757,
+    "missing_bytes": 0,
+    "overflow_bytes": 0,
+    "timedout": false,
+    "md5": "c4184cd3ffd69586663e650a530dc218",
+    "sha1": "24248c99d11c88f620acacc7fd469233c2b06015",
+    "sha256": "0888925cd85d6532c15378af54772e012bb6f90495189b05f59cf98199efa4f1",
+    "__raw": "{\"_path\":\"files\",\"_system_name\":\"Lab-02-VM-01\",\"_write_ts\":\"2023-07-20T15:34:49.170700Z\",\"ts\":\"2023-07-20T15:34:49.170700Z\",\"fuid\":\"FuIrZB2MNlxyjLh7G9\",\"tx_hosts\":[\"137.116.224.167\"],\"rx_hosts\":[\"192.168.0.54\"],\"conn_uids\":[\"C7bDn93NLgpoNhO0i1\"],\"source\":\"SSL\",\"depth\":0,\"analyzers\":[\"SHA1\",\"SHA256\",\"OCSP_REPLY\",\"MD5\"],\"mime_type\":\"application/ocsp-response\",\"duration\":0.0,\"local_orig\":false,\"is_orig\":false,\"seen_bytes\":1757,\"missing_bytes\":0,\"overflow_bytes\":0,\"timedout\":false,\"md5\":\"c4184cd3ffd69586663e650a530dc218\",\"sha1\":\"24248c99d11c88f620acacc7fd469233c2b06015\",\"sha256\":\"0888925cd85d6532c15378af54772e012bb6f90495189b05f59cf98199efa4f1\"}",
+    "__srcIpPort": "96.241.54.158:48808",
+    "__inputId": "tcpjson:in_tcp_json",
+    "_time": 1783320005.353
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_path": "files",
+    "_system_name": "Lab-02-VM-01",
+    "_write_ts": "2023-07-20T15:34:49.226588Z",
+    "ts": "2023-07-20T15:34:49.226588Z",
+    "fuid": "FtTNsj3SrjlR9finl",
+    "tx_hosts": [
+      "198.199.14.136"
+    ],
+    "rx_hosts": [
+      "192.168.0.54"
+    ],
+    "conn_uids": [
+      "CmZ2MG20ezyXWpkz3b"
+    ],
+    "source": "HTTP",
+    "depth": 0,
+    "analyzers": [
+      "SHA1",
+      "SHA256",
+      "DATA_EVENT",
+      "MD5"
+    ],
+    "duration": 0,
+    "local_orig": false,
+    "is_orig": false,
+    "seen_bytes": 14114,
+    "missing_bytes": 0,
+    "overflow_bytes": 0,
+    "timedout": false,
+    "md5": "52c3b1cdf0dfdc6bafc653791856b01a",
+    "sha1": "1382fdcb7e8eac2815b4cabc438d8a8faaf9c624",
+    "sha256": "7f8924f3fdc25ee26f8f96dd4061891ce040574afa557cc62829a7eefd6aaf95",
+    "__raw": "{\"_path\":\"files\",\"_system_name\":\"Lab-02-VM-01\",\"_write_ts\":\"2023-07-20T15:34:49.226588Z\",\"ts\":\"2023-07-20T15:34:49.226588Z\",\"fuid\":\"FtTNsj3SrjlR9finl\",\"tx_hosts\":[\"198.199.14.136\"],\"rx_hosts\":[\"192.168.0.54\"],\"conn_uids\":[\"CmZ2MG20ezyXWpkz3b\"],\"source\":\"HTTP\",\"depth\":0,\"analyzers\":[\"SHA1\",\"SHA256\",\"DATA_EVENT\",\"MD5\"],\"duration\":0.0,\"local_orig\":false,\"is_orig\":false,\"seen_bytes\":14114,\"missing_bytes\":0,\"overflow_bytes\":0,\"timedout\":false,\"md5\":\"52c3b1cdf0dfdc6bafc653791856b01a\",\"sha1\":\"1382fdcb7e8eac2815b4cabc438d8a8faaf9c624\",\"sha256\":\"7f8924f3fdc25ee26f8f96dd4061891ce040574afa557cc62829a7eefd6aaf95\"}",
+    "__srcIpPort": "96.241.54.158:48808",
+    "__inputId": "tcpjson:in_tcp_json",
+    "_time": 1783320005.353
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_path": "files",
+    "_system_name": "Lab-02-VM-01",
+    "_write_ts": "2023-07-20T15:34:49.360449Z",
+    "ts": "2023-07-20T15:34:49.337349Z",
+    "fuid": "FZnGng3sEKtOVDaDbf",
+    "tx_hosts": [
+      "198.199.14.10"
+    ],
+    "rx_hosts": [
+      "192.168.0.54"
+    ],
+    "conn_uids": [
+      "CIjXll9IBsfrow4k1"
+    ],
+    "source": "HTTP",
+    "depth": 0,
+    "analyzers": [
+      "SHA1",
+      "SHA256",
+      "DATA_EVENT",
+      "MD5"
+    ],
+    "duration": 0.02310013771057129,
+    "local_orig": false,
+    "is_orig": false,
+    "seen_bytes": 26707,
+    "missing_bytes": 0,
+    "overflow_bytes": 0,
+    "timedout": false,
+    "md5": "fdd219ca53ed3bc5e1491a2fe58e709e",
+    "sha1": "48fd6daa668621e967c687843cdce7b8831f0bb7",
+    "sha256": "692133136a638be3630bdfc082928f0ccbf919b26583f79c104428f1f139e46e",
+    "__raw": "{\"_path\":\"files\",\"_system_name\":\"Lab-02-VM-01\",\"_write_ts\":\"2023-07-20T15:34:49.360449Z\",\"ts\":\"2023-07-20T15:34:49.337349Z\",\"fuid\":\"FZnGng3sEKtOVDaDbf\",\"tx_hosts\":[\"198.199.14.10\"],\"rx_hosts\":[\"192.168.0.54\"],\"conn_uids\":[\"CIjXll9IBsfrow4k1\"],\"source\":\"HTTP\",\"depth\":0,\"analyzers\":[\"SHA1\",\"SHA256\",\"DATA_EVENT\",\"MD5\"],\"duration\":0.02310013771057129,\"local_orig\":false,\"is_orig\":false,\"seen_bytes\":26707,\"missing_bytes\":0,\"overflow_bytes\":0,\"timedout\":false,\"md5\":\"fdd219ca53ed3bc5e1491a2fe58e709e\",\"sha1\":\"48fd6daa668621e967c687843cdce7b8831f0bb7\",\"sha256\":\"692133136a638be3630bdfc082928f0ccbf919b26583f79c104428f1f139e46e\"}",
+    "__srcIpPort": "96.241.54.158:48808",
+    "__inputId": "tcpjson:in_tcp_json",
+    "_time": 1783320005.353
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_path": "files",
+    "_system_name": "Lab-02-VM-01",
+    "_write_ts": "2023-07-20T15:34:49.466315Z",
+    "ts": "2023-07-20T15:34:49.466315Z",
+    "fuid": "FqjxCo1XsCjr0nAAAi",
+    "tx_hosts": [
+      "173.194.67.105"
+    ],
+    "rx_hosts": [
+      "192.168.0.51"
+    ],
+    "conn_uids": [
+      "CmT3HH3NBRHUHgcVAe"
+    ],
+    "source": "HTTP",
+    "depth": 0,
+    "analyzers": [
+      "SHA1",
+      "SHA256",
+      "DATA_EVENT",
+      "MD5"
+    ],
+    "mime_type": "text/plain",
+    "duration": 0,
+    "local_orig": false,
+    "is_orig": false,
+    "seen_bytes": 341,
+    "missing_bytes": 0,
+    "overflow_bytes": 0,
+    "timedout": false,
+    "md5": "4cbcf43d3c598bd13b3364559e0b3246",
+    "sha1": "908980353ae2b339d73db3421ecb55c400b20a79",
+    "sha256": "cffa99467ca7ca7a4a6084bd1249afc3cb52b6961eb9d33c9527d6a42651e44b",
+    "__raw": "{\"_path\":\"files\",\"_system_name\":\"Lab-02-VM-01\",\"_write_ts\":\"2023-07-20T15:34:49.466315Z\",\"ts\":\"2023-07-20T15:34:49.466315Z\",\"fuid\":\"FqjxCo1XsCjr0nAAAi\",\"tx_hosts\":[\"173.194.67.105\"],\"rx_hosts\":[\"192.168.0.51\"],\"conn_uids\":[\"CmT3HH3NBRHUHgcVAe\"],\"source\":\"HTTP\",\"depth\":0,\"analyzers\":[\"SHA1\",\"SHA256\",\"DATA_EVENT\",\"MD5\"],\"mime_type\":\"text/plain\",\"duration\":0.0,\"local_orig\":false,\"is_orig\":false,\"seen_bytes\":341,\"missing_bytes\":0,\"overflow_bytes\":0,\"timedout\":false,\"md5\":\"4cbcf43d3c598bd13b3364559e0b3246\",\"sha1\":\"908980353ae2b339d73db3421ecb55c400b20a79\",\"sha256\":\"cffa99467ca7ca7a4a6084bd1249afc3cb52b6961eb9d33c9527d6a42651e44b\"}",
+    "__srcIpPort": "96.241.54.158:48808",
+    "__inputId": "tcpjson:in_tcp_json",
+    "_time": 1783320005.353
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_path": "files",
+    "_system_name": "Lab-02-VM-01",
+    "_write_ts": "2023-07-20T15:34:49.552295Z",
+    "ts": "2023-07-20T15:34:49.552295Z",
+    "fuid": "Ft79UIALfrnFPzGLk",
+    "tx_hosts": [
+      "198.199.14.136"
+    ],
+    "rx_hosts": [
+      "192.168.0.54"
+    ],
+    "conn_uids": [
+      "C675Cm3CPY8ifH4lAl"
+    ],
+    "source": "HTTP",
+    "depth": 0,
+    "analyzers": [
+      "SHA1",
+      "SHA256",
+      "DATA_EVENT",
+      "MD5"
+    ],
+    "duration": 0,
+    "local_orig": false,
+    "is_orig": false,
+    "seen_bytes": 93,
+    "total_bytes": 93,
+    "missing_bytes": 0,
+    "overflow_bytes": 0,
+    "timedout": false,
+    "md5": "47a6b7ed5e02de5ba6f04e0e2fda41b6",
+    "sha1": "4c572edc4b8e31f387d17095c89c737eebf450ad",
+    "sha256": "f92c45aea56e344c1271c0617acc355454f6d2c3dacdc669698e1f99f4f31a85",
+    "__raw": "{\"_path\":\"files\",\"_system_name\":\"Lab-02-VM-01\",\"_write_ts\":\"2023-07-20T15:34:49.552295Z\",\"ts\":\"2023-07-20T15:34:49.552295Z\",\"fuid\":\"Ft79UIALfrnFPzGLk\",\"tx_hosts\":[\"198.199.14.136\"],\"rx_hosts\":[\"192.168.0.54\"],\"conn_uids\":[\"C675Cm3CPY8ifH4lAl\"],\"source\":\"HTTP\",\"depth\":0,\"analyzers\":[\"SHA1\",\"SHA256\",\"DATA_EVENT\",\"MD5\"],\"duration\":0.0,\"local_orig\":false,\"is_orig\":false,\"seen_bytes\":93,\"total_bytes\":93,\"missing_bytes\":0,\"overflow_bytes\":0,\"timedout\":false,\"md5\":\"47a6b7ed5e02de5ba6f04e0e2fda41b6\",\"sha1\":\"4c572edc4b8e31f387d17095c89c737eebf450ad\",\"sha256\":\"f92c45aea56e344c1271c0617acc355454f6d2c3dacdc669698e1f99f4f31a85\"}",
+    "__srcIpPort": "96.241.54.158:48808",
+    "__inputId": "tcpjson:in_tcp_json",
+    "_time": 1783320005.353
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_path": "files",
+    "_system_name": "Lab-02-VM-01",
+    "_write_ts": "2023-07-20T15:34:49.858870Z",
+    "ts": "2023-07-20T15:34:49.858870Z",
+    "fuid": "FSKuto4U1n59OAqrZ8",
+    "tx_hosts": [
+      "173.194.67.105"
+    ],
+    "rx_hosts": [
+      "192.168.0.51"
+    ],
+    "conn_uids": [
+      "CEVMTF3vtYkmIJtZi8"
+    ],
+    "source": "HTTP",
+    "depth": 0,
+    "analyzers": [
+      "SHA1",
+      "SHA256",
+      "DATA_EVENT",
+      "MD5"
+    ],
+    "mime_type": "text/plain",
+    "duration": 0,
+    "local_orig": false,
+    "is_orig": false,
+    "seen_bytes": 341,
+    "missing_bytes": 0,
+    "overflow_bytes": 0,
+    "timedout": false,
+    "md5": "b31f0c614490aaa5ee86c79e590722e8",
+    "sha1": "d0725c44a0cdc2601ddc1b32fd62488dcc0b480f",
+    "sha256": "56610b53062c47a8f7b381e18f4660360901bc3c3c1950839f105b0035c96bc8",
+    "__raw": "{\"_path\":\"files\",\"_system_name\":\"Lab-02-VM-01\",\"_write_ts\":\"2023-07-20T15:34:49.858870Z\",\"ts\":\"2023-07-20T15:34:49.858870Z\",\"fuid\":\"FSKuto4U1n59OAqrZ8\",\"tx_hosts\":[\"173.194.67.105\"],\"rx_hosts\":[\"192.168.0.51\"],\"conn_uids\":[\"CEVMTF3vtYkmIJtZi8\"],\"source\":\"HTTP\",\"depth\":0,\"analyzers\":[\"SHA1\",\"SHA256\",\"DATA_EVENT\",\"MD5\"],\"mime_type\":\"text/plain\",\"duration\":0.0,\"local_orig\":false,\"is_orig\":false,\"seen_bytes\":341,\"missing_bytes\":0,\"overflow_bytes\":0,\"timedout\":false,\"md5\":\"b31f0c614490aaa5ee86c79e590722e8\",\"sha1\":\"d0725c44a0cdc2601ddc1b32fd62488dcc0b480f\",\"sha256\":\"56610b53062c47a8f7b381e18f4660360901bc3c3c1950839f105b0035c96bc8\"}",
+    "__srcIpPort": "96.241.54.158:48808",
+    "__inputId": "tcpjson:in_tcp_json",
+    "_time": 1783320005.353
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_path": "files",
+    "_system_name": "Lab-02-VM-01",
+    "_write_ts": "2023-07-20T15:34:49.922395Z",
+    "ts": "2023-07-20T15:34:49.910747Z",
+    "fuid": "FcUkWL3qflmqd74Eca",
+    "tx_hosts": [
+      "198.199.14.136"
+    ],
+    "rx_hosts": [
+      "192.168.0.54"
+    ],
+    "conn_uids": [
+      "Cm8IKy3GCf54IPjNFh"
+    ],
+    "source": "HTTP",
+    "depth": 0,
+    "analyzers": [
+      "SHA1",
+      "SHA256",
+      "DATA_EVENT",
+      "MD5"
+    ],
+    "duration": 0.011647939682006836,
+    "local_orig": false,
+    "is_orig": false,
+    "seen_bytes": 14114,
+    "missing_bytes": 0,
+    "overflow_bytes": 0,
+    "timedout": false,
+    "md5": "87425a193adeff9fd8989c6fa35e5cb7",
+    "sha1": "47b246682155ab08cf66ffbe0790c822f16b40ca",
+    "sha256": "a6b8b3633d7d6733eaee2327df5b5dcc7fa9aa22d8d071379295bf366968cfe7",
+    "__raw": "{\"_path\":\"files\",\"_system_name\":\"Lab-02-VM-01\",\"_write_ts\":\"2023-07-20T15:34:49.922395Z\",\"ts\":\"2023-07-20T15:34:49.910747Z\",\"fuid\":\"FcUkWL3qflmqd74Eca\",\"tx_hosts\":[\"198.199.14.136\"],\"rx_hosts\":[\"192.168.0.54\"],\"conn_uids\":[\"Cm8IKy3GCf54IPjNFh\"],\"source\":\"HTTP\",\"depth\":0,\"analyzers\":[\"SHA1\",\"SHA256\",\"DATA_EVENT\",\"MD5\"],\"duration\":0.011647939682006836,\"local_orig\":false,\"is_orig\":false,\"seen_bytes\":14114,\"missing_bytes\":0,\"overflow_bytes\":0,\"timedout\":false,\"md5\":\"87425a193adeff9fd8989c6fa35e5cb7\",\"sha1\":\"47b246682155ab08cf66ffbe0790c822f16b40ca\",\"sha256\":\"a6b8b3633d7d6733eaee2327df5b5dcc7fa9aa22d8d071379295bf366968cfe7\"}",
+    "__srcIpPort": "96.241.54.158:48808",
+    "__inputId": "tcpjson:in_tcp_json",
+    "_time": 1783320005.353
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_path": "files",
+    "_system_name": "Lab-02-VM-01",
+    "_write_ts": "2023-07-20T15:34:50.062112Z",
+    "ts": "2023-07-20T15:34:50.062112Z",
+    "fuid": "FtzYypexEF9bFyw3i",
+    "tx_hosts": [
+      "137.116.224.167"
+    ],
+    "rx_hosts": [
+      "192.168.0.54"
+    ],
+    "conn_uids": [
+      "Cqeeed4MYUJijCgeXg"
+    ],
+    "source": "SSL",
+    "depth": 0,
+    "analyzers": [
+      "SHA1",
+      "SHA256",
+      "OCSP_REPLY",
+      "MD5"
+    ],
+    "mime_type": "application/ocsp-response",
+    "duration": 0,
+    "local_orig": false,
+    "is_orig": false,
+    "seen_bytes": 1757,
+    "missing_bytes": 0,
+    "overflow_bytes": 0,
+    "timedout": false,
+    "md5": "c4184cd3ffd69586663e650a530dc218",
+    "sha1": "24248c99d11c88f620acacc7fd469233c2b06015",
+    "sha256": "0888925cd85d6532c15378af54772e012bb6f90495189b05f59cf98199efa4f1",
+    "__raw": "{\"_path\":\"files\",\"_system_name\":\"Lab-02-VM-01\",\"_write_ts\":\"2023-07-20T15:34:50.062112Z\",\"ts\":\"2023-07-20T15:34:50.062112Z\",\"fuid\":\"FtzYypexEF9bFyw3i\",\"tx_hosts\":[\"137.116.224.167\"],\"rx_hosts\":[\"192.168.0.54\"],\"conn_uids\":[\"Cqeeed4MYUJijCgeXg\"],\"source\":\"SSL\",\"depth\":0,\"analyzers\":[\"SHA1\",\"SHA256\",\"OCSP_REPLY\",\"MD5\"],\"mime_type\":\"application/ocsp-response\",\"duration\":0.0,\"local_orig\":false,\"is_orig\":false,\"seen_bytes\":1757,\"missing_bytes\":0,\"overflow_bytes\":0,\"timedout\":false,\"md5\":\"c4184cd3ffd69586663e650a530dc218\",\"sha1\":\"24248c99d11c88f620acacc7fd469233c2b06015\",\"sha256\":\"0888925cd85d6532c15378af54772e012bb6f90495189b05f59cf98199efa4f1\"}",
+    "__srcIpPort": "96.241.54.158:48808",
+    "__inputId": "tcpjson:in_tcp_json",
+    "_time": 1783320005.353
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_path": "files",
+    "_system_name": "Lab-02-VM-01",
+    "_write_ts": "2023-07-20T15:34:50.143231Z",
+    "ts": "2023-07-20T15:34:50.120497Z",
+    "fuid": "FNZrSM3lQtGGg7gqja",
+    "tx_hosts": [
+      "198.199.14.10"
+    ],
+    "rx_hosts": [
+      "192.168.0.54"
+    ],
+    "conn_uids": [
+      "CkVd8z1KtKAVXGhUck"
+    ],
+    "source": "HTTP",
+    "depth": 0,
+    "analyzers": [
+      "SHA1",
+      "SHA256",
+      "DATA_EVENT",
+      "MD5"
+    ],
+    "duration": 0.02273392677307129,
+    "local_orig": false,
+    "is_orig": false,
+    "seen_bytes": 26707,
+    "missing_bytes": 0,
+    "overflow_bytes": 0,
+    "timedout": false,
+    "md5": "f30e5c1f50ac81750ad24c66859028b1",
+    "sha1": "b03f3532e612eccc4465ece1da110bf5a9d460f7",
+    "sha256": "a9b4db655aebcd0eec7c3bbc48ea1ea27e53a21c2a05a3a4e0c799c33b022b14",
+    "__raw": "{\"_path\":\"files\",\"_system_name\":\"Lab-02-VM-01\",\"_write_ts\":\"2023-07-20T15:34:50.143231Z\",\"ts\":\"2023-07-20T15:34:50.120497Z\",\"fuid\":\"FNZrSM3lQtGGg7gqja\",\"tx_hosts\":[\"198.199.14.10\"],\"rx_hosts\":[\"192.168.0.54\"],\"conn_uids\":[\"CkVd8z1KtKAVXGhUck\"],\"source\":\"HTTP\",\"depth\":0,\"analyzers\":[\"SHA1\",\"SHA256\",\"DATA_EVENT\",\"MD5\"],\"duration\":0.02273392677307129,\"local_orig\":false,\"is_orig\":false,\"seen_bytes\":26707,\"missing_bytes\":0,\"overflow_bytes\":0,\"timedout\":false,\"md5\":\"f30e5c1f50ac81750ad24c66859028b1\",\"sha1\":\"b03f3532e612eccc4465ece1da110bf5a9d460f7\",\"sha256\":\"a9b4db655aebcd0eec7c3bbc48ea1ea27e53a21c2a05a3a4e0c799c33b022b14\"}",
+    "__srcIpPort": "96.241.54.158:48808",
+    "__inputId": "tcpjson:in_tcp_json",
+    "_time": 1783320005.353
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_path": "files",
+    "_system_name": "Lab-02-VM-01",
+    "_write_ts": "2023-07-20T15:34:50.320583Z",
+    "ts": "2023-07-20T15:34:50.320583Z",
+    "fuid": "FF9PO12tgSxxIxlE3j",
+    "tx_hosts": [
+      "173.194.67.105"
+    ],
+    "rx_hosts": [
+      "192.168.0.51"
+    ],
+    "conn_uids": [
+      "CfCqQN3BUopvvhQJc7"
+    ],
+    "source": "HTTP",
+    "depth": 0,
+    "analyzers": [
+      "SHA1",
+      "SHA256",
+      "DATA_EVENT",
+      "MD5"
+    ],
+    "mime_type": "text/plain",
+    "duration": 0,
+    "local_orig": false,
+    "is_orig": false,
+    "seen_bytes": 341,
+    "missing_bytes": 0,
+    "overflow_bytes": 0,
+    "timedout": false,
+    "md5": "77259aad4cc5a0ca8ec9387a9e8a167b",
+    "sha1": "8b424c63c13bf0e5eed68d1dbf66d3b2c0712592",
+    "sha256": "30f14fde4c20bd8da393e2390e56ab1f42542c93074aaac8f127fcd8356eca8e",
+    "__raw": "{\"_path\":\"files\",\"_system_name\":\"Lab-02-VM-01\",\"_write_ts\":\"2023-07-20T15:34:50.320583Z\",\"ts\":\"2023-07-20T15:34:50.320583Z\",\"fuid\":\"FF9PO12tgSxxIxlE3j\",\"tx_hosts\":[\"173.194.67.105\"],\"rx_hosts\":[\"192.168.0.51\"],\"conn_uids\":[\"CfCqQN3BUopvvhQJc7\"],\"source\":\"HTTP\",\"depth\":0,\"analyzers\":[\"SHA1\",\"SHA256\",\"DATA_EVENT\",\"MD5\"],\"mime_type\":\"text/plain\",\"duration\":0.0,\"local_orig\":false,\"is_orig\":false,\"seen_bytes\":341,\"missing_bytes\":0,\"overflow_bytes\":0,\"timedout\":false,\"md5\":\"77259aad4cc5a0ca8ec9387a9e8a167b\",\"sha1\":\"8b424c63c13bf0e5eed68d1dbf66d3b2c0712592\",\"sha256\":\"30f14fde4c20bd8da393e2390e56ab1f42542c93074aaac8f127fcd8356eca8e\"}",
+    "__srcIpPort": "96.241.54.158:48808",
+    "__inputId": "tcpjson:in_tcp_json",
+    "_time": 1783320005.353
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_path": "files",
+    "_system_name": "Lab-02-VM-01",
+    "_write_ts": "2023-07-20T15:34:50.487696Z",
+    "ts": "2023-07-20T15:34:50.487696Z",
+    "fuid": "FmJUNO3lSKvJWob3nk",
+    "tx_hosts": [
+      "198.199.14.136"
+    ],
+    "rx_hosts": [
+      "192.168.0.54"
+    ],
+    "conn_uids": [
+      "CGCnqC2sPGBHfh9sWe"
+    ],
+    "source": "HTTP",
+    "depth": 0,
+    "analyzers": [
+      "SHA1",
+      "SHA256",
+      "DATA_EVENT",
+      "MD5"
+    ],
+    "duration": 0,
+    "local_orig": false,
+    "is_orig": false,
+    "seen_bytes": 93,
+    "total_bytes": 93,
+    "missing_bytes": 0,
+    "overflow_bytes": 0,
+    "timedout": false,
+    "md5": "8a3f5e96bc83e80df75813bd0d32fdf4",
+    "sha1": "c7989c8dc8375ccebede15218e8e8b1b4b730946",
+    "sha256": "49fe549d6161c433208fe7f131ca2c8648d840ce2c3973d47a556fcf6b08fdab",
+    "__raw": "{\"_path\":\"files\",\"_system_name\":\"Lab-02-VM-01\",\"_write_ts\":\"2023-07-20T15:34:50.487696Z\",\"ts\":\"2023-07-20T15:34:50.487696Z\",\"fuid\":\"FmJUNO3lSKvJWob3nk\",\"tx_hosts\":[\"198.199.14.136\"],\"rx_hosts\":[\"192.168.0.54\"],\"conn_uids\":[\"CGCnqC2sPGBHfh9sWe\"],\"source\":\"HTTP\",\"depth\":0,\"analyzers\":[\"SHA1\",\"SHA256\",\"DATA_EVENT\",\"MD5\"],\"duration\":0.0,\"local_orig\":false,\"is_orig\":false,\"seen_bytes\":93,\"total_bytes\":93,\"missing_bytes\":0,\"overflow_bytes\":0,\"timedout\":false,\"md5\":\"8a3f5e96bc83e80df75813bd0d32fdf4\",\"sha1\":\"c7989c8dc8375ccebede15218e8e8b1b4b730946\",\"sha256\":\"49fe549d6161c433208fe7f131ca2c8648d840ce2c3973d47a556fcf6b08fdab\"}",
+    "__srcIpPort": "96.241.54.158:48808",
+    "__inputId": "tcpjson:in_tcp_json",
+    "_time": 1783320005.353
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_path": "files",
+    "_system_name": "Lab-02-VM-01",
+    "_write_ts": "2023-07-20T15:34:50.675413Z",
+    "ts": "2023-07-20T15:34:50.675413Z",
+    "fuid": "FuTi3t1Lt4k3oIoKy",
+    "tx_hosts": [
+      "173.194.67.105"
+    ],
+    "rx_hosts": [
+      "192.168.0.51"
+    ],
+    "conn_uids": [
+      "CcvCza1R2BOV4akSSe"
+    ],
+    "source": "HTTP",
+    "depth": 0,
+    "analyzers": [
+      "SHA1",
+      "SHA256",
+      "DATA_EVENT",
+      "MD5"
+    ],
+    "mime_type": "text/plain",
+    "duration": 0,
+    "local_orig": false,
+    "is_orig": false,
+    "seen_bytes": 341,
+    "missing_bytes": 0,
+    "overflow_bytes": 0,
+    "timedout": false,
+    "md5": "047ffd36088c3e6ca16a283801abfc5d",
+    "sha1": "069b9f9270aee453631a687a5da9900981c213b8",
+    "sha256": "95d7271fd29b5ff3dbbe61cf4dbe154dcd7e5172228079f325caabb38f8a88c4",
+    "__raw": "{\"_path\":\"files\",\"_system_name\":\"Lab-02-VM-01\",\"_write_ts\":\"2023-07-20T15:34:50.675413Z\",\"ts\":\"2023-07-20T15:34:50.675413Z\",\"fuid\":\"FuTi3t1Lt4k3oIoKy\",\"tx_hosts\":[\"173.194.67.105\"],\"rx_hosts\":[\"192.168.0.51\"],\"conn_uids\":[\"CcvCza1R2BOV4akSSe\"],\"source\":\"HTTP\",\"depth\":0,\"analyzers\":[\"SHA1\",\"SHA256\",\"DATA_EVENT\",\"MD5\"],\"mime_type\":\"text/plain\",\"duration\":0.0,\"local_orig\":false,\"is_orig\":false,\"seen_bytes\":341,\"missing_bytes\":0,\"overflow_bytes\":0,\"timedout\":false,\"md5\":\"047ffd36088c3e6ca16a283801abfc5d\",\"sha1\":\"069b9f9270aee453631a687a5da9900981c213b8\",\"sha256\":\"95d7271fd29b5ff3dbbe61cf4dbe154dcd7e5172228079f325caabb38f8a88c4\"}",
+    "__srcIpPort": "96.241.54.158:48808",
+    "__inputId": "tcpjson:in_tcp_json",
+    "_time": 1783320005.353
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_path": "files",
+    "_system_name": "Lab-02-VM-01",
+    "_write_ts": "2023-07-20T15:34:50.782600Z",
+    "ts": "2023-07-20T15:34:50.771481Z",
+    "fuid": "FwidQo3xBIrBH5fEy6",
+    "tx_hosts": [
+      "198.199.14.10"
+    ],
+    "rx_hosts": [
+      "192.168.0.54"
+    ],
+    "conn_uids": [
+      "CkCtJ91sXKblzqYDr7"
+    ],
+    "source": "HTTP",
+    "depth": 0,
+    "analyzers": [
+      "SHA1",
+      "SHA256",
+      "DATA_EVENT",
+      "MD5"
+    ],
+    "duration": 0.011118888854980469,
+    "local_orig": false,
+    "is_orig": false,
+    "seen_bytes": 26707,
+    "missing_bytes": 0,
+    "overflow_bytes": 0,
+    "timedout": false,
+    "md5": "2de6055c60e48d3e8884730690735728",
+    "sha1": "9e559bbd54572c49c6229341944cb540e81de0fb",
+    "sha256": "fe0b09f42afb61d6fe8b9981ed98d0baf5c24007caa1af7e6ada514de0baf3bd",
+    "__raw": "{\"_path\":\"files\",\"_system_name\":\"Lab-02-VM-01\",\"_write_ts\":\"2023-07-20T15:34:50.782600Z\",\"ts\":\"2023-07-20T15:34:50.771481Z\",\"fuid\":\"FwidQo3xBIrBH5fEy6\",\"tx_hosts\":[\"198.199.14.10\"],\"rx_hosts\":[\"192.168.0.54\"],\"conn_uids\":[\"CkCtJ91sXKblzqYDr7\"],\"source\":\"HTTP\",\"depth\":0,\"analyzers\":[\"SHA1\",\"SHA256\",\"DATA_EVENT\",\"MD5\"],\"duration\":0.011118888854980469,\"local_orig\":false,\"is_orig\":false,\"seen_bytes\":26707,\"missing_bytes\":0,\"overflow_bytes\":0,\"timedout\":false,\"md5\":\"2de6055c60e48d3e8884730690735728\",\"sha1\":\"9e559bbd54572c49c6229341944cb540e81de0fb\",\"sha256\":\"fe0b09f42afb61d6fe8b9981ed98d0baf5c24007caa1af7e6ada514de0baf3bd\"}",
+    "__srcIpPort": "96.241.54.158:48808",
+    "__inputId": "tcpjson:in_tcp_json",
+    "_time": 1783320005.353
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_path": "files",
+    "_system_name": "Lab-02-VM-01",
+    "_write_ts": "2023-07-20T15:34:50.905563Z",
+    "ts": "2023-07-20T15:34:50.894326Z",
+    "fuid": "FumQfY1gNaq5kwgXo8",
+    "tx_hosts": [
+      "198.199.14.136"
+    ],
+    "rx_hosts": [
+      "192.168.0.54"
+    ],
+    "conn_uids": [
+      "C1m8mZ3fz1FZwdxQ4i"
+    ],
+    "source": "HTTP",
+    "depth": 0,
+    "analyzers": [
+      "SHA1",
+      "SHA256",
+      "DATA_EVENT",
+      "MD5"
+    ],
+    "duration": 0.011237144470214844,
+    "local_orig": false,
+    "is_orig": false,
+    "seen_bytes": 12714,
+    "missing_bytes": 1400,
+    "overflow_bytes": 0,
+    "timedout": false,
+    "__raw": "{\"_path\":\"files\",\"_system_name\":\"Lab-02-VM-01\",\"_write_ts\":\"2023-07-20T15:34:50.905563Z\",\"ts\":\"2023-07-20T15:34:50.894326Z\",\"fuid\":\"FumQfY1gNaq5kwgXo8\",\"tx_hosts\":[\"198.199.14.136\"],\"rx_hosts\":[\"192.168.0.54\"],\"conn_uids\":[\"C1m8mZ3fz1FZwdxQ4i\"],\"source\":\"HTTP\",\"depth\":0,\"analyzers\":[\"SHA1\",\"SHA256\",\"DATA_EVENT\",\"MD5\"],\"duration\":0.011237144470214844,\"local_orig\":false,\"is_orig\":false,\"seen_bytes\":12714,\"missing_bytes\":1400,\"overflow_bytes\":0,\"timedout\":false}",
+    "__srcIpPort": "96.241.54.158:48808",
+    "__inputId": "tcpjson:in_tcp_json",
+    "_time": 1783320005.353
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_path": "files",
+    "_system_name": "Lab-02-VM-01",
+    "_write_ts": "2023-07-20T15:34:50.917338Z",
+    "ts": "2023-07-20T15:34:50.917338Z",
+    "fuid": "FI746A2wJuwbD9uuz7",
+    "tx_hosts": [
+      "137.116.224.167"
+    ],
+    "rx_hosts": [
+      "192.168.0.54"
+    ],
+    "conn_uids": [
+      "CEtZn3JFxt5PlUBFe"
+    ],
+    "source": "SSL",
+    "depth": 0,
+    "analyzers": [
+      "SHA1",
+      "SHA256",
+      "OCSP_REPLY",
+      "MD5"
+    ],
+    "mime_type": "application/ocsp-response",
+    "duration": 0,
+    "local_orig": false,
+    "is_orig": false,
+    "seen_bytes": 1757,
+    "missing_bytes": 0,
+    "overflow_bytes": 0,
+    "timedout": false,
+    "md5": "4d137c7f83a266e07a26a529433fdd37",
+    "sha1": "d260bc4c667034fab780e7086f5a7f01e5bf7afc",
+    "sha256": "15de0139a0b8753541d79816c0dd76093a520a41a28e7ed5193c0c701cd8b3fa",
+    "__raw": "{\"_path\":\"files\",\"_system_name\":\"Lab-02-VM-01\",\"_write_ts\":\"2023-07-20T15:34:50.917338Z\",\"ts\":\"2023-07-20T15:34:50.917338Z\",\"fuid\":\"FI746A2wJuwbD9uuz7\",\"tx_hosts\":[\"137.116.224.167\"],\"rx_hosts\":[\"192.168.0.54\"],\"conn_uids\":[\"CEtZn3JFxt5PlUBFe\"],\"source\":\"SSL\",\"depth\":0,\"analyzers\":[\"SHA1\",\"SHA256\",\"OCSP_REPLY\",\"MD5\"],\"mime_type\":\"application/ocsp-response\",\"duration\":0.0,\"local_orig\":false,\"is_orig\":false,\"seen_bytes\":1757,\"missing_bytes\":0,\"overflow_bytes\":0,\"timedout\":false,\"md5\":\"4d137c7f83a266e07a26a529433fdd37\",\"sha1\":\"d260bc4c667034fab780e7086f5a7f01e5bf7afc\",\"sha256\":\"15de0139a0b8753541d79816c0dd76093a520a41a28e7ed5193c0c701cd8b3fa\"}",
+    "__srcIpPort": "96.241.54.158:48808",
+    "__inputId": "tcpjson:in_tcp_json",
+    "_time": 1783320005.353
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_path": "files",
+    "_system_name": "Lab-02-VM-01",
+    "_write_ts": "2023-07-20T15:34:51.149199Z",
+    "ts": "2023-07-20T15:34:51.149199Z",
+    "fuid": "Fqsktl2HpTl2SdlU8h",
+    "tx_hosts": [
+      "173.194.67.105"
+    ],
+    "rx_hosts": [
+      "192.168.0.51"
+    ],
+    "conn_uids": [
+      "CLK7UB3wruhjc1R121"
+    ],
+    "source": "HTTP",
+    "depth": 0,
+    "analyzers": [
+      "SHA1",
+      "SHA256",
+      "DATA_EVENT",
+      "MD5"
+    ],
+    "mime_type": "text/plain",
+    "duration": 0,
+    "local_orig": false,
+    "is_orig": false,
+    "seen_bytes": 341,
+    "missing_bytes": 0,
+    "overflow_bytes": 0,
+    "timedout": false,
+    "md5": "3d4fc9121b17851d46dc28f567ec3e5e",
+    "sha1": "a5137b893ac4f1fc836c6999157aa31693902fe8",
+    "sha256": "4962bc44a2fe8f99e5eeded758e38284b497ac0df7eaf8ab6bf786194f83f1a7",
+    "__raw": "{\"_path\":\"files\",\"_system_name\":\"Lab-02-VM-01\",\"_write_ts\":\"2023-07-20T15:34:51.149199Z\",\"ts\":\"2023-07-20T15:34:51.149199Z\",\"fuid\":\"Fqsktl2HpTl2SdlU8h\",\"tx_hosts\":[\"173.194.67.105\"],\"rx_hosts\":[\"192.168.0.51\"],\"conn_uids\":[\"CLK7UB3wruhjc1R121\"],\"source\":\"HTTP\",\"depth\":0,\"analyzers\":[\"SHA1\",\"SHA256\",\"DATA_EVENT\",\"MD5\"],\"mime_type\":\"text/plain\",\"duration\":0.0,\"local_orig\":false,\"is_orig\":false,\"seen_bytes\":341,\"missing_bytes\":0,\"overflow_bytes\":0,\"timedout\":false,\"md5\":\"3d4fc9121b17851d46dc28f567ec3e5e\",\"sha1\":\"a5137b893ac4f1fc836c6999157aa31693902fe8\",\"sha256\":\"4962bc44a2fe8f99e5eeded758e38284b497ac0df7eaf8ab6bf786194f83f1a7\"}",
+    "__srcIpPort": "96.241.54.158:48808",
+    "__inputId": "tcpjson:in_tcp_json",
+    "_time": 1783320005.353
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_path": "files",
+    "_system_name": "Lab-02-VM-01",
+    "_write_ts": "2023-07-20T15:34:51.209091Z",
+    "ts": "2023-07-20T15:34:51.209091Z",
+    "fuid": "FjQGm14LFvIHHV1Tik",
+    "tx_hosts": [
+      "198.199.14.136"
+    ],
+    "rx_hosts": [
+      "192.168.0.54"
+    ],
+    "conn_uids": [
+      "C8YTxE4mPoKtrGuy3i"
+    ],
+    "source": "HTTP",
+    "depth": 0,
+    "analyzers": [
+      "SHA1",
+      "SHA256",
+      "DATA_EVENT",
+      "MD5"
+    ],
+    "duration": 0,
+    "local_orig": false,
+    "is_orig": false,
+    "seen_bytes": 93,
+    "total_bytes": 93,
+    "missing_bytes": 0,
+    "overflow_bytes": 0,
+    "timedout": false,
+    "md5": "3b8997778b11b2cffd6b80ed4529fdbd",
+    "sha1": "f509a0cdf3c4e08c317f803c8f287f7c9095e24f",
+    "sha256": "b0850f76a24d6824cb3fdc7c1944136cf261519797e2b6dbc1ab2690d2583874",
+    "__raw": "{\"_path\":\"files\",\"_system_name\":\"Lab-02-VM-01\",\"_write_ts\":\"2023-07-20T15:34:51.209091Z\",\"ts\":\"2023-07-20T15:34:51.209091Z\",\"fuid\":\"FjQGm14LFvIHHV1Tik\",\"tx_hosts\":[\"198.199.14.136\"],\"rx_hosts\":[\"192.168.0.54\"],\"conn_uids\":[\"C8YTxE4mPoKtrGuy3i\"],\"source\":\"HTTP\",\"depth\":0,\"analyzers\":[\"SHA1\",\"SHA256\",\"DATA_EVENT\",\"MD5\"],\"duration\":0.0,\"local_orig\":false,\"is_orig\":false,\"seen_bytes\":93,\"total_bytes\":93,\"missing_bytes\":0,\"overflow_bytes\":0,\"timedout\":false,\"md5\":\"3b8997778b11b2cffd6b80ed4529fdbd\",\"sha1\":\"f509a0cdf3c4e08c317f803c8f287f7c9095e24f\",\"sha256\":\"b0850f76a24d6824cb3fdc7c1944136cf261519797e2b6dbc1ab2690d2583874\"}",
+    "__srcIpPort": "96.241.54.158:48808",
+    "__inputId": "tcpjson:in_tcp_json",
+    "_time": 1783320005.353
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_path": "files",
+    "_system_name": "Lab-02-VM-01",
+    "_write_ts": "2023-07-20T15:34:51.239563Z",
+    "ts": "2023-07-20T15:34:51.239563Z",
+    "fuid": "Fn0w7j46IhGi4nMcqi",
+    "tx_hosts": [
+      "192.168.0.2"
+    ],
+    "rx_hosts": [
+      "119.93.152.148"
+    ],
+    "conn_uids": [
+      "CEO6GN2i4TKGjZoKx2"
+    ],
+    "source": "HTTP",
+    "depth": 0,
+    "analyzers": [
+      "SHA1",
+      "SHA256",
+      "DATA_EVENT",
+      "MD5"
+    ],
+    "mime_type": "text/html",
+    "duration": 0,
+    "local_orig": false,
+    "is_orig": false,
+    "seen_bytes": 226,
+    "total_bytes": 226,
+    "missing_bytes": 0,
+    "overflow_bytes": 0,
+    "timedout": false,
+    "md5": "e946fd60df0e24f957bd539c00d6f91d",
+    "sha1": "4a785571983375e723ec42e3748d6a0fdfa1716e",
+    "sha256": "a5c402fa795aa7b38c40559c9d1e2904c1e049580e216b292466d6c0634e9ab6",
+    "__raw": "{\"_path\":\"files\",\"_system_name\":\"Lab-02-VM-01\",\"_write_ts\":\"2023-07-20T15:34:51.239563Z\",\"ts\":\"2023-07-20T15:34:51.239563Z\",\"fuid\":\"Fn0w7j46IhGi4nMcqi\",\"tx_hosts\":[\"192.168.0.2\"],\"rx_hosts\":[\"119.93.152.148\"],\"conn_uids\":[\"CEO6GN2i4TKGjZoKx2\"],\"source\":\"HTTP\",\"depth\":0,\"analyzers\":[\"SHA1\",\"SHA256\",\"DATA_EVENT\",\"MD5\"],\"mime_type\":\"text/html\",\"duration\":0.0,\"local_orig\":false,\"is_orig\":false,\"seen_bytes\":226,\"total_bytes\":226,\"missing_bytes\":0,\"overflow_bytes\":0,\"timedout\":false,\"md5\":\"e946fd60df0e24f957bd539c00d6f91d\",\"sha1\":\"4a785571983375e723ec42e3748d6a0fdfa1716e\",\"sha256\":\"a5c402fa795aa7b38c40559c9d1e2904c1e049580e216b292466d6c0634e9ab6\"}",
+    "__srcIpPort": "96.241.54.158:48808",
+    "__inputId": "tcpjson:in_tcp_json",
+    "_time": 1783320005.353
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_path": "files",
+    "_system_name": "Lab-02-VM-01",
+    "_write_ts": "2023-07-20T15:34:51.242787Z",
+    "ts": "2023-07-20T15:34:51.242787Z",
+    "fuid": "FmigQ32qfpSObUMhAj",
+    "tx_hosts": [
+      "192.168.0.2"
+    ],
+    "rx_hosts": [
+      "119.93.152.148"
+    ],
+    "conn_uids": [
+      "CnYYC7386s6U1Yqfth"
+    ],
+    "source": "HTTP",
+    "depth": 0,
+    "analyzers": [
+      "SHA1",
+      "SHA256",
+      "DATA_EVENT",
+      "MD5"
+    ],
+    "mime_type": "text/html",
+    "duration": 0,
+    "local_orig": false,
+    "is_orig": false,
+    "seen_bytes": 226,
+    "total_bytes": 226,
+    "missing_bytes": 0,
+    "overflow_bytes": 0,
+    "timedout": false,
+    "md5": "e946fd60df0e24f957bd539c00d6f91d",
+    "sha1": "4a785571983375e723ec42e3748d6a0fdfa1716e",
+    "sha256": "a5c402fa795aa7b38c40559c9d1e2904c1e049580e216b292466d6c0634e9ab6",
+    "__raw": "{\"_path\":\"files\",\"_system_name\":\"Lab-02-VM-01\",\"_write_ts\":\"2023-07-20T15:34:51.242787Z\",\"ts\":\"2023-07-20T15:34:51.242787Z\",\"fuid\":\"FmigQ32qfpSObUMhAj\",\"tx_hosts\":[\"192.168.0.2\"],\"rx_hosts\":[\"119.93.152.148\"],\"conn_uids\":[\"CnYYC7386s6U1Yqfth\"],\"source\":\"HTTP\",\"depth\":0,\"analyzers\":[\"SHA1\",\"SHA256\",\"DATA_EVENT\",\"MD5\"],\"mime_type\":\"text/html\",\"duration\":0.0,\"local_orig\":false,\"is_orig\":false,\"seen_bytes\":226,\"total_bytes\":226,\"missing_bytes\":0,\"overflow_bytes\":0,\"timedout\":false,\"md5\":\"e946fd60df0e24f957bd539c00d6f91d\",\"sha1\":\"4a785571983375e723ec42e3748d6a0fdfa1716e\",\"sha256\":\"a5c402fa795aa7b38c40559c9d1e2904c1e049580e216b292466d6c0634e9ab6\"}",
+    "__srcIpPort": "96.241.54.158:48808",
+    "__inputId": "tcpjson:in_tcp_json",
+    "_time": 1783320005.353
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_path": "files",
+    "_system_name": "Lab-02-VM-01",
+    "_write_ts": "2023-07-20T15:34:51.285467Z",
+    "ts": "2023-07-20T15:34:51.285467Z",
+    "fuid": "FcmMGQQslvpHnVHyj",
+    "tx_hosts": [
+      "108.61.16.227"
+    ],
+    "rx_hosts": [
+      "192.168.0.2"
+    ],
+    "conn_uids": [
+      "C19qFf3nxiM3ojpzz2"
+    ],
+    "source": "HTTP",
+    "depth": 0,
+    "analyzers": [
+      "SHA1",
+      "SHA256",
+      "DATA_EVENT",
+      "MD5"
+    ],
+    "mime_type": "text/plain",
+    "duration": 0,
+    "local_orig": false,
+    "is_orig": false,
+    "seen_bytes": 537,
+    "missing_bytes": 0,
+    "overflow_bytes": 0,
+    "timedout": false,
+    "md5": "319f032e66a3ffdb71ff664ee9bacb82",
+    "sha1": "917dbf184e239bc42c65cc46b7bda881a44b1b9d",
+    "sha256": "547ffc70b7bcd003f93fc9b7c73658195dff9099ba40bb5b7786755f0e113a0b",
+    "__raw": "{\"_path\":\"files\",\"_system_name\":\"Lab-02-VM-01\",\"_write_ts\":\"2023-07-20T15:34:51.285467Z\",\"ts\":\"2023-07-20T15:34:51.285467Z\",\"fuid\":\"FcmMGQQslvpHnVHyj\",\"tx_hosts\":[\"108.61.16.227\"],\"rx_hosts\":[\"192.168.0.2\"],\"conn_uids\":[\"C19qFf3nxiM3ojpzz2\"],\"source\":\"HTTP\",\"depth\":0,\"analyzers\":[\"SHA1\",\"SHA256\",\"DATA_EVENT\",\"MD5\"],\"mime_type\":\"text/plain\",\"duration\":0.0,\"local_orig\":false,\"is_orig\":false,\"seen_bytes\":537,\"missing_bytes\":0,\"overflow_bytes\":0,\"timedout\":false,\"md5\":\"319f032e66a3ffdb71ff664ee9bacb82\",\"sha1\":\"917dbf184e239bc42c65cc46b7bda881a44b1b9d\",\"sha256\":\"547ffc70b7bcd003f93fc9b7c73658195dff9099ba40bb5b7786755f0e113a0b\"}",
+    "__srcIpPort": "96.241.54.158:48808",
+    "__inputId": "tcpjson:in_tcp_json",
+    "_time": 1783320005.353
+  }
+]

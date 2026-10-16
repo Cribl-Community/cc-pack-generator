@@ -1,0 +1,7 @@
+[
+  {
+    "_raw": "Sep 28 10:09:55 10.35.116.4 httpd: 2015-09-28 10:09:55.912Z [user1]: Login_Allowed - - to=AdminConnector ip=10.120.253.227 auth=RADIUS group=admin-group apparently_via=GUI",
+    "_time": 1601312995,
+    "cribl_breaker": "Break on newlines"
+  }
+]

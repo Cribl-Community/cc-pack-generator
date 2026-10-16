@@ -1,0 +1,107 @@
+[
+  {
+    "_raw": "<134>1 2023-05-06T08:38:59Z ip-172-16-53-100 - - - - {\"_path\":\"conn\",\"_system_name\":\"ip-172-16-53-100.us-east-2.compute.internal\",\"_write_ts\":\"2023-05-06T08:38:58.385577Z\",\"ts\":\"2023-05-06T08:38:58.383864Z\",\"uid\":\"CtVxxE3smYEtZpQBlf\",\"id.orig_h\":\"157.55.39.32\",\"id.orig_p\":25408,\"id.resp_h\":\"198.71.247.91\",\"id.resp_p\":443,\"proto\":\"tcp\",\"duration\":0.0008111000061035156,\"orig_bytes\":0,\"resp_bytes\":0,\"conn_state\":\"REJ\",\"local_orig\":false,\"local_resp\":false,\"missed_bytes\":0,\"history\":\"Sr\",\"orig_pkts\":1,\"orig_ip_bytes\":48,\"resp_pkts\":1,\"resp_ip_bytes\":40,\"tunnel_parents\":[\"CfbukZ3Nhg6McNWQn6\"],\"orig_cc\":\"US\",\"resp_cc\":\"US\",\"spcap.url\":\"https://localhost/spcap/v1/?uid=CtVxxE3smYEtZpQBlf\",\"spcap.rule\":2,\"spcap.trigger\":\"all-unencrypted\",\"corelight_shunted\":false,\"orig_l2_addr\":\"64:9e:f3:be:db:66\",\"resp_l2_addr\":\"00:16:3c:f1:fd:6d\",\"community_id\":\"1:IXVNH/Omr6aWHMvW9Qyw+8TjWsM=\"}",
+    "__channel": "preview",
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": true,
+    "__cloneCount": 0,
+    "message": "{\"_path\":\"conn\",\"_system_name\":\"ip-172-16-53-100.us-east-2.compute.internal\",\"_write_ts\":\"2023-05-06T08:38:58.385577Z\",\"ts\":\"2023-05-06T08:38:58.383864Z\",\"uid\":\"CtVxxE3smYEtZpQBlf\",\"id.orig_h\":\"157.55.39.32\",\"id.orig_p\":25408,\"id.resp_h\":\"198.71.247.91\",\"id.resp_p\":443,\"proto\":\"tcp\",\"duration\":0.0008111000061035156,\"orig_bytes\":0,\"resp_bytes\":0,\"conn_state\":\"REJ\",\"local_orig\":false,\"local_resp\":false,\"missed_bytes\":0,\"history\":\"Sr\",\"orig_pkts\":1,\"orig_ip_bytes\":48,\"resp_pkts\":1,\"resp_ip_bytes\":40,\"tunnel_parents\":[\"CfbukZ3Nhg6McNWQn6\"],\"orig_cc\":\"US\",\"resp_cc\":\"US\",\"spcap.url\":\"https://localhost/spcap/v1/?uid=CtVxxE3smYEtZpQBlf\",\"spcap.rule\":2,\"spcap.trigger\":\"all-unencrypted\",\"corelight_shunted\":false,\"orig_l2_addr\":\"64:9e:f3:be:db:66\",\"resp_l2_addr\":\"00:16:3c:f1:fd:6d\",\"community_id\":\"1:IXVNH/Omr6aWHMvW9Qyw+8TjWsM=\"}",
+    "severity": 6,
+    "facility": 16,
+    "host": "ip-172-16-53-100",
+    "appname": "-",
+    "procid": "-",
+    "severityName": "info",
+    "facilityName": "local0",
+    "_time": 1683362339,
+    "__srcIpPort": "tcp|18.189.146.99|33738",
+    "__inputId": "syslog:in_syslog:tcp",
+    "__id": 0,
+    "__schema": {
+      "@timestamp": "2023-05-06T08:38:58.385577Z",
+      "ecs": {
+        "version": "8.10.0"
+      },
+      "conn": {
+        "id": {
+          "orig_h": "157.55.39.32",
+          "orig_p": "25408",
+          "resp_h": "198.71.247.91",
+          "resp_p": "443"
+        },
+        "local_orig": "false",
+        "local_resp": "false",
+        "corelight_shunted": "false"
+      },
+      "event": {
+        "kind": "event",
+        "type": "connection",
+        "category": "network",
+        "duration": "811100"
+      },
+      "network": {
+        "transport": "tcp",
+        "connection": {
+          "history": "Sr",
+          "state": "REJ"
+        },
+        "packets": "2",
+        "missed_bytes": "0",
+        "community_id": "1:IXVNH/Omr6aWHMvW9Qyw+8TjWsM=",
+        "direction": "unknown"
+      },
+      "source": {
+        "bytes": "0",
+        "ip": "157.55.39.32",
+        "ip_bytes": "48",
+        "mac": "64:9e:f3:be:db:66",
+        "geo": {
+          "country_iso_code": "US"
+        },
+        "packets": "1",
+        "port": "25408"
+      },
+      "destination": {
+        "bytes": "0",
+        "ip": "198.71.247.91",
+        "ip_bytes": "40",
+        "mac": "00:16:3c:f1:fd:6d",
+        "geo": {
+          "country_iso_code": "US"
+        },
+        "packets": "1",
+        "port": "443"
+      },
+      "log": {
+        "id": {
+          "tunnel_parents": "CfbukZ3Nhg6McNWQn6"
+        },
+        "syslog": {
+          "appname": "-",
+          "facility": {
+            "code": "16",
+            "name": "local0"
+          },
+          "hostname": "ip-172-16-53-100",
+          "procid": "-",
+          "severity": {
+            "code": "6",
+            "name": "info"
+          }
+        }
+      },
+      "labels": {
+        "corelight": {
+          "scap_trigger": "all-unencrypted",
+          "spcap_url": "https://localhost/spcap/v1/?uid=CtVxxE3smYEtZpQBlf",
+          "spcap_rule": "2"
+        }
+      }
+    },
+    "cribl_pipe": "CL_Conn",
+    "__packId": "Corelight",
+    "__isBroken": true,
+    "cribl_breaker": "ndjson"
+  }
+]

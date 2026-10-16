@@ -1,0 +1,102 @@
+[
+  {
+    "_raw": "{\"log\":\"type=SERVICE_STOP msg=audit(1621371413.547:164744): pid=1 uid=0 auid=4294967295 ses=4294967295 subj=system_u:system_r:init_t:s0 msg='unit=ian-the-goat-cloud-agent-updater comm=\\\"systemd\\\" exe=\\\"/usr/lib/systemd/systemd\\\" hostname=? addr=? terminal=? res=failed'\",\"host\":{\"name\":\"filebeat-gt6t9\"},\"datacenterid\":\"us-west-3\",\"instancetype\":\"mango\",\"instancename\":\"ost-primavera-cegbtwo9ef3o1a0\",\"logfilename\":\"/var/log/audit/audit.log\",\"@timestamp\":\"2021-05-18T20:56:53.950Z\"}",
+    "_time": 1621371413.95,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "{\"log\":\"May 18 20:56:53 ost-primavera-cegbnga7ab0ikr updater: File \\\"logging/handlers.py\\\", line 150, in __init__\",\"host\":{\"name\":\"filebeat-22t8p\"},\"datacenterid\":\"us-west-3\",\"instancetype\":\"mango\",\"instancename\":\"ost-primavera-cegbnga7ab0ikr\",\"logfilename\":\"/var/log/messages\",\"@timestamp\":\"2021-05-18T20:56:54.507Z\"}",
+    "_time": 1621371414.507,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "{\"log\":\"May 18 20:56:52 ost-primavera-cegbnga7aba6g3 kubelet: W0518 20:56:52.968064   14726 kubelet_pods.go:849] Unable to retrieve pull secret mango-gilchrist-stage/regsecret for mango-gilchrist-stage/p6js-1 due to secret \\\"regsecret\\\" not found.  The image pull may not succeed.\",\"host\":{\"name\":\"filebeat-sw7z5\"},\"datacenterid\":\"us-west-1\",\"instancetype\":\"mango\",\"instancename\":\"ost-primavera-cegbnga7aba6g3\",\"logfilename\":\"/var/log/messages\",\"@timestamp\":\"2021-05-18T20:56:54.078Z\"}",
+    "_time": 1621371414.078,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "{\"log\":\"May 18 20:56:52 ost-primavera-cegbthre70b1ib8t kubelet: W0518 20:56:52.382460   15358 kubelet_pods.go:849] Unable to retrieve pull secret mango-epi-stage/regsecret for mango-epi-stage/wtss-795fc76d7b-k576c due to secret \\\"regsecret\\\" not found.  The image pull may not succeed.\",\"host\":{\"name\":\"filebeat-fvd9k\"},\"datacenterid\":\"unknown\",\"instancetype\":\"mango\",\"instancename\":\"ost-primavera-cegbthre70b1ib8t\",\"logfilename\":\"/var/log/messages\",\"@timestamp\":\"2021-05-18T20:56:54.160Z\"}",
+    "_time": 1621371414.16,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "{\"log\":\"May 18 20:56:54 ost-primavera-cegbtwo9ef3ojbh watchdog[14868]: still alive after 361 interval(s)\",\"host\":{\"name\":\"filebeat-stlhp\"},\"datacenterid\":\"us-west-3\",\"instancetype\":\"mango\",\"instancename\":\"ost-primavera-cegbtwo9ef3ojbh\",\"logfilename\":\"/var/log/messages\",\"@timestamp\":\"2021-05-18T20:56:54.913Z\"}",
+    "_time": 1621371414.913,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "{\"containerimage\":\"ian.thegoat.io/cn-msp-bootstrap/cne-outbound-proxy/outbound-proxy/outbound-proxy:1.8.18\",\"datacenterid\":\"us-west-2\",\"podname\":\"outbound-proxy-outbound-proxy-569c97589b-7sbbp\",\"instancetype\":\"mango\",\"containerid\":\"a6235d6c1f5ce0aa59447a5f05e98f4a9a5f3514d0f78b94588aaca3aec80c98\",\"namespace\":\"cne-outbound-proxy\",\"@timestamp\":\"2021-05-18T20:56:53.957Z\",\"log\":\"OSTLOG outbound-proxy-access - INFO 1 140556944185088 1000 - - @SEC@[INFO]|OBP|AUTHEN_PASS|obp_instance:outbound-proxy;obp_authenticated:True;subject:resource-pool--mango;source_ip:10.192.248.17;target_resource:idcs-4c44c9281bf64bfba14fc4566fb5d615.identity.ian-the-goat.com:443;method:credentials;reason:valid credentials;\",\"containername\":\"log-scraper\",\"instancename\":\"ost-primavera-externalsazc\",\"costcenter\":\"cne\",\"logfilename\":\"/var/lib/docker/containers/a6235d6c1f5ce0aa59447a5f05e98f4a9a5f3514d0f78b94588aaca3aec80c98/a6235d6c1f5ce0aa59447a5f05e98f4a9a5f3514d0f78b94588aaca3aec80c98-json.log\"}",
+    "_time": 1621371413.957,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "{\"log\":\"May 18 20:56:49 ost-primavera-logginggd67 updater: File \\\"logging/config.py\\\", line 738, in configure_handler\",\"host\":{\"name\":\"filebeat-ssljh\"},\"datacenterid\":\"us-west-3\",\"instancetype\":\"mango\",\"instancename\":\"ost-primavera-logginggd67\",\"logfilename\":\"/var/log/messages\",\"@timestamp\":\"2021-05-18T20:56:54.526Z\"}",
+    "_time": 1621371414.526,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "{\"log\":\"May 18 20:56:53 ost-primavera-cegbthre70b14wxs kubelet: W0518 20:56:53.749484   14823 kubelet_pods.go:849] Unable to retrieve pull secret mango-sfmta-stage/regsecret for mango-sfmta-stage/unifierws-0 due to secret \\\"regsecret\\\" not found.  The image pull may not succeed.\",\"host\":{\"name\":\"filebeat-6dq6z\"},\"datacenterid\":\"us-west-3\",\"instancetype\":\"mango\",\"instancename\":\"ost-primavera-cegbthre70b14wxs\",\"logfilename\":\"/var/log/messages\",\"@timestamp\":\"2021-05-18T20:56:53.794Z\"}",
+    "_time": 1621371413.794,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "{\"containerimage\":\"ian.thegoat.io/cn-msp-bootstrap/cne-dns/dns/bind:1.9.29\",\"datacenterid\":\"us-west-2\",\"podname\":\"dns-deployment-6777c87db5-78z87\",\"instancetype\":\"mango\",\"namespace\":\"cne-dns\",\"containerid\":\"9d0823e48e4e859e236336b504c69d4e417bff9ee666590443725616acdf9786\",\"@timestamp\":\"2021-05-18T20:56:50.670Z\",\"log\":\"OSTLOG bind - INFO 1 139878418773760 25 - - @SEC@[NOTICE]|BIND|AUTHEN_PASS|18-May-2021 20:56:50.669 client @0x7ff61c00b650 127.0.0.1#56592/key rndc-key: signer \\\"rndc-key\\\" approved\",\"containername\":\"bind\",\"instancename\":\"ost-primavera-nodea6my\",\"costcenter\":\"cne\",\"logfilename\":\"/var/lib/docker/containers/9d0823e48e4e859e236336b504c69d4e417bff9ee666590443725616acdf9786/9d0823e48e4e859e236336b504c69d4e417bff9ee666590443725616acdf9786-json.log\"}",
+    "_time": 1621371410.67,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "{\"log\":\"May 18 20:56:53 ost-primavera-cegbtwo9ef3ch49 kubelet: W0518 20:56:53.405793   14803 kubelet_pods.go:849] Unable to retrieve pull secret mango-uhrsd-production/regsecret for mango-uhrsd-production/autovue-0 due to secret \\\"regsecret\\\" not found.  The image pull may not succeed.\",\"host\":{\"name\":\"filebeat-xqn69\"},\"datacenterid\":\"us-west-1\",\"instancetype\":\"mango\",\"instancename\":\"ost-primavera-cegbtwo9ef3ch49\",\"logfilename\":\"/var/log/messages\",\"@timestamp\":\"2021-05-18T20:56:53.879Z\"}",
+    "_time": 1621371413.879,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "{\"log\":\"2021-05-18 20:56:53.109 (3809.3809) ahclient.Info: Spipe connection response received, network return code = 1301, response code -1.\",\"host\":{\"name\":\"filebeat-h7jjj\"},\"datacenterid\":\"us-west-3\",\"instancetype\":\"mango\",\"instancename\":\"ost-primavera-cegbfour4f2aybso\",\"logfilename\":\"/var/McAfee/agent/logs/masvc_ost-primavera-cegbfour4f2aybso.log\",\"@timestamp\":\"2021-05-18T20:56:54.023Z\"}",
+    "_time": 1621371414.023,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "{\"containerimage\":\"ian.thegoat.io/cn-cne-ids/suricata:5.38.0\",\"datacenterid\":\"us-west-2\",\"podname\":\"suricata-m7dc9\",\"instancetype\":\"mango\",\"containerid\":\"0fab76220f03141a02edb244f12daa98849c7283c3154ae53e20c8ec33817177\",\"namespace\":\"cne-ids\",\"@timestamp\":\"2021-05-18T20:56:48.914Z\",\"log\":\"{\\\"timestamp\\\":\\\"2021-05-18T20:56:48.198076+0000\\\",\\\"flow_id\\\":822800475551185,\\\"in_iface\\\":\\\"ens3f0\\\",\\\"event_type\\\":\\\"alert\\\",\\\"src_ip\\\":\\\"100.122.47.254\\\",\\\"src_port\\\":48790,\\\"dest_ip\\\":\\\"169.254.169.254\\\",\\\"dest_port\\\":80,\\\"proto\\\":\\\"TCP\\\",\\\"metadata\\\":{\\\"flowbits\\\":[\\\"http.dottedquadhost\\\"]},\\\"tx_id\\\":2,\\\"alert\\\":{\\\"action\\\":\\\"allowed\\\",\\\"gid\\\":1,\\\"signature_id\\\":2024897,\\\"rev\\\":2,\\\"signature\\\":\\\"ET USER_AGENTS Go HTTP Client User-Agent\\\",\\\"category\\\":\\\"Misc activity\\\",\\\"severity\\\":3,\\\"metadata\\\":{\\\"attack_target\\\":[\\\"Client_Endpoint\\\"],\\\"created_at\\\":[\\\"2017_10_23\\\"],\\\"deployment\\\":[\\\"Perimeter\\\"],\\\"former_category\\\":[\\\"USER_AGENTS\\\"],\\\"signature_severity\\\":[\\\"Major\\\"],\\\"updated_at\\\":[\\\"2020_08_13\\\"]}},\\\"http\\\":{\\\"hostname\\\":\\\"169.254.169.254\\\",\\\"url\\\":\\\"/opc/v2/identity/intermediate.pem\\\",\\\"http_user_agent\\\":\\\"Go-http-client/1.1\\\",\\\"http_content_type\\\":\\\"application/x-x509-ca-cert\\\",\\\"http_method\\\":\\\"GET\\\",\\\"protocol\\\":\\\"HTTP/1.1\\\",\\\"status\\\":200,\\\"length\\\":2097},\\\"app_proto\\\":\\\"http\\\",\\\"flow\\\":{\\\"pkts_toserver\\\":9,\\\"pkts_toclient\\\":6,\\\"bytes_toserver\\\":1059,\\\"bytes_toclient\\\":7722,\\\"start\\\":\\\"2021-05-18T20:56:48.194001+0000\\\"}} @SEC@\",\"containername\":\"suricata\",\"instancename\":\"ost-primavera-cegbfour4f2av9ld\",\"costcenter\":\"cne\",\"logfilename\":\"/var/lib/docker/containers/0fab76220f03141a02edb244f12daa98849c7283c3154ae53e20c8ec33817177/0fab76220f03141a02edb244f12daa98849c7283c3154ae53e20c8ec33817177-json.log\"}",
+    "_time": 1621371408.914,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "{\"log\":\"May 18 20:56:53 ost-primavera-cegbfivece36qi7d kubelet: W0518 20:56:53.469919   12959 kubelet_pods.go:849] Unable to retrieve pull secret mango-mbta-production/regsecret for mango-mbta-production/p6pro-0 due to secret \\\"regsecret\\\" not found.  The image pull may not succeed.\",\"host\":{\"name\":\"filebeat-dsnhz\"},\"datacenterid\":\"us-west-1\",\"instancetype\":\"mango\",\"instancename\":\"ost-primavera-cegbfivece36qi7d\",\"logfilename\":\"/var/log/messages\",\"@timestamp\":\"2021-05-18T20:56:53.954Z\"}",
+    "_time": 1621371413.954,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "{\"log\":\"May 18 20:56:53 ost-primavera-cegbfivece36qi7d kubelet: W0518 20:56:53.470271   12959 kubelet_pods.go:849] Unable to retrieve pull secret mango-wi-production/regsecret for mango-wi-production/wls-admin-server-0 due to secret \\\"regsecret\\\" not found.  The image pull may not succeed.\",\"host\":{\"name\":\"filebeat-dsnhz\"},\"datacenterid\":\"us-west-1\",\"instancetype\":\"mango\",\"instancename\":\"ost-primavera-cegbfivece36qi7d\",\"logfilename\":\"/var/log/messages\",\"@timestamp\":\"2021-05-18T20:56:53.955Z\"}",
+    "_time": 1621371413.955,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "{\"log\":\"May 18 20:56:53 ost-primavera-cegbthre70b12a50 kubelet: W0518 20:56:53.364132   14773 kubelet_pods.go:849] Unable to retrieve pull secret mango-toshiba-stage/regsecret for mango-toshiba-stage/p6tm-1 due to secret \\\"regsecret\\\" not found.  The image pull may not succeed.\",\"host\":{\"name\":\"filebeat-v8w5w\"},\"datacenterid\":\"us-west-2\",\"instancetype\":\"mango\",\"instancename\":\"ost-primavera-cegbthre70b12a50\",\"logfilename\":\"/var/log/messages\",\"@timestamp\":\"2021-05-18T20:56:54.130Z\"}",
+    "_time": 1621371414.13,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "{\"log\":\"2021-05-18T20:56:50.206Z[00:066367:] Stop flag detected, exiting.\",\"host\":{\"name\":\"filebeat-4ssvd\"},\"datacenterid\":\"us-west-1\",\"instancetype\":\"mango\",\"instancename\":\"ost-primavera-cegbfour4f2akd8z\",\"logfilename\":\"/opt/Tanium/TaniumClient/Logs/log0.txt\",\"@timestamp\":\"2021-05-18T20:56:54.417Z\"}",
+    "_time": 1621371414.417,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "{\"log\":\"May 18 20:56:54 ost-primavera-cegbthre70b1t4w2 kubelet: W0518 20:56:54.641917   15376 kubelet_pods.go:849] Unable to retrieve pull secret mango-vsecorp-production/regsecret for mango-vsecorp-production/wtss-795fc76d7b-d6l2m due to secret \\\"regsecret\\\" not found.  The image pull may not succeed.\",\"host\":{\"name\":\"filebeat-r7jvx\"},\"datacenterid\":\"us-west-1\",\"instancetype\":\"mango\",\"instancename\":\"ost-primavera-cegbthre70b1t4w2\",\"logfilename\":\"/var/log/messages\",\"@timestamp\":\"2021-05-18T20:56:54.771Z\"}",
+    "_time": 1621371414.771,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "{\"log\":\"May 18 20:56:53 ost-primavera-cegbnga7abzn5m kubelet: W0518 20:56:53.927437   14800 kubelet_pods.go:849] Unable to retrieve pull secret mango-choateco-production/regsecret for mango-choateco-production/bi-1 due to secret \\\"regsecret\\\" not found.  The image pull may not succeed.\",\"host\":{\"name\":\"filebeat-rg2d9\"},\"datacenterid\":\"us-west-2\",\"instancetype\":\"mango\",\"instancename\":\"ost-primavera-cegbnga7abzn5m\",\"logfilename\":\"/var/log/messages\",\"@timestamp\":\"2021-05-18T20:56:54.194Z\"}",
+    "_time": 1621371414.194,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "{\"log\":\"May 18 20:56:53 ost-primavera-cegbnga7abw7ar kubelet: W0518 20:56:53.743715   15447 kubelet_pods.go:849] Unable to retrieve pull secret mango-chemours-train/regsecret for mango-chemours-train/wtss-5b4fc8b9d7-hv5tg due to secret \\\"regsecret\\\" not found.  The image pull may not succeed.\",\"host\":{\"name\":\"filebeat-9lpdq\"},\"datacenterid\":\"us-west-3\",\"instancetype\":\"mango\",\"instancename\":\"ost-primavera-cegbnga7abw7ar\",\"logfilename\":\"/var/log/messages\",\"@timestamp\":\"2021-05-18T20:56:54.646Z\"}",
+    "_time": 1621371414.646,
+    "cribl_breaker": "Break on newlines"
+  },
+  {
+    "_raw": "{\"log\":\"May 18 20:56:52 ost-primavera-cegbfivece36sovd kubelet: W0518 20:56:52.246247   12885 kubelet_pods.go:849] Unable to retrieve pull secret mango-mcgough-stage/regsecret for mango-mcgough-stage/wtss-5c54d986bd-hprmt due to secret \\\"regsecret\\\" not found.  The image pull may not succeed.\",\"host\":{\"name\":\"filebeat-ql8fb\"},\"datacenterid\":\"us-west-3\",\"instancetype\":\"mango\",\"instancename\":\"ost-primavera-cegbfivece36sovd\",\"logfilename\":\"/var/log/messages\",\"@timestamp\":\"2021-05-18T20:56:54.177Z\"}",
+    "_time": 1621371414.177,
+    "cribl_breaker": "Break on newlines"
+  }
+]

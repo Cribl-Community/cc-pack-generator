@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.backend.tsbuildinfo",
+    "target": "es2023",
+    // DOM lib (not just Node's) so `fetch`/`Response` typing matches the rest of
+    // the app exactly — otherwise every `src/*.ts` file this handler transitively
+    // imports gets RE-CHECKED under a different fetch/Response typing than
+    // tsconfig.app.json uses, cascading unrelated "unknown" errors throughout
+    // api.ts. `window`/`document` being ambiently typed here is a real but minor
+    // loss of strictness for backend/*.ts specifically — every actual `window`
+    // access in the transport chain is already runtime-guarded (see run-mode.ts).
+    "lib": ["ES2023", "DOM"],
+    // vite/client: the src/*.ts files this handler imports use import.meta.env
+    // and import.meta.glob (build-time Vite constructs, erased by bundling —
+    // not something a Backend Function's runtime provides, but needed here for
+    // the same "match tsconfig.app.json, avoid a cross-project cascade" reason
+    // the DOM lib is included above).
+    "types": ["node", "vite/client"],
+    "skipLibCheck": true,
+
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "verbatimModuleSyntax": true,
+    "moduleDetection": "force",
+    "noEmit": true,
+
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "erasableSyntaxOnly": true,
+    "noFallthroughCasesInSwitch": true
+  },
+  "include": ["backend", "src/vite-env.d.ts"]
+}

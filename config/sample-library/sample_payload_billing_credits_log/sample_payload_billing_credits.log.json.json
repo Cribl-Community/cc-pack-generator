@@ -1,0 +1,7 @@
+[
+  {
+    "_raw": "{\n    \"totalCreditsAvailable\": 4807305.250183054,\n    \"totalCreditsPurchased\": 12757630.51,\n    \"totalCreditsUsed\": 7950325.2598169455,\n    \"breakdown\": {\n        \"infrastructureCredits\": 923912.3295098669,\n        \"processingCredits\": 72881.6882274,\n        \"searchCredits\": 5876530.438019484,\n        \"lakeCredits\": 2076.5421264588267,\n        \"lakehouseCredits\": 778.1041666666666\n    }\n}\n",
+    "_time": 1762977985.144,
+    "cribl_breaker": "ndjson"
+  }
+]

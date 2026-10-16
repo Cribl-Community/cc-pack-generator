@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "key": "corelight_known_remotes::json",
+  "sourcetype": "corelight_known_remotes",
+  "format": "json",
+  "events": [
+    "{\"_path\":\"known_remotes\",\"ts\":1718012345.123456,\"uid\":\"CHhAvVGS1DHFjwGM9\",\"id.orig_h\":\"10.1.5.23\",\"id.orig_p\":51422,\"id.resp_h\":\"203.0.113.45\",\"id.resp_p\":443,\"host\":\"203.0.113.45\",\"direction\":\"OUTBOUND\",\"known\":true,\"category\":\"cdn\",\"asn\":13335,\"org\":\"Cloudflare Inc\",\"country\":\"US\"}",
+    "{\"_path\":\"known_remotes\",\"ts\":1718012401.987654,\"uid\":\"C9lXo92kL3pQaB1c8\",\"id.orig_h\":\"172.16.4.11\",\"id.orig_p\":33210,\"id.resp_h\":\"185.220.101.7\",\"id.resp_p\":9001,\"host\":\"185.220.101.7\",\"direction\":\"OUTBOUND\",\"known\":false,\"category\":\"tor_exit_node\",\"asn\":208294,\"org\":\"1337 Services GmbH\",\"country\":\"DE\"}",
+    "{\"_path\":\"known_remotes\",\"ts\":1718012456.456123,\"uid\":\"CxTr882mQpL0f4Nh1\",\"id.orig_h\":\"192.168.1.50\",\"id.orig_p\":443,\"id.resp_h\":\"10.1.5.23\",\"id.resp_p\":51422,\"host\":\"192.168.1.50\",\"direction\":\"INBOUND\",\"known\":true,\"category\":\"internal\",\"asn\":0,\"org\":\"\",\"country\":\"\"}",
+    "{\"_path\":\"known_remotes\",\"ts\":1718012512.311,\"uid\":\"CavZ3fH9mQ21YtLoP\",\"id.orig_h\":\"10.0.0.15\",\"id.orig_p\":54210,\"id.resp_h\":\"91.198.174.192\",\"id.resp_p\":80,\"host\":\"91.198.174.192\",\"direction\":\"OUTBOUND\",\"known\":true,\"category\":\"cdn\",\"asn\":14907,\"org\":\"Wikimedia Foundation\",\"country\":\"US\"}",
+    "{\"_path\":\"known_remotes\",\"ts\":1718012567.874211,\"uid\":\"C7Yk1pV0mS8dLzQaN\",\"id.orig_h\":\"10.10.2.4\",\"id.orig_p\":63012,\"id.resp_h\":\"198.51.100.77\",\"id.resp_p\":22,\"host\":\"198.51.100.77\",\"direction\":\"OUTBOUND\",\"known\":false,\"category\":\"unclassified\",\"asn\":36351,\"org\":\"SoftLayer Technologies\",\"country\":\"US\"}",
+    "{\"_path\":\"known_remotes\",\"ts\":1718012622.1,\"uid\":\"CplBz0mQ22XaFvT9L\",\"id.orig_h\":\"fe80::1a2b:3c4d:5e6f:7a8b\",\"id.orig_p\":5353,\"id.resp_h\":\"ff02::fb\",\"id.resp_p\":5353,\"host\":\"ff02::fb\",\"direction\":\"OUTBOUND\",\"known\":true,\"category\":\"multicast\",\"asn\":0,\"org\":\"\",\"country\":\"\"}",
+    "{\"_path\":\"known_remotes\",\"ts\":1718012678.552341,\"uid\":\"C1qXvL9pS3aBmZ0oT\",\"id.orig_h\":\"10.1.5.99\",\"id.orig_p\":49555,\"id.resp_h\":\"45.83.65.11\",\"id.resp_p\":6667,\"host\":\"45.83.65.11\",\"direction\":\"OUTBOUND\",\"known\":false,\"category\":\"botnet_c2_suspected\",\"asn\":51852,\"org\":\"Private Layer INC\",\"country\":\"CH\"}",
+    "{\"_path\":\"known_remotes\",\"ts\":1718012734.982111,\"uid\":\"C0mZvT2pL8qXaB9oS\",\"id.orig_h\":\"172.16.9.30\",\"id.orig_p\":443,\"id.resp_h\":\"52.94.236.248\",\"id.resp_p\":443,\"host\":\"52.94.236.248\",\"direction\":\"OUTBOUND\",\"known\":true,\"category\":\"cloud_provider\",\"asn\":16509,\"org\":\"Amazon.com Inc\",\"country\":\"US\"}",
+    "{\"_path\":\"known_remotes\",\"ts\":1718012789.334211,\"uid\":\"CqTv1pM9aL2XoZ8bS\",\"id.orig_h\":\"192.168.10.5\",\"id.orig_p\":33889,\"id.resp_h\":\"203.0.113.90\",\"id.resp_p\":8443,\"host\":\"203.0.113.90\",\"direction\":\"OUTBOUND\",\"known\":false,\"category\":\"newly_observed\",\"asn\":63949,\"org\":\"Linode LLC\",\"country\":\"GB\"}",
+    "{\"_path\":\"known_remotes\",\"ts\":1718012845.011223,\"uid\":\"CzM0pL9aTvX2qB8oS\",\"id.orig_h\":\"10.20.1.7\",\"id.orig_p\":22,\"id.resp_h\":\"10.20.1.99\",\"id.resp_p\":52344,\"host\":\"10.20.1.99\",\"direction\":\"INBOUND\",\"known\":true,\"category\":\"internal\",\"asn\":0,\"org\":\"\",\"country\":\"\"}",
+    "{\"_path\":\"known_remotes\",\"ts\":1718012900.667344,\"uid\":\"CvXaT9pL2mQ0oS8bZ\",\"id.orig_h\":\"10.1.5.23\",\"id.orig_p\":60112,\"id.resp_h\":\"104.244.42.65\",\"id.resp_p\":443,\"host\":\"104.244.42.65\",\"direction\":\"OUTBOUND\",\"known\":true,\"category\":\"social_media\",\"asn\":13414,\"org\":\"Twitter Inc\",\"country\":\"US\"}",
+    "{\"_path\":\"known_remotes\",\"ts\":1718012955.223441,\"uid\":\"CmL9pXaT2vQ0oS8bZ\",\"id.orig_h\":\"192.168.5.201\",\"id.orig_p\":41005,\"id.resp_h\":\"::1\",\"id.resp_p\":8080,\"host\":\"::1\",\"direction\":\"OUTBOUND\",\"known\":true,\"category\":\"loopback\",\"asn\":0,\"org\":\"\",\"country\":\"\"}",
+    "{\"_path\":\"known_remotes\",\"ts\":1718013011.887654,\"uid\":\"CpXaL2mT9vQ0oS8bZ\",\"id.orig_h\":\"10.1.9.14\",\"id.orig_p\":51000,\"id.resp_h\":\"77.88.55.66\",\"id.resp_p\":443,\"host\":\"77.88.55.66\",\"direction\":\"OUTBOUND\",\"known\":false,\"category\":\"unclassified\",\"asn\":13238,\"org\":\"Yandex LLC\",\"country\":\"RU\"}",
+    "{\"_path\":\"known_remotes\",\"ts\":1718013067.443221,\"uid\":\"CqL2mXaT9vP0oS8bZ\",\"id.orig_h\":\"172.16.20.4\",\"id.orig_p\":389,\"id.resp_h\":\"172.16.20.250\",\"id.resp_p\":48221,\"host\":\"172.16.20.250\",\"direction\":\"INBOUND\",\"known\":true,\"category\":\"internal\",\"asn\":0,\"org\":\"\",\"country\":\"\"}",
+    "{\"_path\":\"known_remotes\",\"ts\":1718013122.998877,\"uid\":\"CtL2mXaP9vQ0oS8bZ\",\"id.orig_h\":\"10.1.5.44\",\"id.orig_p\":62422,\"id.resp_h\":\"196.251.83.44\",\"id.resp_p\":31337,\"host\":\"196.251.83.44\",\"direction\":\"OUTBOUND\",\"known\":false,\"category\":\"proxy_service\",\"asn\":205100,\"org\":\"F3 Netze e.V.\",\"country\":\"SC\"}",
+    "{\"_path\":\"known_remotes\",\"ts\":1718013178.554321,\"uid\":\"CuP2mXaT9vQ0oS8bZ\",\"id.orig_h\":\"10.1.2.19\",\"id.orig_p\":50201,\"id.resp_h\":\"172.217.14.238\",\"id.resp_p\":443,\"host\":\"172.217.14.238\",\"direction\":\"OUTBOUND\",\"known\":true,\"category\":\"search_engine\",\"asn\":15169,\"org\":\"Google LLC\",\"country\":\"US\"}",
+    "{\"_path\":\"known_remotes\",\"ts\":1718013233.110998,\"uid\":\"CvP2mXaT9uQ0oS8bZ\",\"id.orig_h\":\"192.168.2.31\",\"id.orig_p\":49221,\"id.resp_h\":\"185.244.25.140\",\"id.resp_p\":443,\"host\":\"185.244.25.140\",\"direction\":\"OUTBOUND\",\"known\":false,\"category\":\"phishing_infra_suspected\",\"asn\":211252,\"org\":\"WorldStream B.V.\",\"country\":\"NL\"}",
+    "{\"_path\":\"known_remotes\",\"ts\":1718013289.667889,\"uid\":\"CwQ2mXaT9uP0oS8bZ\",\"id.orig_h\":\"10.5.5.5\",\"id.orig_p\":123,\"id.resp_h\":\"216.239.35.0\",\"id.resp_p\":123,\"host\":\"216.239.35.0\",\"direction\":\"OUTBOUND\",\"known\":true,\"category\":\"ntp_pool\",\"asn\":15169,\"org\":\"Google LLC\",\"country\":\"US\"}",
+    "{\"_path\":\"known_remotes\",\"ts\":1718013344.22311,\"uid\":\"CxQ2mXaT9uP0oR8bZ\",\"id.orig_h\":\"10.1.5.77\",\"id.orig_p\":49900,\"id.resp_h\":\"38.132.124.50\",\"id.resp_p\":4444,\"host\":\"38.132.124.50\",\"direction\":\"OUTBOUND\",\"known\":false,\"category\":\"malware_c2_suspected\",\"asn\":394380,\"org\":\"HostRoyale Technologies\",\"country\":\"IN\"}",
+    "{\"_path\":\"known_remotes\",\"ts\":1718013400.887342,\"uid\":\"CyQ2mXaT9uP0oR8bZ\",\"id.orig_h\":\"172.16.30.2\",\"id.orig_p\":161,\"id.resp_h\":\"172.16.30.250\",\"id.resp_p\":50123,\"host\":\"172.16.30.250\",\"direction\":\"INBOUND\",\"known\":true,\"category\":\"internal\",\"asn\":0,\"org\":\"\",\"country\":\"\"}"
+  ],
+  "fingerprint": "bdeb3960-5786",
+  "verification": {
+    "verdict": "pass",
+    "method": "parser-emulation",
+    "eventsParsed": 20,
+    "eventsChecked": 20,
+    "fields": [
+      "_path",
+      "asn",
+      "category",
+      "country",
+      "direction",
+      "host",
+      "id.orig_h",
+      "id.orig_p",
+      "id.resp_h",
+      "id.resp_p",
+      "known",
+      "log_time",
+      "org",
+      "session_id",
+      "ts",
+      "uid"
+    ],
+    "reasons": [],
+    "offendingEvents": [],
+    "keyEcho": null
+  },
+  "provenance": {
+    "model": "us.anthropic.claude-sonnet-5",
+    "buildNumber": 528,
+    "generatedAt": "2026-08-18T06:34:07.115Z",
+    "grounding": "KNOWN FACTS ABOUT THIS SOURCE (from sourcetype recognition — match these exactly):\n- REQUIRED wire format (the user confirmed this — emit ONLY this format): Format: one compact JSON object per line. Every event carries _path (the Zeek log name, matching the sourcetype), ts as a fractional epoch, uid, and the id.orig_h/id.orig_p/id.resp_h/id.resp_p tuple. Every OTHER key must be one Zeek defines for that specific log — do not carry conn.log fields (conn_state, orig_bytes, resp_bytes, duration, history, service) into a log that is not conn."
+  }
+}

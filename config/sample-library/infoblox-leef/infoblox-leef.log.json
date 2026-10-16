@@ -1,0 +1,7 @@
+[
+  {
+    "_raw": "2022-04-29T13:15:14Z bloxone-infoblox dataconnector - RRZ-QNAME-REDIRECT - LEEF:1.0|Infoblox|Data Connector|2.1.3|RPZ-QNAME-REDIRECT|app=DNS\tcat=\"RRZ EVENT QNAME REDIRECT\"\tsev=0\tdst=\tsrc=10.90.84.6\tsrcPort=13036\tInfobloxDNSView=\tInfobloxDNSQType=AAAA\tmsg=\"rrz QNAME REDIRECT rewrite server1.lxu3b.ru. [AAAA] via CAT_Malicious Downloads.server1.lxu3b.ru.\"\tact=REDIRECT\turl=server1.lxu3b.ru.\tInfobloxRPZRule=CAT_Malicious Downloads.server1.lxu3b.ru.\tInfobloxRPZ=CAT_Malicious Downloads\tsrcMAC=\tInfobloxCSiteId=\tInfobloxPolicyID=98140\tInfobloxDomainCat=Malicious Downloads\tInfobloxThreatProperty=\tInfobloxThreatConfidence=\tInfobloxThreatLevel=\tInfobloxB1Region=us-east-1\tInfobloxB1ConnectionType=remote_office\tInfobloxB1OPHName=\tInfobloxB1OPHIPAddress=\tInfobloxB1Network=ROCHESTER\tusrName=\tidentHostName=10.90.84.6\tInfobloxB1SrcOSVersion=\tInfobloxB1DHCPFingerprint=\tInfobloxB1DNSTags=APP_Uncategorized,CAT_Malicious Downloads\tInfobloxB1ThreatIndicator=CAT\tInfobloxB1FeedName=CAT_Malicious Downloads\tInfobloxB1FeedType=FQDN\tInfobloxB1PolicyName=EV Base Policy\tInfobloxB1PolicyAction=Redirect",
+    "_time": 1651238114,
+    "cribl_breaker": "Break on newlines"
+  }
+]

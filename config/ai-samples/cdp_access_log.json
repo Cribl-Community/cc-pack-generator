@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "key": "cdp_access_log",
+  "sourcetype": "cdp_access_log",
+  "events": [
+    "10.1.2.15 - jsmith [12/May/2024:03:14:22 +0000] \"GET /cdp/api/v1/clusters HTTP/1.1\" 200 4521 \"https://cdp-mgmt.internal.local/dashboard\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36\"",
+    "172.16.5.44 - - [12/May/2024:03:16:05 +0000] \"POST /cdp/api/v1/auth/login HTTP/1.1\" 401 312 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) Gecko/20100101 Firefox/125.0\"",
+    "203.0.113.87 - admin [12/May/2024:04:02:11 +0000] \"GET /cdp/api/v1/users?filter=all HTTP/1.1\" 200 8843 \"https://cdp-mgmt.internal.local/users\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)\"",
+    "192.168.1.23 - - [12/May/2024:04:45:39 +0000] \"GET /favicon.ico HTTP/1.1\" 404 0 \"-\" \"curl/7.88.1\"",
+    "198.51.100.19 - - [12/May/2024:05:12:47 +0000] \"POST /cdp/api/v1/auth/login HTTP/1.1\" 401 298 \"-\" \"python-requests/2.31.0\"",
+    "10.0.0.9 - svc_backup [12/May/2024:05:30:02 +0000] \"PUT /cdp/api/v1/backups/schedule HTTP/1.1\" 200 152 \"-\" \"cdp-backup-agent/3.2.1\"",
+    "172.16.8.12 - jdoe [12/May/2024:06:01:15 +0000] \"GET /cdp/api/v1/clusters/prod-cluster-01/status HTTP/1.1\" 200 2214 \"https://cdp-mgmt.internal.local/clusters/prod-cluster-01\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64)\"",
+    "45.33.22.156 - - [12/May/2024:06:20:58 +0000] \"GET /cdp/api/v1/../../etc/passwd HTTP/1.1\" 400 128 \"-\" \"sqlmap/1.7.2#stable\"",
+    "10.1.2.15 - jsmith [12/May/2024:07:05:44 +0000] \"DELETE /cdp/api/v1/clusters/staging-02 HTTP/1.1\" 403 210 \"https://cdp-mgmt.internal.local/clusters\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64)\"",
+    "2001:db8:85a3::8a2e:370:7334 - - [12/May/2024:07:40:33 +0000] \"GET /cdp/api/v1/health HTTP/1.1\" 200 45 \"-\" \"kube-probe/1.28\"",
+    "192.168.1.101 - mchen [12/May/2024:08:15:29 +0000] \"POST /cdp/api/v1/workloads/submit HTTP/1.1\" 201 61234 \"https://cdp-mgmt.internal.local/workloads/new\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)\"",
+    "185.220.101.45 - - [12/May/2024:09:02:17 +0000] \"GET /cdp/api/v1/admin/config HTTP/1.1\" 403 198 \"-\" \"Mozilla/5.0 (compatible; Nmap Scripting Engine)\"",
+    "10.0.0.9 - svc_backup [12/May/2024:09:30:00 +0000] \"PUT /cdp/api/v1/backups/schedule HTTP/1.1\" 500 402 \"-\" \"cdp-backup-agent/3.2.1\"",
+    "172.16.5.44 - - [12/May/2024:10:11:52 +0000] \"GET /cdp/api/v1/clusters HTTP/1.1\" 200 4488 \"https://cdp-mgmt.internal.local/dashboard\" \"Mozilla/5.0 (X11; Linux x86_64)\"",
+    "203.0.113.87 - admin [12/May/2024:11:47:03 +0000] \"PATCH /cdp/api/v1/users/42/roles HTTP/1.1\" 200 178 \"https://cdp-mgmt.internal.local/users/42\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)\"",
+    "10.2.3.77 - rlee [12/May/2024:13:22:41 +0000] \"GET /cdp/api/v1/reports/export?format=csv HTTP/1.1\" 200 10485760 \"https://cdp-mgmt.internal.local/reports\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64)\"",
+    "198.51.100.230 - - [12/May/2024:14:05:19 +0000] \"GET /cdp/api/v1/../../../boot.ini HTTP/1.1\" 400 133 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) sqlmap-injected\"",
+    "172.16.8.12 - jdoe [12/May/2024:16:30:08 +0000] \"GET /cdp/api/v1/clusters/prod-cluster-01/logs HTTP/1.1\" 200 91234 \"https://cdp-mgmt.internal.local/clusters/prod-cluster-01/logs\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64)\"",
+    "10.1.2.15 - jsmith [12/May/2024:19:58:26 +0000] \"POST /cdp/api/v1/auth/logout HTTP/1.1\" 302 0 \"https://cdp-mgmt.internal.local/dashboard\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64)\"",
+    "91.219.237.244 - - [12/May/2024:23:44:12 +0000] \"GET /cdp/api/v1/auth/login HTTP/1.1\" 503 0 \"-\" \"-\""
+  ],
+  "fingerprint": "b8bf4d8d-3282",
+  "verification": {
+    "verdict": "unverified",
+    "method": "none",
+    "eventsParsed": 0,
+    "eventsChecked": 20,
+    "fields": [],
+    "reasons": [
+      "cdp_access_log has no parser and the events are unstructured text — nothing to verify against"
+    ],
+    "offendingEvents": [],
+    "keyEcho": null
+  },
+  "provenance": {
+    "model": "us.anthropic.claude-sonnet-5",
+    "buildNumber": 529,
+    "generatedAt": "2026-08-18T08:51:19.362Z",
+    "grounding": "KNOWN FACTS ABOUT THIS SOURCE (from sourcetype recognition — match these exactly):\n- Product: Web Server Access log\n- Log family: web"
+  }
+}

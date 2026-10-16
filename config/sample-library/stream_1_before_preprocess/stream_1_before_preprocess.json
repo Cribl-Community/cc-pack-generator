@@ -1,0 +1,222 @@
+[
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_time": 1778543909.867,
+    "_raw": "{\"community_id\": \"1:dd55ee66ff77aa22bb33cc44dd55ee66ff77aa22\", \"conn_state\": \"SF\", \"dir_confidence\": 100, \"duration\": 3200, \"id.ip_ver\": \"ipv4\", \"id.orig_h\": \"10.232.100.62\", \"id.orig_p\": 57001, \"id.resp_h\": \"10.232.100.200\", \"id.resp_p\": 3389, \"local_orig\": true, \"local_resp\": true, \"metadata_type\": \"metadata_isession\", \"orig_hostname\": \"workstation-01\", \"orig_huid\": \"Ua7-0tHA\", \"orig_ip_bytes\": \"45200\", \"orig_pkts\": 312, \"orig_sluid\": \"L.d-kGit\", \"orig_vlan_id\": 100, \"proto\": 6, \"protoName\": \"TCP\", \"resp_hostname\": \"intranet-server\", \"resp_huid\": \"Ua7-0tHJ\", \"resp_ip_bytes\": \"128400\", \"resp_multihomed\": false, \"resp_pkts\": 421, \"resp_sluid\": \"L.Z-tpDp\", \"resp_vlan_id\": 100, \"sensor_uid\": \"e02dp8xu\", \"service\": \"rdp\", \"session_start_time\": 1772029144706, \"ts\": 1772029144706, \"uid\": \"ISS1abce02dp8xu\"}",
+    "host": "66.172.48.228",
+    "__eventId": 2116,
+    "__inputId": "datagen:vectra_stream"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_time": 1778543909.867,
+    "_raw": "{\"community_id\": \"1:ee66ff77aa22bb33cc44dd55ee66ff77aa22bb33\", \"conn_state\": \"SF\", \"dir_confidence\": 100, \"duration\": 18000, \"id.ip_ver\": \"ipv4\", \"id.orig_h\": \"10.232.100.88\", \"id.orig_p\": 57100, \"id.resp_h\": \"10.232.100.201\", \"id.resp_p\": 3389, \"local_orig\": true, \"local_resp\": true, \"metadata_type\": \"metadata_isession\", \"orig_hostname\": \"finance-ws02\", \"orig_huid\": \"Ua7-0tHB\", \"orig_ip_bytes\": \"92100\", \"orig_pkts\": 634, \"orig_sluid\": \"L.d-kGiu\", \"orig_vlan_id\": 200, \"proto\": 6, \"protoName\": \"TCP\", \"resp_hostname\": \"finance-server\", \"resp_huid\": \"Ua7-0tHK\", \"resp_ip_bytes\": \"341200\", \"resp_multihomed\": false, \"resp_pkts\": 891, \"resp_sluid\": \"L.Z-tpDq\", \"resp_vlan_id\": 200, \"sensor_uid\": \"e02dp8xu\", \"service\": \"rdp\", \"session_start_time\": 1772029146706, \"ts\": 1772029146706, \"uid\": \"ISS2abce02dp8xu\"}",
+    "host": "66.172.48.228",
+    "__eventId": 2117,
+    "__inputId": "datagen:vectra_stream"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_time": 1778543883.742,
+    "_raw": "{\"cipher_alg\":\"aes256-ctr\",\"client\":\"SSH-2.0-OpenSSH_8.4p1 Debian-5\",\"community_id\":\"1:aa44bb55cc66dd77ee88ff99aa44bb55cc66dd77\",\"compression_alg\":\"none\",\"hassh\":\"ec7378c1a92f5a8dde7e8b7a1ddf33d1\",\"hasshServer\":\"b12d2871a1189eff20364cf5333619ee\",\"host_key_alg\":\"rsa-sha2-512\",\"id.ip_ver\":\"ipv4\",\"id.orig_h\":\"10.232.100.88\",\"id.orig_p\":57900,\"id.resp_h\":\"10.232.100.51\",\"id.resp_p\":22,\"kex_alg\":\"ecdh-sha2-nistp256\",\"local_orig\":true,\"local_resp\":true,\"mac_alg\":\"hmac-sha2-256-etm@openssh.com\",\"metadata_type\":\"metadata_ssh\",\"orig_hostname\":\"finance-ws02\",\"orig_huid\":\"Ua7-0tHB\",\"orig_sluid\":\"L.d-kGiu\",\"resp_hostname\":\"linux-server02\",\"resp_huid\":\"Ua7-0tHL\",\"resp_sluid\":\"L.Z-tpDt\",\"sensor_uid\":\"e02dp8xu\",\"server\":\"SSH-2.0-OpenSSH_7.9p1 Raspbian-10\",\"ts\":1769734938.0,\"uid\":\"SSH4abce02dp8xu\",\"version\":2}",
+    "host": "66.172.48.228",
+    "__eventId": 850,
+    "__inputId": "datagen:vectra_stream_2"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_time": 1778543883.742,
+    "_raw": "{\"community_id\":\"1:bb55cc66dd77ee88ff99aa44bb55cc66dd77ee88\",\"id.ip_ver\":\"ipv4\",\"id.orig_h\":\"10.232.100.62\",\"id.orig_p\":68,\"id.resp_h\":\"10.232.100.1\",\"id.resp_p\":1812,\"local_orig\":true,\"local_resp\":true,\"metadata_type\":\"metadata_radius\",\"orig_hostname\":\"workstation-01\",\"orig_huid\":\"Ua7-0tHA\",\"orig_sluid\":\"L.d-kGit\",\"radius_type\":\"Access-Request\",\"result\":\"success\",\"sensor_uid\":\"e02dp8xu\",\"ts\":1769734940.0,\"uid\":\"RAD1abce02dp8xu\",\"username\":\"jdoe\",\"nas_ip_address\":\"10.232.100.1\",\"nas_port\":1,\"nas_port_type\":15,\"calling_station_id\":\"00-1A-2B-3C-4D-5E\",\"framed_ip_address\":\"10.232.100.62\",\"password_seen\":false,\"logged\":true,\"reply_timestamp\":1769734940500,\"account_session_time\":3600,\"account_input_octets\":48200,\"account_output_octets\":192400,\"account_input_packets\":312,\"account_output_packets\":421,\"dst_luid_external\":false,\"src_luid_external\":false}",
+    "host": "66.172.48.228",
+    "__eventId": 851,
+    "__inputId": "datagen:vectra_stream_2"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_time": 1778543876.81,
+    "_raw": "{\"community_id\": \"1:7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f\", \"id.ip_ver\": \"ipv4\", \"id.orig_h\": \"10.232.100.62\", \"id.orig_p\": 49802, \"id.resp_h\": \"192.0.2.50\", \"id.resp_p\": 445, \"local_orig\": true, \"local_resp\": false, \"metadata_type\": \"metadata_smbmapping\", \"native_file_system\": \"NTFS\", \"orig_hostname\": \"workstation-01\", \"orig_huid\": \"Ua7-0tHA\", \"orig_sluid\": \"L.d-kGit\", \"resp_hostname\": \"external-fs-01\", \"resp_huid\": \"Ua7-0tHU\", \"resp_sluid\": \"L.Z-tpDz\", \"sensor_uid\": \"e02dp8xu\", \"service\": \"smb\", \"share\": \"\\\\\\\\external-fs-01\\\\sharedrive\", \"share_type\": \"DISK\", \"ts\": 1778379267615, \"uid\": \"SMM2abce02dp8xu\"}",
+    "host": "66.172.48.228",
+    "__eventId": 846,
+    "__inputId": "datagen:vectra_smb_mapping"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_time": 1778543877.822,
+    "_raw": "{\"client\": \"administrator@CORP.EXAMPLE.COM\", \"cname\": \"administrator\", \"community_id\": \"1:0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e\", \"error_code\": \"KDC_ERR_S_PRINCIPAL_UNKNOWN\", \"error_msg\": \"KDC_ERR_S_PRINCIPAL_UNKNOWN\", \"from\": \"172.16.100.31\", \"id.ip_ver\": \"ipv4\", \"id.orig_h\": \"172.16.100.31\", \"id.orig_p\": 60505, \"id.resp_h\": \"172.16.100.5\", \"id.resp_p\": 88, \"local_orig\": true, \"local_resp\": true, \"metadata_type\": \"metadata_kerberos_txn\", \"orig_hostname\": \"DESKTOP-WIN-01\", \"orig_huid\": \"Ua7-0tHC\", \"orig_sluid\": \"L4N-6eNX\", \"request_type\": \"TGS\", \"resp_hostname\": \"branch-dc-01\", \"resp_huid\": \"Ua7-0tHT\", \"resp_sluid\": \"L.Z-tpDn\", \"sensor_uid\": \"oc9mwk3z\", \"service\": \"host/nonexistent-host.corp.example.com\", \"sname\": \"host/nonexistent-host.corp.example.com\", \"success\": false, \"till\": 1778382746615, \"ts\": 1778379152615, \"uid\": \"KRB5abcoc9mwk3z\"}",
+    "host": "66.172.48.228",
+    "__eventId": 734,
+    "__inputId": "datagen:vectra_stream_kerberos"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_time": 1778543876.81,
+    "_raw": "{\"community_id\": \"1:8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a\", \"id.ip_ver\": \"ipv4\", \"id.orig_h\": \"10.232.100.88\", \"id.orig_p\": 49803, \"id.resp_h\": \"198.51.100.20\", \"id.resp_p\": 445, \"local_orig\": true, \"local_resp\": false, \"metadata_type\": \"metadata_smbmapping\", \"native_file_system\": \"NTFS\", \"orig_hostname\": \"finance-ws02\", \"orig_huid\": \"Ua7-0tHB\", \"orig_sluid\": \"L.d-kGiu\", \"resp_hostname\": \"partner-fs-01\", \"resp_huid\": \"Ua7-0tHV\", \"resp_sluid\": \"L.Z-tpDw\", \"sensor_uid\": \"e02dp8xu\", \"service\": \"smb\", \"share\": \"\\\\\\\\partner-fs-01\\\\finance\", \"share_type\": \"DISK\", \"ts\": 1778379268615, \"uid\": \"SMM3abce02dp8xu\"}",
+    "host": "66.172.48.228",
+    "__eventId": 847,
+    "__inputId": "datagen:vectra_smb_mapping"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_time": 1778543877.822,
+    "_raw": "{\"client\": \"jdoe@CORP.EXAMPLE.COM\", \"cname\": \"jdoe\", \"community_id\": \"1:6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a\", \"error_code\": \"KDC_ERR_PREAUTH_FAILED\", \"error_msg\": \"KDC_ERR_PREAUTH_FAILED\", \"from\": \"10.232.100.62\", \"id.ip_ver\": \"ipv4\", \"id.orig_h\": \"10.232.100.62\", \"id.orig_p\": 60101, \"id.resp_h\": \"10.232.100.5\", \"id.resp_p\": 88, \"local_orig\": true, \"local_resp\": true, \"metadata_type\": \"metadata_kerberos_txn\", \"orig_hostname\": \"workstation-01\", \"orig_huid\": \"Ua7-0tHA\", \"orig_sluid\": \"L.d-kGit\", \"request_type\": \"AS\", \"resp_hostname\": \"dc-01\", \"resp_huid\": \"Ua7-0tHP\", \"resp_sluid\": \"L.Z-tpDi\", \"sensor_uid\": \"e02dp8xu\", \"service\": \"krbtgt/CORP.EXAMPLE.COM\", \"sname\": \"krbtgt/CORP.EXAMPLE.COM\", \"success\": false, \"till\": 1778382746615, \"ts\": 1778379146615, \"uid\": \"KRB1abce02dp8xu\"}",
+    "host": "66.172.48.228",
+    "__eventId": 735,
+    "__inputId": "datagen:vectra_stream_kerberos"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_time": 1778543890.855,
+    "_raw": "{\"community_id\": \"1:2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c\", \"domain\": \"CORP\", \"hostname\": \"finance-ws02\", \"id.ip_ver\": \"ipv4\", \"id.orig_h\": \"10.232.100.88\", \"id.orig_p\": 49422, \"id.resp_h\": \"10.232.100.21\", \"id.resp_p\": 445, \"local_orig\": true, \"local_resp\": true, \"metadata_type\": \"metadata_ntlm\", \"ntlm_type\": \"Authenticate\", \"orig_hostname\": \"finance-ws02\", \"orig_huid\": \"Ua7-0tHB\", \"orig_sluid\": \"L.d-kGiu\", \"resp_hostname\": \"fileserver-02\", \"resp_huid\": \"Ua7-0tHG\", \"resp_sluid\": \"L.Z-tpDh\", \"sensor_uid\": \"e02dp8xu\", \"server_nb_computer_name\": \"FILESERVER-02\", \"server_dns_computer_name\": \"fileserver-02.corp.example.com\", \"service\": \"smb\", \"status\": \"STATUS_LOGON_FAILURE\", \"success\": false, \"ts\": 1778379088615, \"uid\": \"NTL2abce02dp8xu\", \"username\": \"alice\"}",
+    "host": "66.172.48.228",
+    "__eventId": 836,
+    "__inputId": "datagen:vectra_stream_ntlm"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_time": 1778543903.65,
+    "_raw": "{\"cipher\": \"TLS_RSA_WITH_3DES_EDE_CBC_SHA\", \"client_version\": \"SSL3.0\", \"client_version_num\": 768, \"community_id\": \"1:dd44ee55ff66aa11bb22cc33dd44ee55ff66aa11\", \"established\": true, \"id.ip_ver\": \"ipv4\", \"id.orig_h\": \"10.232.100.46\", \"id.orig_p\": 54300, \"id.resp_h\": \"10.232.100.203\", \"id.resp_p\": 443, \"issuer\": \"/C=US/O=Internal CA/CN=legacy2.corp.example.com\", \"local_orig\": true, \"local_resp\": true, \"metadata_type\": \"metadata_ssl\", \"orig_hostname\": \"legacy-host-02\", \"orig_huid\": \"Ua7-0tHI\", \"orig_sluid\": \"L.d-kGiw\", \"resp_hostname\": \"legacy-server-2\", \"resp_sluid\": \"L.Z-tpDs\", \"sensor_uid\": \"e02dp8xu\", \"server_name\": \"legacy2.corp.example.com\", \"subject\": \"/C=US/O=Corp/CN=legacy2.corp.example.com\", \"ts\": 1772029132706, \"uid\": \"SSL6abce02dp8xu\", \"version\": \"SSL3.0\", \"version_num\": 768}",
+    "host": "66.172.48.228",
+    "__eventId": 1786,
+    "__inputId": "datagen:vectra_stream"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_time": 1778543890.855,
+    "_raw": "{\"community_id\": \"1:3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d\", \"domain\": \"CORP\", \"hostname\": \"workstation-01\", \"id.ip_ver\": \"ipv4\", \"id.orig_h\": \"10.232.100.62\", \"id.orig_p\": 49555, \"id.resp_h\": \"10.232.100.22\", \"id.resp_p\": 445, \"local_orig\": true, \"local_resp\": true, \"metadata_type\": \"metadata_ntlm\", \"ntlm_type\": \"Authenticate\", \"orig_hostname\": \"workstation-01\", \"orig_huid\": \"Ua7-0tHA\", \"orig_sluid\": \"L.d-kGit\", \"resp_hostname\": \"dc-01\", \"resp_huid\": \"Ua7-0tHP\", \"resp_sluid\": \"L.Z-tpDi\", \"sensor_uid\": \"e02dp8xu\", \"server_nb_computer_name\": \"DC-01\", \"server_dns_computer_name\": \"dc-01.corp.example.com\", \"service\": \"smb\", \"status\": \"STATUS_SUCCESS\", \"success\": true, \"ts\": 1778379090615, \"uid\": \"NTL3abce02dp8xu\", \"username\": \"jdoe\"}",
+    "host": "66.172.48.228",
+    "__eventId": 837,
+    "__inputId": "datagen:vectra_stream_ntlm"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_time": 1778543903.65,
+    "_raw": "{\"AA\": false, \"RA\": true, \"RD\": true, \"TC\": false, \"answers\": [\"8.8.8.8\"], \"community_id\": \"1:ee55ff66aa11bb22cc33dd44ee55ff66aa11bb22\", \"id.ip_ver\": \"ipv4\", \"id.orig_h\": \"10.232.100.62\", \"id.orig_p\": 55101, \"id.resp_h\": \"10.232.100.10\", \"id.resp_p\": 53, \"local_orig\": true, \"local_resp\": true, \"metadata_type\": \"metadata_dns\", \"orig_hostname\": \"workstation-01\", \"orig_huid\": \"Ua7-0tHA\", \"orig_sluid\": \"L.d-kGit\", \"proto\": 17, \"qclass\": 1, \"qclass_name\": \"C_INTERNET\", \"qtype\": 1, \"qtype_name\": \"A\", \"query\": \"intranet.corp.example.com\", \"rcode\": 0, \"rcode_name\": \"NOERROR\", \"rejected\": false, \"resp_hostname\": \"dns-server\", \"saw_query\": true, \"saw_reply\": true, \"sensor_uid\": \"e02dp8xu\", \"total_answers\": 1, \"total_replies\": 1, \"ts\": 1772029134706, \"uid\": \"DNS1abce02dp8xu\"}",
+    "host": "66.172.48.228",
+    "__eventId": 1787,
+    "__inputId": "datagen:vectra_stream"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_raw": "{\"action\":\"SMB::LOGOFF\",\"community_id\":\"1:af95cecf4057df27ea912d5261341060bcaa6ee5\",\"delete_on_close\":false,\"id.ip_ver\":\"ipv4\",\"id.orig_h\":\"10.232.100.150\",\"id.orig_p\":57310,\"id.resp_h\":\"10.232.100.32\",\"id.resp_p\":445,\"local_orig\":true,\"local_resp\":true,\"metadata_type\":\"metadata_smbfiles\",\"orig_hostname\":\"jump-station5\",\"orig_huid\":\"TwTDQXl5\",\"orig_sluid\":\"GFl-IwPF\",\"resp_hostname\":\"DC-ficto01\",\"resp_huid\":\"TwTDQXl2\",\"resp_sluid\":\"GFl-tpDk\",\"sensor_uid\":\"e02dp8xu\",\"ts\":1769736826830,\"uid\":\"p.-1hmw6e02dp8xu\",\"version\":\"SMBv2\"}",
+    "_time": 1778543883.921,
+    "host": "66.172.48.228",
+    "__eventId": 918,
+    "__inputId": "datagen:vectra_stream_smbfiles"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_raw": "{\"action\":\"SMB::LOGOFF\",\"community_id\":\"1:49fd91a660bccd77cbca1946b5edc1ffbe49f88d\",\"delete_on_close\":false,\"id.ip_ver\":\"ipv4\",\"id.orig_h\":\"10.232.100.62\",\"id.orig_p\":57211,\"id.resp_h\":\"10.232.100.32\",\"id.resp_p\":445,\"local_orig\":true,\"local_resp\":true,\"metadata_type\":\"metadata_smbfiles\",\"orig_hostname\":\"marketing-collab-server0\",\"orig_huid\":\"TwTDQXl4\",\"orig_sluid\":\"GFl-kGis\",\"resp_hostname\":\"DC-ficto01\",\"resp_huid\":\"TwTDQXl2\",\"resp_sluid\":\"GFl-tpDk\",\"sensor_uid\":\"e02dp8xu\",\"ts\":1769737443385,\"uid\":\"4jY1obN3e02dp8xu\",\"version\":\"SMBv2\"}",
+    "_time": 1778543883.921,
+    "host": "66.172.48.228",
+    "__eventId": 919,
+    "__inputId": "datagen:vectra_stream_smbfiles"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_time": 1778543893.988,
+    "_raw": "{\"community_id\": \"1:2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c\", \"domain\": \"CORP\", \"hostname\": \"finance-ws02\", \"id.ip_ver\": \"ipv4\", \"id.orig_h\": \"10.232.100.88\", \"id.orig_p\": 49422, \"id.resp_h\": \"10.232.100.21\", \"id.resp_p\": 445, \"local_orig\": true, \"local_resp\": true, \"metadata_type\": \"metadata_ntlm\", \"ntlm_type\": \"Authenticate\", \"orig_hostname\": \"finance-ws02\", \"orig_huid\": \"Ua7-0tHB\", \"orig_sluid\": \"L.d-kGiu\", \"resp_hostname\": \"fileserver-02\", \"resp_huid\": \"Ua7-0tHG\", \"resp_sluid\": \"L.Z-tpDh\", \"sensor_uid\": \"e02dp8xu\", \"server_nb_computer_name\": \"FILESERVER-02\", \"server_dns_computer_name\": \"fileserver-02.corp.example.com\", \"service\": \"smb\", \"status\": \"STATUS_LOGON_FAILURE\", \"success\": false, \"ts\": 1778379088615, \"uid\": \"NTL2abce02dp8xu\", \"username\": \"alice\"}",
+    "host": "66.172.48.228",
+    "__eventId": 866,
+    "__inputId": "datagen:vectra_stream_ntlm"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_time": 1778543893.988,
+    "_raw": "{\"community_id\": \"1:3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d\", \"domain\": \"CORP\", \"hostname\": \"workstation-01\", \"id.ip_ver\": \"ipv4\", \"id.orig_h\": \"10.232.100.62\", \"id.orig_p\": 49555, \"id.resp_h\": \"10.232.100.22\", \"id.resp_p\": 445, \"local_orig\": true, \"local_resp\": true, \"metadata_type\": \"metadata_ntlm\", \"ntlm_type\": \"Authenticate\", \"orig_hostname\": \"workstation-01\", \"orig_huid\": \"Ua7-0tHA\", \"orig_sluid\": \"L.d-kGit\", \"resp_hostname\": \"dc-01\", \"resp_huid\": \"Ua7-0tHP\", \"resp_sluid\": \"L.Z-tpDi\", \"sensor_uid\": \"e02dp8xu\", \"server_nb_computer_name\": \"DC-01\", \"server_dns_computer_name\": \"dc-01.corp.example.com\", \"service\": \"smb\", \"status\": \"STATUS_SUCCESS\", \"success\": true, \"ts\": 1778379090615, \"uid\": \"NTL3abce02dp8xu\", \"username\": \"jdoe\"}",
+    "host": "66.172.48.228",
+    "__eventId": 867,
+    "__inputId": "datagen:vectra_stream_ntlm"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_time": 1778543875.03,
+    "_raw": "{\"cipher\":\"TLS_RSA_WITH_RC4_128_MD5\",\"client_curve_num\":[23],\"client_ec_point_format\":[0],\"client_extension\":[0,5,10],\"client_version\":\"TLS1.0\",\"client_version_num\":769,\"community_id\":\"1:cc33dd44ee55ff66aa11bb22cc33dd44ee55ff66\",\"established\":true,\"id.ip_ver\":\"ipv4\",\"id.orig_h\":\"10.232.100.45\",\"id.orig_p\":54200,\"id.resp_h\":\"10.232.100.202\",\"id.resp_p\":443,\"issuer\":\"/C=US/O=Internal CA/CN=legacy.corp.example.com\",\"ja3\":\"c2e1f7d86571d5ac92g43e31c3e3ca9bb\",\"ja3s\":\"d3f2g8e97682e6bd03h54f42d4f4db0cc\",\"local_orig\":true,\"local_resp\":true,\"metadata_type\":\"metadata_ssl\",\"orig_hostname\":\"legacy-host-01\",\"orig_huid\":\"Ua7-0tHH\",\"orig_sluid\":\"L.d-kGiv\",\"resp_hostname\":\"legacy-server\",\"resp_sluid\":\"L.Z-tpDr\",\"sensor_uid\":\"e02dp8xu\",\"server_name\":\"legacy.corp.example.com\",\"subject\":\"/C=US/O=Corp/CN=legacy.corp.example.com\",\"ts\":1769734504.0,\"uid\":\"SSL5abce02dp8xu\",\"version\":\"TLS1.0\",\"version_num\":769}",
+    "host": "66.172.48.228",
+    "__eventId": 860,
+    "__inputId": "datagen:vectra_stream_2"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_time": 1778543875.03,
+    "_raw": "{\"cipher\":\"TLS_RSA_WITH_3DES_EDE_CBC_SHA\",\"client_version\":\"SSL3.0\",\"client_version_num\":768,\"community_id\":\"1:dd44ee55ff66aa11bb22cc33dd44ee55ff66aa11\",\"established\":true,\"id.ip_ver\":\"ipv4\",\"id.orig_h\":\"10.232.100.46\",\"id.orig_p\":54300,\"id.resp_h\":\"10.232.100.203\",\"id.resp_p\":443,\"issuer\":\"/C=US/O=Internal CA/CN=legacy2.corp.example.com\",\"local_orig\":true,\"local_resp\":true,\"metadata_type\":\"metadata_ssl\",\"orig_hostname\":\"legacy-host-02\",\"orig_huid\":\"Ua7-0tHI\",\"orig_sluid\":\"L.d-kGiw\",\"resp_hostname\":\"legacy-server-2\",\"resp_sluid\":\"L.Z-tpDs\",\"sensor_uid\":\"e02dp8xu\",\"server_name\":\"legacy2.corp.example.com\",\"subject\":\"/C=US/O=Corp/CN=legacy2.corp.example.com\",\"ts\":1769734506.0,\"uid\":\"SSL6abce02dp8xu\",\"version\":\"SSL3.0\",\"version_num\":768}",
+    "host": "66.172.48.228",
+    "__eventId": 861,
+    "__inputId": "datagen:vectra_stream_2"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_time": 1778543909.46,
+    "_raw": "{\"client_build\": \"RDP 10.0.19041\", \"client_name\": \"workstation-ipv6\", \"community_id\": \"1:ff99aa44bb55cc66dd77ee88ff99aa44bb55cc66\", \"cookie\": \"jdoe\", \"desktop_height\": 1080, \"desktop_width\": 1920, \"id.ip_ver\": \"ipv6\", \"id.orig_h\": \"2001:db8:1::62\", \"id.orig_p\": 58100, \"id.resp_h\": \"2001:db8:1::200\", \"id.resp_p\": 3389, \"keyboard_layout\": \"US\", \"local_orig\": true, \"local_resp\": true, \"metadata_type\": \"metadata_rdp\", \"orig_hostname\": \"workstation-ipv6\", \"orig_huid\": \"Ua7-0tHM\", \"orig_sluid\": \"L.d-kGix\", \"resp_hostname\": \"intranet-server-ipv6\", \"resp_huid\": \"Ua7-0tHN\", \"resp_sluid\": \"L.Z-tpDu\", \"result\": \"\", \"sensor_uid\": \"e02dp8xu\", \"ts\": 1772029172706, \"uid\": \"RDP5abce02dp8xu\"}",
+    "host": "66.172.48.228",
+    "__eventId": 1698,
+    "__inputId": "datagen:vectra_stream"
+  },
+  {
+    "__criblEventType": "event",
+    "__ctrlFields": [],
+    "__final": false,
+    "__cloneCount": 0,
+    "_time": 1778543909.46,
+    "_raw": "{\"community_id\": \"1:aa55bb66cc77dd88ee99ff00aa55bb66cc77dd88\", \"conn_state\": \"SF\", \"dir_confidence\": 80, \"duration\": 120, \"id.ip_ver\": \"ipv6\", \"id.orig_h\": \"2001:db8:1::62\", \"id.orig_p\": 58200, \"id.resp_h\": \"ff02::1\", \"id.resp_p\": 5355, \"local_orig\": true, \"local_resp\": true, \"metadata_type\": \"metadata_isession\", \"orig_hostname\": \"workstation-ipv6\", \"orig_huid\": \"Ua7-0tHM\", \"orig_ip_bytes\": \"480\", \"orig_pkts\": 4, \"orig_sluid\": \"L.d-kGix\", \"orig_vlan_id\": 100, \"proto\": 17, \"protoName\": \"UDP\", \"resp_ip_bytes\": \"960\", \"resp_multihomed\": false, \"resp_pkts\": 8, \"resp_vlan_id\": 100, \"sensor_uid\": \"e02dp8xu\", \"service\": \"dns\", \"session_start_time\": 1772029174706, \"ts\": 1772029174706, \"uid\": \"ISS7abce02dp8xu\"}",
+    "host": "66.172.48.228",
+    "__eventId": 1699,
+    "__inputId": "datagen:vectra_stream"
+  }
+]
