@@ -1,0 +1,12 @@
+var e=[{_time:1652695256,cribl_breaker:`Break on newlines`,_raw:`05/16/2022 03:30:56 PM\r
+LogName=Application\r
+SourceName=FileMaker Server 13\r
+EventCode=502\r
+EventType=4\r
+Type=Information\r
+ComputerName=myhost.acme.com\r
+TaskCategory=The operation completed successfully.\r
+OpCode=None\r
+RecordNumber=1238394\r
+Keywords=Classic\r
+Message=Client authentication method: FileMaker and External Server.`}];export{e as default};
