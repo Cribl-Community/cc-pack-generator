@@ -1,9 +1,5 @@
 # AI providers
 
-# Internal Cribl AI proxy (Aperture via Tailscale)
-ai:
-  timeout: 120000
-
 api.anthropic.com:
   timeout: 120000
   paths:

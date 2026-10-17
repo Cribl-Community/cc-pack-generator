@@ -4,6 +4,7 @@ import type { AiProvider } from './ai-client';
 import { invalidateAiHealth } from './api';
 import { getRunMode } from './run-mode';
 import { aiSettingsLocked } from './settings-store';
+import { INTERNAL_AI } from './build-flavor';
 
 const ANTHROPIC_MODELS = [
   { id: 'claude-sonnet-5', label: 'Claude Sonnet 5' },
@@ -87,7 +88,7 @@ const BEDROCK_REGIONS = [
 ];
 
 const PROVIDERS: { id: AiProvider; label: string }[] = [
-  { id: 'devproxy', label: 'Cribl AI (Aperture)' },
+  ...(INTERNAL_AI ? [{ id: 'devproxy' as const, label: 'Cribl AI (Aperture)' }] : []),
   { id: 'cribl', label: 'Cribl AI Settings (this org)' },
   { id: 'anthropic', label: 'Anthropic' },
   { id: 'bedrock', label: 'AWS Bedrock' },
@@ -120,7 +121,7 @@ function getModels(provider: AiProvider) {
 }
 
 export default function AiSettingsModal({ open, onClose, embedded, onSaved }: Props) {
-  const [provider, setProvider] = useState<AiProvider>(getRunMode() === 'iframe' ? 'anthropic' : 'devproxy');
+  const [provider, setProvider] = useState<AiProvider>(getRunMode() === 'iframe' || !INTERNAL_AI ? 'anthropic' : 'devproxy');
   const [model, setModel] = useState('');
   const [normalModel, setNormalModel] = useState('');
   const [repairModel, setRepairModel] = useState('');
@@ -255,7 +256,7 @@ export default function AiSettingsModal({ open, onClose, embedded, onSaved }: Pr
                 onChange={e => setDevProxyUrl(e.target.value)}
               />
               <p className="field-hint">
-                Internal Cribl AI via Aperture (Tailscale). No credentials needed — the proxy handles auth. Requires Tailscale connection and #proj-ts-aperture-enablement access.
+                Internal Cribl AI via Aperture (Tailscale). No credentials needed — the proxy handles auth. Requires a Tailscale connection.
               </p>
             </div>
           )}
