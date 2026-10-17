@@ -1,0 +1,17 @@
+runtime: js
+endpoints:
+  - name: runBatchStep
+    script: backend-build/run-batch-step.js
+    description: "Batch — Background stage runner. Advances ONE durable stage of ONE
+      row per invocation and checkpoints it to the App's KV store, so a closed
+      browser tab does not stop the run. Invoked once by the UI to start a run
+      (kickoff), and thereafter by its own self-scheduled one-minute tick until
+      the run finishes, is stopped, or is dismissed. Samples are resolved in
+      foreground pre-flight — this function never generates or extends one; a
+      row without a sample is skipped. AI extraction, mapping and repair DO run
+      here, through the run's own non-secret provider/model snapshot
+      (credentials stay in the platform's proxy injection). Direct AWS Bedrock
+      is excluded: its SigV4 signing keys live in the browser, which this
+      function has none of."
+    timeout: 300
+    memory: 256

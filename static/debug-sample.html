@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Debug: Add Sample to cisco-test</title>
+  <style>
+    body { font-family: monospace; padding: 20px; background: #1a1a2e; color: #eee; }
+    button { padding: 8px 16px; margin: 5px; cursor: pointer; background: #0f3460; color: #fff; border: 1px solid #16213e; border-radius: 4px; }
+    button:hover { background: #1a508b; }
+    .step { margin: 15px 0; padding: 10px; border: 1px solid #333; border-radius: 4px; }
+    .step h3 { margin: 0 0 8px 0; color: #e94560; }
+    .result { background: #16213e; padding: 8px; margin-top: 8px; white-space: pre-wrap; max-height: 300px; overflow: auto; font-size: 12px; }
+    .success { border-color: #4caf50; }
+    .error { border-color: #f44336; }
+    h1 { color: #e94560; }
+    .note { color: #888; font-size: 11px; }
+  </style>
+</head>
+<body>
+  <h1>Debug: Add Sample to existing cisco-test pack</h1>
+  <p class="note">Each step uses its own unique sample ID (DbgSmN) so they don't conflict. Run 1+2 first (create metadata), then 3-8 (try writing content), then 9 (deploy), then 10+11 (verify).</p>
+
+  <div class="step" id="step1">
+    <h3>Step 1: POST metadata-only to pack (creates DbgSm1)</h3>
+    <p>POST /m/seLab/p/cisco-test/system/samples — {id, sampleName, isTemplate} no items</p>
+    <button onclick="run(1)">Run</button>
+    <div class="result" id="r1"></div>
+  </div>
+
+  <div class="step" id="step2">
+    <h3>Step 2: POST metadata-only to global (creates DbgSm2)</h3>
+    <p>POST /m/seLab/system/samples — {id, sampleName, isTemplate} no items</p>
+    <button onclick="run(2)">Run</button>
+    <div class="result" id="r2"></div>
+  </div>
+
+  <div class="step" id="step3">
+    <h3>Step 3: POST with context.events to pack (THE UI METHOD)</h3>
+    <p>POST /m/seLab/p/cisco-test/system/samples — {sampleName, context: {events: [...]}}</p>
+    <button onclick="run(3)">Run</button>
+    <div class="result" id="r3"></div>
+  </div>
+
+  <div class="step" id="step4">
+    <h3>Step 4: POST with context.events to global</h3>
+    <p>POST /m/seLab/system/samples — {sampleName, context: {events: [...]}}</p>
+    <button onclick="run(4)">Run</button>
+    <div class="result" id="r4"></div>
+  </div>
+
+  <div class="step" id="step5">
+    <h3>Step 5: PUT full object to pack (targets DbgSm1)</h3>
+    <p>PUT /m/seLab/p/cisco-test/system/samples/DbgSm1 — full sample with items[]</p>
+    <button onclick="run(5)">Run</button>
+    <div class="result" id="r5"></div>
+  </div>
+
+  <div class="step" id="step6">
+    <h3>Step 6: PUT full object to global (targets DbgSm2)</h3>
+    <p>PUT /m/seLab/system/samples/DbgSm2 — full sample with items[]</p>
+    <button onclick="run(6)">Run</button>
+    <div class="result" id="r6"></div>
+  </div>
+
+  <div class="step" id="step7">
+    <h3>Step 7: POST multipart file upload to pack</h3>
+    <p>POST /m/seLab/p/cisco-test/system/samples — multipart/form-data with file</p>
+    <button onclick="run(7)">Run</button>
+    <div class="result" id="r7"></div>
+  </div>
+
+  <div class="step" id="step8">
+    <h3>Step 8: POST multipart file upload to global</h3>
+    <p>POST /m/seLab/system/samples — multipart/form-data with file</p>
+    <button onclick="run(8)">Run</button>
+    <div class="result" id="r8"></div>
+  </div>
+
+  <div class="step" id="step9">
+    <h3>Step 9: Commit + Deploy</h3>
+    <button onclick="run(9)">Run</button>
+    <div class="result" id="r9"></div>
+  </div>
+
+  <div class="step" id="step10">
+    <h3>Step 10: List pack samples + check /content (pack-scoped)</h3>
+    <p>Lists all samples in pack, then GETs /content for each</p>
+    <button onclick="run(10)">Run</button>
+    <div class="result" id="r10"></div>
+  </div>
+
+  <div class="step" id="step11">
+    <h3>Step 11: Same samples — check /content (GLOBAL scope)</h3>
+    <p>Same IDs from pack list, but fetches via /m/seLab/system/samples/{id}/content</p>
+    <button onclick="run(11)">Run</button>
+    <div class="result" id="r11"></div>
+  </div>
+
+  <div class="step" id="step12">
+    <h3>Step 12: Cleanup — delete ALL debug samples</h3>
+    <button onclick="run(12)">Run</button>
+    <div class="result" id="r12"></div>
+  </div>
+
+  <script>
+    const BASE = '/api/pack-generator/debug-sample';
+
+    function log(step, text, isError) {
+      document.getElementById('r' + step).textContent = text;
+      document.getElementById('step' + step).className = 'step ' + (isError ? 'error' : 'success');
+    }
+
+    async function run(step) {
+      try {
+        const resp = await fetch(BASE, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ step })
+        });
+        const data = await resp.json();
+        log(step, JSON.stringify(data, null, 2), data.error || !data.ok);
+      } catch (e) {
+        log(step, 'Error: ' + e.message, true);
+      }
+    }
+  </script>
+</body>
+</html>
