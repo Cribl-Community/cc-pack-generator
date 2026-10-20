@@ -1,0 +1,15 @@
+var e=[{_time:1653549558,cribl_breaker:`Break on newlines`,_raw:`05/26/2022 12:49:18 PM
+LogName=Application
+SourceName=Microsoft-Windows-CertificateServicesClient
+EventCode=1004
+EventType=2
+Type=Error
+ComputerName=myhost.acme.com
+User=NOT_TRANSLATED
+Sid=S-1-5-18
+SidType=0
+TaskCategory=The operation completed successfully.
+OpCode=Info
+RecordNumber=3721162
+Keywords=None
+Message=Certificate Services Client Provider some.dll raised an exception. Exception code 3221225477.`}];export{e as default};
