@@ -135,6 +135,6 @@ Issues and pull requests are welcome here. This repository is generated from the
 
 Apache-2.0. The bundled secret-detection rules are MIT-licensed; see `config/bundled-secret-rules-NOTICE`. The shared sample pool's terms are in `config/samples-pool-NOTICE`.
 
-## Author
+## Authors
 
-Wilfred van der Linde, Cribl Solutions Engineering
+Wilfred van der Linde (maintainer), Simon Duchene and Shailendra Sadh, Cribl Solutions Engineering. Simon contributed the Cortex XSIAM destination, the Alibaba and custom sources, and the XSIAM content-pack contracts.
