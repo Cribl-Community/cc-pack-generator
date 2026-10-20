@@ -137,4 +137,4 @@ Apache-2.0. The bundled secret-detection rules are MIT-licensed; see `config/bun
 
 ## Authors
 
-Wilfred van der Linde (maintainer), Simon Duchene and Shailendra Sadh, Cribl Solutions Engineering. Simon contributed the Cortex XSIAM destination, the Alibaba and custom sources, and the XSIAM content-pack contracts.
+Built together by Wilfred van der Linde, Simon Duchene and Shailendra Sadh, Cribl Solutions Engineering.

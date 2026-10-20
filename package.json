@@ -1,8 +1,8 @@
 {
   "name": "cc-pack-generator",
   "private": true,
-  "version": "1.0.305",
-  "buildNumber": 930,
+  "version": "1.0.306",
+  "buildNumber": 931,
   "type": "module",
   "scripts": {
     "dev": "vite",
