@@ -1,0 +1,86 @@
+policies:
+  - object: '/m/*/packs'
+    actions: ['GET', 'POST', 'PUT', 'DELETE']
+  - object: '/m/*/packs/*'
+    actions: ['GET', 'DELETE']
+  # POST creates the pipeline in add-pipeline mode (a second destination in an
+  # existing pack); PATCH updates what the .crbl import wrote. Both verbs are
+  # needed because either can be the one that lands (src/api.ts writePipeline).
+  - object: '/m/*/p/*/pipelines'
+    actions: ['GET', 'POST']
+  - object: '/m/*/p/*/pipelines/*'
+    actions: ['GET', 'PATCH']
+  # The pack's own route table: read to append a sibling route, PATCHed to
+  # write the table back with route finality normalized.
+  - object: '/m/*/p/*/routes'
+    actions: ['GET']
+  - object: '/m/*/p/*/routes/*'
+    actions: ['PATCH']
+  # The live preview that produces every score (Hard Rule 12) — the background
+  # runner has no other way to measure a pipeline it just deployed.
+  - object: '/m/*/p/*/preview'
+    actions: ['POST']
+  - object: '/m/*/p/*/system/samples'
+    actions: ['GET', 'POST']
+  # PATCH is the sample UPSERT: a re-run reuses the sourcetype's sample name and
+  # POST would 409, keeping the stale events the new pipeline is then scored on.
+  - object: '/m/*/p/*/system/samples/*'
+    actions: ['GET', 'PATCH']
+  - object: '/m/*/p/*/system/samples/*/content'
+    actions: ['GET']
+  # Reference lookups bundled into the pack so lookup-driven parsing resolves —
+  # a cisco_asa pack's `cisco_asa_parsing.csv` is deployed here, by the SAME
+  # deploy() code in the iframe and in the background runner. Not a
+  # background-only grant: the iframe has always needed it, and the background
+  # path reaches it too now that the corpus ships as a build-time define
+  # (build 753). POST creates, PATCH overwrites a stale one on re-deploy.
+  - object: '/m/*/p/*/system/lookups'
+    actions: ['POST']
+  - object: '/m/*/p/*/system/lookups/*'
+    actions: ['PATCH']
+  - object: '/m/*/system/samples'
+    actions: ['GET', 'POST']
+  - object: '/m/*/system/samples/*'
+    actions: ['GET', 'PATCH', 'DELETE']
+  - object: '/m/*/system/samples/*/content'
+    actions: ['GET']
+  - object: '/version/commit'
+    actions: ['POST']
+  # Read the latest config version when a commit response carries no usable
+  # hash — without it there is nothing to deploy.
+  - object: '/version'
+    actions: ['GET']
+  - object: '/master/groups/*/deploy'
+    actions: ['PATCH']
+  - object: '/master/groups'
+    actions: ['GET']
+  # Measured: the deploy above answers 404 "Group <id> not found" without this.
+  # A group deploy resolves against the groups the caller can SEE, and the
+  # collection grant covers the collection path only.
+  - object: '/master/groups/*'
+    actions: ['GET']
+  - object: '/master/workers'
+    actions: ['GET']
+  - object: '/m/:gid/search/datasets'
+    actions: ['GET']
+  - object: '/m/:gid/search/datasets/*'
+    actions: ['GET', 'PATCH']
+  - object: '/m/:gid/search/datatypes'
+    actions: ['GET', 'POST']
+  - object: '/m/:gid/search/datatypes/*'
+    actions: ['GET', 'PATCH']
+  - object: '/m/:gid/search/dashboards'
+    actions: ['GET', 'POST']
+  - object: '/m/:gid/search/dashboards/*'
+    actions: ['GET', 'PATCH']
+  # Backend schedules are product APIs and need explicit policy grants.
+  # Invoking runBatchStep is app-local and declared in backend.yml, so it
+  # does not require (or permit) a separate product endpoint policy.
+  - object: '/backend-schedules'
+    actions: ['POST']
+  - object: '/backend-schedules/*'
+    actions: ['DELETE']
+  # Cribl AI Settings provider (src/ai-client.ts callCriblAi): the org's own AI
+  # through the generic open_investigator agent, so the app holds no key.
+  - object: '/ai/q/agents/open_investigator'
+    actions: ['POST']
