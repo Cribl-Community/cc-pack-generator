@@ -1813,6 +1813,7 @@ export function planSanitisation(text: string, opts: SanitiseOptions = {}): Sani
   const enabledOnly = buildReplacer(candidates.filter(e => e.enabled));
   if (all) {
     text.replace(all.re, (hit: string, offset: number) => {
+      if (inJsonKey(text, offset, offset + hit.length)) return hit;
       hits.set(hit, (hits.get(hit) ?? 0) + 1);
       const e = all.byValue.get(hit)!;
       /* A pick consumes its whole match, but apply still masks the auto-detected values in its
@@ -1930,6 +1931,59 @@ export function planSanitisation(text: string, opts: SanitiseOptions = {}): Sani
 // ---------------------------------------------------------------------------
 
 function escapeRe(s: string): string { return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
+
+/**
+ * The inside of every JSON object key in `text`, as flat `[start, end, start, end, …]` offsets,
+ * on the lines that parse as JSON — the same lines `checkStructurePreserved` holds to their keys.
+ *
+ * A replacement is a text swap, so a value that also spells a key renamed the key with it: GCP
+ * audit labels are keyed `compute.googleapis.com/root_trigger_id` while `serviceName` holds
+ * `compute.googleapis.com`, and a user called `admin` rewrote an `"admin": true` flag. The save
+ * gate then refused the whole sample ("changed their field names") with nothing the reviewer
+ * could untick that made sense. Keys are the schema the pack is built against, not identity, so
+ * the matcher leaves them alone (`inJsonKey`) and only values change.
+ *
+ * Memoised on the last text: every caller asks about the same sample (or line) once per hit.
+ */
+let keySpanMemo: { text: string; spans: number[] } | null = null;
+function jsonKeySpans(text: string): number[] {
+  if (keySpanMemo && keySpanMemo.text === text) return keySpanMemo.spans;
+  const spans: number[] = [];
+  let lineStart = 0;
+  for (const line of text.split('\n')) {
+    const t = line.trimStart();
+    if (t.startsWith('{') || t.startsWith('[')) {
+      let ok = true;
+      try { JSON.parse(line); } catch { ok = false; }
+      if (ok) {
+        for (let i = 0; i < line.length; i++) {
+          if (line[i] !== '"') continue;
+          const open = i;
+          for (i++; i < line.length && line[i] !== '"'; i++) if (line[i] === '\\') i++;
+          let j = i + 1;
+          while (j < line.length && (line[j] === ' ' || line[j] === '\t')) j++;
+          if (line[j] === ':') spans.push(lineStart + open + 1, lineStart + i);
+        }
+      }
+    }
+    lineStart += line.length + 1;
+  }
+  keySpanMemo = { text, spans };
+  return spans;
+}
+
+/** True when `[start, end)` lies inside one JSON object key of `text` (see `jsonKeySpans`). */
+function inJsonKey(text: string, start: number, end: number): boolean {
+  const spans = jsonKeySpans(text);
+  let lo = 0, hi = spans.length / 2 - 1;
+  while (lo <= hi) {
+    const mid = (lo + hi) >> 1;
+    if (spans[2 * mid + 1] <= start) lo = mid + 1;
+    else if (spans[2 * mid] > start) hi = mid - 1;
+    else return end <= spans[2 * mid + 1];
+  }
+  return false;
+}
 
 /**
  * Replace every enabled entry throughout the text.
@@ -2053,6 +2107,7 @@ function expandHit(text: string, index: number, matched: string, entry: Sanitise
     for (let h = inner.exec(text); h && h.index < index + end; h = inner.exec(text)) {
       const rs = h.index - index, re = rs + h[0].length;
       if (re > end) break;
+      if (inJsonKey(text, h.index, h.index + h[0].length)) continue;
       const e = m.byValue.get(h[0])!;
       out += matched.slice(cursor, rs);
       pieces.push({ bStart: rs, bEnd: re, aStart: out.length, aEnd: out.length + e.alias.length, entry: e });
@@ -2102,6 +2157,7 @@ export function markSanitisation(text: string, entries: SanitiseEntry[]): Saniti
   const spans: SanitiseSpan[] = [];
   m.re.lastIndex = 0;
   for (let hit = m.re.exec(text); hit; hit = m.re.exec(text)) {
+    if (inJsonKey(text, hit.index, hit.index + hit[0].length)) continue;
     const entry = m.byValue.get(hit[0])!;
     for (const p of expandHit(text, hit.index, hit[0], entry, m).pieces) {
       spans.push({ start: hit.index + p.bStart, end: hit.index + p.bEnd, entry: p.entry });
@@ -2155,7 +2211,8 @@ export function applySanitisation(text: string, entries: SanitiseEntry[]): strin
   if (!m) return text;
   /* A function replacer, so an alias is inserted literally. A machine-account alias ends in
      `$`, and `$&` in a string replacement would splice the match back in. */
-  return text.replace(m.re, (hit: string, offset: number) => expandHit(text, offset, hit, m.byValue.get(hit)!, m).alias);
+  return text.replace(m.re, (hit: string, offset: number) =>
+    inJsonKey(text, offset, offset + hit.length) ? hit : expandHit(text, offset, hit, m.byValue.get(hit)!, m).alias);
 }
 
 export interface PreviewLine {
@@ -2237,6 +2294,7 @@ export function previewSanitisation(
     let changed = false;
     for (let hit = m.re.exec(before); hit; hit = m.re.exec(before)) {
       const matched = hit[0];
+      if (inJsonKey(before, hit.index, hit.index + matched.length)) continue;
       const entry = m.byValue.get(matched)!;
       after += before.slice(at, hit.index);
       const aStart = after.length;
@@ -2374,10 +2432,18 @@ export interface StructuralCheck {
 export function checkStructurePreserved(before: string, after: string): StructuralCheck {
   const problems: string[] = [];
   const a = before.split('\n'), b = after.split('\n');
-  if (a.length !== b.length) problems.push(`Line count changed (${a.length} → ${b.length}).`);
+  if (a.length !== b.length) {
+    // Every later line is compared against the wrong one, so per-line checks would only add noise.
+    let i = 0;
+    while (i < a.length && a[i] === b[i]) i++;
+    problems.push(`Line count changed (${a.length} → ${b.length}) — a replacement adds or removes a line break. First: line ${i + 1}.`);
+    return { ok: false, problems };
+  }
 
+  // The first line each kind of change happens on, in words, so the banner can say where.
   const n = Math.min(a.length, b.length);
   let jsonBroken = 0, keysChanged = 0, delimChanged = 0, wsChanged = 0;
+  let firstBroken = '', firstKeys = '', firstDelim = '', firstWs = '';
   for (let i = 0; i < n; i++) {
     const x = a[i], y = b[i];
     if (!x.trim()) continue;
@@ -2386,27 +2452,70 @@ export function checkStructurePreserved(before: string, after: string): Structur
     if (looksJson) {
       try {
         JSON.parse(x);
-        try { JSON.parse(y); } catch { jsonBroken++; continue; }
-        if (jsonKeys(x) !== jsonKeys(y)) keysChanged++;
+        try { JSON.parse(y); } catch {
+          jsonBroken++;
+          if (!firstBroken) firstBroken = `line ${i + 1} no longer parses${jsonBreakContext(x, y)}`;
+          continue;
+        }
+        if (jsonKeys(x) !== jsonKeys(y)) {
+          keysChanged++;
+          if (!firstKeys) firstKeys = `line ${i + 1}: ${describeKeyChange(x, y)}`;
+        }
       } catch { /* not valid JSON before either — not ours to judge */ }
     }
 
     for (const d of ['\t', '|', ',', '=']) {
-      if (countOf(x, d) !== countOf(y, d)) { delimChanged++; break; }
+      const was = countOf(x, d), now = countOf(y, d);
+      if (was !== now) {
+        delimChanged++;
+        if (!firstDelim) firstDelim = `line ${i + 1} has ${now} ${CHAR_NAMES[d]} where it had ${was}`;
+        break;
+      }
     }
-    if (countOf(x, ' ') !== countOf(y, ' ')) wsChanged++;
+    const wasWs = countOf(x, ' '), nowWs = countOf(y, ' ');
+    if (wasWs !== nowWs) {
+      wsChanged++;
+      if (!firstWs) firstWs = `line ${i + 1} has ${nowWs} spaces where it had ${wasWs}`;
+    }
   }
 
-  if (jsonBroken) problems.push(`${jsonBroken} line(s) were valid JSON before and are not now.`);
-  if (keysChanged) problems.push(`${keysChanged} JSON line(s) changed their field names — only values should change.`);
-  if (delimChanged) problems.push(`${delimChanged} line(s) changed delimiter count, which can shift a CSV/KVP/CEF field boundary.`);
-  if (wsChanged) problems.push(`${wsChanged} line(s) changed whitespace, which can shift a positional parser.`);
+  if (jsonBroken) problems.push(`${jsonBroken} line(s) were valid JSON before and are not now. First: ${firstBroken}.`);
+  if (keysChanged) problems.push(`${keysChanged} JSON line(s) changed their field names — only values should change. First: ${firstKeys}.`);
+  if (delimChanged) problems.push(`${delimChanged} line(s) changed delimiter count, which can shift a CSV/KVP/CEF field boundary. First: ${firstDelim}.`);
+  if (wsChanged) problems.push(`${wsChanged} line(s) changed whitespace, which can shift a positional parser. First: ${firstWs}.`);
 
   return { ok: !problems.length, problems };
 }
 
+const CHAR_NAMES: Record<string, string> = { '\t': 'tabs', '|': "'|' pipes", ',': "',' commas", '=': "'=' signs" };
+
+/** `field "a.b" would become "a.c"` — the first key the sanitised line lost and the one it gained. */
+function describeKeyChange(before: string, after: string): string {
+  const was = new Set(jsonKeys(before).split(','));
+  const now = new Set(jsonKeys(after).split(','));
+  const show = (k: string) => `"${k.replace(/^\./, '')}"`;
+  const lost = [...was].find(k => !now.has(k));
+  const gained = [...now].find(k => !was.has(k));
+  if (lost && gained) return `the field ${show(lost)} would become ${show(gained)}`;
+  if (lost) return `the field ${show(lost)} would disappear`;
+  if (gained) return `a new field ${show(gained)} would appear`;
+  return 'the field names would change';
+}
+
+/** `: …{"user"… became …uhayes"user"…` — both lines around where they first differ. */
+function jsonBreakContext(before: string, after: string): string {
+  let at = 0;
+  while (at < before.length && before[at] === after[at]) at++;
+  if (at >= before.length && at >= after.length) return '';
+  const cut = (t: string) => {
+    const from = Math.max(0, at - 20), to = Math.min(t.length, at + 30);
+    return `${from ? '…' : ''}${t.slice(from, to)}${to < t.length ? '…' : ''}`;
+  };
+  return `: ${cut(before)} became ${cut(after)}`;
+}
+
 /** The delimiter + whitespace characters whose per-line count `checkStructurePreserved` guards. */
-const STRUCTURAL_CHARS = ['\t', '|', ',', '=', ' '];
+const STRUCTURAL_CHARS = ['\n', '\t', '|', ',', '=', ' '];
 
 /** How many JSON lines the sanitisation breaks `structuralOffenders` attributes to entries. */
 const JSON_PROBE_LINES = 40;
@@ -2449,7 +2558,7 @@ function jsonOffenders(live: SanitiseEntry[], text: string): Set<string> {
   for (const line of text.split('\n')) {
     const t = line.trimStart();
     if (!t.startsWith('{') && !t.startsWith('[')) continue;
-    const after = line.replace(m.re, hit => m.byValue.get(hit)!.alias);
+    const after = applySanitisation(line, live);
     if (after === line) continue;
     // '' for a line that was not valid JSON to begin with — not ours to judge.
     const keys = jsonKeys(line);
@@ -2473,12 +2582,29 @@ function jsonOffenders(live: SanitiseEntry[], text: string): Set<string> {
  * could be (two picks that only break the line together), it says so instead of pointing at
  * red marks that are not there.
  */
-export function structureBannerText(problems: string[], marked: number): string {
+export function structureBannerText(problems: string[], marked: number | SanitiseEntry[]): string {
   const what = problems.length ? problems.join(' ') : 'The sanitised sample no longer has the same structure as the original.';
-  const fix = marked
-    ? `Untick or edit the ${marked === 1 ? 'replacement' : `${marked} replacements`} marked in red — this clears as soon as the structure is intact.`
+  const named = Array.isArray(marked) ? marked : [];
+  const count = Array.isArray(marked) ? marked.length : marked;
+  const cause = named.length ? ` ${describeOffenders(named)}` : '';
+  const fix = count
+    ? `Untick or edit the ${count === 1 ? 'replacement' : `${count} replacements`} marked in red — this clears as soon as the structure is intact.`
     : 'No single replacement causes it on its own — untick replacements one at a time until this clears.';
-  return `Sanitising would change the sample's structure: ${what} ${fix}`;
+  return `Sanitising would change the sample's structure: ${what}${cause} ${fix}`;
+}
+
+/** `Caused by: host "a" → "b", user "c" → "d".` — at most three, then a count of the rest. */
+export function describeOffenders(entries: SanitiseEntry[]): string {
+  if (!entries.length) return '';
+  const shown = entries.slice(0, 3).map(e => `${e.kind} ${JSON.stringify(e.original)} → ${JSON.stringify(e.alias)}`);
+  const more = entries.length > 3 ? ` and ${entries.length - 3} more` : '';
+  return `Caused by: ${shown.join(', ')}${more}.`;
+}
+
+/** The enabled entries `structuralOffenders` blames, in plan order. */
+export function offendingEntries(entries: SanitiseEntry[], text: string): SanitiseEntry[] {
+  const bad = structuralOffenders(entries, text);
+  return entries.filter(e => e.enabled && bad.has(`${e.kind}:${e.original}`));
 }
 
 function countOf(s: string, ch: string): number {

@@ -113,6 +113,7 @@ Open an issue in [this repository](https://github.com/Cribl-Community/cc-pack-ge
 
 ## Release notes
 
+- **1.0.307**: sanitising a sample never renames a JSON field, only values. When a replacement would change a sample's structure, the message names the line, what changes there and the replacement to untick.
 - **1.0.304**: the Cribl-internal AI provider is no longer offered in this build; README covers permissions, data and support.
 - **1.0.303**: first release in the Cribl app catalog. Shared goldens whose names contain `@` or `#` import inside Cribl.
 
