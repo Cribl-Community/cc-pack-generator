@@ -1,0 +1,15 @@
+var e=[{_time:1653028606,cribl_breaker:`Break on newlines`,_raw:`05/20/2022 01:36:46 AM
+LogName=System
+SourceName=Microsoft-Windows-DistributedCOM
+EventCode=10036
+EventType=2
+Type=Error
+ComputerName=myhost.acme.com
+User=NOT_TRANSLATED
+Sid=S-1-5-21-6186986-924416480-1714775081-23623
+SidType=0
+TaskCategory=The operation completed successfully.
+OpCode=Info
+RecordNumber=11430746
+Keywords=Classic
+Message=The server-side authentication level policy does not allow the user WARNNT\\svc_PaloAlto SID (S-1-5-21-6186986-924416480-1714775081-23623) from address 10.10.0.10 to activate DCOM server. Please raise the activation authentication level at least to RPC_C_AUTHN_LEVEL_PKT_INTEGRITY in client application.`}];export{e as default};

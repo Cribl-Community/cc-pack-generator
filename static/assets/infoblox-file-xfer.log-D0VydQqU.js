@@ -1,0 +1,1 @@
+var e=[{_raw:`Sep 3 13:03:09 10.34.6.30 monitor[23623]: Type: TFTP, State: Red, Event: A TFTPD daemon failure has occurred`,_time:1630699389,cribl_breaker:`Break on newlines`}];export{e as default};

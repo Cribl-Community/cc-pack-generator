@@ -1,0 +1,12 @@
+var e=[{_time:1665558448,_raw:`10/12/2022·12:37:28·PM
+LogName=Security
+SourceName=Microsoft·Windows·security·auditing.
+EventCode=6408
+EventType=0
+Type=Information
+ComputerName=myhost.acme.com
+TaskCategory=Other·System·Events
+OpCode=Info
+RecordNumber=7719741
+Keywords=Audit·Success
+Message=Registered·product·Symantec·Endpoint·Protection·failed·and·Windows·Firewall·is·now·controlling·the·filtering·for·BootTimeRuleCategory,·StealthRuleCategory,·FirewallRuleCategory.`}];export{e as default};
