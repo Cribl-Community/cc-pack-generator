@@ -877,7 +877,18 @@ export async function fetchGoldensFromGitHub(repo: string, branch: string, _toke
       if (corpus[key]) return corpus[key];
       return typeof kvIndex[key] === 'number' ? { functions: [], score: kvIndex[key] } : null;
     }).filter(entry => entry.part !== 'optimization');
-    return { available, total };
+    // The cheap pass above over-offers: a score-only KV stand-in has no hash and no
+    // evidence, so it ranks legacy and every evidenced pool entry reads as an
+    // upgrade — which the import then refuses ("already have this golden"), and the
+    // banner comes back on every load. Re-decide each OFFERED entry against the
+    // record the import itself will read, so the banner and the import agree.
+    const metaByKey = new Map(goldensList.filter(m => m?.key).map(m => [m.key as string, m]));
+    const confirmed = await Promise.all(available.map(async (entry) => {
+      const local = await readStoredGolden(entry.key).catch(() => undefined);
+      if (local === undefined) return entry;
+      return classifyAvailableGoldensByTrust([metaByKey.get(entry.key)], () => local)[0] ?? null;
+    }));
+    return { available: confirmed.filter(Boolean), total };
   } catch (err) {
     return { available: [], error: err instanceof Error ? err.message : 'Failed to fetch goldens' };
   }
