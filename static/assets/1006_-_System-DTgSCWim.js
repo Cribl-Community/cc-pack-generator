@@ -1,0 +1,15 @@
+var e=[{_time:1653632287,cribl_breaker:`Break on newlines`,_raw:`05/27/2022 11:48:07 AM
+LogName=System
+SourceName=Microsoft-Windows-GroupPolicy
+EventCode=1006
+EventType=2
+Type=Error
+ComputerName=myhost.acme.com
+User=NOT_TRANSLATED
+Sid=S-1-5-18
+SidType=0
+TaskCategory=None
+OpCode=Start
+RecordNumber=1894321
+Keywords=None
+Message=The processing of Group Policy failed. Windows could not authenticate to the Active Directory service on a domain controller. (LDAP Bind function call failed). Look in the details tab for error code and description.`}];export{e as default};

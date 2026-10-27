@@ -1,0 +1,2 @@
+var e=[{_raw:`MSH|^~\\&|SystemA|HosA|PI|MDM|2024070801529||ADT^A01|000000_CTLID_2008090801529|P|2.3.1|||AL|NE\rEVN|A01|2008090801529|||JavaCAPS6^^^^^^^USERS\rPID|1||A000010^^^HosA^MR^HosA||Doe^Jane||19470101123045|M|||42 Main^^Springfield^England - Norfolk^30828^UK||||||||A2008090801529\rPV1|1|I||I|||FUL^Gorde^Gordo^^^^^^^^^^MAIN|||EMR|||||||||V2008090801529^^^^VISIT|||||||||||||||||||||||||2008090801529\r\r\r
+`,_time:1220863929,cribl_breaker:`HL7v2`}];export{e as default};
