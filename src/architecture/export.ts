@@ -6,6 +6,7 @@
 import { downloadBlob, exportFileBase } from '../whiteboard/export';
 import type { Arch } from './model';
 import { exportSvgDoc, type ArchHeading } from './render';
+import { jpegPdf } from './pdf';
 
 export type ArchExportKind = 'png' | 'pdf' | 'svg';
 
@@ -43,9 +44,8 @@ export async function exportArchitecture(a: Arch, kind: ArchExportKind, prospect
     downloadBlob(name, png);
     return name;
   }
-  const { jsPDF } = await import('jspdf');
-  const pdf = new jsPDF({ orientation: doc.w >= doc.h ? 'landscape' : 'portrait', unit: 'px', format: [doc.w, doc.h], hotfixes: ['px_scaling'], compress: true });
-  pdf.addImage(canvas.toDataURL('image/jpeg', 0.92), 'JPEG', 0, 0, doc.w, doc.h);
-  downloadBlob(name, pdf.output('blob'));
+  const jpeg = await new Promise<Blob>((resolve, reject) => canvas.toBlob(b => (b ? resolve(b) : reject(new Error('The image could not be made.'))), 'image/jpeg', 0.92));
+  const bytes = jpegPdf(new Uint8Array(await jpeg.arrayBuffer()), canvas.width, canvas.height, doc.w, doc.h);
+  downloadBlob(name, new Blob([bytes as BlobPart], { type: 'application/pdf' }));
   return name;
 }
