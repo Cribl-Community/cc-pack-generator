@@ -1,0 +1,1 @@
+var e=[{_raw:`Sep 28 06:57:21 10.35.116.7 ntpd[12186]: precision = 0.053 usec`,_time:1601301441,cribl_breaker:`Break on newlines`},{_raw:`Sep 28 06:57:21 10.35.116.7 ntpd[12186]: Listening on interface #0 wildcard, 0.0.0.0#123 Disabled`,_time:1601301441,cribl_breaker:`Break on newlines`}];export{e as default};
