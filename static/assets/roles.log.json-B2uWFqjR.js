@@ -1,0 +1,33 @@
+var e=[{_raw:`{
+    "id": "2c91808c6faadea6016fb4f2bc69077b",
+    "accessProfileCount": 1,
+    "accessProfiles": [
+      {
+        "id": "468171f0af874adebb58d3718519bd56",
+        "name": "SalesCommonAccess"
+      }
+    ],
+    "created": "2023-06-01T22:00:55.311Z",
+    "description": "All Sales people in the company",
+    "dimensional": false,
+    "enabled": true,
+    "modified": "2023-06-01T22:00:55.432Z",
+    "name": "SalesGlobal",
+    "owner": {
+      "email": "admin@sailpointdemo.com",
+      "id": "c18630c4811c4030810afb3a14f388cf",
+      "name": "admin",
+      "type": "IDENTITY"
+    },
+    "requestCommentsRequired": false,
+    "requestable": true,
+    "tags": [
+      "TAG_1",
+      "TAG_2"
+    ],
+    "pod": "pod01-useast1",
+    "org": "org-name",
+    "_type": "role",
+    "type": "role",
+    "_version": "v2"
+  }`,_time:1760744868.368,cribl_breaker:[`Break on newlines`,`ndjson`]}];export{e as default};
