@@ -9,10 +9,11 @@
  *
  * The invariants it exists to keep:
  *
- * - ONE durable transition per invocation. A Backend Function is bounded (120s)
- *   and its schedule fires every minute, so a tick runs a single stage and
- *   persists it. Predictability beats throughput here: an interrupted tick costs
- *   one stage, never a whole row.
+ * - ONE row per invocation. A tick runs the build stages still left on that
+ *   row while the invocation deadline has time for another one, and checkpoints
+ *   each stage before starting the next. It never starts the next row. An
+ *   interrupted tick costs the stage in progress; earlier stages of that tick
+ *   are already saved. Repair and Scorecard stay one transition per tick.
  * - A tick that cannot prove it owns the run does nothing. The active-run
  *   pointer is checked before any work and the lease is written and then RE-READ
  *   before the first stage — App KV has no compare-and-swap, so ownership is
@@ -30,7 +31,9 @@
  *   none at all if nothing changed (a Scorecard never changes anything).
  * - A measurement that failed never looks like one that succeeded (Hard Rule
  *   32): a timed-out stage is retried once and then marked error on that row
- *   alone; a failed commit is visible as `deployStatus: 'failed'` and leaves the
+ *   alone; a leader that drops the connection (Config Helper down, socket hang
+ *   up) is retried for a few ticks and then marked error on that row alone; a
+ *   failed commit is visible as `deployStatus: 'failed'` and leaves the
  *   run recoverable rather than reporting a deploy that never happened.
  */
 import type {
@@ -44,6 +47,7 @@ import type { BackgroundBatchStore } from '../src/background-batch-store';
 import { kvSafeSegment, rowArtifactKey } from '../src/background-batch-store';
 import {
   claimLease,
+  markLeaderUnavailableStage,
   markTimedOutStage,
   nextBackgroundPhase,
   orderedBackgroundRows,
@@ -66,6 +70,7 @@ import {
 import { canBackgroundUseProvider } from '../src/settings-store';
 import type { AiProvider } from '../src/settings-store';
 import { credentialLikeMatch, verifyGeneratedSample } from '../src/sample-library';
+import { isLeaderUnavailableMessage } from '../src/sample-io';
 import { sampleContentId } from '../src/batch-row-sample';
 import { isEmptyEvent } from '../src/sample-gate';
 import { BACKEND_FUNCTION_CEILING_MS } from '../src/ai-budget';
@@ -319,11 +324,36 @@ export interface BackgroundRunnerDeps {
   /** Generate one sample (Cribl AI) under the stage deadline. Verified by the runner. */
   createSample(request: SampleStageRequest): Promise<SampleStageOutcome>;
   runQualityStage(request: QualityStageRequest): Promise<QualityStageOutcome>;
-  commitDeploy(workerGroup: string, message: string): Promise<unknown>;
+  /** `packIds`: the run's packs, so a commit in a later tick (no baseline) takes only their files. */
+  commitDeploy(workerGroup: string, message: string, packIds?: string[]): Promise<unknown>;
   ensureSchedule(cp: BackgroundBatchCheckpoint): Promise<string>;
   deleteSchedule(id?: string): Promise<void>;
   leaseTtlMs?: number;
   log?(message: string): void;
+  /**
+   * Absolute time at which this invocation's stage deadline fires
+   * (`BACKEND_STAGE_DEADLINE_MS` after the tick started). When set, a tick
+   * continues into the next build stage of the SAME row while at least
+   * `BACKGROUND_FOLLOWUP_STAGE_MIN_MS` remains. Absent — every existing test —
+   * a tick runs one stage, so a caller that forgets the deadline cannot
+   * accidentally chain past the platform kill.
+   */
+  continueUntilMs?: number;
+}
+
+/**
+ * A follow-up stage starts only with this much of the invocation deadline left.
+ * Mapping stages in a live background run reached 84s (SimonTmp, 2026-11-05);
+ * starting one with less than this left is aborted and spends a retry.
+ */
+export const BACKGROUND_FOLLOWUP_STAGE_MIN_MS = 120_000;
+
+/** sample + extraction + mapping + optimization + finalize. A bug must not loop. */
+const BACKGROUND_BUILD_CHAIN_MAX = 5;
+
+function roomForFollowUp(deps: BackgroundRunnerDeps): boolean {
+  if (deps.continueUntilMs == null) return false;
+  return deps.continueUntilMs - deps.now() >= BACKGROUND_FOLLOWUP_STAGE_MIN_MS;
 }
 
 export type BackgroundTickStatus =
@@ -648,11 +678,12 @@ export async function runBackgroundTick(
 ): Promise<BackgroundTickResult> {
   const owned = await loadOwnedRun(runId, deps);
   if (!owned.ok) {
-    // A run that is finished but whose schedule is still firing: stop the
-    // ticking. The checkpoint stays in KV until the user dismisses it.
-    if (owned.status === 'done' || owned.status === 'error') {
-      await bestEffortDeleteSchedule(deps, runId, owned.cp?.scheduleId);
-    }
+    // No tick can ever do work for this run again — finished, its manifest gone (`missing`),
+    // replaced by a newer run (`stale`), unreadable (`invalid`) or stopped — so stop the ticking.
+    // Only done/error used to: the other outcomes left a one-minute schedule firing forever. The
+    // id is derived from THIS run's id, so a newer run's schedule is never touched. The
+    // checkpoint, if any, stays in KV until the user dismisses it.
+    await bestEffortDeleteSchedule(deps, runId, owned.cp?.scheduleId);
     return { status: owned.status, processed: 0, message: owned.message };
   }
 
@@ -694,31 +725,54 @@ export async function runBackgroundTick(
       // will do.
       cp = await rejectUnrunnableRows(deps, cp);
 
-      const row = selectBuildRow(cp);
-      const plan = row ? planRowWork(row) : null;
-      if (row && plan?.kind === 'terminal') {
-        // Skip is terminal by definition — no stage, no side effects.
-        cp = await persistRow(runId, deps, {
-          ...row,
-          phase: plan.phase,
-          message: sanitizeRunnerMessage(row.message || 'Skipped — existing pack left untouched.'),
-        });
-      } else if (row && plan?.kind === 'sample') {
-        const staged = await runOneSampleStage(runId, deps, cp, row, () => { stageMayBeAlive = true; });
-        cp = staged.cp;
-        stageMayBeAlive = stageMayBeAlive || staged.stageAlive;
-        processed = 1;
-      } else if (row && plan?.kind === 'stage') {
+      // Build stages of ONE row, while the invocation deadline has room for
+      // another. Each stage checkpoints before the next starts, so a tick that
+      // dies resumes at the stage in progress. The next row waits for the next
+      // tick. No `continueUntilMs` (the tests) runs exactly one stage.
+      const chainRowId = selectBuildRow(cp)?.rowId;
+      while (processed < BACKGROUND_BUILD_CHAIN_MAX && cp.status !== 'stopping') {
+        const row = selectBuildRow(cp);
+        if (!row) break;
+        if (processed > 0 && (row.rowId !== chainRowId || !roomForFollowUp(deps))) break;
+
+        const plan = planRowWork(row);
+        if (plan.kind === 'terminal') {
+          // Skip is terminal by definition — no stage, no side effects, and it
+          // does not pull the next row into this tick.
+          cp = await persistRow(runId, deps, {
+            ...row,
+            phase: plan.phase,
+            message: sanitizeRunnerMessage(row.message || 'Skipped — existing pack left untouched.'),
+          });
+          break;
+        }
+        if (plan.kind !== 'sample' && plan.kind !== 'stage') break;
+
+        const before = { phase: row.phase, attempt: row.attempt };
         // Awaited in FULL: the stage is bounded by an abort it can act on, not
         // by a timer that returns while it keeps deploying (see StageRequest).
-        const staged = await runOneStage(runId, deps, cp, row, plan.stopAfter, () => { stageMayBeAlive = true; });
+        const staged = plan.kind === 'sample'
+          ? await runOneSampleStage(runId, deps, cp, row, () => { stageMayBeAlive = true; })
+          : await runOneStage(runId, deps, cp, row, plan.stopAfter, () => { stageMayBeAlive = true; });
         cp = staged.cp;
         stageMayBeAlive = stageMayBeAlive || staged.stageAlive;
-        processed = 1;
-      } else if (!row) {
+        processed += 1;
+        if (stageMayBeAlive) break;
+
+        const updated = cp.rows.find(r => r.rowId === row.rowId);
+        if (!updated || updated.phase === 'error' || updated.phase === 'skipped') break;
+        // A timeout leaves the phase in place and bumps the attempt. The retry
+        // belongs to a later tick: doing it now would spend the one retry
+        // inside the invocation that just ran out of time.
+        if (updated.phase === before.phase && updated.attempt > before.attempt) break;
+      }
+
+      if (processed === 0 && !selectBuildRow(cp)) {
         // Build rows are ALL terminal. `selectQualityRow` additionally refuses
         // until the build config is deployed, so a Repair/Scorecard can never
-        // measure config that was patched and never committed.
+        // measure config that was patched and never committed. One transition
+        // per tick — a repair writes live config and must checkpoint between
+        // its rounds.
         const qualityRow = selectQualityRow(cp);
         const qualityPlan = qualityRow ? planRowWork(qualityRow) : null;
         if (qualityRow && qualityPlan?.kind === 'quality') {
@@ -799,6 +853,23 @@ function failedRow(row: BackgroundBatchRow, message: string): BackgroundBatchRow
     score: null,
     scores: { ...(row.scores ?? {}), overall: null },
     message: sanitizeRunnerMessage(message),
+  };
+}
+
+/**
+ * A leader that is down is not a broken pipeline. Keep the row in its phase
+ * and ask again on a later tick; stop it only after that has failed too.
+ * Returns null when the message is some other failure.
+ */
+function leaderUnavailableRow(row: BackgroundBatchRow, message: string): BackgroundBatchRow | null {
+  if (!isLeaderUnavailableMessage(message)) return null;
+  const next = markLeaderUnavailableStage(row);
+  if (next.phase === 'error') {
+    return failedRow(next, `${message} The worker group stayed unavailable, so this row was stopped.`);
+  }
+  return {
+    ...next,
+    message: sanitizeRunnerMessage(`The worker group was unavailable — this row will be retried on the next tick. ${message}`),
   };
 }
 
@@ -964,7 +1035,11 @@ async function runOneStage(
   }
 
   if (outcome.kind === 'error') {
-    return { cp: await persistRow(runId, deps, failedRow(row, outcome.message), mayHaveWrittenConfig), stageAlive: false };
+    const retry = leaderUnavailableRow(row, outcome.message);
+    return {
+      cp: await persistRow(runId, deps, retry ?? failedRow(row, outcome.message), mayHaveWrittenConfig),
+      stageAlive: false,
+    };
   }
 
   try {
@@ -1129,6 +1204,10 @@ async function runOneSampleStage(
     const reason = outcome.kind === 'error'
       ? outcome.message
       : `the sample failed verification: ${verification?.reasons[0] || 'no usable events'}`;
+    if (outcome.kind === 'error') {
+      const retry = leaderUnavailableRow(row, outcome.message);
+      if (retry) return { cp: await persistRow(runId, deps, retry), stageAlive: false };
+    }
     if (row.attempt === 0) {
       return {
         cp: await persistRow(runId, deps, {
@@ -1341,7 +1420,16 @@ async function runOneQualityStage(
     };
   }
 
-  if (outcome.kind === 'error') return windDown(outcome.message);
+  if (outcome.kind === 'error') {
+    const retry = leaderUnavailableRow(row, outcome.message);
+    if (retry) {
+      // Same as a build stage that died mid-write: a later commit is owed if
+      // this phase can patch, and the row itself is asked again next tick.
+      const owed: PendingDeploy = phaseMayWriteConfig ? 'quality' : null;
+      return { cp: await persistRow(runId, deps, retry, owed), stageAlive: false };
+    }
+    return windDown(outcome.message);
+  }
 
   try {
     await deps.store.saveArtifact<BackgroundRowArtifact>(row.artifactKey, {
@@ -1396,6 +1484,12 @@ async function runOneQualityStage(
  * Decide what the run's state is now: still working, deployed and done, or
  * stuck on a failed commit.
  */
+/** Whether `finishTick` would commit now: a deployment is pending or failed, or a stop is closing the run. */
+function commitIsOwed(cp: BackgroundBatchCheckpoint, stopping: boolean): boolean {
+  const owed = (s: string | undefined) => s === 'pending' || s === 'failed';
+  return stopping || owed(cp.deployStatus) || owed(cp.qualityDeployStatus);
+}
+
 async function finishTick(
   runId: string,
   deps: BackgroundRunnerDeps,
@@ -1425,6 +1519,12 @@ async function finishTick(
     }
   } else if (selectBuildRow(cp)) {
     return { status: 'running', processed };
+  }
+
+  // A stage already ran in this invocation: the commit and deploy (each up to a 120 s Cribl call)
+  // go to the next tick, so one invocation is a stage OR a commit and stays inside its budget.
+  if (processed > 0 && commitIsOwed(cp, stopping)) {
+    return { status: stopping ? 'stopping' : 'running', processed, message: 'Committing on the next tick.' };
   }
 
   // Every build row is terminal (or the run was stopped): commit ONCE.
@@ -1536,7 +1636,7 @@ async function commitOnce(
   cp = { ...cp, status: stopping ? 'stopping' : 'committing', updatedAt: deps.now() };
   await deps.store.saveRun(cp);
   try {
-    await deps.commitDeploy(cp.workerGroup, `Deploy background batch ${runId}`);
+    await deps.commitDeploy(cp.workerGroup, `Deploy background batch ${runId}`, [...new Set(cp.rows.map(r => deps.packId(r.packName)))]);
     // Written back immediately: the build commit is followed by the quality
     // rows, and a manifest left saying `committing` while those run would tell
     // the UI a deploy is in flight for as long as they take.

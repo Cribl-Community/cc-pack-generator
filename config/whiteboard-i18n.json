@@ -1,0 +1,1597 @@
+{
+  "_readme": [
+    "The whiteboard languages beyond what the upstream board ships (English and French), and the words of the toolbox.",
+    "After editing, run: npm run whiteboard:vendor   (CI fails while the generated board is older than this file).",
+    "languages: the order of the language picker in the app's header (en first). locale formats the meeting date.",
+    "<lang>.menu: the toolbox (story card, its row of tools) and the arrow bar. <lang>.ui: interface strings of the board (keys as upstream UI.en); en and fr carry only what the app changes.",
+    "<lang>.items: built-in diagram items by id: l label, d description, b badge. Leave out what stays as in English (product names).",
+    "A missing string falls back to English. <u>x</u> marks the keyboard shortcut letter: keep the same key in every language.",
+    "The challenges (with their outcomes) and the use cases carry their own text per language in config/whiteboard-discovery.json."
+  ],
+  "languages": [
+    {
+      "code": "en",
+      "name": "English",
+      "short": "EN",
+      "locale": "en-GB"
+    },
+    {
+      "code": "fr",
+      "name": "Français",
+      "short": "FR",
+      "locale": "fr-FR"
+    },
+    {
+      "code": "de",
+      "name": "Deutsch",
+      "short": "DE",
+      "locale": "de-DE"
+    },
+    {
+      "code": "es",
+      "name": "Español",
+      "short": "ES",
+      "locale": "es-ES"
+    }
+  ],
+  "en": {
+    "menu": {
+      "cribl": "Use Cribl product names",
+      "fit": "Fit to screen",
+      "reset": "Back to step 1",
+      "config": "Configure and style",
+      "autoArrows": "Automatic arrows",
+      "auto": "Auto",
+      "autoOnTip": "Auto arrows: one arrow per item, at each step. Delete or edit any arrow, drag from one item to another to add one.",
+      "deleteN": "Delete {n} arrows",
+      "deletedN": "{n} arrows deleted",
+      "story": "Story",
+      "min": "Minimise",
+      "expand": "Expand",
+      "moveTip": "Drag to move it. Double-click puts it back.",
+      "revPipe": "Pipeline",
+      "revSearch": "Search",
+      "revAi": "AI",
+      "revPeople": "People",
+      "revShow": "Show {x}",
+      "revHide": "Hide {x}",
+      "clean": "Clean",
+      "cleanTip": "Clean arrows: dotted red lines before the pipeline, then one wide straight arrow from layer to layer, so the flow reads at first glance.",
+      "disco": "Challenges",
+      "discoFull": "Challenges, full: pinned on their boxes and, once solved, listed on the left with their business outcomes",
+      "discoMin": "Challenges, minimal: pinned on their boxes; hover a green one for its business outcomes",
+      "discoOff": "Challenges hidden, for a clear view of the drawing",
+      "vPain": "Challenge",
+      "vSolved": "Solved",
+      "vOutcome": "Outcome",
+      "vRemove": "Take it off the board",
+      "laneAfter": "What changes",
+      "goalsSec": "Security goals",
+      "goalsObs": "Observability goals",
+      "goalNote": "Initiative",
+      "goalNotePh": "e.g. SIEM migration",
+      "goalAddPillar": "Add a pillar",
+      "goalNewPillar": "New pillar",
+      "goalDelPillar": "Remove this pillar",
+      "goalDelQ": "Remove this pillar and its initiatives?",
+      "goalHide": "Hide (the initiatives are kept)",
+      "gpCompliance": "Compliance",
+      "gpDetection": "Detection",
+      "gpInvestigation": "Investigation",
+      "gpResponse": "Response",
+      "gpAvailability": "Availability & SLOs",
+      "gpTroubleshooting": "Troubleshooting",
+      "gpPerformance": "Performance",
+      "gpCost": "Cost control",
+      "cfgOutcomes": "Outcomes",
+      "cfgOutcome": "Outcome",
+      "cfgOutcomePh": "Positive business outcome",
+      "cfgSolvedBy": "Solved by",
+      "cfgKeywords": "Search words",
+      "cfgKeywordsPh": "licence, expensive, GB… (comma-separated)",
+      "askBtn": "Challenge",
+      "askPh": "What’s the challenge? Search them all",
+      "askAdd": "Add “{x}”",
+      "askOn": "on {x}",
+      "askEmpty": "No challenge for this box yet: type one to add it",
+      "askOutPh": "What it becomes with Cribl (optional)",
+      "cfgSections": "Configuration sections",
+      "cfgNavBoard": "On the board",
+      "cfgNavLibrary": "Library",
+      "cfgBackup": "Backup and reset",
+      "cfgHelpPains": "Pick a challenge to edit it. In the list: offered in its box’s + Challenge without typing; switched off, it is still found by typing.",
+      "cfgHelpLib": "Move your library to another machine, or start again from the built-in one.",
+      "cfgFind": "Find a challenge (every word must match)",
+      "cfgAll": "All",
+      "cfgOnlyList": "Only the ones in the list",
+      "cfgInList": "In the box’s + Challenge list without typing",
+      "cfgNew": "New challenge",
+      "cfgNone": "Nothing matches.",
+      "cfgPick": "Pick a challenge on the left.",
+      "cfgOnBoard": "On the board",
+      "cfgOnce": "once {x} is shown",
+      "cfgBadge": "Red pin text",
+      "cfgOutHelp": "the first one is the green pin; all show on hover",
+      "cfgDesc": "Description (never on the board; + Challenge searches it)",
+      "cfgOut0": "no outcome",
+      "cfgOut1": "1 outcome",
+      "cfgOutN": "{n} outcomes",
+      "cfgResetHelp": "Puts the built-in library back. Your own challenges, items and edits are deleted; theme, colours and language are kept."
+    },
+    "ui": {
+      "criblK": "Cribl · platform first, solutions on top",
+      "story": "Most teams run telemetry one of two ways, and neither is enough: <b>solutions</b> that each bring their own data engine, or a <b>data platform</b> that wasn’t made for telemetry. Cribl is the AI Platform for Telemetry, for <b>humans and AI</b> alike: <span class=\"hl\">build it, buy it, bring your own.</span>",
+      "gPains": "Challenges",
+      "paLabel": "Challenges",
+      "paCol": "Challenge",
+      "newPa": "New challenge",
+      "addPa": "Add challenge",
+      "pointK": "Solution first",
+      "pointP": "The SIEM, APM and observability tools you run today: they work out of the box, each on its own data engine. You collect, store and license the same data again in every tool, on the vendor’s terms.",
+      "platK": "Platform first",
+      "platP": "Your data lake or warehouse: open, flexible and cheaper per terabyte, but not built for telemetry. Parsers, schemas, detections and apps are yours to build and run, so software cost becomes people cost.",
+      "criblP": "Keep the SIEM you have, or replace it when you’re ready. Collect once in open formats, and run Cribl’s, a partner’s or your own solutions on the same data.",
+      "gPoint": "Solutions",
+      "wayByoD": "Your storage, your tools, your models. Keep data in open formats in your own bucket and keep feeding the SIEM and platforms you already run."
+    }
+  },
+  "fr": {
+    "menu": {
+      "cribl": "Noms des produits Cribl",
+      "fit": "Ajuster à l’écran",
+      "reset": "Revenir à l’étape 1",
+      "config": "Configuration et style",
+      "autoArrows": "Flèches automatiques",
+      "auto": "Auto",
+      "autoOnTip": "Flèches auto : une flèche par élément, à chaque étape. Supprimez ou modifiez une flèche, glissez d’un élément à un autre pour en ajouter une.",
+      "deleteN": "Supprimer {n} flèches",
+      "deletedN": "{n} flèches supprimées",
+      "story": "Récit",
+      "min": "Réduire",
+      "expand": "Agrandir",
+      "moveTip": "Glissez pour le déplacer. Double-cliquez pour le remettre en place.",
+      "revPipe": "Pipeline",
+      "revSearch": "Recherche",
+      "revAi": "IA",
+      "revPeople": "Personnes",
+      "revShow": "Afficher {x}",
+      "revHide": "Masquer {x}",
+      "clean": "Épuré",
+      "cleanTip": "Flèches épurées : des lignes rouges en pointillés avant le pipeline, puis une large flèche droite d’un niveau à l’autre, pour lire le flux au premier coup d’œil.",
+      "disco": "Défis",
+      "discoFull": "Défis, complet : épinglés sur leur bloc et, une fois résolus, listés à gauche avec leurs bénéfices métier",
+      "discoMin": "Défis, minimal : épinglés sur leur bloc ; survolez un défi vert pour voir ses bénéfices métier",
+      "discoOff": "Défis masqués, pour une vue claire du schéma",
+      "vPain": "Défi",
+      "vSolved": "Résolu",
+      "vOutcome": "Bénéfice",
+      "vRemove": "Retirer du tableau",
+      "laneAfter": "Ce qui change",
+      "goalsSec": "Objectifs sécurité",
+      "goalsObs": "Objectifs observabilité",
+      "goalNote": "Initiative",
+      "goalNotePh": "p. ex. migration du SIEM",
+      "goalAddPillar": "Ajouter un pilier",
+      "goalNewPillar": "Nouveau pilier",
+      "goalDelPillar": "Retirer ce pilier",
+      "goalDelQ": "Supprimer ce pilier et ses initiatives ?",
+      "goalHide": "Masquer (les initiatives sont conservées)",
+      "gpCompliance": "Conformité",
+      "gpDetection": "Détection",
+      "gpInvestigation": "Investigation",
+      "gpResponse": "Réponse",
+      "gpAvailability": "Disponibilité et SLO",
+      "gpTroubleshooting": "Diagnostic",
+      "gpPerformance": "Performance",
+      "gpCost": "Maîtrise des coûts",
+      "cfgOutcomes": "Bénéfices",
+      "cfgOutcome": "Bénéfice",
+      "cfgOutcomePh": "Bénéfice métier positif",
+      "cfgSolvedBy": "Résolu par",
+      "cfgKeywords": "Mots de recherche",
+      "cfgKeywordsPh": "licence, cher, Go… (séparés par des virgules)",
+      "askBtn": "Défi",
+      "askPh": "Quel est le défi ? Cherchez parmi tous",
+      "askAdd": "Ajouter « {x} »",
+      "askOn": "sur {x}",
+      "askEmpty": "Aucun défi pour ce bloc : tapez-en un pour l’ajouter",
+      "askOutPh": "Ce que cela devient avec Cribl (facultatif)",
+      "cfgSections": "Sections de la configuration",
+      "cfgNavBoard": "Sur le schéma",
+      "cfgNavLibrary": "Bibliothèque",
+      "cfgBackup": "Sauvegarde et réinitialisation",
+      "cfgHelpPains": "Choisissez un défi pour le modifier. Dans la liste : proposé par le + Défi de sa boîte sans rien taper ; désactivé, il se trouve encore en tapant.",
+      "cfgHelpLib": "Transférez votre bibliothèque sur une autre machine, ou repartez de celle par défaut.",
+      "cfgFind": "Trouver un défi (chaque mot doit correspondre)",
+      "cfgAll": "Tous",
+      "cfgOnlyList": "Seulement ceux de la liste",
+      "cfgInList": "Dans la liste du + Défi de la boîte, sans rien taper",
+      "cfgNew": "Nouveau défi",
+      "cfgNone": "Aucun résultat.",
+      "cfgPick": "Choisissez un défi à gauche.",
+      "cfgOnBoard": "Sur le schéma",
+      "cfgOnce": "une fois {x} affiché",
+      "cfgBadge": "Texte de l’étiquette rouge",
+      "cfgOutHelp": "la première est l’étiquette verte ; toutes s’affichent au survol",
+      "cfgDesc": "Description (jamais sur le schéma ; le + Défi la parcourt)",
+      "cfgOut0": "aucun résultat attendu",
+      "cfgOut1": "1 résultat attendu",
+      "cfgOutN": "{n} résultats attendus",
+      "cfgResetHelp": "Remet la bibliothèque par défaut. Vos défis, éléments et modifications sont supprimés ; le thème, les couleurs et la langue sont conservés."
+    },
+    "ui": {
+      "criblK": "Cribl · la plateforme d’abord, les solutions par-dessus",
+      "story": "La plupart des équipes gèrent leur télémétrie de l’une de deux façons, et aucune ne suffit : des <b>solutions</b> qui apportent chacune leur propre moteur de données, ou une <b>plateforme de données</b> qui n’a pas été conçue pour la télémétrie. Cribl est la plateforme d’IA pour la télémétrie, pour <b>les humains comme pour l’IA</b> : <span class=\"hl\">construisez, achetez, apportez le vôtre.</span>",
+      "gPains": "Défis",
+      "paLabel": "Défis",
+      "paCol": "Défi",
+      "newPa": "Nouveau défi",
+      "addPa": "Ajouter le défi",
+      "pointK": "La solution d’abord",
+      "pointP": "Les outils SIEM, APM et d’observabilité que vous utilisez aujourd’hui : prêts à l’emploi, chacun avec son propre moteur de données. Vous collectez, stockez et payez à nouveau les mêmes données dans chaque outil, aux conditions de l’éditeur.",
+      "platK": "La plateforme d’abord",
+      "platP": "Votre data lake ou entrepôt de données : ouvert, flexible et moins cher au téraoctet, mais pas conçu pour la télémétrie. Parseurs, schémas, détections et applications sont à construire et à opérer par vous : le coût logiciel devient un coût humain.",
+      "criblP": "Gardez votre SIEM actuel, ou remplacez-le quand vous serez prêt. Collectez une fois en formats ouverts, et faites tourner les solutions de Cribl, d’un partenaire ou les vôtres sur les mêmes données.",
+      "gPoint": "Solutions",
+      "wayByoD": "Votre stockage, vos outils, vos modèles. Gardez les données en formats ouverts dans votre propre bucket et continuez d’alimenter le SIEM et les plateformes que vous utilisez déjà."
+    }
+  },
+  "de": {
+    "menu": {
+      "cribl": "Cribl-Produktnamen verwenden",
+      "fit": "An Bildschirm anpassen",
+      "reset": "Zurück zu Schritt 1",
+      "config": "Konfiguration und Stil",
+      "autoArrows": "Automatische Pfeile",
+      "auto": "Auto",
+      "autoOnTip": "Auto-Pfeile: ein Pfeil pro Element in jedem Schritt. Löschen oder bearbeiten Sie einen Pfeil, ziehen Sie von einem Element zum anderen, um einen hinzuzufügen.",
+      "deleteN": "{n} Pfeile löschen",
+      "deletedN": "{n} Pfeile gelöscht",
+      "story": "Story",
+      "min": "Minimieren",
+      "expand": "Erweitern",
+      "moveTip": "Zum Verschieben ziehen. Doppelklick setzt es zurück.",
+      "revPipe": "Pipeline",
+      "revSearch": "Suche",
+      "revAi": "KI",
+      "revPeople": "Personen",
+      "revShow": "{x} anzeigen",
+      "revHide": "{x} ausblenden",
+      "clean": "Klar",
+      "cleanTip": "Klare Pfeile: rot gepunktete Linien vor der Pipeline, danach ein breiter gerader Pfeil von Ebene zu Ebene, damit der Fluss auf den ersten Blick lesbar ist.",
+      "disco": "Herausforderungen",
+      "discoFull": "Herausforderungen, vollständig: an ihrem Block angeheftet und, sobald gelöst, links mit ihren Geschäftsergebnissen aufgelistet",
+      "discoMin": "Herausforderungen, minimal: an ihrem Block angeheftet; fahren Sie über eine grüne, um ihre Geschäftsergebnisse zu sehen",
+      "discoOff": "Herausforderungen ausgeblendet, für einen klaren Blick auf die Zeichnung",
+      "vPain": "Herausforderung",
+      "vSolved": "Gelöst",
+      "vOutcome": "Ergebnis",
+      "vRemove": "Vom Board nehmen",
+      "laneAfter": "Was sich ändert",
+      "goalsSec": "Sicherheitsziele",
+      "goalsObs": "Observability-Ziele",
+      "goalNote": "Initiative",
+      "goalNotePh": "z. B. SIEM-Migration",
+      "goalAddPillar": "Säule hinzufügen",
+      "goalNewPillar": "Neue Säule",
+      "goalDelPillar": "Diese Säule entfernen",
+      "goalDelQ": "Diese Säule und ihre Initiativen entfernen?",
+      "goalHide": "Ausblenden (die Initiativen bleiben erhalten)",
+      "gpCompliance": "Compliance",
+      "gpDetection": "Erkennung",
+      "gpInvestigation": "Untersuchung",
+      "gpResponse": "Reaktion",
+      "gpAvailability": "Verfügbarkeit und SLOs",
+      "gpTroubleshooting": "Fehlersuche",
+      "gpPerformance": "Performance",
+      "gpCost": "Kostenkontrolle",
+      "cfgOutcomes": "Ergebnisse",
+      "cfgOutcome": "Ergebnis",
+      "cfgOutcomePh": "Positives Geschäftsergebnis",
+      "cfgSolvedBy": "Gelöst durch",
+      "cfgKeywords": "Suchbegriffe",
+      "cfgKeywordsPh": "Lizenz, teuer, GB… (durch Kommas getrennt)",
+      "askBtn": "Herausforderung",
+      "askPh": "Was ist die Herausforderung? Alle durchsuchen",
+      "askAdd": "„{x}“ hinzufügen",
+      "askOn": "in {x}",
+      "askEmpty": "Noch keine Herausforderung für diesen Block: tippen Sie eine ein",
+      "askOutPh": "Was daraus mit Cribl wird (optional)",
+      "cfgSections": "Bereiche der Konfiguration",
+      "cfgNavBoard": "Auf dem Board",
+      "cfgNavLibrary": "Bibliothek",
+      "cfgBackup": "Sichern und zurücksetzen",
+      "cfgHelpPains": "Wählen Sie eine Herausforderung, um sie zu bearbeiten. In der Liste: im + Herausforderung ihres Kastens ohne Tippen angeboten; ausgeschaltet wird sie weiterhin beim Tippen gefunden.",
+      "cfgHelpLib": "Übertragen Sie Ihre Bibliothek auf ein anderes Gerät oder beginnen Sie neu mit der mitgelieferten.",
+      "cfgFind": "Herausforderung suchen (jedes Wort muss passen)",
+      "cfgAll": "Alle",
+      "cfgOnlyList": "Nur die in der Liste",
+      "cfgInList": "In der Liste von + Herausforderung des Kastens, ohne Tippen",
+      "cfgNew": "Neue Herausforderung",
+      "cfgNone": "Keine Treffer.",
+      "cfgPick": "Wählen Sie links eine Herausforderung.",
+      "cfgOnBoard": "Auf dem Board",
+      "cfgOnce": "sobald {x} gezeigt wird",
+      "cfgBadge": "Text der roten Markierung",
+      "cfgOutHelp": "die erste ist die grüne Markierung; alle erscheinen beim Überfahren",
+      "cfgDesc": "Beschreibung (nie auf dem Board; + Herausforderung durchsucht sie)",
+      "cfgOut0": "kein Ergebnis",
+      "cfgOut1": "1 Ergebnis",
+      "cfgOutN": "{n} Ergebnisse",
+      "cfgResetHelp": "Stellt die mitgelieferte Bibliothek wieder her. Eigene Herausforderungen, Elemente und Änderungen werden gelöscht; Design, Farben und Sprache bleiben."
+    },
+    "ui": {
+      "title": "Cribl | Die KI-Plattform für Telemetrie",
+      "tagline": "Die KI-Plattform für Telemetrie",
+      "story": "Die meisten Teams betreiben Telemetrie auf eine von zwei Arten, und keine reicht aus: <b>Lösungen</b>, die jeweils ihre eigene Daten-Engine mitbringen, oder eine <b>Datenplattform</b>, die nicht für Telemetrie gebaut wurde. Cribl ist die KI-Plattform für Telemetrie, für <b>Menschen und KI</b> gleichermaßen: <span class=\"hl\">selbst bauen, kaufen, Eigenes mitbringen.</span>",
+      "prospectPh": "Name des Interessenten",
+      "logoAdd": "Logo",
+      "logoTitle": "Logo des Interessenten hinzufügen: klicken oder Bild hierher ziehen",
+      "logoRemove": "Logo entfernen",
+      "prospectFallback": "Interessent",
+      "paLabel": "Herausforderungen",
+      "paShow": "<u>S</u>ituation anzeigen",
+      "paHide": "<u>S</u>ituation ausblenden",
+      "kCost": "Kosten",
+      "kTime": "Zeit",
+      "kRisk": "Risiko",
+      "paCol": "Herausforderung",
+      "badgeCol": "Badge-Text",
+      "kindCol": "Art",
+      "tgtCol": "Angezeigt bei",
+      "newPa": "Neue Herausforderung",
+      "addPa": "Herausforderung hinzufügen",
+      "badgePh": "Badge-Text (optional)",
+      "ucLabel": "Geschäftliche Anwendungsfälle",
+      "ucShow": "Anwendungsfälle anzeigen (<u>u</u>)",
+      "ucHide": "Anwendungsfälle ausblenden (<u>u</u>)",
+      "ucNone": "noch keine",
+      "famToggle": "Alle Anwendungsfälle „{x}“ ein- oder ausblenden",
+      "humansT": "Menschliche Nutzer",
+      "humansS": "über Apps, Suche und Copilots",
+      "agentsT": "KI-Nutzer",
+      "agentsS": "Agenten, die Telemetrie per MCP lesen",
+      "lApps": "Apps",
+      "lAnalysis": "Einheitliche Analytics",
+      "lStores": "Datenspeicher",
+      "lPipe": "Telemetrie-Pipeline",
+      "lSources": "Datenquellen",
+      "railT": "Menschlicher Kontext",
+      "pointK": "Lösung zuerst",
+      "pointP": "Die SIEM-, APM- und Observability-Tools, die Sie heute betreiben: sofort einsatzbereit, jedes mit eigener Daten-Engine. Dieselben Daten werden in jedem Tool erneut erfasst, gespeichert und lizenziert, zu den Bedingungen des Anbieters.",
+      "criblK": "Cribl · Plattform zuerst, Lösungen darauf",
+      "criblP": "Behalten Sie Ihr SIEM oder ersetzen Sie es, wenn Sie so weit sind. Einmal in offenen Formaten erfassen und Lösungen von Cribl, von Partnern oder eigene auf denselben Daten betreiben.",
+      "platK": "Plattform zuerst",
+      "platP": "Ihr Data Lake oder Data Warehouse: offen, flexibel und günstiger pro Terabyte, aber nicht für Telemetrie gebaut. Parser, Schemata, Detections und Apps bauen und betreiben Sie selbst, und aus Softwarekosten werden Personalkosten.",
+      "waysT": "Ihre Wahl, pro Anwendungsfall",
+      "wayBuy": "Kaufen",
+      "wayBuild": "Selbst bauen",
+      "wayByo": "Eigenes mitbringen",
+      "wayBuyD": "Fertige Lösungen von Cribl und Partnern, etwa SIEM, APM und KI-Observability, ab dem ersten Tag einsatzbereit.",
+      "wayBuildD": "Individuelle Apps und Agenten für Ihren ganz eigenen Workflow, gebaut auf derselben Telemetrie-Basis mit KI-gestützter Entwicklung.",
+      "wayByoD": "Ihr Speicher, Ihre Tools, Ihre Modelle. Behalten Sie Daten in offenen Formaten im eigenen Bucket und versorgen Sie weiterhin das SIEM und die Plattformen, die Sie bereits betreiben.",
+      "fRoute": "Routing zu jeder Option",
+      "fQuery": "Abfrage vor Ort",
+      "fSearch": "Suche",
+      "fMcp": "MCP",
+      "tiers": "Ebenen",
+      "tSources": "Datenquellen",
+      "tStores": "Speicher",
+      "tHuman": "Menschlicher Kontext",
+      "view": "Ansicht",
+      "showCribl": "<u>C</u>ribl anzeigen",
+      "pauseFlow": "<u>F</u>luss pausieren",
+      "playFlow": "<u>F</u>luss abspielen",
+      "fit": "An Bildschirm anpassen (<u>z</u>)",
+      "present": "<u>P</u>räsentieren",
+      "style": "Stil",
+      "meeting": "Meeting",
+      "draw": "Pfeile zeichnen (<u>D</u>)",
+      "drawing": "Zeichnen beenden (<u>d</u>)",
+      "autoArrows": "Auto-Pfeile",
+      "configure": "Konfigurieren",
+      "backDiagram": "Zurück zum Diagramm",
+      "save": "Speichern",
+      "newMeeting": "Neues Meeting",
+      "sPipe": "Pipeline",
+      "sSearch": "Einheitliche Suche",
+      "sAi": "Einheitliche KI",
+      "before": "Vorher",
+      "after": "Nachher",
+      "step": "Schritt",
+      "stepK": "Schritt",
+      "resetK": "Reset",
+      "drawHint": "Von einem Element zu einem anderen ziehen, um einen Pfeil zu zeichnen. Esc zum Beenden.",
+      "addTo": "Zu {x} hinzufügen",
+      "searchAdd": "Suchen oder hinzufügen…",
+      "sugg": "Vorschläge",
+      "yours": "Ihre Einträge",
+      "addNew": "„{x}“ hinzufügen",
+      "descPh": "Beschreibung (optional)",
+      "keep": "Für künftige Meetings behalten",
+      "noMore": "Alles ist bereits im Diagramm. Geben Sie einen Namen ein, um etwas Neues hinzuzufügen.",
+      "remove": "Aus diesem Meeting entfernen",
+      "close": "Schließen",
+      "gSources": "Datenquellen",
+      "gPipe": "Telemetrie-Pipeline",
+      "gPoint": "Lösungen",
+      "gCribl": "Cribl-Datenspeicher",
+      "gPlatform": "Datenplattformen",
+      "gHumans": "Menschliche Nutzer",
+      "gAgents": "KI-Nutzer",
+      "gAnalysis": "Einheitliche Analytics",
+      "gApps": "Apps",
+      "gHuman": "Menschlicher Kontext",
+      "gUsecases": "Geschäftliche Anwendungsfälle",
+      "gPains": "Herausforderungen",
+      "famCompliance": "Compliance",
+      "famDetection": "Erkennung",
+      "famInvestigation": "Untersuchung",
+      "famResponse": "Reaktion",
+      "lvTop": "Apps & Nutzer",
+      "lvAnalysis": "Einheitliche Analytics",
+      "lvStores": "Datenspeicher",
+      "lvPipe": "Telemetrie-Pipeline",
+      "lvSources": "Datenquellen",
+      "arrowLabelPh": "Beschriftung",
+      "arrowDelete": "Pfeil löschen",
+      "arrowColor": "Farbe",
+      "styleT": "Stil",
+      "themes": "Design",
+      "colours": "Farben",
+      "resetColours": "Farben zurücksetzen",
+      "thCapra": "Capra",
+      "thCapraD": "Offizielles Cribl, hell",
+      "thMidnight": "Mitternacht",
+      "thMidnightD": "Dunkel, für die große Leinwand",
+      "thBoard": "Whiteboard",
+      "thBoardD": "Marker auf Papier, für Workshops",
+      "cSources": "Quellen",
+      "cPipe": "Pipeline",
+      "cStores": "Speicher",
+      "cAnalysis": "Analytics",
+      "cApps": "Apps",
+      "cPeople": "Menschen",
+      "cAgents": "KI-Agenten",
+      "cFlow": "Fluss",
+      "cCribl": "Cribl-Akzent",
+      "cMess": "Vorher-Zustand",
+      "cfgTitle": "Konfiguration",
+      "cfgHelp": "Markierte Elemente erscheinen standardmäßig in jedem Meeting. Nicht markierte bleiben über die Schaltfläche + verfügbar.",
+      "cfgReset": "Auf Standard zurücksetzen",
+      "cfgResetQ": "Bibliothek auf die integrierten Standardwerte zurücksetzen? Ihre eigenen Einträge werden gelöscht.",
+      "cfgCopy": "Bibliotheks-JSON kopieren",
+      "cfgCopied": "Kopiert",
+      "cfgApply": "Eingefügtes JSON anwenden",
+      "cfgInvalid": "Ungültiges JSON",
+      "cfgJson": "Bibliotheks-JSON",
+      "cfgJsonHelp": "Kopieren Sie es, um Ihre Bibliothek auf einen anderen Rechner zu übertragen. Fügen Sie eines ein und klicken Sie auf „Eingefügtes JSON anwenden“. Konfigurationen aus v4.3 werden akzeptiert.",
+      "tagSugg": "Vorschlag",
+      "tagYours": "eigen",
+      "newItem": "Name des neuen Elements",
+      "newCribl": "Cribl-Name (optional)",
+      "noLogo": "kein Logo",
+      "tooltipPh": "Tooltip (optional)",
+      "ucCol": "Anwendungsfall",
+      "famCol": "Kategorie",
+      "lvCol": "Ebene",
+      "tipCol": "Tooltip",
+      "newUc": "Neuer Anwendungsfall",
+      "addUc": "Anwendungsfall hinzufügen",
+      "del": "Löschen",
+      "shown": "Standardmäßig angezeigt",
+      "saveT": "Dieses Meeting speichern",
+      "saveName": "Dateiname",
+      "saveFormats": "Formate",
+      "fHtml": "HTML, eine interaktive Kopie",
+      "fPng": "PNG-Bild",
+      "fPdf": "PDF",
+      "saveFolder": "Ordner",
+      "chooseFolder": "Ordner wählen",
+      "changeFolder": "Ändern",
+      "noFolder": "Noch kein Ordner gewählt. Sie werden beim Speichern danach gefragt.",
+      "dlFolder": "Dieser Browser speichert in Ihrem Download-Ordner.",
+      "saveBtn": "Speichern",
+      "cancel": "Abbrechen",
+      "saving": "Wird gespeichert…",
+      "saved": "{n} in {x} gespeichert",
+      "savedDl": "{n} heruntergeladen",
+      "files1": "1 Datei",
+      "filesN": "{n} Dateien",
+      "saveNone": "Wählen Sie mindestens ein Format.",
+      "saveErrImg": "PNG und PDF benötigen eine Internetverbindung, um die Exportbibliothek zu laden. Alles andere wurde gespeichert.",
+      "saveErr": "Speichern nicht möglich: {x}",
+      "newT": "Neues Meeting beginnen?",
+      "newClears": "Löscht",
+      "newKeeps": "Behält",
+      "newClearsL": "Name und Logo des Interessenten, gezeichnete Pfeile, in diesem Meeting hinzugefügte oder entfernte Elemente, die Auswahl von Situation und Anwendungsfällen sowie den Story-Schritt.",
+      "newKeepsL": "Ihre Einträge, die Auswahl unter Konfigurieren, Design, Farben, Sprache und Meeting-Ordner.",
+      "saveFirst": "Dieses Meeting zuerst speichern",
+      "newGo": "Neues Meeting beginnen",
+      "newDone": "Neues Meeting begonnen",
+      "undo": "Rückgängig",
+      "snap": "Gespeicherte Kopie · {x}",
+      "snapTitle": "Dies ist eine gespeicherte Kopie. Änderungen werden nicht gespeichert."
+    },
+    "items": {
+      "src-ai": {
+        "l": "KI-/LLM-APIs",
+        "d": "Prompt-, Completion- und Tool-Call-Logs der Modellanbieter. Neue Telemetrie, altes Problem: hohes Volumen, gemischter Wert, sensible Inhalte."
+      },
+      "src-uf": {
+        "d": "Die bestehende Forwarder-Landschaft. Richten Sie sie auf die Pipeline aus und behalten Sie die Erfassung, für die Sie bereits bezahlt haben."
+      },
+      "src-obj": {
+        "l": "Objektspeicher",
+        "d": "Cloud-Logs, die bereits in Buckets landen. Später per Replay erneut senden, ohne sie neu zu erfassen."
+      },
+      "src-syslog": {
+        "d": "Netzwerkgeräte, Firewalls und alles, was nur UDP ins Leere spricht."
+      },
+      "src-kafka": {
+        "d": "Event-Streams aus Anwendungen, bereits strukturiert und bereits in Bewegung."
+      },
+      "src-otel": {
+        "d": "OpenTelemetry-Traces, -Metriken und -Logs aus instrumentierten Services. Herstellerneutral auf der Leitung – so wird das Ziel zur Wahl statt zur Verpflichtung."
+      },
+      "src-edge": {
+        "l": "Edge-Agent",
+        "d": "Erfassung am Endpunkt, inklusive Kubernetes und Windows, als Flotte verwaltet statt über tausend Konfigurationsdateien."
+      },
+      "src-win": {
+        "l": "Windows-Events",
+        "d": "Security-, Sysmon- und PowerShell-Logs aus der Windows-Umgebung."
+      },
+      "src-fw": {
+        "d": "Traffic- und Threat-Logs in hohem Volumen – meist Rauschen, bis zu dem Tag, an dem sie es nicht mehr sind."
+      },
+      "src-edr": {
+        "d": "Endpoint-Telemetrie zu Prozessen, Netzwerk und Dateien. Reichhaltig, ausführlich und downstream pro Byte bepreist."
+      },
+      "src-cloudtrail": {
+        "d": "Jeder API-Aufruf in der AWS-Umgebung. Unverzichtbar für Audits, schwergewichtig im großen Maßstab."
+      },
+      "src-azure": {
+        "d": "Anmelde-, Audit- und Aktivitätslogs aus der Microsoft-Cloud."
+      },
+      "src-m365": {
+        "d": "Audit-Trails von Mail, Teams und SharePoint."
+      },
+      "src-idp": {
+        "l": "Identität (Okta)",
+        "d": "Wer sich angemeldet hat, von wo und mit welchem Faktor."
+      },
+      "src-proxy": {
+        "l": "Web-Proxy (Zscaler)",
+        "d": "Jede ausgehende Anfrage. Die erste Anlaufstelle nach einem Phishing-Klick."
+      },
+      "src-dns": {
+        "d": "Kleine Events, riesiges Volumen und oft das früheste Anzeichen für Probleme."
+      },
+      "src-flow": {
+        "l": "NetFlow- und VPC-Flow-Logs",
+        "d": "Wer mit wem kommuniziert hat. Größtenteils auf Aggregate reduzierbar."
+      },
+      "src-k8s": {
+        "d": "Container-, Node- und Audit-Logs, die sich mit jedem Deployment ändern."
+      },
+      "src-prom": {
+        "l": "Prometheus-Metriken",
+        "d": "Abgefragte Zeitreihen von Services und Infrastruktur."
+      },
+      "src-hec": {
+        "d": "Anwendungen und SaaS, die Events per HTTP senden."
+      },
+      "src-db": {
+        "l": "Datenbanken & Mainframe",
+        "d": "Audit- und Transaktionslogs aus den Kernsystemen."
+      },
+      "src-ot": {
+        "d": "Industrie- und Gerätetelemetrie, oft in Netzen ohne direkten Cloud-Zugang."
+      },
+      "pipe-edge": {
+        "l": "Edge-Flottenmanagement",
+        "d": "Agent-Flotte an der Quelle. Erfasst Daten von Hosts, Dateien und Kubernetes und filtert vor, bevor irgendetwas das Netzwerk passiert."
+      },
+      "pipe-stream": {
+        "l": "Stream-Verarbeitung",
+        "d": "Der Kontrollpunkt. Parsen, anreichern, reduzieren, maskieren, auf ein gemeinsames Schema bringen und ein Event an mehrere Ziele routen – jeweils im erwarteten Format."
+      },
+      "pipe-guard": {
+        "l": "Datenschutz",
+        "d": "Erkennt und behandelt sensible Daten in Bewegung. Erkennen, maskieren oder verwerfen, bevor sie dort landen, wo sie nicht hingehören."
+      },
+      "pipe-insights": {
+        "l": "Telemetrie-Insights",
+        "d": "Zeigt, was tatsächlich fließt: Volumen pro Quelle, Wert, Kosten und was Sie ohne Verlust auf günstigere Tiers verschieben oder verwerfen könnten."
+      },
+      "pipe-copilot": {
+        "l": "KI-Tools",
+        "d": "Erstellt und erklärt Pipeline-Logik in natürlicher Sprache. Aus einem Routing- oder Parsing-Problem wird ein Gespräch statt einer Konfigurationsdatei."
+      },
+      "pipe-replay": {
+        "l": "Daten-Replay",
+        "d": "Historische Daten erneut durch die Pipeline an beliebige Tools senden – für eine Untersuchung oder ein neues Ziel."
+      },
+      "pipe-ocsf": {
+        "l": "Schema-Normalisierung (OCSF)",
+        "d": "Events einmal, unterwegs und für jedes Ziel in OCSF oder das Schema Ihres SIEM überführen."
+      },
+      "pipe-enrich": {
+        "l": "Anreicherung & Lookups",
+        "d": "Asset-, Benutzer- und Threat-Intel-Kontext hinzufügen, bevor das Event ankommt."
+      },
+      "pipe-packs": {
+        "d": "Vorgefertigte Pipelines für gängige Quellen und Ziele, von Cribl und der Community."
+      },
+      "pipe-agg": {
+        "l": "Sampling & Aggregation",
+        "d": "Logs mit hohem Volumen und geringem Wert in Metriken oder Stichproben umwandeln."
+      },
+      "pt-detect": {
+        "d": "Kaufen – bei Cribl. Ein fertiges SIEM-Erlebnis mit Detections, Korrelation und Analysten-Workflow, auf offener Telemetrie, die Ihnen gehört."
+      },
+      "pt-xsiam": {
+        "d": "Die herstellereigene Security-Plattform von Palo Alto. Schneller Mehrwert, wenn Sie voll einsteigen – und Ihre Security-Daten leben in deren Engine, zu deren Bedingungen."
+      },
+      "pt-cs": {
+        "d": "SIEM im Paket mit der Falcon-Landschaft. Bequem für CrowdStrike-Kunden, bepreist und gestaltet nach der Sicht eines einzigen Anbieters."
+      },
+      "pt-sentinel": {
+        "d": "Cloud-SIEM, an die Microsoft-Welt gebunden. Einfach für Azure-native Daten, teuer für alles andere."
+      },
+      "pt-splunk": {
+        "d": "Der etablierte Index. Behalten Sie ihn für die Detections und Dashboards, die ihre Lizenzkosten wert sind."
+      },
+      "pt-datadog": {
+        "d": "Breite SaaS-Observability. Schnell eingeführt – und die Rechnung wächst mit allem, was Sie senden."
+      },
+      "pt-dynatrace": {
+        "d": "APM mit automatischer Abhängigkeitsanalyse. Premium-Angebot, Premium-Preise."
+      },
+      "pt-newrelic": {
+        "d": "Full-Stack-APM und Observability, bepreist nach Ingest und Benutzern."
+      },
+      "pt-elastic": {
+        "d": "Schnelle Suche über aktuelle, hochwertige Daten. Stark beim Abrufen, teuer bei der Aufbewahrung."
+      },
+      "pt-secops": {
+        "d": "Googles Cloud-SIEM und SOAR, bepreist nach eigenem Ingestion-Modell."
+      },
+      "pt-qradar": {
+        "d": "Langjähriges SIEM, derzeit im Übergang zu einem neuen Eigentümer."
+      },
+      "pt-exabeam": {
+        "d": "SIEM und UEBA, inzwischen mit LogRhythm fusioniert."
+      },
+      "pt-sumo": {
+        "d": "Cloud-Log-Analytics für Security und Betrieb."
+      },
+      "pt-securonix": {
+        "d": "Cloud-SIEM mit integriertem UEBA."
+      },
+      "pt-grafana": {
+        "d": "Dashboards, Metriken, Logs und Traces auf dem LGTM-Stack."
+      },
+      "pt-splunkobs": {
+        "d": "APM und Infrastruktur-Monitoring aus der Splunk-Welt."
+      },
+      "pt-s1": {
+        "d": "EDR-zentrierter Security Data Lake von SentinelOne."
+      },
+      "cr-lake": {
+        "d": "Speicher in offenen Formaten, von Cribl verwaltet oder in Ihrem eigenen Bucket. Schema-on-Read, Aufbewahrung unter Ihrer Kontrolle. Alles speichern, später entscheiden."
+      },
+      "cr-lakehouse": {
+        "d": "Abfrageleistung nahe an einem Premium-Tool zu Kosten nahe an Objektspeicher – auf Daten, die im offenen Format bleiben und Ihnen gehören."
+      },
+      "cr-metrics": {
+        "d": "Speziell entwickelter Metrik-Speicher. Zeitreihen mit hoher Kardinalität zu einem Bruchteil dessen, was eine Premium-Plattform für dieselben Datenpunkte verlangt."
+      },
+      "cr-byob": {
+        "l": "Cribl Lake in Ihrem Bucket",
+        "d": "Dasselbe offene Format, in Ihrem eigenen S3-, Azure-Blob- oder GCS-Konto."
+      },
+      "pf-databricks": {
+        "d": "Lakehouse für ML und Analytics im großen Maßstab. Leistungsstark – die Telemetrie-Anwendungsfälle bauen Sie jedoch selbst."
+      },
+      "pf-snowflake": {
+        "d": "Das Analytics-Warehouse, dem das Business bereits vertraut. Parsing, Schema und Detections für Telemetrie liegen bei Ihnen."
+      },
+      "pf-clickhouse": {
+        "d": "Spaltenorientierter Speicher für schnelle Analytics mit hoher Kardinalität."
+      },
+      "pf-bigquery": {
+        "d": "Serverless Warehouse. Bezahlung pro Abfrage – und jede Abfrage über rohe Telemetrie zählt."
+      },
+      "pf-obj": {
+        "l": "Objektspeicher",
+        "d": "Ihr eigener Bucket, Ihr eigenes Format. Die günstigste Landezone für Daten in voller Detailtiefe."
+      },
+      "pf-adx": {
+        "d": "Schnelle Analytics über Logs und Zeitreihen in Azure, mit KQL."
+      },
+      "pf-fabric": {
+        "d": "Microsofts einheitliche Analytics-Plattform auf Basis von OneLake."
+      },
+      "pf-seclake": {
+        "d": "Security Data Lake im OCSF-Format in Ihrem AWS-Konto."
+      },
+      "pf-iceberg": {
+        "l": "Apache-Iceberg-Tabellen",
+        "d": "Offenes Tabellenformat, das jede Engine lesen kann."
+      },
+      "pf-opensearch": {
+        "d": "Open-Source-Suche und -Analytics, selbst betrieben oder als Managed Service."
+      },
+      "pf-hadoop": {
+        "d": "Der On-Prem-Data-Lake, den viele Teams noch betreiben."
+      },
+      "hu-soc": {
+        "l": "SOC-Analyst",
+        "d": "Sichtet Alerts und führt Untersuchungen durch. Lebt im SIEM und braucht schnell Kontext."
+      },
+      "hu-hunter": {
+        "l": "Threat Hunter",
+        "d": "Stellt offene Fragen über Monate an Daten. Braucht Suche über günstige, lange Aufbewahrung."
+      },
+      "hu-sre": {
+        "l": "SRE / Bereitschaft",
+        "d": "Um 2 Uhr nachts geweckt, um herauszufinden, was sich geändert hat. Braucht Logs, Metriken und Traces an einem Ort."
+      },
+      "hu-dev": {
+        "l": "Entwickler",
+        "d": "Verantwortet Code und Traces. Will Antworten, ohne noch eine Abfragesprache zu lernen."
+      },
+      "hu-compliance": {
+        "d": "Weist nach, was passiert ist – Jahre später. Braucht vollständig aufbewahrte Daten, nicht nur Zusammenfassungen."
+      },
+      "hu-ciso": {
+        "d": "Verantwortet Risiko und Budget. Will Abdeckung ohne ausufernde Rechnung."
+      },
+      "hu-net": {
+        "l": "Netzwerkingenieur",
+        "d": "Lebt in Flow- und Firewall-Daten. Braucht sie aufbewahrt und durchsuchbar."
+      },
+      "hu-data": {
+        "l": "Data Engineer",
+        "d": "Bringt Telemetrie ins Warehouse und hält die Schemata konsistent."
+      },
+      "hu-platform": {
+        "l": "Plattform-Engineer",
+        "d": "Betreibt die gemeinsame Infrastruktur, von der jedes Team abhängt."
+      },
+      "hu-itops": {
+        "l": "IT-Betrieb",
+        "d": "Hält Services am Laufen und Tickets in Bewegung."
+      },
+      "hu-auditor": {
+        "d": "Fordert Nachweise an, oft Jahre nach dem Ereignis."
+      },
+      "hu-fraud": {
+        "l": "Betrugsanalyst",
+        "d": "Sucht nach Mustern über Transaktionen und Sitzungen hinweg."
+      },
+      "ag-traversal": {
+        "d": "KI-SRE, die Service-Abhängigkeiten durchläuft, um die Ursache zu finden, statt dafür einen Menschen zu alarmieren."
+      },
+      "ag-tines": {
+        "d": "Workflow-Automatisierung und Orchestrierung. Führt das Playbook aus, sobald eine Entscheidung gefallen ist."
+      },
+      "ag-resolve": {
+        "d": "Agentische Automatisierung für IT- und Netzwerkbetrieb."
+      },
+      "ag-intezer": {
+        "d": "Autonome Alert-Triage. Entscheidet, was die Aufmerksamkeit eines Analysten wirklich verdient."
+      },
+      "ag-glean": {
+        "d": "Unternehmenssuche und Assistenten über internes Wissen und interne Systeme."
+      },
+      "ag-yours": {
+        "l": "Ihre Agenten",
+        "d": "Bringen Sie Ihr eigenes Modell und Ihre eigenen Agenten mit. Alles, was MCP spricht, erreicht dieselben Daten wie die Menschen."
+      },
+      "ag-seccopilot": {
+        "d": "Microsofts Assistent für Security-Analysten."
+      },
+      "ag-torq": {
+        "d": "Hyperautomatisierung und KI-Agenten für das SOC."
+      },
+      "ag-dropzone": {
+        "d": "Autonome Untersuchung von Alerts, durchgängig von Anfang bis Ende."
+      },
+      "ag-cleric": {
+        "d": "KI-SRE, die Produktionsvorfälle untersucht."
+      },
+      "ag-snowai": {
+        "d": "Agenten, die direkt in ITSM- und SecOps-Workflows handeln."
+      },
+      "ag-llm": {
+        "l": "LLM-Assistenten (Claude, ChatGPT)",
+        "d": "Allgemeine Assistenten, die per MCP auf Telemetrie zugreifen."
+      },
+      "an-search": {
+        "l": "Föderierte Suche",
+        "d": "Daten vor Ort abfragen – in Ihren Lösungen, in Cribl und in Ihren Datenplattformen –, ohne sie zu verschieben oder zu duplizieren. Eine Oberfläche über viele Systeme."
+      },
+      "an-copilot": {
+        "l": "KI-Tools",
+        "d": "Natürliche Sprache über der Datenschicht. Stellen Sie eine Frage, erhalten Sie eine Abfrage – und überlassen Sie die Schema-Archäologie dem Assistenten statt dem Analysten."
+      },
+      "an-mcp": {
+        "d": "Die Schnittstelle, die Agenten tatsächlich nutzen. Stellt Suche, Kontext und Tools über ein einziges Protokoll bereit, sodass ein Agent die Datenschicht ohne individuelle Integration pro System erreicht."
+      },
+      "an-dash": {
+        "d": "Gemeinsame Ansichten über jeden Speicher, einmal erstellt und stets aktuell."
+      },
+      "an-notebooks": {
+        "d": "Untersuchungen, die während der Arbeit dokumentiert werden – Abfragen und Notizen zusammen."
+      },
+      "an-alerts": {
+        "l": "Geplante Suchen & Alerts",
+        "d": "Detections und Prüfungen, die zeitgesteuert über alle Speicher laufen."
+      },
+      "ap-custom": {
+        "l": "Eigene App",
+        "d": "Selbst bauen. Ein Workflow, der für Ihr Unternehmen einzigartig ist, gebaut auf der gemeinsamen Telemetrie-Schicht statt an den Speicher eines einzelnen Anbieters angeflanscht."
+      },
+      "ap-o11y": {
+        "l": "Observability",
+        "d": "Metriken, Traces und Logs für das Engineering. Bringt Geschwindigkeit, kostet pro Volumen."
+      },
+      "ap-aio11y": {
+        "l": "KI-Observability",
+        "d": "Observability für Modelle und Agenten. Prompts, Tokens, Tool-Calls, Latenz, Kosten."
+      },
+      "ap-apm": {
+        "d": "Application Performance Monitoring. Traces und Service-Abhängigkeiten für die Engineers, die den Code verantworten."
+      },
+      "ap-existing": {
+        "l": "Ihre bestehenden Tools",
+        "d": "Eigenes mitbringen. Die App, die Sie bereits nutzen, oder die, die Sie noch nicht gekauft haben. Mit einer Datenschicht darunter ist das Hinzufügen eine Routing-Änderung, kein Re-Instrumentierungsprojekt."
+      },
+      "ap-siem": {
+        "d": "Detection und Response auf der gemeinsamen Datenschicht."
+      },
+      "ap-soar": {
+        "d": "Playbooks und Case Management für das SOC."
+      },
+      "ap-itsm": {
+        "d": "Störungen, Änderungen und Serviceanfragen."
+      },
+      "ap-bi": {
+        "l": "BI & Reporting",
+        "d": "Business-Dashboards auf Basis operativer Daten."
+      },
+      "ap-finops": {
+        "d": "Cloud- und Tool-Ausgaben, aufgeschlüsselt nach Team und Quelle."
+      },
+      "ap-fraud": {
+        "l": "Betrugserkennung",
+        "d": "Modelle, die Sitzungen und Transaktionen nahezu in Echtzeit bewerten."
+      },
+      "hc-jira": {
+        "d": "Tickets und Change Records, die erklären, warum ein System um 2 Uhr nachts seltsam aussah."
+      },
+      "hc-snow": {
+        "d": "Incidents, CMDB und Asset-Verantwortlichkeiten. Die Landkarte dessen, was ein Hostname tatsächlich ist."
+      },
+      "hc-slack": {
+        "d": "Wo die Menschen tatsächlich entschieden haben. Oft der einzige Beleg für einen Workaround."
+      },
+      "hc-gitlab": {
+        "d": "Merge Requests und Pipeline-Läufe. Deployments sind die häufigste Ursache neuer Anomalien."
+      },
+      "hc-github": {
+        "d": "Code, Issues und Commit-Historie, die aus einem Stack-Trace einen Verantwortlichen machen."
+      },
+      "hc-mcp": {
+        "d": "Ein Protokoll, damit ein Agent all das erreicht – ohne zehn individuelle Integrationen."
+      },
+      "hc-web": {
+        "l": "Websuche",
+        "d": "Öffentlicher Kontext. CVEs, Hersteller-Advisories und Störungsmeldungen, die der interne Stack nie sieht."
+      },
+      "hc-confluence": {
+        "d": "Runbooks und Designdokumente, die beschreiben, wie die Dinge funktionieren sollen."
+      },
+      "hc-pagerduty": {
+        "d": "Wer Bereitschaft hatte, wer alarmiert wurde und wann."
+      },
+      "hc-teams": {
+        "d": "Wo Entscheidungen getroffen wurden – in Microsoft-Umgebungen."
+      },
+      "hc-ti": {
+        "l": "Threat-Intel-Feeds",
+        "d": "Indikatoren und Kampagnen aus kommerziellen und offenen Feeds."
+      },
+      "hc-cmdb": {
+        "d": "Das Inventar der Assets und ihrer Verantwortlichen."
+      },
+      "hc-dir": {
+        "l": "Verzeichnisdienst (AD, Entra)",
+        "d": "Benutzer, Gruppen und Rollen hinter jeder Anmeldung."
+      }
+    }
+  },
+  "es": {
+    "menu": {
+      "cribl": "Usar nombres de productos Cribl",
+      "fit": "Ajustar a la pantalla",
+      "reset": "Volver al paso 1",
+      "config": "Configuración y estilo",
+      "autoArrows": "Flechas automáticas",
+      "auto": "Auto",
+      "autoOnTip": "Flechas auto: una flecha por elemento en cada paso. Elimine o edite cualquier flecha, arrastre de un elemento a otro para añadir una.",
+      "deleteN": "Eliminar {n} flechas",
+      "deletedN": "{n} flechas eliminadas",
+      "story": "Historia",
+      "min": "Minimizar",
+      "expand": "Expandir",
+      "moveTip": "Arrastre para moverlo. Doble clic para devolverlo a su sitio.",
+      "revPipe": "Pipeline",
+      "revSearch": "Búsqueda",
+      "revAi": "IA",
+      "revPeople": "Personas",
+      "revShow": "Mostrar {x}",
+      "revHide": "Ocultar {x}",
+      "clean": "Limpio",
+      "cleanTip": "Flechas limpias: líneas rojas punteadas antes del pipeline, luego una flecha ancha y recta de capa a capa, para leer el flujo de un vistazo.",
+      "disco": "Desafíos",
+      "discoFull": "Desafíos, completo: fijados en su bloque y, una vez resueltos, listados a la izquierda con sus resultados de negocio",
+      "discoMin": "Desafíos, mínimo: fijados en su bloque; pase sobre uno verde para ver sus resultados de negocio",
+      "discoOff": "Desafíos ocultos, para ver el dibujo con claridad",
+      "vPain": "Desafío",
+      "vSolved": "Resuelto",
+      "vOutcome": "Resultado",
+      "vRemove": "Quitar de la pizarra",
+      "laneAfter": "Lo que cambia",
+      "goalsSec": "Objetivos de seguridad",
+      "goalsObs": "Objetivos de observabilidad",
+      "goalNote": "Iniciativa",
+      "goalNotePh": "p. ej. migración del SIEM",
+      "goalAddPillar": "Añadir un pilar",
+      "goalNewPillar": "Nuevo pilar",
+      "goalDelPillar": "Quitar este pilar",
+      "goalDelQ": "¿Eliminar este pilar y sus iniciativas?",
+      "goalHide": "Ocultar (las iniciativas se conservan)",
+      "gpCompliance": "Cumplimiento",
+      "gpDetection": "Detección",
+      "gpInvestigation": "Investigación",
+      "gpResponse": "Respuesta",
+      "gpAvailability": "Disponibilidad y SLO",
+      "gpTroubleshooting": "Diagnóstico",
+      "gpPerformance": "Rendimiento",
+      "gpCost": "Control de costes",
+      "cfgOutcomes": "Resultados",
+      "cfgOutcome": "Resultado",
+      "cfgOutcomePh": "Resultado de negocio positivo",
+      "cfgSolvedBy": "Resuelto por",
+      "cfgKeywords": "Palabras de búsqueda",
+      "cfgKeywordsPh": "licencia, caro, GB… (separadas por comas)",
+      "askBtn": "Desafío",
+      "askPh": "¿Cuál es el desafío? Busque en todos",
+      "askAdd": "Añadir «{x}»",
+      "askOn": "en {x}",
+      "askEmpty": "Aún no hay desafíos para este bloque: escriba uno para añadirlo",
+      "askOutPh": "En qué se convierte con Cribl (opcional)",
+      "cfgSections": "Secciones de la configuración",
+      "cfgNavBoard": "En el diagrama",
+      "cfgNavLibrary": "Biblioteca",
+      "cfgBackup": "Copia y restablecer",
+      "cfgHelpPains": "Elija un desafío para editarlo. En la lista: se ofrece en el + Desafío de su caja sin escribir; desactivado, se sigue encontrando al escribir.",
+      "cfgHelpLib": "Lleve su biblioteca a otro equipo o vuelva a empezar desde la incluida.",
+      "cfgFind": "Buscar un desafío (cada palabra debe coincidir)",
+      "cfgAll": "Todos",
+      "cfgOnlyList": "Solo los de la lista",
+      "cfgInList": "En la lista del + Desafío de la caja, sin escribir",
+      "cfgNew": "Nuevo desafío",
+      "cfgNone": "Ningún resultado.",
+      "cfgPick": "Elija un desafío a la izquierda.",
+      "cfgOnBoard": "En el diagrama",
+      "cfgOnce": "cuando se muestra {x}",
+      "cfgBadge": "Texto de la etiqueta roja",
+      "cfgOutHelp": "el primero es la etiqueta verde; todos se ven al pasar el ratón",
+      "cfgDesc": "Descripción (nunca en el diagrama; + Desafío la busca)",
+      "cfgOut0": "sin resultado",
+      "cfgOut1": "1 resultado",
+      "cfgOutN": "{n} resultados",
+      "cfgResetHelp": "Restaura la biblioteca incluida. Se eliminan sus desafíos, elementos y cambios; se conservan el tema, los colores y el idioma."
+    },
+    "ui": {
+      "title": "Cribl | La plataforma de IA para la telemetría",
+      "tagline": "La plataforma de IA para la telemetría",
+      "story": "La mayoría de los equipos gestiona su telemetría de una de dos maneras, y ninguna basta: <b>soluciones</b> que traen cada una su propio motor de datos, o una <b>plataforma de datos</b> que no se creó para la telemetría. Cribl es la plataforma de IA para la telemetría, tanto para <b>las personas como para la IA</b>: <span class=\"hl\">constrúyalo, cómprelo, traiga el suyo.</span>",
+      "prospectPh": "Nombre del prospecto",
+      "logoAdd": "Logo",
+      "logoTitle": "Añadir el logo del prospecto: haga clic o suelte una imagen",
+      "logoRemove": "Quitar el logo",
+      "prospectFallback": "Prospecto",
+      "paLabel": "Desafíos",
+      "paShow": "Mostrar la <u>s</u>ituación",
+      "paHide": "Ocultar la <u>s</u>ituación",
+      "kCost": "Costo",
+      "kTime": "Tiempo",
+      "kRisk": "Riesgo",
+      "paCol": "Desafío",
+      "badgeCol": "Texto de la etiqueta",
+      "kindCol": "Tipo",
+      "tgtCol": "Se muestra en",
+      "newPa": "Nuevo desafío",
+      "addPa": "Añadir desafío",
+      "badgePh": "Texto de la etiqueta (opcional)",
+      "ucLabel": "Casos de uso de negocio",
+      "ucShow": "Mostrar casos de <u>u</u>so",
+      "ucHide": "Ocultar casos de <u>u</u>so",
+      "ucNone": "ninguno por ahora",
+      "famToggle": "Activar o desactivar todos los casos «{x}»",
+      "humansT": "Usuarios humanos",
+      "humansS": "a través de apps, búsqueda y copilotos",
+      "agentsT": "Consumidores de IA",
+      "agentsS": "agentes que leen la telemetría vía MCP",
+      "lApps": "Aplicaciones",
+      "lAnalysis": "Analítica unificada",
+      "lStores": "Almacenes de datos",
+      "lPipe": "Pipeline de telemetría",
+      "lSources": "Fuentes de datos",
+      "railT": "Contexto humano",
+      "pointK": "Primero la solución",
+      "pointP": "Las herramientas de SIEM, APM y observabilidad que usa hoy: funcionan desde el primer día, cada una con su propio motor de datos. Recopila, almacena y paga licencia por los mismos datos en cada herramienta, según las condiciones del proveedor.",
+      "criblK": "Cribl · primero la plataforma, soluciones encima",
+      "criblP": "Conserve el SIEM que tiene o sustitúyalo cuando esté listo. Recopile una vez en formatos abiertos y ejecute soluciones de Cribl, de un socio o propias sobre los mismos datos.",
+      "platK": "Primero la plataforma",
+      "platP": "Su data lake o data warehouse: abierto, flexible y más barato por terabyte, pero no pensado para la telemetría. Parsers, esquemas, detecciones y apps quedan en sus manos, y el coste de software se convierte en coste de personal.",
+      "waysT": "Su elección, por caso de uso",
+      "wayBuy": "Cómprelo",
+      "wayBuild": "Constrúyalo",
+      "wayByo": "Traiga el suyo",
+      "wayBuyD": "Experiencias de solución empaquetadas de Cribl y sus partners, como SIEM, APM y observabilidad de IA, listas desde el primer día.",
+      "wayBuildD": "Apps y agentes a medida para el flujo de trabajo propio de su organización, construidos sobre la misma base de telemetría con desarrollo asistido por IA.",
+      "wayByoD": "Su almacenamiento, sus herramientas, sus modelos. Mantenga los datos en formatos abiertos en su propio bucket y siga alimentando el SIEM y las plataformas que ya utiliza.",
+      "fRoute": "enrutamiento a cualquier opción",
+      "fQuery": "consulta in situ",
+      "fSearch": "búsqueda",
+      "fMcp": "MCP",
+      "tiers": "Niveles",
+      "tSources": "Fuentes de datos",
+      "tStores": "Almacenamiento",
+      "tHuman": "Contexto humano",
+      "view": "Vista",
+      "showCribl": "Mostrar <u>C</u>ribl",
+      "pauseFlow": "Pausar el <u>f</u>lujo",
+      "playFlow": "Animar el <u>f</u>lujo",
+      "fit": "Ajustar a la pantalla (<u>z</u>)",
+      "present": "<u>P</u>resentar",
+      "style": "Estilo",
+      "meeting": "Reunión",
+      "draw": "<u>D</u>ibujar flechas",
+      "drawing": "Dejar de <u>d</u>ibujar",
+      "autoArrows": "Flechas automáticas",
+      "configure": "Configurar",
+      "backDiagram": "Volver al diagrama",
+      "save": "Guardar",
+      "newMeeting": "Nueva reunión",
+      "sPipe": "Pipeline",
+      "sSearch": "Búsqueda unificada",
+      "sAi": "IA unificada",
+      "before": "Antes",
+      "after": "Después",
+      "step": "Paso",
+      "stepK": "paso",
+      "resetK": "reiniciar",
+      "drawHint": "Arrastre de un elemento a otro para trazar una flecha. Esc para salir.",
+      "addTo": "Añadir a {x}",
+      "searchAdd": "Buscar o añadir…",
+      "sugg": "Sugerencias",
+      "yours": "Sus entradas",
+      "addNew": "Añadir «{x}»",
+      "descPh": "Descripción (opcional)",
+      "keep": "Conservar para próximas reuniones",
+      "noMore": "Todo ya está en el diagrama. Escriba un nombre para añadir uno nuevo.",
+      "remove": "Quitar de esta reunión",
+      "close": "Cerrar",
+      "gSources": "Fuentes de datos",
+      "gPipe": "Pipeline de telemetría",
+      "gPoint": "Soluciones",
+      "gCribl": "Almacenamiento Cribl",
+      "gPlatform": "Plataformas de datos",
+      "gHumans": "Usuarios humanos",
+      "gAgents": "Consumidores de IA",
+      "gAnalysis": "Analítica unificada",
+      "gApps": "Aplicaciones",
+      "gHuman": "Contexto humano",
+      "gUsecases": "Casos de uso de negocio",
+      "gPains": "Desafíos",
+      "famCompliance": "Cumplimiento",
+      "famDetection": "Detección",
+      "famInvestigation": "Investigación",
+      "famResponse": "Respuesta",
+      "lvTop": "Apps y consumidores",
+      "lvAnalysis": "Analítica unificada",
+      "lvStores": "Almacenes de datos",
+      "lvPipe": "Pipeline de telemetría",
+      "lvSources": "Fuentes de datos",
+      "arrowLabelPh": "Etiqueta",
+      "arrowDelete": "Eliminar la flecha",
+      "arrowColor": "Color",
+      "styleT": "Estilo",
+      "themes": "Tema",
+      "colours": "Colores",
+      "resetColours": "Restablecer colores",
+      "thCapra": "Capra",
+      "thCapraD": "Cribl oficial, claro",
+      "thMidnight": "Medianoche",
+      "thMidnightD": "Oscuro, para la pantalla grande",
+      "thBoard": "Pizarra blanca",
+      "thBoardD": "Marcador sobre papel, para talleres",
+      "cSources": "Fuentes",
+      "cPipe": "Pipeline",
+      "cStores": "Almacenamiento",
+      "cAnalysis": "Analítica",
+      "cApps": "Aplicaciones",
+      "cPeople": "Personas",
+      "cAgents": "Agentes de IA",
+      "cFlow": "Flujo",
+      "cCribl": "Acento Cribl",
+      "cMess": "Estado «antes»",
+      "cfgTitle": "Configuración",
+      "cfgHelp": "Los elementos marcados aparecen por defecto en cada reunión. Los demás siguen disponibles con el botón +.",
+      "cfgReset": "Restablecer valores predeterminados",
+      "cfgResetQ": "¿Restablecer la biblioteca a los valores predeterminados? Sus entradas se eliminarán.",
+      "cfgCopy": "Copiar el JSON de la biblioteca",
+      "cfgCopied": "Copiado",
+      "cfgApply": "Aplicar el JSON pegado",
+      "cfgInvalid": "JSON no válido",
+      "cfgJson": "JSON de la biblioteca",
+      "cfgJsonHelp": "Cópielo para llevar su biblioteca a otro equipo. Pegue uno de vuelta y haga clic en Aplicar el JSON pegado. Se aceptan configuraciones de la v4.3.",
+      "tagSugg": "sugerencia",
+      "tagYours": "propio",
+      "newItem": "Nombre del nuevo elemento",
+      "newCribl": "Nombre Cribl (opcional)",
+      "noLogo": "sin logo",
+      "tooltipPh": "Tooltip (opcional)",
+      "ucCol": "Caso de uso",
+      "famCol": "Familia",
+      "lvCol": "Nivel",
+      "tipCol": "Tooltip",
+      "newUc": "Nuevo caso de uso",
+      "addUc": "Añadir caso de uso",
+      "del": "Eliminar",
+      "shown": "Visible por defecto",
+      "saveT": "Guardar esta reunión",
+      "saveName": "Nombre del archivo",
+      "saveFormats": "Formatos",
+      "fHtml": "HTML, una copia interactiva",
+      "fPng": "Imagen PNG",
+      "fPdf": "PDF",
+      "saveFolder": "Carpeta",
+      "chooseFolder": "Elegir carpeta",
+      "changeFolder": "Cambiar",
+      "noFolder": "Aún no se ha elegido ninguna carpeta. Se le pedirá al guardar.",
+      "dlFolder": "Este navegador guarda en su carpeta Descargas.",
+      "saveBtn": "Guardar",
+      "cancel": "Cancelar",
+      "saving": "Guardando…",
+      "saved": "Guardado en {x}: {n}",
+      "savedDl": "Descargado: {n}",
+      "files1": "1 archivo",
+      "filesN": "{n} archivos",
+      "saveNone": "Elija al menos un formato.",
+      "saveErrImg": "El PNG y el PDF necesitan conexión a internet para cargar la biblioteca de exportación. Todo lo demás se ha guardado.",
+      "saveErr": "No se pudo guardar: {x}",
+      "newT": "¿Empezar una nueva reunión?",
+      "newClears": "Borra",
+      "newKeeps": "Conserva",
+      "newClearsL": "El nombre y el logo del prospecto, las flechas dibujadas, los elementos añadidos o quitados durante esta reunión, la selección de situación y casos de uso, y el paso de la historia.",
+      "newKeepsL": "Sus entradas, las opciones de Configurar, el tema, los colores, el idioma y la carpeta de reuniones.",
+      "saveFirst": "Guardar antes esta reunión",
+      "newGo": "Empezar nueva reunión",
+      "newDone": "Nueva reunión iniciada",
+      "undo": "Deshacer",
+      "snap": "Copia guardada · {x}",
+      "snapTitle": "Esta es una copia guardada. Los cambios no se conservan."
+    },
+    "items": {
+      "src-ai": {
+        "l": "API de IA / LLM",
+        "d": "Logs de prompts, respuestas y llamadas a herramientas de los proveedores de modelos. Telemetría nueva, mismo problema: gran volumen, valor desigual, contenido sensible."
+      },
+      "src-uf": {
+        "d": "El parque de forwarders existente. Apúntelo al pipeline y conserve la recopilación por la que ya pagó."
+      },
+      "src-obj": {
+        "l": "Almacenamiento de objetos",
+        "d": "Logs de la nube que ya llegan a buckets. Reprodúzcalos más tarde sin volver a recopilarlos."
+      },
+      "src-syslog": {
+        "d": "Equipos de red, firewalls y todo lo que solo habla UDP al vacío."
+      },
+      "src-kafka": {
+        "d": "Flujos de eventos de aplicaciones, ya estructurados y ya en movimiento."
+      },
+      "src-otel": {
+        "d": "Trazas, métricas y logs OpenTelemetry de servicios instrumentados. Neutral respecto al proveedor, lo que convierte el destino en una elección y no en un compromiso."
+      },
+      "src-edge": {
+        "l": "Agente Edge",
+        "d": "Recopilación en el endpoint, incluidos Kubernetes y Windows, gestionada como una flota y no como mil archivos de configuración."
+      },
+      "src-win": {
+        "l": "Eventos de Windows",
+        "d": "Logs de seguridad, Sysmon y PowerShell del parque Windows."
+      },
+      "src-fw": {
+        "d": "Logs de tráfico y amenazas a gran volumen, casi todo ruido hasta el día en que deja de serlo."
+      },
+      "src-edr": {
+        "d": "Telemetría de endpoints: procesos, red y archivos. Rica, verbosa y facturada por byte aguas abajo."
+      },
+      "src-cloudtrail": {
+        "d": "Cada llamada a la API en AWS. Imprescindible para la auditoría, pesada a gran escala."
+      },
+      "src-azure": {
+        "l": "Azure y Entra ID",
+        "d": "Logs de inicio de sesión, auditoría y actividad de la nube de Microsoft."
+      },
+      "src-m365": {
+        "d": "Registros de auditoría del correo, Teams y SharePoint."
+      },
+      "src-idp": {
+        "l": "Identidad (Okta)",
+        "d": "Quién inició sesión, desde dónde y con qué factor."
+      },
+      "src-proxy": {
+        "l": "Proxy web (Zscaler)",
+        "d": "Cada solicitud saliente. El primer lugar donde mirar tras un clic en un phishing."
+      },
+      "src-dns": {
+        "d": "Eventos pequeños, volumen enorme y, a menudo, la primera señal de un problema."
+      },
+      "src-flow": {
+        "l": "NetFlow y VPC flow logs",
+        "d": "Quién habló con quién. Reducible en gran parte a agregados."
+      },
+      "src-k8s": {
+        "d": "Logs de contenedores, nodos y auditoría que cambian con cada despliegue."
+      },
+      "src-prom": {
+        "l": "Métricas de Prometheus",
+        "d": "Series temporales recogidas de servicios e infraestructura."
+      },
+      "src-hec": {
+        "d": "Aplicaciones y SaaS que envían eventos por HTTP."
+      },
+      "src-db": {
+        "l": "Bases de datos y mainframe",
+        "d": "Logs de auditoría y de transacciones de los sistemas de registro."
+      },
+      "src-ot": {
+        "l": "OT e IoT",
+        "d": "Telemetría industrial y de dispositivos, a menudo en redes sin acceso directo a la nube."
+      },
+      "pipe-edge": {
+        "l": "Gestión de flota Edge",
+        "d": "Flota de agentes en el origen. Recopila de hosts, archivos y Kubernetes, y hace el primer filtrado antes de que nada cruce la red."
+      },
+      "pipe-stream": {
+        "l": "Procesamiento de flujos",
+        "d": "El punto de control. Parsear, enriquecer, reducir, enmascarar, normalizar hacia un esquema común y enrutar un mismo evento a varios destinos, cada uno en el formato que espera."
+      },
+      "pipe-guard": {
+        "l": "Protección de datos",
+        "d": "Detecta y trata los datos sensibles en tránsito. Detectar, enmascarar o descartar antes de que lleguen a donde no deberían."
+      },
+      "pipe-insights": {
+        "l": "Visibilidad de la telemetría",
+        "d": "Muestra lo que realmente circula: volumen por fuente, valor, costo y lo que podría escalonar o descartar sin perder nada."
+      },
+      "pipe-copilot": {
+        "l": "Herramientas de IA",
+        "d": "Construye y explica la lógica del pipeline en lenguaje natural. Un problema de enrutamiento o de parsing se convierte en una conversación en lugar de un archivo de configuración."
+      },
+      "pipe-replay": {
+        "l": "Replay de datos",
+        "d": "Reenviar datos históricos por el pipeline hacia cualquier herramienta, para una investigación o un nuevo destino."
+      },
+      "pipe-ocsf": {
+        "l": "Normalización de esquemas (OCSF)",
+        "d": "Adaptar los eventos a OCSF o al esquema de su SIEM una sola vez, en tránsito, para todos los destinos."
+      },
+      "pipe-enrich": {
+        "l": "Enriquecimiento y lookups",
+        "d": "Añadir contexto de activos, usuarios y threat intel antes de que llegue el evento."
+      },
+      "pipe-packs": {
+        "d": "Pipelines listos para usar para fuentes y destinos habituales, de Cribl y de la comunidad."
+      },
+      "pipe-agg": {
+        "l": "Muestreo y agregación",
+        "d": "Convertir logs de gran volumen y poco valor en métricas o muestras."
+      },
+      "pt-detect": {
+        "d": "Cómprelo, a Cribl. Una experiencia SIEM empaquetada con detecciones, correlación y flujo de trabajo del analista, sobre una telemetría abierta que sigue siendo suya."
+      },
+      "pt-xsiam": {
+        "d": "La plataforma de seguridad nativa de Palo Alto. Aporta valor rápido si apuesta todo por ella, y sus datos de seguridad viven en su motor, según sus reglas."
+      },
+      "pt-cs": {
+        "d": "SIEM incluido con el ecosistema Falcon. Práctico para clientes de CrowdStrike, con precio y diseño según la visión de un solo proveedor."
+      },
+      "pt-sentinel": {
+        "d": "SIEM en la nube ligado al ecosistema Microsoft. Sencillo para datos nativos de Azure, costoso para todo lo demás."
+      },
+      "pt-splunk": {
+        "d": "El índice establecido. Consérvelo para las detecciones y dashboards que justifican su licencia."
+      },
+      "pt-datadog": {
+        "d": "Observabilidad SaaS muy amplia. Rápida de adoptar, y la factura crece con todo lo que le envía."
+      },
+      "pt-dynatrace": {
+        "d": "APM con mapeo automático de dependencias. Nivel premium, tarifa premium."
+      },
+      "pt-newrelic": {
+        "d": "APM y observabilidad full stack, con precio según la ingesta y los usuarios."
+      },
+      "pt-elastic": {
+        "d": "Búsqueda rápida sobre datos recientes de alto valor. Excelente para recuperar, caro para retener."
+      },
+      "pt-secops": {
+        "d": "El SIEM y SOAR en la nube de Google, con precio según su propio modelo de ingesta."
+      },
+      "pt-qradar": {
+        "d": "SIEM veterano, ahora en transición hacia un nuevo propietario."
+      },
+      "pt-exabeam": {
+        "d": "SIEM y UEBA, ahora fusionado con LogRhythm."
+      },
+      "pt-sumo": {
+        "d": "Analítica de logs en la nube para seguridad y operaciones."
+      },
+      "pt-securonix": {
+        "d": "SIEM en la nube con UEBA integrado."
+      },
+      "pt-grafana": {
+        "d": "Dashboards, métricas, logs y trazas sobre la pila LGTM."
+      },
+      "pt-splunkobs": {
+        "d": "APM y monitorización de infraestructura del ecosistema Splunk."
+      },
+      "pt-s1": {
+        "d": "Data lake de seguridad centrado en EDR, de SentinelOne."
+      },
+      "cr-lake": {
+        "d": "Almacenamiento en formato abierto, gestionado por Cribl o en su propio bucket. Esquema en lectura y retención bajo su control. Guárdelo todo, decida después."
+      },
+      "cr-lakehouse": {
+        "d": "Rendimiento de consulta cercano al de una herramienta premium, a un costo más cercano al del almacenamiento de objetos, sobre datos que siguen en formato abierto y siguen siendo suyos."
+      },
+      "cr-metrics": {
+        "d": "Almacén diseñado para métricas. Series temporales de alta cardinalidad conservadas por una fracción de lo que cobra una plataforma premium por los mismos puntos."
+      },
+      "cr-byob": {
+        "l": "Cribl Lake en su bucket",
+        "d": "El mismo formato abierto, en su propia cuenta de S3, Azure Blob o GCS."
+      },
+      "pf-databricks": {
+        "d": "Lakehouse para ML y analítica a gran escala. Potente, y los casos de uso de telemetría los construye usted."
+      },
+      "pf-snowflake": {
+        "d": "El almacén analítico en el que el negocio ya confía. El parsing, el esquema y las detecciones de telemetría corren por su cuenta."
+      },
+      "pf-clickhouse": {
+        "d": "Base columnar para analítica de alta cardinalidad a gran velocidad."
+      },
+      "pf-bigquery": {
+        "d": "Almacén serverless. Se paga por consulta, y cada consulta sobre telemetría en bruto cuenta."
+      },
+      "pf-obj": {
+        "l": "Almacenamiento de objetos",
+        "d": "Su propio bucket, su propio formato. La zona de aterrizaje más barata posible para datos con fidelidad completa."
+      },
+      "pf-adx": {
+        "d": "Analítica rápida sobre logs y series temporales en Azure, con KQL."
+      },
+      "pf-fabric": {
+        "d": "La plataforma de analítica unificada de Microsoft, sobre OneLake."
+      },
+      "pf-seclake": {
+        "d": "Data lake de seguridad en formato OCSF en su cuenta de AWS."
+      },
+      "pf-iceberg": {
+        "l": "Tablas Apache Iceberg",
+        "d": "Formato de tabla abierto que cualquier motor puede leer."
+      },
+      "pf-opensearch": {
+        "d": "Búsqueda y analítica open source, autogestionada o gestionada."
+      },
+      "pf-hadoop": {
+        "d": "El data lake on-prem que muchos equipos aún operan."
+      },
+      "hu-soc": {
+        "l": "Analista SOC",
+        "d": "Clasifica alertas y dirige investigaciones. Vive en el SIEM y necesita contexto rápido."
+      },
+      "hu-hunter": {
+        "d": "Plantea preguntas abiertas sobre meses de datos. Necesita búsqueda sobre una retención larga y barata."
+      },
+      "hu-sre": {
+        "l": "SRE / guardia",
+        "d": "Lo despiertan a las 2 de la madrugada para averiguar qué cambió. Necesita logs, métricas y trazas en un solo lugar."
+      },
+      "hu-dev": {
+        "l": "Desarrollador",
+        "d": "Es dueño del código y de las trazas. Quiere respuestas sin aprender otro lenguaje de consulta."
+      },
+      "hu-compliance": {
+        "l": "Cumplimiento",
+        "d": "Demuestra lo que pasó, años después. Necesita datos conservados con fidelidad completa, no solo resumidos."
+      },
+      "hu-ciso": {
+        "d": "Es responsable del riesgo y del presupuesto. Quiere cobertura sin una factura descontrolada."
+      },
+      "hu-net": {
+        "l": "Ingeniero de redes",
+        "d": "Vive en los datos de flujos y firewalls. Necesita que se conserven y se puedan consultar."
+      },
+      "hu-data": {
+        "l": "Ingeniero de datos",
+        "d": "Lleva la telemetría al almacén de datos y mantiene los esquemas coherentes."
+      },
+      "hu-platform": {
+        "l": "Ingeniero de plataforma",
+        "d": "Opera la infraestructura compartida de la que dependen todos los equipos."
+      },
+      "hu-itops": {
+        "l": "Operaciones de TI",
+        "d": "Mantiene los servicios en marcha y los tickets avanzando."
+      },
+      "hu-auditor": {
+        "d": "Pide evidencias, a menudo años después de los hechos."
+      },
+      "hu-fraud": {
+        "l": "Analista de fraude",
+        "d": "Busca patrones en transacciones y sesiones."
+      },
+      "ag-traversal": {
+        "d": "SRE de IA que recorre las dependencias entre servicios para localizar la causa raíz, en lugar de despertar a una persona para hacerlo."
+      },
+      "ag-tines": {
+        "d": "Automatización y orquestación de flujos de trabajo. Ejecuta el playbook una vez tomada la decisión."
+      },
+      "ag-resolve": {
+        "d": "Automatización agéntica para operaciones de TI y de red."
+      },
+      "ag-intezer": {
+        "d": "Clasificación autónoma de alertas. Decide qué merece realmente la atención de un analista."
+      },
+      "ag-glean": {
+        "d": "Búsqueda empresarial y asistentes sobre el conocimiento y los sistemas internos."
+      },
+      "ag-yours": {
+        "l": "Sus agentes",
+        "d": "Traiga su propio modelo y sus propios agentes. Todo lo que habla MCP accede a los mismos datos que las personas."
+      },
+      "ag-seccopilot": {
+        "d": "El asistente de Microsoft para analistas de seguridad."
+      },
+      "ag-torq": {
+        "d": "Hiperautomatización y agentes de IA para el SOC."
+      },
+      "ag-dropzone": {
+        "d": "Investigación autónoma de alertas, de principio a fin."
+      },
+      "ag-cleric": {
+        "d": "SRE de IA que investiga incidentes de producción."
+      },
+      "ag-snowai": {
+        "d": "Agentes que actúan dentro de los flujos de trabajo de ITSM y SecOps."
+      },
+      "ag-llm": {
+        "l": "Asistentes LLM (Claude, ChatGPT)",
+        "d": "Asistentes generalistas que acceden a la telemetría vía MCP."
+      },
+      "an-search": {
+        "l": "Búsqueda federada",
+        "d": "Consulte los datos in situ en sus soluciones, en Cribl y en sus plataformas de datos, sin moverlos ni duplicarlos. Una sola interfaz sobre muchos sistemas."
+      },
+      "an-copilot": {
+        "l": "Herramientas de IA",
+        "d": "Lenguaje natural sobre la capa de datos. Haga una pregunta, obtenga una consulta y deje que el asistente haga la arqueología de esquemas en lugar del analista."
+      },
+      "an-mcp": {
+        "d": "La interfaz que realmente usan los agentes. Expone búsqueda, contexto y herramientas mediante un solo protocolo, para que un agente llegue a la capa de datos sin una integración a medida por sistema."
+      },
+      "an-dash": {
+        "d": "Vistas compartidas sobre cualquier almacén, construidas una vez y siempre actualizadas."
+      },
+      "an-notebooks": {
+        "d": "Investigaciones documentadas a medida que se realizan, con consultas y notas juntas."
+      },
+      "an-alerts": {
+        "l": "Búsquedas programadas y alertas",
+        "d": "Detecciones y comprobaciones que se ejecutan de forma programada en todos los almacenes."
+      },
+      "ap-custom": {
+        "l": "App a medida",
+        "d": "Constrúyala. Un flujo de trabajo propio de su organización, construido sobre la capa de telemetría compartida en lugar de acoplado al almacén de un solo proveedor."
+      },
+      "ap-o11y": {
+        "l": "Observabilidad",
+        "d": "Métricas, trazas y logs para ingeniería. Compra velocidad, cobra por volumen."
+      },
+      "ap-aio11y": {
+        "l": "Observabilidad de IA",
+        "d": "Observabilidad de los modelos y los agentes. Prompts, tokens, llamadas a herramientas, latencia, costo."
+      },
+      "ap-apm": {
+        "d": "Monitorización del rendimiento de aplicaciones. Trazas y dependencias de servicios para los ingenieros responsables del código."
+      },
+      "ap-existing": {
+        "l": "Sus herramientas actuales",
+        "d": "Traiga las suyas. La app que ya utiliza, o la que aún no ha comprado. Con una capa de datos debajo, añadirla es un cambio de enrutamiento, no un proyecto de reinstrumentación."
+      },
+      "ap-siem": {
+        "d": "Detección y respuesta sobre la capa de datos compartida."
+      },
+      "ap-soar": {
+        "d": "Playbooks y gestión de casos para el SOC."
+      },
+      "ap-itsm": {
+        "d": "Incidentes, cambios y solicitudes de servicio."
+      },
+      "ap-bi": {
+        "l": "BI e informes",
+        "d": "Dashboards de negocio construidos a partir de datos operativos."
+      },
+      "ap-finops": {
+        "d": "Gasto en nube y herramientas, desglosado por equipo y por fuente."
+      },
+      "ap-fraud": {
+        "l": "Detección de fraude",
+        "d": "Modelos que puntúan sesiones y transacciones casi en tiempo real."
+      },
+      "hc-jira": {
+        "d": "Tickets y registros de cambios que explican por qué un sistema se comportaba de forma extraña a las 2 de la madrugada."
+      },
+      "hc-snow": {
+        "d": "Incidentes, CMDB y propiedad de los activos. El mapa de lo que es realmente un nombre de host."
+      },
+      "hc-slack": {
+        "d": "Donde las personas tomaron realmente las decisiones. A menudo, el único registro de una solución provisional."
+      },
+      "hc-gitlab": {
+        "d": "Merge requests y ejecuciones de pipelines. Los despliegues son la primera causa de nuevas anomalías."
+      },
+      "hc-github": {
+        "d": "Código, issues e historial de commits que convierten un stack trace en un responsable."
+      },
+      "hc-mcp": {
+        "d": "Un solo protocolo para que un agente acceda a todo esto sin diez integraciones a medida."
+      },
+      "hc-web": {
+        "l": "Búsqueda web",
+        "d": "Contexto público. CVE, avisos de proveedores e informes de caídas que la pila interna nunca ve."
+      },
+      "hc-confluence": {
+        "d": "Runbooks y documentos de diseño que describen cómo deberían funcionar las cosas."
+      },
+      "hc-pagerduty": {
+        "d": "Quién estaba de guardia, a quién se avisó y cuándo."
+      },
+      "hc-teams": {
+        "d": "Donde se tomaron las decisiones, en entornos Microsoft."
+      },
+      "hc-ti": {
+        "l": "Feeds de threat intel",
+        "d": "Indicadores y campañas de feeds comerciales y abiertos."
+      },
+      "hc-cmdb": {
+        "d": "El inventario de activos y sus responsables."
+      },
+      "hc-dir": {
+        "l": "Directorio (AD, Entra)",
+        "d": "Usuarios, grupos y roles detrás de cada inicio de sesión."
+      }
+    }
+  }
+}

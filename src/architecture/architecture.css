@@ -1,0 +1,110 @@
+/* The Architecture tab of a board (src/architecture/ArchitectureBoard.tsx), after the mockup. */
+.arch-board {
+  --arch-line: #d8e0e7;
+  --arch-shadow: 0 1px 2px rgba(19, 35, 58, .06), 0 8px 24px rgba(19, 35, 58, .08);
+  flex: 1; min-height: 0; position: relative; display: grid; grid-template-columns: 236px 1fr;
+  border: 1px solid var(--pg-line2); border-top: none; border-radius: 0 0 var(--pg-radius-card) var(--pg-radius-card);
+  background: #fff; overflow: hidden; color: var(--pg-ink);
+}
+.arch-board button { font: inherit; color: inherit; }
+.arch-board :focus-visible { outline: none; box-shadow: var(--pg-ring); }
+
+/* palette */
+.arch-palette { border-right: 1px solid var(--pg-line2); overflow: auto; padding: 12px 10px 20px; background: #fff; }
+.arch-palette > input { width: 100%; box-sizing: border-box; border: 1px solid var(--arch-line); border-radius: 6px; padding: 7px 10px; font: inherit; }
+.arch-pgroup h3 { font-size: 12px; font-weight: 600; color: var(--pg-muted); margin: 14px 6px 6px; }
+.arch-pitems { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+.arch-pitem { border: 1px solid var(--arch-line); border-radius: 10px; background: #fff; padding: 8px 6px 6px; display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 12px !important; color: var(--pg-body) !important; cursor: grab; user-select: none; text-align: center; line-height: 1.2; }
+.arch-pitem:hover { border-color: var(--pg-teal); color: var(--pg-ink) !important; }
+.arch-pitem:active { cursor: grabbing; }
+.arch-pitem svg { height: 30px; display: block; }
+.arch-tip { font-size: 12px; color: var(--pg-muted); margin: 16px 6px 0; line-height: 1.45; }
+
+/* canvas */
+.arch-stage { position: relative; overflow: hidden; background: radial-gradient(circle, #d7dee5 1px, transparent 1.2px) 0 0 / 20px 20px, #fafbfc; }
+.arch-customer { position: absolute; top: 16px; left: 50%; transform: translateX(-50%); z-index: 4; pointer-events: none; background: none; border: 0; box-shadow: none; outline: none; }
+.arch-customer img { height: 36px; width: auto; max-width: 180px; object-fit: contain; display: block; border: 0; outline: none; background: transparent; box-shadow: none; }
+.arch-world { width: 100%; height: 100%; display: block; touch-action: none; user-select: none; }
+.arch-stage.panning { cursor: grabbing; }
+.arch-stage.drawing .arch-world { cursor: crosshair; }
+.arch-world .node { cursor: move; }
+.arch-world .handle { opacity: 0; cursor: crosshair; transition: opacity .1s; }
+.arch-world .node:hover .handle, .arch-world .node.selected .handle { opacity: 1; }
+.arch-world .selbox { display: none; fill: none; stroke: #00b3b3; stroke-width: 1.5; stroke-dasharray: 4 3; }
+.arch-world .node.selected > .selbox { display: block; }
+.arch-world .drop-ok .body { stroke: #00b3b3; stroke-width: 2.5; }
+.arch-world .edge { cursor: pointer; }
+.arch-world .edge .hit { stroke: transparent; stroke-width: 12; fill: none; }
+.arch-world .edge.selected path.vis { stroke-width: 2.6; }
+.arch-world .addcard { cursor: pointer; }
+.arch-world .resize { cursor: nwse-resize; }
+.arch-world .grip[data-axis="y"] { cursor: ns-resize; }
+.arch-world .grip[data-axis="x"] { cursor: ew-resize; }
+
+.arch-empty { position: absolute; inset: 0; display: grid; place-items: center; pointer-events: none; padding: 20px; }
+.arch-empty-box { pointer-events: auto; text-align: center; max-width: 900px; }
+.arch-empty h2 { font-size: 20px; font-weight: 600; margin: 0 0 4px; }
+.arch-empty p { color: var(--pg-body); margin: 0 0 18px; }
+.arch-tpls { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; }
+.arch-tpl { background: #fff; border: 1px solid var(--arch-line); border-radius: 10px; padding: 10px; text-align: left; cursor: pointer; }
+.arch-tpl:hover { border-color: var(--pg-teal); }
+.arch-tpl b { display: block; font-weight: 600; font-size: 13px; margin: 6px 0 2px; }
+.arch-tpl span { font-size: 12px; color: var(--pg-body); }
+.arch-tpl svg { width: 100%; height: 56px; background: var(--pg-page); border-radius: 6px; display: block; }
+.arch-org { margin-top: 14px; }
+.arch-fromboard { display: inline-flex; flex-direction: column; align-items: center; gap: 2px; margin: 0 0 18px; padding: 10px 22px; }
+.arch-fromboard small { font-weight: 400; font-size: 12px; opacity: .9; }
+
+.arch-tools { position: absolute; left: 14px; top: 14px; display: flex; align-items: center; gap: 2px; background: #fff; border: 1px solid var(--arch-line); border-radius: 10px; box-shadow: var(--arch-shadow); padding: 3px; z-index: 6; }
+.arch-tools > button, .arch-menu-wrap > button { border: 0; background: none; border-radius: 7px; padding: 6px 10px; display: flex; gap: 6px; align-items: center; color: var(--pg-body) !important; font-weight: 500; cursor: pointer; font-size: 13px; }
+.arch-tools > button:hover:not(:disabled), .arch-menu-wrap > button:hover { color: var(--pg-ink) !important; }
+.arch-tools > button[aria-pressed="true"] { background: var(--pg-teal-tint2); color: var(--pg-teal-text) !important; }
+.arch-tools > button:disabled { opacity: .4; cursor: default; }
+.arch-tools .arch-present-btn { background: var(--pg-teal); color: #fff !important; margin-left: 2px; }
+.arch-tools .arch-present-btn:hover:not(:disabled) { background: var(--pg-teal-dark); color: #fff !important; }
+.arch-sep { width: 1px; height: 20px; background: var(--arch-line); margin: 0 3px; }
+.arch-menu-wrap { position: relative; }
+.arch-menu { position: absolute; left: 0; top: calc(100% + 8px); background: #fff; border: 1px solid var(--arch-line); border-radius: 10px; box-shadow: var(--arch-shadow); padding: 6px; min-width: 270px; z-index: 40; }
+.arch-menu button { display: block; width: 100%; text-align: left; border: 0; background: none; padding: 8px 10px; border-radius: 6px; cursor: pointer; font-size: 13px; }
+.arch-menu button:hover:not(:disabled) { background: var(--pg-page); }
+.arch-menu small { display: block; color: var(--pg-muted); font-size: 12px; }
+
+.arch-hint { position: absolute; top: 62px; left: 50%; transform: translateX(-50%); background: var(--pg-ink); color: #fff; font-size: 12px; border-radius: 999px; padding: 6px 12px; z-index: 5; pointer-events: none; white-space: nowrap; }
+.arch-zoom { position: absolute; right: 14px; bottom: 14px; display: flex; align-items: center; background: #fff; border: 1px solid var(--arch-line); border-radius: 10px; box-shadow: var(--arch-shadow); }
+.arch-zoom button { border: 0; background: none; padding: 7px 10px; color: var(--pg-body) !important; cursor: pointer; font-size: 13px; }
+.arch-zoom button:disabled { opacity: .4; cursor: default; }
+.arch-zoom span { font-size: 12px; min-width: 42px; text-align: center; color: var(--pg-body); }
+.arch-legend { position: absolute; left: 14px; bottom: 14px; background: #fff; border: 1px solid var(--arch-line); border-radius: 10px; box-shadow: var(--arch-shadow); padding: 8px 12px; font-size: 12px; color: var(--pg-body); display: flex; gap: 14px; align-items: center; }
+.arch-legend svg { vertical-align: middle; margin-right: 4px; }
+
+.arch-picker { position: absolute; z-index: 9; width: 260px; background: #fff; border: 1px solid var(--arch-line); border-radius: 10px; box-shadow: var(--arch-shadow); padding: 8px; }
+.arch-picker input { width: 100%; box-sizing: border-box; border: 1px solid var(--arch-line); border-radius: 6px; padding: 7px 9px; margin-bottom: 6px; font: inherit; }
+.arch-picker-opts { max-height: 260px; overflow: auto; display: flex; flex-direction: column; }
+.arch-picker-opts button { border: 0; background: none; text-align: left; padding: 6px 8px; border-radius: 6px; display: flex; justify-content: space-between; gap: 8px; cursor: pointer; font-size: 13px; }
+.arch-picker-opts button:hover { background: var(--pg-page); }
+.arch-picker small { color: var(--pg-muted); }
+.arch-picker p { margin: 6px 8px; color: var(--pg-muted); font-size: 13px; }
+
+/* inspector: floats over the canvas, does not shrink it */
+.arch-insp { position: absolute; top: 14px; right: 14px; width: 280px; max-height: calc(100% - 90px); background: #fff; border: 1px solid var(--arch-line); border-radius: 10px; box-shadow: var(--arch-shadow); overflow: auto; padding: 16px; z-index: 8; box-sizing: border-box; }
+.arch-insp h2 { font-size: 15px; margin: 0 0 2px; font-weight: 600; overflow-wrap: anywhere; }
+.arch-kind { color: var(--pg-muted); font-size: 12px; margin-bottom: 14px; }
+.arch-field { display: flex; flex-direction: column; gap: 4px; margin-bottom: 12px; font-size: 13px; color: var(--pg-body); }
+.arch-field input[type=text], .arch-field select { border: 1px solid var(--arch-line); border-radius: 6px; padding: 7px 9px; background: #fff; color: var(--pg-ink); font: inherit; }
+.arch-stepper { display: flex; align-items: center; gap: 8px; }
+.arch-stepper button { width: 30px; height: 30px; border: 1px solid var(--arch-line); border-radius: 6px; background: #fff; cursor: pointer; }
+.arch-stepper button:disabled { opacity: .4; cursor: default; }
+.arch-stepper b { min-width: 24px; text-align: center; }
+.arch-check { display: flex; gap: 8px; align-items: center; font-size: 13px; margin-bottom: 10px; }
+.arch-note { font-size: 12px; color: var(--pg-muted); background: var(--pg-page); border-radius: 6px; padding: 8px 10px; margin-bottom: 12px; line-height: 1.45; }
+.arch-insp .btn-secondary { margin-right: 6px; }
+.arch-insp .arch-danger { color: var(--pg-red) !important; border-color: #f0c2c2; margin-top: 8px; }
+
+/* present: the drawing alone */
+.arch-board.is-present { position: fixed; inset: 0; z-index: 1000; border: none; border-radius: 0; grid-template-columns: 0 1fr; }
+.arch-board.is-present .arch-palette { display: none; }
+.arch-exit { position: absolute; top: 12px; right: 12px; z-index: 6; }
+.arch-exit kbd { font-size: 11px; color: var(--pg-muted); margin-left: 4px; }
+
+@media (max-width: 1100px) { .arch-tpls { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (prefers-reduced-motion: reduce) { .arch-board * { transition: none !important; } }

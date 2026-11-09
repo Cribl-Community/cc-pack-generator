@@ -30,7 +30,7 @@ import { handleFetchPublicSamples, handleHybridSamples } from './scripts/fetch-s
 // @ts-ignore
 import { handleDebugSample } from './scripts/debug-sample-api.mjs'
 // @ts-ignore
-import { handleValidatePipeline, handleRepairPipeline, handlePreDeployValidate, handleGetGolden, handleSaveGolden, handleObserveGolden, handlePipelineProfile } from './scripts/schema-validator.mjs'
+import { handleValidatePipeline, handleRepairPipeline, handlePreDeployValidate, handleGetGolden, handleSaveGolden, handleObserveGolden, handlePipelineProfile, handlePreviewInline } from './scripts/schema-validator.mjs'
 // @ts-ignore
 import { handleReferenceCatalog, handleReferenceAvailability, handleReferenceSample, handleReferenceLookups, handleDatatypeAudit } from './scripts/reference-api.mjs'
 // @ts-ignore
@@ -48,7 +48,7 @@ import { handleSanitisedSamples, handleSanitisedSampleSave, handleSanitisedSampl
 // @ts-ignore
 import { handleSanitisedSamplePublish, handleSanitisedSampleTest } from './scripts/sanitised-samples-github.mjs'
 // @ts-ignore
-import { handleListWorkers, handleListLakeDatasets, handleListSearchDatasets, handleListSearchDatatypes, handleDeploySearchDatatype, handleAttachSearchDatatypes, handleDeploySearchDashboard, handleListOutputs, handleEnsureLakeOutput, handleSetMasterRoutes, handleCreateDemoDatagen, handleScanDemo, handleCleanupDemo } from './scripts/demo-api.mjs'
+import { handleListWorkers, handleListLakeDatasets, handleListSearchDatasets, handleListSearchDatatypes, handleDeploySearchDatatype, handleAttachSearchDatatypes, handleDeploySearchDashboard, handleListOutputs, handleEnsureLakeOutput, handleLakeDatasetIds, handleEnsureLakeDataset, handleDeleteLakeDataset, handleSetMasterRoutes, handleCreateDemoDatagen, handleScanDemo, handleCleanupDemo, handleSetDemoRunning } from './scripts/demo-api.mjs'
 
 function hasLegacyTokenQuery(req: IncomingMessage): boolean {
   return new URL(req.url || '/', 'http://localhost').searchParams.has('token')
@@ -346,6 +346,17 @@ export const deployApiPlugin = () => ({
         res.end('Method not allowed')
       }
     })
+    server.middlewares.use('/api/pack-generator/lake-dataset-ids', (req: IncomingMessage, res: ServerResponse) => {
+      void handleLakeDatasetIds(req, res)
+    })
+    server.middlewares.use('/api/pack-generator/ensure-lake-dataset', (req: IncomingMessage, res: ServerResponse) => {
+      if (req.method === 'POST') void handleEnsureLakeDataset(req, res)
+      else { res.statusCode = 405; res.end('Method not allowed') }
+    })
+    server.middlewares.use('/api/pack-generator/delete-lake-dataset', (req: IncomingMessage, res: ServerResponse) => {
+      if (req.method === 'POST') void handleDeleteLakeDataset(req, res)
+      else { res.statusCode = 405; res.end('Method not allowed') }
+    })
     server.middlewares.use('/api/pack-generator/master-routes', (req: IncomingMessage, res: ServerResponse) => {
       if (req.method === 'POST') {
         void handleSetMasterRoutes(req, res)
@@ -364,6 +375,10 @@ export const deployApiPlugin = () => ({
     })
     server.middlewares.use('/api/pack-generator/demo-scan', (req: IncomingMessage, res: ServerResponse) => {
       void handleScanDemo(req, res)
+    })
+    server.middlewares.use('/api/pack-generator/demo-run', (req: IncomingMessage, res: ServerResponse) => {
+      if (req.method === 'POST') void handleSetDemoRunning(req, res)
+      else { res.statusCode = 405; res.end('Method not allowed') }
     })
     server.middlewares.use('/api/pack-generator/demo-cleanup', (req: IncomingMessage, res: ServerResponse) => {
       if (req.method === 'POST') {
@@ -455,6 +470,14 @@ export const deployApiPlugin = () => ({
     server.middlewares.use('/api/pack-generator/pipeline-profile', (req: IncomingMessage, res: ServerResponse) => {
       if (req.method === 'POST') {
         void handlePipelineProfile(req, res)
+      } else {
+        res.statusCode = 405
+        res.end('Method not allowed')
+      }
+    })
+    server.middlewares.use('/api/pack-generator/preview-inline', (req: IncomingMessage, res: ServerResponse) => {
+      if (req.method === 'POST') {
+        void handlePreviewInline(req, res)
       } else {
         res.statusCode = 405
         res.end('Method not allowed')

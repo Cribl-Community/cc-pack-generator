@@ -31,6 +31,7 @@ import {
   canonicalizeSourcetype,
   matchDatatypeParserBySample,
   matchJsonSignature,
+  matchWindowsEventXml,
   normalizeSourcetypeName,
   recognizeCefSource,
   recognizeSourcetype,
@@ -39,7 +40,7 @@ import {
 export interface GateCandidate {
   name: string;
   /** Why this name is on the list. The first entry is the one to lead with. */
-  why: 'exact' | 'alias' | 'family' | 'fuzzy' | 'catalog' | 'cef-header' | 'datatype' | 'json-signature' | 'ai' | 'golden';
+  why: 'exact' | 'alias' | 'family' | 'fuzzy' | 'catalog' | 'cef-header' | 'datatype' | 'json-signature' | 'windows-channel' | 'ai' | 'golden';
   confidence: 'high' | 'medium' | 'low';
   /** This name has a stored golden, even when a stronger reason already leads. */
   hasGolden?: boolean;
@@ -49,7 +50,7 @@ export type SuggestionKind = 'from sample' | 'AI (sample)' | 'has a golden' | 'c
 
 /** Short label for a suggestion chip: the sample named it, a golden exists, or the declared name is close. */
 export function suggestionLabel(why: GateCandidate['why']): SuggestionKind {
-  if (why === 'cef-header' || why === 'datatype' || why === 'json-signature') return 'from sample';
+  if (why === 'cef-header' || why === 'datatype' || why === 'json-signature' || why === 'windows-channel') return 'from sample';
   if (why === 'ai') return 'AI (sample)';
   if (why === 'golden') return 'has a golden';
   if (why === 'exact' || why === 'alias') return 'declared name';
@@ -240,6 +241,10 @@ export function sampleSuggestions(sample: string, declared: string, goldenNames:
       dedupe(out, { name, why: 'json-signature', confidence: 'high' });
     }
   } catch { /* no signature */ }
+  try {
+    const win = matchWindowsEventXml(text);
+    if (win) dedupe(out, { name: win.sourcetype, why: 'windows-channel', confidence: 'high' });
+  } catch { /* not Windows Event XML */ }
   for (const cand of nameCandidates(declared, goldenNames)) {
     const key = canonicalizeSourcetype(cand.name);
     const existing = out.find(c => canonicalizeSourcetype(c.name) === key);

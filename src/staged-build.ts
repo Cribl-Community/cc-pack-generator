@@ -27,6 +27,7 @@ import {
   schematizerMapping,
 } from './api';
 import { goldenServingDecision, storedTrustState } from './golden-trust';
+import { liftCriblEventSample } from './sample-lift';
 import { buildGoldenEvidence } from './golden-evidence';
 import { describeSampleProvenance } from './sample-provenance';
 import { isStageAbortError, stageAbortError } from './ai-budget';
@@ -44,6 +45,7 @@ import { loadQualitySettings } from './ai-client';
 import { KNOWN_PARSER_SOURCETYPES } from './pack-orchestrator';
 import { aiSampleRefusal, aiSampleSnippet, UnsanitisedSampleError } from './sample-sanitise';
 import { goldenWireFormatForSample } from './golden-variant';
+import { dropUnreachableCefBranches } from './source-recognition';
 import {
   buildAiMappingFunctions, buildGoldenFormatMapping, buildPackReadme, buildXsiamTagging,
   capMappingScore, concretizeAsimFormat, concretizeCimFormat, concretizeOcsfFormat,
@@ -62,7 +64,11 @@ import {
   validateExtractionStage, validateMappingInputs, withoutOutputCompaction,
 } from './pipeline-stages';
 import { buildXsiamBreakerYml, resolveXsiamForBuild, XsiamBuildError } from './xsiam-builder';
-import { buildSourceOptimizationFunctions, withSourceOptimizationOff } from './source-optimization';
+import { buildSourceOptimizationFunctions, optimizeToggleKey, ruleToggleKey, sourceOptimizationRules, withSourceOptimizationOff } from './source-optimization';
+import { comparePipelineOutputs } from './perf-compile';
+import { cleanPipeline } from './perf-native';
+import { libraryCleanOptions, recordSeenFields } from './vendor-field-library';
+import { CSV_GROUPS, SPLUNK_CSV_FORMAT, auditSplunkCsvDelivery, kvFieldNames, planSplunkCsv, splunkCsvFunctions } from './splunk-csv';
 import { buildDestinationMetadataFunctions } from './destination-metadata';
 import { elasticIntegrationStamp } from './elastic-integration';
 import { secopsLogTypeStamp } from './secops-log-types';
@@ -304,15 +310,33 @@ export async function resolveParseFunctions(opts: {
 // Wrap an arbitrary function list into a Cribl pipeline conf (mirrors
 // buildPipelineConfWithMappings' output shape).
 export const expConf = (functions: any[]) => ({
-  output: 'default', streamtags: [] as string[], groups: {}, asyncFuncTimeout: 1000,
+  output: 'default', streamtags: [] as string[], groups: pipelineGroupsOf(functions), asyncFuncTimeout: 1000,
   functions: (functions || []).map((f: any) => {
     const e: Record<string, unknown> = { id: f.id, filter: f.filter || 'true', disabled: f.disabled || false, conf: f.conf };
     if (f.description) e.description = f.description;
     if (f.final) e.final = true;
+    if (typeof f.groupId === 'string' && f.groupId) e.groupId = f.groupId;
     return e;
   }),
   description: 'Experimental staged pipeline',
 });
+
+/**
+ * Cribl function groups, from the `groupId` / `groupName` / `groupDescription`
+ * a builder put on its functions (only the Splunk CSV pipeline does today), in
+ * order of first appearance. A group is a UI grouping: its switch does not reach
+ * the functions inside it, so every group ships enabled and each function keeps
+ * its own `disabled`.
+ */
+export function pipelineGroupsOf(functions: any[]): Record<string, { name: string; description?: string; index: number; disabled: boolean }> {
+  const groups: Record<string, { name: string; description?: string; index: number; disabled: boolean }> = {};
+  for (const f of functions || []) {
+    const id = typeof f?.groupId === 'string' ? f.groupId : '';
+    if (!id || groups[id]) continue;
+    groups[id] = { name: String(f.groupName || id), ...(f.groupDescription ? { description: String(f.groupDescription) } : {}), index: Object.keys(groups).length + 1, disabled: false };
+  }
+  return groups;
+}
 
 export const hydrateRawForScoring = (events: any[]): any[] => {
     if (!Array.isArray(events) || events.length === 0) return events;
@@ -361,10 +385,11 @@ export const scoreStage = (
     prevOutputRaw: any[],   // output BEFORE this stage's functions (for optimization delta)
     keptContract?: string[],   // (optimization only) the field names the stage is CONTRACTED to keep; loss is only counted among these
   ): { score: number | null; band: ExpStageResult['band']; reasons: string[] } => {
-    const isSchema = !['json', 'manual', 'raw', 'raw_fields', 'passthrough', ''].includes(destFormat);
+    const isSchema = !['json', 'manual', 'raw', 'raw_fields', 'passthrough', SPLUNK_CSV_FORMAT, ''].includes(destFormat);
     const isXsiam = destFormat === 'xsiam';
     const isPassthrough = destFormat === 'passthrough';
     const isNextGen = isNextGenRawFidelityFormat(destFormat);
+    const isSplunkCsv = destFormat === SPLUNK_CSV_FORMAT;
     // Hydrate _raw JSON → top-level so shape (fields-in-_raw) doesn't zero the
     // mapping/optimization score. NOT for extraction (it uses ignoreRaw:true to
     // avoid crediting values still sitting in an untransformed _raw — hydrating
@@ -383,6 +408,7 @@ export const scoreStage = (
       // "distrust bare 100s / not-measurable ≠ a pass" trap closed everywhere
       // else. N/A is the honest report (mapping already returns n/a below).
       if (isPassthrough) return { score: null, band: 'na', reasons: ['Passthrough — events forwarded unchanged (_raw preserved); nothing to extract or map, so there is nothing to score.'] };
+      if (isSplunkCsv) return { score: null, band: 'na', reasons: ['Splunk CSV: the pipeline parses its own key=value pairs and maps nothing; what it delivers is graded at the CSV stage.'] };
       if (isXsiam) return scoreXsiamPayloadStage(rawEvents, sourcetype);
       // Extraction ONLY: did sample values land in named fields? Mapping/keep is
       // irrelevant here (ignoreRaw so untransformed _raw cannot fake a pass).
@@ -632,7 +658,7 @@ export interface PreparedExtraction { fns: any[]; out: any[]; score: number | nu
  * concretizing only ever turns a schema family into another schema key.
  */
 export function extractionClassOf(destFormat: string): 'mapped' | 'raw' {
-  return ['json', 'manual', 'raw', 'raw_fields', 'passthrough', ''].includes(destFormat) ? 'raw' : 'mapped';
+  return ['json', 'manual', 'raw', 'raw_fields', 'passthrough', SPLUNK_CSV_FORMAT, ''].includes(destFormat) ? 'raw' : 'mapped';
 }
 
 // Eligibility pre-check for a `noAi: true` build (build 713): true only when the
@@ -713,6 +739,12 @@ export interface StagedBuildArtifact {
    * sample, and neither can change between invocations of the same build.
    */
   referenceLookups?: any[];
+  /**
+   * The function list finishBuild left deployed when the vendor field library
+   * shortened it. A resumed finalize reports this list and does not deploy again.
+   * Absent when the library did not change the pipeline.
+   */
+  shippedFns?: any[];
   /** Serializable recorder state carried across durable stage invocations. */
   trace?: BuildTrace;
 }
@@ -873,7 +905,14 @@ export async function buildStagedPipeline(
 export async function buildStagedPipeline(
   opts: StagedBuildOptions,
 ): Promise<StagedBuildResult | StagedBuildProgress | null> {
-    const { sourcetype, sampleEvents, group, packId, pipelineId, packageJson, reductionToggles: rt, thresholds: thr, shareOn } = opts;
+    const { sourcetype, sampleEvents: providedSampleEvents, group, packId, pipelineId, packageJson, reductionToggles: rt, thresholds: thr, shareOn } = opts;
+    // A line that is a Cribl event (`{"_raw":"CEF:…","host":"…"}`) is the wrapper,
+    // not the vendor log. Unwrap before format detection, parsing and scoring,
+    // and keep host/_time for the sample that gets uploaded.
+    const liftedSample = liftCriblEventSample(providedSampleEvents);
+    const sampleEvents = liftedSample.lifted > 0
+      ? liftedSample.events.map(e => e._raw).join('\n')
+      : providedSampleEvents;
     const externalLog = opts.log;
     // The real `./api` functions unless a test injected fakes. Destructured under
     // the SAME names as the imports, so every call site below reads unchanged.
@@ -953,7 +992,7 @@ export async function buildStagedPipeline(
     // Quality → "Drop null and blank fields when parsing JSON" (default off).
     const sanitizeOpts = { dropEmptyJsonFields: !!qSettings.dropEmptyJsonFields };
     const secondModel = (qSettings.repairModel && qSettings.repairModel !== qSettings.normalModel) ? qSettings.repairModel : null;
-    const isSchema = !['json', 'manual', 'raw', 'raw_fields', 'passthrough', ''].includes(destFormat);
+    const isSchema = !['json', 'manual', 'raw', 'raw_fields', 'passthrough', SPLUNK_CSV_FORMAT, ''].includes(destFormat);
     // XSIAM is source-native passthrough (Simon's PR #53): no parser / AI
     // extraction and no field mapping are added — the pipeline just validates
     // the payload + tags routing metadata. Guards below skip parser candidates,
@@ -965,7 +1004,10 @@ export async function buildStagedPipeline(
     // that add no extraction/mapping/optimization and store no golden sub-parts;
     // the XSIAM-only bits (payload scoring, routing tagging) stay keyed on isXsiam.
     const isPassthrough = destFormat === 'passthrough';
-    const isNativePass = isXsiam || isPassthrough;
+    // Splunk CSV adds no extraction/mapping stage either: its own parse lives in
+    // the optimization slot, where the CSV is written and graded (splunk-csv.ts).
+    const isSplunkCsv = destFormat === SPLUNK_CSV_FORMAT;
+    const isNativePass = isXsiam || isPassthrough || isSplunkCsv;
     // Extraction class (see PreparedExtraction): a mapped-schema destination pulls
     // the canonical field model, raw/json wants the Search-native names, so the two
     // classes may pick different parsers and can't share one prepared extraction.
@@ -1055,7 +1097,16 @@ export async function buildStagedPipeline(
     // ONE sample per sourcetype (destination-independent) — every format's
     // pipeline in this pack parses the same `<sourcetype>_sample.log`, so the
     // pack holds a single sample rather than a duplicate per destination.
-    const sampleData = rawEvents.map(r => ({ _raw: r, _time: Date.now() / 1000 }));
+    if (liftedSample.lifted > 0) log(`Sample had ${liftedSample.lifted} Cribl event wrapper(s); parsing the inner log and keeping host.`);
+    const sampleData = rawEvents.map((r, i) => {
+      const env = liftedSample.lifted > 0 ? liftedSample.events[i] : undefined;
+      return {
+        _raw: r,
+        _time: env && typeof env._time === 'number' ? env._time : Date.now() / 1000,
+        ...(env?.host ? { host: env.host } : {}),
+        ...(env?.source ? { source: env.source } : {}),
+      };
+    });
     const resume = opts.resume;
     const stopAfter = opts.stopAfter;
     // A caller that passes neither option is a regular caller and gets the
@@ -1195,7 +1246,7 @@ export async function buildStagedPipeline(
             displayName: packageJson?.displayName,
             routeFilter, workerGroup: group,
             reductionToggles: rt, allowCodeFunctions: allowCode,
-            pipelineId, cimModel,
+            pipelineId, cimModel, sampleEvents, outputSourcetype,
           });
           await deploy({
             mode: 'new', packId, pipelineId, workerGroup: group, packageJson,
@@ -1368,6 +1419,9 @@ export async function buildStagedPipeline(
       if (isXsiam) {
         log(`[extraction] XSIAM native-payload passthrough for ${sourcetype} — no parser/AI extraction added.`);
         extCandidates.push({ source: 'copilot', label: 'XSIAM native-payload passthrough', fns: [] });
+      } else if (isSplunkCsv) {
+        log(`[extraction] Splunk CSV for ${sourcetype} — no separate parser: the CSV stage parses the key=value pairs itself.`);
+        extCandidates.push({ source: 'none', label: 'Splunk CSV (parsed in the CSV stage)', fns: [{ id: 'comment', conf: { comment: '--- Splunk CSV: the key=value pairs are parsed and re-encoded in the CSV groups below ---' } }] });
       } else {
         // Passthrough: a single self-documenting comment marks intent; the pipeline
         // adds NO transform, so every event is forwarded unchanged (_raw preserved).
@@ -1402,7 +1456,10 @@ export async function buildStagedPipeline(
       if (sourceExpectation === 'mismatch') {
         log(`[extraction] skipping built-in parser — sample wire format does not match the selected ${sourcetype} source contract.`);
       } else {
-        try { const pk = getParserForSourcetype(sourcetype, allowCode); if (pk?.length) staticCand = { source: 'static', label: 'built-in / pack parser', fns: pk }; } catch { /* none */ }
+        try {
+          const pk = dropUnreachableCefBranches(getParserForSourcetype(sourcetype, allowCode), sampleEvents);
+          if (pk?.length) staticCand = { source: 'static', label: 'built-in / pack parser', fns: pk };
+        } catch { /* none */ }
       }
       // Ordering matters because the loop early-breaks at SATISFIED. For a MAPPED
       // schema destination (CIM/OCSF/ECS/CEF/CSL) the downstream mapper reads the
@@ -1972,21 +2029,57 @@ export async function buildStagedPipeline(
       // relative order unchanged. Never for OCSF or native-pass
       // (formatSupportsSourceOptimization). A per-build toggle, not learned
       // shaping, so it is kept out of the golden sub-part.
-      const srcOpt = isNativePass
-        ? null
-        : buildSourceOptimizationFunctions(sourcetype, destFormat, rt, referenceLookups.map((l: any) => l?.file).filter(Boolean));
-      const srcOptFns = srcOpt?.functions ?? [];
+      // Splunk CSV: its own parse, the filter examples and the CSV format all live
+      // in this slot (splunk-csv.ts). The plan is deterministic over (sourcetype,
+      // sample), so the README's Splunk app — written by whichever pipeline
+      // created the pack — is the one this pipeline's columns need.
+      const canonicalSt = canonicalizeSourcetype(sourcetype);
+      const csvPlan = isSplunkCsv ? planSplunkCsv(canonicalSt, sampleEvents, resolveOutputSourcetype(outputSourcetype, sourcetype, canonicalSt)) : null;
+      const csvParts = csvPlan?.eligible ? splunkCsvFunctions(csvPlan) : null;
+      if (csvPlan) {
+        log(csvParts
+          ? `[optimization] Splunk CSV: ${csvPlan.reason} ${csvPlan.variants.filter(v => v.sampleEvents).map(v => `${v.value}=${v.origin} (${v.columns.length} columns)`).join(', ')}.`
+          : `[optimization] Splunk CSV not built: ${csvPlan.reason} Events are sent unchanged.`);
+      }
+      // Its noise drops ship as EXAMPLES, every one switched off: the card is a
+      // lossless format optimization; removing events is the customer's call. A
+      // rule reading no field the pairs carry is left out (it could never fire).
+      const csvExampleToggles: Record<string, boolean> = {
+        [optimizeToggleKey(destFormat)]: true,
+        ...Object.fromEntries(sourceOptimizationRules(sourcetype).map(r => [ruleToggleKey(r.id), false])),
+      };
+      const srcOpt = isSplunkCsv
+        ? (csvParts ? buildSourceOptimizationFunctions(sourcetype, destFormat, csvExampleToggles, referenceLookups.map((l: any) => l?.file).filter(Boolean), kvFieldNames(sampleEvents)) : null)
+        : isNativePass
+          ? null
+          : buildSourceOptimizationFunctions(sourcetype, destFormat, rt, referenceLookups.map((l: any) => l?.file).filter(Boolean));
+      const srcOptFns = isSplunkCsv && srcOpt?.functions.length
+        ? [
+          { id: 'comment', filter: 'true', ...CSV_GROUPS.filters, conf: { comment: `${CSV_GROUPS.filters.groupName}: ${CSV_GROUPS.filters.groupDescription}` } },
+          ...srcOpt.functions.map((f: any) => ({ ...f, ...CSV_GROUPS.filters })),
+        ]
+        : (srcOpt?.functions ?? []);
       if (srcOptFns.length && optSource === 'none') optSource = 'static';
       const deployedStages = ocsfDeployed(extractionFns, mappingFns);
       if (deployedStages.removed.length) log(`[optimization] OCSF: left out ${deployedStages.removed.length} add(s) the output cannot carry (no-op aliases, copies, constants): ${[...new Set(deployedStages.removed)].join(', ')}.`);
+      // The golden mapping casts Sentinel columns, and the compaction step casts
+      // the same columns again after the keep-list. One cast, after the strip.
+      const isSentinelCast = (f: any) => f?.id === 'eval' && /^Cast Sentinel columns/.test(String(f.description || ''));
+      const mappingForAssemble = compactFns.some(isSentinelCast)
+        ? deployedStages.mappingFns.filter(f => !isSentinelCast(f))
+        : deployedStages.mappingFns;
       const assemble = (src: any[]) => assemblePipelineFunctions({
         extraction: deployedStages.extractionFns,
-        mapping: deployedStages.mappingFns,
+        mapping: mappingForAssemble,
         optimization: keepRawOcsf
           ? [...keepOriginalRawCopy([...destinationMetadataFns, ...optFns, ...compactFns]), ORIGINAL_RAW_TO_RAW_DATA]
           : keepRawNextGen
             ? [...keepOriginalRawCopy([...destinationMetadataFns, ...src, ...optFns, ...compactFns]), nextGenRawRestoreFunction()]
-            : [...destinationMetadataFns, ...src, ...optFns, ...compactFns],
+            : isSplunkCsv
+              // Metadata FIRST: its host chain must read the Cribl source's fields,
+              // never a parsed vendor key (FortiGate `hostname` is a URL host).
+              ? [...destinationMetadataFns, ...(csvParts?.read ?? []), ...src, ...(csvParts?.format ?? [])]
+              : [...destinationMetadataFns, ...src, ...optFns, ...compactFns],
       });
       const finalFns = assemble(srcOptFns);
       // Scoring stays honest: dropped sample events are neither "lost fields"
@@ -2017,6 +2110,12 @@ export async function buildStagedPipeline(
       if (srcOpt?.skipped.length) {
         srcOptReason = `${srcOptReason ? `${srcOptReason} ` : ''}Left out (lookup not in the pack): ${srcOpt.skipped.join(', ')}.`;
       }
+      if (srcOpt?.unreadable.length) {
+        srcOptReason = `${srcOptReason ? `${srcOptReason} ` : ''}Left out (reads no field this source's pairs carry): ${srcOpt.unreadable.join(', ')}.`;
+      }
+      if (isSplunkCsv && srcOpt?.shippedOff.length) {
+        srcOptReason = `${srcOptReason ? `${srcOptReason} ` : ''}Filter examples shipped OFF: ${srcOpt.shippedOff.join(', ')}.`;
+      }
       // Optimization's job is to drop volume WITHOUT losing the fields the mapping
       // was contracted to produce. The verbose vendor-raw intermediates that
       // compaction strips (Corelight uid/id.orig_h…, raw KVP keys) are NOT part
@@ -2024,13 +2123,21 @@ export async function buildStagedPipeline(
       // isn't scored as field loss (was making CIM optimization score 0).
       const keptContract = mappedNames.length ? [...mappedNames, '_time', 'index', 'source', 'sourcetype', 'host', 'cribl_breaker', 'cribl_pipe'] : undefined;
       // NG SIEM's delivery check does not depend on the parse: score it regardless.
-      const upstreamPassed = isNextGenRawFidelityFormat(destFormat) || canScoreOptimization(
+      const upstreamPassed = isNextGenRawFidelityFormat(destFormat) || isSplunkCsv || canScoreOptimization(
         extractionScore,
         mappingScore,
         thr.extraction,
         thr.mapping,
       );
-      const s3 = upstreamPassed
+      // Splunk CSV is graded on the WHOLE sample (the plan was learned on all of
+      // it, so the columns match exactly: strict).
+      const csvGrade = (): { score: number | null; band: ExpStageResult['band']; reasons: string[] } => {
+        if (!csvParts) return { score: null, band: 'na', reasons: [`Splunk CSV not built: ${csvPlan?.reason || 'no plan'} Events are sent unchanged — use Splunk raw.`] };
+        const a = auditSplunkCsvDelivery(canonicalSt, providedRawEvents, out3, { strict: true });
+        if (a.score == null) return { score: null, band: 'na', reasons: a.reasons };
+        return { score: a.score, band: a.score >= 85 ? 'good' : a.score >= 60 ? 'warn' : 'fail', reasons: a.reasons };
+      };
+      const s3 = isSplunkCsv ? csvGrade() : upstreamPassed
         ? scoreStage('optimization', destFormat, sourcetype, rawEvents, out3, out2, keptContract)
         : {
             score: null,
@@ -2040,12 +2147,56 @@ export async function buildStagedPipeline(
       const optimizationStage: StagedStageResult = {
         stage: 'optimization', source: optSource, score: s3.score, band: s3.band,
         reasons: srcOptReason ? [...s3.reasons, srcOptReason] : s3.reasons, out: out3,
-        appliedOptimizations: srcOpt?.applied ?? [],
-        ...(isNextGenRawFidelityFormat(destFormat) ? { decidesOverall: true } : {}),
+        appliedOptimizations: csvParts
+          ? [{ label: 'Splunk CSV format (lossless)', description: csvPlan!.reason }, ...(srcOpt?.applied ?? [])]
+          : (srcOpt?.applied ?? []),
+        ...(isNextGenRawFidelityFormat(destFormat) || isSplunkCsv ? { decidesOverall: true } : {}),
       };
       emit(optimizationStage);
-      const optGoldenFns = [...optFns, ...compactFns];
-      return { finalFns, optimization: { ...optimizationStage, fns: optGoldenFns } };
+      // A resumed finalize re-assembles the pipeline from this list, so for Splunk
+      // CSV it is the whole tail after the metadata.
+      const optGoldenFns = isSplunkCsv
+        ? [...(csvParts?.read ?? []), ...srcOptFns, ...(csvParts?.format ?? [])]
+        : [...optFns, ...compactFns];
+      const shipped = await applyBatchFieldLibrary(finalFns, out3);
+      return { finalFns: shipped, optimization: { ...optimizationStage, fns: optGoldenFns } };
+    }
+
+    /**
+     * Batch only. Drop `||` fallbacks the vendor field library proves this source
+     * does not carry, then keep that pipeline only when the sample output matches
+     * the one just scored. Any other origin, a source with no library entry, or a
+     * preview that differs leaves the generated pipeline deployed.
+     */
+    async function applyBatchFieldLibrary(functions: any[], referenceOut: any[]): Promise<any[]> {
+      if (origin !== 'batch') return functions;
+      let replaced = false;
+      try {
+        const seenNow = realFieldNames(artifact.extraction?.out?.[0]);
+        const lib = await libraryCleanOptions(sourcetype, seenNow);
+        if (!lib) return functions;
+        const cleaned = cleanPipeline(functions, { complete: lib.complete, confirmed: lib.confirmed, known: lib.known });
+        if (!cleaned.stats.prunedOperands) return functions;
+        await deployStage(cleaned.functions);
+        replaced = true;
+        const out = await preview();
+        const cmp = comparePipelineOutputs(referenceOut || [], out || []);
+        if (referenceOut?.length && cmp.differing === 0) {
+          artifact.shippedFns = cleaned.functions;
+          log(`[optimization] Vendor field library ${lib.key} (${lib.status}): removed ${cleaned.stats.prunedOperands} fallback(s)${cleaned.stats.prunedFields.length ? `: ${cleaned.stats.prunedFields.slice(0, 12).join(', ')}` : ''}. Sample output matches, so this is the pipeline that ships.`);
+          void recordSeenFields(sourcetype, seenNow).catch(() => {});
+          return cleaned.functions;
+        }
+        await deployStage(functions);
+        replaced = false;
+        const why = !referenceOut?.length ? 'the scored preview was empty' : `the sample output changed${cmp.fields.length ? ` (${cmp.fields.slice(0, 8).join(', ')})` : ''}`;
+        log(`[optimization] Vendor field library ${lib.key} (${lib.status}) was not applied: ${why}. The generated pipeline ships.`);
+        return functions;
+      } catch (err) {
+        if (replaced) { try { await deployStage(functions); } catch { /* the generated pipeline stays if this restore also fails */ } }
+        log(`[optimization] Vendor field library was not applied: ${err instanceof Error ? err.message : err}. The generated pipeline ships.`);
+        return functions;
+      }
     }
 
     // ---- FINALIZE: the completion event + the assembled result ----------------
@@ -2146,7 +2297,7 @@ export async function buildStagedPipeline(
       if (stopAfter === 'optimization') return halt('finalize');
 
       const resumedStages = ocsfDeployed(artifact.extraction.fns, artifact.mapping.fns);
-      const finalFns = deployedFinalFns ?? assemblePipelineFunctions({
+      const finalFns = deployedFinalFns ?? artifact.shippedFns ?? assemblePipelineFunctions({
         extraction: resumedStages.extractionFns,
         mapping: resumedStages.mappingFns,
         optimization: [...destinationMetadataFns, ...artifact.optimization.fns],

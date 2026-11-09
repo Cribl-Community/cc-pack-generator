@@ -26,8 +26,10 @@ export const WIZARD_MODES: WizardModeInfo[] = [
   { id: 'add-pipeline', icon: '＋', name: 'Modify existing pack', title: 'Modify existing pack',
     desc: 'Add a new pipeline or improve an existing pipeline in a pack already deployed in your environment.' },
   { id: 'batch', icon: '☰', name: 'Batch create', title: 'Batch create',
-    desc: 'Upload a CSV/JSON file to create multiple packs and pipelines in one go — in this tab, or in the background (server-side, you can close the tab).' },
-  { id: 'demo', icon: '◎', name: 'Demo environment', title: 'Create/Clean demo environment',
+    desc: 'Upload a CSV or JSON file of up to 200 pipelines and build them in one go.' },
+  // Off the menu since build 951: customers build packs, and Cribl and partner teams start a
+  // demo from Tools › Whiteboards & demos (a board's Deploy demo, or New demo by hand).
+  { id: 'demo', icon: '◎', name: 'Demo environment', title: 'Create/Clean demo environment', hidden: true,
     desc: 'Stand up a ready customer demo (live datagen, packs per destination format, isolated routing) — or clean up an earlier demo.' },
   // Off the menu for now (Build pack flow builds post-processing packs); the mode still works.
   { id: 'post-process', icon: '⟲', name: 'Post-processing', title: 'Create a post-processing pipeline', hidden: true,

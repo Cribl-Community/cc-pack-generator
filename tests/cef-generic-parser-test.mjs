@@ -66,8 +66,8 @@ function evalExpr(event, expr) {
 }
 
 /** Runs regex_extract / serde(kvp) / eval functions the way Cribl's own eval does. */
-function runPipeline(fns, rawLine) {
-  const event = { _raw: rawLine };
+function runPipeline(fns, rawLine, seed = {}) {
+  const event = { ...seed, _raw: rawLine };
   for (const fn of fns) {
     if (fn.filter) {
       let ok;
@@ -111,16 +111,21 @@ test("checkpoint_cef stays on Check Point's own richer parser, not the generic o
 });
 
 test('checkpoint_firewall extracts a real Check Point CEF export via the shared CEF branch', () => {
-  const line = 'CEF:0|Check Point|VPN-1 & FireWall-1|R81|Accept|Log|3|rt=1736692502000 src=10.1.1.15 dst=8.8.8.8 proto=6 act=Accept';
+  const line = 'CEF:0|Check Point|VPN-1 & FireWall-1|R81|Accept|Log|3|rt=1736692502000 src=10.1.1.15 dst=8.8.8.8 proto=6 act=Accept origin=10.9.9.9 ifname=eth1 service_id=TCP_8400 cs2Label="Rule Name" cs2=STEALTH';
   assert.equal(sampleMatchesSourceExpectation('checkpoint_firewall', line), 'match',
     'a genuine CEF header must not be rejected by the KVP key-overlap check tuned for loguid/origin/conn_direction');
   const fns = getParserForSourcetype('checkpoint_firewall', false);
-  const event = runPipeline(fns, line);
+  const event = runPipeline(fns, line, { host: '64.9.38.250' });
   assert.equal(event.src_ip, '10.1.1.15');
   assert.equal(event.dest_ip, '8.8.8.8');
   assert.equal(event.action, 'Accept');
   assert.equal(event.vendor_product, 'Check Point VPN-1 & FireWall-1', 'CEF-derived vendor/product, not the hardcoded legacy string');
   assert.equal(event.log_time, '1736692502000');
+  assert.equal(event.origin_ip, '10.9.9.9', 'Check Point origin is the firewall, kept off src_ip');
+  assert.equal(event.src_zone, 'eth1');
+  assert.equal(event.app, 'TCP_8400');
+  assert.equal(event.rule_name, 'STEALTH');
+  assert.equal(event.host, '64.9.38.250', 'the collector envelope host must survive the CEF host assignment');
 });
 
 test("checkpoint_firewall's own legacy KVP dialect still works and is not shadowed by the CEF branch", () => {

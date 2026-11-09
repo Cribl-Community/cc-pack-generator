@@ -8,7 +8,7 @@ import {
   FLOW_SYSTEMS, flowFormatInfo, flowFormatOptimizable, flowSourceRules, flowHasOcsf, flowCounts, newPpOutput, ppOutputLabel, ppOutputSystem,
   ppChoices, ppChoiceFor, ppOutputPinned, ppBuildableSchemas, flowPackCheck, nextFreePackName, flowPackId, ppPackCheck, nextFreePpName, FLOW_ROUTE_FILTER,
   flowDestPickerGroups, flowStageToggle, flowStageSummary, ppPickerItems, OCSF_VALUE,
-  flowDestinationSetup, flowDestinationSetupHeading, flowRecommendedFor,
+  flowDestinationSetup, flowDestinationSetupHeading, flowBadgeFor,
   type FlowPpState, type FlowSystem, type FlowExistingPack, type FlowModelPick,
 } from './flow-builder';
 import './FlowDestination.css';
@@ -136,6 +136,12 @@ type WireColor = 'teal' | 'violet' | 'amber';
 interface Wire { from: string; to: string; color: WireColor; pill?: string }
 const WIRE: Record<WireColor, string> = { teal: '#5cc9c9', violet: '#a78bfa', amber: '#e0b84a' };
 const STEP2 = 'Step 2 · after OCSF';
+
+/** A card's Recommended / Optimized badge (flowBadgeFor), or nothing. */
+function FlowBadge({ fmt, sourcetype, sampleEvents }: { fmt: string; sourcetype: string; sampleEvents?: string }) {
+  const b = flowBadgeFor(fmt, sourcetype, sampleEvents);
+  return b ? <span className={`fd-rec-badge${b.text === 'Optimized' ? ' fd-opt-badge' : ''}`} title={b.title}>{b.text}</span> : null;
+}
 
 function SysBox({ sys, violet }: { sys: FlowSystem; violet?: boolean }) {
   return (
@@ -554,7 +560,7 @@ export default function FlowDestination(p: FlowDestinationProps) {
                                     <button key={v.value} type="button" className={`fd-family-opt${added ? ' added' : on ? ' on' : ''}`}
                                       disabled={added} aria-pressed={added || on} title={added ? 'Already on the canvas' : undefined}
                                       onClick={() => setStaged(st => flowStageToggle(st, v.value, p.destFormats))}>
-                                      {v.label}{flowRecommendedFor(v.value, p.sourcetype, p.sampleEvents) === true && <span className="fd-rec-badge" title={`Recommended for ${p.sourcetype || 'this source'}`}>Recommended</span>}
+                                      {v.label}<FlowBadge fmt={v.value} sourcetype={p.sourcetype} sampleEvents={p.sampleEvents} />
                                     </button>
                                   );
                                 })}
@@ -585,7 +591,7 @@ export default function FlowDestination(p: FlowDestinationProps) {
                           onClick={() => setStaged(st => flowStageToggle(st, item.value, p.destFormats))}>
                           <div className={`pic ${info.ocsf ? 'ocsf' : g.group}`}>{info.ocsf ? '🗄️' : g.group === 'lake' ? '📦' : '📊'}</div>
                           <div>
-                            <div className="pname">{item.label}{flowRecommendedFor(item.value, p.sourcetype, p.sampleEvents) === true && <span className="fd-rec-badge" title={`Recommended for ${p.sourcetype || 'this source'}`}>Recommended</span>}{info.aiReady && <span className="fd-ai-badge">AI-ready</span>}{info.notAiReady && <span className="fd-raw-chip">Raw · not AI-ready</span>}</div>
+                            <div className="pname">{item.label}<FlowBadge fmt={item.value} sourcetype={p.sourcetype} sampleEvents={p.sampleEvents} />{info.aiReady && <span className="fd-ai-badge">AI-ready</span>}{info.notAiReady && <span className="fd-raw-chip">Raw · not AI-ready</span>}</div>
                             <div className="pwhat">{info.what} → {FLOW_SYSTEMS[info.system].name}</div>
                             {info.ocsf && <div className="fd-value-chips">{OCSF_VALUE.benefits.map(b => <span key={b.key} className={`fd-value-chip ${b.key}`}>{b.label}</span>)}</div>}
                           </div>

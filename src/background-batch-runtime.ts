@@ -209,9 +209,29 @@ export function shouldRetryTimedOutStage(row: BackgroundBatchRow): boolean {
   return row.attempt === 0;
 }
 
+/**
+ * How many times a row is asked again after the leader's Config Helper drops
+ * the connection. One tick is a minute, and a helper that crashed under a long
+ * batch is usually back within a few of those. A deadline timeout stays at one
+ * retry — that budget is `shouldRetryTimedOutStage`.
+ */
+export const LEADER_UNAVAILABLE_ROW_ATTEMPTS = 4;
+
+export function shouldRetryLeaderUnavailable(row: BackgroundBatchRow): boolean {
+  return row.attempt < LEADER_UNAVAILABLE_ROW_ATTEMPTS;
+}
+
 export function markTimedOutStage(row: BackgroundBatchRow): BackgroundBatchRow {
   if (TERMINAL_PHASES.has(row.phase)) return row;
   if (shouldRetryTimedOutStage(row)) {
+    return { ...row, attempt: row.attempt + 1 };
+  }
+  return { ...row, phase: 'error', attempt: row.attempt + 1 };
+}
+
+export function markLeaderUnavailableStage(row: BackgroundBatchRow): BackgroundBatchRow {
+  if (TERMINAL_PHASES.has(row.phase)) return row;
+  if (shouldRetryLeaderUnavailable(row)) {
     return { ...row, attempt: row.attempt + 1 };
   }
   return { ...row, phase: 'error', attempt: row.attempt + 1 };

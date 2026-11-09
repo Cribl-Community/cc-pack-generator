@@ -11,7 +11,7 @@ export type SourceMode = '' | 'upload' | 'existing' | 'ai-generate' | 'paste' | 
 export type AsimSchemaFormat = `asim#${string}`;
 export type CimSchemaFormat = `cim#${string}`;
 export type OcsfSchemaFormat = `ocsf#${string}`;
-export type DestFormat = 'nextgen' | 'ocsf' | OcsfSchemaFormat | 'cef' | 'commonsecuritylog' | 'cim' | CimSchemaFormat | 'ecs' | 'asim' | AsimSchemaFormat | 'chronicle' | 'json' | 'xsiam' | 'passthrough' | 'raw_fields' | 'splunk_raw' | 'splunk_json' | 'elastic_raw' | 'elastic_json' | 'chronicle_raw' | 'sentinel' | 'manual';
+export type DestFormat = 'nextgen' | 'ocsf' | OcsfSchemaFormat | 'cef' | 'commonsecuritylog' | 'cim' | CimSchemaFormat | 'ecs' | 'asim' | AsimSchemaFormat | 'chronicle' | 'json' | 'xsiam' | 'passthrough' | 'raw_fields' | 'splunk_raw' | 'splunk_csv' | 'splunk_json' | 'elastic_raw' | 'elastic_json' | 'chronicle_raw' | 'sentinel' | 'manual';
 
 export interface WizardState {
   packName: string;

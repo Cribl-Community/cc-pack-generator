@@ -13,8 +13,10 @@
  *   returns 202. It does NO build work: the iframe's fetch bridge cancels any
  *   proxied request that has not answered in 30 seconds (Hard Rule 21), so a
  *   kickoff that built anything would be cancelled mid-write.
- * - `{ runId, scheduledFor? }` — a scheduled tick. Runs at most ONE durable
- *   stage of ONE row and checkpoints it.
+ * - `{ runId, scheduledFor? }` — a scheduled tick. Runs the build stages still
+ *   left on ONE row while the invocation deadline has room, checkpointing each
+ *   one, and never starts the next row. Repair and Scorecard stay one
+ *   transition per tick.
  *
  * Why the AI settings are re-installed on every tick: a Backend Function is a
  * fresh process with no browser storage, so the run's own snapshot (non-secret
@@ -294,7 +296,7 @@ export async function runUnderStageDeadline<T>(
  * that can otherwise outlive it: the staged builder (deploy/patch checks) and
  * the AI transport (registered for the duration of this stage only).
  */
-async function runStage(request: StageRequest): Promise<StageOutcome> {
+async function runStage(request: StageRequest, deadlineMs = BACKEND_STAGE_DEADLINE_MS): Promise<StageOutcome> {
   await ensureAiSnapshot(request.checkpoint.ai);
   const quality = await loadQualitySettingsAsync();
   const timeoutsBefore = aiTimeoutsObserved();
@@ -306,7 +308,7 @@ async function runStage(request: StageRequest): Promise<StageOutcome> {
     } finally {
       setBackendStageSignal(null);
     }
-  });
+  }, { deadlineMs });
 
   if (outcome.aborted && !outcome.unwound) {
     // The signal could not reach whatever this stage is doing. Say so: the
@@ -335,7 +337,7 @@ async function runStage(request: StageRequest): Promise<StageOutcome> {
  * 'balanced'). It only generates: whether the events are usable is the
  * runner's verification gate, not this adapter's.
  */
-async function createSample(request: SampleStageRequest): Promise<SampleStageOutcome> {
+async function createSample(request: SampleStageRequest, deadlineMs = BACKEND_STAGE_DEADLINE_MS): Promise<SampleStageOutcome> {
   await ensureAiSnapshot(request.checkpoint.ai);
   const modes = sampleGenerationAttemptModes();
   const mode = modes[Math.min(request.attempt, modes.length - 1)]!;
@@ -347,7 +349,7 @@ async function createSample(request: SampleStageRequest): Promise<SampleStageOut
     } finally {
       setBackendStageSignal(null);
     }
-  });
+  }, { deadlineMs });
 
   if (outcome.aborted && !outcome.unwound) {
     return { kind: 'timeout', stageAlive: true, message: 'Sample creation passed its deadline and did not stop.' };
@@ -371,7 +373,7 @@ async function createSample(request: SampleStageRequest): Promise<SampleStageOut
  * background run, the foreground wizard and the `/pack-quality-check` skill all
  * repair by the same rules.
  */
-async function runQualityStage(request: QualityStageRequest): Promise<QualityStageOutcome> {
+async function runQualityStage(request: QualityStageRequest, deadlineMs = BACKEND_STAGE_DEADLINE_MS): Promise<QualityStageOutcome> {
   await ensureAiSnapshot(request.checkpoint.ai);
   const quality = await loadQualitySettingsAsync();
   const { row, checkpoint } = request;
@@ -402,7 +404,7 @@ async function runQualityStage(request: QualityStageRequest): Promise<QualitySta
     } finally {
       setBackendStageSignal(null);
     }
-  });
+  }, { deadlineMs });
 
   if (outcome.aborted && !outcome.unwound) {
     return {
@@ -437,19 +439,24 @@ async function runQualityStage(request: QualityStageRequest): Promise<QualitySta
 // --- handler -----------------------------------------------------------------
 
 function makeDeps(): BackgroundRunnerDeps {
+  // One deadline for the whole invocation. A follow-up stage must not get a
+  // fresh 280s, or the platform's 300s kill lands in the middle of it.
+  const continueUntilMs = Date.now() + BACKEND_STAGE_DEADLINE_MS;
+  const remaining = () => Math.max(1, continueUntilMs - Date.now());
   return {
     store: backgroundBatchStore,
     now: () => Date.now(),
+    continueUntilMs,
     // Identifies THIS invocation for lease ownership. Random rather than
     // time-based alone: two ticks can start in the same millisecond.
     invocationId: `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 10)}`,
     // The ONE pack identity: the runner decides new-vs-add-pipeline with it and
     // hands the resolved id back for the stage to deploy into.
     packId: toKebab,
-    runStage,
-    createSample,
-    runQualityStage,
-    commitDeploy: (workerGroup, message) => commitDeploy(workerGroup, message),
+    runStage: request => runStage(request, remaining()),
+    createSample: request => createSample(request, remaining()),
+    runQualityStage: request => runQualityStage(request, remaining()),
+    commitDeploy: (workerGroup, message, packIds) => commitDeploy(workerGroup, message, packIds),
     ensureSchedule: cp => createSchedule(cp.runId),
     deleteSchedule: id => removeSchedule(id),
     // Run/invocation identifiers only — never row content (Hard Rule 32's

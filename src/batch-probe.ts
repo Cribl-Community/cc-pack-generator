@@ -27,7 +27,7 @@ import {
 import { describeSampleFormat, SAMPLE_EXTEND_FLOOR } from './sample-library';
 import {
   getDatatypeParserFunctions, getParserForSourcetype, isWindowsCodeFamily, matchDatatypeParserBySample,
-  matchJsonSignature, recognizeCefSource, recognizeSourcetype, sampleFingerprint, sampleMatchesSourceExpectation,
+  matchJsonSignature, matchWindowsEventXml, recognizeCefSource, recognizeSourcetype, sampleFingerprint, sampleMatchesSourceExpectation,
 } from './source-recognition';
 
 /** A stored golden part as the lookup returns it (the `GoldenPipeline` subset read here). */
@@ -99,7 +99,7 @@ export interface BatchProbeResult {
   goldenWire: string | null;
   /** The source the sample's CONTENT names, offline, with how it was found. */
   detected: string | null;
-  detectedBy: 'cef-header' | 'datatype' | 'json-signature' | null;
+  detectedBy: 'cef-header' | 'datatype' | 'json-signature' | 'windows-channel' | null;
   detectedDiffers: boolean;
   guard: 'match' | 'mismatch' | 'unknown' | null;
   staticParser: string | null;
@@ -145,7 +145,7 @@ export interface RowSampleReading {
   wireLabel: string | null;
   /** The source the sample's CONTENT names, with how it was found. */
   detected: string | null;
-  detectedBy: 'cef-header' | 'datatype' | 'json-signature' | null;
+  detectedBy: 'cef-header' | 'datatype' | 'json-signature' | 'windows-channel' | null;
   /** The content names a different source than the row's (generic `cef` and the row's own Search datatype do not count). */
   detectedDiffers: boolean;
   guard: 'match' | 'mismatch' | 'unknown' | null;
@@ -175,6 +175,12 @@ export function readRowSample(sourcetype: string, sampleText: string): RowSample
     try {
       const js = matchJsonSignature(text);
       if (js) { detected = recognizeSourcetype(js.sourcetype).canonical || js.sourcetype; detectedBy = 'json-signature'; }
+    } catch { /* no match */ }
+  }
+  if (!detected) {
+    try {
+      const win = matchWindowsEventXml(text);
+      if (win) { detected = win.sourcetype; detectedBy = 'windows-channel'; }
     } catch { /* no match */ }
   }
   const dtp = getDatatypeParserFunctions(sourcetype);

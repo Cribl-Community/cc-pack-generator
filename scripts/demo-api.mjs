@@ -7,7 +7,7 @@
 // iframe parity for all of these lives in src/api.ts (same shapes).
 import { CRIBL_ORG, getToken } from './cribl-auth.mjs';
 import {
-  demoSampleOwner, isDemoInputId, isDemoOutputId, unquoteDatagenTimestamps,
+  demoSampleOwner, isDemoInputId, isDemoOutputId, unquoteDatagenTimestamps, mergeDemoRouteTable, demoNsOfComment,
 } from '../src/demo-flow-ids.ts';
 
 const DEMO_ROUTE_PREFIX = 'demo_';
@@ -57,7 +57,8 @@ function pruneRoutesAndComments(routes, comments, removeRouteIds) {
     if (e.kind === 'route') {
       if (!idSet.has(e.r.id)) { keptRoutes.push(e.r); keptCombined.push(e); }
     } else {
-      const isDemo = String(e.c.comment || '').startsWith('[DEMO]');
+      // `[DEMO]` (made by hand) or `[DEMO:<ns>]` (a whiteboard's demo, spec R16).
+      const isDemo = demoNsOfComment(String(e.c.comment || '')) !== null;
       const anchorsRemoved = removedPositions.has(pos + 1);
       if (!(isDemo && anchorsRemoved)) keptCombined.push(e);
     }
@@ -273,12 +274,71 @@ export async function handleEnsureLakeOutput(req, res) {
   }
 }
 
+// --- Cribl Lake datasets for whiteboard demos (spec R15) ---------------------
+// Mirrors src/api.ts listLakeAndSearchDatasetIds / ensureLakeDataset /
+// deleteLakeDataset for standalone mode. An existing dataset is reused, never changed.
+const LAKE_DATASETS = '/api/v1/products/lake/lakes/default/datasets';
+
+// Lake deletes asynchronously: a dataset whose deletion started is still listed for a while.
+async function lakeDatasets(headers) {
+  const resp = await fetch(`${CRIBL_ORG}${LAKE_DATASETS}`, { headers });
+  if (!resp.ok) throw new Error(`Cribl Lake returned ${resp.status}: ${(await resp.text()).slice(0, 200)}`);
+  return ((await resp.json()).items || []).filter(d => d && d.id);
+}
+
+export async function handleLakeDatasetIds(req, res) {
+  try {
+    const headers = authHeaders(await getToken());
+    const all = await lakeDatasets(headers);
+    const lakeIds = all.map(d => String(d.id));
+    const deletingIds = all.filter(d => d.deletionStartedAt).map(d => String(d.id));
+    const sresp = await fetch(`${CRIBL_ORG}/api/v1/m/default_search/search/datasets?offset=0&limit=1000`, { headers });
+    const searchIds = sresp.ok ? ((await sresp.json()).items || []).map(d => String(d.id || '')).filter(Boolean) : [];
+    sendJson(res, 200, { lakeIds, searchIds, deletingIds });
+  } catch (err) {
+    sendJson(res, 500, { error: err.message || 'Failed to list Lake datasets' });
+  }
+}
+
+export async function handleEnsureLakeDataset(req, res) {
+  try {
+    const { id, retentionPeriodInDays } = await readBody(req);
+    if (!id || !/^[A-Za-z0-9_]{1,512}$/.test(id)) return sendJson(res, 400, { error: 'A dataset id of letters, digits and underscores is required' });
+    const headers = authHeaders(await getToken());
+    const existing = (await lakeDatasets(headers)).find(d => d.id === id);
+    if (existing?.deletionStartedAt) return sendJson(res, 409, { error: `Lake dataset ${id} is being deleted. Cribl can take several minutes to finish; pick another id to go on now.` });
+    if (existing) return sendJson(res, 200, { id, created: false });
+    const body = { id, description: 'Demo dataset (Pack Generator)', retentionPeriodInDays: Number(retentionPeriodInDays) || 30, format: 'json' };
+    const resp = await fetch(`${CRIBL_ORG}${LAKE_DATASETS}`, { method: 'POST', headers, body: JSON.stringify(body) });
+    if (!resp.ok) {
+      const txt = await resp.text();
+      if (resp.status === 409 || txt.includes('already exists')) return sendJson(res, 200, { id, created: false });
+      return sendJson(res, resp.status, { error: `Failed to create Lake dataset: ${txt.slice(0, 300)}` });
+    }
+    sendJson(res, 200, { id, created: true });
+  } catch (err) {
+    sendJson(res, 500, { error: err.message || 'Failed to create the Lake dataset' });
+  }
+}
+
+export async function handleDeleteLakeDataset(req, res) {
+  try {
+    const { id } = await readBody(req);
+    if (!id || !/^[A-Za-z0-9_]{1,512}$/.test(id)) return sendJson(res, 400, { error: 'A dataset id is required' });
+    const resp = await fetch(`${CRIBL_ORG}${LAKE_DATASETS}/${encodeURIComponent(id)}`, { method: 'DELETE', headers: authHeaders(await getToken()) });
+    if (!resp.ok && resp.status !== 404) return sendJson(res, resp.status, { error: `Failed to delete Lake dataset: ${(await resp.text()).slice(0, 300)}` });
+    sendJson(res, 200, { id, deleted: true });
+  } catch (err) {
+    sendJson(res, 500, { error: err.message || 'Failed to delete the Lake dataset' });
+  }
+}
+
 // --- Worker-group MASTER route table ---------------------------------------
 // Prepend the demo route block to /m/<group>/routes, replacing any prior demo
 // block (id prefix demo_). Then commit + deploy the group.
 export async function handleSetMasterRoutes(req, res) {
   try {
-    const { group, demoRoutes, demoComments = [] } = await readBody(req);
+    const { group, demoRoutes, demoComments = [], ns = '' } = await readBody(req);
     if (!group || !Array.isArray(demoRoutes)) return sendJson(res, 400, { error: 'group and demoRoutes[] required' });
     const token = await getToken();
     const headers = authHeaders(token);
@@ -288,23 +348,17 @@ export async function handleSetMasterRoutes(req, res) {
     const table = getData.items?.[0] || { id: 'default', routes: [] };
     const existing = Array.isArray(table.routes) ? table.routes : [];
 
-    // Drop any previous demo routes so re-runs replace rather than stack.
-    const nonDemo = existing.filter(r => !String(r.id || '').startsWith(DEMO_ROUTE_PREFIX));
-    const newRoutes = [...demoRoutes, ...nonDemo];
-
-    // Comment rows are keyed by their position in the COMBINED comments+routes
-    // list (NOT the routes-only array). We prepend the demo block at the very
-    // top, so it occupies the first (demoRoutes.length + demoComments.length)
-    // rows — shift every existing customer comment down by that combined count.
-    // Demo comment indices already account for their own interleaving.
+    // Replace only this namespace's demo block (spec R16): other boards' blocks,
+    // the one shared terminator and the customer's routes + comments keep their
+    // places; comment positions are recomputed (src/demo-flow-ids.ts).
     const genId = () => Math.random().toString(36).slice(2, 8);
-    const prevComments = Array.isArray(table.comments) ? table.comments : [];
-    const demoBlockRows = demoRoutes.length + demoComments.length;
-    const shiftedExisting = prevComments
-      .filter(c => !String(c.comment || '').startsWith('[DEMO]'))
-      .map(c => ({ ...c, index: (c.index || 0) + demoBlockRows }));
-    const demoCommentRows = demoComments.map(c => ({ id: genId(), comment: c.comment, index: c.index }));
-    const comments = [...demoCommentRows, ...shiftedExisting];
+    const merged = mergeDemoRouteTable(
+      { routes: existing, comments: Array.isArray(table.comments) ? table.comments : [] },
+      ns,
+      { routes: demoRoutes, comments: demoComments.map(c => ({ id: genId(), comment: c.comment, index: c.index })) },
+    );
+    const newRoutes = merged.routes;
+    const comments = merged.comments;
     const tableId = table.id || 'default';
 
     // The master route table validates every route's `pipeline` against an enum
@@ -381,7 +435,9 @@ export async function handleSetMasterRoutes(req, res) {
     const deployResult = await deployResp.json();
     const version = deployResult.items?.[0]?.configVersion || commit;
 
-    const demoWritten = routesToWrite.filter(r => String(r.id || '').startsWith(DEMO_ROUTE_PREFIX)).length;
+    // This block's routes that made it in (other boards' blocks are not ours to count).
+    const blockIds = new Set(demoRoutes.map(r => r.id));
+    const demoWritten = routesToWrite.filter(r => blockIds.has(r.id)).length;
     const dropped = demoRoutes.length - demoWritten;
     sendJson(res, 200, { routeCount: routesToWrite.length, demoCount: demoWritten, dropped, commit, version });
   } catch (err) {
@@ -532,7 +588,7 @@ export async function handleScanDemo(req, res) {
       .map(r => ({ id: r.id, name: r.name, pipeline: r.pipeline, output: r.output }));
     const datagens = (inputs.items || [])
       .filter(i => isDemoInputId(String(i.id || '')))
-      .map(i => ({ id: i.id, sampleCount: (i.samples || []).length, description: i.description || '' }));
+      .map(i => ({ id: i.id, sampleCount: (i.samples || []).length, description: i.description || '', disabled: i.disabled === true }));
     const packList = (packs.items || [])
       .filter(p => String(p.id || '').startsWith(DEMO_PACK_PREFIX))
       .map(p => ({ id: p.id, displayName: p.displayName || p.id, version: p.version || '' }));
@@ -543,6 +599,33 @@ export async function handleScanDemo(req, res) {
     sendJson(res, 200, { routes, datagens, packs: packList, outputs: outputList });
   } catch (err) {
     sendJson(res, 500, { error: err.message || 'Failed to scan demo artifacts' });
+  }
+}
+
+// --- Stop / start ONE demo: turn its datagen inputs off or on -------------
+// Only the ids passed in are touched; the caller commits + deploys once after
+// (src/api.ts setDemoRunning → commitDeploy), so packs and routes stay as they are.
+export async function handleSetDemoRunning(req, res) {
+  try {
+    const { group, datagenIds = [], running } = await readBody(req);
+    if (!group || typeof running !== 'boolean') return sendJson(res, 400, { error: 'group and running required' });
+    const headers = authHeaders(await getToken());
+    const changed = [];
+    const errors = [];
+    for (const id of datagenIds) {
+      if (!isDemoInputId(String(id))) { errors.push(`datagen ${id}: not a demo input`); continue; }
+      const url = `${CRIBL_ORG}/api/v1/m/${group}/system/inputs/${encodeURIComponent(id)}`;
+      const got = await fetch(url, { headers });
+      if (!got.ok) { errors.push(`datagen ${id}: ${got.status}`); continue; }
+      const input = (await got.json()).items?.[0];
+      if (!input) { errors.push(`datagen ${id}: not found`); continue; }
+      const pr = await fetch(url, { method: 'PATCH', headers, body: JSON.stringify({ ...input, disabled: !running }) });
+      if (pr.ok) changed.push(id);
+      else errors.push(`datagen ${id}: ${pr.status} ${await pr.text()}`);
+    }
+    sendJson(res, 200, { changed, errors });
+  } catch (err) {
+    sendJson(res, 500, { error: err.message || 'Failed to change the demo' });
   }
 }
 

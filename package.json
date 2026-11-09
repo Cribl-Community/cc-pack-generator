@@ -1,8 +1,8 @@
 {
   "name": "cc-pack-generator",
   "private": true,
-  "version": "1.0.309",
-  "buildNumber": 934,
+  "version": "1.0.327",
+  "buildNumber": 1015,
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -26,6 +26,8 @@
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.2",
     "esbuild": "^0.28.2",
+    "html-to-image": "1.11.13",
+    "jspdf": "2.5.2",
     "oxlint": "^1.69.0",
     "tsx": "^4.23.1",
     "typescript": "~6.0.2",
@@ -44,7 +46,9 @@
   },
   "tags": {
     "product": [
-      "stream"
+      "stream",
+      "search",
+      "lake"
     ]
   }
 }

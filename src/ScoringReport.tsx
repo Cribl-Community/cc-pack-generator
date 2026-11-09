@@ -15,8 +15,10 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { previewPipelineProfile, type CriblPipelineProfile } from './api';
 import { pipelineVisualizerUrl, VISUALIZER_REPORT_NOTE, type VisualizerAvailability } from './pipeline-visualizer-link';
 import { PipelineVisualizerLink } from './PipelineVisualizerLink';
+import { PerformanceModePanel } from './PerformanceModePanel';
+import { recordSeenFields } from './vendor-field-library';
 
-export interface ReportProfileArgs { workerGroup: string; packId: string; pipelineId: string; sampleName: string; }
+export interface ReportProfileArgs { workerGroup: string; packId: string; pipelineId: string; sampleName: string; sourcetype?: string; }
 export type ReportStageSource = 'search' | 'golden' | 'copilot' | 'ai' | 'static' | 'none';
 export interface ReportStageScore { v: number | null; src: ReportStageSource; }
 export interface ReportField { name: string; value: string; }
@@ -71,7 +73,8 @@ export function bandOfScore(n: number | null): 'good' | 'warn' | 'fail' | 'na' {
 }
 function fmtBytes(n?: number) { return n == null ? '—' : n < 1024 ? `${n} B` : `${(n / 1024).toFixed(1)} KB`; }
 function fmtMs(n?: number) { return n == null ? '—' : n < 1 ? `${n.toFixed(3)} ms` : `${n.toFixed(2)} ms`; }
-export function esc(s: any) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+// Quotes too: the reports put values into attributes (href, title), where an unescaped `"` ends the attribute.
+export function esc(s: any) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;'); }
 
 // Locate each extracted value inside the raw line so verbatim tokens light up.
 function rawSegments(raw: string, fields: { name: string; value: string; color: string }[]) {
@@ -108,7 +111,7 @@ function profileNumbers(p: CriblPipelineProfile | null) {
   };
 }
 
-export function ScoringReport({ data, packId, workerGroup, visualizerBaseUrl }: { data: ReportFormatVM[]; packId?: string; workerGroup?: string; visualizerBaseUrl?: string | null }) {
+export function ScoringReport({ data, packId, workerGroup, visualizerBaseUrl, performanceMode, performanceAllowCode, performanceUseLibrary }: { data: ReportFormatVM[]; packId?: string; workerGroup?: string; visualizerBaseUrl?: string | null; performanceMode?: boolean; performanceAllowCode?: boolean; performanceUseLibrary?: boolean }) {
   const [active, setActive] = useState(0);
   // Live Cribl pipeline profiles keyed by pipelineId, fetched once per format.
   const [profiles, setProfiles] = useState<Record<string, CriblPipelineProfile | null>>({});
@@ -133,6 +136,19 @@ export function ScoringReport({ data, packId, workerGroup, visualizerBaseUrl }: 
         .catch(() => { setProfileState(s => ({ ...s, [id]: 'error' })); });
     }
   }, [data]);
+
+  // With the vendor field library on, each build adds the field NAMES it extracted to the
+  // library's per-install "seen" list (never values). Once per source type per report.
+  const recorded = useRef<Set<string>>(new Set());
+  useEffect(() => {
+    if (!performanceMode || !performanceUseLibrary) return;
+    for (const f of data) {
+      const st = f.profileArgs?.sourcetype;
+      if (!st || recorded.current.has(st) || !f.extractedFields.length) continue;
+      recorded.current.add(st);
+      void recordSeenFields(st, f.extractedFields.map(x => x.name)).catch(() => { /* advice only */ });
+    }
+  }, [data, performanceMode, performanceUseLibrary]);
 
   const vm = data[active] || data[0];
   const download = () => downloadReport(data, profiles, packId, workerGroup);
@@ -166,6 +182,7 @@ export function ScoringReport({ data, packId, workerGroup, visualizerBaseUrl }: 
       </div>
       <div className="sr-panel">
         <FormatView vm={vm} profile={profiles[vm.pipelineId] ?? null} profileState={profileState[vm.pipelineId]} />
+        {performanceMode && vm.profileArgs && <PerformanceModePanel key={vm.pipelineId} target={{ ...vm.profileArgs, allowCode: !!performanceAllowCode, useLibrary: !!performanceUseLibrary, seenNow: vm.extractedFields.map(x => x.name) }} />}
       </div>
     </div>
   );

@@ -39,6 +39,19 @@ export function collectDatasetFields(events: Record<string, unknown>[]): string[
   return [...fields].sort();
 }
 
+/**
+ * A Lake-fed dashboard reads what the feeding pipeline emits: Search parses Lake's JSON
+ * as `cribl_json`, so these are the fields it shows (measured 2026-11-01 — FortiGate's
+ * raw + fields copy lands as `srcip`, not the parser's canonical `src_ip`). `__` fields
+ * never reach Lake. The sample handed to the KPI picker is those events, not the raw lines.
+ */
+export function lakeDashboardSource(sourcetype: string, outputEvents: Record<string, unknown>[]): { sourcetype: string; sampleEvents: string; parsedFieldNames: string[] } | null {
+  const events = outputEvents.map(event => Object.fromEntries(Object.entries(event).filter(([key]) => !key.startsWith('__'))));
+  const parsedFieldNames = collectDatasetFields(events);
+  if (!parsedFieldNames.length) return null;
+  return { sourcetype, sampleEvents: events.slice(0, 8).map(event => JSON.stringify(event)).join('\n'), parsedFieldNames };
+}
+
 export function normalizeDashboardPlan(raw: any, availableFields: string[], datasetId: string): DashboardPlan {
   const allowed = new Set(availableFields);
   const visualizations = new Set<DashboardVisualization>(['single', 'line', 'bar', 'pie', 'table', 'sankey', 'treemap']);

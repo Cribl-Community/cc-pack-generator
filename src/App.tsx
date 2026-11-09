@@ -1,10 +1,10 @@
-import { useState, useEffect, useLayoutEffect, useRef, Fragment, type ReactNode, type CSSProperties } from 'react';
+import { useState, useEffect, useLayoutEffect, useRef, useCallback, useMemo, Fragment, type ReactNode, type CSSProperties } from 'react';
 import goatImg from './assets/goat-header.webp';
 import goatGrazeImg from './assets/cribl-goat-graze.webp';
 import type { WizardState, SourceMode, DestFormat } from './types';
-import { buildPack, toKebab, getPipelineId, getSampleName, getParserFieldNames, hasGoldenFormatPath, goldenPathMatchesSample, sampleFingerprint, fingerprintsMatch, scoreValueCoverage, scoreSchemaMappingFromExtraction, getBlockingContractErrors, canonicalizeSourcetype, getParserForSourcetype, getDatatypeParserFunctions, matchDatatypeParserBySample, matchGoldenSourceBySample, matchJsonSignature, recommendDestFormatsForSample, asimSchemaOptions, ocsfSchemaOptions, concretizeAsimFormat, concretizeCimFormat, concretizeOcsfFormat, isCimFormat, isOcsfFormat, isOcsfScoredFormat, isCefFormat, cimModelForFormatKey, inferDataClass, describeSourcetype, recognizeSourcetype, recognizeCefSource, getSupportedSourcetypeCatalog, searchSupportedSourcetypes, getFamilyTokenVariants, getMultiFormatSpec, buildSampleGroundingContext, explainValueCoverageGaps, shapeMappedEventForDisplay, type MultiFormatSpec, type SampleGrounding, type ContractLintFinding, type CoverageGapDetail } from './pack-builder';
+import { buildPack, toKebab, getPipelineId, getSampleName, getParserFieldNames, hasGoldenFormatPath, goldenPathMatchesSample, sampleFingerprint, fingerprintsMatch, scoreValueCoverage, scoreSchemaMappingFromExtraction, getBlockingContractErrors, canonicalizeSourcetype, getParserForSourcetype, getDatatypeParserFunctions, matchDatatypeParserBySample, matchGoldenSourceBySample, matchJsonSignature, matchWindowsEventXml, recommendDestFormatsForSample, asimSchemaOptions, ocsfSchemaOptions, concretizeAsimFormat, concretizeCimFormat, concretizeOcsfFormat, isCimFormat, isOcsfFormat, isOcsfScoredFormat, isCefFormat, cimModelForFormatKey, inferDataClass, describeSourcetype, recognizeSourcetype, recognizeCefSource, getSupportedSourcetypeCatalog, searchSupportedSourcetypes, getFamilyTokenVariants, getMultiFormatSpec, buildSampleGroundingContext, explainValueCoverageGaps, shapeMappedEventForDisplay, type MultiFormatSpec, type SampleGrounding, type ContractLintFinding, type CoverageGapDetail } from './pack-builder';
 import { generateSamples, hasBuiltInSamples, SOURCETYPES } from './ai-samples';
-import { listGroups, listPacks, listPackPipelines, getPackPipeline, getPackSample, uploadPackSample, liveCapture, downloadSample, listGroupAndPackSamples, downloadPackSample, isSanitisedLibrarySampleName, aiValidate, aiSamples, aiAdvise, aiMapping, aiParse, detectSourcetypeApi, deploy, aiAvailable, fetchPublicSamples, fetchHybridSamples, validatePipeline, previewPipeline, previewPipelineProfile, repairPipeline, getGoldenPipeline, getGoldenPart, fetchReferenceAvailability, fetchReferenceSample, extendResolvedSample, fetchReferenceLookups, healLookup, auditDatatypes, ensureDatatypeOverlay, logPipelineScore, checkLakeExportHealth, checkAiHealth, repairQuality, fetchAvailableGoldens, importGoldens, sendLakeTestEvent, testGoldenAccess, testSanitisedSampleAccess, listWorkers, backgroundGroupBlockReason, listLakeDatasets, listSearchDatasets, listSearchDatatypes, deploySearchDatatype, attachSearchDatatypes, deploySearchDashboard, listOutputs, ensureLakeOutput, setMasterRoutes, createDemoDatagen, scanDemo, cleanupDemo, patchPipeline, commitDeploy, getCriblCreds, testCriblCreds, saveCriblCreds, getRunMode, fetchPushableGoldens, pushGoldens, fetchSampleLibrarySummary, saveBatchCheckpoint, loadBatchCheckpoint, clearBatchCheckpoint, analyzeBuildTrace, type PushableGolden, type AvailableGolden, type WorkerHealth, type LakeDataset, type SearchDataset, type SearchDatatype, type DemoScanResult, type DemoOutput, type BatchCheckpoint } from './api';
+import { listGroups, listPacks, listPackPipelines, getPackPipeline, getPackSample, uploadPackSample, liveCapture, downloadSample, listGroupAndPackSamples, downloadPackSample, isSanitisedLibrarySampleName, aiValidate, aiSamples, aiAdvise, aiMapping, aiParse, detectSourcetypeApi, deploy, aiAvailable, fetchPublicSamples, fetchHybridSamples, validatePipeline, previewPipeline, previewPipelineProfile, repairPipeline, getGoldenPipeline, getGoldenPart, fetchReferenceAvailability, fetchReferenceSample, extendResolvedSample, fetchReferenceLookups, healLookup, auditDatatypes, ensureDatatypeOverlay, logPipelineScore, checkLakeExportHealth, checkAiHealth, repairQuality, fetchAvailableGoldens, importGoldens, sendLakeTestEvent, testGoldenAccess, testSanitisedSampleAccess, listWorkers, backgroundGroupBlockReason, listLakeDatasets, listSearchDatasets, listSearchDatatypes, deploySearchDatatype, attachSearchDatatypes, deploySearchDashboard, listOutputs, ensureLakeOutput, ensureLakeDataset, deleteLakeDataset, setMasterRoutes, createDemoDatagen, scanDemo, cleanupDemo, patchPipeline, commitDeploy, getCriblCreds, testCriblCreds, saveCriblCreds, getRunMode, fetchPushableGoldens, pushGoldens, fetchSampleLibrarySummary, saveBatchCheckpoint, loadBatchCheckpoint, clearBatchCheckpoint, analyzeBuildTrace, type PushableGolden, type AvailableGolden, type WorkerHealth, type LakeDataset, type SearchDataset, type SearchDatatype, type DemoScanResult, type DemoOutput, type BatchCheckpoint } from './api';
 import { buildPostProcessFunctions, postProcessLookupsFor, postProcessSampleEvents, getPostProcessPair, postProcessSchemaOptions, POSTPROCESS_SOURCE_FORMATS, POSTPROCESS_DEST_FORMATS, isNoPairPostProcessDestination, postProcessFamilyOf } from './postprocess-builder';
 import { isRawPassthroughDestination } from './postprocess-optimization';
 import { parseOcsfGuidance } from './ocsf-schema';
@@ -43,7 +43,7 @@ import { goldenImportSummary, goldenUpdateNotice, leaveDecision } from './golden
 import { canConfirmInline, checkTiles, preflightBusyView, decisionQueue, explainCheckRow, scopedQueue, selectionAfterRemove, sampleActionLabel, sampleNote, stepperFor, type CheckRowFacts, type Rich } from './batch-check-view';
 import { forecastSamples, sampleForecastIsWeak, sampleForecastLabel, type StoreLookup } from './sample-forecast';
 import { estimateBatch, loadRowTimings, measuredTimeLeft, recordBatchTimings, rowBuildPath, saveRowTimings, formatDuration, formatRoughRange } from './batch-estimate';
-import { applyRowPatch, batchPhaseLabel, createAsyncCache, isBatchPhaseTerminal, preflightSampleTier, runPackGroups, batchRunChoices, groupPickBlock, BATCH_FOREGROUND_CONCURRENCY, BATCH_BACKGROUND_MAX_ROWS, type BatchPhase } from './batch-runtime';
+import { applyRowPatch, batchPhaseLabel, createAsyncCache, isBatchPhaseTerminal, preflightSampleTier, runPackGroups, batchRunChoices, groupPickBlock, capBatchRows, batchFileCapNotice, clampBatchParallel, openBatchRunBlock, BATCH_FOREGROUND_CONCURRENCY, BATCH_BACKGROUND_MAX_ROWS, MAX_BATCH_CONCURRENCY, type BatchPhase } from './batch-runtime';
 import {
   backgroundBatchSupported, dismissBatchBackgroundRun, loadActiveBatchBackgroundRun,
   killBatchBackgroundRun, loadBatchBackgroundRun, loadBatchBackgroundRowArtifact, startBatchBackgroundRun, stopBatchBackgroundRun,
@@ -61,7 +61,7 @@ import {
 } from './background-progress-view';
 import { KILL_CONFIRM_LABEL, KILL_LABEL, killForegroundResults } from './batch-kill';
 import type { BackgroundBatchCheckpoint } from './background-batch';
-import { backgroundAiSnapshot } from './settings-store';
+import { applyStandaloneBatchProvider, backgroundAiSnapshot, loadSettings, STANDALONE_BATCH_PROVIDERS, type AiProvider } from './settings-store';
 import { identifyUniqueNames, mapSettledWithConcurrency, preflightCount, preflightRowMatches, preflightSampleMatches, PREFLIGHT_FILTER_LABEL, samplesStillToResolve, type PreflightFilter, type PreflightFilterRow } from './preflight-filter';
 import { averageStageScores, inferFromPipelineId, resolveDetectedSourcetype, splitPipelineFunctions } from './pipeline-stages';
 import { buildTraceJson, describeStoredGoldens, summarizeBuildTraceForAi, type BuildTrace } from './build-trace';
@@ -83,6 +83,8 @@ import type { AiParseFunctions, ValidationReport, ReferenceAvailability, PreDepl
 // small enough that a background fetch is unnoticeable.
 const SAMPLE_FORMAT_SNIFF_LIMIT = 12;
 const SAMPLE_FORMAT_SNIFF_MAX_BYTES = 1_000_000;
+// Downloaded worker-group samples kept for the session (sniffed ones are ≤1 MB each).
+const SAMPLE_CONTENT_CACHE_MAX = 40;
 
 function downloadTextFile(content: string, fileName: string, type: string): void {
   const blob = new Blob([content], { type });
@@ -217,7 +219,7 @@ function goldenSharingConfigured(q: QualitySettings): boolean {
 }
 import type { AiMappingResult, AiProgressCallback } from './ai-client';
 import { loadSettingsAsync, loadQualitySettings, loadQualitySettingsAsync, saveQualitySettings, saveLakeToken, saveGoldenReadToken, saveSanitisedSampleToken, aiDesignSearchDashboard, aiParallelism, isCriblAiActive, type QualitySettings } from './ai-client';
-import { buildNativeDashboard, buildVizlabDashboard, type DashboardStyle } from './dashboard-builder';
+import { buildNativeDashboard, buildVizlabDashboard, lakeDashboardSource, type DashboardStyle } from './dashboard-builder';
 import { buildSearchDatatype, inferSearchDatatypeFields } from './search-datatype-builder';
 import { sanitisedSampleRepoError } from './sanitised-sample-github';
 import { getAvailableSources, getPublicSource } from './sample-sources';
@@ -226,18 +228,32 @@ import { cimModelSuggestions, cimModelPickerOptions, resolveCimModel } from './c
 import AiSettingsModal from './AiSettings';
 import FlowDestination from './FlowDestination';
 import { WIZARD_MODES, MENU_MODES, wizardSteps, canJumpToStep, isBusyStep, type WizardMode } from './wizard-steps';
+import {
+  captureWizardDraftBeforeUnload, clearWizardDraft, isPackBuildDraftMode, loadWizardDraft,
+  saveWizardDraft, serializeWizardDraft, shouldPersistWizardDraft, wizardDraftLabel,
+  type PackModeDraft, type SerializeWizardDraftInput, type WizardDraftDocument,
+} from './wizard-draft';
+import { useWizardHistoryGuard } from './wizard-history';
 import { EMPTY_FLOW_PP, flowBuildFormat, flowDestOptions, flowReductionToggles, flowSummary, ppEffectiveFormat, ppOutputLabel, ppOutputsToBuild, ppPackIdFor, type FlowPpState, type FlowPpOutput, flowBlockedReason, flowPackCheck, ppPackCheck, FLOW_ROUTE_FILTER, flowPackId, flowDefaultPackName, flowSourceLabel, ppPackNameFor, flowFormatInfo, flowBuildPercent, flowBuildCounts, type FlowLiveFormat, type FlowLivePp, type FlowBuildPhase, flowModelPick, flowCreep, flowRunningActivity, upstreamSampleEvents } from './flow-builder';
 import {
-  DEMO_EVENTS_PER_SEC, DEMO_LAKE_OUTPUT, DEMO_OCSF_REPLAY_ID, demoDefaultCells, demoEventsPerSecond, demoMergeCells, demoPpPackId, demoTargets,
-  demoFailureReason, ocsfReplayLine, planDemoFlow, type DemoCell, type DemoPlan,
+  DEMO_EVENTS_PER_SEC, DEMO_LAKE_OUTPUT, DEMO_MAX_FORMATS, DEMO_MAX_SOURCES, DEMO_OCSF_REPLAY_ID, demoCleanupSelection, demoNamespacesIn, demoDefaultCells, demoEventsPerSecond, demoMergeCells, demoNames, demoNsOfRoute, demoTargets,
+  demoFailureReason, planDemoFlow, type DemoCell, type DemoPlan,
 } from './demo-flow';
 import { SampleLibraryModal } from './sample-library-panel';
+import WhiteboardsPage from './WhiteboardsPage';
+import { safeGetItem, safeSetItem } from './safe-storage';
+import { runDemoDeploy, type DemoResult, type DemoSource } from './demo-deploy';
+import { deploymentRecord, groupNeighbours, markGroupReleased, recordDeployment, type DemoSeed } from './discovery-demo-seed';
+import { listBoards, loadBoard, loadLibrary, saveBoard } from './whiteboard-store';
+import type { WhiteboardIndexEntry } from './whiteboard/types';
 import { TOOL_AREAS, toolTabs, toolLink, resolveToolPage, sampleLibraryView, settingsHealth, type ToolPage, type ToolLink, type SettingsTab, type SamplesTab } from './tool-pages';
 import { DOC_OPEN_MESSAGE, type AppDocId } from './doc-ids';
 import { SanitizeWizard, type LibrarySample, type SamplePick } from './sanitize-wizard';
 import { ScoringReport, buildBatchReportHtml, downloadHtmlFile, type BatchReportPack, type ReportFormatVM, type ReportStageSource } from './ScoringReport';
 import { buildImproveReportHtml, improveReportFilename, type ImproveReportRow } from './improve-report';
 import { cachedVisualizerAvailability, criblInstanceBaseUrl, pipelineVisualizerUrl, probePipelineVisualizer } from './pipeline-visualizer-link';
+import { buildSourceCorpus, searchSources, aiFallbackName, sampleFit, SAMPLE_FIT_INFO, OWN_EVENT_MODES, type SourceEntry, type SampleFit } from './source-search';
+import { streamPackUrl, streamPipelineUrl } from './cribl-ui-links';
 import { PipelineVisualizerLink } from './PipelineVisualizerLink';
 import { foregroundReportAvailability, groupForegroundReportRows, stagesFromArtifact, stagesFromBuilt, type ForegroundReportRow } from './background-run-report';
 
@@ -673,27 +689,7 @@ type PackMode = 'add-pipeline' | 'batch' | 'demo' | 'experiment' | 'post-process
 type Step = 'mode' | 'select-group' | 'select-pack' | 'select-action' | 'select-pipeline' | 'optimize-goals' | 'optimize-sample' | 'optimize-running' | 'optimize-done' | 'name' | 'source' | 'destination' | 'ai-analysis' | 'options' | 'review' | 'deploying' | 'done' | 'batch-upload' | 'batch-preflight' | 'batch-running' | 'batch-done' | 'batch-bg-running' | 'demo-group' | 'demo-sources' | 'demo-destinations' | 'demo-routing' | 'demo-deploying' | 'demo-done' | 'demo-cleanup' | 'demo-cleanup-done' | 'experiment-setup' | 'experiment-running' | 'experiment-done' | 'pp-formats';
 
 // One selected source in the demo builder.
-interface DemoSource {
-  sourcetype: string;       // canonical sourcetype
-  allowCodeFunctions: boolean;
-}
-
-// Result of building one demo combination, for the done screen.
-interface DemoResult {
-  sourcetype: string;
-  /** Flow format key (main pack pipeline) or `pp:<fmt>` (post-processing pack). */
-  format: string;
-  kind: 'main' | 'pp';
-  label: string;
-  status: 'pending' | 'running' | 'success' | 'error';
-  phase?: BatchPhase;              // truthful per-combination phase (shared with batch UI)
-  score?: number | null;          // null = N/A (e.g. a passthrough raw copy — nothing to score)
-  // Per-stage scores from the 3-stage builder (null = N/A, e.g. mapping for JSON).
-  stageScores?: { extraction: number | null; mapping: number | null; optimization: number | null };
-  packId?: string;
-  pipelineId?: string;
-  message?: string;
-}
+// DemoSource / DemoResult live in src/demo-deploy.ts with the deployer.
 
 interface BatchRow {
   sourcetype: string;
@@ -1400,6 +1396,20 @@ function JourneyModal({ format, stages, profileArgs, onClose }: { format: string
   );
 }
 
+/** The rail mark: a pack (an isometric box, streams packed in) with the spark that generates it. */
+function PackGeneratorLogo() {
+  return (
+    <svg className="pg-logo" viewBox="0 0 32 32" width="30" height="30" aria-hidden="true">
+      <rect width="32" height="32" rx="8" fill="#1a1a2e" />
+      <path d="M16 7.5 24.5 12.3 16 17.1 7.5 12.3Z" fill="#7ff0ee" />
+      <path d="M7.5 12.3 16 17.1V26.8L7.5 22Z" fill="#00b8b8" />
+      <path d="M24.5 12.3V22L16 26.8V17.1Z" fill="#007a82" />
+      <path d="M9.6 16.4 13.9 18.8M9.6 19.4 13.9 21.8" stroke="#fff" strokeOpacity=".6" strokeWidth="1.3" strokeLinecap="round" />
+      <path d="M25.6 3.2 26.5 5.6 28.9 6.5 26.5 7.4 25.6 9.8 24.7 7.4 22.3 6.5 24.7 5.6Z" fill="#fff" />
+    </svg>
+  );
+}
+
 function App() {
   const [step, setStep] = useState<Step>('mode');
   const [packMode, setPackMode] = useState<PackMode>('experiment');
@@ -1432,6 +1442,11 @@ function App() {
   const [sourcetypeFilter, setSourcetypeFilter] = useState('');
   const [reductionToggles, setReductionToggles] = useState<Record<string, boolean>>({});
   const [allowCodeFunctions, setAllowCodeFunctions] = useState(false);
+  // Opt-in. With Code functions off it only cleans the pipeline with standard Functions; the
+  // Code-function compile on top is only offered with allowCodeFunctions on.
+  const [performanceMode, setPerformanceMode] = useState(false);
+  // Off: performance mode only merges evals; every || fallback is kept (no library involved).
+  const [useVendorFieldLibrary, setUseVendorFieldLibrary] = useState(false);
   const [createDatagen, setCreateDatagen] = useState(false);
   const [autoValidate, setAutoValidate] = useState(false);
   const [deployLog, setDeployLog] = useState<string[]>([]);
@@ -1536,6 +1551,12 @@ function App() {
   // `'unknown'` = too large to sniff or the download failed.
   const [sampleFormats, setSampleFormats] = useState<Record<string, SampleFormatDescription | 'busy' | 'unknown'>>({});
   const sampleFormatAttempted = useRef<Set<string>>(new Set());
+  // Worker-group sample downloads, one in-flight or settled promise per group+sample+size:
+  // the format sniffer, a click on the same row and a re-opened list share ONE request
+  // (build 998 — a clicked row was downloaded again, and every re-list re-sniffed). The
+  // listed size is in the key, so a sample changed in Cribl since is fetched fresh. A
+  // failed download is dropped, never memoized, so a retry fetches again.
+  const sampleContentCache = useRef<Map<string, Promise<{ events: string[]; count: number }>>>(new Map());
   const [existingSampleLabel, setExistingSampleLabel] = useState('');
   // Local pseudonymisation of the sample. Sanitising runs in the SanitizeWizard modal
   // (the same flow as the Sample Library); this screen only opens it and receives the
@@ -1601,6 +1622,10 @@ function App() {
     return next;
   });
   const [batchError, setBatchError] = useState('');
+  // A file longer than the batch limit: the extra rows are not loaded.
+  const [batchCapNotice, setBatchCapNotice] = useState('');
+  // Shown the moment Batch create is chosen while a run is still open.
+  const [batchOpenRunNotice, setBatchOpenRunNotice] = useState('');
   const [batchRunning, setBatchRunning] = useState(false);
   const [batchConflicts, setBatchConflicts] = useState<string[]>([]);
   const [batchEditingRow, setBatchEditingRow] = useState<number | null>(null);
@@ -1636,7 +1661,10 @@ function App() {
   // Cribl AI serves one call at a time (src/ai-client.ts), so on Cribl AI every
   // AI-driven pool — row actions, batch rows, pre-flight model work — runs 1 wide.
   const MAX_ROW_ACTIONS = aiParallelism(4);
-  const batchConcurrency = aiParallelism(BATCH_FOREGROUND_CONCURRENCY);
+  // Standalone only. Inside Cribl the worker runner is one pack at a time and this is not shown.
+  const [batchParallel, setBatchParallel] = useState(BATCH_FOREGROUND_CONCURRENCY);
+  const [batchProvider, setBatchProvider] = useState<AiProvider>(() => loadSettings().provider);
+  const batchConcurrency = aiParallelism(clampBatchParallel(batchParallel));
   // Ref-based stop signal (mirrors preflightAbort): stops new rows from
   // starting, does not cancel a call already in flight. Reset at the top of
   // every run so a previous run's stop can't leak into a new one.
@@ -1644,6 +1672,7 @@ function App() {
   // Kill (src/batch-kill.ts): bumped by Kill so a run abandoned mid-request can
   // never write to the screen — or reach the group commit — when it wakes up.
   const batchRunGen = useRef(0);
+  const draftSnapRef = useRef<(Omit<SerializeWizardDraftInput, 'packMode'> & { packMode: string; step: string }) | null>(null);
   // Two-press confirm for Kill (the sandboxed iframe has no window.confirm):
   // 'fg' / 'bg' = armed for that run mode, null = not armed.
   const [killArmed, setKillArmed] = useState<'fg' | 'bg' | null>(null);
@@ -1656,6 +1685,9 @@ function App() {
   // (batchRows/batchConflictActions/batchSkipPacks) it depends on has committed —
   // handleBatchDeploy reads those via closure, so it must run AFTER that render.
   const [pendingResumeRun, setPendingResumeRun] = useState<{ workerGroup: string; results: BatchResult[] } | null>(null);
+  // Pack-build wizard draft (refresh / back): offered on Home as Resume/Discard.
+  const [wizardDraftResume, setWizardDraftResume] = useState<WizardDraftDocument | null>(null);
+  const [wizardDraftNotice, setWizardDraftNotice] = useState('');
 
   // --- "Batch — Background" (build 715): same packMode==='batch', same CSV
   // upload/pre-flight/conflict screens — this flag only forks the flow at the
@@ -2066,6 +2098,13 @@ function App() {
   const [demoLakeDatasets, setDemoLakeDatasets] = useState<LakeDataset[]>([]);
   const [demoLakeDataset, setDemoLakeDataset] = useState('');
   const [demoLakeLoading, setDemoLakeLoading] = useState(false);
+  // A demo generated from a whiteboard (spec R11, R12, R15): the board it came from, the
+  // Lake dataset it creates, and every board's record (who runs a demo on which group).
+  const [demoOrigin, setDemoOrigin] = useState<DemoSeed | null>(null);
+  const [demoLakeCreate, setDemoLakeCreate] = useState<{ datasetId: string; retentionPeriodInDays: number } | null>(null);
+  const [demoBoardRows, setDemoBoardRows] = useState<WhiteboardIndexEntry[]>([]);
+  const [demoCleanupLake, setDemoCleanupLake] = useState<{ id: string; remove: boolean } | null>(null);
+  const [wbOpenBoardId, setWbOpenBoardId] = useState<string | null>(null);
   const [demoCreateDashboard, setDemoCreateDashboard] = useState(false);
   const [demoDashboardDatasets, setDemoDashboardDatasets] = useState<SearchDataset[]>([]);
   const [demoDashboardDataset, setDemoDashboardDataset] = useState('');
@@ -2094,6 +2133,9 @@ function App() {
   const [expStartedAt, setExpStartedAt] = useState(0);
   const [expError, setExpError] = useState('');
   const [expPackId, setExpPackId] = useState('');
+  // Did the ONE final commit+deploy land? null = not reached. The Results page
+  // reads this, so a failed deploy never shows as "live".
+  const [expDeploy, setExpDeploy] = useState<{ ok: boolean; at: number; message?: string } | null>(null);
   // Click-to-enlarge event viewer for the 3-stage report cards (the inline
   // previews are tiny — this opens the full event in a modal).
   const [eventModal, setEventModal] = useState<{ title: string; body: string } | null>(null);
@@ -2104,8 +2146,6 @@ function App() {
   const [demoCleanupSel, setDemoCleanupSel] = useState<{ routes: Set<string>; datagens: Set<string>; packs: Set<string>; outputs: Set<string> }>({ routes: new Set(), datagens: new Set(), packs: new Set(), outputs: new Set() });
   const [demoCleaning, setDemoCleaning] = useState(false);
   const [demoCleanupResult, setDemoCleanupResult] = useState<{ routes: string[]; datagens: string[]; packs: string[]; outputs: string[]; errors: string[] } | null>(null);
-  const DEMO_MAX_SOURCES = 5;
-  const DEMO_MAX_FORMATS = 3;
 
   /**
    * Any change to the sample events invalidates the sanitised mark.
@@ -2146,6 +2186,8 @@ function App() {
     setSourcetypeFilter('');
     setReductionToggles({});
     setAllowCodeFunctions(false);
+    setPerformanceMode(false);
+    setUseVendorFieldLibrary(false);
     setCreateDatagen(false);
     setAutoValidate(false);
     setDeployLog([]);
@@ -2202,6 +2244,8 @@ function App() {
     setBatchTraces({});
     batchReportStages.current = {};
     setBatchError('');
+    setBatchCapNotice('');
+    setBatchOpenRunNotice('');
     setBatchRunning(false);
     setBatchConflicts([]);
     setBatchSkipPacks(new Set());
@@ -2228,6 +2272,9 @@ function App() {
     setRepairing(false);
     setValidationError('');
     setDemoSources([]);
+    setDemoOrigin(null);
+    setDemoLakeCreate(null);
+    setDemoCleanupLake(null);
     setDemoSourceInput('');
     setDemoSourceHint('');
     setDemoSourceSuggestions([]);
@@ -2258,10 +2305,17 @@ function App() {
     setExpPhase('prep');
     setExpError('');
     setExpPackId('');
+    setExpDeploy(null);
     setDemoScan(null);
     setDemoCleanupSel({ routes: new Set(), datagens: new Set(), packs: new Set(), outputs: new Set() });
     setDemoCleaning(false);
     setDemoCleanupResult(null);
+  };
+
+  const finishWizardDraft = () => {
+    setWizardDraftResume(null);
+    setWizardDraftNotice('');
+    void clearWizardDraft();
   };
 
   useEffect(() => {
@@ -2312,6 +2366,42 @@ function App() {
     })();
   }, []);
 
+  // Whiteboards & demos is for Cribl and partner teams, not customers: hidden until the
+  // switch in Settings › Menu turns it on, on every install.
+  const [wbDemosOn, setWbDemosOn] = useState(() => loadQualitySettings().whiteboardsDemos === true);
+  useEffect(() => {
+    let cancelled = false;
+    void loadQualitySettingsAsync().then(q => { if (!cancelled) setWbDemosOn(q.whiteboardsDemos === true); });
+    return () => { cancelled = true; };
+  }, []);
+  // The switch applies at once: it needs no Save, and leaves the rest of the Settings form as it is.
+  const setWhiteboardsDemos = (on: boolean) => {
+    saveQualitySettings({ ...loadQualitySettings(), whiteboardsDemos: on });
+    setQForm(f => ({ ...f, whiteboardsDemos: on }));
+    setWbDemosOn(on);
+  };
+
+  // The left rail folds to icons; remembered on this browser.
+  const [railCollapsed, setRailCollapsed] = useState(() => safeGetItem('pg-rail-collapsed') === '1');
+  // An open whiteboard folds the rail for room; leaving the board gives back what it was. Not remembered:
+  // the SE's own choice (toggleRail) is, and a toggle while on a board is kept when it closes.
+  const railRef = useRef(railCollapsed);
+  railRef.current = railCollapsed;
+  const railBeforeBoard = useRef<boolean | null>(null);
+  const toggleRail = () => {
+    railBeforeBoard.current = null;
+    setRailCollapsed(c => { safeSetItem('pg-rail-collapsed', c ? '0' : '1'); return !c; });
+  };
+  const onWhiteboardOpen = useCallback((open: boolean) => {
+    if (open) {
+      if (railBeforeBoard.current === null) railBeforeBoard.current = railRef.current;
+      setRailCollapsed(true);
+    } else if (railBeforeBoard.current !== null) {
+      setRailCollapsed(railBeforeBoard.current);
+      railBeforeBoard.current = null;
+    }
+  }, []);
+
   // Datatype parsers imported by THIS install (iframe Sync) live in the app KV
   // store, not in the bundle — install them before anything builds a pipeline, or
   // an imported sourcetype resolves to no parser at all.
@@ -2323,6 +2413,46 @@ function App() {
     void loadBatchCheckpoint().then(cp => {
       if (cp && cp.status !== 'done') setBatchResumeCheckpoint(cp);
     });
+  }, []);
+
+  useEffect(() => {
+    void loadWizardDraft().then(d => { if (d) setWizardDraftResume(d); });
+  }, []);
+
+  useEffect(() => {
+    const snap = draftSnapRef.current;
+    if (!snap || !shouldPersistWizardDraft(snap.step, snap.packMode)) return;
+    if (!isPackBuildDraftMode(snap.packMode)) return;
+    const handle = window.setTimeout(() => {
+      void saveWizardDraft(serializeWizardDraft({ ...snap, packMode: snap.packMode as PackModeDraft })).then(r => {
+        if (r.trimmedSample) setWizardDraftNotice('Sample was trimmed to fit storage — re-paste or re-upload if you need the full text.');
+        else if (!r.ok) setWizardDraftNotice('Draft saved in this browser only — reopening the Cribl app may not restore it.');
+      });
+    }, 400);
+    return () => window.clearTimeout(handle);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [
+    step, packMode, state, sourcetype, customSourcetype, isCustomSourcetype, customConfirmed, confirmedFormat,
+    selectedGroup, selectedPackId, addImproveAction, optimizePipelineId, optimizeGoals, optimizeGuidance,
+    flowOptimize, flowSrcRules, flowOcsfKeepRaw, flowOverwrite, flowPpOverwrite, flowNameEdited, flowPp,
+    allowCodeFunctions, createDatagen, autoValidate, reductionToggles,
+    ppSourceFormat, ppDestFormat, ppSchema,
+  ]);
+
+  useEffect(() => {
+    const onBeforeUnload = (e: BeforeUnloadEvent) => {
+      const snap = draftSnapRef.current;
+      if (!snap) return;
+      if (shouldPersistWizardDraft(snap.step, snap.packMode)) {
+        e.preventDefault();
+        e.returnValue = '';
+      }
+      if (isPackBuildDraftMode(snap.packMode) && isBusyStep(snap.step)) {
+        captureWizardDraftBeforeUnload({ ...snap, packMode: snap.packMode as PackModeDraft });
+      }
+    };
+    window.addEventListener('beforeunload', onBeforeUnload);
+    return () => window.removeEventListener('beforeunload', onBeforeUnload);
   }, []);
 
   // handleBatchDeploy reads batchRows/batchConflictActions/batchSkipPacks from
@@ -2602,7 +2732,7 @@ function App() {
     // workers, and Cribl AI runs every preview and score there, so in both the
     // picker greys out groups with none connected. Load the health when that
     // picker opens; other flows don't need it.
-    if (step === 'select-group' && ((packMode === 'batch' && batchBackground) || isCriblAiActive())) {
+    if (step === 'select-group' && ((packMode === 'batch' && backgroundBatchSupported()) || isCriblAiActive())) {
       void refreshWorkerHealth();
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -2613,6 +2743,8 @@ function App() {
   // step, move the selection off a choice that is not allowed, so Start always
   // matches a card.
   const batchRun = batchRunChoices({ inCribl: backgroundBatchSupported(), criblAi: isCriblAiActive(), rows: batchRows.length });
+  // Inside Cribl there is one batch path: the worker runner. Standalone stays in this browser.
+  const batchInApp = backgroundBatchSupported();
   useEffect(() => {
     if (step !== 'select-group' || packMode !== 'batch') return;
     if (batchBackground && !batchRun.background.ok && batchRun.foreground.ok) setBatchBackground(false);
@@ -2681,7 +2813,8 @@ function App() {
     try {
       const datasets = await listLakeDatasets();
       setDemoLakeDatasets(datasets);
-      if (demoLakeDataset && !datasets.some(dataset => dataset.id === demoLakeDataset)) setDemoLakeDataset('');
+      // A whiteboard demo's own dataset does not exist until the deploy creates it.
+      if (demoLakeDataset && demoLakeCreate?.datasetId !== demoLakeDataset && !datasets.some(dataset => dataset.id === demoLakeDataset)) setDemoLakeDataset('');
     } catch {
       setDemoLakeDatasets([]);
     } finally {
@@ -2725,7 +2858,10 @@ function App() {
   };
 
   useEffect(() => {
-    if (step === 'demo-group') fetchDemoGroupHealth();
+    if (step === 'demo-group') {
+      fetchDemoGroupHealth();
+      void listBoards().then(setDemoBoardRows).catch(() => setDemoBoardRows([]));
+    }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [step]);
 
@@ -2830,6 +2966,8 @@ function App() {
   // the Create button and the build, so what is shown is what gets created.
   const currentDemoPlan = (): DemoPlan => planDemoFlow({
     sources: demoSources.map(src => src.sourcetype), destFormats: demoDestFormats, pp: demoPp, cells: demoCells,
+    // A whiteboard's demo lives in its own namespace (spec R16); a hand-made demo keeps legacy names.
+    ns: demoOrigin?.ns || '',
   });
 
   // Resolve sample events for a source — prefer a real reference, fall back to AI.
@@ -2871,6 +3009,53 @@ function App() {
   // post-processing packs fed by the OCSF replay datagen, one lane
   // datagen per format, then the isolated demo route block. Everything is built
   // deferred; setMasterRoutes' single commit + deploy makes it all live at once.
+  // The board a demo came from records it. Its ids are in its own namespace (spec R16),
+  // so no other board's demo was touched. Never throws into the demo.
+  const recordWhiteboardDemo = async (seed: DemoSeed, outcome: Parameters<typeof deploymentRecord>[1]): Promise<string> => {
+    try {
+      const [doc, lib] = await Promise.all([loadBoard(seed.boardId), loadLibrary()]);
+      if (!doc) return `⚠ The ${seed.prospect || 'whiteboard'} board was not found, so this demo is not recorded on it.`;
+      // This board's own earlier demo on the group (same namespace) is the one just replaced.
+      const released = markGroupReleased(doc, outcome.group, new Date(), new Set([seed.ns]));
+      const saved = await saveBoard(recordDeployment(released || doc, deploymentRecord(seed, outcome)), lib);
+      if (!saved.ok) return `⚠ The demo is live, but recording it on the whiteboard failed: ${saved.message}`;
+      return `✓ Recorded on the ${seed.prospect || 'whiteboard'} board.`;
+    } catch (err) {
+      return `⚠ The demo is live, but recording it on the whiteboard failed: ${err instanceof Error ? err.message : String(err)}`;
+    }
+  };
+  /** Mark removed the demos on `group` named in `namespaces` ('' = legacy), on every board that recorded one. */
+  const releaseGroupOnBoards = async (group: string, rows: WhiteboardIndexEntry[], namespaces: ReadonlySet<string>) => {
+    if (!namespaces.size) return;
+    const lib = await loadLibrary();
+    const at = new Date();
+    for (const r of rows.filter(b => b.demo?.group === group && b.demo.status !== 'removed')) {
+      const d = await loadBoard(r.id);
+      const next = d && markGroupReleased(d, group, at, namespaces);
+      if (next) await saveBoard(next, lib);
+    }
+  };
+  /** Fill Demo mode from a validated whiteboard and open it (spec R11). Nothing is written yet. */
+  const startDemoFromSeed = (seed: DemoSeed) => {
+    guardLeave(() => {
+      closeTool();
+      if (step !== 'mode') resetAll();
+      setPackMode('demo');
+      setDemoSources(seed.sources.map(st => ({ sourcetype: st, allowCodeFunctions: false })));
+      setDemoDestFormats(seed.destFormats);
+      setDemoCells([]);
+      setDemoPp(EMPTY_FLOW_PP);
+      setDemoLakeSelected(!!seed.lake);
+      setDemoLakeDataset(seed.lake?.datasetId || '');
+      setDemoLakeCreate(seed.lake);
+      // A Search dashboard over the board's Lake dataset (spec R19): the existing demo dashboard step.
+      setDemoCreateDashboard(!!seed.lake?.dashboard);
+      if (seed.lake?.dashboard) { setDemoDashboardStyle('native'); setDemoDatatypeSelections({}); }
+      setDemoOrigin(seed);
+      setStep('demo-group');
+    });
+  };
+
   const handleCreateDemo = async () => {
     setDemoError('');
     setDemoLog([]);
@@ -2891,275 +3076,36 @@ function App() {
       const demoQ = loadQualitySettings();
       const demoThresholds = { extraction: demoQ.expExtractionThreshold ?? 80, mapping: demoQ.expMappingThreshold ?? 80, optimization: demoQ.expOptimizationThreshold ?? 80 };
       const demoShareOn = goldenSharingConfigured(demoQ);
-      const fmtLabel = (fmt: string) => flowFormatInfo(fmt).label;
 
-      // Seed the result list up-front so every pipeline and post pack shows a live phase.
-      const results: DemoResult[] = [
-        ...plan.packs.flatMap(pk => pk.pipelines.map(pl => ({
-          sourcetype: pk.sourcetype, format: pl.fmt, kind: 'main' as const,
-          label: pl.fmt === 'ocsf' && !plan.routes.some(r => r.sourcetype === pk.sourcetype && r.kind === 'main' && r.target === 'ocsf') ? `${fmtLabel('ocsf')} (feeds post-processing)` : fmtLabel(pl.fmt),
-          status: 'pending' as const, phase: 'queued' as BatchPhase,
-        }))),
-        ...plan.ppPacks.map(pp => ({
-          sourcetype: pp.sourcetype, format: pp.target, kind: 'pp' as const,
-          label: `OCSF → ${ppOutputLabel(pp.output)}`, status: 'pending' as const, phase: 'queued' as BatchPhase,
-        })),
-      ];
-      const idxOf = (st: string, fmt: string) => results.findIndex(r => r.sourcetype === st && r.format === fmt);
-      const patchResult = (i: number, patch: Partial<DemoResult>) => {
-        if (i < 0) return;
-        results[i] = { ...results[i], ...patch };
-        setDemoResults([...results]);
-      };
-      setDemoResults([...results]);
-
-      // Sample choice and extraction preparation are separate sealed stages.
-      // Resolve the sample first so format/schema decisions cannot trigger parser
-      // generation; resolve extraction later and cache it once per source sample.
-      const sampleCache = createAsyncCache<string, string>();
-      const extractionPrepCache = createAsyncCache<string, {
-        aiParseFns: Awaited<ReturnType<typeof resolveParseFunctions>>['aiParseFns'];
-        parsedFieldNames: string[];
-        referenceLookups: Awaited<ReturnType<typeof fetchReferenceLookups>>;
-      }>();
-      const resolveSourceSample = (sourcetype: string, log: (m: string) => void) => {
-        const cached = sampleCache.getOrCreate(sourcetype, () => resolveDemoSampleEvents(sourcetype, log));
-        if (cached.reused) log(`Reusing resolved ${sourcetype} sample.`);
-        return cached.value;
-      };
-      const resolveSourceExtraction = (sourcetype: string, sampleEvents: string, log: (m: string) => void) => {
-        const cacheKey = `${sourcetype}::${JSON.stringify(sampleFingerprint(sampleEvents))}`;
-        const cached = extractionPrepCache.getOrCreate(cacheKey, async () => {
-          const [parseResult, referenceLookups] = await Promise.all([
-            resolveParseFunctions({ sourcetype, sampleEvents, log, model: loadQualitySettings().normalModel }),
-            fetchReferenceLookups(sourcetype).catch(() => []),
-          ]);
-          return { aiParseFns: parseResult.aiParseFns, parsedFieldNames: parseResult.parsedFieldNames, referenceLookups };
-        });
-        if (cached.reused) log(`Reusing prepared ${sourcetype} extraction and lookups.`);
-        return cached.value;
-      };
-
-      // 1. Resolve sample events per source (via the cache — shared with the pack
-      //    builds below so each source is prepared exactly once).
-      dlog(`Preparing ${demoSources.length} source(s)…`);
-      const eventsBySource: Record<string, string> = {};
-      const sampleFailures: Record<string, string> = {};
-      for (const src of demoSources) {
-        dlog(`• ${src.sourcetype}`);
-        results.forEach((r, k) => { if (r.sourcetype === src.sourcetype) patchResult(k, { status: 'running', phase: 'preparing', message: 'Preparing source data…' }); });
-        try {
-          eventsBySource[src.sourcetype] = await resolveSourceSample(src.sourcetype, dlog);
-        } catch (e) {
-          eventsBySource[src.sourcetype] = '';
-          sampleFailures[src.sourcetype] = e instanceof Error ? e.message : 'unknown error';
-        }
-      }
-      if (!demoSources.some(src => eventsBySource[src.sourcetype])) {
-        // Name the real reason per source. Tailscale is a standalone concept — in
-        // the iframe the model is called from the browser, so pointing there sent
-        // people to check a VPN that has nothing to do with the failure.
-        const failed = demoSources.map(src => `${src.sourcetype}: ${sampleFailures[src.sourcetype] || 'no sample available'}`);
-        const hint = getRunMode() === 'iframe'
-          ? 'AI runs in your browser here — check the API key and model in Settings.'
-          : 'Check AI/Tailscale connectivity and retry.';
-        throw new Error(`Could not obtain sample events for any source. ${failed.join('; ')}. ${hint}`);
-      }
-
-      // 2. Main packs — one per source, one pipeline per format (OCSF last), the
-      //    Build pack flow loop: first pipeline creates the pack, the rest are
-      //    added; extraction is reused per class. Each pipeline's route inside the
-      //    pack is its lane filter, so the master route picks the pipeline by input.
-      const built = new Set<string>();                       // `${st}::${fmt}`
-      const ocsfBySource = new Map<string, DeployedPipeline>();
-      const scoresOf = (stages: { stage: string; score: number | null }[]) => {
-        const at = (k: string) => stages.find(x => x.stage === k)?.score ?? null;
-        return { extraction: at('extraction'), mapping: at('mapping'), optimization: at('optimization') };
-      };
-      for (const pk of plan.packs) {
-        const st = pk.sourcetype;
-        const src = demoSources.find(x => x.sourcetype === st);
-        const sampleEvents = eventsBySource[st];
-        if (!sampleEvents) {
-          const why = `No sample: ${sampleFailures[st] || 'none available'}`;
-          results.forEach((r, k) => { if (r.sourcetype === st) patchResult(k, { status: 'error', phase: 'done', message: why }); });
-          dlog(`  ✗ [${st}] ${why} — nothing built for this source.`);
-          continue;
-        }
-        const prep = await resolveSourceExtraction(st, sampleEvents, dlog);
-        const packageJson = {
-          version: '1.0.0', author: 'Cribl Pack Generator (demo)', tags: { streamtags: [] }, exports: [],
-          displayName: `[DEMO] ${st}`, name: pk.packId,
-          description: `[DEMO] ${st} to ${pk.pipelines.map(pl => fmtLabel(pl.fmt)).join(', ')} — one pipeline per format, picked by the demo lane datagen.`,
-        };
-        const extractionByClass = new Map<'mapped' | 'raw', PreparedExtraction>();
-        const extractionClassOf = (f: string): 'mapped' | 'raw' =>
-          ['json', 'manual', 'raw', 'raw_fields', 'passthrough', ''].includes(flowBuildFormat(f)) ? 'raw' : 'mapped';
-        let firstBuilt = false;
-        dlog(`[${st}] Building pack ${pk.packId} (${pk.pipelines.length} pipeline${pk.pipelines.length > 1 ? 's' : ''})…`);
-        for (const pl of pk.pipelines) {
-          const ri = idxOf(st, pl.fmt);
-          // The demo has no per-format table / model / class picker: resolve each
-          // Flow key to the concrete golden-keyed format from this source's sample
-          // ('sentinel' → commonsecuritylog, asim/cim/ocsf → the sample's class).
-          let buildFmt = flowBuildFormat(pl.fmt);
-          if (buildFmt === 'sentinel') buildFmt = 'commonsecuritylog';
-          buildFmt = concretizeAsimFormat(buildFmt as DestFormat, st, sampleEvents);
-          buildFmt = concretizeCimFormat(buildFmt as DestFormat, st, sampleEvents);
-          buildFmt = concretizeOcsfFormat(buildFmt as DestFormat, st, sampleEvents);
-          if (buildFmt !== flowBuildFormat(pl.fmt)) dlog(`  [${st}] ${fmtLabel(pl.fmt)} → ${buildFmt} (concrete golden format).`);
-          patchResult(ri, { status: 'running', phase: 'building', message: `Building ${pl.pipelineId} (3-stage)…` });
-          try {
-            const out = await buildStagedPipeline({
-              sourcetype: st, destFormat: buildFmt, sampleEvents, group, packId: pk.packId, pipelineId: pl.pipelineId,
-              packageJson, reductionToggles, thresholds: demoThresholds, shareOn: demoShareOn,
-              origin: 'demo', mode: firstBuilt ? 'add-pipeline' : 'new', uploadSample: !firstBuilt,
-              routeFilter: pl.routeFilter, destinationKey: pl.fmt,
-              preparedExtraction: extractionByClass.get(extractionClassOf(pl.fmt)) ?? null,
-              allFormats: pk.pipelines.map(x => x.fmt),
-              allowCode: src?.allowCodeFunctions, log: dlog, logScore: maybeLogScore,
-              preparedParseFns: prep.aiParseFns?.functions,
-              onStage: (r) => patchResult(ri, { phase: r.stage === 'optimization' ? 'scoring' : 'building', message: `${r.stage}: ${r.score ?? 'n/a'}` }),
-            });
-            if (!out) {
-              patchResult(ri, { status: 'error', phase: 'done', message: 'No sample events — nothing built.' });
-              dlog(`  ⚠ [${st} to ${fmtLabel(pl.fmt)}] no sample — skipped.`);
-              continue;
-            }
-            firstBuilt = true;
-            built.add(`${st}::${pl.fmt}`);
-            if (out.extractionForReuse && !extractionByClass.has(out.extractionForReuse.extractionClass)) {
-              extractionByClass.set(out.extractionForReuse.extractionClass, out.extractionForReuse);
-            }
-            if (isOcsfScoredFormat(buildFmt)) {  // NG SIEM ships raw, never OCSF to post-process
-              ocsfBySource.set(st, { pipelineId: pl.pipelineId, destFormat: buildFmt, sourcetype: st, packId: pk.packId, workerGroup: group, sampleName: getSampleName(st) });
-            }
-            const stageScores = scoresOf(out.stages);
-            // null (N/A) when there is nothing to score — e.g. a passthrough raw
-            // copy. Never coerce that to 0: a 0 reads as a failed build.
-            // NG SIEM: the optimization stage grades what the destination receives
-            // (raw fidelity) and decides the overall — see averageStageScores.
-            const score = averageStageScores(stageScores.extraction, stageScores.mapping, out.stages.find(x => x.stage === 'optimization'));
-            patchResult(ri, { status: 'success', phase: 'done', score, stageScores, packId: pk.packId, pipelineId: pl.pipelineId, message: `score ${score ?? 'N/A'}` });
-            dlog(`✓ [${st} to ${fmtLabel(pl.fmt)}] ${pl.pipelineId} — extraction ${stageScores.extraction ?? 'n/a'} · mapping ${stageScores.mapping ?? 'n/a'} · output shaping ${stageScores.optimization ?? 'n/a'}.`);
-          } catch (err) {
-            patchResult(ri, { status: 'error', phase: 'done', message: err instanceof Error ? err.message : 'build failed' });
-            dlog(`  ✗ [${st} to ${fmtLabel(pl.fmt)}] ${err instanceof Error ? err.message : 'failed'} (no route written).`);
-          }
-        }
-      }
-
-      // 3. OCSF → post-processing. The post packs' sample AND the replay feed are
-      //    the OCSF pipeline's own preview output, so the replay datagen sends
-      //    exactly what the live chain would deliver (the curated OCSF set only
-      //    when that preview returns nothing).
-      const ppOk = new Set<string>();                        // `${st}::${target}`
-      const replaySources: { sourcetype: string; events: string[] }[] = [];
-      for (const st of [...new Set(plan.ppPacks.map(pp => pp.sourcetype))]) {
-        const mine = plan.ppPacks.filter(pp => pp.sourcetype === st);
-        const upstream = ocsfBySource.get(st);
-        if (!upstream) {
-          mine.forEach(pp => patchResult(idxOf(st, pp.target), { status: 'error', phase: 'done', message: 'Skipped: the OCSF pipeline was not built' }));
-          dlog(`⚠ [${st}] OCSF pipeline was not built — skipping its post-processing packs (they read its output).`);
-          continue;
-        }
-        const upstreamEvents = await upstreamOcsfOutputEvents(upstream, dlog);
-        if (plan.replaySourcetypes.includes(st)) {
-          const recorded = upstreamEvents.length
-            ? upstreamEvents
-            : postProcessSampleEvents('ocsf').split('\n').filter(Boolean).map(l => { try { return JSON.parse(l); } catch { return null; } }).filter(Boolean) as Record<string, unknown>[];
-          if (recorded.length) replaySources.push({ sourcetype: st, events: recorded.map(ocsfReplayLine) });
-        }
-        const ppResults = await buildFlowPostProcessPacks(
-          mine.map(pp => pp.output), group, dlog,
-          (i, p) => {
-            const status = p.state === 'running' ? 'running' : p.state === 'error' ? 'error' : p.state === 'done' ? 'success' : null;
-            if (status) patchResult(idxOf(st, mine[i].target), { status, phase: status === 'running' ? 'building' : 'done', ...(p.error ? { message: p.error } : {}) });
-          },
-          undefined,
-          {
-            sourcetype: st, upstreamEvents,
-            packIdFor: o => demoPpPackId(st, ppEffectiveFormat(o)),
-            displayNameFor: o => `[DEMO] ${st} OCSF to ${ppOutputLabel(o)}`,
-          },
-        );
-        ppResults.forEach((r, i) => {
-          if (r.error) return;
-          ppOk.add(`${st}::${mine[i].target}`);
-          patchResult(idxOf(st, mine[i].target), { packId: r.packId, pipelineId: r.pipelineId, message: r.optimize ? 'optimized by category' : 'full copy' });
-        });
-      }
-
-      // 4. Datagens: one lane per main-pack format (only sources whose pipeline
-      //    was built), plus the OCSF replay. Inactive until the deploy below.
-      const datagenIds: string[] = [];
-      for (const lane of plan.lanes) {
-        const members = lane.sourcetypes.filter(st => built.has(`${st}::${lane.fmt}`) && eventsBySource[st]);
-        if (!members.length) continue;
-        const dg = await createDemoDatagen(group, members.map(st => ({ sourcetype: st, events: eventsBySource[st].split('\n').filter(Boolean) })), { datagenId: lane.id, eventsPerSec: DEMO_EVENTS_PER_SEC });
-        datagenIds.push(dg.datagenId);
-        dlog(`✓ Lane datagen "${dg.datagenId}" (${fmtLabel(lane.fmt)}): ${members.join(', ')} at ${DEMO_EVENTS_PER_SEC} ev/s each.`);
-      }
-      const replayed = replaySources.filter(r => plan.ppPacks.some(pp => pp.sourcetype === r.sourcetype && ppOk.has(`${r.sourcetype}::${pp.target}`)));
-      if (replayed.length) {
-        const dg = await createDemoDatagen(group, replayed, { datagenId: DEMO_OCSF_REPLAY_ID, eventsPerSec: DEMO_EVENTS_PER_SEC });
-        datagenIds.push(dg.datagenId);
-        dlog(`✓ OCSF replay datagen "${dg.datagenId}": ${replayed.map(r => `${r.sourcetype} (${r.events.length} recorded event${r.events.length === 1 ? '' : 's'})`).join(', ')}.`);
-      }
-      if (!datagenIds.length) throw new Error('Nothing was built — no datagen or route was created. See the log above.');
-
-      // 5. "Cribl Lake" outputs resolve to the demo dataset's cribl_lake output.
-      let lakeOutputId: string | null = null;
-      if (plan.routes.some(r => r.output === DEMO_LAKE_OUTPUT)) {
-        dlog(`Ensuring Cribl Lake output → dataset "${demoLakeDataset}"…`);
-        lakeOutputId = await ensureLakeOutput(group, demoLakeDataset);
-        dlog(`✓ Lake output: ${lakeOutputId}`);
-      }
-
-      // 6. The demo route block, one commented group per source, then the
-      //    terminator. Cribl keys each comment by its position in the COMBINED
-      //    comments+routes list — addComment() computes that index.
-      const demoRouteBlock: any[] = [];
-      const demoComments: { comment: string; index: number }[] = [];
-      const addComment = (comment: string) => demoComments.push({ comment, index: demoRouteBlock.length + demoComments.length });
-      const live = plan.routes.filter(r => r.kind === 'pp' ? ppOk.has(`${r.sourcetype}::${r.target}`) : built.has(`${r.sourcetype}::${r.target}`));
-      for (const src of demoSources) {
-        const mine = live.filter(r => r.sourcetype === src.sourcetype);
-        if (!mine.length) continue;
-        const outs = [...new Set(mine.map(r => (r.output === DEMO_LAKE_OUTPUT ? 'Cribl Lake' : r.output)))];
-        addComment(`[DEMO] ${src.sourcetype} — ${mine.map(r => r.name.replace(`[DEMO] ${src.sourcetype} `, '')).join(', ')}; sends to ${outs.join(' / ')}`);
-        for (const r of mine) {
-          const output = r.output === DEMO_LAKE_OUTPUT ? lakeOutputId : r.output;
-          demoRouteBlock.push({
-            id: r.id, name: r.name, filter: sanitizeFilter(r.filter), pipeline: r.pipeline, output,
-            final: false, disabled: false,
-            description: `[DEMO] ${r.name.replace('[DEMO] ', '')}; sends to ${output}`,
-            clones: [], enableOutputExpression: false,
-          });
-        }
-      }
-      addComment('[DEMO] Terminator — drop all demo data so it never reaches the production routes below');
-      demoRouteBlock.push({
-        id: 'demo_terminator',
-        name: '[DEMO] terminator - drop demo data',
-        filter: plan.terminatorFilter,
-        pipeline: 'devnull', output: 'devnull',
-        final: true, disabled: false,
-        description: '[DEMO] Final catch-all so demo events never reach production routes.',
-        clones: [], enableOutputExpression: false,
+      // Steps 1–6 (samples → packs → post packs → datagens → Lake → routes) live in
+      // src/demo-deploy.ts (spec R17); App supplies its state and its helpers.
+      const deployed = await runDemoDeploy({
+        group, plan, sources: demoSources,
+        lake: demoLakeDataset
+          ? { datasetId: demoLakeDataset, ...(demoLakeCreate && demoLakeCreate.datasetId === demoLakeDataset ? { create: { retentionPeriodInDays: demoLakeCreate.retentionPeriodInDays } } : {}) }
+          : null,
+        reductionToggles, thresholds: demoThresholds, shareOn: demoShareOn, normalModel: demoQ.normalModel,
+      }, {
+        api: { ensureLakeDataset, ensureLakeOutput, createDemoDatagen, setMasterRoutes, fetchReferenceLookups },
+        buildStagedPipeline, resolveParseFunctions,
+        resolveSample: resolveDemoSampleEvents,
+        upstreamOcsfOutputEvents: (upstream, log) => upstreamOcsfOutputEvents(upstream, log),
+        buildPostProcessPacks: (outputs, g, log, onProgress, over) => buildFlowPostProcessPacks(outputs, g, log, onProgress, undefined, over),
+        sanitizeFilter, logScore: maybeLogScore, log: dlog, results: setDemoResults, runMode: getRunMode(),
       });
-
-      // 6b. Write the demo block on TOP of the master table — the one commit +
-      //     deploy that makes the packs, datagens and routes live together.
-      dlog(`Writing ${demoRouteBlock.length} demo route(s) + ${demoComments.length} comment(s) on top of the master routing table…`);
-      const routeResult = await setMasterRoutes(group, demoRouteBlock, demoComments);
-      dlog(`✓ Routing table updated (${routeResult.demoCount} demo of ${routeResult.routeCount} total). Committed ${routeResult.commit}.`);
+      const { results, datagenIds, lakeOutputId, eventsBySource, lakeFeeds, resolveSourceSample, resolveSourceExtraction } = deployed;
+      const routeResult = { demoCount: deployed.routeCount };
 
       // 7. Optional Search experience. Reuse the exact processing samples and
       // parser field contracts prepared above; the target dataset may be empty.
       if (demoCreateDashboard) {
+        // A whiteboard's Lake dataset is created by this very deploy: read Search's list again
+        // rather than the one loaded before it existed (it lists as v1 at once, measured 2026-11-01).
+        const searchDatasets = demoLakeSelected && !demoDashboardDatasets.some(dataset => dataset.id === demoLakeDataset)
+          ? await listSearchDatasets().catch(() => demoDashboardDatasets)
+          : demoDashboardDatasets;
         const searchDatasetId = demoLakeSelected
-          ? (demoDashboardDatasets.some(dataset => dataset.id === demoLakeDataset) ? demoLakeDataset : '')
+          ? (searchDatasets.some(dataset => dataset.id === demoLakeDataset) ? demoLakeDataset : '')
           : demoDashboardDataset;
         dlog('Resolving selected Search Datatypes and sample-generated Datatype v1 parsers…');
         try {
@@ -3170,6 +3116,21 @@ function App() {
           const datatypeIds: string[] = [];
           for (const src of demoSources) {
             const sampleEvents = eventsBySource[src.sourcetype] || await resolveSourceSample(src.sourcetype, dlog);
+            // The Lake dataset this deploy feeds holds that pipeline's JSON output, which Search reads
+            // as cribl_json: no Datatype to write, and the KPIs pick from the fields the output carries.
+            const feed = demoLakeSelected ? lakeFeeds[src.sourcetype] : undefined;
+            if (feed) {
+              const lakeSource = lakeDashboardSource(src.sourcetype, upstreamSampleEvents(await previewPipeline({
+                workerGroup: feed.workerGroup, packId: feed.packId, pipelineId: feed.pipelineId,
+                sourcetype: feed.sourcetype, destFormat: feed.destFormat, sampleName: feed.sampleName,
+              }).catch(() => null)));
+              if (lakeSource) {
+                dashboardSources.push(lakeSource);
+                dlog(`✓ ${src.sourcetype}: dashboard fields read from ${feed.pipelineId}'s output, as the Lake dataset holds it (${lakeSource.parsedFieldNames.length} field(s)).`);
+                continue;
+              }
+              dlog(`⚠ ${src.sourcetype}: ${feed.pipelineId} preview returned no events — falling back to a Datatype for its fields.`);
+            }
             const prep = await resolveSourceExtraction(src.sourcetype, sampleEvents, dlog);
             const selectedDatatypeId = demoDatatypeSelections[src.sourcetype] || '';
             if (selectedDatatypeId) {
@@ -3186,16 +3147,21 @@ function App() {
             const datatype = buildSearchDatatype(src.sourcetype, sampleEvents, parserFunctions, prep.parsedFieldNames);
             const deployedDatatype = await deploySearchDatatype(datatype as unknown as Record<string, unknown>);
             datatypeIds.push(deployedDatatype.id);
-            dashboardSources.push({ sourcetype: src.sourcetype, sampleEvents, parsedFieldNames: prep.parsedFieldNames });
-            dlog(`✓ Datatype ${deployedDatatype.id} ${deployedDatatype.updated ? 'updated' : 'created'} (${datatype.dataFormat}, ${prep.parsedFieldNames.length} parsed field(s)).`);
+            // KPIs from what this Datatype makes Search extract, not the Stream parser's canonical names
+            // (a kvp Datatype shows FortiGate's `srcip`, never `src_ip`).
+            const fieldNames = inferSearchDatatypeFields(datatype, sampleEvents);
+            dashboardSources.push({ sourcetype: src.sourcetype, sampleEvents, parsedFieldNames: fieldNames });
+            dlog(`✓ Datatype ${deployedDatatype.id} ${deployedDatatype.updated ? 'updated' : 'created'} (${datatype.dataFormat}, ${fieldNames.length} Search field(s)).`);
           }
           const uniqueDatatypeIds = [...new Set(datatypeIds)];
-          try {
-            await attachSearchDatatypes(searchDatasetId, uniqueDatatypeIds);
-          } catch (error) {
-            throw new Error(`Datatype attachment failed: ${error instanceof Error ? error.message : 'unknown error'}`);
+          if (uniqueDatatypeIds.length) {
+            try {
+              await attachSearchDatatypes(searchDatasetId, uniqueDatatypeIds);
+            } catch (error) {
+              throw new Error(`Datatype attachment failed: ${error instanceof Error ? error.message : 'unknown error'}`);
+            }
+            dlog(`✓ Attached ${uniqueDatatypeIds.length} Datatype v1 parser(s) to federated dataset "${searchDatasetId}".`);
           }
-          dlog(`✓ Attached ${uniqueDatatypeIds.length} Datatype v1 parser(s) to federated dataset "${searchDatasetId}".`);
           dlog('Asking AI to select KPIs from the prepared samples and datatype output fields…');
           const plan = await aiDesignSearchDashboard(searchDatasetId, dashboardSources, demoDashboardStyle);
           dlog(`${plan.selectionMode === 'sample-fallback' ? '⚠ AI was unreachable; sample analysis selected' : '✓ AI selected'} ${plan.kpis.length} KPI(s): ${plan.kpis.map(k => k.title).join(', ')}.`);
@@ -3224,6 +3190,15 @@ function App() {
       });
       dlog('✓ Demo environment is live — data is flowing.');
       setStep('demo-done');
+      if (demoOrigin) {
+        void recordWhiteboardDemo(demoOrigin, {
+          group, results, packs: [...plan.packs.map(pk => pk.packId), ...plan.ppPacks.map(pp => pp.packId)], buildNumber: BUILD_NUMBER,
+          lakeDataset: lakeOutputId ? demoLakeDataset : undefined,
+        }).then(note => { if (note) dlog(note); });
+      } else {
+        // A demo made by hand replaces the legacy-named block: boards recorded before Phase 3 pointed at it.
+        void listBoards().then(rows => releaseGroupOnBoards(group, rows, new Set(['']))).catch(() => {});
+      }
     } catch (err) {
       setDemoError(err instanceof Error ? err.message : 'Demo creation failed');
       dlog(`✗ ${err instanceof Error ? err.message : 'failed'}`);
@@ -3598,6 +3573,7 @@ function App() {
           end_time: Math.floor(Date.now() / 1000),
         });
       }
+      finishWizardDraft();
       setStep('optimize-done');
     } catch (error) {
       if (temporaryPatchApplied && baselineConf) {
@@ -3631,6 +3607,7 @@ function App() {
   // Orchestrator: build + deploy + score each stage independently.
   const runStagedExperiment = async (nameOverride?: string) => {
     setExpError('');
+    setExpDeploy(null);
     setExpLog([]);
     setExpBuildTraces([]);
     setStep('experiment-running');
@@ -3752,7 +3729,7 @@ function App() {
       // class because a CIM parser emits canonical names a raw/json dest wouldn't want.
       const expExtractionByClass = new Map<'mapped' | 'raw', PreparedExtraction>();
       const extractionClassOf = (f: string): 'mapped' | 'raw' =>
-        ['json', 'manual', 'raw', 'raw_fields', 'passthrough', ''].includes(flowBuildFormat(f)) ? 'raw' : 'mapped';
+        ['json', 'manual', 'raw', 'raw_fields', 'passthrough', 'splunk_csv', ''].includes(flowBuildFormat(f)) ? 'raw' : 'mapped';
       let firstBuilt = false;
       for (let fi = 0; fi < allFormats.length; fi++) {
         const fmt = allFormats[fi];
@@ -3837,8 +3814,11 @@ function App() {
         xlog('Committing + deploying the pack (once)…');
         await commitDeploy(group, `Deploy 3-stage pack ${packId}`);
         xlog(`✓ Pack ${packId} deployed on ${group} (${deployed.length} pipeline${deployed.length > 1 ? 's' : ''}).`);
+        setExpDeploy({ ok: true, at: Date.now() });
       } catch (e) {
-        xlog(`⚠ Final deploy failed: ${e instanceof Error ? e.message : 'unknown'} — pack is built; redeploy the group in Cribl.`);
+        const m = e instanceof Error ? e.message : 'unknown';
+        xlog(`⚠ Final deploy failed: ${m} — pack is built; redeploy the group in Cribl.`);
+        setExpDeploy({ ok: false, at: Date.now(), message: m });
       }
       setExpPhase('done');
       xlog('✓ 3-stage experiment complete.');
@@ -3847,6 +3827,7 @@ function App() {
       setValidationReports({});
       setRepairSelection(new Set());
       setValidationError('');
+      finishWizardDraft();
       setStep('experiment-done');
     } catch (err) {
       const msg = err instanceof Error ? err.message : 'Experiment failed';
@@ -3881,6 +3862,15 @@ function App() {
     setDemoCleanupSel({ routes: new Set(), datagens: new Set(), packs: new Set(), outputs: new Set() });
     setDemoScanLoading(true);
     setStep('demo-cleanup');
+    // A whiteboard demo on this group that created a Lake dataset: offer to delete it (off by default).
+    setDemoCleanupLake(null);
+    void listBoards().then(async rows => {
+      setDemoBoardRows(rows);
+      const row = rows.find(r => r.demo?.group === selectedGroup && r.demo.status !== 'removed');
+      const doc = row ? await loadBoard(row.id) : null;
+      const rec = doc?.deployments.find(d => d.group === selectedGroup && d.status !== 'removed' && d.lakeDataset);
+      if (rec?.lakeDataset) setDemoCleanupLake({ id: rec.lakeDataset, remove: false });
+    }).catch(() => {});
     try {
       const scan = await scanDemo(selectedGroup);
       setDemoScan(scan);
@@ -3918,7 +3908,15 @@ function App() {
         packIds: [...demoCleanupSel.packs],
         outputIds: [...demoCleanupSel.outputs],
       });
-      setDemoCleanupResult({ ...result.removed, errors: result.errors });
+      const errors = [...result.errors];
+      if (demoCleanupLake?.remove) {
+        try { await deleteLakeDataset(demoCleanupLake.id); }
+        catch (err) { errors.push(`Lake dataset ${demoCleanupLake.id}: ${err instanceof Error ? err.message : String(err)}`); }
+      }
+      // The demo routes are gone: the boards whose namespace they were named in are told.
+      const removedNs = new Set(result.removed.routes.map(id => demoNsOfRoute(id)).filter((ns): ns is string => ns !== null));
+      await releaseGroupOnBoards(selectedGroup, await listBoards().catch(() => []), removedNs).catch(() => {});
+      setDemoCleanupResult({ ...result.removed, errors });
       setStep('demo-cleanup-done');
     } catch (err) {
       setDemoError(err instanceof Error ? err.message : 'Cleanup failed');
@@ -3994,7 +3992,12 @@ function App() {
         } catch { /* not valid JSON array, use as-is */ }
       }
       content = repairXmlEventBreaking(content);
-      update({ sampleEvents: content });
+      // A file dropped on the Source step's paste box is an upload too (build 996), and
+      // the sanitise banner keys on the mode, so it is set here, not by the caller.
+      setSourcetypeFilter('');
+      setDetectedSourcetype('');
+      setExistingSampleLabel('');
+      update({ sourceMode: 'upload' as SourceMode, sampleEvents: content });
       // Explicit rather than read from state: this runs in the same tick as the update
       // above, and the privacy gate must not be decided by a stale `sourceMode`.
       detectSourcetype(content, { sourceMode: 'upload', sanitised: false });
@@ -4251,9 +4254,7 @@ function App() {
         }
         setSampleFormats(prev => ({ ...prev, [key]: 'busy' }));
         try {
-          const data = s.packId
-            ? await downloadPackSample(group, s.packId, s.id)
-            : await downloadSample(group, s.id);
+          const data = await downloadWorkerGroupSample(group, s);
           // Same flattening the loader applies, so the badge describes the events as
           // the pipeline will see them (a pretty-printed JSON sample is JSON, not text).
           const desc = describeSampleFormat(flattenEventsToLines(data.events || []).split('\n').filter(Boolean));
@@ -4335,7 +4336,21 @@ function App() {
     setSamplesListLoading(false);
   };
 
-  const loadExistingSample = async (sampleId: string, sampleName?: string, packId?: string) => {
+  const downloadWorkerGroupSample = (group: string, s: { id: string; packId?: string; size: number }) => {
+    const key = `${group}|${sampleKey(s)}|${s.size}`;
+    let pending = sampleContentCache.current.get(key);
+    if (!pending) {
+      pending = s.packId ? downloadPackSample(group, s.packId, s.id) : downloadSample(group, s.id);
+      const cache = sampleContentCache.current;
+      // Bounded: the oldest entry goes first (a Map iterates in insertion order).
+      if (cache.size >= SAMPLE_CONTENT_CACHE_MAX) cache.delete(cache.keys().next().value!);
+      cache.set(key, pending);
+      pending.catch(() => { if (cache.get(key) === pending) cache.delete(key); });
+    }
+    return pending;
+  };
+
+  const loadExistingSample = async (sampleId: string, sampleName: string, packId: string | undefined, size: number) => {
     const group = selectedGroup || state.workerGroup;
     if (!group) return;
     setExistingSampleLabel(sampleName || sampleId);
@@ -4344,9 +4359,7 @@ function App() {
     setSampleRepairNotice('');
     update({ sampleEvents: '' });
     try {
-      const data = packId
-        ? await downloadPackSample(group, packId, sampleId)
-        : await downloadSample(group, sampleId);
+      const data = await downloadWorkerGroupSample(group, { id: sampleId, packId, size });
       if (data.events && data.events.length > 0) {
         const joined = repairXmlEventBreaking(data.events.join('\n'));
         // A `sanitised__*` record IS the sanitised library (its events only exist
@@ -4460,6 +4473,19 @@ function App() {
       }
     } catch { /* a local recogniser fault must not stop the AI path below */ }
 
+    // Tier 1b' — offline Windows Event XML. Its attributes fingerprint as kvp keys
+    // that are the same on every channel, so Tier 1 cannot name it; the `<Channel>`
+    // can. Without this a worker-group Windows sample waited 3-4 s on the AI.
+    try {
+      const win = matchWindowsEventXml(events);
+      if (win) {
+        adopt(win.sourcetype, win.share >= 0.8 ? 'high' : 'medium',
+          `Recognised locally: ${win.description} (${Math.round(win.share * 100)}% of the events). No data left your browser.`);
+        setDetecting(false);
+        return;
+      }
+    } catch { /* a local recogniser fault must not stop the AI path below */ }
+
     // Tier 1c — offline distinctive-signature match. Some golden sources
     // fingerprint as keyless `unstructured` (so Tier 1's field/regex-parser
     // signals can't name them) yet carry a raw marker unique enough to identify
@@ -4536,6 +4562,40 @@ function App() {
 
   const canProceedName = state.packName.trim().length > 0;
   const canProceedSource = state.sampleEvents.trim().length > 0 && effectiveSourcetype.trim().length > 0 && !samplesLoading;
+
+  // ── Source step: ONE search over every source the app can start a pack from ──
+  // The curated tiles, the supported catalog and every sourcetype with real
+  // reference / pool events (source-search.ts). Labels are filled once here, not
+  // per keystroke.
+  const sourceCorpus = useMemo<SourceEntry[]>(() => buildSourceCorpus(
+    SOURCETYPES.filter(s => s.value !== '__custom__').map(s => ({ name: s.value, label: s.label, tile: true })),
+    getSupportedSourcetypeCatalog().map(c => ({ name: c.name, golden: c.golden })),
+    Object.entries(referenceAvailability).map(([name, r]) => ({ name, realEvents: r.hasSamples ? Math.max(1, r.sampleEvents || 0) : 0 })),
+  ).map(e => {
+    if (e.label) return e;
+    const d = describeSourcetype(e.name);
+    return d && d !== 'Unknown source type' ? { ...e, label: d } : e;
+  }), [referenceAvailability]);
+  // "Load sample and continue": the main button loads a real sample, then moves on
+  // by itself once the events are in. A failed load (error, nothing loaded) stays put.
+  // AI generation never continues by itself: generated events are reviewed first.
+  const continueAfterLoadRef = useRef(false);
+  useEffect(() => {
+    if (!continueAfterLoadRef.current || samplesLoading || refSampleLoading) return;
+    continueAfterLoadRef.current = false;
+    if (step === 'source' && canProceedSource && !error) setStep('destination');
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [samplesLoading, refSampleLoading]);
+
+  // Where "Open pack in Stream" points: the instance this app runs inside (iframe),
+  // or the configured org (standalone). Backend mode has neither → links hidden.
+  const [criblUiBase, setCriblUiBase] = useState<string | null>(() => criblInstanceBaseUrl());
+  useEffect(() => {
+    if (criblUiBase || getRunMode() !== 'standalone' || step !== 'experiment-done') return;
+    let live = true;
+    void getCriblCreds().then(c => { if (live && c?.org) setCriblUiBase(c.org); });
+    return () => { live = false; };
+  }, [step, criblUiBase]);
 
   // formatsOverride lets a caller (e.g. the sample-advice "Add" button) run
   // analysis for a format set that hasn't flushed to state yet — setState is
@@ -5885,6 +5945,7 @@ function App() {
     const file = e.target.files?.[0];
     if (!file) return;
     setBatchError('');
+    setBatchCapNotice('');
     setBatchRows([]);
     setBatchFileName(file.name);
 
@@ -5912,6 +5973,13 @@ function App() {
           }
           rows = csv.rows;
           readErrors = csv.rowErrors;
+        }
+
+        const capNotice = batchFileCapNotice(rows.length);
+        if (capNotice) {
+          setBatchCapNotice(capNotice);
+          rows = capBatchRows(rows).rows;
+          readErrors = Object.fromEntries(Object.entries(readErrors).filter(([index]) => Number(index) < rows.length));
         }
 
         // Validate required fields exist
@@ -7057,6 +7125,58 @@ function App() {
   // Restores the state handleBatchDeploy reads from closure (batchRows,
   // batchConflictActions, batchSkipPacks), then hands off to the
   // pendingResumeRun effect, which fires once that restore has committed.
+  const applyWizardDraft = (d: WizardDraftDocument) => {
+    setPackMode(d.packMode);
+    setState({ ...initialState, ...d.state });
+    setSourcetype(d.sourcetype);
+    setCustomSourcetype(d.customSourcetype);
+    setIsCustomSourcetype(d.isCustomSourcetype);
+    setCustomConfirmed(d.customConfirmed);
+    setConfirmedFormat(d.confirmedFormat);
+    setSelectedGroup(d.selectedGroup);
+    setSelectedPackId(d.selectedPackId);
+    setAddImproveAction(d.addImproveAction);
+    setOptimizePipelineId(d.optimizePipelineId);
+    setOptimizeGoals({ ...d.optimizeGoals });
+    setOptimizeGuidance(d.optimizeGuidance);
+    setFlowOptimize({ ...d.flowOptimize });
+    setFlowSrcRules({ ...d.flowSrcRules });
+    setFlowOcsfKeepRaw(d.flowOcsfKeepRaw);
+    setFlowOverwrite(d.flowOverwrite);
+    setFlowPpOverwrite(d.flowPpOverwrite);
+    setFlowNameEdited(d.flowNameEdited);
+    setFlowPp({ ...d.flowPp, outputs: d.flowPp.outputs.map(o => ({ ...o })) });
+    setAllowCodeFunctions(d.allowCodeFunctions);
+    setCreateDatagen(d.createDatagen);
+    setAutoValidate(d.autoValidate);
+    setReductionToggles({ ...d.reductionToggles });
+    setPpSourceFormat(d.ppSourceFormat);
+    setPpDestFormat(d.ppDestFormat);
+    setPpSchema(d.ppSchema);
+    if (d.selectedGroup) void fetchPacks(d.selectedGroup);
+    if (d.selectedGroup && d.selectedPackId) {
+      void listPackPipelines(d.selectedGroup, d.selectedPackId).then(setPackPipelines).catch(() => setPackPipelines([]));
+    }
+    setStep(d.step as Step);
+    if (d.interruptedOnBusy) {
+      setWizardDraftNotice('The build was interrupted — review your choices and start the build again.');
+    } else {
+      setWizardDraftNotice('');
+    }
+  };
+
+  const handleResumeWizardDraft = () => {
+    const d = wizardDraftResume;
+    if (!d) return;
+    setWizardDraftResume(null);
+    closeTool();
+    applyWizardDraft(d);
+  };
+
+  const handleDiscardWizardDraft = () => {
+    finishWizardDraft();
+  };
+
   const handleResumeBatch = () => {
     const cp = batchResumeCheckpoint;
     if (!cp) return;
@@ -7225,6 +7345,7 @@ function App() {
       if (runId) await dismissBatchBackgroundRun(runId);
       setBatchBgCheckpoint(null);
       setBatchBgRead(BACKGROUND_READ_OK);
+      setBatchOpenRunNotice('');
       resetAll();
     } catch (e) {
       // Stay exactly where we are, and say what is true: the run is still
@@ -7598,6 +7719,42 @@ function App() {
     else if (d === 'ask') setLeaveAsk(() => go);
   };
 
+  draftSnapRef.current = {
+    packMode,
+    step,
+    state,
+    sourcetype,
+    customSourcetype,
+    isCustomSourcetype,
+    customConfirmed,
+    confirmedFormat,
+    selectedGroup,
+    selectedPackId,
+    addImproveAction,
+    optimizePipelineId,
+    optimizeGoals,
+    optimizeGuidance,
+    flowOptimize,
+    flowSrcRules,
+    flowOcsfKeepRaw,
+    flowOverwrite,
+    flowPpOverwrite,
+    flowNameEdited,
+    flowPp,
+    allowCodeFunctions,
+    createDatagen,
+    autoValidate,
+    reductionToggles,
+    ppSourceFormat,
+    ppDestFormat,
+    ppSchema,
+  };
+
+  useWizardHistoryGuard(
+    step !== 'mode' && isPackBuildDraftMode(packMode),
+    () => guardLeave(() => { closeTool(); resetAll(); window.scrollTo({ top: 0 }); }),
+  );
+
   // ── Settings / Samples pages ──
   const prepQualityForm = () => {
     setQForm(loadQualitySettings()); setQSaveMsg(''); setLakeTestMsg(''); setGhTestMsg(''); setSampleGhTestMsg(''); setCredTestMsg('');
@@ -7661,6 +7818,7 @@ function App() {
               };
               saveQualitySettings(saved);
               setQForm(saved);
+              if (saved.whiteboardsDemos !== undefined) setWbDemosOn(saved.whiteboardsDemos);
               await refreshAvailableGoldens();
               void checkLakeExportHealth().then(h => { setLakeExportActive(h.active); setLakeExportMsg(h.message); lakeActiveRef.current = h.active; });
               setQSaveMsg('Saved.');
@@ -7689,6 +7847,30 @@ function App() {
       setStep(m === 'batch' ? 'batch-upload' : m === 'demo' ? 'demo-group' : 'select-group');
     });
   };
+  // Batch create stops here when a run is still open, before any file or group
+  // is chosen. Inside Cribl the one path is the worker runner, so that flag is
+  // set here rather than asked on a later screen.
+  const chooseBatch = async () => {
+    if (backgroundBatchSupported()) {
+      let run = batchBgCheckpoint;
+      if (!run) {
+        try {
+          run = await loadActiveBatchBackgroundRun();
+          if (run) setBatchBgCheckpoint(run);
+        } catch {
+          run = batchBgCheckpoint;
+        }
+      }
+      const block = openBatchRunBlock(run, run ? backgroundStatusPresentation(run.status).label : '');
+      if (block) {
+        setBatchOpenRunNotice(block);
+        if (step !== 'mode') setStep('mode');
+        return;
+      }
+    }
+    setBatchOpenRunNotice('');
+    startMode('batch', { background: backgroundBatchSupported() });
+  };
 
 
   // Settings and Samples: one page each, a tab list on the left, the pane on the right.
@@ -7698,6 +7880,11 @@ function App() {
     const area = TOOL_AREAS[toolPage.area];
     const tabs = toolTabs(toolPage.area, runMode);
     const backTo = step === 'mode' ? 'Home' : (WIZARD_MODES.find(m => m.id === packMode)?.name || 'the wizard');
+    // Whiteboards is one full-width page (the list, which opens a board) — no tab column.
+    if (toolPage.area === 'whiteboards') {
+      return <WhiteboardsPage onGenerateDemo={startDemoFromSeed} onNewDemo={() => startMode('demo')} onBoardOpen={onWhiteboardOpen}
+        initialBoardId={wbOpenBoardId} onInitialBoardOpened={() => setWbOpenBoardId(null)} />;
+    }
     const tabDot = (id: string): 'ok' | 'error' | 'checking' | null =>
       id === 'ai' ? aiStatus
       : id === 'connection' ? (lakeExportActive === true ? 'ok' : lakeExportActive === false ? 'error' : 'checking')
@@ -7861,6 +8048,19 @@ function App() {
               </div>
 
         {saveBar}
+      </>);
+      else if (t === 'menu') pane = (<>
+              <div className="field-group">
+                <div className="pg-switch-row">
+                  <button type="button" role="switch" id="set-wb-demos" className="pg-switch" aria-checked={qForm.whiteboardsDemos === true}
+                    onClick={() => setWhiteboardsDemos(qForm.whiteboardsDemos !== true)}><span className="pg-switch-knob" /></button>
+                  <label htmlFor="set-wb-demos" className="field-label" style={{ margin: 0, cursor: 'pointer' }}>Whiteboards &amp; demos</label>
+                </div>
+                <p className="field-hint" style={{ marginTop: 6 }}>
+                  For Cribl and partner teams: discovery whiteboards, and the demo environments built from them, under
+                  Tools in the rail. Hidden until you turn it on here; it applies at once.
+                </p>
+              </div>
       </>);
       else if (t === 'goldens') pane = (<>
               <h4 className="tp-sec">Shared golden knowledge</h4>
@@ -8185,17 +8385,14 @@ function App() {
     );
   };
 
+  // The action bar every step ends with: where you are on the left, Back and the
+  // ONE main button on the right. Restart lives in the top bar (it ends the
+  // session, so it must not sit one slip away from Back).
+  const stepNavIdx = wizardStepList.findIndex(w => w[0] === step);
   const StepNav = ({ children, style }: { children: ReactNode; style?: CSSProperties }) => (
     <div className="nav" style={style}>
-      {step !== 'mode' && (
-        <button
-          type="button"
-          className="session-restart"
-          onClick={resetAll}
-          title="Restart session and return to the main menu"
-        >
-          Restart
-        </button>
+      {stepNavIdx >= 0 && (
+        <span className="nav-where">Step {stepNavIdx + 1} of {wizardStepList.length}, <b>{wizardStepList[stepNavIdx][1]}</b></span>
       )}
       <div className="nav-actions">{children}</div>
     </div>
@@ -8390,7 +8587,8 @@ function App() {
       extractedFields, mappings, droppedFields, addedFields, unmappedRideAlong,
       outputEvent, formatValid: conf.valid, formatNote: conf.note,
       appliedOptimizations: opt?.debug?.appliedOptimizations || [],
-      sampleStats, stageStats: stageStats.length ? stageStats : undefined, profileArgs,
+      sampleStats, stageStats: stageStats.length ? stageStats : undefined,
+      profileArgs: profileArgs && { ...profileArgs, sourcetype: sourcetypeOverride || effectiveSourcetype || undefined },
     };
   };
 
@@ -8661,71 +8859,60 @@ function App() {
             {goldenImportMsg && <div className={`ai-banner ${goldenImportMsg.tone === 'ok' ? 'ai-banner-ok' : 'ai-banner-error'} pg-golden-import-msg`} role={goldenImportMsg.tone === 'ok' ? 'status' : 'alert'}><span>{goldenImportMsg.text}</span><button onClick={() => setGoldenImportMsg(null)} aria-label="Dismiss">✕</button></div>}
             <div className="mode-grid pg-mode-grid">
               {MENU_MODES.map(m => (
-                <button key={m.id} type="button" className="mode-card pg-mode-card" onClick={() => startMode(m.id)}>
+                <button key={m.id} type="button" className="mode-card pg-mode-card" onClick={() => { if (m.id === 'batch') void chooseBatch(); else startMode(m.id); }}>
                   <span className="ic" aria-hidden="true">{m.icon}</span>
                   <strong>{m.title}{m.badge && <span className="pg-badge">{m.badge}</span>}</strong>
                   <span>{m.desc}</span>
                   <span className="go">Start →</span>
                 </button>
               ))}
-              {backgroundBatchSupported() && (
-                <button type="button" className="mode-card pg-mode-card" onClick={() => startMode('batch', { background: true })}>
-                  <span className="ic" aria-hidden="true">☁</span>
-                  <strong>Batch create — Background</strong>
-                  <span>Same as Batch create, but runs server-side — you can close this tab. Up to {BATCH_BACKGROUND_MAX_ROWS} pipelines. Samples are resolved here before it starts; a source with no sample is skipped with a note to use regular Batch.</span>
-                  <span className="go">Start →</span>
-                </button>
-              )}
             </div>
           </div>
         );
 
       case 'select-group': {
         const selectedGroupBlock = selectedGroup ? groupPickBlock({
-          group: selectedGroup, background: packMode === 'batch' && batchBackground,
+          group: selectedGroup, background: packMode === 'batch' && batchInApp,
           criblAi: isCriblAiActive(), health: workerHealthLoaded ? workerHealth : null,
         }) : null;
+        const providerOptions = STANDALONE_BATCH_PROVIDERS.some(p => p.id === batchProvider)
+          ? STANDALONE_BATCH_PROVIDERS
+          : [{ id: batchProvider, label: batchProvider }, ...STANDALONE_BATCH_PROVIDERS];
         return (
           <div className="step">
-            <h2>{packMode === 'batch' ? 'Where it runs' : 'Select Worker Group'}</h2>
-            <p className="step-desc">{packMode === 'batch' ? 'Choose how the batch runs, then the worker group' : 'Choose the worker group'} where {packMode === 'batch' ? `your ${batchRows.length} pipelines will be deployed` : packMode === 'experiment' || packMode === 'flow' ? 'your new pack will be deployed' : 'the pack lives'}.</p>
+            <h2>{packMode !== 'batch' ? 'Select Worker Group' : batchInApp ? 'Worker group' : 'How this batch runs'}</h2>
+            <p className="step-desc">{packMode !== 'batch'
+              ? `Choose the worker group where ${packMode === 'experiment' || packMode === 'flow' ? 'your new pack will be deployed' : 'the pack lives'}.`
+              : batchInApp
+                ? `Choose the worker group where your ${batchRows.length} pipelines will be deployed. The batch runs there, one pack at a time, and you can close this tab after it starts.`
+                : `Choose the AI provider and how many pipelines to build at once, then the worker group for your ${batchRows.length} pipelines.`}</p>
 
             {packMode === 'batch' && (
               <div className="bx" style={{ marginBottom: 18 }}>
-                {/* In this tab always runs batchConcurrency rows (1 on Cribl AI) at a
-                    time and background always one row per tick — nothing to tune,
-                    so there is nothing to ask. */}
-                <div className="bx-where pg-run-where" role="radiogroup" aria-label="Run where">
-                  <div role="radio" aria-checked={!batchBackground} aria-disabled={!batchRun.foreground.ok || undefined} tabIndex={0}
-                    className={`bx-card${!batchBackground ? ' sel' : ''}${batchRun.foreground.ok ? '' : ' off'}`}
-                    title={batchRun.foreground.reason}
-                    onClick={() => { if (batchRun.foreground.ok) setBatchBackground(false); }}
-                    onKeyDown={e => { if ((e.key === 'Enter' || e.key === ' ') && batchRun.foreground.ok) setBatchBackground(false); }}>
-                    <div className="bx-ic">⚡</div>
-                    <h3>In this tab · {batchConcurrency === 1 ? 'one row' : `${batchConcurrency} rows`} at a time</h3>
-                    <p>{batchRun.foreground.ok ? 'The fastest way to run a batch.' : batchRun.foreground.reason}</p>
-                    <ul>
-                      <li>Keep this tab open while it runs</li>
-                      <li>Checkpoints let an interrupted run resume</li>
-                      <li>Can ask you for a sample or schema choice mid-run</li>
-                    </ul>
+                {batchInApp ? (
+                  <p className="bx-recap-note">Runs on the worker group, one pack at a time. A file is limited to {BATCH_BACKGROUND_MAX_ROWS} pipelines.</p>
+                ) : (
+                  <div className="bx-where pg-run-where">
+                    <label className="bx-col">
+                      <span>AI provider</span>
+                      <select id="batch-provider" className="field-select" value={batchProvider} onChange={e => {
+                        const provider = e.target.value as AiProvider;
+                        setBatchProvider(provider);
+                        void applyStandaloneBatchProvider(provider);
+                      }}>
+                        {providerOptions.map(p => <option key={p.id} value={p.id}>{p.label}</option>)}
+                      </select>
+                    </label>
+                    <label className="bx-col">
+                      <span>Pipelines at once</span>
+                      <select id="batch-parallel" className="field-select" value={batchConcurrency} onChange={e => setBatchParallel(clampBatchParallel(Number(e.target.value)))}>
+                        {Array.from({ length: MAX_BATCH_CONCURRENCY }, (_, i) => i + 1).map(n => (
+                          <option key={n} value={n}>{n}</option>
+                        ))}
+                      </select>
+                    </label>
                   </div>
-                  <div role="radio" aria-checked={batchBackground} aria-disabled={!batchRun.background.ok || undefined} tabIndex={0}
-                    className={`bx-card${batchBackground ? ' sel' : ''}${batchRun.background.ok ? '' : ' off'}`}
-                    title={batchRun.background.reason}
-                    onClick={() => { if (!batchRun.background.ok) return; setBatchBackground(true); void refreshWorkerHealth(); }}
-                    onKeyDown={e => { if ((e.key === 'Enter' || e.key === ' ') && batchRun.background.ok) { setBatchBackground(true); void refreshWorkerHealth(); } }}>
-                    <div className="bx-ic v">☾</div>
-                    <h3>In the background · 1 row at a time</h3>
-                    <p>{batchRun.background.ok ? 'Runs server-side on the worker group.' : batchRun.background.reason}</p>
-                    <ul>
-                      <li>You can close this tab and come back later</li>
-                      <li>Up to {BATCH_BACKGROUND_MAX_ROWS} pipelines per file</li>
-                      <li>One row per minute on the group's workers</li>
-                      <li>Rows without a resolved sample are skipped</li>
-                    </ul>
-                  </div>
-                </div>
+                )}
                 <div className="bx-section-h">Worker group<span className="bx-grow" /></div>
               </div>
             )}
@@ -8754,7 +8941,7 @@ function App() {
                           // only once the health fetch has returned, since an
                           // unloaded map has every group absent.
                           const blockWhy = groupPickBlock({
-                            group: g.id, background: packMode === 'batch' && batchBackground,
+                            group: g.id, background: packMode === 'batch' && batchInApp,
                             criblAi: isCriblAiActive(), health: workerHealthLoaded ? workerHealth : null,
                           });
                           const noWorkers = blockWhy !== null;
@@ -8824,7 +9011,7 @@ function App() {
               const runRows = preflightSourcetypes.filter(r => batchConflictActions.get(toKebab(batchRows[r.index]?.pack_name || '')) !== 'skip');
               const golden = runRows.filter(r => r.status === 'green').length;
               const ai = runRows.length - golden;
-              const est = estimateBatch(loadRowTimings(), { golden, ai }, { concurrency: batchConcurrency, background: batchBackground });
+              const est = estimateBatch(loadRowTimings(), { golden, ai }, { concurrency: batchConcurrency, background: batchInApp });
               const packs = new Set(batchRows.map(r => toKebab(r.pack_name))).size;
               const genCount = batchRows.filter(r => !batchSkipPacks.has(toKebab(r.pack_name))).length;
               const repairCount = batchRows.filter(r => batchConflictActions.get(toKebab(r.pack_name)) === 'repair').length;
@@ -8857,12 +9044,12 @@ function App() {
                     <div><span>Pipelines</span><b>{batchRows.length}</b></div>
                     <div><span>★ Golden · ✦ AI</span><b>{golden} · {ai}</b></div>
                     <div><span>Group</span><b>{selectedGroup}</b></div>
-                    <div><span>Runs</span><b>{batchBackground ? 'Background' : 'This tab'}</b><small className="bx-recap-sub">{batchBackground ? 1 : batchConcurrency} at a time</small></div>
+                    <div><span>Runs</span><b>{batchInApp ? 'On the workers' : 'This tab'}</b><small className="bx-recap-sub">{batchInApp ? '1 at a time' : `${batchConcurrency} at a time`}</small></div>
                     <div><span>Estimate</span><b>{est.label}</b></div>
                   </div>
                   <p className="bx-recap-note">ⓘ {est.detail}{est.measured ? ' An estimate, not a promise: AI response times vary.' : ''}</p>
 
-                  {batchBackground && (() => {
+                  {batchInApp && (() => {
                     // Rows with no sample get one created as their first
                     // background stage. Name those sources before Start, so the
                     // extra run time is not a surprise in the report.
@@ -9035,7 +9222,7 @@ function App() {
                 screen exists — an ineligible provider, a run already active, a
                 KV or schedule refusal. So the reason belongs here, beside the
                 button that was pressed. */}
-            {batchBackground && batchBgError && (
+            {batchInApp && batchBgError && (
               <div className="error-box" role="alert">
                 <strong>Could not start the background run:</strong> {batchBgError}
               </div>
@@ -9055,11 +9242,11 @@ function App() {
               {batchConfirmReady && (
                 <button
                   className="confirm-btn"
-                  disabled={!!selectedGroupBlock || (batchBackground && batchBgStarting) || !(batchBackground ? batchRun.background.ok : batchRun.foreground.ok)}
-                  onClick={() => batchBackground ? handleStartBackgroundBatch(selectedGroup) : handleBatchDeploy(selectedGroup)}
+                  disabled={!!selectedGroupBlock || (batchInApp && batchBgStarting) || (batchInApp && !batchRun.background.ok)}
+                  onClick={() => batchInApp ? handleStartBackgroundBatch(selectedGroup) : handleBatchDeploy(selectedGroup)}
                 >
-                  {batchBackground
-                    ? (batchBgStarting ? (batchBgPrep || 'Starting…') : 'Start in background')
+                  {batchInApp && batchBgStarting
+                    ? (batchBgPrep || 'Starting…')
                     : `Start (${batchRows.length - batchRows.filter(r => batchConflictActions.get(toKebab(r.pack_name)) === 'skip').length} pipelines)`}
                 </button>
               )}
@@ -9700,19 +9887,6 @@ function App() {
 
       case 'optimize-sample':
       case 'source': {
-        const categoryIcons: Record<string, string> = {
-          'Network Security': '\u{1F6E1}',
-          'Endpoint': '\u{1F5A5}',
-          'Cloud': '\u{2601}',
-          'Identity': '\u{1F511}',
-          'Proxy': '\u{1F310}',
-          'Web': '\u{1F4C4}',
-          'Other': '\u{270F}',
-        };
-        const filteredSourcetypes = SOURCETYPES.filter((s) =>
-          s.label.toLowerCase().includes(sourcetypeFilter.toLowerCase()) ||
-          s.category.toLowerCase().includes(sourcetypeFilter.toLowerCase())
-        );
         const filteredExistingSamples = existingSamples.filter(s =>
           s.name.toLowerCase().includes(sampleSearchFilter.toLowerCase()) ||
           s.id.toLowerCase().includes(sampleSearchFilter.toLowerCase()) ||
@@ -9720,289 +9894,294 @@ function App() {
         );
         const activeWorkerGroup = selectedGroup || state.workerGroup;
 
-        return (
-          <div className="step">
-            <h2>{step === 'optimize-sample' ? 'Improvement Sample' : 'Source Data'}</h2>
-            <p className="step-desc">
-              {step === 'optimize-sample'
-                ? `Provide current events for ${optimizePipelineId}. The same local sanitisation controls used when adding a pipeline are available below.`
-                : 'Provide sample events first — the sourcetype will be auto-detected.'}
-            </p>
+        // ONE search box over every known source (source-search.ts). An unknown name
+        // always gets a "Generate an AI sample" row, so nothing needs a Custom tile.
+        const stQuery = sourcetypeFilter.trim();
+        const stHits = stQuery
+          ? searchSources(stQuery, sourceCorpus, { limit: 61, familyHits: searchSupportedSourcetypes(stQuery, 40).map(m => m.name) })
+          : sourceCorpus.filter(e => e.tile);
+        const stFallback = stQuery ? aiFallbackName(stQuery, sourceCorpus) : null;
+        type StRow = { kind: 'source'; e: SourceEntry } | { kind: 'ai'; name: string };
+        const stRows: StRow[] = [
+          ...stHits.slice(0, 60).map(e => ({ kind: 'source' as const, e })),
+          ...(stFallback ? [{ kind: 'ai' as const, name: stFallback }] : []),
+        ];
+        const stRowName = (r: StRow) => r.kind === 'ai' ? r.name : r.e.name;
+        const stRowSelected = (r: StRow) => state.sourceMode === 'ai-generate' && !!effectiveSourcetype && effectiveSourcetype === stRowName(r);
+        const pickSource = (r: StRow) => {
+          const name = stRowName(r);
+          setError('');
+          if (state.sourceMode !== 'ai-generate') {
+            update({ sourceMode: 'ai-generate' as SourceMode, sampleEvents: '' });
+            setDetectedSourcetype('');
+            setExistingSampleLabel('');
+          }
+          // Tiles keep their own path (non-custom sourcetype); everything else is the
+          // former "Custom / Other → pick a match" path, already confirmed.
+          if (r.kind === 'source' && r.e.tile) { handleSelectSourcetype(name); return; }
+          handleSelectOther();
+          setCustomSourcetype(name);
+          setStMatches([]);
+          setValidationHint('');
+          setValidationSuggestions([]);
+          applyRecognition(name);
+          setCustomConfirmed(true);
+          if (r.kind === 'source') {
+            setSampleSourceId(referenceAvailability[name]?.hasSamples
+              ? 'reference'
+              : (getAvailableSources(name, hasBuiltInSamples(name))[0]?.id || 'ai-generate'));
+          }
+        };
+        const chooseOwnEvents = (mode: SourceMode) => {
+          // Own events: the search results would only sit in the way. Typing again brings them back.
+          setSourcetypeFilter('');
+          update({ sourceMode: mode, sampleEvents: '' });
+          setDetectedSourcetype('');
+          setExistingSampleLabel('');
+          if (mode === 'live-capture') setCaptureFilter('true');
+          if (mode === 'existing' && activeWorkerGroup) void fetchExistingSamples();
+        };
 
-            <div className="field">
-              <label>How do you want to provide sample events?</label>
-              <div className="tile-grid" style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(150px, 1fr))' }}>
-                <div
-                  className={state.sourceMode === 'upload' ? 'tile active' : 'tile'}
-                  onClick={() => { update({ sourceMode: 'upload' as SourceMode, sampleEvents: '' }); setDetectedSourcetype(''); setExistingSampleLabel(''); }}
-                >
-                  <span className="tile-icon">{'\u{1F4C1}'}</span>
-                  <strong className="tile-name">Upload file</strong>
-                  <span className="tile-meta">JSON, log, txt, csv</span>
+        // The action bar's main button does what this step still needs: load or
+        // generate the picked source's sample, then Next.
+        const stPicked = state.sourceMode === 'ai-generate' && !!effectiveSourcetype && (!isCustomSourcetype || customConfirmed);
+        const sampleBusy = samplesLoading || refSampleLoading;
+        const needsFetch = stPicked && !state.sampleEvents.trim() && !!sampleSourceId;
+        const aiFetch = sampleSourceId === 'ai-generate' || sampleSourceId === 'hybrid';
+        const andContinue = step === 'source' ? ' and continue' : '';
+        const fetchLabel = sampleSourceId === 'reference' || sampleSourceId === 'built-in' ? `Load sample${andContinue}`
+          : sampleSourceId === 'ai-generate' ? 'Generate sample'
+          : sampleSourceId === 'hybrid' ? 'Fetch and generate sample'
+          : `Fetch sample${andContinue}`;
+        const runFetch = () => {
+          if (!needsFetch || sampleBusy) return;
+          continueAfterLoadRef.current = step === 'source' && !aiFetch;
+          if (sampleSourceId === 'reference') void fetchReferenceSampleEvents(effectiveSourcetype);
+          else void fetchAiSamples(effectiveSourcetype);
+        };
+        const goNext = () => { if (canProceedSource) setStep(step === 'optimize-sample' ? 'optimize-running' : 'destination'); };
+        const pickedOptions = stPicked
+          ? (referenceAvailability[effectiveSourcetype]?.hasSamples ? 1 : 0) + getAvailableSources(effectiveSourcetype, hasBuiltInSamples(effectiveSourcetype)).length
+          : 0;
+        const stBadge = (e: SourceEntry) => e.realEvents > 0
+          ? <span className="st-bd st-bd-real" title={`${e.realEvents} real vendor events`}>real sample</span>
+          : e.golden
+            ? <span className="st-bd st-bd-gold" title="Proven parser and schema mapping, no AI">golden parser</span>
+            : <span className="st-bd st-bd-ai" title="No real events known — the AI writes them">AI sample</span>;
+        // Build 996: own events first. `fit` drives the ladder, the action-bar meter and
+        // the catalog warning (source-search.ts sampleFit).
+        const ownMode = (OWN_EVENT_MODES as readonly string[]).includes(state.sourceMode);
+        const fit = sampleFit(state.sourceMode, stPicked ? sampleSourceId : '', !!state.sampleEvents.trim());
+        const loadedCount = state.sampleEvents.split('\n').filter(Boolean).length;
+        const loadedElsewhere = ownMode && state.sourceMode !== 'paste' && loadedCount > 0;
+        const ownSourceLabel = state.sourceMode === 'existing' ? (existingSampleLabel || 'worker-group sample')
+          : state.sourceMode === 'live-capture' ? 'live capture' : 'uploaded file';
+        // The paste box is always on screen: typing into it IS choosing paste mode.
+        const pasteOwnEvents = (v: string) => {
+          setSampleRepairNotice('');
+          if (state.sourceMode === 'paste') { update({ sampleEvents: v }); return; }
+          setError('');
+          setSourcetypeFilter('');
+          setDetectedSourcetype('');
+          setExistingSampleLabel('');
+          update({ sourceMode: 'paste' as SourceMode, sampleEvents: v });
+        };
+        const focusOwnPaste = () => {
+          const el = document.getElementById('own-paste');
+          el?.scrollIntoView({ block: 'center', behavior: 'smooth' });
+          el?.focus();
+        };
+        const fitMeter = (f: SampleFit) => (
+          <span className="st-fit" data-lvl={SAMPLE_FIT_INFO[f].level} aria-hidden="true"><i /><i /><i /></span>
+        );
+        // Preview + sourcetype confirmation: right under the card the events came from.
+        const samplePanel = state.sampleEvents && !samplesLoading && (
+            <>
+              {sampleRepairNotice && (
+                <div className="sample-repair-notice">
+                  <span className="repair-icon">{'\u{1F527}'}</span> {sampleRepairNotice}
                 </div>
-                <div
-                  className={state.sourceMode === 'existing' ? 'tile active' : 'tile'}
-                  onClick={() => {
-                    update({ sourceMode: 'existing' as SourceMode, sampleEvents: '' });
-                    setDetectedSourcetype('');
-                    setExistingSampleLabel('');
-                    if (activeWorkerGroup) void fetchExistingSamples();
-                  }}
-                >
-                  <span className="tile-icon">{'\u{1F4BE}'}</span>
-                  <strong className="tile-name">Group sample</strong>
-                  <span className="tile-meta">Pick from {activeWorkerGroup || 'worker group'}</span>
-                </div>
-                <div
-                  className={state.sourceMode === 'paste' ? 'tile active' : 'tile'}
-                  onClick={() => { update({ sourceMode: 'paste' as SourceMode, sampleEvents: '' }); setDetectedSourcetype(''); setExistingSampleLabel(''); }}
-                >
-                  <span className="tile-icon">{'\u{1F4CB}'}</span>
-                  <strong className="tile-name">Paste events</strong>
-                  <span className="tile-meta">One per line or JSON</span>
-                </div>
-                <div
-                  className={state.sourceMode === 'live-capture' ? 'tile active' : 'tile'}
-                  onClick={() => { update({ sourceMode: 'live-capture' as SourceMode, sampleEvents: '' }); setDetectedSourcetype(''); setCaptureFilter('true'); setExistingSampleLabel(''); }}
-                >
-                  <span className="tile-icon">{'\u{1F4E1}'}</span>
-                  <strong className="tile-name">Live capture</strong>
-                  <span className="tile-meta">Capture from worker group</span>
-                </div>
-                <div
-                  className={state.sourceMode === 'ai-generate' ? 'tile active' : 'tile'}
-                  onClick={() => { update({ sourceMode: 'ai-generate' as SourceMode, sampleEvents: '' }); setDetectedSourcetype(''); setExistingSampleLabel(''); }}
-                >
-                  <span className="tile-icon">{'\u{2728}'}</span>
-                  <strong className="tile-name">AI-generate</strong>
-                  <span className="tile-meta">Pick sourcetype first</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Upload mode */}
-            {state.sourceMode === 'upload' && !state.sampleEvents && (
-              <div className="field">
-                <label
-                  className="upload-zone"
-                  onDragOver={(e) => { e.preventDefault(); e.currentTarget.classList.add('dragover'); }}
-                  onDragLeave={(e) => { e.currentTarget.classList.remove('dragover'); }}
-                  onDrop={(e) => { e.preventDefault(); e.currentTarget.classList.remove('dragover'); const f = e.dataTransfer.files[0]; if (f) readSampleFile(f); }}
-                >
-                  <input type="file" accept=".json,.log,.txt,.csv" onChange={handleFileUpload} style={{ display: 'none' }} />
-                  <span className="upload-zone-icon">{'\u{2B06}\u{FE0F}'}</span>
-                  <strong>Drop file here or click to browse</strong>
-                  <span className="upload-zone-hint">JSON, log, txt, csv — one event per line</span>
-                </label>
-              </div>
-            )}
-
-            {/* Existing worker-group sample */}
-            {state.sourceMode === 'existing' && !state.sampleEvents && (
-              <div className="field existing-samples-section">
-                {!activeWorkerGroup ? (
-                  <div className="advice-box">Select a worker group first, then return here to pick a sample.</div>
-                ) : (
-                  <>
-                    <label className="existing-samples-label">
-                      Samples in worker group <code>{activeWorkerGroup}</code> (including samples inside installed packs)
-                      {samplesListLoading && <span className="ai-spinner" style={{ width: 14, height: 14, borderWidth: 2 }} />}
-                    </label>
-                    {existingSamples.length === 0 && !samplesListLoading && (
-                      <button className="load-samples-btn" onClick={fetchExistingSamples}>Load samples</button>
-                    )}
-                    {existingSamples.length > 0 && (
-                      <>
-                        <input
-                          type="text"
-                          value={sampleSearchFilter}
-                          onChange={(e) => setSampleSearchFilter(e.target.value)}
-                          placeholder="Search samples..."
-                          className="tile-search"
-                        />
-                        <p className="gen-tier-note" style={{ marginTop: 6, marginBottom: 6 }}>
-                          The badge shows each sample's <b>wire format</b>. The pack is built around the format of the
-                          sample you pick, so choose the one your feed really emits — a CEF sample for a key=value feed
-                          produces a pipeline that extracts nothing in production.
-                        </p>
-                        <div className="tile-grid" style={{ gridTemplateColumns: 'repeat(3, 1fr)', maxHeight: 220 }}>
-                          {filteredExistingSamples.map(s => {
-                            const fmt = sampleFormats[sampleKey(s)];
-                            return (
-                              <div key={sampleKey(s)} className="tile" onClick={() => loadExistingSample(s.id, s.name, s.packId)}>
-                                <span className="tile-icon">{s.packId ? '\u{1F4E6}' : '\u{1F4C4}'}</span>
-                                <strong className="tile-name">{s.name}</strong>
-                                {s.packName && <span className="tile-meta" title={`From pack ${s.packName}`} style={{ opacity: 0.75 }}>{'\u{1F4E6}'} {s.packName}</span>}
-                                <span className="tile-meta">{s.numEvents} events &middot; {Math.round(s.size / 1024)}KB</span>
-                                {fmt === 'busy' ? (
-                                  <span className="sample-format-badge sample-format-pending">reading format…</span>
-                                ) : (!fmt || fmt === 'unknown') ? (
-                                  <span
-                                    className="sample-format-badge sample-format-pending"
-                                    title={s.size > SAMPLE_FORMAT_SNIFF_MAX_BYTES
-                                      ? 'Too large to inspect in the background — the format is shown once the sample is loaded.'
-                                      : 'Format not inspected yet — it is shown once the sample is loaded.'}
-                                  >format unknown</span>
-                                ) : (
-                                  <span
-                                    className={fmt.mixed ? 'sample-format-badge sample-format-mixed' : 'sample-format-badge'}
-                                    title={fmt.detail}
-                                  >{fmt.label}{fmt.mixed ? ' · mixed' : ''}</span>
-                                )}
-                              </div>
-                            );
-                          })}
+              )}
+              {/* Sanitise — only for customer-estate samples (upload / paste / live /
+                  worker-group). AI-generated and reference/library events are already
+                  synthetic or public, so the banner must not appear or nag on those.
+                  It sits ABOVE the preview so a real sample is flagged the moment it
+                  loads, and folds the "required" warning and the "done" confirmation
+                  into one block instead of a loose stack of boxes. */}
+              {sampleNeedsSanitising(state.sourceMode) && (() => {
+                const required = !state.sampleSanitised && loadQualitySettings().requireSanitisedSamples;
+                const cls = state.sampleSanitised ? 'sanitise-banner done'
+                  : required ? 'sanitise-banner req' : 'sanitise-banner';
+                return (
+                  <div className={cls}>
+                    <span className="sanitise-banner-icon">{state.sampleSanitised ? '✅' : '\u{1F6E1}\u{FE0F}'}</span>
+                    <div className="sanitise-banner-text">
+                      <div className="sanitise-banner-title">
+                        {state.sampleSanitised ? 'Sample sanitised locally' : 'Sanitize this sample'}
+                        {required && <span className="sanitise-banner-chip">Required before AI steps</span>}
+                      </div>
+                      <div className="sanitise-banner-desc">
+                        {state.sampleSanitised
+                          ? (isSanitisedLibrarySampleName(existingSampleLabel)
+                              ? 'This is a sanitised library sample — its identities were already replaced when it was saved, so there is nothing left to sanitise.'
+                              : 'Identities were replaced with consistent stand-ins. Nothing was sent anywhere to do it.')
+                          : required
+                            ? 'These are real events from your estate, and sending un-sanitised data to the AI provider is turned off — the AI steps will not run until you sanitise. It happens entirely in your browser: no upload, no AI call.'
+                            : 'Replace hostnames, usernames and IP addresses with consistent stand-ins — entirely in your browser. No upload, no AI call.'}
+                      </div>
+                      {/* Action is left-aligned under the text, so it lines up with every
+                          other button in the wizard rather than floating off to the right. */}
+                      {/* Advisory only: the sanitised events still load and the pack can be
+                          built, but they no longer parse cleanly against the source's declared
+                          wire format. The user decides — Undo restores the original, or narrow
+                          the picks and re-sanitise from the wizard. */}
+                      {state.sampleSanitised && sanitiseWarning && (
+                        <div className="sanitise-banner-warn">
+                          ⚠️ {sanitiseWarning} You can still build with it, or Undo and narrow the picks that changed the format.
                         </div>
-                        {filteredExistingSamples.length === 0 && (
-                          <p className="step-desc" style={{ marginTop: 8 }}>No samples match your search.</p>
+                      )}
+                      {state.sampleSanitised
+                        ? (sanitisePrev !== null && (
+                            <button className="btn-link sanitise-banner-action" onClick={undoSanitise}>Undo sanitise</button>
+                          ))
+                        : (
+                          <div className="sanitise-banner-actions">
+                            <button className="confirm-btn sanitise-banner-action" onClick={() => setSanitiseModalOpen(true)}
+                              title="Replace hostnames, usernames and IP addresses with consistent stand-ins. Runs entirely in your browser — nothing is sent anywhere.">
+                              Sanitize sample
+                            </button>
+                            {/* A worker group also holds samples this app itself put there —
+                                generated or library-derived events with no identities in them.
+                                Sanitising those a second time is pure friction, but the app
+                                cannot prove provenance from a plain sample file, so the escape
+                                is an explicit human assertion rather than a silent default. */}
+                            {state.sourceMode === 'existing' && (
+                              <button className="btn-link sanitise-banner-action"
+                                onClick={() => update({ sampleSanitised: true })}
+                                title="Use this sample as-is. Only do this for events you know are synthetic or already sanitised — generated samples, reference data, or a sanitised library entry.">
+                                These events are already synthetic — skip
+                              </button>
+                            )}
+                          </div>
                         )}
-                      </>
-                    )}
-                  </>
-                )}
-              </div>
-            )}
-
-            {/* Paste mode */}
-            {state.sourceMode === 'paste' && (
-              <div className="field">
-                <label>Paste sample events <span className="hint">(one event per line, or JSON array)</span></label>
-                <textarea
-                  className="paste-area"
-                  value={state.sampleEvents}
-                  onChange={(e) => { setSampleRepairNotice(''); update({ sampleEvents: e.target.value }); }}
-                  onBlur={() => { if (state.sampleEvents.trim() && !detectedSourcetype && !detecting) { const repaired = repairXmlEventBreaking(state.sampleEvents); if (repaired !== state.sampleEvents) update({ sampleEvents: repaired }); detectSourcetype(repaired, { sourceMode: 'paste' }); } }}
-                  placeholder={"Paste your events here, one per line...\n\nExample:\n<166>%ASA-6-302013: Built inbound TCP connection...\n<166>%ASA-4-106023: Deny tcp src outside:10.1.1.1..."}
-                  rows={10}
-                />
-                {state.sampleEvents.trim() && !detectedSourcetype && !detecting && (
-                  <button className="confirm-btn" style={{ marginTop: 8 }} onClick={() => detectSourcetype(state.sampleEvents, { sourceMode: 'paste' })}>Detect sourcetype</button>
-                )}
-              </div>
-            )}
-
-            {/* Live capture mode */}
-            {state.sourceMode === 'live-capture' && !captureLoading && !state.sampleEvents && (
-              <div className="ai-generate-options">
-                <label>Live capture settings</label>
-                <p className="gen-tier-note" style={{ marginTop: 0, marginBottom: 12 }}>
-                  Captures real events flowing through the selected worker group. Ensure traffic is actively being processed.
-                </p>
-                <div className="field" style={{ marginBottom: 12 }}>
-                  <label>Filter expression <span className="hint">(Cribl filter syntax)</span></label>
-                  <input
-                    type="text"
-                    value={captureFilter}
-                    onChange={(e) => setCaptureFilter(e.target.value)}
-                    placeholder="true for all events, or sourcetype=='cisco_asa'"
-                  />
-                </div>
-                <div style={{ display: 'flex', gap: 16, marginBottom: 12 }}>
-                  <div className="field" style={{ flex: 1 }}>
-                    <label>Max events</label>
-                    <input
-                      type="text"
-                      value={captureMaxEvents}
-                      onChange={(e) => setCaptureMaxEvents(Math.min(500, Math.max(1, Number(e.target.value) || 100)))}
-                    />
+                    </div>
                   </div>
-                  <div className="field" style={{ flex: 1 }}>
-                    <label>Duration (seconds)</label>
-                    <input
-                      type="text"
-                      value={captureDuration}
-                      onChange={(e) => setCaptureDuration(Math.min(30, Math.max(1, Number(e.target.value) || 10)))}
-                    />
+                );
+              })()}
+
+              <div className="preview-box">
+                <label>
+                  Preview ({state.sampleEvents.split('\n').filter(Boolean).length} events)
+                  {state.sampleSanitised && <span className="sl-sanitised-badge">sanitised</span>}
+                </label>
+                <textarea readOnly value={state.sampleEvents.split('\n').slice(0, 5).join('\n') + '\n...'} />
+              </div>
+
+
+              {/* What format did we actually get? The pack is built around it, so it
+                  is stated explicitly for EVERY sample source — uploaded, pasted,
+                  worker-group, reference, vendor or AI-generated. */}
+              {(() => {
+                const fmt = describeSampleFormat(state.sampleEvents.split('\n').slice(0, 50));
+                if (fmt.id === 'empty') return null;
+                const variant = multiFormatSpec
+                  ? multiFormatSpec.formats.find(f => sampleFormatMatchesVariant(fmt, f.id)) || null
+                  : null;
+                const unmatched = !!multiFormatSpec && !variant;
+                // A mixed sample can carry TWO of this source's variants (the Corelight
+                // reference sample is syslog-framed JSON plus Zeek TSV). Building for one
+                // silently drops the others, so name them instead of just saying "mixed".
+                const present = multiFormatSpec && fmt.mixed
+                  ? sampleVariantsPresent(state.sampleEvents.split('\n'), multiFormatSpec.formats.map(f => f.id))
+                  : [];
+                const presentLabels = present
+                  .map(id => multiFormatSpec!.formats.find(f => f.id === id)?.label || id);
+                return (
+                  <div className={unmatched || fmt.mixed ? 'sample-format-line sample-format-line-warn' : 'sample-format-line'}>
+                    <span className="sample-format-badge">{fmt.label}</span>
+                    <span className="sample-format-text">
+                      {fmt.detail}
+                      {variant && ` This is the “${variant.label}” variant of this source — the pack will be built for it.`}
+                      {presentLabels.length > 1 && ` These events carry ${presentLabels.length} of this source's variants (${presentLabels.join(' + ')}) — a pack built for one will not extract the others, so use a single-format sample if you can.`}
+                      {unmatched && ` This source also ships as ${multiFormatSpec!.formats.map(f => f.label).join(' / ')}, and these events match none of them — check the sample before building.`}
+                    </span>
                   </div>
-                </div>
-                <button
-                  className="confirm-btn"
-                  onClick={fetchLiveCapture}
-                  disabled={!(selectedGroup || state.workerGroup)}
-                >
-                  Start capture ({captureMaxEvents} events, {captureDuration}s)
-                </button>
-              </div>
-            )}
+                );
+              })()}
 
-            {captureLoading && (
-              <AiProgress messages={[
-                'Starting live capture on worker group...',
-                'Waiting for events to flow through...',
-                'Capturing matching events...',
-                'Collecting results...',
-              ]} />
-            )}
-
-            {state.sourceMode === 'live-capture' && !captureLoading && error && (
-              <div className={error.startsWith('No events matched') ? 'advice-box' : 'error-box'}>
-                {error}
-                <div style={{ marginTop: 8 }}>
-                  <button className="confirm-btn" onClick={fetchLiveCapture}>Retry capture</button>
-                </div>
-              </div>
-            )}
-
-            {/* AI-generate: sourcetype picker first */}
-            {state.sourceMode === 'ai-generate' && !state.sampleEvents && (
-              <>
-                <div className="field">
-                  <label>Select sourcetype to generate events for</label>
-                  <input
-                    type="text"
-                    value={sourcetypeFilter}
-                    onChange={(e) => setSourcetypeFilter(e.target.value)}
-                    placeholder="Search sourcetypes..."
-                    className="tile-search"
-                  />
-                  <div className="tile-grid">
-                    {filteredSourcetypes.map((s) => {
-                      const ref = referenceAvailability[s.value];
-                      const hasRef = ref && (ref.hasSamples || ref.fields > 0);
-                      return (
-                        <div
-                          key={s.value}
-                          className={s.value === '__custom__'
-                            ? (isCustomSourcetype ? 'tile tile-custom active' : 'tile tile-custom')
-                            : (!isCustomSourcetype && sourcetype === s.value ? 'tile active' : 'tile')}
-                          onClick={() => s.value === '__custom__' ? handleSelectOther() : handleSelectSourcetype(s.value)}
-                        >
-                          {hasRef && (
-                            <span
-                              className="tile-ref-badge"
-                              title={`Reference data from professional pack${ref.pack ? ` "${ref.pack}"` : ''}: ${ref.hasSamples ? `${ref.sampleEvents} real sample events, ` : ''}${ref.fields} known fields${ref.transformations.length ? `, maps to ${ref.transformations.join('/').toUpperCase()}` : ''}`}
-                            >
-                              {ref.hasSamples ? `${'\u{2B50}'} sample` : `${'\u{1F4DA}'} mappings`}
-                            </span>
-                          )}
-                          <span className="tile-icon">{s.value === '__custom__' ? '\u{270F}' : (categoryIcons[s.category] || '\u{1F4E6}')}</span>
-                          <strong className="tile-name">{s.label}</strong>
-                          <span className="tile-meta">{s.category}</span>
+              {/* Sourcetype detection/confirmation for non-AI modes */}
+              {state.sourceMode !== 'ai-generate' && (
+                <div className="field" style={{ marginTop: 16 }}>
+                  {detecting && (
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '12px 0' }}>
+                      <span className="ai-spinner" style={{ width: 16, height: 16, borderWidth: 2 }} />
+                      <span style={{ fontSize: 13, color: '#595959' }}>Detecting sourcetype...</span>
+                    </div>
+                  )}
+                  {detectedSourcetype && !detecting && (
+                    <div className="ai-generate-options">
+                      <label>Detected sourcetype</label>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 8 }}>
+                        <code style={{ fontSize: 15, fontWeight: 600, padding: '4px 10px', background: '#e6fafa', borderRadius: 4 }}>{detectedSourcetype}</code>
+                        <span className={`type-badge type-${detectConfidence === 'high' ? 'stream' : detectConfidence === 'medium' ? 'edge' : 'outpost'}`}>{detectConfidence} confidence</span>
+                      </div>
+                      {detectReason && <p className="gen-tier-note" style={{ marginTop: 0, marginBottom: 12 }}>{detectReason}</p>}
+                      {/* Detection already set this as the active sourcetype (canProceedSource
+                          is satisfied) — so there is no "Confirm" to press. This row only exists
+                          to OVERRIDE it: type a different name and "Use this" commits the change. */}
+                      <label style={{ fontSize: 12, color: '#8c8c8c', fontWeight: 400 }}>Not right? Enter the correct sourcetype:</label>
+                      <div className="custom-input-row" style={{ marginTop: 6 }}>
+                        <div className="custom-input-inline">
+                          <input
+                            type="text"
+                            value={isCustomSourcetype ? customSourcetype : sourcetype}
+                            onChange={(e) => { sourcetypeSelectionOrigin.current = 'user'; setCustomSourcetype(e.target.value); setIsCustomSourcetype(true); }}
+                            placeholder="Override sourcetype..."
+                          />
+                          <button
+                            className="confirm-btn"
+                            disabled={!(isCustomSourcetype ? customSourcetype.trim() : sourcetype)}
+                            onClick={() => { sourcetypeSelectionOrigin.current = 'user'; setReductionToggles({}); }}
+                          >
+                            Use this
+                          </button>
                         </div>
-                      );
-                    })}
-                  </div>
-                  {isCustomSourcetype && (
-                    <div className="custom-input-row">
+                      </div>
+                    </div>
+                  )}
+                  {!detectedSourcetype && !detecting && (
+                    <div className="ai-generate-options">
+                      <label>Sourcetype could not be auto-detected</label>
+                      {detectReason && <p className="gen-tier-note" style={{ marginTop: 0, marginBottom: 10, color: '#d4380d' }}>{detectReason}</p>}
+                      {/* The way back after the privacy gate stopped detection. Without this
+                          the only route is to retype the sourcetype by hand, which reads as a
+                          dead end rather than a step that is now unblocked. */}
+                      {state.sampleSanitised && state.sampleEvents.trim() && (
+                        <button className="btn-secondary" style={{ marginBottom: 10 }}
+                          onClick={() => detectSourcetype(state.sampleEvents, { sanitised: true })}>
+                          Detect sourcetype now the sample is sanitised
+                        </button>
+                      )}
+                      <p className="gen-tier-note" style={{ marginTop: 0, marginBottom: 10 }}>Enter the sourcetype manually:</p>
                       <div className="custom-input-inline">
                         <input
                           type="text"
                           value={customSourcetype}
-                          onChange={(e) => { setCustomSourcetype(normalizeSourcetypeName(e.target.value)); setCustomConfirmed(false); setValidationHint(''); setValidationSuggestions([]); setStMatches([]); }}
+                            onChange={(e) => { sourcetypeSelectionOrigin.current = 'user'; setCustomSourcetype(e.target.value); setIsCustomSourcetype(true); setStMatches([]); setValidationHint(''); }}
                           onKeyDown={(e) => { if (e.key === 'Enter' && customSourcetype.trim()) validateSourcetype(customSourcetype); }}
-                          placeholder="e.g. cisco_meraki"
+                          placeholder="e.g. cisco_asa, palo_alto_traffic"
                           disabled={validating}
                         />
                         <button
                           className="confirm-btn"
                           disabled={!customSourcetype.trim() || validating}
-                          onClick={() => validateSourcetype(customSourcetype)}
+                          onClick={() => { setIsCustomSourcetype(true); setReductionToggles({}); void validateSourcetype(customSourcetype); }}
                         >
                           {validating ? 'Checking...' : 'Confirm'}
                         </button>
                       </div>
-                      <div className="format-hint">Use snake_case format: vendor_product (e.g. cisco_asa, palo_alto_traffic)</div>
-                      {!customConfirmed && !validating && stMatches.length > 0 && (
+                      {validationHint && <p className="gen-tier-note" style={{ marginTop: 8, marginBottom: 0 }}>{validationHint}</p>}
+                      {!validating && stMatches.length > 0 && (
                         <div className="st-search-matches">
                           <span className="st-search-label">Pick a supported sourcetype to use it directly, or refine the name yourself and Confirm again:</span>
                           <div className="st-search-list">
@@ -10011,7 +10190,7 @@ function App() {
                                 key={m.name}
                                 className={m.name === customSourcetype ? 'st-search-item active' : 'st-search-item'}
                                 title={m.description || m.name}
-                                onClick={() => { setCustomSourcetype(m.name); setStMatches([]); setValidationHint(''); setValidationSuggestions([]); applyRecognition(m.name); setCustomConfirmed(true); }}
+                                onClick={() => { setCustomSourcetype(m.name); setIsCustomSourcetype(true); setReductionToggles({}); setStMatches([]); setValidationHint(''); applyRecognition(m.name); setCustomConfirmed(true); }}
                               >
                                 {m.golden && <span className="st-search-star">{'★'}</span>}
                                 <span className="st-search-name">{m.name}</span>
@@ -10021,359 +10200,430 @@ function App() {
                           </div>
                         </div>
                       )}
-                      {validating && (
-                        <div className="validation-loading">Validating sourcetype...</div>
+                    </div>
+                  )}
+                </div>
+              )}
+            </>
+          );
+
+        return (
+          <div className="step">
+            <h2>{step === 'optimize-sample' ? 'Improvement Sample' : 'Source Data'}</h2>
+            <p className="step-desc">
+              {step === 'optimize-sample'
+                ? `Provide current events for ${optimizePipelineId}. The same local sanitisation controls used when adding a pipeline are available below.`
+                : 'The pack is built and scored on the events you give it. Events from your own feed make the most accurate pack: the parser and mappings fit your real fields, not a vendor example.'}
+            </p>
+
+            <div className="own-layout">
+              <div className="own-main">
+                {/* Build 996: the user's own events are the main way in. The pack is built
+                    and scored on the sample, so a catalog sample yields a score for that
+                    sample, not for the user's feed. The catalog stays one search away below. */}
+                <div className="own-hero">
+                  <span className="own-ribbon">Recommended · most accurate</span>
+                  <h3>Use events from your feed</h3>
+                  <p className="own-sub">20 to 200 lines is enough, and it takes about a minute.</p>
+                  <div className="own-body">
+                    <div className="own-drop-wrap">
+                      <textarea
+                        id="own-paste"
+                        className={state.sourceMode === 'paste' && state.sampleEvents ? 'own-drop has' : 'own-drop'}
+                        value={state.sourceMode === 'paste' ? state.sampleEvents : ''}
+                        spellCheck={false}
+                        aria-label="Paste sample events"
+                        placeholder={loadedElsewhere
+                          ? `${loadedCount} events loaded (${ownSourceLabel}). Paste or drop events here to replace them.`
+                          : 'Paste events here, one per line or a JSON array.\n\nOr drop a .log / .json / .txt / .csv file on this box.'}
+                        onChange={(e) => pasteOwnEvents(e.target.value)}
+                        onBlur={() => { if (state.sourceMode === 'paste' && state.sampleEvents.trim() && !detectedSourcetype && !detecting) { const repaired = repairXmlEventBreaking(state.sampleEvents); if (repaired !== state.sampleEvents) update({ sampleEvents: repaired }); detectSourcetype(repaired, { sourceMode: 'paste' }); } }}
+                        onDragOver={(e) => { e.preventDefault(); e.currentTarget.classList.add('dragover'); }}
+                        onDragLeave={(e) => { e.currentTarget.classList.remove('dragover'); }}
+                        onDrop={(e) => { e.preventDefault(); e.currentTarget.classList.remove('dragover'); const f = e.dataTransfer.files[0]; if (f) readSampleFile(f); }}
+                      />
+                      {state.sourceMode === 'paste' && state.sampleEvents.trim() && !detectedSourcetype && !detecting && (
+                        <button className="confirm-btn" style={{ marginTop: 8 }} onClick={() => detectSourcetype(state.sampleEvents, { sourceMode: 'paste' })}>Detect sourcetype</button>
                       )}
-                      {validationHint && validationSuggestions.length > 0 && (
-                        <div className="validation-suggestions">
-                          <span className="validation-hint">{validationHint}</span>
-                          <div className="suggestion-options">
-                            {validationSuggestions.map((s) => (
+                    </div>
+                    {/* Build 997: the fit ladder sits beside the paste box, the other ways in below it. */}
+                    <aside className="own-ladder" aria-label="How close the sample is to your feed">
+                      <h4>How close is the sample to your feed?</h4>
+                      <p>The pack can only parse what it saw. The closer the sample is to your feed, the fewer fields are dropped in production.</p>
+                      {([
+                        ['own', 'Your own events', 'Paste, upload, worker-group sample or live capture'],
+                        ['vendor', 'Real vendor sample', 'Right format, but someone else’s version, config and event mix'],
+                        ['ai', 'AI-written sample', 'Plausible events in the vendor format. Fields are a best guess.'],
+                      ] as const).map(([f, title, desc]) => (
+                        <div key={f} className={fit === f ? 'own-rung on' : 'own-rung'}>
+                          {fitMeter(f)}
+                          <b>{title}</b>
+                          <small>{desc}</small>
+                        </div>
+                      ))}
+                      <div className="own-ladder-note">A score of 90 on a vendor sample measures how much of <i>that sample</i> reached the output. It says nothing about the fields only your feed sends.</div>
+                    </aside>
+                  </div>
+                  <div className="own-ways">
+                    <button type="button" className={state.sourceMode === 'existing' ? 'own-way on' : 'own-way'} aria-pressed={state.sourceMode === 'existing'}
+                      onClick={() => chooseOwnEvents('existing')}>
+                      <span className="own-way-ic" aria-hidden="true">▤</span>
+                      <span>
+                        <b>Pick a sample in {activeWorkerGroup ? <code>{activeWorkerGroup}</code> : 'a worker group'}</b>
+                        <small>{!activeWorkerGroup ? 'Select a worker group first'
+                          : existingSamples.length ? `${existingSamples.length} samples saved here, including samples inside installed packs`
+                          : 'Samples saved in this worker group, including samples inside installed packs'}</small>
+                      </span>
+                    </button>
+                    <button type="button" className={state.sourceMode === 'live-capture' ? 'own-way on' : 'own-way'} aria-pressed={state.sourceMode === 'live-capture'}
+                      onClick={() => chooseOwnEvents('live-capture')}>
+                      <span className="own-way-ic" aria-hidden="true">◉</span>
+                      <span>
+                        <b>Capture live traffic</b>
+                        <small>{activeWorkerGroup
+                          ? `${captureDuration} s on ${activeWorkerGroup}, up to ${captureMaxEvents} events. Use it when the feed already flows through this group.`
+                          : 'Select a worker group first'}</small>
+                      </span>
+                    </button>
+                    <label className={state.sourceMode === 'upload' ? 'own-way on' : 'own-way'}>
+                      <input type="file" accept=".json,.log,.txt,.csv" onChange={(e) => { handleFileUpload(e); e.target.value = ''; }} style={{ display: 'none' }} />
+                      <span className="own-way-ic" aria-hidden="true">⇪</span>
+                      <span>
+                        <b>Upload a file</b>
+                        <small>An export from your SIEM, or a log file from the device</small>
+                      </span>
+                    </label>
+                  </div>
+                </div>
+
+                {/* Existing worker-group sample */}
+                {state.sourceMode === 'existing' && !state.sampleEvents && (
+                  <div className="field existing-samples-section">
+                    {!activeWorkerGroup ? (
+                      <div className="advice-box">Select a worker group first, then return here to pick a sample.</div>
+                    ) : (
+                      <>
+                        <label className="existing-samples-label">
+                          Samples in worker group <code>{activeWorkerGroup}</code> (including samples inside installed packs)
+                          {samplesListLoading && <span className="ai-spinner" style={{ width: 14, height: 14, borderWidth: 2 }} />}
+                        </label>
+                        {existingSamples.length === 0 && !samplesListLoading && (
+                          <button className="load-samples-btn" onClick={fetchExistingSamples}>Load samples</button>
+                        )}
+                        {existingSamples.length > 0 && (
+                          <>
+                            <input
+                              type="text"
+                              value={sampleSearchFilter}
+                              onChange={(e) => setSampleSearchFilter(e.target.value)}
+                              placeholder="Search samples..."
+                              className="tile-search"
+                            />
+                            <p className="gen-tier-note" style={{ marginTop: 6, marginBottom: 6 }}>
+                              The badge shows each sample's <b>wire format</b>. The pack is built around the format of the
+                              sample you pick, so choose the one your feed really emits — a CEF sample for a key=value feed
+                              produces a pipeline that extracts nothing in production.
+                            </p>
+                            {/* Build 998: say what is loading, here by the list, not as AI wording in the catalog box. */}
+                            {samplesLoading && (
+                              <div className="ws-loading" role="status">
+                                <span className="ai-spinner" style={{ width: 14, height: 14, borderWidth: 2 }} />
+                                Loading <b>{existingSampleLabel}</b> from <code>{activeWorkerGroup}</code>…
+                              </div>
+                            )}
+                            {/* One compact row per sample (build 996): a worker group can hold dozens,
+                                and the old 3-column cards showed only a handful at a time. */}
+                            <div className="ws-list" role="listbox" aria-label="Worker-group samples">
+                              {filteredExistingSamples.map(s => {
+                                const fmt = sampleFormats[sampleKey(s)];
+                                return (
+                                  <button key={sampleKey(s)} type="button" role="option" aria-selected={false} className="ws-row"
+                                    disabled={samplesLoading}
+                                    title={s.packName ? `${s.name} — from pack ${s.packName}` : s.name}
+                                    onClick={() => loadExistingSample(s.id, s.name, s.packId, s.size)}>
+                                    <span className="ws-ic" aria-hidden="true">{s.packId ? '\u{1F4E6}' : '\u{1F4C4}'}</span>
+                                    <span className="ws-nm">{s.name}</span>
+                                    {s.packName && <span className="ws-pack">{s.packName}</span>}
+                                    <span className="ws-meta">{s.numEvents} ev · {Math.round(s.size / 1024)} KB</span>
+                                    {fmt === 'busy' ? (
+                                      <span className="sample-format-badge sample-format-pending">reading…</span>
+                                    ) : (!fmt || fmt === 'unknown') ? (
+                                      <span
+                                        className="sample-format-badge sample-format-pending"
+                                        title={s.size > SAMPLE_FORMAT_SNIFF_MAX_BYTES
+                                          ? 'Too large to inspect in the background — the format is shown once the sample is loaded.'
+                                          : 'Format not inspected yet — it is shown once the sample is loaded.'}
+                                      >format ?</span>
+                                    ) : (
+                                      <span
+                                        className={fmt.mixed ? 'sample-format-badge sample-format-mixed' : 'sample-format-badge'}
+                                        title={fmt.detail}
+                                      >{fmt.label}{fmt.mixed ? ' · mixed' : ''}</span>
+                                    )}
+                                  </button>
+                                );
+                              })}
+                            </div>
+                            {filteredExistingSamples.length === 0 && (
+                              <p className="step-desc" style={{ marginTop: 8 }}>No samples match your search.</p>
+                            )}
+                          </>
+                        )}
+                      </>
+                    )}
+                  </div>
+                )}
+
+                {/* Live capture mode */}
+                {state.sourceMode === 'live-capture' && !captureLoading && !state.sampleEvents && (
+                  <div className="ai-generate-options">
+                    <label>Live capture settings</label>
+                    <p className="gen-tier-note" style={{ marginTop: 0, marginBottom: 12 }}>
+                      Captures real events flowing through the selected worker group. Ensure traffic is actively being processed.
+                    </p>
+                    <div className="field" style={{ marginBottom: 12 }}>
+                      <label>Filter expression <span className="hint">(Cribl filter syntax)</span></label>
+                      <input
+                        type="text"
+                        value={captureFilter}
+                        onChange={(e) => setCaptureFilter(e.target.value)}
+                        placeholder="true for all events, or sourcetype=='cisco_asa'"
+                      />
+                    </div>
+                    <div style={{ display: 'flex', gap: 16, marginBottom: 12 }}>
+                      <div className="field" style={{ flex: 1 }}>
+                        <label>Max events</label>
+                        <input
+                          type="text"
+                          value={captureMaxEvents}
+                          onChange={(e) => setCaptureMaxEvents(Math.min(500, Math.max(1, Number(e.target.value) || 100)))}
+                        />
+                      </div>
+                      <div className="field" style={{ flex: 1 }}>
+                        <label>Duration (seconds)</label>
+                        <input
+                          type="text"
+                          value={captureDuration}
+                          onChange={(e) => setCaptureDuration(Math.min(30, Math.max(1, Number(e.target.value) || 10)))}
+                        />
+                      </div>
+                    </div>
+                    <button
+                      className="confirm-btn"
+                      onClick={fetchLiveCapture}
+                      disabled={!(selectedGroup || state.workerGroup)}
+                    >
+                      Start capture ({captureMaxEvents} events, {captureDuration}s)
+                    </button>
+                  </div>
+                )}
+
+                {captureLoading && (
+                  <AiProgress messages={[
+                    'Starting live capture on worker group...',
+                    'Waiting for events to flow through...',
+                    'Capturing matching events...',
+                    'Collecting results...',
+                  ]} />
+                )}
+
+                {state.sourceMode === 'live-capture' && !captureLoading && error && (
+                  <div className={error.startsWith('No events matched') ? 'advice-box' : 'error-box'}>
+                    {error}
+                    <div style={{ marginTop: 8 }}>
+                      <button className="confirm-btn" onClick={fetchLiveCapture}>Retry capture</button>
+                    </div>
+                  </div>
+                )}
+
+                {ownMode && samplePanel}
+
+                <div className="own-or">{step === 'optimize-sample' ? 'No current events at hand?' : 'No events from your feed yet?'}</div>
+                <div className="st-cat">
+                  <div className="st-cat-head">
+                    <span className="st-cat-ic" aria-hidden="true">▦</span>
+                    <b>Start from a catalog sample</b>
+                    <small>Real vendor events or AI-written ones. Fine for a demo or a first draft; rebuild on your own events later with <i>Improve an existing pipeline</i>.</small>
+                  </div>
+                  <div className="st-omni">
+                    <span className="st-omni-ic" aria-hidden="true">
+                      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="9" cy="9" r="6" /><path d="m14 14 4 4" /></svg>
+                    </span>
+                    <input
+                      type="text"
+                      value={sourcetypeFilter}
+                      aria-label="Search sources"
+                      placeholder={`Search ${sourceCorpus.length} sources, e.g. darktrace, fortigate, okta`}
+                      onChange={(e) => setSourcetypeFilter(e.target.value)}
+                      // Build 997: the user clicks the source they want; Enter picks nothing.
+                      onKeyDown={(e) => { if (e.key === 'Enter') e.preventDefault(); }}
+                    />
+                  </div>
+
+                  {!stQuery ? (
+                    <div className="st-pop">
+                      <span>Popular:</span>
+                      {sourceCorpus.filter(e => e.tile).slice(0, 10).map(e => {
+                        const r: StRow = { kind: 'source', e };
+                        return (
+                          <button key={e.name} type="button" title={e.name} className={stRowSelected(r) ? 'st-pop-btn on' : 'st-pop-btn'}
+                            onClick={() => pickSource(r)}>{e.label || e.name}</button>
+                        );
+                      })}
+                      <span>or type to search all {sourceCorpus.length}</span>
+                    </div>
+                  ) : (
+                    <div className="st-results">
+                      <div className="st-grp">
+                        {stHits.length ? <>Known sources <span>{stHits.length > 60 ? '60+ matches, keep typing to narrow' : `${stHits.length} match${stHits.length === 1 ? '' : 'es'}`}</span></>
+                          : <>No known source matches “{stQuery}”</>}
+                      </div>
+                      <div className="st-list" role="listbox" aria-label="Sources">
+                        {stRows.map((r) => {
+                          const cls = `st-row${r.kind === 'ai' ? ' st-row-ai' : ''}${stRowSelected(r) ? ' sel' : ''}`;
+                          if (r.kind === 'ai') {
+                            return (
+                              <button key={`ai:${r.name}`} type="button" role="option" aria-selected={stRowSelected(r)} className={cls}
+                                onClick={() => pickSource(r)}>
+                                <span className="st-nm">{stHits.length ? 'None of these? ' : ''}Generate an AI sample for “{r.name}”</span>
+                                <span className="st-lb">Not in the catalog. The AI writes realistic events in the vendor’s format; you review them before building.</span>
+                                <span className="st-bd st-bd-ai">AI</span>
+                              </button>
+                            );
+                          }
+                          return (
+                            <button key={r.e.name} type="button" role="option" aria-selected={stRowSelected(r)} className={cls}
+                              title={r.e.label || r.e.name} onClick={() => pickSource(r)}>
+                              <span className="st-nm">{r.e.name}</span>
+                              <span className="st-lb">{r.e.label}</span>
+                              {stBadge(r.e)}
+                            </button>
+                          );
+                        })}
+                      </div>
+                      {!stRows.length && (
+                        <p className="st-empty">“{stQuery}” can’t be a sourcetype name. Use letters, digits and underscores, e.g. <code>vendor_product</code>.</p>
+                      )}
+                    </div>
+                  )}
+
+                  {/* Picked from the search: where its events come from. No button here —
+                      the action bar's main button loads or generates them. */}
+                  {stPicked && !state.sampleEvents && !sampleBusy && (
+                    <div className="st-picked">
+                      <div className="st-picked-head">
+                        <strong>{effectiveSourcetype}</strong>
+                        {(() => { const e = sourceCorpus.find(x => x.name === effectiveSourcetype); return e ? stBadge(e) : <span className="st-bd st-bd-ai">AI sample</span>; })()}
+                        <span className="st-picked-desc">
+                          {sampleSourceId === 'reference' ? 'Real vendor events, no AI involved.'
+                            : sampleSourceId === 'built-in' ? 'Built-in sample events, no AI involved.'
+                            : aiFetch ? 'The AI writes a focused, high-fidelity sample in the vendor format. It takes 1 to 3 minutes; review the events before you continue.'
+                            : 'Public sample dataset for this source.'}
+                        </span>
+                      </div>
+                      {pickedOptions > 1 && (
+                        <div className="source-picker st-source-picker">
+                          {referenceAvailability[effectiveSourcetype]?.hasSamples && (
+                            <div
+                              className={sampleSourceId === 'reference' ? 'source-option source-option-ref active' : 'source-option source-option-ref'}
+                              onClick={() => setSampleSourceId('reference')}
+                            >
+                              <span className="source-option-icon">{'\u{2B50}'}</span>
+                              <div className="source-option-text">
+                                <strong>Reference sample (recommended)</strong>
+                                <span className="source-option-desc">Real events{referenceAvailability[effectiveSourcetype].pack ? ` from "${referenceAvailability[effectiveSourcetype].pack}"` : ''}, exact vendor format</span>
+                                <span className="source-option-meta">{referenceAvailability[effectiveSourcetype].sampleEvents} real events available</span>
+                                {(() => {
+                                  const fmt = sampleFormats[`ref:${effectiveSourcetype}`];
+                                  if (fmt === 'busy') return <span className="sample-format-badge sample-format-pending">reading format…</span>;
+                                  if (!fmt || fmt === 'unknown') return null;
+                                  return (
+                                    <span
+                                      className={fmt.mixed ? 'sample-format-badge sample-format-mixed' : 'sample-format-badge'}
+                                      title={fmt.detail}
+                                    >{fmt.label}{fmt.mixed ? ' · mixed' : ''}</span>
+                                  );
+                                })()}
+                              </div>
+                            </div>
+                          )}
+                          {getAvailableSources(effectiveSourcetype, hasBuiltInSamples(effectiveSourcetype)).map((src) => (
+                            <div
+                              key={src.id}
+                              className={sampleSourceId === src.id ? 'source-option active' : 'source-option'}
+                              onClick={() => setSampleSourceId(src.id)}
+                            >
+                              <span className="source-option-icon">{src.icon}</span>
+                              <div className="source-option-text">
+                                <strong>{src.label}</strong>
+                                <span className="source-option-desc">{src.description}</span>
+                                {src.eventCount && <span className="source-option-meta">{src.eventCount} events available</span>}
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      )}
+
+                      {aiFetch && multiFormatSpec && (
+                        <div className="multi-format-picker">
+                          <label style={{ marginTop: 12 }}>Which format does your data use?</label>
+                          <p className="gen-tier-note" style={{ marginTop: 4 }}>{multiFormatSpec.note} Pick the one your feed emits so the generated samples match — a wrong guess produces unparseable events.</p>
+                          <div className="format-options">
+                            {multiFormatSpec.formats.map((f) => (
                               <button
-                                key={s}
-                                className={s === customSourcetype ? 'suggestion-btn active' : 'suggestion-btn'}
-                                onClick={() => { setCustomSourcetype(s); setValidationHint(''); setValidationSuggestions([]); applyRecognition(s); setCustomConfirmed(true); }}
+                                key={f.id}
+                                className={confirmedFormat === f.id ? 'format-option active' : 'format-option'}
+                                onClick={() => setConfirmedFormat(f.id)}
                               >
-                                {s}
+                                {f.label}
                               </button>
                             ))}
                           </div>
                         </div>
                       )}
-                      {validationHint && validationSuggestions.length === 0 && (
-                        <div className="validation-hint">{validationHint}</div>
-                      )}
+                      <p className="gen-tier-note" style={{ marginBottom: 0 }}>Cribl sample files are capped at 2 MB. Event count is adjusted if the data exceeds this limit.</p>
+                    </div>
+                  )}
+
+                  {/* Loading indicators */}
+                  {refSampleLoading && !samplesLoading && (
+                    <AiProgress messages={[
+                      'Loading real sample events from reference pack...',
+                      'Preparing vendor-format events...',
+                    ]} />
+                  )}
+                  {samplesLoading && state.sourceMode === 'ai-generate' && (
+                    aiSteps.length > 0
+                      ? <AiStepProgress steps={aiSteps} />
+                      : <AiProgress messages={[
+                          'Preparing sample generation...',
+                        ]} />
+                  )}
+                  {state.sourceMode === 'ai-generate' && !samplesLoading && !refSampleLoading && error && (
+                    <div className="error-box">{error}</div>
+                  )}
+
+                  {(fit === 'vendor' || fit === 'ai') && !sampleBusy && (
+                    <div className="st-cat-warn">
+                      <b>{fit === 'ai' ? 'Built from AI-written events, not your feed.' : 'Built from a vendor sample, not your feed.'}</b>{' '}
+                      {fit === 'ai' ? 'The fields are the AI’s best guess at the vendor format.' : 'Real events, but from someone else’s version, config and event mix.'}{' '}
+                      Fields only your feed sends won’t be parsed, and the score measures this sample, not your data.{' '}
+                      <button type="button" className="btn-link" onClick={focusOwnPaste}>Paste my own events instead</button>
                     </div>
                   )}
                 </div>
 
-                {effectiveSourcetype && !samplesLoading && (!isCustomSourcetype || customConfirmed) && (
-                  <div className="ai-generate-options">
-                    <label>Sample source</label>
-                    <div className="source-picker">
-                      {referenceAvailability[effectiveSourcetype]?.hasSamples && (
-                        <div
-                          className={sampleSourceId === 'reference' ? 'source-option source-option-ref active' : 'source-option source-option-ref'}
-                          onClick={() => setSampleSourceId('reference')}
-                        >
-                          <span className="source-option-icon">{'\u{2B50}'}</span>
-                          <div className="source-option-text">
-                            <strong>Reference sample (recommended)</strong>
-                            <span className="source-option-desc">Real events from the official Cribl pack{referenceAvailability[effectiveSourcetype].pack ? ` "${referenceAvailability[effectiveSourcetype].pack}"` : ''} — exact vendor format, no AI guessing</span>
-                            <span className="source-option-meta">{referenceAvailability[effectiveSourcetype].sampleEvents} real events available</span>
-                            {(() => {
-                              const fmt = sampleFormats[`ref:${effectiveSourcetype}`];
-                              if (fmt === 'busy') return <span className="sample-format-badge sample-format-pending">reading format…</span>;
-                              if (!fmt || fmt === 'unknown') return null;
-                              return (
-                                <span
-                                  className={fmt.mixed ? 'sample-format-badge sample-format-mixed' : 'sample-format-badge'}
-                                  title={fmt.detail}
-                                >{fmt.label}{fmt.mixed ? ' · mixed' : ''}</span>
-                              );
-                            })()}
-                          </div>
-                        </div>
-                      )}
-                      {getAvailableSources(effectiveSourcetype, hasBuiltInSamples(effectiveSourcetype)).map((src) => (
-                        <div
-                          key={src.id}
-                          className={sampleSourceId === src.id ? 'source-option active' : 'source-option'}
-                          onClick={() => setSampleSourceId(src.id)}
-                        >
-                          <span className="source-option-icon">{src.icon}</span>
-                          <div className="source-option-text">
-                            <strong>{src.label}</strong>
-                            <span className="source-option-desc">{src.description}</span>
-                            {src.eventCount && <span className="source-option-meta">{src.eventCount} events available</span>}
-                          </div>
-                        </div>
-                      ))}
-                    </div>
+                {!ownMode && samplePanel}
 
-                    {(sampleSourceId === 'ai-generate' || sampleSourceId === 'hybrid') && multiFormatSpec && (
-                      <div className="multi-format-picker">
-                        <label style={{ marginTop: 16 }}>Which format does your data use?</label>
-                        <p className="gen-tier-note" style={{ marginTop: 4 }}>{multiFormatSpec.note} Pick the one your feed emits so the generated samples match — a wrong guess produces unparseable events.</p>
-                        <div className="format-options">
-                          {multiFormatSpec.formats.map((f) => (
-                            <button
-                              key={f.id}
-                              className={confirmedFormat === f.id ? 'format-option active' : 'format-option'}
-                              onClick={() => setConfirmedFormat(f.id)}
-                            >
-                              {f.label}
-                            </button>
-                          ))}
-                        </div>
-                      </div>
-                    )}
+              </div>
+            </div>
 
-                    {(sampleSourceId === 'ai-generate' || sampleSourceId === 'hybrid') && (
-                      <>
-                        <label style={{ marginTop: 16 }}>AI generation</label>
-                        <div className="generate-tiers">
-                          <div className="gen-tier active">
-                            <span className="gen-tier-icon">{'\u{2728}'}</span>
-                            <strong>Quality sample</strong>
-                            <span className="gen-tier-desc">A focused, high-fidelity set of diverse events grounded on the real vendor format — event types, severities, and edge cases. Quality over volume.</span>
-                            <span className="gen-tier-meta">up to 2 MB</span>
-                          </div>
-                        </div>
-                      </>
-                    )}
-
-                    <p className="gen-tier-note">Cribl sample files are capped at 2 MB. Event count is adjusted if the generated data exceeds this limit.</p>
-                    <button
-                      className="confirm-btn"
-                      disabled={!sampleSourceId}
-                      onClick={() => sampleSourceId === 'reference' ? fetchReferenceSampleEvents(effectiveSourcetype) : fetchAiSamples(effectiveSourcetype)}
-                      style={{ marginTop: 10 }}
-                    >
-                      {sampleSourceId === 'reference' ? 'Load reference sample' :
-                       sampleSourceId === 'built-in' ? 'Load built-in sample' :
-                       sampleSourceId === 'ai-generate' ? 'Generate quality sample' :
-                       sampleSourceId === 'hybrid' ? 'Fetch & generate quality sample' :
-                       sampleSourceId ? 'Fetch sample events' : 'Select a source above'}
-                    </button>
-                  </div>
-                )}
-              </>
-            )}
-
-            {/* Loading indicators */}
-            {refSampleLoading && !samplesLoading && (
-              <AiProgress messages={[
-                'Loading real sample events from reference pack...',
-                'Preparing vendor-format events...',
-              ]} />
-            )}
-            {samplesLoading && (
-              aiSteps.length > 0
-                ? <AiStepProgress steps={aiSteps} />
-                : <AiProgress messages={[
-                    'Preparing sample generation...',
-                  ]} />
-            )}
-            {state.sourceMode === 'ai-generate' && !samplesLoading && !refSampleLoading && error && (
-              <div className="error-box">{error}</div>
-            )}
-
-            {/* Preview + sourcetype confirmation */}
-            {state.sampleEvents && !samplesLoading && (
-              <>
-                {sampleRepairNotice && (
-                  <div className="sample-repair-notice">
-                    <span className="repair-icon">{'\u{1F527}'}</span> {sampleRepairNotice}
-                  </div>
-                )}
-                {/* Sanitise — only for customer-estate samples (upload / paste / live /
-                    worker-group). AI-generated and reference/library events are already
-                    synthetic or public, so the banner must not appear or nag on those.
-                    It sits ABOVE the preview so a real sample is flagged the moment it
-                    loads, and folds the "required" warning and the "done" confirmation
-                    into one block instead of a loose stack of boxes. */}
-                {sampleNeedsSanitising(state.sourceMode) && (() => {
-                  const required = !state.sampleSanitised && loadQualitySettings().requireSanitisedSamples;
-                  const cls = state.sampleSanitised ? 'sanitise-banner done'
-                    : required ? 'sanitise-banner req' : 'sanitise-banner';
-                  return (
-                    <div className={cls}>
-                      <span className="sanitise-banner-icon">{state.sampleSanitised ? '✅' : '\u{1F6E1}\u{FE0F}'}</span>
-                      <div className="sanitise-banner-text">
-                        <div className="sanitise-banner-title">
-                          {state.sampleSanitised ? 'Sample sanitised locally' : 'Sanitize this sample'}
-                          {required && <span className="sanitise-banner-chip">Required before AI steps</span>}
-                        </div>
-                        <div className="sanitise-banner-desc">
-                          {state.sampleSanitised
-                            ? (isSanitisedLibrarySampleName(existingSampleLabel)
-                                ? 'This is a sanitised library sample — its identities were already replaced when it was saved, so there is nothing left to sanitise.'
-                                : 'Identities were replaced with consistent stand-ins. Nothing was sent anywhere to do it.')
-                            : required
-                              ? 'These are real events from your estate, and sending un-sanitised data to the AI provider is turned off — the AI steps will not run until you sanitise. It happens entirely in your browser: no upload, no AI call.'
-                              : 'Replace hostnames, usernames and IP addresses with consistent stand-ins — entirely in your browser. No upload, no AI call.'}
-                        </div>
-                        {/* Action is left-aligned under the text, so it lines up with every
-                            other button in the wizard rather than floating off to the right. */}
-                        {/* Advisory only: the sanitised events still load and the pack can be
-                            built, but they no longer parse cleanly against the source's declared
-                            wire format. The user decides — Undo restores the original, or narrow
-                            the picks and re-sanitise from the wizard. */}
-                        {state.sampleSanitised && sanitiseWarning && (
-                          <div className="sanitise-banner-warn">
-                            ⚠️ {sanitiseWarning} You can still build with it, or Undo and narrow the picks that changed the format.
-                          </div>
-                        )}
-                        {state.sampleSanitised
-                          ? (sanitisePrev !== null && (
-                              <button className="btn-link sanitise-banner-action" onClick={undoSanitise}>Undo sanitise</button>
-                            ))
-                          : (
-                            <div className="sanitise-banner-actions">
-                              <button className="confirm-btn sanitise-banner-action" onClick={() => setSanitiseModalOpen(true)}
-                                title="Replace hostnames, usernames and IP addresses with consistent stand-ins. Runs entirely in your browser — nothing is sent anywhere.">
-                                Sanitize sample
-                              </button>
-                              {/* A worker group also holds samples this app itself put there —
-                                  generated or library-derived events with no identities in them.
-                                  Sanitising those a second time is pure friction, but the app
-                                  cannot prove provenance from a plain sample file, so the escape
-                                  is an explicit human assertion rather than a silent default. */}
-                              {state.sourceMode === 'existing' && (
-                                <button className="btn-link sanitise-banner-action"
-                                  onClick={() => update({ sampleSanitised: true })}
-                                  title="Use this sample as-is. Only do this for events you know are synthetic or already sanitised — generated samples, reference data, or a sanitised library entry.">
-                                  These events are already synthetic — skip
-                                </button>
-                              )}
-                            </div>
-                          )}
-                      </div>
-                    </div>
-                  );
-                })()}
-
-                <div className="preview-box">
-                  <label>
-                    Preview ({state.sampleEvents.split('\n').filter(Boolean).length} events)
-                    {state.sampleSanitised && <span className="sl-sanitised-badge">sanitised</span>}
-                  </label>
-                  <textarea readOnly value={state.sampleEvents.split('\n').slice(0, 5).join('\n') + '\n...'} />
-                </div>
-
-
-                {/* What format did we actually get? The pack is built around it, so it
-                    is stated explicitly for EVERY sample source — uploaded, pasted,
-                    worker-group, reference, vendor or AI-generated. */}
-                {(() => {
-                  const fmt = describeSampleFormat(state.sampleEvents.split('\n').slice(0, 50));
-                  if (fmt.id === 'empty') return null;
-                  const variant = multiFormatSpec
-                    ? multiFormatSpec.formats.find(f => sampleFormatMatchesVariant(fmt, f.id)) || null
-                    : null;
-                  const unmatched = !!multiFormatSpec && !variant;
-                  // A mixed sample can carry TWO of this source's variants (the Corelight
-                  // reference sample is syslog-framed JSON plus Zeek TSV). Building for one
-                  // silently drops the others, so name them instead of just saying "mixed".
-                  const present = multiFormatSpec && fmt.mixed
-                    ? sampleVariantsPresent(state.sampleEvents.split('\n'), multiFormatSpec.formats.map(f => f.id))
-                    : [];
-                  const presentLabels = present
-                    .map(id => multiFormatSpec!.formats.find(f => f.id === id)?.label || id);
-                  return (
-                    <div className={unmatched || fmt.mixed ? 'sample-format-line sample-format-line-warn' : 'sample-format-line'}>
-                      <span className="sample-format-badge">{fmt.label}</span>
-                      <span className="sample-format-text">
-                        {fmt.detail}
-                        {variant && ` This is the “${variant.label}” variant of this source — the pack will be built for it.`}
-                        {presentLabels.length > 1 && ` These events carry ${presentLabels.length} of this source's variants (${presentLabels.join(' + ')}) — a pack built for one will not extract the others, so use a single-format sample if you can.`}
-                        {unmatched && ` This source also ships as ${multiFormatSpec!.formats.map(f => f.label).join(' / ')}, and these events match none of them — check the sample before building.`}
-                      </span>
-                    </div>
-                  );
-                })()}
-
-                {/* Sourcetype detection/confirmation for non-AI modes */}
-                {state.sourceMode !== 'ai-generate' && (
-                  <div className="field" style={{ marginTop: 16 }}>
-                    {detecting && (
-                      <div style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '12px 0' }}>
-                        <span className="ai-spinner" style={{ width: 16, height: 16, borderWidth: 2 }} />
-                        <span style={{ fontSize: 13, color: '#595959' }}>Detecting sourcetype...</span>
-                      </div>
-                    )}
-                    {detectedSourcetype && !detecting && (
-                      <div className="ai-generate-options">
-                        <label>Detected sourcetype</label>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 8 }}>
-                          <code style={{ fontSize: 15, fontWeight: 600, padding: '4px 10px', background: '#e6fafa', borderRadius: 4 }}>{detectedSourcetype}</code>
-                          <span className={`type-badge type-${detectConfidence === 'high' ? 'stream' : detectConfidence === 'medium' ? 'edge' : 'outpost'}`}>{detectConfidence} confidence</span>
-                        </div>
-                        {detectReason && <p className="gen-tier-note" style={{ marginTop: 0, marginBottom: 12 }}>{detectReason}</p>}
-                        {/* Detection already set this as the active sourcetype (canProceedSource
-                            is satisfied) — so there is no "Confirm" to press. This row only exists
-                            to OVERRIDE it: type a different name and "Use this" commits the change. */}
-                        <label style={{ fontSize: 12, color: '#8c8c8c', fontWeight: 400 }}>Not right? Enter the correct sourcetype:</label>
-                        <div className="custom-input-row" style={{ marginTop: 6 }}>
-                          <div className="custom-input-inline">
-                            <input
-                              type="text"
-                              value={isCustomSourcetype ? customSourcetype : sourcetype}
-                              onChange={(e) => { sourcetypeSelectionOrigin.current = 'user'; setCustomSourcetype(e.target.value); setIsCustomSourcetype(true); }}
-                              placeholder="Override sourcetype..."
-                            />
-                            <button
-                              className="confirm-btn"
-                              disabled={!(isCustomSourcetype ? customSourcetype.trim() : sourcetype)}
-                              onClick={() => { sourcetypeSelectionOrigin.current = 'user'; setReductionToggles({}); }}
-                            >
-                              Use this
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    )}
-                    {!detectedSourcetype && !detecting && (
-                      <div className="ai-generate-options">
-                        <label>Sourcetype could not be auto-detected</label>
-                        {detectReason && <p className="gen-tier-note" style={{ marginTop: 0, marginBottom: 10, color: '#d4380d' }}>{detectReason}</p>}
-                        {/* The way back after the privacy gate stopped detection. Without this
-                            the only route is to retype the sourcetype by hand, which reads as a
-                            dead end rather than a step that is now unblocked. */}
-                        {state.sampleSanitised && state.sampleEvents.trim() && (
-                          <button className="btn-secondary" style={{ marginBottom: 10 }}
-                            onClick={() => detectSourcetype(state.sampleEvents, { sanitised: true })}>
-                            Detect sourcetype now the sample is sanitised
-                          </button>
-                        )}
-                        <p className="gen-tier-note" style={{ marginTop: 0, marginBottom: 10 }}>Enter the sourcetype manually:</p>
-                        <div className="custom-input-inline">
-                          <input
-                            type="text"
-                            value={customSourcetype}
-                              onChange={(e) => { sourcetypeSelectionOrigin.current = 'user'; setCustomSourcetype(e.target.value); setIsCustomSourcetype(true); setStMatches([]); setValidationHint(''); }}
-                            onKeyDown={(e) => { if (e.key === 'Enter' && customSourcetype.trim()) validateSourcetype(customSourcetype); }}
-                            placeholder="e.g. cisco_asa, palo_alto_traffic"
-                            disabled={validating}
-                          />
-                          <button
-                            className="confirm-btn"
-                            disabled={!customSourcetype.trim() || validating}
-                            onClick={() => { setIsCustomSourcetype(true); setReductionToggles({}); void validateSourcetype(customSourcetype); }}
-                          >
-                            {validating ? 'Checking...' : 'Confirm'}
-                          </button>
-                        </div>
-                        {validationHint && <p className="gen-tier-note" style={{ marginTop: 8, marginBottom: 0 }}>{validationHint}</p>}
-                        {!validating && stMatches.length > 0 && (
-                          <div className="st-search-matches">
-                            <span className="st-search-label">Pick a supported sourcetype to use it directly, or refine the name yourself and Confirm again:</span>
-                            <div className="st-search-list">
-                              {stMatches.map((m) => (
-                                <button
-                                  key={m.name}
-                                  className={m.name === customSourcetype ? 'st-search-item active' : 'st-search-item'}
-                                  title={m.description || m.name}
-                                  onClick={() => { setCustomSourcetype(m.name); setIsCustomSourcetype(true); setReductionToggles({}); setStMatches([]); setValidationHint(''); applyRecognition(m.name); setCustomConfirmed(true); }}
-                                >
-                                  {m.golden && <span className="st-search-star">{'★'}</span>}
-                                  <span className="st-search-name">{m.name}</span>
-                                  {m.description && <span className="st-search-desc">{m.description}</span>}
-                                </button>
-                              ))}
-                            </div>
-                          </div>
-                        )}
-                      </div>
-                    )}
-                  </div>
-                )}
-              </>
-            )}
-
+            {/* Rarely changed: one closed "Build options" (open while either is on, so a
+                non-default setting is never hidden). */}
             {(packMode === 'experiment' || packMode === 'flow' || packMode === 'add-pipeline') && canProceedSource && (
-              <div className="code-function-toggle" style={{ marginTop: 16 }}>
+              <details className="st-build-opts" open={allowCodeFunctions || performanceMode}>
+              <summary>Build options{(allowCodeFunctions || performanceMode) && <span className="st-build-opts-on">{[allowCodeFunctions && 'Code functions', performanceMode && 'Performance mode'].filter(Boolean).join(', ')} on</span>}</summary>
+              <div className="code-function-toggle" style={{ marginTop: 10 }}>
                 <label className="toggle-label">
                   <input
                     type="checkbox"
@@ -10389,15 +10639,54 @@ function App() {
                   </div>
                 </label>
               </div>
+              <div className="code-function-toggle" style={{ marginTop: 8 }}>
+                <label className="toggle-label">
+                  <input
+                    type="checkbox"
+                    checked={performanceMode}
+                    onChange={(e) => setPerformanceMode(e.target.checked)}
+                  />
+                  <span className="toggle-switch" />
+                  <div className="option-info">
+                    <strong>Performance mode (experimental)</strong>
+                    <span>{!performanceMode
+                      ? 'Off — the pipeline is deployed exactly as generated.'
+                      : `The pipeline is built as usual. After the build, a cleaner version is prepared: consecutive evals are merged${useVendorFieldLibrary ? ', and || fallbacks around fields the vendor field library confirms for the source type are removed' : ''}${allowCodeFunctions ? ', then its evals are compiled into Code functions' : ' — standard Functions only, no Code functions'}. Both versions run in Data Preview on the pack sample; you are offered the cleaner one only when the output is identical, and applying it is your click.`}</span>
+                  </div>
+                </label>
+                {performanceMode && (
+                  <label className="toggle-label" style={{ marginTop: 8 }}>
+                    <input
+                      type="checkbox"
+                      checked={useVendorFieldLibrary}
+                      onChange={(e) => setUseVendorFieldLibrary(e.target.checked)}
+                    />
+                    <span className="toggle-switch" />
+                    <div className="option-info">
+                      <strong>Use vendor field library</strong>
+                      <span>{!useVendorFieldLibrary
+                        ? 'Off — every || fallback is kept; performance mode only merges evals.'
+                        : 'On — where an || chain reads a field the library confirms for this source type, that field stays and the alternatives around it go; a chain without a confirmed field keeps every fallback, unless the entry is reviewed as complete (closed). The field names each build extracts (never values) are learned into this install\'s library and count as confirmed, so every variant a sample showed stays in its chain; a name a closed entry does not list reopens it.'}</span>
+                    </div>
+                  </label>
+                )}
+              </div>
+              </details>
             )}
 
             <StepNav>
+              <span className="st-fit-status">{fitMeter(fit)}{SAMPLE_FIT_INFO[fit].label}{fit === 'own' ? ` · ${loadedCount} events` : ''}</span>
+              {(fit === 'vendor' || fit === 'ai') && <button className="back" onClick={focusOwnPaste}>Use my own events</button>}
               <button className="back" onClick={() => setStep(step === 'optimize-sample' ? 'optimize-goals' : packMode === 'flow' ? 'select-group' : packMode === 'experiment' ? 'name' : 'select-action')}>Back</button>
-              <button disabled={!canProceedSource} onClick={() => {
-                setStep(step === 'optimize-sample' ? 'optimize-running' : 'destination');
-              }}>
-                {step === 'optimize-sample' ? 'Review Improvements' : packMode === 'flow' ? 'Next: Flow' : 'Next: Destination Format'}
-              </button>
+              {(needsFetch || sampleBusy) ? (
+                <button className={aiFetch ? 'nav-ai' : undefined} disabled={sampleBusy} onClick={runFetch}>
+                  {sampleBusy ? (aiFetch ? 'Generating…' : 'Loading…') : fetchLabel}
+                </button>
+              ) : (
+                <button disabled={!canProceedSource} onClick={goNext}>
+                  {step === 'optimize-sample' ? 'Review Improvements' : packMode === 'flow' ? 'Next: Flow' : 'Next: Destination Format'}
+                </button>
+              )}
             </StepNav>
           </div>
         );
@@ -10774,7 +11063,7 @@ function App() {
                     : null;
                   return (
                     <>
-                      {flowBlock && <span className="step-desc" role="status">{flowBlock}</span>}
+                      {flowBlock && <span className="step-desc nav-hint" role="status">{flowBlock}</span>}
                       {/* Flow has no Review step: Build pack starts the staged build,
                           whose screen opens with the short summary. */}
                       <button disabled={blocked || !!flowBlock || (packMode === 'flow' && packsLoading)} onClick={() => {
@@ -11173,6 +11462,7 @@ function App() {
             <h2>Batch create · Upload your file</h2>
             <p className="step-desc">One row per pipeline. Rows with the same pack name become one pack. You choose samples in the next step, so the file has no sample column.</p>
 
+            {batchCapNotice && <div className="bx-notice" role="status" style={{ marginBottom: 14 }}>{batchCapNotice}</div>}
             {batchError && <div className="bx-notice err" style={{ marginBottom: 14 }}>{batchError}</div>}
 
             {batchRows.length === 0 ? (
@@ -11487,6 +11777,7 @@ fortinet_fortigate,FortiGate CEF,fgt_cef_to_ocsf,ocsf,,`}</pre>
         return (
           <div className={`step bx${selRow ? ' bx-has-side' : ''}`}>
             <h2>Check sourcetypes and samples</h2>
+            {batchCapNotice && <div className="bx-notice" role="status" style={{ marginBottom: 14 }}>{batchCapNotice}</div>}
             <p className="step-desc">Choose each row's sample first, then confirm the sourcetype it names. Click a row to see why it needs you, what to do and what happens to it in the build. ✎ changes a row's sourcetype and ⇪ chooses its sample (capture, upload, saved or library). The Sample column says where a row without a chosen sample gets one: the library, or AI, which creates the missing samples at the start of the batch run.</p>
 
             {/* Busy panel ABOVE the table and sticky to the top of the step: the
@@ -12905,7 +13196,8 @@ fortinet_fortigate,FortiGate CEF,fgt_cef_to_ocsf,ocsf,,`}</pre>
                               setSelectedGroup(g.id);
                               update({ workerGroup: g.id });
                               setGroupFilter('');
-                              setStep('demo-sources');
+                              // A whiteboard demo already has its sources: go to the destinations.
+                              setStep(demoOrigin ? 'demo-destinations' : 'demo-sources');
                             }}
                           >
                             <span className="tile-icon">{'⚙'}</span>
@@ -12915,6 +13207,13 @@ fortinet_fortigate,FortiGate CEF,fgt_cef_to_ocsf,ocsf,,`}</pre>
                                 ? <span className="type-badge type-stream">{h.healthy}/{h.total} worker{h.total !== 1 ? 's' : ''} active</span>
                                 : <span style={{ color: '#d4380d', fontSize: 12, fontWeight: 600 }}>No active workers — deploy a worker to this group first</span>}
                             </span>
+                            {(() => {
+                              // Each board's demo has its own names (spec R16): neighbours are information, not a conflict.
+                              const others = groupNeighbours(g.id, demoOrigin?.boardId ?? '', demoBoardRows);
+                              return others.length > 0 && (
+                                <span className="wb-group-neighbours">Also running here: {others.map(o => o.prospect).join(', ')}</span>
+                              );
+                            })()}
                           </div>
                         );
                       })}
@@ -13254,10 +13553,10 @@ fortinet_fortigate,FortiGate CEF,fgt_cef_to_ocsf,ocsf,,`}</pre>
             <div className="success-box">
               <p><strong>{ok}</strong> pipeline{ok !== 1 ? 's' : ''} and pack{ok !== 1 ? 's' : ''} deployed{failed > 0 ? `, ${failed} failed` : ''} on <code>{demoSummary?.group}</code>.</p>
               <p>Active datagens: {demoSummary?.datagenIds.map((id, i) => <span key={id}>{i > 0 && ', '}<code>{id}</code></span>)} — ≈ {demoSummary?.eventsPerSec} events/s from {demoSources.length} sourcetype(s).</p>
-              {demoSummary?.replay && <p>Post-processing is fed by the OCSF replay datagen <code>{DEMO_OCSF_REPLAY_ID}</code> (recorded from each source's OCSF pipeline output).</p>}
+              {demoSummary?.replay && <p>Post-processing is fed by the OCSF replay datagen <code>{demoOrigin?.ns ? demoNames(demoOrigin.ns).replayId : DEMO_OCSF_REPLAY_ID}</code> (recorded from each source's OCSF pipeline output).</p>}
               <p><strong>{demoSummary?.routeCount}</strong> isolated demo route(s) written on top of the routing table (final — real data untouched).</p>
-              {demoSummary?.lakeOutput && <p>Cribl Lake output: <code>{demoSummary.lakeOutput}</code> → dataset <code>{demoLakeDataset}</code>.</p>}
-              {demoDashboardResult?.name && <p>{demoDashboardStyle === 'vizlab' ? 'Viz-Lab' : 'Cribl Search'} dashboard: <strong>{demoDashboardResult.name}</strong> with {demoDashboardResult.kpiCount} AI-selected KPI(s) and {demoDashboardResult.datatypeIds?.length || 0} Datatype v1 parser(s).</p>}
+              {demoSummary?.lakeOutput && <p>Cribl Lake output: <code>{demoSummary.lakeOutput}</code> → dataset <code>{demoLakeDataset}</code>. Search it in Cribl Search with <code>dataset="{demoLakeDataset}" | limit 100</code>.</p>}
+              {demoDashboardResult?.name && <p>{demoDashboardStyle === 'vizlab' ? 'Viz-Lab' : 'Cribl Search'} dashboard: <strong>{demoDashboardResult.name}</strong> with {demoDashboardResult.kpiCount} AI-selected KPI(s){demoDashboardResult.datatypeIds?.length ? ` and ${demoDashboardResult.datatypeIds.length} Datatype v1 parser(s)` : ', read from the Lake dataset as stored'}.</p>}
               {demoDashboardResult?.error && <p className="demo-dashboard-error">Optional dashboard not deployed: {demoDashboardResult.error}</p>}
             </div>
             <div className="batch-results">
@@ -13307,6 +13606,25 @@ fortinet_fortigate,FortiGate CEF,fgt_cef_to_ocsf,ocsf,,`}</pre>
               <div className="success-box"><p>No demo artifacts found on this worker group. Nothing to clean up.</p></div>
             ) : (
               <>
+                {demoScan && (() => {
+                  // One chip per demo on the group (spec R16): a whiteboard's namespace, or "Made by hand".
+                  const spaces = demoNamespacesIn(demoScan);
+                  if (spaces.length < 2 && spaces[0] === '') return null;
+                  const who = (ns: string) => ns === '' ? 'Made by hand'
+                    : demoBoardRows.find(b => b.demo?.ns === ns && b.demo.group === selectedGroup)?.prospect
+                      || demoBoardRows.find(b => b.demo?.ns === ns)?.prospect || ns;
+                  return (
+                    <div className="wb-cleanup-spaces">
+                      <span className="wb-cleanup-spaces-lbl">Select one demo</span>
+                      {spaces.map(ns => (
+                        <button key={ns || 'legacy'} type="button" className="wb-cleanup-space" onClick={() => {
+                          const pick = demoCleanupSelection(demoScan, ns);
+                          setDemoCleanupSel({ routes: new Set(pick.routes), datagens: new Set(pick.datagens), packs: new Set(pick.packs), outputs: new Set() });
+                        }}>{who(ns)}</button>
+                      ))}
+                    </div>
+                  );
+                })()}
                 {(['routes', 'datagens', 'packs', 'outputs'] as const).map((kind) => {
                   const items = (demoScan ? demoScan[kind] : []) || [];
                   if (items.length === 0) return null;
@@ -13332,6 +13650,12 @@ fortinet_fortigate,FortiGate CEF,fgt_cef_to_ocsf,ocsf,,`}</pre>
                   );
                 })}
               </>
+            )}
+            {demoCleanupLake && (
+              <label className="wb-cleanup-lake">
+                <input type="checkbox" checked={demoCleanupLake.remove} onChange={e => setDemoCleanupLake({ ...demoCleanupLake, remove: e.target.checked })} />
+                Also delete Lake dataset <code>{demoCleanupLake.id}</code> and the demo data in it
+              </label>
             )}
             <StepNav>
               <button className="back" onClick={() => setStep('demo-sources')}>Back</button>
@@ -13372,7 +13696,7 @@ fortinet_fortigate,FortiGate CEF,fgt_cef_to_ocsf,ocsf,,`}</pre>
 
       case 'experiment-setup': {
         const df = state.destFormat === 'manual' ? (state.manualFormat || 'json') : state.destFormat;
-        const isSchema = !['json', 'manual', 'raw', 'raw_fields', 'passthrough', ''].includes(flowBuildFormat(df));
+        const isSchema = !['json', 'manual', 'raw', 'raw_fields', 'passthrough', 'splunk_csv', ''].includes(flowBuildFormat(df));
         return (
           <div className="step">
             <h2>{packMode === 'flow' ? 'Review & build the pack flow' : 'Create New Pack'}</h2>
@@ -13488,12 +13812,86 @@ fortinet_fortigate,FortiGate CEF,fgt_cef_to_ocsf,ocsf,,`}</pre>
             })();
         return (
           <div className="step">
-            <h2>Pack Results</h2>
-            <p className="step-desc">Each stage scored on its <strong>own job</strong>. No blended number — a weak stage can't hide behind a strong one. One tab per output format.</p>
-            <ScoringReport data={reportData} packId={expPackId} workerGroup={selectedGroup || state.workerGroup} visualizerBaseUrl={criblInstanceBaseUrl()} />
-            <BuildTracePanel traces={expBuildTraces} />
-            <div className="build-trace-ai-row"><TraceAiPanel traces={expBuildTraces} /></div>
-            <p className="step-desc" style={{ marginTop: 14 }}>Pack <code>{expPackId}</code> deployed on <code>{selectedGroup || state.workerGroup}</code>. {describeStoredGoldens(expBuildTraces)}</p>
+            {(() => {
+              // What actually happened, said first: built → committed + deployed → scored.
+              // `expDeploy` is the final commit+deploy's own outcome, so a failed deploy
+              // never reads as live.
+              const group = selectedGroup || state.workerGroup;
+              const live = expDeploy?.ok === true && deployedPipelines.length > 0;
+              const failed = expDeploy != null && !expDeploy.ok;
+              const scored = reportData.map(f => f.average).filter((n): n is number => typeof n === 'number');
+              const avg = scored.length ? Math.round(scored.reduce((a, b) => a + b, 0) / scored.length) : null;
+              const packUrl = streamPackUrl(criblUiBase, group, expPackId);
+              const vizBase = criblInstanceBaseUrl();
+              const nPipes = reportData.length || deployedPipelines.length;
+              const at = expDeploy ? new Date(expDeploy.at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : '';
+              const ext = <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path d="M9 3h4v4M13 3 7 9M11 9v4H3V5h4" /></svg>;
+              return (
+                <>
+                  <div className={`res-hero${live ? ' ok' : failed ? ' bad' : ''}`}>
+                    <span className="res-hero-ic" aria-hidden="true">{live ? '✓' : failed ? '!' : '…'}</span>
+                    <div className="res-hero-body">
+                      <h2>{live ? 'Your pack is live' : failed ? 'Your pack is built but not deployed' : 'Your pack is built'}</h2>
+                      <p>
+                        <code>{expPackId}</code>{' '}
+                        {live ? <>is committed and deployed on worker group <code>{group}</code> with {nPipes} pipeline{nPipes === 1 ? '' : 's'}.</>
+                          : failed ? <>is saved on worker group <code>{group}</code>, but the final commit and deploy failed: {expDeploy?.message}. Commit and deploy the group in Stream to make it live.</>
+                          : <>is on worker group <code>{group}</code>. Check the build log for its deploy status.</>}
+                      </p>
+                      <ol className="res-tl">
+                        <li className="done"><b>Built</b><span>{nPipes} pipeline{nPipes === 1 ? '' : 's'}</span></li>
+                        <li className={live ? 'done' : failed ? 'bad' : ''}><b>Committed and deployed</b><span>{live ? `to ${group} at ${at}` : failed ? 'failed' : 'unknown'}</span></li>
+                        <li className={avg != null ? 'done' : ''}><b>Scored</b><span>{avg != null ? `average ${avg}` : 'not scored'}</span></li>
+                      </ol>
+                      <div className="res-acts">
+                        {packUrl && <a className="res-btn pri" href={packUrl} target="_blank" rel="noopener noreferrer" title={`Open ${expPackId} on ${group} in Cribl Stream`}>Open pack in Stream {ext}</a>}
+                        {vizBase && group && expPackId && (
+                          <PipelineVisualizerLink className="res-btn" href={pipelineVisualizerUrl(vizBase, group, expPackId)} title={`Open ${expPackId} in the Pipeline Visualizer`} align="left">
+                            Pipeline Visualizer
+                          </PipelineVisualizerLink>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                  {expError && <div className="error-box"><span>{expError}</span></div>}
+
+                  {reportData.length > 0 && (
+                    <table className="res-fmts">
+                      <thead><tr><th>Destination</th><th>Pipeline</th><th>Score</th><th>Status</th><th /></tr></thead>
+                      <tbody>
+                        {reportData.map(f => {
+                          const fPack = f.profileArgs?.packId || expPackId;
+                          const url = streamPipelineUrl(criblUiBase, f.profileArgs?.workerGroup || group, fPack, f.pipelineId);
+                          return (
+                            <tr key={f.pipelineId}>
+                              <td><b>{f.formatLabel}</b>{fPack !== expPackId && <div className="res-sub">pack <code>{fPack}</code></div>}</td>
+                              <td><code>{f.pipelineId}</code></td>
+                              <td>
+                                <div className="res-sc">
+                                  <b>{f.average ?? 'N/A'}</b>
+                                  <span className="res-bar"><i className={`band-${f.band}`} style={{ width: `${f.average ?? 0}%` }} /></span>
+                                </div>
+                              </td>
+                              <td><span className={live ? 'res-st ok' : 'res-st'}>{live ? 'Deployed' : failed ? 'Not deployed' : 'Built'}</span></td>
+                              <td>{url && <a className="res-lk" href={url} target="_blank" rel="noopener noreferrer">Open pipeline</a>}</td>
+                            </tr>
+                          );
+                        })}
+                      </tbody>
+                    </table>
+                  )}
+                </>
+              );
+            })()}
+
+            {/* The per-destination detail: one sample line with every extracted
+                field highlighted, then where each one lands. */}
+            <section className="res-inspector">
+              <h3>Extraction inspector</h3>
+              <p className="step-desc">One event from your sample, the fields pulled out of it, and where each one lands in the destination. Each stage is scored on its own job, so a weak stage can't hide behind a strong one. One tab per destination.</p>
+              <ScoringReport data={reportData} packId={expPackId} workerGroup={selectedGroup || state.workerGroup} visualizerBaseUrl={criblInstanceBaseUrl()} performanceMode={performanceMode} performanceAllowCode={allowCodeFunctions} performanceUseLibrary={useVendorFieldLibrary} />
+            </section>
+            <p className="step-desc" style={{ marginTop: 14 }}>{describeStoredGoldens(expBuildTraces)}</p>
             {/* Successful + scored post-process packs got their own tab in the
                 ScoringReport above (see buildFlowPostProcessPacks). Only packs
                 that errored, or deployed with no upstream sample to score
@@ -13509,9 +13907,10 @@ fortinet_fortigate,FortiGate CEF,fgt_cef_to_ocsf,ocsf,,`}</pre>
                 ))}
               </div>
             )}
-            {expError && <div className="error-box"><span>{expError}</span></div>}
+            <BuildTracePanel traces={expBuildTraces} />
+            <div className="build-trace-ai-row"><TraceAiPanel traces={expBuildTraces} /></div>
             <StepNav>
-              <button onClick={resetAll}>Start Again</button>
+              <button onClick={resetAll}>Build another pack</button>
             </StepNav>
           </div>
         );
@@ -13747,6 +14146,7 @@ fortinet_fortigate,FortiGate CEF,fgt_cef_to_ocsf,ocsf,,`}</pre>
       log(`✓ Deployed pack ${result.packId} — pipeline ${result.pipelineId} on ${state.workerGroup}.`);
       log(`Attach this pack as a post-processing pipeline on your ${ppDestFormat.toUpperCase()} destination.`);
       setDeployedPipelines([]);   // deterministic transform — no AI validation panel
+      finishWizardDraft();
       setStep('done');
     } catch (e) {
       setError(e instanceof Error ? e.message : String(e));
@@ -13969,6 +14369,7 @@ fortinet_fortigate,FortiGate CEF,fgt_cef_to_ocsf,ocsf,,`}</pre>
       setValidationReports({});
       setRepairSelection(new Set());
       setValidationError('');
+      finishWizardDraft();
       setStep('done');
       if (autoValidate && deployed.length > 0) {
         log('Auto-validating deployed pipelines...');
@@ -14002,20 +14403,26 @@ fortinet_fortigate,FortiGate CEF,fgt_cef_to_ocsf,ocsf,,`}</pre>
   }
 
   return (
-    <div className="app pg-shell">
+    <div className={`app pg-shell${railCollapsed ? ' rail-collapsed' : ''}`}>
       <input type="file" ref={batchSampleInputRef} style={{ display: 'none' }} accept=".log,.txt,.json,.xml,.csv,.jsonl" onChange={handleBatchSampleUpload} />
       <aside className="pg-rail" aria-label="Modes and tools">
         <div className="pg-brand">
-          <span className="pg-logo" aria-hidden="true" />
+          <PackGeneratorLogo />
           <div><b>Pack Generator</b><small className="build-number">build {BUILD_NUMBER}</small></div>
+          <button type="button" className="pg-collapse" onClick={toggleRail} aria-expanded={!railCollapsed}
+            aria-label={railCollapsed ? 'Expand the menu' : 'Collapse the menu'} title={railCollapsed ? 'Expand the menu' : 'Collapse the menu'}>
+            <svg viewBox="0 0 12 12" width="12" height="12" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <path d={railCollapsed ? 'M4.5 2.5 8 6l-3.5 3.5' : 'M7.5 2.5 4 6l3.5 3.5'} />
+            </svg>
+          </button>
         </div>
-        <button type="button" className={`pg-nav${step === 'mode' && !toolPage ? ' on' : ''}`} onClick={goHome} disabled={railLocked}>
+        <button type="button" className={`pg-nav${step === 'mode' && !toolPage ? ' on' : ''}`} onClick={goHome} disabled={railLocked} title="Home">
           <span className="ni" aria-hidden="true">⌂</span>Home
         </button>
         <div className="pg-rail-h">Modes</div>
         {MENU_MODES.map(m => (
           <button key={m.id} type="button" className={`pg-nav${!toolPage && step !== 'mode' && packMode === m.id ? ' on' : ''}`}
-            title={railLocked ? 'Wait for the current build to finish' : m.title} disabled={railLocked} onClick={() => startMode(m.id)}>
+            title={railLocked ? 'Wait for the current build to finish' : m.title} disabled={railLocked} onClick={() => { if (m.id === 'batch') void chooseBatch(); else startMode(m.id); }}>
             <span className="ni" aria-hidden="true">{m.icon}</span>{m.name}{m.badge && <span className="new">{m.badge}</span>}
           </button>
         ))}
@@ -14025,6 +14432,14 @@ fortinet_fortigate,FortiGate CEF,fgt_cef_to_ocsf,ocsf,,`}</pre>
               {/* Sample library — open in BOTH run modes since build 566: sanitising is
                   browser-only work. The staged-count badge is standalone's alone — in the
                   iframe there is no queue to count. */}
+              {/* Whiteboards & demos — discovery boards and the demos built from them; for Cribl and
+                  partner teams, so only when Settings › Menu has it on (wbDemosOn). Both run modes. */}
+              {wbDemosOn && (
+              <button className={`settings-btn${toolPage?.area === 'whiteboards' ? ' on' : ''}`} onClick={() => openTool({ area: 'whiteboards', tab: 'boards' })}
+                title="Whiteboards & demos — one discovery board per prospect, and the demos built from it: stop or destroy one while the others run">
+                <svg viewBox="0 0 20 20" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><rect x="2.5" y="3.5" width="15" height="11" rx="2"/><path d="M6 11c1.6-3 3.4 1 5-2s2.4-1 3-1.5"/><path d="M7 17.5l3-3 3 3"/></svg><span className="rt-label">Whiteboards &amp; demos</span>
+              </button>
+              )}
               <button className={`settings-btn${toolPage?.area === 'samples' ? ' on' : ''}`} onClick={() => openTool({ area: 'samples', tab: 'sanitize' })}
                 title={getRunMode() !== 'standalone'
                   ? 'Samples — sanitize a sample and keep it as a validated one'
@@ -14080,6 +14495,16 @@ fortinet_fortigate,FortiGate CEF,fgt_cef_to_ocsf,ocsf,,`}</pre>
             ? <>{TOOL_AREAS[toolPage.area].title} · <b>{toolTabs(toolPage.area, getRunMode()).find(t => t.id === toolPage.tab)?.label}</b></>
             : step === 'mode' ? <b>Home</b> : <>{WIZARD_MODES.find(m => m.id === packMode)?.name}{currentStepLabel && <> · <b>{currentStepLabel}</b></>}</>}
         </div>
+        {!toolPage && step !== 'mode' && (
+          <button
+            type="button"
+            className="session-restart pg-topbar-restart"
+            onClick={() => guardLeave(resetAll)}
+            title="End this session and return to Home (asks first while a step is in progress)"
+          >
+            Restart
+          </button>
+        )}
         {newBuild != null && (
           <div className="update-banner">
             <span>A new version (build {newBuild}) is available. Reload to update.</span>
@@ -14113,6 +14538,34 @@ fortinet_fortigate,FortiGate CEF,fgt_cef_to_ocsf,ocsf,,`}</pre>
           </span>
           <button onClick={handleResumeBatch}>Resume</button>
           <button onClick={handleDiscardResume}>Discard</button>
+        </div>
+      )}
+      {wizardDraftResume && step === 'mode' && (
+        <div className="ai-banner ai-banner-ok">
+          <span>
+            A saved <strong>{wizardDraftLabel(wizardDraftResume.packMode)}</strong> draft from{' '}
+            {new Date(wizardDraftResume.updatedAt).toLocaleString()} is ready
+            {wizardDraftResume.interruptedOnBusy ? ' (the build was interrupted)' : ''}. Resume your choices, or discard the draft.
+          </span>
+          <button onClick={handleResumeWizardDraft}>Resume</button>
+          <button onClick={handleDiscardWizardDraft}>Discard</button>
+        </div>
+      )}
+      {wizardDraftNotice && step !== 'mode' && (
+        <div className="ai-banner ai-banner-error">
+          <span>{wizardDraftNotice}</span>
+          <button type="button" onClick={() => setWizardDraftNotice('')}>Dismiss</button>
+        </div>
+      )}
+      {batchOpenRunNotice && (
+        <div className="ai-banner ai-banner-error" role="alert">
+          <span>{batchOpenRunNotice}</span>
+          <button className="banner-primary" onClick={() => { setPackMode('batch'); setBatchBackground(true); setBatchOpenRunNotice(''); setStep('batch-bg-running'); }}>
+            Open the run
+          </button>
+          <button className="banner-neutral" disabled={batchBgDismissing} onClick={() => void handleDismissBatchBackground()}>
+            {batchBgDismissing ? 'Clearing…' : 'Dismiss'}
+          </button>
         </div>
       )}
       {(batchBgCheckpoint || batchBgNotice || batchBgRead.status === 'unavailable'
@@ -14179,7 +14632,22 @@ fortinet_fortigate,FortiGate CEF,fgt_cef_to_ocsf,ocsf,,`}</pre>
         </div>
       )}
       {/* Hidden, not unmounted, under a tool page: a build keeps its screen state. */}
-      <main style={toolPage ? { display: 'none' } : undefined}>{renderStep()}</main>
+      <main style={toolPage ? { display: 'none' } : undefined}>
+        {demoOrigin && step.startsWith('demo-') && (
+          <div className="wb-demo-banner">
+            <span className="wb-said">{demoOrigin.prospect || 'Untitled prospect'}</span>
+            <p>This demo is filled in from the {demoOrigin.prospect || 'untitled'} whiteboard. Everything below can still be changed.</p>
+            <button type="button" className="wb-link" onClick={() => { setWbOpenBoardId(demoOrigin.boardId); openTool({ area: 'whiteboards', tab: 'boards' }); }}>Back to the whiteboard</button>
+          </div>
+        )}
+        {/* A demo made by hand starts from the Whiteboards & demos list: the way back to it. */}
+        {!demoOrigin && step.startsWith('demo-') && (
+          <div className="wb-demo-back">
+            <button type="button" className="btn-secondary" onClick={() => openTool({ area: 'whiteboards', tab: 'boards' })}>← Whiteboards &amp; demos</button>
+          </div>
+        )}
+        {renderStep()}
+      </main>
       {toolPage && <main className="tp-main">{renderToolPage()}</main>}
       {eventModal && (
         <div className="modal-backdrop" onClick={() => setEventModal(null)}>
@@ -14202,7 +14670,7 @@ fortinet_fortigate,FortiGate CEF,fgt_cef_to_ocsf,ocsf,,`}</pre>
         <div className="modal-backdrop" onClick={() => setLeaveAsk(null)}>
           <div className="modal-panel pg-leave-ask" role="alertdialog" aria-label="Leave this run?" onClick={e => e.stopPropagation()}>
             <div className="modal-header"><h3>Leave this run?</h3></div>
-            <div className="modal-body"><p>Choices made so far are discarded.</p></div>
+            <div className="modal-body"><p>Leaving clears this screen. Your last saved pack-build draft stays on Home — use <strong>Resume</strong> there to continue, or discard it from the banner.</p></div>
             <div className="modal-footer">
               <button className="btn-secondary" onClick={() => setLeaveAsk(null)}>Stay</button>
               <button className="btn-primary" onClick={() => { const go = leaveAsk; setLeaveAsk(null); go(); }}>Leave</button>

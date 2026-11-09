@@ -9,7 +9,7 @@ export interface SearchDatatypeDescriptor {
     name: string;
     sourceField: string;
     extractionType: 'regexp';
-    regexpList: Array<{ regexp: string; overwrite?: boolean }>;
+    regexpList: Array<{ regexp: string }>;
   }>;
   timestampExtraction: {
     type: 'auto';
@@ -66,14 +66,24 @@ function looksLikeKvp(sampleEvents: string): boolean {
   return (line.match(/(?:^|\s)[A-Za-z_][\w.-]*=/g) || []).length >= 2;
 }
 
-function stripRegexDelimiters(value: string): string {
-  const match = value.match(/^\/(.*)\/[a-z]*$/s);
-  return (match ? match[1] : value).replace(/\(\?<([A-Za-z_$][\w$]*)>/g, '(?P<$1>');
+/**
+ * Search's own shape (every stock regexp extraction, read live 2026-11-01): a JS regex
+ * literal with `(?<name>` groups and no other keys. A bare body, `(?P<name>` or an
+ * `overwrite` key fails the Datatype schema and the whole dashboard with it.
+ */
+function searchRegexLiteral(value: string): string {
+  const match = value.match(/^\/(.*)\/([a-z]*)$/s);
+  const body = (match ? match[1] : value).replace(/\(\?P<([A-Za-z_$][\w$]*)>/g, '(?<$1>');
+  return `/${body}/${match ? match[2] : ''}`;
 }
 
 function regexExtractions(functions: StreamFunction[]): SearchDatatypeDescriptor['additionalExtractions'] {
   return functions.flatMap((fn, index) => {
     if (fn.disabled || fn.id !== 'regex_extract' || typeof fn.conf?.regex !== 'string') return [];
+    const regexp = searchRegexLiteral(fn.conf.regex);
+    // A regex that only fills `__` scratch fields (FortiGate's CEF header) extracts nothing Search shows.
+    const groups = [...regexp.matchAll(/\(\?<([A-Za-z_$][\w$]*)>/g)].map(m => m[1]);
+    if (!groups.some(g => !g.startsWith('__'))) return [];
     const sourceField = typeof fn.conf.source === 'string'
       ? fn.conf.source
       : typeof fn.conf.sourceField === 'string' ? fn.conf.sourceField : '_raw';
@@ -81,7 +91,7 @@ function regexExtractions(functions: StreamFunction[]): SearchDatatypeDescriptor
       name: `demo_regex_${index + 1}`,
       sourceField,
       extractionType: 'regexp' as const,
-      regexpList: [{ regexp: stripRegexDelimiters(fn.conf.regex), overwrite: false }],
+      regexpList: [{ regexp }],
     }];
   });
 }

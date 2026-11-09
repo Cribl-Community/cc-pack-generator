@@ -26,6 +26,12 @@ export async function handleListGroups(req, res) {
       description: g.description || '',
       type: g.type || 'stream',
       workerCount: counts[g.id] || 0,
+      // where the group runs, for the Architecture board's "this Cribl org"
+      ...(g.isFleet ? { isFleet: true } : {}),
+      ...(g.isSearch ? { isSearch: true } : {}),
+      ...(g.onPrem ? { onPrem: true } : {}),
+      ...(g.cloud ? { cloud: g.cloud } : {}),
+      ...(g.inherits ? { inherits: g.inherits } : {}),
     }));
     res.statusCode = 200;
     res.setHeader('Content-Type', 'application/json');

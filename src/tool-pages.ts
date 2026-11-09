@@ -1,13 +1,15 @@
-// The two tool areas in the left rail — Settings and Samples — and their tabs, in
+// The tool areas in the left rail — Whiteboards & demos, Samples and Settings — and their tabs, in
 // one place: the rail, the page tab lists and every "open settings" link elsewhere
 // in the app resolve through here, so a link can never land on a tab this run mode
 // does not have. Pure data, no React.
 
-export type SettingsTab = 'ai' | 'connection' | 'quality' | 'goldens' | 'datatypes';
+export type SettingsTab = 'ai' | 'connection' | 'quality' | 'goldens' | 'datatypes' | 'menu';
 export type SamplesTab = 'sanitize' | 'review' | 'library' | 'sharing';
+export type WhiteboardsTab = 'boards';
 export type ToolPage =
   | { area: 'settings'; tab: SettingsTab }
-  | { area: 'samples'; tab: SamplesTab };
+  | { area: 'samples'; tab: SamplesTab }
+  | { area: 'whiteboards'; tab: WhiteboardsTab };
 export type ToolArea = ToolPage['area'];
 export type ToolRunMode = 'iframe' | 'standalone' | 'backend';
 
@@ -21,8 +23,9 @@ export interface ToolTab<T extends string = string> {
 }
 
 export const TOOL_AREAS: Record<ToolArea, { title: string; desc: string }> = {
-  settings: { title: 'Settings', desc: 'AI provider, connections, quality thresholds, shared goldens and Search datatypes.' },
+  settings: { title: 'Settings', desc: 'AI provider, connections, quality thresholds, shared goldens, Search datatypes and optional tools.' },
   samples: { title: 'Samples', desc: 'Sanitize real events, review generated samples, and choose how sanitised samples are shared.' },
+  whiteboards: { title: 'Whiteboards & demos', desc: 'One row per prospect: the discovery board and every demo built from it. Stop or destroy one demo while the others keep running.' },
 };
 
 export const SETTINGS_TABS: ToolTab<SettingsTab>[] = [
@@ -31,6 +34,7 @@ export const SETTINGS_TABS: ToolTab<SettingsTab>[] = [
   { id: 'quality', icon: '◎', label: 'Quality', desc: 'Golden thresholds per stage' },
   { id: 'goldens', icon: '★', label: 'Goldens', desc: 'Shared repo, import and publish' },
   { id: 'datatypes', icon: '▦', label: 'Datatypes', desc: 'Cribl Search coverage check' },
+  { id: 'menu', icon: '☰', label: 'Menu', desc: 'Optional tools in the rail' },
 ];
 
 export const SAMPLES_TABS: ToolTab<SamplesTab>[] = [
@@ -40,11 +44,17 @@ export const SAMPLES_TABS: ToolTab<SamplesTab>[] = [
   { id: 'sharing', icon: '⇪', label: 'Sharing', desc: 'Privacy rule and the shared sample pool' },
 ];
 
+/** Whiteboards & demos has one view (the prospect list, which opens a board); it renders full width, without a tab column. */
+export const WHITEBOARDS_TABS: ToolTab<WhiteboardsTab>[] = [
+  { id: 'boards', icon: '✎', label: 'All prospects', desc: 'Every prospect board and its demos' },
+];
+
 export function toolTabs(area: 'settings', runMode: ToolRunMode): ToolTab<SettingsTab>[];
 export function toolTabs(area: 'samples', runMode: ToolRunMode): ToolTab<SamplesTab>[];
+export function toolTabs(area: 'whiteboards', runMode: ToolRunMode): ToolTab<WhiteboardsTab>[];
 export function toolTabs(area: ToolArea, runMode: ToolRunMode): ToolTab[];
 export function toolTabs(area: ToolArea, runMode: ToolRunMode): ToolTab[] {
-  const all: ToolTab[] = area === 'settings' ? SETTINGS_TABS : SAMPLES_TABS;
+  const all: ToolTab[] = area === 'settings' ? SETTINGS_TABS : area === 'samples' ? SAMPLES_TABS : WHITEBOARDS_TABS;
   return all.filter(t => !t.standaloneOnly || runMode === 'standalone');
 }
 

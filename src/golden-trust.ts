@@ -16,6 +16,7 @@
  * never be beaten. Standing is earned by surviving re-measurement on a different
  * sample SHAPE instead. Score is the second-to-last tiebreak, never the decider.
  */
+import { disallowedFunctions } from './function-allowlist';
 import type { SampleFingerprint } from './source-recognition';
 
 /**
@@ -605,6 +606,8 @@ export function planGoldenObservation(existing: StoredGolden | null | undefined,
  */
 export function planGoldenImport(existing: StoredGolden | null | undefined, doc: StoredGolden): GoldenWritePlan {
   if (!doc || !Array.isArray(doc.functions) || doc.functions.length === 0) return { action: 'refuse', reasons: ['pool doc has no functions'] };
+  const foreign = disallowedFunctions(doc.functions);
+  if (foreign.length) return { action: 'refuse', reasons: [`uses functions the generator never builds: ${foreign.join(', ')}`] };
   const hash = goldenFunctionsHash(doc.functions);
   const incoming: StoredGolden = {
     functions: doc.functions, score: doc.evidence?.score ?? doc.score ?? 0,

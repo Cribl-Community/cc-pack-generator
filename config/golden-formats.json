@@ -267,6 +267,10 @@
           "expr": "action"
         },
         {
+          "dest": "CommunicationDirection",
+          "expr": "deviceDirection || direction"
+        },
+        {
           "dest": "SourceUserName",
           "expr": "src_user || user"
         },
@@ -284,11 +288,27 @@
         },
         {
           "dest": "ApplicationProtocol",
-          "expr": "app || protocol"
+          "expr": "service_id || app || protocol"
         },
         {
           "dest": "DeviceName",
           "expr": "host"
+        },
+        {
+          "dest": "DeviceAddress",
+          "expr": "origin_ip || device_ip"
+        },
+        {
+          "dest": "DeviceInboundInterface",
+          "expr": "ifname || src_zone"
+        },
+        {
+          "dest": "DeviceCustomString2",
+          "expr": "cs2"
+        },
+        {
+          "dest": "DeviceCustomString2Label",
+          "expr": "cs2Label"
         },
         {
           "dest": "LogSeverity",

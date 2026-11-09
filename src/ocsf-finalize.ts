@@ -469,13 +469,35 @@ export function pruneOcsfDeadFields(input: OcsfPruneInput): OcsfPruneResult {
   // which OCSF attributes ship.
   const shaping = buildOcsfOutputShaping({ mappingFns: input.mappingFns || [], destFormat: input.destFormat });
 
-  // 1. Schematizer aliases: keep an assignment only when a synonym is produced.
+  // 1. Schematizer aliases: keep an assignment only when a synonym is produced
+  // by the vendor parse. A CIM copy that already reads the canonical
+  // (`src = src_ip || tls_peer_cn`) is not that synonym — counting it keeps
+  // both the copy and the bridge, which is the circular pair OCSF must drop.
   const ai = all.findIndex(f => f?.id === 'eval' && SCHEMATIZER_ALIAS_DESC.test(String(f.description || '')));
   const produced = ai >= 0 ? staticallyProducedFields(all.slice(0, ai)) : null;
+  const synonymFromVendor = (syn: string, canonical: string): boolean => {
+    let vendor = false;
+    let circular = false;
+    for (const f of all.slice(0, ai)) {
+      if (!f || f.disabled) continue;
+      if (f.id === 'eval') {
+        for (const a of f.conf?.add || []) {
+          if (String(a?.name || '') !== syn) continue;
+          const ids = identsIn(stripQuoted(String(a.value ?? '')));
+          if (ids.includes(canonical)) circular = true;
+          else vendor = true;
+        }
+        continue;
+      }
+      const names = staticallyProducedFields([f]);
+      if (names === null || names.has(syn)) vendor = true;
+    }
+    return vendor || !circular;
+  };
   if (ai >= 0 && produced) {
     const fn = all[ai];
     fn.conf.add = fn.conf.add.filter((a: EvalAdd) => {
-      const live = String(a.value).split('||').map(t => t.trim()).some(t => t !== a.name && produced.has(t));
+      const live = String(a.value).split('||').map(t => t.trim()).some(t => t !== a.name && produced.has(t) && synonymFromVendor(t, a.name));
       if (!live) removed.push(a.name);
       return live;
     });

@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url';
 import { AI_MODEL as MODEL_ID, invokeModel } from './cribl-auth.mjs';
 import { recognizeCefSource } from '../src/source-recognition.ts';
 import { describeSampleFormat } from '../src/sample-format.ts';
+import { demoFormatSystemPrompt, demoFormatUserPrompt, parseDemoFormatAnswer } from '../src/discovery-ai.ts';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -57,7 +58,23 @@ export async function handleAiValidate(req, res) {
   for await (const chunk of req) body += chunk;
 
   try {
-    const { sourcetype, destFormat, mode, catalog } = JSON.parse(body);
+    const { sourcetype, destFormat, mode, catalog, label, options } = JSON.parse(body);
+
+    // --- A whiteboard destination nothing matched (spec R18): which demo format? ---
+    // Grounded in the options the client sends; the label is the only thing asked about.
+    if (mode === 'demo-format') {
+      const opts = Array.isArray(options) ? options.filter(o => o && typeof o.format === 'string').slice(0, 40) : [];
+      let out = { format: null, why: 'The AI did not answer. Check AI connectivity, then try again.' };
+      if (opts.length && label) {
+        try {
+          const t = await invokeModel(MODEL_ID, demoFormatSystemPrompt(opts), demoFormatUserPrompt(label), 256);
+          out = parseDemoFormatAnswer(t, new Set(opts.map(o => o.format)));
+        } catch { /* AI unavailable — keep the honest default */ }
+      }
+      res.statusCode = 200; res.setHeader('Content-Type', 'application/json');
+      res.end(JSON.stringify(out));
+      return;
+    }
 
     // --- Fast-path: only an EXACT hit in bundled reference data is accepted
     // without AI. The old "looks like vendor_product" heuristic wrongly accepted

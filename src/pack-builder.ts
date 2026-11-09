@@ -16,6 +16,7 @@ import {
 } from './xsiam-builder';
 import { resolveXsiamDestination } from './xsiam-resolver';
 import { buildRawFidelityTagFunctions } from './raw-fidelity';
+import { SPLUNK_CSV_FORMAT, auditSplunkCsvDelivery, planSplunkCsv, splunkCsvReadmeSection, type CsvDeliveryAudit } from './splunk-csv';
 import { auditCefFormat, type CefFormatAudit } from './cef-format';
 import { buildCanonicalAliasAdd, repairCanonicalAliases, producedParseFields } from './mapping-aliases';
 import { auditSchemaConformance, auditUdmConformance, isSchemaConformanceFormat, isUdmConformanceFormat, type SchemaConformanceAudit, type UdmConformanceAudit } from './schema-conformance';
@@ -70,6 +71,7 @@ export {
   matchDatatypeParserBySample,
   matchGoldenSourceBySample,
   matchJsonSignature,
+  matchWindowsEventXml,
   sampleStartsWithCef,
   recognizeCefSource,
   nativeSourceWireFormats,
@@ -1107,6 +1109,7 @@ function getFormatLabel(state: WizardState): string {
     case 'passthrough': return 'Passthrough (raw copy)';
     case 'raw_fields': return 'Raw + extracted fields';
     case 'splunk_raw': return 'Splunk raw';
+    case 'splunk_csv': return 'Splunk CSV (licence-optimized)';
     case 'splunk_json': return 'Splunk JSON';
     case 'elastic_raw': return 'Elastic integration';
     case 'elastic_json': return 'Elastic JSON';
@@ -1147,6 +1150,7 @@ function formatLabelShort(destFormat: string, manualFormat: string): string {
     case 'passthrough': return 'Passthrough';
     case 'raw_fields': return 'Raw + fields';
     case 'splunk_raw': return 'Splunk raw';
+    case 'splunk_csv': return 'Splunk CSV';
     case 'splunk_json': return 'Splunk JSON';
     case 'elastic_raw': return 'Elastic integration';
     case 'elastic_json': return 'Elastic JSON';
@@ -1192,12 +1196,20 @@ routes:
 `;
 }
 
+/* Names `new Function` can take as plain parameters. Anything else is NOT just invalid: a key like
+   `x=fetch('//evil')` is a parameter with a default value, and its default is executed — and event
+   keys come from sample data. */
+const JS_IDENTIFIER = /^[A-Za-z_$][\w$]*$/;
+const JS_RESERVED = new Set(('break case catch class const continue debugger default delete do else enum export extends false '
+  + 'finally for function if import in instanceof new null return super switch this throw true try typeof var void while '
+  + 'with yield let static implements interface package private protected public await arguments eval').split(' '));
+
 export function safeEvalFilter(filter: string, event: Record<string, any>): boolean {
   try {
-    const keys = Object.keys(event);
-    const values = Object.values(event);
-    const fn = new Function(...keys, `try { return !!(${filter}); } catch { return false; }`);
-    return fn(...values);
+    // Only plain identifiers become parameters; a field the filter cannot name anyway is left out.
+    const entries = Object.entries(event).filter(([k]) => JS_IDENTIFIER.test(k) && !JS_RESERVED.has(k));
+    const fn = new Function(...entries.map(([k]) => k), `try { return !!(${filter}); } catch { return false; }`);
+    return fn(...entries.map(([, v]) => v));
   } catch {
     return false;
   }
@@ -2240,13 +2252,15 @@ function getCommonSecurityLogMapping(sourcetype: string): PipelineFunction[] {
             { name: 'TimeGenerated', value: "new Date((_time || Date.now()/1000) * 1000).toISOString()" },
             { name: 'DeviceVendor', value: `'${info.vendor}'` },
             { name: 'DeviceProduct', value: `'${info.product}'` },
-            { name: 'DeviceVersion', value: `'${info.version}'` },
+            { name: 'DeviceVersion', value: `device_version || '${info.version}'` },
             { name: 'DeviceEventClassID', value: "logid || msg_id || subtype || 'traffic'" },
             { name: 'Activity', value: "subtype ? type + ':' + subtype : type || action || 'Network Traffic'" },
             { name: 'LogSeverity', value: "level == 'emergency' ? '10' : level == 'alert' || level == 'critical' ? '9' : level == 'error' ? '7' : level == 'warning' ? '6' : level == 'notice' ? '4' : severity || '5'" },
             { name: 'DeviceAction', value: "action || act || 'allow'" },
+            { name: 'CommunicationDirection', value: "deviceDirection || direction || ''" },
             { name: 'DeviceName', value: "devname || hostname || host || ''" },
             { name: 'DeviceExternalID', value: "devid || serial || ''" },
+            { name: 'DeviceAddress', value: "origin_ip || origin || device_ip || ''" },
           ],
         },
       },
@@ -2261,9 +2275,9 @@ function getCommonSecurityLogMapping(sourcetype: string): PipelineFunction[] {
             { name: 'DestinationPort', value: 'Number(dst_port || dstport || dport || 0)' },
             { name: 'SentBytes', value: 'Number(sentbyte || bytes_out || out_bytes || 0)' },
             { name: 'ReceivedBytes', value: 'Number(rcvdbyte || bytes_in || in_bytes || 0)' },
-            { name: 'DeviceInboundInterface', value: "srcintf || inbound_if || in_interface || ''" },
+            { name: 'DeviceInboundInterface', value: "ifname || srcintf || inbound_if || in_interface || src_zone || ''" },
             { name: 'DeviceOutboundInterface', value: "dstintf || outbound_if || out_interface || ''" },
-            { name: 'ApplicationProtocol', value: "service || app || app_proto || ''" },
+            { name: 'ApplicationProtocol', value: "service_id || service || app || app_proto || ''" },
           ],
         },
       },
@@ -3438,6 +3452,10 @@ export function buildPackReadme(args: {
   sentinelTable?: string;
   manualFormat?: string;
   cimModel?: string;
+  /** The pack's sample: a Splunk CSV pipeline's README section (grade + Splunk app) is computed from it. */
+  sampleEvents?: string;
+  /** The sourcetype the build emits (batch: the user's explicit one) — names a learned plan's props stanza. */
+  outputSourcetype?: string;
 }): string {
   const enabledOptions: string[] = [];
   const disabledOptions: string[] = [];
@@ -3456,7 +3474,14 @@ export function buildPackReadme(args: {
     manualFormat: args.manualFormat,
     cimModel: args.cimModel,
   } as unknown as WizardState;
-  return buildReadme(state, args.sourcetype, enabledOptions, disabledOptions, args.pipelineId, args.allowCodeFunctions);
+  const readme = buildReadme(state, args.sourcetype, enabledOptions, disabledOptions, args.pipelineId, args.allowCodeFunctions);
+  // Splunk CSV: the plan is deterministic over (sourcetype, sample), so the
+  // README's Splunk app is the one the CSV pipeline writes — whichever pipeline
+  // of the pack happens to create it.
+  if (!formats.includes(SPLUNK_CSV_FORMAT)) return readme;
+  const st = canonicalizeSourcetype(args.sourcetype);
+  const plan = planSplunkCsv(st, args.sampleEvents || '', resolveOutputSourcetype(args.outputSourcetype, args.sourcetype, st));
+  return `${readme.trimEnd()}\n\n${splunkCsvReadmeSection(plan, getPipelineId(args.sourcetype, SPLUNK_CSV_FORMAT))}`;
 }
 
 function getSourceExplanation(sourcetypeRaw: string): string {
@@ -3493,6 +3518,7 @@ function getDestFormatExplanation(destFormat: string): string {
     case 'ocsf': return `**OCSF (Open Cybersecurity Schema Framework) v1.4** is a vendor-neutral schema for security telemetry. Events are mapped to OCSF classes (e.g., Network Activity 4001, Authentication 3002) with standardized fields like \`src_endpoint\`, \`dst_endpoint\`, \`activity_id\`, and \`severity_id\`. This enables cross-vendor correlation in security data lakes (AWS Security Lake, Cribl Lake, etc.).`;
     case 'cef': return `**CEF (Common Event Format)** outputs events as a single \`_raw\` string in standard CEF format: \`CEF:0|Vendor|Product|Version|SignatureID|Name|Severity|Extensions\`. Extension keys use the CEF standard (\`src\`, \`dst\`, \`spt\`, \`dpt\`, \`proto\`, \`act\`, \`in\`, \`out\`, \`suser\`, \`cs1Label\`, \`cs1\`, etc.). This is the transport format accepted by CEF-compatible SIEMs and collectors.`;
     case 'commonsecuritylog': return `**Sentinel CommonSecurityLog** maps events to Microsoft Sentinel's CommonSecurityLog table columns. Output uses PascalCase field names: \`DeviceVendor\`, \`DeviceProduct\`, \`SourceIP\`, \`DestinationIP\`, \`SourcePort\`, \`DestinationPort\`, \`Protocol\`, \`DeviceAction\`, \`LogSeverity\`, \`SentBytes\`, \`ReceivedBytes\`, etc. This is for direct ingestion into Sentinel via DCR (Data Collection Rules) where the table schema is flat.`;
+    case 'splunk_csv': return `**Splunk CSV** sends each key=value event as one CSV row: the known keys are columns and every other pair goes into a trailing \`extended\` key=value column, so no value is dropped. Splunk reads it back with the search-head app in the *Splunk CSV* section below. Events of a log type the plan does not cover are sent unchanged.`;
     case 'cim': return `**Splunk Common Information Model (CIM)** normalizes events into data model fields for Splunk Enterprise Security. Depending on the source type, events are mapped to CIM data models like Network Traffic (\`src\`, \`dest\`, \`src_port\`, \`dest_port\`, \`transport\`, \`action\`, \`bytes_in\`, \`bytes_out\`) or Authentication (\`user\`, \`src\`, \`dest\`, \`action\`, \`app\`).`;
     default: return `Events are mapped to a custom output format as specified.`;
   }
@@ -3595,6 +3621,7 @@ function destFormatDescription(format: string): string {
     case 'passthrough': return 'Passthrough (raw copy)';
     case 'raw_fields': return 'Raw + extracted fields';
     case 'splunk_raw': return 'Splunk raw (passthrough)';
+    case 'splunk_csv': return 'Splunk CSV (lossless licence reduction)';
     case 'splunk_json': return 'Splunk JSON (clean JSON)';
     case 'elastic_raw': return 'Elastic integration (original line)';
     case 'elastic_json': return 'Elastic JSON (clean JSON)';
@@ -6253,7 +6280,7 @@ export function validateOutputAgainstSpec(
 import { auditRawFidelity, type RawFidelityAudit } from './raw-fidelity';
 export { auditRawFidelity, rawFidelityIssues, type RawFidelityAudit } from './raw-fidelity';
 
-export type AuthoritativeScoreSource = 'golden-spec' | 'spec-validation' | 'value-coverage' | 'raw-fidelity' | 'ai';
+export type AuthoritativeScoreSource = 'golden-spec' | 'spec-validation' | 'value-coverage' | 'raw-fidelity' | 'csv-fidelity' | 'ai';
 
 export interface AuthoritativeScoreResult {
   score: number;
@@ -6271,6 +6298,7 @@ export interface AuthoritativeScoreResult {
   xsiamParse?: XsiamParseConformanceAudit | null;
   udm?: UdmConformanceAudit | null;
   rawFidelity?: RawFidelityAudit | null;
+  splunkCsv?: CsvDeliveryAudit | null;
 }
 
 // OCSF nested content objects — real event signal, NOT metadata/envelope
@@ -6484,6 +6512,26 @@ export function scoreAuthoritative(opts: {
     return {
       score, band: score >= 85 ? 'good' : score >= 60 ? 'warn' : 'fail', scoreSource: 'ai',
       golden: null, spec: null, coverage: null, real: false, rawFidelity,
+    };
+  }
+
+  // Splunk CSV rewrites _raw as a CSV row the README's Splunk app reads back, so
+  // value coverage over the row only measures a tokenizer. The score is the share
+  // of sample values that decode back out of the row under the same key — the
+  // same plan the build wrote (deterministic over sourcetype + sample).
+  if (destFormat === SPLUNK_CSV_FORMAT) {
+    const splunkCsv = auditSplunkCsvDelivery(canonicalizeSourcetype(sourcetype || ''), rawEvents, outputEvents);
+    if (splunkCsv.applicable && splunkCsv.score != null) {
+      const score = splunkCsv.score;
+      return {
+        score, band: score >= 85 ? 'good' : score >= 60 ? 'warn' : 'fail', scoreSource: 'csv-fidelity',
+        golden: null, spec: null, coverage: null, real: true, splunkCsv,
+      };
+    }
+    const score = aiScore ?? 0;
+    return {
+      score, band: score >= 85 ? 'good' : score >= 60 ? 'warn' : 'fail', scoreSource: 'ai',
+      golden: null, spec: null, coverage: null, real: false, splunkCsv,
     };
   }
 
@@ -7076,7 +7124,14 @@ export function buildGoldenFormatMapping(sourcetypeRaw: string, destFormat: stri
   // CommonSecurityLog takes the identity Sentinel content filters on instead.
   const cslId = destFormat === 'commonsecuritylog' && SENTINEL_CSL_IDENTITY[canonicalizeSourcetype(sourcetype)] ? sentinelCslIdentity(sourcetype) : null;
   const VE = cslId
-    ? { vendor: `'${cslId.vendor.replace(/'/g, "\\'")}'`, product: `'${cslId.product.replace(/'/g, "\\'")}'`, version: `'${cslId.version}'` }
+    ? {
+        vendor: `'${cslId.vendor.replace(/'/g, "\\'")}'`,
+        product: `'${cslId.product.replace(/'/g, "\\'")}'`,
+        // The header's device version when the parser read one; the curated
+        // constant only when the line has none. A constant alone left
+        // device_version sitting in AdditionalExtensions.
+        version: `device_version || '${cslId.version.replace(/'/g, "\\'")}'`,
+      }
     : cefVendorExpressions(sourcetype);
   if (!postProcess) {
     functions.push({
@@ -7372,6 +7427,9 @@ export function buildGoldenFormatMapping(sourcetypeRaw: string, destFormat: stri
     const exclude = new Set<string>([
       ...outputFields, ...canonicalInputs, '_raw', '_time', 'index', 'source', 'sourcetype', 'host',
       'cribl_breaker', 'cribl_pipe', 'vendor', 'product', 'version', 'AdditionalExtensions',
+      // Copies of columns already filled: the CEF header version/vendor/product,
+      // the joined vendor_product string, and the cs2 label alias of the rule name.
+      'cef_version', 'device_version', 'device_vendor', 'device_product', 'vendor_product', 'Rule_Name',
     ]);
     // Serialize as KVP (`key=value key2=value2`), NOT JSON. AdditionalExtensions
     // is CEF's native extension format; a JSON string here becomes a

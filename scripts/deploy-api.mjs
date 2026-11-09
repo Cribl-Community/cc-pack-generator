@@ -4,6 +4,7 @@ import { CRIBL_ORG, getToken } from './cribl-auth.mjs';
 import { getLookupsForSourcetype } from './lookup-bundler.mjs';
 import { invalidateSampleCache } from './sample-cache.mjs';
 import { normalizeRouteFinality, packRoutesFromRouteYml } from '../src/route-model.ts';
+import { vendorSampleEvent } from '../src/sample-lift.ts';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -386,19 +387,13 @@ export async function handleDeploy(req, res) {
       const events = payload.sampleData.map(evt => {
         // structuredSample (mirrors src/api.ts): the events are already-processed
         // upstream OUTPUT, exactly as emitted — keep every field (with or without
-        // a `_raw`), minus Cribl control fields. Otherwise reduce to _raw/_time
-        // (vendor text to parse).
+        // a `_raw`), minus Cribl control fields. Otherwise keep the log plus the
+        // collector envelope (host, source, _time); a wrapped Cribl event is unwrapped.
         if (payload.structuredSample && typeof evt === 'object' && evt !== null) {
           const { __criblEventType, __ctrlFields, __final, __cloneCount, __id, __packId, cribl_pipe: _cribl_pipe, cribl_breaker: _cribl_breaker, ...fields } = evt;
           return { ...fields, _time: evt._time || Date.now() / 1000 };
         }
-        if (typeof evt === 'object' && evt !== null && evt._raw) {
-          return { _raw: evt._raw, _time: evt._time || Date.now() / 1000 };
-        }
-        if (typeof evt === 'string') {
-          return { _raw: evt, _time: Date.now() / 1000 };
-        }
-        return { _raw: JSON.stringify(evt), _time: Date.now() / 1000 };
+        return vendorSampleEvent(evt, Date.now() / 1000);
       });
       // The sample name is deterministic per sourcetype+format, so a re-run /
       // add-pipeline reuses the SAME name. A bare POST returns 409 on a name

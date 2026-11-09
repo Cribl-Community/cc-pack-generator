@@ -1,4 +1,5 @@
 import { SignatureV4 } from '@smithy/signature-v4';
+import { demoFormatSystemPrompt, demoFormatUserPrompt, parseDemoFormatAnswer, type DemoFormatOption } from './discovery-ai';
 import { Sha256 } from '@aws-crypto/sha256-js';
 import { HttpRequest } from '@smithy/protocol-http';
 import { getRunMode } from './run-mode';
@@ -946,6 +947,16 @@ Rules:
 
 const AIV_NAMESPACE_PREFIXES = ['ncsc', 'nci', 'custom', 'tenant', 'corp', 'org', 'prod', 'dev', 'test', 'lab', 'internal', 'ext', 'external', 'collector', 'ingest', 'src', 'source'];
 const AIV_FORMAT_TOKENS = ['syslog', 'cef', 'leef', 'json', 'xml', 'kv', 'kvp', 'raw', 'log', 'logs', 'estreamer', 'operational', 'rfc3164', 'rfc5424', 'nopri', 'tcp', 'udp'];
+
+/** Which demo format a whiteboard destination ingests (spec R18) — grounded in `options`, advisory only. */
+export async function aiSuggestDemoFormatLocal(label: string, options: DemoFormatOption[]): Promise<{ format: string | null; why: string }> {
+  try {
+    const text = await invokeAi(demoFormatSystemPrompt(options), demoFormatUserPrompt(label), 256);
+    return parseDemoFormatAnswer(text, new Set(options.map(o => o.format)));
+  } catch (err) {
+    return { format: null, why: `The AI did not answer: ${err instanceof Error ? err.message : String(err)}` };
+  }
+}
 
 export async function aiValidateSourcetype(sourcetype: string, destFormat: string, catalog?: string[]): Promise<{
   valid: boolean; sourcetypeOk: boolean; destFormatOk: boolean; suggestion: string; clarification: string; isRealSource?: boolean;

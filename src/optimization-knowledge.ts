@@ -127,7 +127,7 @@ const DESTINATIONS: Record<string, DestinationProfile> = {
     billing: 'Ingest licence counts only the HEC `event` payload (the _raw), not index-time fields or metadata.',
     levers: [
       'Drop unused fields/key-value pairs inside _raw when the TA extracts at search time and the removed keys are not used by the TA\'s field aliases.',
-      'Reformat a repeated-key KV source to CSV only when the pack also ships the matching props/transforms (e.g. the Fortinet pack\'s fortigate CSV sourcetype, ~55% smaller).',
+      'Reformat a repeated-key KV source to CSV only when the pack also ships the matching props/transforms (the Splunk CSV card does: the Fortinet pack\'s CSV contract or columns learned from the sample, ~45-55% smaller, lossless).',
       'Move stable values to index-time fields (host, source, sourcetype, index): they are not metered.',
     ],
     never: [
@@ -137,7 +137,8 @@ const DESTINATIONS: Record<string, DestinationProfile> = {
     ],
     modes: {
       cim: 'CIM card: the pack emits CIM field names into _raw JSON; the CIM data models find them by name.',
-      splunk_raw: 'Raw card: nothing inside _raw changes; only whole-event reduction.',
+      splunk_raw: 'Raw card: nothing inside _raw changes; only whole-event reduction. For a key=value source the Splunk CSV card is the lossless alternative.',
+      splunk_csv: 'CSV card: a key=value event is sent as one CSV row (known keys as columns, every other pair in a trailing `extended` key=value column), lossless; Splunk reads it with the search-head app in the pack README. Field names stay the vendor\'s, so the TA\'s aliases still apply. Map nothing; drops ship disabled.',
       splunk_json: 'JSON card: every extracted field as JSON with canonical names; KV_MODE=json at search time.',
     },
   },
@@ -217,7 +218,7 @@ const FAMILY_OF: Record<string, string> = {
   nextgen: 'crowdstrike_ngsiem', crowdstrike_ngsiem: 'crowdstrike_ngsiem', crowdstrike: 'crowdstrike_ngsiem',
   chronicle: 'secops', chronicle_raw: 'secops', secops: 'secops', udm: 'secops',
   sentinel: 'sentinel', asim: 'sentinel', commonsecuritylog: 'sentinel',
-  cim: 'splunk', splunk: 'splunk', splunk_raw: 'splunk', splunk_json: 'splunk',
+  cim: 'splunk', splunk: 'splunk', splunk_raw: 'splunk', splunk_csv: 'splunk', splunk_json: 'splunk',
   ecs: 'elastic', elastic: 'elastic', elastic_raw: 'elastic', elastic_json: 'elastic', elasticsearch: 'elastic',
   cef: 'cef_siem', arcsight: 'cef_siem',
   leef: 'qradar', qradar: 'qradar',
@@ -425,6 +426,11 @@ export function pairVerdict(sourcetype: string, destFormat: string): string {
   const dest = destinationProfile(destFormat);
   const src = sourceProfile(sourcetype);
   if (!dest) return '';
+  if (String(destFormat || '').toLowerCase().split('#')[0] === 'splunk_csv') {
+    return src?.structure === 'kv'
+      ? `${src.label} is repeated-key key=value: the Splunk CSV card re-encodes it losslessly as CSV columns + an \`extended\` overflow (no field is dropped); only whole-event drops reduce further.`
+      : `The Splunk CSV card only pays for a repeated-key key=value source${src ? `; ${src.label} is ${src.structure}` : ''}: send it raw or as JSON instead.`;
+  }
   if (destinationParsesRaw(destFormat)) {
     return `${dest.label} parses the original line: keep _raw exactly as received${src ? ` (${src.nativeFormats[0]})` : ''}; only whole-event drop/sample/suppress and removal of Cribl-added envelope fields are safe.`;
   }

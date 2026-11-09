@@ -450,6 +450,28 @@ export async function handlePipelineProfile(req, res) {
   }
 }
 
+// Backend endpoint: run a pack sample through an INLINE pipeline conf (nothing is saved),
+// with CPU profiling. Standalone path for performance mode, which compares the deployed
+// functions against their compiled Code-function form before offering it.
+export async function handlePreviewInline(req, res) {
+  try {
+    const { workerGroup, packId, sampleName, functions } = await readBody(req);
+    if (!workerGroup || !packId || !Array.isArray(functions)) {
+      return sendJson(res, 400, { error: 'workerGroup, packId, functions are required' });
+    }
+    const token = await getToken();
+    const sampleId = await resolveSampleId(token, workerGroup, packId, undefined, sampleName);
+    if (!sampleId) return sendJson(res, 400, { error: `No sample found in pack ${packId}` });
+    const r = await cribl.send(token, `/m/${workerGroup}/p/${packId}/preview`, 'POST', {
+      mode: 'pipe', sampleId, pipelineId: 'dummy', pipelineConf: { functions }, cpuProfile: true, level: 3,
+    });
+    if (!r.ok) return sendJson(res, 502, { error: `Preview failed (${r.status}): ${r.text.slice(0, 300)}` });
+    return sendJson(res, 200, { items: r.json?.items || [], stats: r.json?.stats || null });
+  } catch (e) {
+    return sendJson(res, 500, { error: e?.message || String(e) });
+  }
+}
+
 function scoreBand(score) {
   if (score >= 85) return 'good';
   if (score >= 60) return 'warn';

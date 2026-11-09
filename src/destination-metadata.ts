@@ -65,12 +65,12 @@ export const SPLUNK_OCSF_SOURCETYPE = 'ocsf';
 export const SPLUNK_HOST_EXPR = 'host || (device||{}).hostname || dvc_host || dvc || Computer || hostname || C.os.hostname()';
 
 /** Which contract (if any) a destination key belongs to. Accepts main-pack
- * formats (`cim#network`, `splunk_raw`, `splunk_json`) and post-processing
+ * formats (`cim#network`, `splunk_raw`, `splunk_csv`, `splunk_json`) and post-processing
  * formats (`splunk`, `splunk#raw`, `splunk#ocsf`, `cim#authentication`). */
 export function destinationMetadataFamily(destKey?: string | null): DestinationMetadataFamily | null {
   const key = String(destKey || '');
   const family = key.split('#')[0];
-  if (family === 'cim' || family === 'splunk' || key === 'splunk_raw' || key === 'splunk_json') return 'splunk';
+  if (family === 'cim' || family === 'splunk' || key === 'splunk_raw' || key === 'splunk_csv' || key === 'splunk_json') return 'splunk';
   if (key === 'elastic_raw' || key === 'elasticsearch') return 'elastic';
   if (key === 'chronicle_raw' || key === 'chronicle#raw') return 'secops';
   return null;

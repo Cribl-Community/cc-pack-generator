@@ -2660,12 +2660,12 @@ test('the save step offers each destination as a self-contained action card, no 
   // Upload is its own card, fields live inside it, and it has its own Upload button.
   assert.match(wiz, /runAction\('upload', uploadAction\)/, 'the upload card has its own Upload button');
   // Download sanitised .log is now its own card (not a footer/primary button).
-  assert.match(wiz, /runAction\('download', \(\) => \{ triggerDownload\(buildDoc\(\), 'log'\); return/,
+  assert.match(wiz, /runAction\('download', \(\) => \{ triggerDownload\(buildDoc\(true\), 'log'\); return/,
     'the sanitised .log download is its own action card');
   // Report + evidence JSON are their own downloads (not the log) — a green row at the bottom,
   // no "Also download (optional):" label, both styled like the other action buttons.
-  assert.match(wiz, /className="sz-btn" onClick=\{\(\) => triggerDownload\(buildDoc\(\), 'report'\)\}/, 'the HTML report download is a green action button');
-  assert.match(wiz, /className="sz-btn" onClick=\{\(\) => triggerDownload\(buildDoc\(\), 'json'\)\}/, 'the evidence JSON download is a green action button');
+  assert.match(wiz, /className="sz-btn" onClick=\{\(\) => triggerDownload\(buildDoc\(true\), 'report'\)\}/, 'the HTML report download is a green action button');
+  assert.match(wiz, /className="sz-btn" onClick=\{\(\) => triggerDownload\(buildDoc\(true\), 'json'\)\}/, 'the evidence JSON download is a green action button');
   assert.ok(!/sz-downloads-label/.test(wiz), 'the "Also download (optional):" label is gone');
   // No "Do any of these…" preamble — the self-labelled cards are their own menu.
   assert.ok(!/Do any of these/.test(wiz), 'the redundant "Do any of these" line is gone');

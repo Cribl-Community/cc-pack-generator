@@ -23,8 +23,10 @@
 // absent from a given source is harmless — a golden parser that already emits the
 // canonical name is unchanged.
 export const CANONICAL_FIELD_ALIASES: Record<string, string[]> = {
-  src_ip: ['source__ip', 'client__ip', 'srcaddr', 'srcip', 'id_orig_h'],
-  dest_ip: ['dst_ip', 'destination__ip', 'server__ip', 'dstaddr', 'dstip', 'id_resp_h'],
+  // `src` / `dst` are the CEF and Check Point names. The canonical stays first,
+  // so a parser that already emitted src_ip is unchanged.
+  src_ip: ['source__ip', 'client__ip', 'srcaddr', 'srcip', 'id_orig_h', 'src'],
+  dest_ip: ['dst_ip', 'destination__ip', 'server__ip', 'dstaddr', 'dstip', 'id_resp_h', 'dst'],
   src_port: ['source__port', 'spt', 'srcport', 'sport', 'id_orig_p'],
   dest_port: ['dst_port', 'destination__port', 'dpt', 'dstport', 'dport', 'id_resp_p'],
   protocol: ['transport', 'network__transport', 'proto'],
@@ -45,6 +47,10 @@ export const CANONICAL_FIELD_ALIASES: Record<string, string[]> = {
   dest_zone: ['dst_zone', 'observer__egress__zone', 'observer__egress_zone'],
   // host: ZIA names it device_hostname / device_name.
   host: ['observer__hostname', 'hostname', 'device_hostname', 'device_name', 'dvchost', 'devname'],
+  // Check Point's log-origin IP (`origin`) is the firewall, not the source.
+  // CommonSecurityLog DeviceAddress reads origin_ip || device_ip.
+  origin_ip: ['origin', 'orig'],
+  device_ip: ['dvc'],
   // log_time: the OCSF time-assembly reads ONLY log_time; ZIA names the column `time`.
   log_time: ['generated_time', 'receive_time', 'start_time', 'event__created', 'timestamp', 'event__start', 'time', 'event_time', 'datetime', 'logtime'],
   // request_method: the http_request.http_method map reads `request_method || method`;

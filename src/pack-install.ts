@@ -9,7 +9,12 @@
  * so an install could land on a pack still being removed.
  *
  * So: every install goes through one lock, the old pack must be confirmed gone
- * (GET → 404) before the upload, and those two leader errors get one retry.
+ * (GET → 404) before the install, and those two leader errors get one retry.
+ *
+ * Two guards protect what is already there. A pack with the same id is only replaced when
+ * the Pack Generator made it (its `author`): a hand-built or Dispensary pack that happens to
+ * share the name is refused, not deleted. And the new .crbl is uploaded BEFORE the old pack
+ * is removed, so a failed upload — the usual failure — leaves the old pack in place.
  */
 import { createSerialLock } from './serial-lock';
 
@@ -22,6 +27,8 @@ export interface PackInstallSteps {
   upload(): Promise<string>;
   /** POST the install of an uploaded `source`. */
   install(source: string): Promise<void>;
+  /** The existing pack's `author`, or null when it has none. Only asked when the pack exists. */
+  author?(): Promise<string | null>;
   sleep?(ms: number): Promise<void>;
   log?(msg: string): void;
 }
@@ -32,6 +39,16 @@ export const PACK_INSTALL_RETRY_WAIT_MS = 2000;
 
 /** The leader errors a concurrent install produces — worth exactly one retry. */
 export const RETRYABLE_PACK_INSTALL = /REST_list|Pack Id conflicts/i;
+
+/** The `author` every generated pack carries (src/pack-builder.ts), including older builds' wording. */
+export const GENERATED_PACK_AUTHOR = /^Cribl Pack Generator\b/;
+
+export class ForeignPackError extends Error {
+  constructor(packId: string, author: string | null) {
+    super(`A pack named "${packId}" already exists on this worker group and was not made by the Pack Generator${author ? ` (author: ${author})` : ''}, so it is not replaced. Choose another pack name.`);
+    this.name = 'ForeignPackError';
+  }
+}
 
 const errText = (err: unknown) => (err instanceof Error ? err.message : String(err));
 const wait = (ms: number) => new Promise<void>(resolve => setTimeout(resolve, ms));
@@ -54,8 +71,12 @@ const installLock = createSerialLock();
 export function installPackSerially(packId: string, steps: PackInstallSteps): Promise<void> {
   const sleep = steps.sleep || wait;
   return installLock(async () => {
-    await removePackFully(packId, steps);
+    if (steps.author && (await steps.exists())) {
+      const author = await steps.author();
+      if (!GENERATED_PACK_AUTHOR.test(author || '')) throw new ForeignPackError(packId, author);
+    }
     const source = await steps.upload();
+    await removePackFully(packId, steps);
     try {
       await steps.install(source);
     } catch (err) {

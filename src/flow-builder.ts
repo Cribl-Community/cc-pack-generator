@@ -24,6 +24,7 @@ import {
 import { canonicalizeSourcetype } from './source-recognition';
 import { elasticIntegrationAdvice, type ElasticIntegrationAdvice } from './elastic-integration';
 import { secopsLogTypeAdvice, type SecopsLogTypeAdvice } from './secops-log-types';
+import { CSV_RECOMMEND_SAVING, SPLUNK_CSV_FORMAT, splunkCsvAdvice, type SplunkCsvAdvice } from './splunk-csv';
 
 /** A destination system box on the top row. Labels only — nothing is created in Cribl. */
 export interface FlowSystem { name: string; color: string; letter: string }
@@ -101,7 +102,12 @@ export const FLOW_FORMATS: Record<string, FlowFormatInfo> = {
   splunk_raw: {
     label: 'Splunk raw', system: 'splunk', group: 'analytics', notAiReady: true,
     what: 'The event exactly as received, for Splunk to parse with its own add-on.',
-    fixedNote: 'Full fidelity only. A raw copy has nothing to optimize.',
+    fixedNote: 'Full fidelity, unchanged. For a key=value source, Splunk CSV sends the same values in about half the licence.',
+  },
+  splunk_csv: {
+    label: 'Splunk CSV (licence-optimized)', system: 'splunk', group: 'analytics', notAiReady: true, tag: 'lossless CSV',
+    what: 'The same values as Splunk raw, re-encoded as one CSV row per event: no key repeated on every line, nothing dropped. Splunk reads it with the small app in the pack README.',
+    fixedNote: 'Lossless format optimization. Field cleanup (empty / N/A) is on; the noise-drop examples ship switched off.',
   },
   splunk_json: {
     label: 'Splunk JSON', system: 'splunk', group: 'analytics', tag: 'clean JSON',
@@ -221,6 +227,7 @@ const FLOW_ANALYTICS_FAMILIES: FlowDestPickerFamily[] = [
       { value: 'cim', label: 'CIM' },
       { value: 'splunk_json', label: 'JSON' },
       { value: 'splunk_raw', label: 'Raw' },
+      { value: 'splunk_csv', label: 'CSV' },
     ],
   },
   {
@@ -243,6 +250,17 @@ const FLOW_ANALYTICS_FAMILIES: FlowDestPickerFamily[] = [
     ],
   },
 ];
+
+/**
+ * One destination system's formats, in the order the destination picker shows them
+ * (Lake: OCSF first; a family: its variants). Custom format is not offered.
+ */
+export function flowSystemFormats(system: string): string[] {
+  if (system === 'lake') return [...FLOW_LAKE_ORDER];
+  const family = FLOW_ANALYTICS_FAMILIES.find(f => f.system === system)?.variants.map(v => v.value) || [];
+  const rest = Object.keys(FLOW_FORMATS).filter(k => FLOW_FORMATS[k].system === system && k !== 'manual' && !family.includes(k));
+  return [...family, ...rest];
+}
 
 /** Picker layout: Lake stays as separate rows; similar analytics destinations are grouped. */
 export function flowDestPickerGroups(): FlowDestPickerGroup[] {
@@ -296,14 +314,16 @@ export function flowSourceRules(fmt: string, sourcetype: string): SourceOptRule[
  * switch — noise-drop rules for this source. OCSF never does.
  */
 export function flowFormatOptimizable(fmt: string, sourcetype: string): boolean {
-  if (fmt === 'ocsf') return false;
+  // Splunk CSV IS the optimization: its drops ship as examples, switched off.
+  if (fmt === 'ocsf' || fmt === SPLUNK_CSV_FORMAT) return false;
   return fmt === 'cim' || flowSourceRules(fmt, sourcetype).length > 0;
 }
 
 /** The destination-side setup a card shows (Elastic integration or SecOps raw). */
 export type FlowDestinationAdvice =
   | (ElasticIntegrationAdvice & { system: 'elastic' })
-  | (SecopsLogTypeAdvice & { system: 'secops'; routeEntries: null });
+  | (SecopsLogTypeAdvice & { system: 'secops'; routeEntries: null })
+  | (Omit<SplunkCsvAdvice, 'plan'> & { system: 'splunk'; routeEntries: null });
 
 /**
  * The destination-side setup a card needs, read from the user's own sample.
@@ -316,11 +336,18 @@ export function flowDestinationSetup(fmt: string, sourcetype: string, sampleEven
   const st = canonicalizeSourcetype(sourcetype);
   if (fmt === 'elastic_raw') return { ...elasticIntegrationAdvice(st, sampleEvents), system: 'elastic' };
   if (fmt === 'chronicle_raw') return { ...secopsLogTypeAdvice(st, sampleEvents), system: 'secops', routeEntries: null };
+  if (fmt === SPLUNK_CSV_FORMAT) {
+    const { plan: _plan, ...advice } = splunkCsvAdvice(st, sampleEvents);
+    return { ...advice, system: 'splunk', routeEntries: null };
+  }
   return null;
 }
 
 /** The heading over a card's setup block. */
 export function flowDestinationSetupHeading(setup: FlowDestinationAdvice): string {
+  if (setup.system === 'splunk') {
+    return setup.status === 'ready' ? 'Graded on your sample' : setup.status === 'mismatch' ? 'CSV will not help this source' : 'Needs a sample';
+  }
   if (setup.system === 'secops') {
     return setup.status === 'ready' ? 'Setup in Google SecOps' : setup.status === 'mismatch' ? 'Google\'s parser will not read this sample' : 'No Google log type mapped';
   }
@@ -331,14 +358,30 @@ export function flowDestinationSetupHeading(setup: FlowDestinationAdvice): strin
  * Which card of a destination the picker recommends for this source. Elastic:
  * the integration when its pipeline parses the sample's shape, ECS (a custom
  * logs-* data stream) otherwise. SecOps: raw + log type when Google ships a
- * default parser that reads the sample's wire format, UDM otherwise. null for
- * every other option.
+ * default parser that reads the sample's wire format, UDM otherwise. Splunk:
+ * CSV when it is lossless on the sample and saves at least
+ * CSV_RECOMMEND_SAVING (Raw, CIM and JSON carry no badge). null for every other
+ * option.
  */
 export function flowRecommendedFor(fmt: string, sourcetype: string, sampleEvents?: string): boolean | null {
   const st = canonicalizeSourcetype(sourcetype);
   if (fmt === 'elastic_raw' || fmt === 'ecs') return elasticIntegrationAdvice(st, sampleEvents).recommended === fmt;
   if (fmt === 'chronicle_raw' || fmt === 'chronicle') return secopsLogTypeAdvice(st, sampleEvents).recommended === fmt;
+  if (fmt === SPLUNK_CSV_FORMAT) return splunkCsvAdvice(st, sampleEvents).recommended;
   return null;
+}
+
+/**
+ * The badge a card carries, or null. Elastic and SecOps cards say Recommended: one of the two
+ * cannot parse the sample. Splunk CSV says Optimized: it is a cost choice the customer makes,
+ * never a recommendation over Raw, CIM or JSON.
+ */
+export function flowBadgeFor(fmt: string, sourcetype: string, sampleEvents?: string): { text: string; title: string } | null {
+  if (flowRecommendedFor(fmt, sourcetype, sampleEvents) !== true) return null;
+  const st = sourcetype || 'this source';
+  return fmt === SPLUNK_CSV_FORMAT
+    ? { text: 'Optimized', title: `Licence-optimized for ${st}: lossless on the sample and at least ${Math.round(CSV_RECOMMEND_SAVING * 100)}% smaller. The customer decides.` }
+    : { text: 'Recommended', title: `Recommended for ${st}` };
 }
 
 /** Falls back to a neutral card for a format this map doesn't know yet. */

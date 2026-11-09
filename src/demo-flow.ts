@@ -11,10 +11,13 @@
 //
 // Everything here is pure: App.tsx resolves samples, builds and deploys.
 import {
-  DEMO_EVENTS_PER_SEC, DEMO_FEED_FILTER, DEMO_LAKE_OUTPUT, DEMO_TERMINATOR_FILTER, demoLaneFilter, demoLaneId, demoMainPackId, demoPpPackId,
-  demoPipelineId, idPart,
+  DEMO_EVENTS_PER_SEC, DEMO_LAKE_OUTPUT, DEMO_TERMINATOR_FILTER, demoNames, demoPipelineId,
 } from './demo-flow-ids';
 import { FLOW_FORMATS, ppEffectiveFormat, ppOutputLabel, ppOutputsToBuild, type FlowPpOutput, type FlowPpState } from './flow-builder';
+
+/** What one demo environment builds at most (the Demo screens and whiteboard validation share these). */
+export const DEMO_MAX_SOURCES = 5;
+export const DEMO_MAX_FORMATS = 3;
 
 /** One column of the routing grid: a main-pack format or a post-processing output. */
 export interface DemoTarget { key: string; kind: 'main' | 'pp'; fmt: string; label: string; pp?: FlowPpOutput }
@@ -55,6 +58,10 @@ export interface DemoPlanPack {
 }
 export interface DemoPlanPpPack { sourcetype: string; packId: string; target: string; output: FlowPpOutput }
 export interface DemoPlan {
+  /** The namespace every id in the plan is named in ('' = legacy). */
+  ns: string;
+  /** The OCSF replay datagen post-processing packs read. */
+  replayId: string;
   lanes: { id: string; fmt: string; sourcetypes: string[] }[];
   /** Sources the OCSF replay datagen carries. */
   replaySourcetypes: string[];
@@ -76,7 +83,10 @@ export interface DemoPlan {
  */
 export function planDemoFlow(args: {
   sources: string[]; destFormats: string[]; pp: FlowPpState; cells: DemoCell[];
+  /** The demo's namespace (spec R16): a whiteboard's, or '' for a demo made by hand. */
+  ns?: string;
 }): DemoPlan {
+  const n = demoNames(args.ns || '');
   const targets = demoTargets(args.destFormats, args.pp);
   const on = (st: string, key: string) => args.cells.some(c => c.sourcetype === st && c.target === key && c.enabled);
   const cell = (st: string, key: string) => args.cells.find(c => c.sourcetype === st && c.target === key);
@@ -98,32 +108,32 @@ export function planDemoFlow(args: {
     if (ppOn.length && !fmts.includes('ocsf')) fmts.push('ocsf');
     if (!fmts.length) continue;
     fmts.sort((a, b) => (a === 'ocsf' ? 1 : 0) - (b === 'ocsf' ? 1 : 0));
-    const packId = demoMainPackId(st);
-    packs.push({ sourcetype: st, packId, pipelines: fmts.map(fmt => ({ fmt, pipelineId: demoPipelineId(st, fmt), routeFilter: demoLaneFilter(fmt) })) });
+    const packId = n.mainPackId(st);
+    packs.push({ sourcetype: st, packId, pipelines: fmts.map(fmt => ({ fmt, pipelineId: demoPipelineId(st, fmt), routeFilter: n.laneFilter(fmt) })) });
 
     for (const t of mainOn) {
       join(t.fmt, st);
       routes.push({
-        id: `demo_${idPart(st)}_${idPart(t.fmt)}`, name: `[DEMO] ${st} to ${t.label}`,
-        filter: `${demoLaneFilter(t.fmt)} && sourcetype=='${st}'`, pipeline: `pack:${packId}`,
+        id: n.routeId(st, t.fmt), name: `[DEMO] ${st} to ${t.label}`,
+        filter: `${n.laneFilter(t.fmt)} && sourcetype=='${st}'`, pipeline: `pack:${packId}`,
         output: cell(st, t.key)?.output || 'devnull', sourcetype: st, target: t.key, kind: 'main',
       });
     }
     if (!ppOn.length) continue;
     replaySourcetypes.push(st);
     for (const t of ppOn) {
-      const ppPackId = demoPpPackId(st, t.fmt);
+      const ppPackId = n.ppPackId(st, t.fmt);
       ppPacks.push({ sourcetype: st, packId: ppPackId, target: t.key, output: t.pp! });
       routes.push({
-        id: `demo_${idPart(st)}_${idPart(t.fmt)}_post`, name: `[DEMO] ${st} ${t.label}`,
-        filter: `${DEMO_FEED_FILTER} && sourcetype=='${st}'`, pipeline: `pack:${ppPackId}`,
+        id: n.routeId(st, t.fmt, true), name: `[DEMO] ${st} ${t.label}`,
+        filter: `${n.feedFilter} && sourcetype=='${st}'`, pipeline: `pack:${ppPackId}`,
         output: cell(st, t.key)?.output || 'devnull', sourcetype: st, target: t.key, kind: 'pp',
       });
     }
   }
 
-  const lanes = [...laneMembers.entries()].map(([fmt, sourcetypes]) => ({ id: demoLaneId(fmt), fmt, sourcetypes }));
-  return { lanes, replaySourcetypes, packs, ppPacks, routes, terminatorFilter: DEMO_TERMINATOR_FILTER };
+  const lanes = [...laneMembers.entries()].map(([fmt, sourcetypes]) => ({ id: n.laneId(fmt), fmt, sourcetypes }));
+  return { ns: n.ns, replayId: n.replayId, lanes, replaySourcetypes, packs, ppPacks, routes, terminatorFilter: DEMO_TERMINATOR_FILTER };
 }
 
 /** Lanes × sources × rate: what the demo ingests, shown before anything is built. */

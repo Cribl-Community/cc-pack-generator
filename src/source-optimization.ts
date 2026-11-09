@@ -503,6 +503,8 @@ export interface SourceOptimizationBuild {
   shippedOff: string[];
   /** Lookup rules left out because their CSV is not in the pack. */
   skipped: string[];
+  /** Rules left out because none of the fields they read exists (`availableFields`). */
+  unreadable: string[];
 }
 
 /**
@@ -516,8 +518,10 @@ export function buildSourceOptimizationFunctions(
   destFormat: string,
   toggles: Record<string, boolean>,
   packLookups: string[],
+  /** When given, a rule reading none of these fields is left out (it could never fire). */
+  availableFields?: ReadonlySet<string>,
 ): SourceOptimizationBuild {
-  const res: SourceOptimizationBuild = { functions: [], applied: [], appliedRules: [], shippedOff: [], skipped: [] };
+  const res: SourceOptimizationBuild = { functions: [], applied: [], appliedRules: [], shippedOff: [], skipped: [], unreadable: [] };
   if (!formatSupportsSourceOptimization(destFormat) || toggles[optimizeToggleKey(destFormat)] !== true) return res;
   const scratch: string[] = [];
   // Emitted in the order splitPipelineFunctions would put them back in, so a
@@ -526,6 +530,7 @@ export function buildSourceOptimizationFunctions(
   const plumbing: any[] = []; const suppress: any[] = []; const drops: any[] = [];
   for (const r of sourceOptimizationRules(sourcetype)) {
     if (r.lookup && !packLookups.includes(r.lookup.file)) { res.skipped.push(r.label); continue; }
+    if (availableFields && !r.reads.some(f => availableFields.has(f))) { res.unreadable.push(r.label); continue; }
     const on = ruleEnabled(r, toggles);
     const tag = r.origin === 'cribl-pack' ? '[Cribl pack] ' : '';
     const description = `${tag}${r.description}${on ? '' : OFF_HINT}`;

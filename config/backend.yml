@@ -18,8 +18,10 @@ endpoints:
   - name: runBatchStep
     script: backend/run-batch-step.ts
     description: >-
-      Batch — Background stage runner. Advances ONE durable stage of ONE row per
-      invocation and checkpoints it to the App's KV store, so a closed browser
+      Batch — Background stage runner. Advances the build stages still left on
+      ONE row while the invocation has time, checkpointing each one, and never
+      starts the next row. Repair and Scorecard stay one transition per tick.
+      Checkpoints go to the App's KV store, so a closed browser
       tab does not stop the run. Invoked once by the UI to start a run
       (kickoff), and thereafter by its own self-scheduled one-minute tick until
       the run finishes, is stopped, or is dismissed. Samples are resolved in

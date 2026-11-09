@@ -1,9 +1,11 @@
 export { getRunMode } from './run-mode';
+import { assertGeneratorFunctions } from './function-allowlist';
 import { getRunMode } from './run-mode';
 import { killBackgroundCheckpoint } from './batch-kill';
 import { backendReferenceLookups } from './backend-reference-lookups';
 import { buildPackCrbl } from './browser-tar';
 import { normalizeRouteFinality } from './route-model';
+import { vendorSampleEvent } from './sample-lift';
 import type { SampleFingerprint, SampleGrounding } from './pack-builder';
 import {
   getBundledDatatypeParsers, getDatatypeParserStore, installDatatypeParserOverlay,
@@ -57,7 +59,9 @@ import {
 import {
   measureAuthoritative, previewWithZeroOutputRetry, resolveSampleLines,
 } from './quality-measure';
-import { unquoteDatagenTimestamps, isDemoInputId, isDemoOutputId, demoSampleOwner } from './demo-flow-ids';
+import { unquoteDatagenTimestamps, isDemoInputId, isDemoOutputId, demoSampleOwner, mergeDemoRouteTable, demoNsOfComment } from './demo-flow-ids';
+import { lakeDatasetBody } from './lake-dataset';
+import { readSourceSuggestion, type AiSourceSuggestion, type DemoFormatOption } from './discovery-ai';
 
 /**
  * `bundled-data` carries the reference catalogue and source-sample corpus (itself
@@ -102,7 +106,7 @@ const bundledGoldens = () => bundledGoldensLoader();
 // re-exports every moved symbol (existing importers unchanged) and imports back
 // the primitives it uses internally. Do not move these definitions back here.
 export {
-  getApiBase, fetchWithDeadline, proxyFetch, isTransientFetchError, withTransientRetry,
+  getApiBase, fetchWithDeadline, proxyFetch, isTransientFetchError, isLeaderUnavailableMessage, withTransientRetry,
   criblFetch, shouldUseBackendProxy, listGroups, liveCapture, listSamples, downloadSample,
   listGroupAndPackSamples, downloadPackSample,
   workerGroupSamplesPath, uploadWorkerGroupSample, isSanitisedLibrarySampleName,
@@ -113,8 +117,7 @@ export {
 export type { SanitisedSampleLibraryState } from './sample-io';
 import {
   getApiBase, proxyFetch, criblFetch, shouldUseBackendProxy, withTransientRetry,
-  setBundledSanitisedBaselineLoader,
-} from './sample-io';
+  setBundledSanitisedBaselineLoader, noteConfigWrite, filesForScopedCommit, leftPendingByLastCommit } from './sample-io';
 
 // Register the curated sanitised-sample baseline. This is the ONE place the
 // bundled-data → sanitised-baseline edge is wired; `sample-io.ts` stays free of any
@@ -384,17 +387,77 @@ export async function ensureLakeOutput(group: string, datasetId: string): Promis
   return outputId;
 }
 
+// Cribl Lake datasets for whiteboard demos (spec R15). Cribl.Cloud only; lakeId is 'default'.
+const LAKE_DATASETS_PATH = '/products/lake/lakes/default/datasets';
+
+/** Every Lake dataset id (Cribl's own included) and every Search dataset id —
+ *  what a new demo dataset id is checked against (src/lake-dataset.ts). */
+export async function listLakeAndSearchDatasetIds(): Promise<{ lakeIds: string[]; searchIds: string[]; deletingIds: string[] }> {
+  if (shouldUseBackendProxy()) {
+    const resp = await proxyFetch('/api/pack-generator/lake-dataset-ids');
+    const data = await resp.json();
+    if (!resp.ok) throw new Error(data.error || 'Failed to list Lake datasets');
+    return data;
+  }
+  const lake = await criblFetch<{ items: any[] }>(LAKE_DATASETS_PATH);
+  const search = await criblFetch<{ items: any[] }>('/m/default_search/search/datasets?offset=0&limit=1000')
+    .catch(() => ({ items: [] as any[] }));
+  return {
+    lakeIds: (lake.items || []).map((d: any) => String(d.id || '')).filter(Boolean),
+    deletingIds: (lake.items || []).filter((d: any) => d.deletionStartedAt).map((d: any) => String(d.id || '')).filter(Boolean),
+    searchIds: (search.items || []).map((d: any) => String(d.id || '')).filter(Boolean),
+  };
+}
+
+/** Create the dataset unless it exists — an existing one is reused, never changed. */
+export async function ensureLakeDataset(id: string, retentionPeriodInDays: number): Promise<{ id: string; created: boolean }> {
+  if (shouldUseBackendProxy()) {
+    const resp = await proxyFetch('/api/pack-generator/ensure-lake-dataset', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ id, retentionPeriodInDays }),
+    });
+    const data = await resp.json();
+    if (!resp.ok) throw new Error(data.error || 'Failed to create the Lake dataset');
+    return data;
+  }
+  const lake = await criblFetch<{ items: any[] }>(LAKE_DATASETS_PATH);
+  const existing = (lake.items || []).find((d: any) => d.id === id);
+  if (existing?.deletionStartedAt) throw new Error(`Lake dataset ${id} is being deleted. Cribl can take several minutes to finish; pick another id to go on now.`);
+  if (existing) return { id, created: false };
+  try {
+    await criblFetch(LAKE_DATASETS_PATH, { method: 'POST', body: JSON.stringify(lakeDatasetBody(id, retentionPeriodInDays)) });
+  } catch (err) {
+    // Created by another tab or run between the list and the POST: that is the dataset we want.
+    if (/\(409\)|already exists/i.test(err instanceof Error ? err.message : '')) return { id, created: false };
+    throw err;
+  }
+  return { id, created: true };
+}
+
+export async function deleteLakeDataset(id: string): Promise<void> {
+  if (shouldUseBackendProxy()) {
+    const resp = await proxyFetch('/api/pack-generator/delete-lake-dataset', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ id }),
+    });
+    const data = await resp.json().catch(() => ({}));
+    if (!resp.ok) throw new Error(data.error || 'Failed to delete the Lake dataset');
+    return;
+  }
+  await criblFetch(`${LAKE_DATASETS_PATH}/${encodeURIComponent(id)}`, { method: 'DELETE' });
+}
+
 const DEMO_ROUTE_PREFIX = 'demo_';
 
 export interface DemoRouteComment { comment: string; index: number }
 
-// Prepend the demo route block (+ its comment rows) to the worker-group MASTER
-// route table (/m/<group>/routes), replacing any prior demo block, then commit + deploy.
-export async function setMasterRoutes(group: string, demoRoutes: any[], demoComments: DemoRouteComment[] = []): Promise<{ routeCount: number; demoCount: number; commit: string; version: string }> {
+// Write one demo namespace's route block (+ its comment rows) at the top of the
+// worker-group MASTER route table (/m/<group>/routes), replacing only that
+// namespace's previous block (spec R16; '' = a demo made by hand), then commit + deploy.
+export async function setMasterRoutes(group: string, demoRoutes: any[], demoComments: DemoRouteComment[] = [], ns = ''): Promise<{ routeCount: number; demoCount: number; commit: string; version: string }> {
   if (shouldUseBackendProxy()) {
     const resp = await proxyFetch('/api/pack-generator/master-routes', {
       method: 'POST', headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ group, demoRoutes, demoComments }),
+      body: JSON.stringify({ group, demoRoutes, demoComments, ns }),
     });
     const data = await resp.json();
     if (!resp.ok) throw new Error(data.error || 'Failed to set master routes');
@@ -403,19 +466,16 @@ export async function setMasterRoutes(group: string, demoRoutes: any[], demoComm
   const getData = await criblFetch<{ items: any[] }>(`/m/${group}/routes`);
   const table = getData.items?.[0] || { id: 'default', routes: [] };
   const existing = Array.isArray(table.routes) ? table.routes : [];
-  const nonDemo = existing.filter((r: any) => !String(r.id || '').startsWith(DEMO_ROUTE_PREFIX));
-  const newRoutes = [...demoRoutes, ...nonDemo];
-  // Comment rows are keyed by position in the COMBINED comments+routes list. The
-  // demo block occupies the first (demoRoutes.length + demoComments.length) rows,
-  // so shift each existing customer comment down by that combined count.
+  // Other boards' blocks, the shared terminator and the customer's routes + comments keep
+  // their places; comment positions are recomputed, never shifted (src/demo-flow-ids.ts).
   const genId = () => Math.random().toString(36).slice(2, 8);
-  const prevComments: any[] = Array.isArray(table.comments) ? table.comments : [];
-  const demoBlockRows = demoRoutes.length + demoComments.length;
-  const shiftedExisting = prevComments
-    .filter((c: any) => !String(c.comment || '').startsWith('[DEMO]'))
-    .map((c: any) => ({ ...c, index: (c.index || 0) + demoBlockRows }));
-  const demoCommentRows = demoComments.map(c => ({ id: genId(), comment: c.comment, index: c.index }));
-  const comments = [...demoCommentRows, ...shiftedExisting];
+  const merged = mergeDemoRouteTable(
+    { routes: existing, comments: Array.isArray(table.comments) ? table.comments : [] },
+    ns,
+    { routes: demoRoutes, comments: demoComments.map(c => ({ id: genId(), comment: c.comment, index: c.index })) },
+  );
+  const newRoutes = merged.routes;
+  const comments = merged.comments;
   const tableId = table.id || 'default';
 
   // The master route table validates each route's pipeline against an enum of
@@ -484,7 +544,8 @@ export async function setMasterRoutes(group: string, demoRoutes: any[], demoComm
     body: JSON.stringify({ version: demoDeployVersion }),
   });
   const version = deployResult?.items?.[0]?.configVersion || demoDeployVersion;
-  const demoWritten = routesToWrite.filter((r: any) => String(r.id || '').startsWith(DEMO_ROUTE_PREFIX)).length;
+  const blockIds = new Set(demoRoutes.map((r: any) => r.id));
+  const demoWritten = routesToWrite.filter((r: any) => blockIds.has(r.id)).length;
   return { routeCount: routesToWrite.length, demoCount: demoWritten, commit: demoDeployVersion, version };
 }
 
@@ -584,7 +645,8 @@ function pruneRoutesAndComments(routes: any[], comments: any[], removeRouteIds: 
     if (e.kind === 'route') {
       if (!idSet.has(e.r.id)) { keptRoutes.push(e.r); keptCombined.push(e); }
     } else {
-      const isDemo = String(e.c.comment || '').startsWith('[DEMO]');
+      // `[DEMO]` (made by hand) or `[DEMO:<ns>]` (a whiteboard's demo, spec R16).
+      const isDemo = demoNsOfComment(String(e.c.comment || '')) !== null;
       if (!(isDemo && removedPositions.has(pos + 1))) keptCombined.push(e);
     }
   });
@@ -595,7 +657,7 @@ function pruneRoutesAndComments(routes: any[], comments: any[], removeRouteIds: 
 
 export interface DemoScanResult {
   routes: { id: string; name: string; pipeline: string; output: string }[];
-  datagens: { id: string; sampleCount: number; description: string }[];
+  datagens: { id: string; sampleCount: number; description: string; disabled: boolean }[];
   packs: { id: string; displayName: string; version: string }[];
   outputs: { id: string; type: string; destPath: string }[];
 }
@@ -620,7 +682,7 @@ export async function scanDemo(group: string): Promise<DemoScanResult> {
       .map((r: any) => ({ id: r.id, name: r.name, pipeline: r.pipeline, output: r.output })),
     datagens: (inputs.items || [])
       .filter((i: any) => isDemoInputId(String(i.id || '')))
-      .map((i: any) => ({ id: i.id, sampleCount: (i.samples || []).length, description: i.description || '' })),
+      .map((i: any) => ({ id: i.id, sampleCount: (i.samples || []).length, description: i.description || '', disabled: i.disabled === true })),
     packs: (packs.items || [])
       .filter((p: any) => String(p.id || '').startsWith(DEMO_PACK_PREFIX))
       .map((p: any) => ({ id: p.id, displayName: p.displayName || p.id, version: p.version || '' })),
@@ -628,6 +690,37 @@ export async function scanDemo(group: string): Promise<DemoScanResult> {
       .filter((o: any) => isDemoOutputId(String(o.id || '')))
       .map((o: any) => ({ id: o.id, type: o.type, destPath: o.destPath || '' })),
   };
+}
+
+/**
+ * Stop or start one demo: turn its data generators off or on, then ONE commit + deploy.
+ * Its packs and routes stay, so a stopped demo starts again in seconds. Only the ids
+ * passed are touched — the other demos on the group keep running.
+ */
+export async function setDemoRunning(group: string, datagenIds: string[], running: boolean): Promise<{ changed: string[]; errors: string[] }> {
+  let changed: string[] = [];
+  let errors: string[] = [];
+  if (shouldUseBackendProxy()) {
+    const resp = await proxyFetch('/api/pack-generator/demo-run', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ group, datagenIds, running }),
+    });
+    const data = await resp.json();
+    if (!resp.ok) throw new Error(data.error || `Failed to ${running ? 'start' : 'stop'} the demo`);
+    ({ changed, errors } = data);
+  } else {
+    for (const id of datagenIds) {
+      try {
+        const got = await criblFetch<{ items: any[] }>(`/m/${group}/system/inputs/${encodeURIComponent(id)}`);
+        const input = got.items?.[0];
+        if (!input) { errors.push(`datagen ${id}: not found`); continue; }
+        await criblFetch(`/m/${group}/system/inputs/${encodeURIComponent(id)}`, { method: 'PATCH', body: JSON.stringify({ ...input, disabled: !running }) });
+        changed.push(id);
+      } catch (e: any) { errors.push(`datagen ${id}: ${e.message}`); }
+    }
+  }
+  if (changed.length) await commitDeploy(group, `${running ? 'Start' : 'Stop'} demo (${changed.join(', ')})`);
+  return { changed, errors };
 }
 
 export interface DemoCleanupResult {
@@ -834,6 +927,9 @@ export async function deploy(payload: any, log: (msg: string) => void): Promise<
   // Sanitize at the single deploy choke point so it catches literal strings AND
   // any AI-generated description, in both iframe and standalone paths.
   sanitizePackDescription(payload?.packageJson);
+  // Nothing outside the generator's own function vocabulary reaches a worker group, whichever
+  // run mode deploys it and whether it came from a pool golden, a replay or AI output.
+  assertGeneratorFunctions(payload?.pipelineConf, `Pipeline ${payload?.pipelineId || 'transform'}`);
 
   if (shouldUseBackendProxy()) {
     const resp = await proxyFetch('/api/pack-generator/deploy', {
@@ -850,6 +946,9 @@ export async function deploy(payload: any, log: (msg: string) => void): Promise<
 
   // Iframe mode: call Cribl API directly (platform handles auth)
   const { packId, pipelineId = 'transform', workerGroup, packageJson, pipelineConf, mode = 'new', routeFilter, sourcetype, deferDeploy } = payload;
+  // Before the first write (the raw .crbl upload below bypasses criblFetch): what was already
+  // pending in the group stays out of this deploy's commit.
+  await noteConfigWrite(workerGroup, packId);
 
 
   if (mode === 'new') {
@@ -879,6 +978,10 @@ export async function deploy(payload: any, log: (msg: string) => void): Promise<
           if (/\(404\)/.test(err instanceof Error ? err.message : String(err))) return false;
           throw err;
         }
+      },
+      author: async () => {
+        const got = await criblFetch<{ items?: { author?: string }[] }>(packPath);
+        return got?.items?.[0]?.author ?? null;
       },
       upload: async () => {
         log('Uploading pack...');
@@ -966,17 +1069,12 @@ export async function deploy(payload: any, log: (msg: string) => void): Promise<
       // pack's input = the upstream pipeline's output, exactly as emitted), so keep
       // every field — with or without a `_raw` (a Windows XML parser consumes it).
       // Otherwise a sample is vendor text the pipeline must parse, and parsed-JSON
-      // fields must not pre-empt that — reduce to _raw/_time.
+      // fields must not pre-empt that — keep the log plus the collector envelope
+      // (host, source, _time). A `_raw` that is itself a Cribl event is unwrapped.
       if (payload.structuredSample && typeof evt === 'object' && evt !== null) {
         return { ...stripCtrl(evt), _time: evt._time || Date.now() / 1000 };
       }
-      if (typeof evt === 'object' && evt !== null && evt._raw) {
-        return { _raw: evt._raw, _time: evt._time || Date.now() / 1000 };
-      }
-      if (typeof evt === 'string') {
-        return { _raw: evt, _time: Date.now() / 1000 };
-      }
-      return { _raw: JSON.stringify(evt), _time: Date.now() / 1000 };
+      return vendorSampleEvent(evt, Date.now() / 1000);
     });
     // Sample names are deterministic per sourcetype+format (`<pipelineId>_sample.log`),
     // so a re-run / add-pipeline reuses the SAME name. Cribl POST returns 409 when the
@@ -1091,10 +1189,7 @@ export async function deploy(payload: any, log: (msg: string) => void): Promise<
 
   log('Committing...');
   const commitMsg = mode === 'new' ? `Deploy pack ${packId}` : `Add pipeline ${pipelineId} to pack ${packId}`;
-  const commitResult = await criblFetch<any>(`/version/commit`, {
-    method: 'POST',
-    body: JSON.stringify({ message: commitMsg, group: workerGroup }),
-  });
+  const commitResult = await scopedCommit(workerGroup, commitMsg, [packId], log);
   const isHash = (v: unknown): v is string => typeof v === 'string' && v.length >= 7 && /^[0-9a-f]+$/i.test(v);
   const rawCommit = commitResult?.items?.[0]?.commit || commitResult?.items?.[0]?.hash || commitResult?.commit || commitResult?.version || commitResult?.items?.[0]?.id || '';
   const commit = isHash(rawCommit) ? rawCommit : '';
@@ -1124,6 +1219,9 @@ export async function deploy(payload: any, log: (msg: string) => void): Promise<
 // no pack recreate, no commit, no deploy. Used by the 3-stage experiment so it
 // tries many candidates against ONE pack instead of redeploying each time.
 export async function patchPipeline(packId: string, pipelineId: string, workerGroup: string, pipelineConf: any): Promise<void> {
+  assertGeneratorFunctions(pipelineConf, `Pipeline ${pipelineId}`);
+  // The iframe write below is a raw fetch, so note the write (baseline + pack) here.
+  if (!shouldUseBackendProxy()) await noteConfigWrite(workerGroup, packId);
   if (shouldUseBackendProxy()) {
     await withTransientRetry(async () => {
       const resp = await proxyFetch('/api/pack-generator/patch-pipeline', {
@@ -1145,7 +1243,27 @@ export async function patchPipeline(packId: string, pipelineId: string, workerGr
 }
 
 // Commit + deploy a worker group once (final step of the deferred 3-stage flow).
-export async function commitDeploy(workerGroup: string, message?: string): Promise<{ commit: string; version: string }> {
+/**
+ * Commit only this app's changes in `workerGroup` (see `filesForScopedCommit`): what changed since
+ * its first write there, and the files of `packIds`. Nothing to commit → no commit at all, and the
+ * caller deploys the latest version. Status unreadable → the old whole-group commit, logged.
+ */
+async function scopedCommit(workerGroup: string, message: string, packIds: string[], log: (msg: string) => void = () => {}): Promise<any> {
+  const files = await filesForScopedCommit(workerGroup, packIds);
+  if (files === null) {
+    log('⚠ Could not read the pending changes; committing the whole worker group as before.');
+    return criblFetch<any>('/version/commit', { method: 'POST', body: JSON.stringify({ message, group: workerGroup }) });
+  }
+  if (!files.length) {
+    log('Nothing of this app is pending in the worker group; deploying the current version.');
+    return {};
+  }
+  const left = leftPendingByLastCommit();
+  if (left) log(`${left} change(s) that were already pending in ${workerGroup} are left out of this commit; commit them in Cribl if they are yours.`);
+  return criblFetch<any>('/version/commit', { method: 'POST', body: JSON.stringify({ message, group: workerGroup, files }) });
+}
+
+export async function commitDeploy(workerGroup: string, message?: string, packIds: string[] = []): Promise<{ commit: string; version: string }> {
   if (shouldUseBackendProxy()) {
     const resp = await proxyFetch('/api/pack-generator/commit-deploy', {
       method: 'POST', headers: { 'Content-Type': 'application/json' },
@@ -1154,7 +1272,7 @@ export async function commitDeploy(workerGroup: string, message?: string): Promi
     if (!resp.ok) throw new Error(`commit-deploy failed: ${resp.status} — ${await resp.text()}`);
     return resp.json();
   }
-  const commitResult = await criblFetch<any>('/version/commit', { method: 'POST', body: JSON.stringify({ message: message || `Deploy ${workerGroup}`, group: workerGroup }) });
+  const commitResult = await scopedCommit(workerGroup, message || `Deploy ${workerGroup}`, packIds);
   const isH = (v: unknown): v is string => typeof v === 'string' && v.length >= 7 && /^[0-9a-f]+$/i.test(v);
   let deployVersion = [commitResult?.items?.[0]?.commit, commitResult?.items?.[0]?.hash, commitResult?.commit, commitResult?.version, commitResult?.items?.[0]?.id]
     .find(v => isH(v)) || '';
@@ -1178,6 +1296,7 @@ import {
   saveLakeToken,
   saveGoldenReadToken,
   aiValidateSourcetype,
+  aiSuggestDemoFormatLocal,
   aiDetectSourcetype,
   aiAdvise as aiAdviseClient,
   analyzeBuildTrace as analyzeBuildTraceClient,
@@ -1793,6 +1912,36 @@ export async function loadActiveBatchBackgroundRun(): Promise<BackgroundBatchChe
 
 // Destination/table-aware validation. Recognizes specific SIEM tables and flags
 // ambiguous platforms (e.g. "Azure Sentinel") with specific-table suggestions.
+/**
+ * Whiteboard rows nothing matched (spec R18): an AI suggestion, grounded and advisory.
+ * A source label goes through the same grounded resolver Demo mode uses; a destination
+ * label is asked which of `options` it ingests. Only the label is sent.
+ */
+export async function aiSuggestSourceForLabel(label: string, catalog: string[]): Promise<AiSourceSuggestion> {
+  const supported = new Set(catalog);
+  const out = await aiValidate(label, '', catalog);
+  const read = readSourceSuggestion(out, supported);
+  // The resolver's fast path answers "valid" with no suggestion for a label that already IS a name.
+  const exact = catalog.find(n => n.toLowerCase() === label.trim().toLowerCase().replace(/[\s:/-]+/g, '_'));
+  return read.status === 'unavailable' && exact ? { status: 'suggested', picks: [exact], why: 'This is a supported source name.' } : read;
+}
+
+export async function aiSuggestDemoFormat(label: string, options: DemoFormatOption[]): Promise<{ format: string | null; why: string }> {
+  if (shouldUseBackendProxy()) {
+    try {
+      const resp = await proxyFetch('/api/pack-generator/ai-validate', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ mode: 'demo-format', label, options }),
+      });
+      if (!resp.ok) throw new Error(`AI unavailable (${resp.status})`);
+      return await resp.json();
+    } catch (err) {
+      return { format: null, why: `The AI did not answer: ${err instanceof Error ? err.message : String(err)}` };
+    }
+  }
+  return aiSuggestDemoFormatLocal(label, options);
+}
+
 // Returns { destFormatOk, canonical, suggestion, clarification }.
 export async function aiValidateDest(destFormat: string, sourcetype = ''): Promise<{ destFormatOk: boolean; canonical: string; displayName: string; suggestion: string; clarification: string }> {
   const fallback = { destFormatOk: true, canonical: '', displayName: '', suggestion: '', clarification: '' };
@@ -2158,7 +2307,7 @@ export interface ValidationReport {
   sampleKeys?: string[];
   sampleRaw?: string[];
   // Set to the scorer that produced the displayed score.
-  scoreSource?: 'golden-spec' | 'value-coverage' | 'raw-fidelity' | 'schema-validated' | 'ai';
+  scoreSource?: 'golden-spec' | 'value-coverage' | 'raw-fidelity' | 'csv-fidelity' | 'schema-validated' | 'ai';
 }
 
 export interface ValidatePipelineArgs {
@@ -2329,6 +2478,34 @@ export async function previewPipelineProfile(args: {
   } catch {
     return null;
   }
+}
+
+// Run a pack sample through an INLINE pipeline conf — nothing is saved or deployed.
+// Performance mode previews the deployed functions and their compiled form this way
+// so both run on exactly the same events. Control fields are stripped from the output.
+export async function previewInlinePipeline(args: {
+  workerGroup: string; packId: string; sampleName: string; functions: any[];
+}): Promise<{ items: any[]; stats: CriblPipelineProfile | null }> {
+  if (shouldUseBackendProxy()) {
+    return withTransientRetry(async () => {
+      const resp = await proxyFetch('/api/pack-generator/preview-inline', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(args),
+      });
+      const data = await resp.json();
+      if (!resp.ok) throw new Error(data.error || `preview-inline failed: ${resp.status}`);
+      return { items: (data.items || []).map(stripCtrl), stats: data.stats || null };
+    }, { label: 'previewInlinePipeline' });
+  }
+  const { workerGroup, packId, sampleName, functions } = args;
+  const sampleId = await resolvePackSampleId(workerGroup, packId, sampleName);
+  if (!sampleId) throw new Error(`No sample found matching "${sampleName}" in pack ${packId}`);
+  return withTransientRetry(async () => {
+    const data = await criblFetch<{ items?: any[]; stats?: CriblPipelineProfile }>(`/m/${workerGroup}/p/${packId}/preview`, {
+      method: 'POST',
+      body: JSON.stringify({ mode: 'pipe', sampleId, pipelineId: 'dummy', pipelineConf: { functions }, cpuProfile: true, level: 3 }),
+    });
+    return { items: (data.items || []).map(stripCtrl), stats: data.stats || null };
+  }, { label: 'previewInlinePipeline-iframe' });
 }
 
 // Validate a deployed pipeline: runs the sample through it (preview API) and
@@ -3379,7 +3556,7 @@ export async function repairQuality(opts: {
     // when the rollback failed: the live pipeline is then holding a candidate
     // nobody verified, and a commit is what would ship it.
     if (!drive.unresolved && result.changed && !opts.deferCommit) {
-      await commitDeploy(opts.workerGroup, `quality-repair ${opts.pipelineId} in ${opts.packId}`);
+      await commitDeploy(opts.workerGroup, `quality-repair ${opts.pipelineId} in ${opts.packId}`, [opts.packId]);
     }
     return {
       pipelineId: result.pipelineId,

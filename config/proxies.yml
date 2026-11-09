@@ -1,104 +1,61 @@
-# AI providers
+# GitHub — read-only, and no credential is injected on purpose. The shared goldens and the
+# samples pool are public repositories read unauthenticated, and publishing to them happens
+# outside the iframe, so nothing the app does inside Cribl needs a GitHub credential and there
+# is none to leak. The allowlists name the exact repositories the app reads; an admin who
+# points the golden pool elsewhere adds that repository here after install.
 
-api.anthropic.com:
-  timeout: 120000
-  paths:
-    allowlist:
-      - "/v1/messages"
-  headers:
-    inject:
-      x-api-key: "kv.anthropicApiKey"
-
-bedrock-runtime.us-east-1.amazonaws.com:
-  timeout: 120000
-  headers:
-    inject:
-      Authorization: "kv.bedrockAuth"
-
-bedrock-runtime.us-west-2.amazonaws.com:
-  timeout: 120000
-  headers:
-    inject:
-      Authorization: "kv.bedrockAuth"
-
-bedrock-runtime.eu-west-1.amazonaws.com:
-  timeout: 120000
-  headers:
-    inject:
-      Authorization: "kv.bedrockAuth"
-
-bedrock-runtime.eu-central-1.amazonaws.com:
-  timeout: 120000
-  headers:
-    inject:
-      Authorization: "kv.bedrockAuth"
-
-bedrock-runtime.ap-northeast-1.amazonaws.com:
-  timeout: 120000
-  headers:
-    inject:
-      Authorization: "kv.bedrockAuth"
-
-bedrock-runtime.ap-southeast-1.amazonaws.com:
-  timeout: 120000
-  headers:
-    inject:
-      Authorization: "kv.bedrockAuth"
-
-bedrock-runtime.ap-southeast-2.amazonaws.com:
-  timeout: 120000
-  headers:
-    inject:
-      Authorization: "kv.bedrockAuth"
-
-api.openai.com:
-  timeout: 120000
-  paths:
-    allowlist:
-      - "/v1/chat/completions"
-  headers:
-    inject:
-      Authorization: "'Bearer ' + kv.openaiApiKey"
-
-api.mistral.ai:
-  timeout: 120000
-  paths:
-    allowlist:
-      - "/v1/chat/completions"
-  headers:
-    inject:
-      Authorization: "'Bearer ' + kv.mistralApiKey"
-
-api.githubcopilot.com:
-  timeout: 120000
-
-# No credential is injected here on purpose. The shared goldens are read from a
-# public repository over raw.githubusercontent.com below, and publishing to it
-# happens outside the iframe — so nothing the app does inside Cribl needs a
-# GitHub credential, and there is none to leak.
+# Tree listings, and blob reads for golden files whose name holds a `#` (the raw lane below
+# cannot carry one through the platform proxy).
 api.github.com:
   timeout: 30000
   paths:
     allowlist:
-      - "/graphql"
-      - "/repos/"
+      - "/repos/wvdlinde-cribl/cribl-pack-goldens/"
+      - "/repos/wvdlinde-cribl/cribl-pack-samples/"
 
-models.inference.ai.azure.com:
-  timeout: 120000
-  paths:
-    allowlist:
-      - "/chat/completions"
-  headers:
-    inject:
-      Authorization: "'Bearer ' + kv.azureaiApiKey"
-
-generativelanguage.googleapis.com:
-  timeout: 120000
-  headers:
-    inject:
-      x-goog-api-key: "kv.geminiApiKey"
-
-# Public sample data sources, and the public shared-golden pool: every golden the
-# app reads comes through here, unauthenticated, in both run modes.
+# The shared goldens, the samples pool, and the public vendor sample logs offered as
+# Sample sources (src/sample-sources.ts).
 raw.githubusercontent.com:
   timeout: 30000
+  paths:
+    allowlist:
+      - "/wvdlinde-cribl/cribl-pack-goldens/"
+      - "/wvdlinde-cribl/cribl-pack-samples/"
+      - "/sbousseaden/EVTX-ATTACK-SAMPLES/"
+      - "/logpai/loghub/"
+      - "/kaus33k/okta-sample-system-logs/"
+      - "/Grishmbasnet515/ai-cloud-log-threat-detector/"
+
+# Prospect logos for the discovery whiteboard (src/whiteboard/logo-search.ts). Wikidata names a
+# company's official logo (a Wikimedia Commons file) and website; Commons renders the file as a
+# small PNG; icon.horse serves a website's own icon. Public and anonymous: no credential is
+# injected. Only the name the SE typed is sent, and only when they press Search in the logo dialog.
+www.wikidata.org:
+  timeout: 15000
+  paths:
+    allowlist:
+      - "/w/api.php"
+
+commons.wikimedia.org:
+  timeout: 15000
+  paths:
+    allowlist:
+      - "/w/api.php"
+
+thumb.wikimedia.org:
+  timeout: 15000
+  paths:
+    allowlist:
+      - "/wikipedia/commons/thumb/"
+
+upload.wikimedia.org:
+  timeout: 15000
+  paths:
+    allowlist:
+      - "/wikipedia/commons/"
+
+icon.horse:
+  timeout: 15000
+  paths:
+    allowlist:
+      - "/icon/"

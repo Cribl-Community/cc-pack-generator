@@ -1,0 +1,40 @@
+{
+  "upstreamSha256": "f79a82b397bc7afb76e3516c687204b592dc4a4037c7bd3d23ad5cea0c42f436",
+  "upstreamTitle": "Cribl | The AI Platform for Telemetry",
+  "patches": [
+    "P1 store",
+    "P2 libs",
+    "P3 bridge",
+    "P4 download",
+    "P5 chrome",
+    "P6 boot",
+    "P7 fonts",
+    "P8 add",
+    "P9 declutter",
+    "P10 content",
+    "P11 arrows",
+    "P12 stores",
+    "P13 reveal",
+    "P14 value",
+    "P15 configure"
+  ],
+  "libs": {
+    "html-to-image": "1.11.13",
+    "jspdf": "2.5.2"
+  },
+  "content": {
+    "discovery": "bd15c0b6de6840c6d8783a832c9442a57890d6e066d5952351dc7d5ea1cbf4e8",
+    "i18n": "6f0aaba490bf0862c9f67b4b1b396e57e295c0a331e2e438091e97f0b69acb90",
+    "languages": [
+      "en",
+      "fr",
+      "de",
+      "es"
+    ]
+  },
+  "storeKeys": {
+    "lib": "cribl-canvas:lib:v5",
+    "meet": "cribl-canvas:meet:v5"
+  },
+  "vendoredAt": "2026-11-09T09:42:59.325Z"
+}

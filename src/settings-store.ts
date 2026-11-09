@@ -7,7 +7,8 @@
 // provably AI-free only while this file does (see CLAUDE.md Hard Rule 25,
 // enforced by tests/sanitizer-ai-free-test.mjs).
 import { getRunMode } from './run-mode';
-import { INTERNAL_AI } from './build-flavor';
+import { DEV_BACKEND, devServerFetch, INTERNAL_AI } from './build-flavor';
+import { provideSampleIoSettings } from './sample-io-settings';
 
 // 'cribl' = the org's own Cribl AI Settings (BYOM or Cribl-managed), reached through
 // the platform's open_investigator agent. App (iframe) mode only; no key of our own.
@@ -90,6 +91,34 @@ function getDefaultSettings(): AiSettings {
 }
 
 export let memorySettings: AiSettings | null = null;
+
+/** Providers a standalone batch may pick. Inside Cribl the org's one provider is used and this list is not shown. */
+export const STANDALONE_BATCH_PROVIDERS: { id: AiProvider; label: string }[] = [
+  ...(INTERNAL_AI ? [{ id: 'devproxy' as const, label: 'Cribl AI (Aperture)' }] : []),
+  { id: 'anthropic', label: 'Anthropic' },
+  { id: 'bedrock', label: 'AWS Bedrock' },
+  { id: 'openai', label: 'OpenAI' },
+  { id: 'mistral', label: 'Mistral' },
+  { id: 'azureai', label: 'Azure AI / Copilot' },
+  { id: 'gemini', label: 'Google Gemini' },
+];
+
+const PROVIDER_DEFAULT_MODEL: Record<AiProvider, string> = {
+  devproxy: 'us.anthropic.claude-sonnet-5',
+  cribl: 'cribl-ai-settings',
+  anthropic: 'claude-sonnet-5',
+  bedrock: 'us.anthropic.claude-sonnet-5',
+  openai: 'gpt-4.1',
+  mistral: 'mistral-large-latest',
+  azureai: 'gpt-4.1',
+  gemini: 'gemini-pro-latest',
+};
+
+/** Settings with `provider` selected and its default model, keeping stored credentials. */
+export function settingsWithProvider(current: AiSettings, provider: AiProvider): AiSettings {
+  const model = PROVIDER_DEFAULT_MODEL[provider];
+  return { ...current, provider, model, normalModel: model, repairModel: model };
+}
 
 export function canBackgroundUseProvider(provider: AiProvider): { ok: boolean; reason?: string } {
   if (provider === 'bedrock') {
@@ -312,11 +341,10 @@ function setCookie(name: string, value: string) {
 // The durable copy is the app's own KV store, the store the sample library and
 // goldens already use: no worker group, no commit, readable by anyone who can open
 // the app. Secrets never go here (persistable*Settings blanks them; they stay in
-// encrypted KV). The old /m/default/lib/vars variable is read once to migrate: its
-// save never created the variable (a 404 is not a network error), and it needed a
-// `default` group the user could edit.
+// encrypted KV). The old /m/default/lib/vars variable is no longer read: its save never
+// created the variable (a 404 is not a network error), neither app grants that path, so
+// the migration only ever produced a 403 on every load.
 export const SETTINGS_KV_KEY = 'settings/app';
-const SETTINGS_VAR_ID = 'pack_generator_settings';
 let platformSettingsCache: Record<string, any> | null = null;
 let platformSettingsLoaded = false;
 
@@ -358,18 +386,7 @@ async function loadPlatformSettings(): Promise<Record<string, any> | null> {
   try {
     const resp = await settingsFetch(`${getCriblApiBase()}/kvstore/${SETTINGS_KV_KEY}`);
     if (resp.ok) platformSettingsCache = parseStoredBlob(await resp.text());
-  } catch { /* unreachable — try the legacy variable */ }
-  if (!platformSettingsCache) {
-    try {
-      const resp = await settingsFetch(`${getCriblApiBase()}/m/default/lib/vars/${SETTINGS_VAR_ID}`);
-      if (resp.ok) {
-        const data = await resp.json();
-        const item = data.items?.[0] || data;
-        const legacy = item?.value ? parseStoredBlob(typeof item.value === 'string' ? item.value : JSON.stringify(item.value)) : null;
-        if (legacy) { platformSettingsCache = legacy; await putSettingsKv(legacy).catch(() => {}); }
-      }
-    } catch { /* no legacy copy */ }
-  }
+  } catch { /* unreachable — defaults */ }
   platformSettingsLoaded = true;
   return platformSettingsCache;
 }
@@ -553,8 +570,12 @@ async function persistAiCredentials(s: AiSettings): Promise<void> {
     await Promise.all(Object.entries(secrets).map(([key, value]) => kvWrite(key, value, true)));
     return;
   }
+  // Outside the iframe the only credential store is the development server. A build without
+  // one (the Sanitizer's community copy, which has no AI at all) keeps keys for the session
+  // only, and the rest of the settings still persist.
+  if (!DEV_BACKEND) return;
 
-  const response = await fetch('/api/pack-generator/creds-save', {
+  const response = await devServerFetch('/api/pack-generator/creds-save', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(secrets),
@@ -643,6 +664,13 @@ export interface QualitySettings {
    * Defaults OFF; scoring is unaffected (null/blank already count as unfilled).
    */
   dropEmptyJsonFields: boolean;
+  /**
+   * Show "Whiteboards & demos" under Tools in the rail — for Cribl and partner teams,
+   * not customers. Absent = not decided yet: the app turns it on by itself once when
+   * it finds whiteboards or demos (App.tsx), and otherwise records it off. A choice
+   * made in Settings › Menu always wins.
+   */
+  whiteboardsDemos?: boolean;
 }
 
 const QUALITY_STORAGE_KEY = 'pack-generator-quality-settings';
@@ -795,6 +823,15 @@ export async function loadQualitySettingsAsync(): Promise<QualitySettings> {
   return getDefaultQualitySettings();
 }
 
+/** Standalone batch: the provider the browser build will call, and the model the quality settings name. */
+export async function applyStandaloneBatchProvider(provider: AiProvider): Promise<void> {
+  const next = settingsWithProvider(loadSettings(), provider);
+  // Visible to the build at once. The save below still persists it.
+  memorySettings = next;
+  saveQualitySettings({ ...loadQualitySettings(), normalModel: next.model, repairModel: next.model });
+  await saveSettings(next);
+}
+
 export function saveQualitySettings(s: QualitySettings) {
   const persistent = persistQualitySettingsToDurableSinks(s, {
     localStorage: serialized => {
@@ -846,7 +883,7 @@ export async function saveLakeToken(token: string): Promise<void> {
     await kvWrite('lakeToken', value, true);
     return;
   }
-  const response = await fetch('/api/pack-generator/creds-save', {
+  const response = await devServerFetch('/api/pack-generator/creds-save', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ lakeToken: value }),
@@ -868,7 +905,7 @@ export async function saveGoldenReadToken(token: string): Promise<void> {
     if (!response.ok) throw new Error(`Encrypted GitHub credential save failed (${response.status})`);
     return;
   }
-  const response = await fetch('/api/pack-generator/creds-save', {
+  const response = await devServerFetch('/api/pack-generator/creds-save', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ goldenReadToken: value }),
@@ -882,7 +919,7 @@ export async function saveSanitisedSampleToken(token: string): Promise<void> {
   const value = token.trim();
   if (!value) return;
   if (getRunMode() === 'iframe') throw new Error('Shared sample publishing is standalone-only.');
-  const response = await fetch('/api/pack-generator/creds-save', {
+  const response = await devServerFetch('/api/pack-generator/creds-save', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ sanitisedSampleToken: value }),
@@ -891,3 +928,16 @@ export async function saveSanitisedSampleToken(token: string): Promise<void> {
   const result = await response.json().catch(() => null);
   if (!result?.saved) throw new Error(result?.message || 'Server did not confirm the sample-repository credential save');
 }
+
+// sample-io reads these through sample-io-settings, so it does not import this store (and the
+// Sample Sanitizer, which uses sample-io but no AI, does not bundle it).
+provideSampleIoSettings({
+  provider: () => loadSettings().provider,
+  sanitisedSharing: () => {
+    const q = loadQualitySettings();
+    return {
+      shareSanitisedSamples: q.shareSanitisedSamples, sanitisedSampleTokenSet: q.sanitisedSampleTokenSet,
+      sanitisedSampleRepo: q.sanitisedSampleRepo, sanitisedSampleBranch: q.sanitisedSampleBranch, goldenRepo: q.goldenRepo,
+    };
+  },
+});

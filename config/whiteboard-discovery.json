@@ -1,0 +1,3331 @@
+{
+  "_readme": [
+    "The discovery values of the whiteboard: the challenges (\"situations\" here) with their positive business outcomes, and the business use cases.",
+    "After editing, run: npm run whiteboard:vendor   (CI fails while the generated board is older than this file).",
+    "families: one entry per family id. label per language (en is required; an empty fr/de/es falls back to en).",
+    "  colour: per theme (capra, midnight, board), the colour of a use-case family. Outcomes always use the one outcome green; situations the before-state red.",
+    "  kind: the default icon (cost | time | risk) for a situation added to this family. level: the default level for a use case added to it.",
+    "situations.families: the families an outcome can belong to, in order. useCases.families: the use-case families, in order.",
+    "items: shown = offered in its box's + Challenge list without typing (false = still found by typing). Items show in this order.",
+    "  situation: kind = icon (cost | time | risk); target = the box it is pinned on (point | platform | stores | sources | humans | agents); badge = the red pin's text;",
+    "    solvedBy = the Cribl layer whose appearance solves it (pipe | search | ai): from then on the board shows its outcomes;",
+    "    outcomes = one or more positive business outcomes, each with a family (operational | financial | strategic) and a label per language;",
+    "    keywords = per language, search words: a box's + Challenge finds the challenge by them (every typed word must match).",
+    "  use case: level = which level of the diagram it sits beside (top | analysis | stores | pipe | sources).",
+    "ids are permanent: never rename or reuse one. Removing an id removes it from every SE library on their next open."
+  ],
+  "families": {
+    "operational": {
+      "label": {
+        "en": "Operational",
+        "fr": "Opérationnel",
+        "de": "Operativ",
+        "es": "Operativo"
+      },
+      "kind": "time",
+      "level": "pipe",
+      "colour": {
+        "capra": "#008080",
+        "midnight": "#2DD4BF",
+        "board": "#008080"
+      }
+    },
+    "financial": {
+      "label": {
+        "en": "Financial",
+        "fr": "Financier",
+        "de": "Finanziell",
+        "es": "Financiero"
+      },
+      "kind": "cost",
+      "level": "stores",
+      "colour": {
+        "capra": "#05A758",
+        "midnight": "#A3E635",
+        "board": "#05A758"
+      }
+    },
+    "strategic": {
+      "label": {
+        "en": "Strategic",
+        "fr": "Stratégique",
+        "de": "Strategisch",
+        "es": "Estratégico"
+      },
+      "kind": "risk",
+      "level": "top",
+      "colour": {
+        "capra": "#5955FF",
+        "midnight": "#E879F9",
+        "board": "#5955FF"
+      }
+    },
+    "compliance": {
+      "label": {
+        "en": "Compliance",
+        "fr": "Conformité",
+        "de": "Compliance",
+        "es": "Cumplimiento"
+      },
+      "kind": "risk",
+      "level": "stores",
+      "colour": {
+        "capra": "#0B6CD9",
+        "midnight": "#38BDF8",
+        "board": "#0B6CD9"
+      }
+    },
+    "detection": {
+      "label": {
+        "en": "Detection",
+        "fr": "Détection",
+        "de": "Erkennung",
+        "es": "Detección"
+      },
+      "kind": "risk",
+      "level": "pipe",
+      "colour": {
+        "capra": "#FF8B00",
+        "midnight": "#FB923C",
+        "board": "#FF8B00"
+      }
+    },
+    "investigation": {
+      "label": {
+        "en": "Investigation",
+        "fr": "Investigation",
+        "de": "Untersuchung",
+        "es": "Investigación"
+      },
+      "kind": "time",
+      "level": "analysis",
+      "colour": {
+        "capra": "#5955FF",
+        "midnight": "#E879F9",
+        "board": "#5955FF"
+      }
+    },
+    "response": {
+      "label": {
+        "en": "Response",
+        "fr": "Réponse",
+        "de": "Reaktion",
+        "es": "Respuesta"
+      },
+      "kind": "time",
+      "level": "top",
+      "colour": {
+        "capra": "#05A758",
+        "midnight": "#A3E635",
+        "board": "#05A758"
+      }
+    }
+  },
+  "situations": {
+    "families": [
+      "operational",
+      "financial",
+      "strategic"
+    ],
+    "items": [
+      {
+        "id": "pa-slowint",
+        "shown": true,
+        "kind": "time",
+        "target": "point",
+        "solvedBy": "pipe",
+        "label": {
+          "en": "Slow, laborious integrations of new data sources",
+          "fr": "Intégrations lentes et pénibles de nouvelles sources de données",
+          "de": "Mühsame, langsame Integrationen von neuen Datenquellen",
+          "es": "Integraciones lentas y complicadas de nuevas fuentes de datos"
+        },
+        "badge": {
+          "en": "Weeks per source",
+          "fr": "Des semaines par source",
+          "de": "Wochen pro Quelle",
+          "es": "Semanas por fuente"
+        },
+        "desc": {
+          "en": "Each new source is a project: vendor connectors, custom parsers and tickets before the data is usable. Onboarding into Sentinel is a classic example.",
+          "fr": "Chaque nouvelle source est un projet : connecteurs éditeur, parseurs sur mesure et tickets avant que la donnée soit exploitable. L’intégration dans Sentinel en est un exemple classique.",
+          "de": "Jede neue Quelle ist ein Projekt: Hersteller-Connectoren, eigene Parser und Tickets, bevor die Daten nutzbar sind. Das Onboarding in Sentinel ist ein klassisches Beispiel.",
+          "es": "Cada nueva fuente es un proyecto: conectores del proveedor, parsers a medida y tickets antes de que los datos sean utilizables. La incorporación a Sentinel es un ejemplo clásico."
+        },
+        "outcomes": [
+          {
+            "family": "operational",
+            "label": {
+              "en": "New sources onboarded in days, not weeks",
+              "fr": "Nouvelles sources intégrées en jours, pas en semaines",
+              "de": "Neue Quellen in Tagen statt Wochen angebunden",
+              "es": "Nuevas fuentes integradas en días, no en semanas"
+            }
+          },
+          {
+            "family": "financial",
+            "label": {
+              "en": "No connector project to fund for each source",
+              "fr": "Plus de projet de connecteur à financer par source",
+              "de": "Kein Konnektor-Projekt mehr pro Quelle zu finanzieren",
+              "es": "Sin proyecto de conector que financiar por fuente"
+            }
+          }
+        ],
+        "keywords": {
+          "en": [
+            "slow",
+            "integration",
+            "onboard",
+            "onboarding",
+            "parser",
+            "connector",
+            "weeks",
+            "new source"
+          ],
+          "fr": [
+            "lent",
+            "intégration",
+            "connecteur",
+            "parseur",
+            "semaines",
+            "nouvelle source"
+          ],
+          "de": [
+            "langsam",
+            "integration",
+            "konnektor",
+            "parser",
+            "wochen",
+            "neue quelle"
+          ],
+          "es": [
+            "lento",
+            "integración",
+            "conector",
+            "parser",
+            "semanas",
+            "nueva fuente"
+          ]
+        }
+      },
+      {
+        "id": "pa-backlog",
+        "shown": true,
+        "kind": "time",
+        "target": "sources",
+        "solvedBy": "pipe",
+        "label": {
+          "en": "Backlog of data to ingest",
+          "fr": "Backlog: données en attente d'intégration",
+          "de": "Backlog: Daten in der Warteschlange",
+          "es": "Backlog: datos en espera de ingesta"
+        },
+        "badge": {
+          "en": "Backlog of sources to ingest",
+          "fr": "Backlog: sources à intégrer",
+          "de": "Backlog: Quellen zur Integration",
+          "es": "Backlog: fuentes para ingestar"
+        },
+        "desc": {
+          "en": "Sources the business asked for are still waiting in the queue. Each one is a project, so the backlog grows faster than the team can onboard.",
+          "fr": "Les sources demandées par les métiers attendent encore dans la file. Chacune est un projet, et le retard grandit plus vite que l’équipe ne les intègre.",
+          "de": "Vom Business angeforderte Quellen warten noch in der Warteschlange. Jede ist ein Projekt, und der Rückstau wächst schneller, als das Team anbinden kann.",
+          "es": "Las fuentes que pidió el negocio siguen esperando en la cola. Cada una es un proyecto, así que el retraso crece más rápido de lo que el equipo puede incorporarlas."
+        },
+        "outcomes": [
+          {
+            "family": "operational",
+            "label": {
+              "en": "Better visibility",
+              "fr": "Une meilleure visibilité",
+              "de": "Bessere Sichtbarkeit",
+              "es": "Mejor visibilidad"
+            }
+          },
+          {
+            "family": "strategic",
+            "label": {
+              "en": "Reduce risk",
+              "fr": "Réduire le risque",
+              "de": "Risiko senken",
+              "es": "Reducir el riesgo"
+            }
+          },
+          {
+            "family": "strategic",
+            "label": {
+              "en": "Increase compliance",
+              "fr": "Renforcer la conformité",
+              "de": "Compliance stärken",
+              "es": "Reforzar el cumplimiento"
+            }
+          }
+        ],
+        "keywords": {
+          "en": [
+            "backlog",
+            "queue",
+            "waiting",
+            "requests",
+            "ingest"
+          ],
+          "fr": [
+            "retard",
+            "file",
+            "attente",
+            "demandes",
+            "backlog"
+          ],
+          "de": [
+            "rückstau",
+            "warteschlange",
+            "anfragen"
+          ],
+          "es": [
+            "retraso",
+            "cola",
+            "espera",
+            "peticiones"
+          ]
+        }
+      },
+      {
+        "id": "pa-longinv",
+        "shown": true,
+        "kind": "time",
+        "target": "humans",
+        "solvedBy": "search",
+        "label": {
+          "en": "Long investigations",
+          "fr": "Investigations trop longues",
+          "de": "Langwierige Untersuchungen",
+          "es": "Investigaciones largas"
+        },
+        "badge": {
+          "en": "Hours per incident",
+          "fr": "Des heures par incident",
+          "de": "Stunden pro Vorfall",
+          "es": "Horas por incidente"
+        },
+        "desc": {
+          "en": "Analysts hop between consoles, wait for archives to rehydrate and stitch the timeline together by hand while the incident is still live.",
+          "fr": "Les analystes passent d’une console à l’autre, attendent la réhydratation des archives et reconstituent la chronologie à la main pendant que l’incident est en cours.",
+          "de": "Analysten springen zwischen Konsolen, warten auf die Rehydrierung von Archiven und setzen die Zeitachse von Hand zusammen, während der Vorfall noch läuft.",
+          "es": "Los analistas saltan de una consola a otra, esperan a que se rehidraten los archivos históricos y reconstruyen la cronología a mano mientras el incidente sigue activo."
+        },
+        "outcomes": [
+          {
+            "family": "operational",
+            "label": {
+              "en": "Investigations in minutes across every store",
+              "fr": "Des investigations en minutes sur tous les stockages",
+              "de": "Untersuchungen in Minuten über alle Speicher",
+              "es": "Investigaciones en minutos en todos los almacenes"
+            }
+          },
+          {
+            "family": "strategic",
+            "label": {
+              "en": "Lower risk: nothing missing from the timeline",
+              "fr": "Moins de risque : rien ne manque dans la chronologie",
+              "de": "Weniger Risiko: nichts fehlt in der Zeitleiste",
+              "es": "Menos riesgo: nada falta en la cronología"
+            }
+          }
+        ],
+        "keywords": {
+          "en": [
+            "investigation",
+            "incident",
+            "timeline",
+            "hours",
+            "rehydrate",
+            "consoles",
+            "mttr"
+          ],
+          "fr": [
+            "investigation",
+            "incident",
+            "chronologie",
+            "heures",
+            "consoles"
+          ],
+          "de": [
+            "untersuchung",
+            "vorfall",
+            "zeitleiste",
+            "stunden"
+          ],
+          "es": [
+            "investigación",
+            "incidente",
+            "cronología",
+            "horas"
+          ]
+        }
+      },
+      {
+        "id": "pa-fragmented",
+        "shown": true,
+        "kind": "risk",
+        "target": "stores",
+        "solvedBy": "search",
+        "label": {
+          "en": "Fragmented visibility",
+          "fr": "Visibilité fragmentée",
+          "de": "Fragmentierte Sichtbarkeit",
+          "es": "Visibilidad fragmentada"
+        },
+        "badge": {
+          "en": "No single view",
+          "fr": "Aucune vue d’ensemble",
+          "de": "Keine Gesamtsicht",
+          "es": "Sin vista única"
+        },
+        "desc": {
+          "en": "Each team sees its own slice of the estate in its own tool, so nobody sees the whole picture when it matters.",
+          "fr": "Chaque équipe voit sa part du parc dans son propre outil, et personne n’a la vue complète quand ça compte.",
+          "de": "Jedes Team sieht nur seinen Ausschnitt der Umgebung im eigenen Tool – niemand hat das Gesamtbild, wenn es darauf ankommt.",
+          "es": "Cada equipo ve su parte del entorno en su propia herramienta, y nadie tiene la visión completa cuando importa."
+        },
+        "outcomes": [
+          {
+            "family": "operational",
+            "label": {
+              "en": "Single pane of glass across every team’s data",
+              "fr": "Une vue unique sur les données de toutes les équipes",
+              "de": "Eine zentrale Sicht auf die Daten aller Teams",
+              "es": "Una vista única de los datos de todos los equipos"
+            }
+          },
+          {
+            "family": "strategic",
+            "label": {
+              "en": "Decisions made on the whole picture",
+              "fr": "Des décisions prises sur l’ensemble du tableau",
+              "de": "Entscheidungen auf Basis des Gesamtbilds",
+              "es": "Decisiones tomadas con el panorama completo"
+            }
+          }
+        ],
+        "keywords": {
+          "en": [
+            "fragmented",
+            "silo",
+            "single view",
+            "visibility",
+            "teams",
+            "scattered"
+          ],
+          "fr": [
+            "fragmenté",
+            "silo",
+            "vue unique",
+            "visibilité",
+            "équipes"
+          ],
+          "de": [
+            "fragmentiert",
+            "silo",
+            "gesamtsicht",
+            "sichtbarkeit"
+          ],
+          "es": [
+            "fragmentado",
+            "silo",
+            "vista única",
+            "visibilidad"
+          ]
+        }
+      },
+      {
+        "id": "pa-fatigue",
+        "shown": false,
+        "kind": "time",
+        "target": "humans",
+        "solvedBy": "pipe",
+        "label": {
+          "en": "Alert fatigue",
+          "fr": "Fatigue des alertes",
+          "de": "Alert-Müdigkeit",
+          "es": "Fatiga de alertas"
+        },
+        "badge": {
+          "en": "Too many alerts",
+          "fr": "Trop d’alertes",
+          "de": "Zu viele Alerts",
+          "es": "Demasiadas alertas"
+        },
+        "desc": {
+          "en": "Noisy, unenriched alerts bury the ones that matter and burn out the team.",
+          "fr": "Des alertes bruyantes et non enrichies noient celles qui comptent et épuisent l’équipe.",
+          "de": "Laute, nicht angereicherte Alerts begraben die wichtigen und brennen das Team aus.",
+          "es": "Las alertas ruidosas y sin enriquecer ocultan las que importan y agotan al equipo."
+        },
+        "outcomes": [
+          {
+            "family": "operational",
+            "label": {
+              "en": "More context: fewer, richer alerts the team can act on",
+              "fr": "Plus de contexte : moins d’alertes, plus riches et exploitables par l’équipe",
+              "de": "Mehr Kontext: weniger, aussagekräftigere Alerts, auf die das Team reagieren kann",
+              "es": "Más contexto: menos alertas, más ricas y accionables para el equipo"
+            }
+          },
+          {
+            "family": "strategic",
+            "label": {
+              "en": "Analysts focused on real threats, not noise",
+              "fr": "Des analystes concentrés sur les vraies menaces, pas sur le bruit",
+              "de": "Analysten auf echte Bedrohungen fokussiert, nicht auf Rauschen",
+              "es": "Analistas centrados en amenazas reales, no en ruido"
+            }
+          }
+        ],
+        "keywords": {
+          "en": [
+            "alerts",
+            "noise",
+            "noisy",
+            "fatigue",
+            "false positive",
+            "burnout"
+          ],
+          "fr": [
+            "alertes",
+            "bruit",
+            "fatigue",
+            "faux positif",
+            "épuisement"
+          ],
+          "de": [
+            "alarme",
+            "rauschen",
+            "müdigkeit",
+            "fehlalarm"
+          ],
+          "es": [
+            "alertas",
+            "ruido",
+            "fatiga",
+            "falso positivo"
+          ]
+        }
+      },
+      {
+        "id": "pa-siemcost",
+        "shown": true,
+        "kind": "cost",
+        "target": "point",
+        "solvedBy": "pipe",
+        "label": {
+          "en": "Costly SIEM ingestion",
+          "fr": "Ingestion SIEM coûteuse",
+          "de": "Teure SIEM-Ingestion",
+          "es": "Ingesta SIEM costosa"
+        },
+        "badge": {
+          "en": "Pay per GB",
+          "fr": "Facturé au Go",
+          "de": "Bezahlung pro GB",
+          "es": "Pago por GB"
+        },
+        "desc": {
+          "en": "Every gigabyte indexed is billed, so teams drop data to stay under the licence and lose visibility with it.",
+          "fr": "Chaque gigaoctet indexé est facturé : les équipes écartent des données pour rester sous la licence et perdent en visibilité.",
+          "de": "Jedes indizierte Gigabyte wird berechnet – also verwerfen Teams Daten, um unter der Lizenz zu bleiben, und verlieren damit Sichtbarkeit.",
+          "es": "Cada gigabyte indexado se factura, así que los equipos descartan datos para no superar la licencia y pierden visibilidad con ellos."
+        },
+        "outcomes": [
+          {
+            "family": "financial",
+            "label": {
+              "en": "Control cost",
+              "fr": "Maîtriser les coûts",
+              "de": "Kosten im Griff",
+              "es": "Controlar los costes"
+            }
+          },
+          {
+            "family": "operational",
+            "label": {
+              "en": "Full visibility without the licence trade-off",
+              "fr": "Une visibilité complète sans arbitrage de licence",
+              "de": "Volle Sichtbarkeit ohne Lizenz-Kompromiss",
+              "es": "Visibilidad completa sin renunciar por la licencia"
+            }
+          }
+        ],
+        "keywords": {
+          "en": [
+            "expensive",
+            "licence",
+            "license",
+            "ingest",
+            "gb",
+            "bill",
+            "cost",
+            "siem",
+            "splunk",
+            "budget"
+          ],
+          "fr": [
+            "cher",
+            "licence",
+            "coût",
+            "facture",
+            "siem",
+            "budget",
+            "go"
+          ],
+          "de": [
+            "teuer",
+            "lizenz",
+            "kosten",
+            "rechnung",
+            "siem",
+            "budget"
+          ],
+          "es": [
+            "caro",
+            "licencia",
+            "coste",
+            "factura",
+            "siem",
+            "presupuesto"
+          ]
+        }
+      },
+      {
+        "id": "pa-o11ycost",
+        "shown": false,
+        "kind": "cost",
+        "target": "point",
+        "solvedBy": "pipe",
+        "label": {
+          "en": "Observability bill out of control",
+          "fr": "Facture d’observabilité hors de contrôle",
+          "de": "Observability-Kosten außer Kontrolle",
+          "es": "Factura de observabilidad descontrolada"
+        },
+        "badge": {
+          "en": "Runaway bill",
+          "fr": "Facture qui explose",
+          "de": "Ausufernde Rechnung",
+          "es": "Factura disparada"
+        },
+        "desc": {
+          "en": "APM and log tools charge for everything they receive, and most of it is never looked at.",
+          "fr": "Les outils APM et de journaux facturent tout ce qu’ils reçoivent, et la plupart n’est jamais consulté.",
+          "de": "APM- und Log-Tools berechnen alles, was sie empfangen – und das meiste davon wird nie angesehen.",
+          "es": "Las herramientas de APM y de logs cobran por todo lo que reciben, y la mayor parte nunca se consulta."
+        },
+        "outcomes": [
+          {
+            "family": "financial",
+            "label": {
+              "en": "Control cost",
+              "fr": "Maîtriser les coûts",
+              "de": "Kosten im Griff",
+              "es": "Controlar los costes"
+            }
+          },
+          {
+            "family": "operational",
+            "label": {
+              "en": "Right data to the right destination",
+              "fr": "La bonne donnée à la bonne destination",
+              "de": "Die richtigen Daten ans richtige Ziel",
+              "es": "Los datos correctos al destino correcto"
+            }
+          }
+        ],
+        "keywords": {
+          "en": [
+            "observability",
+            "apm",
+            "datadog",
+            "new relic",
+            "dynatrace",
+            "bill",
+            "expensive",
+            "metrics",
+            "traces"
+          ],
+          "fr": [
+            "observabilité",
+            "apm",
+            "datadog",
+            "facture",
+            "cher",
+            "métriques"
+          ],
+          "de": [
+            "observability",
+            "apm",
+            "datadog",
+            "rechnung",
+            "teuer",
+            "metriken"
+          ],
+          "es": [
+            "observabilidad",
+            "apm",
+            "datadog",
+            "factura",
+            "caro",
+            "métricas"
+          ]
+        }
+      },
+      {
+        "id": "pa-retention",
+        "shown": false,
+        "kind": "cost",
+        "target": "stores",
+        "solvedBy": "search",
+        "label": {
+          "en": "Costly retention, costly rehydration",
+          "fr": "Rétention coûteuse, réhydratation coûteuse",
+          "de": "Teure Aufbewahrung, teure Rehydrierung",
+          "es": "Retención costosa, rehidratación costosa"
+        },
+        "badge": {
+          "en": "30 days hot",
+          "fr": "30 jours à chaud",
+          "de": "30 Tage Hot",
+          "es": "30 días en caliente"
+        },
+        "desc": {
+          "en": "Keeping data searchable is so expensive that history is cut short, and getting it back means paying again.",
+          "fr": "Garder les données consultables coûte si cher que l’historique est raccourci, et le récupérer se paie une seconde fois.",
+          "de": "Daten durchsuchbar zu halten ist so teuer, dass die Historie gekürzt wird – und sie zurückzuholen kostet erneut.",
+          "es": "Mantener los datos consultables es tan caro que se recorta el historial, y recuperarlo implica pagar otra vez."
+        },
+        "outcomes": [
+          {
+            "family": "financial",
+            "label": {
+              "en": "Years of retention at object-storage cost",
+              "fr": "Des années de rétention au coût du stockage objet",
+              "de": "Jahre an Aufbewahrung zu Objektspeicher-Kosten",
+              "es": "Años de retención al coste del almacenamiento de objetos"
+            }
+          },
+          {
+            "family": "operational",
+            "label": {
+              "en": "Instant access, no rehydration",
+              "fr": "Accès immédiat, sans réhydratation",
+              "de": "Sofortiger Zugriff, ohne Rehydrierung",
+              "es": "Acceso inmediato, sin rehidratación"
+            }
+          }
+        ],
+        "keywords": {
+          "en": [
+            "retention",
+            "rehydrate",
+            "rehydration",
+            "history",
+            "archive",
+            "30 days",
+            "cold",
+            "hot"
+          ],
+          "fr": [
+            "retention",
+            "réhydratation",
+            "rétention",
+            "historique",
+            "archivage",
+            "30 jours",
+            "froid"
+          ],
+          "de": [
+            "aufbewahrung",
+            "rehydrierung",
+            "historie",
+            "archiv",
+            "30 tage"
+          ],
+          "es": [
+            "retención",
+            "rehidratación",
+            "historial",
+            "archivo",
+            "30 días"
+          ]
+        }
+      },
+      {
+        "id": "pa-siloedtools",
+        "shown": true,
+        "kind": "cost",
+        "target": "point",
+        "solvedBy": "pipe",
+        "label": {
+          "en": "Siloed tools",
+          "fr": "Outils en silos",
+          "de": "Tools in Silos",
+          "es": "Herramientas en silos"
+        },
+        "badge": {
+          "en": "Tool sprawl",
+          "fr": "Outils en double",
+          "de": "Tool-Wildwuchs",
+          "es": "Exceso de herramientas"
+        },
+        "desc": {
+          "en": "Every tool keeps its own data, its own agents and its own bill, so the same data is collected and paid for several times.",
+          "fr": "Chaque outil garde ses propres données, ses agents et sa facture : les mêmes données sont collectées et payées plusieurs fois.",
+          "de": "Jedes Tool hat eigene Daten, eigene Agenten und eine eigene Rechnung – dieselben Daten werden mehrfach erfasst und bezahlt.",
+          "es": "Cada herramienta guarda sus propios datos, sus propios agentes y su propia factura, así que los mismos datos se recopilan y se pagan varias veces."
+        },
+        "outcomes": [
+          {
+            "family": "financial",
+            "label": {
+              "en": "Control cost: the right data to the right destination",
+              "fr": "Maîtriser les coûts : la bonne donnée à la bonne destination",
+              "de": "Kosten im Griff: die richtigen Daten ans richtige Ziel",
+              "es": "Controlar los costes: los datos correctos al destino correcto"
+            }
+          },
+          {
+            "family": "strategic",
+            "label": {
+              "en": "Consolidate tools on your own timeline",
+              "fr": "Consolider vos outils à votre rythme",
+              "de": "Tools im eigenen Tempo konsolidieren",
+              "es": "Consolidar las herramientas a su propio ritmo"
+            }
+          }
+        ],
+        "keywords": {
+          "en": [
+            "sprawl",
+            "too many tools",
+            "agents",
+            "duplicate",
+            "overlap",
+            "consolidate"
+          ],
+          "fr": [
+            "prolifération",
+            "trop d’outils",
+            "agents",
+            "doublon",
+            "consolider"
+          ],
+          "de": [
+            "wildwuchs",
+            "zu viele tools",
+            "agenten",
+            "doppelt",
+            "konsolidieren"
+          ],
+          "es": [
+            "proliferación",
+            "demasiadas herramientas",
+            "agentes",
+            "duplicado",
+            "consolidar"
+          ]
+        }
+      },
+      {
+        "id": "pa-blind",
+        "shown": false,
+        "kind": "risk",
+        "target": "sources",
+        "solvedBy": "pipe",
+        "label": {
+          "en": "Blind spots in coverage",
+          "fr": "Angles morts dans la couverture",
+          "de": "Blinde Flecken in der Abdeckung",
+          "es": "Puntos ciegos en la cobertura"
+        },
+        "badge": {
+          "en": "Sources left out",
+          "fr": "Sources écartées",
+          "de": "Quellen außen vor",
+          "es": "Fuentes excluidas"
+        },
+        "desc": {
+          "en": "Sources stay unmonitored because they cost too much to index, and threats there go unseen.",
+          "fr": "Des sources restent non surveillées parce qu’elles coûtent trop cher à indexer, et les menaces y passent inaperçues.",
+          "de": "Quellen bleiben unüberwacht, weil ihre Indizierung zu teuer ist – und Bedrohungen dort bleiben unentdeckt.",
+          "es": "Hay fuentes sin supervisar porque indexarlas cuesta demasiado, y las amenazas en ellas pasan inadvertidas."
+        },
+        "outcomes": [
+          {
+            "family": "operational",
+            "label": {
+              "en": "Every source collected",
+              "fr": "Toutes les sources collectées",
+              "de": "Jede Quelle erfasst",
+              "es": "Todas las fuentes recopiladas"
+            }
+          },
+          {
+            "family": "strategic",
+            "label": {
+              "en": "Lower risk from unmonitored sources",
+              "fr": "Moins de risque lié aux sources non surveillées",
+              "de": "Weniger Risiko durch unüberwachte Quellen",
+              "es": "Menos riesgo por fuentes sin vigilar"
+            }
+          }
+        ],
+        "keywords": {
+          "en": [
+            "blind",
+            "coverage",
+            "unmonitored",
+            "missing",
+            "gap",
+            "left out"
+          ],
+          "fr": [
+            "angle mort",
+            "couverture",
+            "non surveillé",
+            "manquant"
+          ],
+          "de": [
+            "blinder fleck",
+            "abdeckung",
+            "unüberwacht",
+            "lücke"
+          ],
+          "es": [
+            "punto ciego",
+            "cobertura",
+            "sin vigilar",
+            "hueco"
+          ]
+        }
+      },
+      {
+        "id": "pa-lockin",
+        "shown": false,
+        "kind": "risk",
+        "target": "point",
+        "solvedBy": "pipe",
+        "label": {
+          "en": "Vendor lock-in",
+          "fr": "Dépendance à l’éditeur",
+          "de": "Vendor-Lock-in",
+          "es": "Dependencia del proveedor"
+        },
+        "badge": {
+          "en": "Locked in",
+          "fr": "Captif",
+          "de": "Gebunden",
+          "es": "Cautivo"
+        },
+        "desc": {
+          "en": "Proprietary formats and query languages turn every change of tool into a migration project.",
+          "fr": "Formats et langages de requête propriétaires font de chaque changement d’outil un projet de migration.",
+          "de": "Proprietäre Formate und Abfragesprachen machen jeden Toolwechsel zum Migrationsprojekt.",
+          "es": "Los formatos y lenguajes de consulta propietarios convierten cada cambio de herramienta en un proyecto de migración."
+        },
+        "outcomes": [
+          {
+            "family": "strategic",
+            "label": {
+              "en": "Your strategy guides the tooling, not the other way around",
+              "fr": "Votre stratégie guide vos outils, et non l’inverse",
+              "de": "Ihre Strategie bestimmt die Tools, nicht umgekehrt",
+              "es": "Su estrategia guía las herramientas, y no al revés"
+            }
+          },
+          {
+            "family": "financial",
+            "label": {
+              "en": "Control cost and vendor dependency",
+              "fr": "Maîtriser les coûts et la dépendance aux éditeurs",
+              "de": "Kosten und Herstellerabhängigkeit im Griff",
+              "es": "Controlar los costes y la dependencia del proveedor"
+            }
+          }
+        ],
+        "keywords": {
+          "en": [
+            "lock",
+            "locked",
+            "lock-in",
+            "migration",
+            "proprietary",
+            "switch",
+            "renewal",
+            "vendor"
+          ],
+          "fr": [
+            "verrouillage",
+            "enfermement",
+            "migration",
+            "propriétaire",
+            "changer",
+            "renouvellement"
+          ],
+          "de": [
+            "lock-in",
+            "gebunden",
+            "migration",
+            "proprietär",
+            "wechsel",
+            "verlängerung"
+          ],
+          "es": [
+            "dependencia",
+            "cautivo",
+            "migración",
+            "propietario",
+            "cambiar",
+            "renovación"
+          ]
+        }
+      },
+      {
+        "id": "pa-diy",
+        "shown": false,
+        "kind": "time",
+        "target": "platform",
+        "solvedBy": "pipe",
+        "label": {
+          "en": "Build and run everything yourself",
+          "fr": "Tout construire et tout opérer soi-même",
+          "de": "Alles selbst bauen und betreiben",
+          "es": "Construirlo y operarlo todo uno mismo"
+        },
+        "badge": {
+          "en": "Months to build",
+          "fr": "Des mois de développement",
+          "de": "Monate Entwicklung",
+          "es": "Meses de desarrollo"
+        },
+        "desc": {
+          "en": "Every parser, schema and detection on the data platform is a project your team owns forever.",
+          "fr": "Chaque parseur, schéma et détection sur la plateforme de données est un projet que votre équipe porte pour toujours.",
+          "de": "Jeder Parser, jedes Schema und jede Detection auf der Datenplattform ist ein Projekt, das Ihr Team dauerhaft verantwortet.",
+          "es": "Cada parser, esquema y detección en la plataforma de datos es un proyecto que su equipo mantiene para siempre."
+        },
+        "outcomes": [
+          {
+            "family": "operational",
+            "label": {
+              "en": "Focus on your mission, not on the plumbing",
+              "fr": "Se concentrer sur sa mission, pas sur la tuyauterie",
+              "de": "Fokus auf Ihre Mission, nicht auf die Infrastruktur",
+              "es": "Centrarse en su misión, no en la fontanería"
+            }
+          },
+          {
+            "family": "financial",
+            "label": {
+              "en": "Lower overall TCO",
+              "fr": "Un TCO global réduit",
+              "de": "Niedrigere Gesamtbetriebskosten (TCO)",
+              "es": "Menor TCO global"
+            }
+          }
+        ],
+        "keywords": {
+          "en": [
+            "diy",
+            "build",
+            "maintain",
+            "in-house",
+            "databricks",
+            "snowflake",
+            "pipeline team",
+            "months"
+          ],
+          "fr": [
+            "fait maison",
+            "construire",
+            "maintenir",
+            "interne",
+            "mois"
+          ],
+          "de": [
+            "selbst bauen",
+            "warten",
+            "intern",
+            "monate"
+          ],
+          "es": [
+            "hecho en casa",
+            "construir",
+            "mantener",
+            "interno",
+            "meses"
+          ]
+        }
+      },
+      {
+        "id": "pa-silos",
+        "shown": false,
+        "kind": "risk",
+        "target": "agents",
+        "solvedBy": "ai",
+        "label": {
+          "en": "AI agents stuck in data silos",
+          "fr": "Agents IA bloqués par les silos",
+          "de": "KI-Agenten in Datensilos gefangen",
+          "es": "Agentes de IA atrapados en silos"
+        },
+        "badge": {
+          "en": "No shared access",
+          "fr": "Pas d’accès partagé",
+          "de": "Kein gemeinsamer Zugriff",
+          "es": "Sin acceso compartido"
+        },
+        "desc": {
+          "en": "Each agent needs its own integration to every store, so AI stays a pilot instead of part of the workflow.",
+          "fr": "Chaque agent a besoin de sa propre intégration à chaque stockage : l’IA reste un pilote au lieu de faire partie du quotidien.",
+          "de": "Jeder Agent braucht eine eigene Integration zu jedem Speicher – so bleibt KI ein Pilotprojekt statt Teil des Workflows.",
+          "es": "Cada agente necesita su propia integración con cada almacén, así que la IA se queda en piloto en lugar de formar parte del día a día."
+        },
+        "outcomes": [
+          {
+            "family": "strategic",
+            "label": {
+              "en": "AI agents on all your data through one interface",
+              "fr": "Des agents IA sur toutes vos données par une seule interface",
+              "de": "KI-Agenten auf allen Daten über eine Schnittstelle",
+              "es": "Agentes de IA sobre todos sus datos con una sola interfaz"
+            }
+          },
+          {
+            "family": "operational",
+            "label": {
+              "en": "From AI pilot to the daily workflow",
+              "fr": "Du pilote IA au travail quotidien",
+              "de": "Vom KI-Pilot zum täglichen Arbeitsablauf",
+              "es": "Del piloto de IA al trabajo diario"
+            }
+          }
+        ],
+        "keywords": {
+          "en": [
+            "ai",
+            "agent",
+            "agents",
+            "copilot",
+            "mcp",
+            "llm",
+            "genai"
+          ],
+          "fr": [
+            "ia",
+            "agent",
+            "agents",
+            "copilote",
+            "mcp",
+            "llm"
+          ],
+          "de": [
+            "ki",
+            "agent",
+            "agenten",
+            "copilot",
+            "mcp",
+            "llm"
+          ],
+          "es": [
+            "ia",
+            "agente",
+            "agentes",
+            "copiloto",
+            "mcp",
+            "llm"
+          ]
+        }
+      },
+      {
+        "id": "pa-agentsprawl",
+        "shown": false,
+        "kind": "time",
+        "target": "sources",
+        "solvedBy": "pipe",
+        "label": {
+          "en": "Too many agents and collectors to manage",
+          "fr": "Trop d’agents et de collecteurs à gérer",
+          "de": "Zu viele Agenten und Collectors zu verwalten",
+          "es": "Demasiados agentes y colectores que gestionar"
+        },
+        "badge": {
+          "en": "Agent sprawl",
+          "fr": "Prolifération d’agents",
+          "de": "Agenten-Wildwuchs",
+          "es": "Proliferación de agentes"
+        },
+        "desc": {
+          "en": "Each tool brings its own agent: upgrades, configs and versions to keep in step on every host.",
+          "fr": "Chaque outil apporte son agent : mises à jour, configurations et versions à tenir à jour sur chaque hôte.",
+          "de": "Jedes Tool bringt seinen eigenen Agenten mit: Updates, Konfigurationen und Versionen auf jedem Host abzustimmen.",
+          "es": "Cada herramienta trae su propio agente: actualizaciones, configuraciones y versiones que mantener en cada host."
+        },
+        "outcomes": [
+          {
+            "family": "operational",
+            "label": {
+              "en": "One fleet of Edge agents, multiple protocols, managed centrally",
+              "fr": "Une seule flotte d’agents Edge, multiprotocole, gérée de façon centrale",
+              "de": "Eine Flotte von Edge-Agenten, mehrere Protokolle, zentral verwaltet",
+              "es": "Una sola flota de agentes Edge, varios protocolos, gestionada de forma central"
+            }
+          },
+          {
+            "family": "operational",
+            "label": {
+              "en": "Handle heterogeneous fleets, migrate agents on your own terms",
+              "fr": "Gérer des parcs hétérogènes, migrer les agents à vos conditions",
+              "de": "Heterogene Flotten verwalten, Agenten zu Ihren Bedingungen migrieren",
+              "es": "Gestionar flotas heterogéneas, migrar los agentes según sus condiciones"
+            }
+          },
+          {
+            "family": "financial",
+            "label": {
+              "en": "Low operational cost",
+              "fr": "Un coût opérationnel réduit",
+              "de": "Niedrige Betriebskosten",
+              "es": "Coste operativo reducido"
+            }
+          }
+        ],
+        "keywords": {
+          "en": [
+            "agent",
+            "agents",
+            "forwarder",
+            "collector",
+            "fleet",
+            "upgrade",
+            "universal forwarder"
+          ],
+          "fr": [
+            "agent",
+            "agents",
+            "collecteur",
+            "flotte",
+            "mise à jour"
+          ],
+          "de": [
+            "agent",
+            "agenten",
+            "collector",
+            "flotte",
+            "update"
+          ],
+          "es": [
+            "agente",
+            "agentes",
+            "colector",
+            "flota",
+            "actualización"
+          ]
+        }
+      },
+      {
+        "id": "pa-otel",
+        "shown": false,
+        "kind": "time",
+        "target": "sources",
+        "solvedBy": "pipe",
+        "label": {
+          "en": "Hard to adopt OpenTelemetry",
+          "fr": "Difficile d’adopter OpenTelemetry",
+          "de": "OpenTelemetry ist schwer einzuführen",
+          "es": "Difícil adoptar OpenTelemetry"
+        },
+        "badge": {
+          "en": "OTel stalled",
+          "fr": "OTel au point mort",
+          "de": "OTel stockt",
+          "es": "OTel estancado"
+        },
+        "desc": {
+          "en": "Moving to open standards (OTel, OTLP) means re-instrumenting and running two worlds side by side.",
+          "fr": "Passer aux standards ouverts (OTel, OTLP) impose de réinstrumenter et de faire cohabiter deux mondes.",
+          "de": "Der Umstieg auf offene Standards (OTel, OTLP) bedeutet Neu-Instrumentierung und zwei Welten parallel.",
+          "es": "Pasar a estándares abiertos (OTel, OTLP) obliga a reinstrumentar y a mantener dos mundos en paralelo."
+        },
+        "outcomes": [
+          {
+            "family": "strategic",
+            "label": {
+              "en": "Open standards without re-instrumenting everything",
+              "fr": "Des standards ouverts sans tout réinstrumenter",
+              "de": "Offene Standards ohne alles neu zu instrumentieren",
+              "es": "Estándares abiertos sin reinstrumentarlo todo"
+            }
+          },
+          {
+            "family": "operational",
+            "label": {
+              "en": "OTel and existing agents feeding the same tools",
+              "fr": "OTel et les agents existants alimentent les mêmes outils",
+              "de": "OTel und bestehende Agenten speisen dieselben Tools",
+              "es": "OTel y los agentes existentes alimentan las mismas herramientas"
+            }
+          }
+        ],
+        "keywords": {
+          "en": [
+            "otel",
+            "opentelemetry",
+            "otlp",
+            "open standard",
+            "instrumentation"
+          ],
+          "fr": [
+            "otel",
+            "opentelemetry",
+            "standard ouvert",
+            "instrumentation"
+          ],
+          "de": [
+            "otel",
+            "opentelemetry",
+            "offener standard",
+            "instrumentierung"
+          ],
+          "es": [
+            "otel",
+            "opentelemetry",
+            "estándar abierto",
+            "instrumentación"
+          ]
+        }
+      },
+      {
+        "id": "pa-modernsrc",
+        "shown": false,
+        "kind": "time",
+        "target": "sources",
+        "solvedBy": "pipe",
+        "label": {
+          "en": "Cloud, Kubernetes and AI sources are hard to ingest",
+          "fr": "Les sources cloud, Kubernetes et IA sont difficiles à ingérer",
+          "de": "Cloud-, Kubernetes- und KI-Quellen sind schwer einzubinden",
+          "es": "Las fuentes cloud, Kubernetes e IA son difíciles de ingerir"
+        },
+        "badge": {
+          "en": "Ingestion overload",
+          "fr": "Ingestion saturée",
+          "de": "Ingestion überlastet",
+          "es": "Ingesta saturada"
+        },
+        "desc": {
+          "en": "The variety, velocity and volume of modern sources outgrow the existing collection.",
+          "fr": "La variété, la vitesse et le volume des sources modernes dépassent la collecte existante.",
+          "de": "Vielfalt, Tempo und Volumen moderner Quellen übersteigen die bestehende Erfassung.",
+          "es": "La variedad, la velocidad y el volumen de las fuentes modernas superan la recogida existente."
+        },
+        "outcomes": [
+          {
+            "family": "operational",
+            "label": {
+              "en": "Cloud, Kubernetes and AI sources onboarded like any other",
+              "fr": "Sources cloud, Kubernetes et IA intégrées comme les autres",
+              "de": "Cloud-, Kubernetes- und KI-Quellen wie alle anderen angebunden",
+              "es": "Fuentes cloud, Kubernetes e IA integradas como las demás"
+            }
+          },
+          {
+            "family": "strategic",
+            "label": {
+              "en": "Monitoring keeps pace with new projects",
+              "fr": "La supervision suit le rythme des nouveaux projets",
+              "de": "Das Monitoring hält mit neuen Projekten Schritt",
+              "es": "La supervisión sigue el ritmo de los nuevos proyectos"
+            }
+          }
+        ],
+        "keywords": {
+          "en": [
+            "kubernetes",
+            "k8s",
+            "cloud",
+            "aws",
+            "azure",
+            "gcp",
+            "volume",
+            "variety"
+          ],
+          "fr": [
+            "kubernetes",
+            "cloud",
+            "volume",
+            "variété"
+          ],
+          "de": [
+            "kubernetes",
+            "cloud",
+            "volumen",
+            "vielfalt"
+          ],
+          "es": [
+            "kubernetes",
+            "cloud",
+            "volumen",
+            "variedad"
+          ]
+        }
+      },
+      {
+        "id": "pa-pii",
+        "shown": true,
+        "kind": "risk",
+        "target": "sources",
+        "solvedBy": "pipe",
+        "label": {
+          "en": "Sensitive data (PII) reaches the tools",
+          "fr": "Des données sensibles (PII) arrivent dans les outils",
+          "de": "Sensible Daten (PII) landen in den Tools",
+          "es": "Datos sensibles (PII) llegan a las herramientas"
+        },
+        "badge": {
+          "en": "PII exposed",
+          "fr": "PII exposées",
+          "de": "PII offengelegt",
+          "es": "PII expuestos"
+        },
+        "desc": {
+          "en": "Masking and redaction are manual, error-prone and done tool by tool.",
+          "fr": "Le masquage et l’anonymisation sont manuels, sources d’erreurs et faits outil par outil.",
+          "de": "Maskierung und Schwärzung sind manuell, fehleranfällig und pro Tool.",
+          "es": "El enmascaramiento y la redacción son manuales, propensos a errores y herramienta a herramienta."
+        },
+        "outcomes": [
+          {
+            "family": "strategic",
+            "label": {
+              "en": "PII masked before it leaves the pipeline",
+              "fr": "PII masquées avant de quitter le pipeline",
+              "de": "PII maskiert, bevor sie die Pipeline verlassen",
+              "es": "PII enmascarados antes de salir del pipeline"
+            }
+          },
+          {
+            "family": "operational",
+            "label": {
+              "en": "Compliance without hand-written redaction",
+              "fr": "La conformité sans anonymisation écrite à la main",
+              "de": "Compliance ohne handgeschriebene Schwärzung",
+              "es": "Cumplimiento sin redacción escrita a mano"
+            }
+          },
+          {
+            "family": "financial",
+            "label": {
+              "en": "Costly compliance breach avoided",
+              "fr": "Des infractions de conformité coûteuses évitées",
+              "de": "Teure Compliance-Verstöße vermieden",
+              "es": "Costosas infracciones de cumplimiento evitadas"
+            }
+          }
+        ],
+        "keywords": {
+          "en": [
+            "pii",
+            "gdpr",
+            "mask",
+            "redact",
+            "privacy",
+            "personal data",
+            "sensitive"
+          ],
+          "fr": [
+            "pii",
+            "rgpd",
+            "masquer",
+            "anonymiser",
+            "données personnelles",
+            "sensible"
+          ],
+          "de": [
+            "pii",
+            "dsgvo",
+            "maskieren",
+            "schwärzen",
+            "personenbezogen",
+            "sensibel"
+          ],
+          "es": [
+            "pii",
+            "rgpd",
+            "enmascarar",
+            "anonimizar",
+            "datos personales",
+            "sensible"
+          ]
+        }
+      },
+      {
+        "id": "pa-spikes",
+        "shown": false,
+        "kind": "risk",
+        "target": "sources",
+        "solvedBy": "pipe",
+        "label": {
+          "en": "Data spikes",
+          "fr": "Des pics de données",
+          "de": "Datenspitzen",
+          "es": "Picos de datos"
+        },
+        "badge": {
+          "en": "Volume spikes",
+          "fr": "Pics de volume",
+          "de": "Volumenspitzen",
+          "es": "Picos de volumen"
+        },
+        "desc": {
+          "en": "Volume surges exactly when visibility matters most: data is lost, delayed or billed as overage.",
+          "fr": "Le volume explose précisément quand la visibilité compte : données perdues, retardées ou facturées en dépassement.",
+          "de": "Das Volumen steigt genau dann, wenn Sichtbarkeit zählt: Daten gehen verloren, kommen verspätet oder werden als Überschreitung berechnet.",
+          "es": "El volumen se dispara justo cuando la visibilidad importa: datos perdidos, retrasados o facturados como exceso."
+        },
+        "outcomes": [
+          {
+            "family": "operational",
+            "label": {
+              "en": "Spikes absorbed, no data lost",
+              "fr": "Les pics absorbés, aucune donnée perdue",
+              "de": "Spitzen abgefangen, keine Daten verloren",
+              "es": "Picos absorbidos, sin pérdida de datos"
+            }
+          }
+        ],
+        "keywords": {
+          "en": [
+            "spike",
+            "burst",
+            "peak",
+            "surge",
+            "overage",
+            "data loss"
+          ],
+          "fr": [
+            "pic",
+            "rafale",
+            "dépassement",
+            "perte de données"
+          ],
+          "de": [
+            "spitze",
+            "lastspitze",
+            "überschreitung",
+            "datenverlust"
+          ],
+          "es": [
+            "pico",
+            "ráfaga",
+            "exceso",
+            "pérdida de datos"
+          ]
+        }
+      },
+      {
+        "id": "pa-fragile",
+        "shown": false,
+        "kind": "risk",
+        "target": "sources",
+        "solvedBy": "pipe",
+        "label": {
+          "en": "Fragile and complex plumbing: syslog servers, forwarders, Kafka, Logstash",
+          "fr": "Une tuyauterie fragile et complexe : serveurs syslog, forwarders, Kafka, Logstash",
+          "de": "Fragile, komplexe Infrastruktur: Syslog-Server, Forwarder, Kafka, Logstash",
+          "es": "Infraestructura frágil y compleja: servidores syslog, forwarders, Kafka, Logstash"
+        },
+        "badge": {
+          "en": "War room on every upgrade",
+          "fr": "Cellule de crise à chaque mise à jour",
+          "de": "Krisenstab bei jedem Update",
+          "es": "Sala de crisis en cada actualización"
+        },
+        "desc": {
+          "en": "Too many moving parts between sources and tools: every upgrade or config change risks downtime.",
+          "fr": "Trop de pièces entre les sources et les outils : chaque mise à jour ou changement de configuration risque une interruption.",
+          "de": "Zu viele bewegliche Teile zwischen Quellen und Tools: jedes Update oder jede Konfigurationsänderung riskiert Ausfälle.",
+          "es": "Demasiadas piezas entre las fuentes y las herramientas: cada actualización o cambio de configuración arriesga una caída."
+        },
+        "outcomes": [
+          {
+            "family": "operational",
+            "label": {
+              "en": "One pipeline, changed live without restarts, less infrastructure to manage",
+              "fr": "Un seul pipeline, modifié à chaud sans redémarrage, moins d’infrastructure à gérer",
+              "de": "Eine Pipeline, live ohne Neustarts geändert, weniger Infrastruktur zu betreiben",
+              "es": "Un solo pipeline, modificado en caliente sin reinicios, menos infraestructura que gestionar"
+            }
+          },
+          {
+            "family": "financial",
+            "label": {
+              "en": "Lower running costs",
+              "fr": "Des coûts d’exploitation réduits",
+              "de": "Niedrigere Betriebskosten",
+              "es": "Menores costes de operación"
+            }
+          }
+        ],
+        "keywords": {
+          "en": [
+            "syslog",
+            "kafka",
+            "logstash",
+            "nifi",
+            "heavy forwarder",
+            "fragile",
+            "downtime"
+          ],
+          "fr": [
+            "syslog",
+            "kafka",
+            "logstash",
+            "nifi",
+            "fragile",
+            "interruption"
+          ],
+          "de": [
+            "syslog",
+            "kafka",
+            "logstash",
+            "nifi",
+            "fragil",
+            "ausfall"
+          ],
+          "es": [
+            "syslog",
+            "kafka",
+            "logstash",
+            "nifi",
+            "frágil",
+            "caída"
+          ]
+        }
+      },
+      {
+        "id": "pa-scripts",
+        "shown": false,
+        "kind": "time",
+        "target": "sources",
+        "solvedBy": "pipe",
+        "label": {
+          "en": "Manual scripts to reshape and enrich data",
+          "fr": "Des scripts manuels pour remodeler et enrichir les données",
+          "de": "Manuelle Skripte, um Daten umzuformen und anzureichern",
+          "es": "Scripts manuales para transformar y enriquecer los datos"
+        },
+        "badge": {
+          "en": "Hand-written scripts",
+          "fr": "Scripts maison",
+          "de": "Selbstgeschriebene Skripte",
+          "es": "Scripts caseros"
+        },
+        "desc": {
+          "en": "Custom code (Lambda, Python, regex) that one engineer understands and everyone depends on.",
+          "fr": "Du code maison (Lambda, Python, regex) qu’un seul ingénieur comprend et dont tout le monde dépend.",
+          "de": "Eigener Code (Lambda, Python, Regex), den ein Engineer versteht und von dem alle abhängen.",
+          "es": "Código propio (Lambda, Python, regex) que entiende un solo ingeniero y del que todos dependen."
+        },
+        "outcomes": [
+          {
+            "family": "operational",
+            "label": {
+              "en": "Reshaping and enrichment without writing code",
+              "fr": "Remodelage et enrichissement sans écrire de code",
+              "de": "Umformen und Anreichern ohne Code",
+              "es": "Transformación y enriquecimiento sin escribir código"
+            }
+          },
+          {
+            "family": "strategic",
+            "label": {
+              "en": "No longer one engineer away from an unsupported pipeline",
+              "fr": "Plus à un ingénieur près d’un pipeline sans support",
+              "de": "Nicht mehr nur einen Engineer von einer Pipeline ohne Support entfernt",
+              "es": "Ya no a un ingeniero de un pipeline sin soporte"
+            }
+          }
+        ],
+        "keywords": {
+          "en": [
+            "script",
+            "scripts",
+            "enrich",
+            "reshape",
+            "transform",
+            "lambda",
+            "python",
+            "custom code"
+          ],
+          "fr": [
+            "script",
+            "enrichir",
+            "transformer",
+            "lambda",
+            "python",
+            "code maison"
+          ],
+          "de": [
+            "skript",
+            "anreichern",
+            "umformen",
+            "lambda",
+            "python",
+            "eigener code"
+          ],
+          "es": [
+            "script",
+            "enriquecer",
+            "transformar",
+            "lambda",
+            "python",
+            "código propio"
+          ]
+        }
+      },
+      {
+        "id": "pa-capacity",
+        "shown": false,
+        "kind": "cost",
+        "target": "point",
+        "solvedBy": "pipe",
+        "label": {
+          "en": "SIEM at its licensed capacity",
+          "fr": "SIEM au maximum de sa licence",
+          "de": "SIEM am Lizenzlimit",
+          "es": "SIEM al límite de su licencia"
+        },
+        "badge": {
+          "en": "At the licence limit",
+          "fr": "Au plafond de licence",
+          "de": "Am Lizenzlimit",
+          "es": "Al límite de licencia"
+        },
+        "desc": {
+          "en": "No room left for the next data source without a bigger contract.",
+          "fr": "Plus de place pour la prochaine source sans un contrat plus gros.",
+          "de": "Kein Platz mehr für die nächste Quelle ohne größeren Vertrag.",
+          "es": "No queda sitio para la próxima fuente sin un contrato mayor."
+        },
+        "outcomes": [
+          {
+            "family": "financial",
+            "label": {
+              "en": "Headroom on the licence you already have",
+              "fr": "De la marge sur la licence que vous avez déjà",
+              "de": "Spielraum in der vorhandenen Lizenz",
+              "es": "Margen en la licencia que ya tiene"
+            }
+          },
+          {
+            "family": "strategic",
+            "label": {
+              "en": "Say yes to new data without a bigger contract",
+              "fr": "Dire oui aux nouvelles données sans contrat plus gros",
+              "de": "Ja zu neuen Daten ohne größeren Vertrag",
+              "es": "Decir sí a nuevos datos sin un contrato mayor"
+            }
+          }
+        ],
+        "keywords": {
+          "en": [
+            "capacity",
+            "licence limit",
+            "license limit",
+            "quota",
+            "headroom",
+            "renewal"
+          ],
+          "fr": [
+            "capacité",
+            "plafond",
+            "quota",
+            "licence",
+            "renouvellement"
+          ],
+          "de": [
+            "kapazität",
+            "lizenzlimit",
+            "kontingent",
+            "verlängerung"
+          ],
+          "es": [
+            "capacidad",
+            "límite",
+            "cuota",
+            "licencia",
+            "renovación"
+          ]
+        }
+      },
+      {
+        "id": "pa-dropdata",
+        "shown": false,
+        "kind": "risk",
+        "target": "point",
+        "solvedBy": "pipe",
+        "label": {
+          "en": "Dropping data to stay within budget",
+          "fr": "Abandonner des données pour tenir le budget",
+          "de": "Daten verwerfen, um im Budget zu bleiben",
+          "es": "Descartar datos para no salirse del presupuesto"
+        },
+        "badge": {
+          "en": "Visibility traded for budget",
+          "fr": "La visibilité sacrifiée au budget",
+          "de": "Sichtbarkeit gegen Budget getauscht",
+          "es": "Visibilidad sacrificada al presupuesto"
+        },
+        "desc": {
+          "en": "Sources left out of the SIEM because they cost too much: visibility traded for budget.",
+          "fr": "Des sources laissées hors du SIEM car trop chères : la visibilité sacrifiée au budget.",
+          "de": "Quellen bleiben aus dem SIEM, weil sie zu teuer sind: Sichtbarkeit gegen Budget getauscht.",
+          "es": "Fuentes fuera del SIEM por ser demasiado caras: visibilidad a cambio de presupuesto."
+        },
+        "outcomes": [
+          {
+            "family": "strategic",
+            "label": {
+              "en": "Every source kept, the full copy in low-cost storage",
+              "fr": "Toutes les sources gardées, la copie complète en stockage bon marché",
+              "de": "Jede Quelle behalten, die vollständige Kopie im günstigen Speicher",
+              "es": "Todas las fuentes conservadas, la copia completa en almacenamiento barato"
+            }
+          },
+          {
+            "family": "operational",
+            "label": {
+              "en": "Investigations on 100% of your data",
+              "fr": "Des investigations sur 100 % de vos données",
+              "de": "Untersuchungen auf 100 % Ihrer Daten",
+              "es": "Investigaciones sobre el 100 % de sus datos"
+            }
+          }
+        ],
+        "keywords": {
+          "en": [
+            "drop",
+            "dropping",
+            "budget",
+            "afford",
+            "left out",
+            "trade-off",
+            "sampling"
+          ],
+          "fr": [
+            "abandonner",
+            "budget",
+            "arbitrage",
+            "laisser de côté"
+          ],
+          "de": [
+            "verwerfen",
+            "budget",
+            "abwägung",
+            "weglassen"
+          ],
+          "es": [
+            "descartar",
+            "presupuesto",
+            "compromiso",
+            "dejar fuera"
+          ]
+        }
+      },
+      {
+        "id": "pa-unpredictable",
+        "shown": false,
+        "kind": "cost",
+        "target": "point",
+        "solvedBy": "pipe",
+        "label": {
+          "en": "Unpredictable tool spend",
+          "fr": "Des dépenses outils imprévisibles",
+          "de": "Unvorhersehbare Tool-Kosten",
+          "es": "Gasto en herramientas impredecible"
+        },
+        "badge": {
+          "en": "Surprise overages",
+          "fr": "Dépassements surprises",
+          "de": "Überraschende Überschreitungen",
+          "es": "Excesos sorpresa"
+        },
+        "desc": {
+          "en": "Ingest-based pricing makes next year’s bill impossible to forecast.",
+          "fr": "La tarification à l’ingestion rend la facture de l’an prochain impossible à prévoir.",
+          "de": "Ingest-basierte Preise machen die Rechnung des nächsten Jahres unvorhersehbar.",
+          "es": "Los precios por ingesta hacen imposible prever la factura del próximo año."
+        },
+        "outcomes": [
+          {
+            "family": "financial",
+            "label": {
+              "en": "Control cost",
+              "fr": "Maîtriser les coûts",
+              "de": "Kosten im Griff",
+              "es": "Controlar los costes"
+            }
+          },
+          {
+            "family": "financial",
+            "label": {
+              "en": "Overages avoided before they happen",
+              "fr": "Les dépassements évités avant qu’ils arrivent",
+              "de": "Überschreitungen vermieden, bevor sie entstehen",
+              "es": "Excesos evitados antes de que ocurran"
+            }
+          }
+        ],
+        "keywords": {
+          "en": [
+            "unpredictable",
+            "overage",
+            "forecast",
+            "budget",
+            "growth",
+            "bill"
+          ],
+          "fr": [
+            "imprévisible",
+            "dépassement",
+            "prévision",
+            "budget",
+            "facture"
+          ],
+          "de": [
+            "unvorhersehbar",
+            "überschreitung",
+            "prognose",
+            "budget",
+            "rechnung"
+          ],
+          "es": [
+            "impredecible",
+            "exceso",
+            "previsión",
+            "presupuesto",
+            "factura"
+          ]
+        }
+      },
+      {
+        "id": "pa-migration",
+        "shown": false,
+        "kind": "time",
+        "target": "point",
+        "solvedBy": "pipe",
+        "label": {
+          "en": "A SIEM migration takes months",
+          "fr": "Une migration de SIEM prend des mois",
+          "de": "Eine SIEM-Migration dauert Monate",
+          "es": "Una migración de SIEM lleva meses"
+        },
+        "badge": {
+          "en": "Months to migrate",
+          "fr": "Des mois de migration",
+          "de": "Monate für die Migration",
+          "es": "Meses de migración"
+        },
+        "desc": {
+          "en": "Re-routing and reformatting every source for the new tool, with the risk of a gap.",
+          "fr": "Rerouter et reformater chaque source pour le nouvel outil, avec le risque d’un trou.",
+          "de": "Jede Quelle für das neue Tool umleiten und umformatieren, mit dem Risiko einer Lücke.",
+          "es": "Redirigir y reformatear cada fuente para la nueva herramienta, con riesgo de un hueco."
+        },
+        "outcomes": [
+          {
+            "family": "operational",
+            "label": {
+              "en": "Migrate in weeks, both SIEMs fed in parallel",
+              "fr": "Migrer en semaines, les deux SIEM alimentés en parallèle",
+              "de": "In Wochen migrieren, beide SIEMs parallel versorgt",
+              "es": "Migrar en semanas, con ambos SIEM alimentados en paralelo"
+            }
+          },
+          {
+            "family": "strategic",
+            "label": {
+              "en": "Change tools on your own timeline",
+              "fr": "Changer d’outil à votre rythme",
+              "de": "Tools im eigenen Tempo wechseln",
+              "es": "Cambiar de herramienta a su ritmo"
+            }
+          }
+        ],
+        "keywords": {
+          "en": [
+            "migration",
+            "migrate",
+            "switch",
+            "replace",
+            "new siem",
+            "sentinel"
+          ],
+          "fr": [
+            "migration",
+            "migrer",
+            "changer",
+            "remplacer",
+            "nouveau siem"
+          ],
+          "de": [
+            "migration",
+            "migrieren",
+            "wechsel",
+            "ersetzen",
+            "neues siem"
+          ],
+          "es": [
+            "migración",
+            "migrar",
+            "cambiar",
+            "reemplazar",
+            "nuevo siem"
+          ]
+        }
+      },
+      {
+        "id": "pa-lowvalue",
+        "shown": false,
+        "kind": "cost",
+        "target": "point",
+        "solvedBy": "pipe",
+        "label": {
+          "en": "Low-value data indexed at premium rates",
+          "fr": "Des données à faible valeur indexées au prix fort",
+          "de": "Daten mit geringem Wert zum Premiumpreis indexiert",
+          "es": "Datos de poco valor indexados a precio premium"
+        },
+        "badge": {
+          "en": "Debug logs in the SIEM",
+          "fr": "Logs de debug dans le SIEM",
+          "de": "Debug-Logs im SIEM",
+          "es": "Logs de depuración en el SIEM"
+        },
+        "desc": {
+          "en": "Verbose logs kept for compliance or the rare investigation, paid at the SIEM’s rate.",
+          "fr": "Des logs verbeux gardés pour la conformité ou l’investigation rare, payés au tarif du SIEM.",
+          "de": "Ausführliche Logs für Compliance oder seltene Untersuchungen, zum SIEM-Preis bezahlt.",
+          "es": "Logs detallados guardados para cumplimiento o la investigación rara, pagados a la tarifa del SIEM."
+        },
+        "outcomes": [
+          {
+            "family": "financial",
+            "label": {
+              "en": "Low-value data in a cheaper tier, still searchable",
+              "fr": "Les données à faible valeur dans un tier moins cher, toujours consultables",
+              "de": "Daten mit geringem Wert in einer günstigeren Stufe, weiter durchsuchbar",
+              "es": "Datos de poco valor en un nivel más barato, aún consultables"
+            }
+          },
+          {
+            "family": "operational",
+            "label": {
+              "en": "The SIEM holds what the detections use",
+              "fr": "Le SIEM contient ce que les détections utilisent",
+              "de": "Das SIEM enthält, was die Erkennungen nutzen",
+              "es": "El SIEM contiene lo que usan las detecciones"
+            }
+          }
+        ],
+        "keywords": {
+          "en": [
+            "debug",
+            "verbose",
+            "noisy",
+            "low value",
+            "flow logs",
+            "tiering"
+          ],
+          "fr": [
+            "debug",
+            "verbeux",
+            "bruit",
+            "faible valeur",
+            "tiering"
+          ],
+          "de": [
+            "debug",
+            "ausführlich",
+            "rauschen",
+            "geringer wert",
+            "tiering"
+          ],
+          "es": [
+            "depuración",
+            "detallado",
+            "ruido",
+            "poco valor",
+            "niveles"
+          ]
+        }
+      },
+      {
+        "id": "pa-schema",
+        "shown": false,
+        "kind": "time",
+        "target": "point",
+        "solvedBy": "pipe",
+        "label": {
+          "en": "Every tool needs its own format",
+          "fr": "Chaque outil exige son propre format",
+          "de": "Jedes Tool braucht sein eigenes Format",
+          "es": "Cada herramienta exige su propio formato"
+        },
+        "badge": {
+          "en": "Custom parsers",
+          "fr": "Parseurs sur mesure",
+          "de": "Eigene Parser",
+          "es": "Parsers a medida"
+        },
+        "desc": {
+          "en": "Normalising to OCSF, CIM, ECS or UDM by hand, and fixing mappings when a field changes.",
+          "fr": "Normaliser en OCSF, CIM, ECS ou UDM à la main, et corriger les mappings quand un champ change.",
+          "de": "Manuelles Normalisieren auf OCSF, CIM, ECS oder UDM und Korrigieren der Mappings bei jeder Feldänderung.",
+          "es": "Normalizar a OCSF, CIM, ECS o UDM a mano, y corregir los mapeos cuando cambia un campo."
+        },
+        "outcomes": [
+          {
+            "family": "operational",
+            "label": {
+              "en": "Each tool gets the schema it expects",
+              "fr": "Chaque outil reçoit le schéma qu’il attend",
+              "de": "Jedes Tool erhält das erwartete Schema",
+              "es": "Cada herramienta recibe el esquema que espera"
+            }
+          },
+          {
+            "family": "strategic",
+            "label": {
+              "en": "Adopt OCSF or OTel to future-proof your data",
+              "fr": "Adopter OCSF ou OTel pour pérenniser vos données",
+              "de": "OCSF oder OTel einführen und Ihre Daten zukunftssicher machen",
+              "es": "Adoptar OCSF u OTel para preparar sus datos para el futuro"
+            }
+          }
+        ],
+        "keywords": {
+          "en": [
+            "schema",
+            "ocsf",
+            "cim",
+            "ecs",
+            "udm",
+            "normalize",
+            "normalise",
+            "mapping",
+            "format"
+          ],
+          "fr": [
+            "schéma",
+            "ocsf",
+            "cim",
+            "normaliser",
+            "mapping",
+            "format"
+          ],
+          "de": [
+            "schema",
+            "ocsf",
+            "cim",
+            "normalisieren",
+            "mapping",
+            "format"
+          ],
+          "es": [
+            "esquema",
+            "ocsf",
+            "cim",
+            "normalizar",
+            "mapeo",
+            "formato"
+          ]
+        }
+      },
+      {
+        "id": "pa-datalake",
+        "shown": true,
+        "kind": "time",
+        "target": "platform",
+        "solvedBy": "pipe",
+        "label": {
+          "en": "Building a data lake takes months",
+          "fr": "Construire un data lake prend des mois",
+          "de": "Ein Data Lake aufzubauen dauert Monate",
+          "es": "Construir un data lake lleva meses"
+        },
+        "badge": {
+          "en": "Months to a lake",
+          "fr": "Des mois pour un lake",
+          "de": "Monate bis zum Lake",
+          "es": "Meses hasta el lake"
+        },
+        "desc": {
+          "en": "Weeks to months to stand one up, and significant toil to keep it fed and usable.",
+          "fr": "Des semaines voire des mois pour le monter, et beaucoup d’efforts pour l’alimenter et le rendre utile.",
+          "de": "Wochen bis Monate für den Aufbau und viel Aufwand, um ihn zu befüllen und nutzbar zu halten.",
+          "es": "Semanas o meses para montarlo y mucho esfuerzo para alimentarlo y que sea útil."
+        },
+        "outcomes": [
+          {
+            "family": "operational",
+            "label": {
+              "en": "A searchable lake in days, in open formats",
+              "fr": "Un lake consultable en jours, en formats ouverts",
+              "de": "Ein durchsuchbarer Lake in Tagen, in offenen Formaten",
+              "es": "Un lake consultable en días, en formatos abiertos"
+            }
+          },
+          {
+            "family": "strategic",
+            "label": {
+              "en": "Your data in your storage, in formats you own",
+              "fr": "Vos données dans votre stockage, dans des formats qui vous appartiennent",
+              "de": "Ihre Daten in Ihrem Speicher, in eigenen Formaten",
+              "es": "Sus datos en su almacenamiento, en formatos propios"
+            }
+          }
+        ],
+        "keywords": {
+          "en": [
+            "data lake",
+            "lake",
+            "s3",
+            "parquet",
+            "iceberg",
+            "open format"
+          ],
+          "fr": [
+            "data lake",
+            "lac de données",
+            "s3",
+            "parquet",
+            "format ouvert"
+          ],
+          "de": [
+            "data lake",
+            "s3",
+            "parquet",
+            "offenes format"
+          ],
+          "es": [
+            "data lake",
+            "lago de datos",
+            "s3",
+            "parquet",
+            "formato abierto"
+          ]
+        }
+      },
+      {
+        "id": "pa-egress",
+        "shown": false,
+        "kind": "cost",
+        "target": "stores",
+        "solvedBy": "pipe",
+        "label": {
+          "en": "High egress and storage costs",
+          "fr": "Des coûts d’egress et de stockage élevés",
+          "de": "Hohe Egress- und Speicherkosten",
+          "es": "Altos costes de egress y almacenamiento"
+        },
+        "badge": {
+          "en": "Egress bill",
+          "fr": "Facture d’egress",
+          "de": "Egress-Rechnung",
+          "es": "Factura de egress"
+        },
+        "desc": {
+          "en": "Data copied across clouds and regions, and stored again in each tool.",
+          "fr": "Des données copiées entre clouds et régions, puis stockées à nouveau dans chaque outil.",
+          "de": "Daten werden zwischen Clouds und Regionen kopiert und in jedem Tool erneut gespeichert.",
+          "es": "Datos copiados entre clouds y regiones, y almacenados de nuevo en cada herramienta."
+        },
+        "outcomes": [
+          {
+            "family": "financial",
+            "label": {
+              "en": "Less data leaving each cloud",
+              "fr": "Moins de données qui sortent de chaque cloud",
+              "de": "Weniger Daten verlassen jede Cloud",
+              "es": "Menos datos que salen de cada cloud"
+            }
+          },
+          {
+            "family": "financial",
+            "label": {
+              "en": "Long-term data at object-storage prices",
+              "fr": "Les données long terme au prix du stockage objet",
+              "de": "Langfristige Daten zu Object-Storage-Preisen",
+              "es": "Datos a largo plazo a precio de almacenamiento de objetos"
+            }
+          }
+        ],
+        "keywords": {
+          "en": [
+            "egress",
+            "storage cost",
+            "network",
+            "cloud bill",
+            "transfer"
+          ],
+          "fr": [
+            "egress",
+            "coût de stockage",
+            "réseau",
+            "facture cloud"
+          ],
+          "de": [
+            "egress",
+            "speicherkosten",
+            "netzwerk",
+            "cloud-rechnung"
+          ],
+          "es": [
+            "egress",
+            "coste de almacenamiento",
+            "red",
+            "factura cloud"
+          ]
+        }
+      },
+      {
+        "id": "pa-audit",
+        "shown": false,
+        "kind": "risk",
+        "target": "stores",
+        "solvedBy": "search",
+        "label": {
+          "en": "Audits on historical data take weeks",
+          "fr": "Les audits sur l’historique prennent des semaines",
+          "de": "Audits auf historischen Daten dauern Wochen",
+          "es": "Las auditorías sobre datos históricos llevan semanas"
+        },
+        "badge": {
+          "en": "Weeks per audit",
+          "fr": "Des semaines par audit",
+          "de": "Wochen pro Audit",
+          "es": "Semanas por auditoría"
+        },
+        "desc": {
+          "en": "Old data has to be found, restored and reloaded before an auditor’s question can be answered.",
+          "fr": "Il faut retrouver, restaurer et recharger les anciennes données avant de répondre à l’auditeur.",
+          "de": "Alte Daten müssen gefunden, wiederhergestellt und geladen werden, bevor die Frage des Prüfers beantwortet ist.",
+          "es": "Hay que encontrar, restaurar y recargar los datos antiguos antes de responder al auditor."
+        },
+        "outcomes": [
+          {
+            "family": "strategic",
+            "label": {
+              "en": "Audits answered in minutes, in place",
+              "fr": "Les audits traités en minutes, sur place",
+              "de": "Audits in Minuten beantwortet, direkt am Speicherort",
+              "es": "Auditorías respondidas en minutos, en el sitio"
+            }
+          },
+          {
+            "family": "financial",
+            "label": {
+              "en": "Compliance data kept at a fraction of the cost",
+              "fr": "Les données de conformité conservées pour une fraction du coût",
+              "de": "Compliance-Daten zu einem Bruchteil der Kosten aufbewahrt",
+              "es": "Datos de cumplimiento conservados por una fracción del coste"
+            }
+          }
+        ],
+        "keywords": {
+          "en": [
+            "audit",
+            "compliance",
+            "regulation",
+            "historical",
+            "retention policy",
+            "grc"
+          ],
+          "fr": [
+            "audit",
+            "conformité",
+            "réglementation",
+            "historique",
+            "grc"
+          ],
+          "de": [
+            "audit",
+            "compliance",
+            "regulierung",
+            "historisch",
+            "grc"
+          ],
+          "es": [
+            "auditoría",
+            "cumplimiento",
+            "regulación",
+            "histórico",
+            "grc"
+          ]
+        }
+      },
+      {
+        "id": "pa-residency",
+        "shown": false,
+        "kind": "risk",
+        "target": "stores",
+        "solvedBy": "pipe",
+        "label": {
+          "en": "Data residency and sovereignty rules",
+          "fr": "Des règles de résidence et de souveraineté des données",
+          "de": "Vorgaben zu Datenresidenz und Souveränität",
+          "es": "Normas de residencia y soberanía de los datos"
+        },
+        "badge": {
+          "en": "Data bound by borders",
+          "fr": "Données liées aux frontières",
+          "de": "An Grenzen gebunden",
+          "es": "Datos atados a fronteras"
+        },
+        "desc": {
+          "en": "Some data must stay in a region or country, and some teams may only see part of it.",
+          "fr": "Certaines données doivent rester dans une région ou un pays, et certaines équipes n’en voient qu’une partie.",
+          "de": "Manche Daten müssen in einer Region oder einem Land bleiben, und manche Teams dürfen nur einen Teil sehen.",
+          "es": "Algunos datos deben quedarse en una región o país, y algunos equipos solo pueden ver una parte."
+        },
+        "outcomes": [
+          {
+            "family": "strategic",
+            "label": {
+              "en": "Data kept in-region, routed by policy",
+              "fr": "Les données gardées dans la région, routées selon la politique",
+              "de": "Daten bleiben in der Region, per Richtlinie geroutet",
+              "es": "Datos dentro de la región, enrutados por política"
+            }
+          },
+          {
+            "family": "operational",
+            "label": {
+              "en": "One view across regions without moving the data",
+              "fr": "Une vue sur toutes les régions sans déplacer les données",
+              "de": "Ein Blick über alle Regionen, ohne die Daten zu bewegen",
+              "es": "Una vista de todas las regiones sin mover los datos"
+            }
+          }
+        ],
+        "keywords": {
+          "en": [
+            "residency",
+            "sovereignty",
+            "gdpr",
+            "region",
+            "country",
+            "rbac"
+          ],
+          "fr": [
+            "résidence",
+            "souveraineté",
+            "rgpd",
+            "région",
+            "pays"
+          ],
+          "de": [
+            "residenz",
+            "souveränität",
+            "dsgvo",
+            "region",
+            "land"
+          ],
+          "es": [
+            "residencia",
+            "soberanía",
+            "rgpd",
+            "región",
+            "país"
+          ]
+        }
+      },
+      {
+        "id": "pa-share",
+        "shown": false,
+        "kind": "time",
+        "target": "stores",
+        "solvedBy": "search",
+        "label": {
+          "en": "Other teams can’t get to the data",
+          "fr": "Les autres équipes n’ont pas accès aux données",
+          "de": "Andere Teams kommen nicht an die Daten",
+          "es": "Otros equipos no llegan a los datos"
+        },
+        "badge": {
+          "en": "Data walls",
+          "fr": "Murs de données",
+          "de": "Datenmauern",
+          "es": "Muros de datos"
+        },
+        "desc": {
+          "en": "Security, SRE, fraud and insider-threat teams each ask for access, one ticket at a time.",
+          "fr": "Sécurité, SRE, fraude et menaces internes demandent chacune un accès, un ticket à la fois.",
+          "de": "Security, SRE, Betrug und Insider-Threat fragen jeweils Zugang an, Ticket für Ticket.",
+          "es": "Seguridad, SRE, fraude y amenazas internas piden acceso cada una, ticket a ticket."
+        },
+        "outcomes": [
+          {
+            "family": "operational",
+            "label": {
+              "en": "Self-service access for every team",
+              "fr": "Un accès en libre-service pour chaque équipe",
+              "de": "Self-Service-Zugang für jedes Team",
+              "es": "Acceso de autoservicio para cada equipo"
+            }
+          },
+          {
+            "family": "strategic",
+            "label": {
+              "en": "Every team works from the same data",
+              "fr": "Toutes les équipes travaillent sur les mêmes données",
+              "de": "Alle Teams arbeiten mit denselben Daten",
+              "es": "Todos los equipos trabajan con los mismos datos"
+            }
+          }
+        ],
+        "keywords": {
+          "en": [
+            "share",
+            "access",
+            "teams",
+            "self service",
+            "fraud",
+            "insider threat",
+            "request"
+          ],
+          "fr": [
+            "partager",
+            "accès",
+            "équipes",
+            "libre-service",
+            "fraude"
+          ],
+          "de": [
+            "teilen",
+            "zugang",
+            "teams",
+            "self-service",
+            "betrug"
+          ],
+          "es": [
+            "compartir",
+            "acceso",
+            "equipos",
+            "autoservicio",
+            "fraude"
+          ]
+        }
+      },
+      {
+        "id": "pa-outages",
+        "shown": true,
+        "kind": "time",
+        "target": "humans",
+        "solvedBy": "search",
+        "label": {
+          "en": "Outages take too long to resolve",
+          "fr": "Les incidents de production sont trop longs à résoudre",
+          "de": "Ausfälle dauern zu lange bis zur Behebung",
+          "es": "Las caídas tardan demasiado en resolverse"
+        },
+        "badge": {
+          "en": "War rooms",
+          "fr": "Cellules de crise",
+          "de": "Krisenstäbe",
+          "es": "Salas de crisis"
+        },
+        "desc": {
+          "en": "Bridge calls and finger-pointing while MTTD, MTTI and MTTR climb and SLOs slip.",
+          "fr": "Des conférences de crise et des renvois de responsabilité pendant que MTTD, MTTI et MTTR montent et que les SLO glissent.",
+          "de": "Krisen-Calls und Schuldzuweisungen, während MTTD, MTTI und MTTR steigen und SLOs verfehlt werden.",
+          "es": "Llamadas de crisis y culpas cruzadas mientras suben el MTTD, el MTTI y el MTTR y se incumplen los SLO."
+        },
+        "outcomes": [
+          {
+            "family": "operational",
+            "label": {
+              "en": "Faster recovery, with every log at hand",
+              "fr": "Une reprise plus rapide, avec tous les logs sous la main",
+              "de": "Schnellere Wiederherstellung, alle Logs griffbereit",
+              "es": "Recuperación más rápida, con todos los logs a mano"
+            }
+          },
+          {
+            "family": "strategic",
+            "label": {
+              "en": "SLOs met, customers kept",
+              "fr": "Les SLO tenus, les clients gardés",
+              "de": "SLOs eingehalten, Kunden gehalten",
+              "es": "SLO cumplidos, clientes conservados"
+            }
+          }
+        ],
+        "keywords": {
+          "en": [
+            "outage",
+            "mttr",
+            "mttd",
+            "war room",
+            "bridge call",
+            "slo",
+            "sla",
+            "downtime",
+            "firefighting"
+          ],
+          "fr": [
+            "incident",
+            "panne",
+            "mttr",
+            "cellule de crise",
+            "slo",
+            "sla",
+            "interruption"
+          ],
+          "de": [
+            "ausfall",
+            "mttr",
+            "krisenstab",
+            "slo",
+            "sla",
+            "störung"
+          ],
+          "es": [
+            "caída",
+            "mttr",
+            "sala de crisis",
+            "slo",
+            "sla",
+            "interrupción"
+          ]
+        }
+      },
+      {
+        "id": "pa-toil",
+        "shown": false,
+        "kind": "time",
+        "target": "humans",
+        "solvedBy": "pipe",
+        "label": {
+          "en": "Engineers stuck on low-value data work",
+          "fr": "Des ingénieurs coincés sur des tâches de données à faible valeur",
+          "de": "Engineers hängen an Datenarbeit mit geringem Wert fest",
+          "es": "Ingenieros atascados en tareas de datos de poco valor"
+        },
+        "badge": {
+          "en": "Data toil",
+          "fr": "Corvées de données",
+          "de": "Datenplackerei",
+          "es": "Tareas pesadas de datos"
+        },
+        "desc": {
+          "en": "Onboarding, parsing and field mapping instead of investigating or improving practices.",
+          "fr": "De l’intégration, du parsing et du mapping de champs au lieu d’investiguer ou d’améliorer les pratiques.",
+          "de": "Onboarding, Parsing und Feld-Mapping statt Untersuchungen oder besserer Praktiken.",
+          "es": "Integración, parsing y mapeo de campos en lugar de investigar o mejorar las prácticas."
+        },
+        "outcomes": [
+          {
+            "family": "operational",
+            "label": {
+              "en": "Engineers back on detections and investigations",
+              "fr": "Les ingénieurs de retour sur la détection et l’investigation",
+              "de": "Engineers zurück bei Erkennung und Untersuchung",
+              "es": "Ingenieros de vuelta a la detección y la investigación"
+            }
+          },
+          {
+            "family": "strategic",
+            "label": {
+              "en": "High-value people on high-value work",
+              "fr": "Les meilleurs profils sur les tâches qui comptent",
+              "de": "Wertvolle Leute an wertvoller Arbeit",
+              "es": "Los mejores perfiles en el trabajo que importa"
+            }
+          }
+        ],
+        "keywords": {
+          "en": [
+            "toil",
+            "burnout",
+            "parsing",
+            "mapping",
+            "attrition",
+            "keep the lights on",
+            "ktlo"
+          ],
+          "fr": [
+            "corvée",
+            "épuisement",
+            "parsing",
+            "mapping",
+            "turnover"
+          ],
+          "de": [
+            "plackerei",
+            "burnout",
+            "parsing",
+            "mapping",
+            "fluktuation"
+          ],
+          "es": [
+            "tareas pesadas",
+            "agotamiento",
+            "parsing",
+            "mapeo",
+            "rotación"
+          ]
+        }
+      },
+      {
+        "id": "pa-unplanned",
+        "shown": false,
+        "kind": "time",
+        "target": "humans",
+        "solvedBy": "search",
+        "label": {
+          "en": "Unplanned questions need data that isn’t in the SIEM",
+          "fr": "Les questions imprévues portent sur des données absentes du SIEM",
+          "de": "Ungeplante Fragen brauchen Daten, die nicht im SIEM sind",
+          "es": "Las preguntas imprevistas necesitan datos que no están en el SIEM"
+        },
+        "badge": {
+          "en": "Not in the SIEM",
+          "fr": "Pas dans le SIEM",
+          "de": "Nicht im SIEM",
+          "es": "No está en el SIEM"
+        },
+        "desc": {
+          "en": "Six-month-old data, or a source never sent to the SIEM: a project before the first answer.",
+          "fr": "Des données de six mois, ou une source jamais envoyée au SIEM : un projet avant la première réponse.",
+          "de": "Sechs Monate alte Daten oder eine Quelle, die nie ins SIEM ging: ein Projekt vor der ersten Antwort.",
+          "es": "Datos de hace seis meses, o una fuente nunca enviada al SIEM: un proyecto antes de la primera respuesta."
+        },
+        "outcomes": [
+          {
+            "family": "operational",
+            "label": {
+              "en": "Any question asked of the data where it lives",
+              "fr": "Toute question posée aux données là où elles sont",
+              "de": "Jede Frage an die Daten dort, wo sie liegen",
+              "es": "Cualquier pregunta a los datos allí donde están"
+            }
+          },
+          {
+            "family": "operational",
+            "label": {
+              "en": "No ticket to restore an archive first",
+              "fr": "Plus de ticket pour restaurer une archive d’abord",
+              "de": "Kein Ticket mehr, um zuerst ein Archiv wiederherzustellen",
+              "es": "Sin ticket para restaurar primero un archivo"
+            }
+          }
+        ],
+        "keywords": {
+          "en": [
+            "unplanned",
+            "ad hoc",
+            "archive",
+            "six months",
+            "not in the siem",
+            "question"
+          ],
+          "fr": [
+            "imprévu",
+            "ad hoc",
+            "archive",
+            "six mois",
+            "question"
+          ],
+          "de": [
+            "ungeplant",
+            "ad hoc",
+            "archiv",
+            "sechs monate",
+            "frage"
+          ],
+          "es": [
+            "imprevisto",
+            "ad hoc",
+            "archivo",
+            "seis meses",
+            "pregunta"
+          ]
+        }
+      },
+      {
+        "id": "pa-aiready",
+        "shown": true,
+        "kind": "risk",
+        "target": "agents",
+        "solvedBy": "ai",
+        "label": {
+          "en": "Telemetry isn’t ready for AI",
+          "fr": "La télémétrie n’est pas prête pour l’IA",
+          "de": "Die Telemetrie ist nicht bereit für KI",
+          "es": "La telemetría no está lista para la IA"
+        },
+        "badge": {
+          "en": "Not AI-ready",
+          "fr": "Pas prête pour l’IA",
+          "de": "Nicht KI-bereit",
+          "es": "No lista para IA"
+        },
+        "desc": {
+          "en": "Raw, inconsistent data spread over silos: AI pilots stall before they reach the daily work.",
+          "fr": "Des données brutes, incohérentes et éparpillées : les pilotes IA calent avant le quotidien.",
+          "de": "Rohe, uneinheitliche Daten in Silos: KI-Piloten bleiben vor dem Alltag stecken.",
+          "es": "Datos brutos, inconsistentes y dispersos: los pilotos de IA se estancan antes del día a día."
+        },
+        "outcomes": [
+          {
+            "family": "strategic",
+            "label": {
+              "en": "AI initiatives on clean, governed telemetry",
+              "fr": "Des initiatives IA sur une télémétrie propre et gouvernée",
+              "de": "KI-Initiativen auf sauberer, kontrollierter Telemetrie",
+              "es": "Iniciativas de IA sobre telemetría limpia y gobernada"
+            }
+          },
+          {
+            "family": "operational",
+            "label": {
+              "en": "Agents query normalised data, not raw dumps",
+              "fr": "Les agents interrogent des données normalisées, pas des dumps bruts",
+              "de": "Agenten fragen normalisierte Daten ab, keine Rohdaten",
+              "es": "Los agentes consultan datos normalizados, no volcados en bruto"
+            }
+          }
+        ],
+        "keywords": {
+          "en": [
+            "ai ready",
+            "llm",
+            "agentic",
+            "ai initiative",
+            "data quality",
+            "normalise"
+          ],
+          "fr": [
+            "prêt pour l’ia",
+            "llm",
+            "agentique",
+            "initiative ia",
+            "qualité des données"
+          ],
+          "de": [
+            "ki-bereit",
+            "llm",
+            "agentisch",
+            "ki-initiative",
+            "datenqualität"
+          ],
+          "es": [
+            "lista para ia",
+            "llm",
+            "agéntico",
+            "iniciativa de ia",
+            "calidad de datos"
+          ]
+        }
+      },
+      {
+        "id": "pa-aiprivacy",
+        "shown": false,
+        "kind": "risk",
+        "target": "agents",
+        "solvedBy": "ai",
+        "label": {
+          "en": "Sending data to an AI vendor is a risk",
+          "fr": "Envoyer des données à un fournisseur d’IA est un risque",
+          "de": "Daten an einen KI-Anbieter zu senden ist ein Risiko",
+          "es": "Enviar datos a un proveedor de IA es un riesgo"
+        },
+        "badge": {
+          "en": "AI data exposure",
+          "fr": "Exposition des données à l’IA",
+          "de": "KI-Datenrisiko",
+          "es": "Exposición de datos a la IA"
+        },
+        "desc": {
+          "en": "An AI service that needs the data in its cloud, or can change its terms, pricing or accuracy.",
+          "fr": "Un service d’IA qui exige les données dans son cloud, ou qui peut changer ses conditions, ses prix ou sa précision.",
+          "de": "Ein KI-Dienst, der die Daten in seiner Cloud braucht oder Bedingungen, Preise oder Genauigkeit ändern kann.",
+          "es": "Un servicio de IA que necesita los datos en su cloud, o que puede cambiar sus condiciones, precios o precisión."
+        },
+        "outcomes": [
+          {
+            "family": "strategic",
+            "label": {
+              "en": "Bring your own AI: the data stays governed",
+              "fr": "Apportez votre IA : les données restent gouvernées",
+              "de": "Eigene KI mitbringen: die Daten bleiben kontrolliert",
+              "es": "Traiga su propia IA: los datos siguen gobernados"
+            }
+          },
+          {
+            "family": "operational",
+            "label": {
+              "en": "A human in the loop on every AI action",
+              "fr": "Un humain dans la boucle pour chaque action de l’IA",
+              "de": "Ein Mensch im Loop bei jeder KI-Aktion",
+              "es": "Una persona en el circuito en cada acción de la IA"
+            }
+          }
+        ],
+        "keywords": {
+          "en": [
+            "byoai",
+            "ai vendor",
+            "privacy",
+            "model",
+            "human in the loop",
+            "llm"
+          ],
+          "fr": [
+            "byoai",
+            "fournisseur ia",
+            "confidentialité",
+            "modèle",
+            "humain dans la boucle"
+          ],
+          "de": [
+            "byoai",
+            "ki-anbieter",
+            "datenschutz",
+            "modell",
+            "human in the loop"
+          ],
+          "es": [
+            "byoai",
+            "proveedor de ia",
+            "privacidad",
+            "modelo",
+            "persona en el circuito"
+          ]
+        }
+      },
+      {
+        "id": "pa-aiscale",
+        "shown": false,
+        "kind": "risk",
+        "target": "agents",
+        "solvedBy": "ai",
+        "label": {
+          "en": "AI agents will flood the data tier with queries",
+          "fr": "Les agents IA vont submerger la couche de données de requêtes",
+          "de": "KI-Agenten werden die Datenschicht mit Abfragen fluten",
+          "es": "Los agentes de IA inundarán la capa de datos con consultas"
+        },
+        "badge": {
+          "en": "Agent query load",
+          "fr": "Charge des agents",
+          "de": "Agenten-Abfragelast",
+          "es": "Carga de los agentes"
+        },
+        "desc": {
+          "en": "Many agents querying at once, at machine speed, on a stack designed for a few analysts.",
+          "fr": "De nombreux agents qui interrogent en même temps, à la vitesse des machines, sur une pile pensée pour quelques analystes.",
+          "de": "Viele Agenten fragen gleichzeitig in Maschinengeschwindigkeit ab, auf einem Stack für wenige Analysten.",
+          "es": "Muchos agentes consultando a la vez, a velocidad de máquina, sobre una pila pensada para pocos analistas."
+        },
+        "outcomes": [
+          {
+            "family": "strategic",
+            "label": {
+              "en": "An engine built for the speed of agents",
+              "fr": "Un moteur conçu pour la vitesse des agents",
+              "de": "Eine Engine für das Tempo von Agenten",
+              "es": "Un motor creado para la velocidad de los agentes"
+            }
+          },
+          {
+            "family": "financial",
+            "label": {
+              "en": "Agents query in place, without new copies of the data",
+              "fr": "Les agents interrogent sur place, sans nouvelles copies des données",
+              "de": "Agenten fragen vor Ort ab, ohne neue Datenkopien",
+              "es": "Los agentes consultan en el sitio, sin nuevas copias de los datos"
+            }
+          }
+        ],
+        "keywords": {
+          "en": [
+            "scale",
+            "concurrent",
+            "agents",
+            "query load",
+            "ai traffic",
+            "machine speed"
+          ],
+          "fr": [
+            "montée en charge",
+            "concurrent",
+            "agents",
+            "requêtes",
+            "trafic ia"
+          ],
+          "de": [
+            "skalierung",
+            "gleichzeitig",
+            "agenten",
+            "abfragelast",
+            "ki-verkehr"
+          ],
+          "es": [
+            "escala",
+            "concurrente",
+            "agentes",
+            "carga de consultas",
+            "tráfico de ia"
+          ]
+        }
+      }
+    ]
+  },
+  "useCases": {
+    "families": [
+      "compliance",
+      "detection",
+      "investigation",
+      "response"
+    ],
+    "items": [
+      {
+        "id": "uc-route",
+        "family": "detection",
+        "shown": true,
+        "level": "pipe",
+        "label": {
+          "en": "The right data to the right destination",
+          "fr": "La bonne donnée à la bonne destination",
+          "de": "Die richtigen Daten ans richtige Ziel",
+          "es": "Los datos correctos al destino correcto"
+        },
+        "desc": {
+          "en": "Route each event to the tool that needs it, in the shape it expects. Security gets what it detects on, everything else lands in open storage.",
+          "fr": "Routez chaque événement vers l’outil qui en a besoin, dans la forme qu’il attend. La sécurité reçoit ce sur quoi elle détecte, le reste atterrit dans un stockage ouvert.",
+          "de": "Jedes Event an das Tool routen, das es braucht, in der erwarteten Form. Security erhält, worauf sie detektiert, alles andere landet in offenem Speicher.",
+          "es": "Enrute cada evento a la herramienta que lo necesita, en el formato que espera. Seguridad recibe lo que usa para detectar; todo lo demás va a un almacenamiento abierto."
+        }
+      },
+      {
+        "id": "uc-cost",
+        "family": "compliance",
+        "shown": true,
+        "level": "pipe",
+        "label": {
+          "en": "Optimize cost",
+          "fr": "Optimiser les coûts",
+          "de": "Kosten optimieren",
+          "es": "Optimizar costos"
+        },
+        "desc": {
+          "en": "Reduce, filter and tier before you pay to index. Keep everything you must retain at object storage prices.",
+          "fr": "Réduisez, filtrez et hiérarchisez avant de payer l’indexation. Conservez tout ce qui doit l’être au prix du stockage objet.",
+          "de": "Reduzieren, filtern und auf Tiers verteilen, bevor Sie für die Indizierung zahlen. Alles Aufbewahrungspflichtige zu Objektspeicher-Preisen behalten.",
+          "es": "Reduzca, filtre y escalone por niveles antes de pagar por indexar. Conserve todo lo que deba retener a precio de almacenamiento de objetos."
+        }
+      },
+      {
+        "id": "uc-vis",
+        "family": "detection",
+        "shown": true,
+        "level": "pipe",
+        "label": {
+          "en": "Better visibility",
+          "fr": "Meilleure visibilité",
+          "de": "Bessere Sichtbarkeit",
+          "es": "Mejor visibilidad"
+        },
+        "desc": {
+          "en": "See what is flowing, from where, and what has gone quiet, before a gap becomes a blind spot.",
+          "fr": "Voyez ce qui circule, d’où, et ce qui s’est tu, avant qu’un trou ne devienne un angle mort.",
+          "de": "Sehen, was fließt, woher und was verstummt ist, bevor eine Lücke zum blinden Fleck wird.",
+          "es": "Vea qué circula, desde dónde y qué ha dejado de enviar, antes de que un hueco se convierta en un punto ciego."
+        }
+      },
+      {
+        "id": "uc-risk",
+        "family": "investigation",
+        "shown": true,
+        "level": "analysis",
+        "label": {
+          "en": "Lower risk: investigate on all of your data",
+          "fr": "Moins de risque : enquêter sur toutes vos données",
+          "de": "Weniger Risiko: über alle Daten untersuchen",
+          "es": "Menos riesgo: investigar sobre todos sus datos"
+        },
+        "desc": {
+          "en": "Search every store in place, hot or cold, Cribl or not. No rehydration, no gaps in the timeline.",
+          "fr": "Interrogez chaque stockage sur place, chaud ou froid, Cribl ou non. Pas de réhydratation, pas de trou dans la chronologie.",
+          "de": "Jeden Speicher vor Ort durchsuchen, hot oder cold, Cribl oder nicht. Keine Rehydrierung, keine Lücken in der Zeitachse.",
+          "es": "Consulte cada almacén in situ, en caliente o en frío, de Cribl o no. Sin rehidratación ni huecos en la cronología."
+        }
+      },
+      {
+        "id": "uc-ai10x",
+        "family": "response",
+        "shown": true,
+        "level": "top",
+        "label": {
+          "en": "10x investigation with AI",
+          "fr": "Des investigations 10x plus rapides avec l’IA",
+          "de": "10x schnellere Untersuchungen mit KI",
+          "es": "Investigaciones 10x más rápidas con IA"
+        },
+        "desc": {
+          "en": "Analysts and agents work the same data. AI does the querying and correlation so humans spend their time deciding and responding.",
+          "fr": "Analystes et agents travaillent sur les mêmes données. L’IA fait les requêtes et la corrélation, les humains passent leur temps à décider et à répondre.",
+          "de": "Analysten und Agenten arbeiten auf denselben Daten. KI übernimmt Abfragen und Korrelation, damit Menschen ihre Zeit mit Entscheiden und Reagieren verbringen.",
+          "es": "Analistas y agentes trabajan sobre los mismos datos. La IA se encarga de las consultas y la correlación para que las personas dediquen su tiempo a decidir y responder."
+        }
+      },
+      {
+        "id": "uc-ttd",
+        "family": "detection",
+        "shown": true,
+        "level": "stores",
+        "label": {
+          "en": "Reduce time to detect",
+          "fr": "Réduire le temps de détection",
+          "de": "Erkennungszeit verkürzen",
+          "es": "Reducir el tiempo de detección"
+        },
+        "desc": {
+          "en": "Detections run on clean, normalized data wherever it lives, so threats surface sooner.",
+          "fr": "Les détections tournent sur des données propres et normalisées, où qu’elles soient, et les menaces apparaissent plus tôt.",
+          "de": "Detections laufen auf sauberen, normalisierten Daten, wo immer sie liegen – Bedrohungen werden früher sichtbar.",
+          "es": "Las detecciones se ejecutan sobre datos limpios y normalizados, estén donde estén, para que las amenazas aparezcan antes."
+        }
+      },
+      {
+        "id": "uc-unify",
+        "family": "investigation",
+        "shown": true,
+        "level": "stores",
+        "label": {
+          "en": "Unify data lakes",
+          "fr": "Unifier les data lakes",
+          "de": "Data Lakes vereinheitlichen",
+          "es": "Unificar los data lakes"
+        },
+        "desc": {
+          "en": "One open lake across security, IT and observability instead of a copy per tool.",
+          "fr": "Un seul lake ouvert pour la sécurité, l’IT et l’observabilité, au lieu d’une copie par outil.",
+          "de": "Ein offener Lake für Security, IT und Observability statt einer Kopie pro Tool.",
+          "es": "Un único lake abierto para seguridad, TI y observabilidad, en lugar de una copia por herramienta."
+        }
+      },
+      {
+        "id": "uc-compliance",
+        "family": "compliance",
+        "shown": true,
+        "level": "stores",
+        "label": {
+          "en": "Compliance",
+          "fr": "Conformité",
+          "de": "Compliance",
+          "es": "Cumplimiento normativo"
+        },
+        "desc": {
+          "en": "Retain full fidelity data for years in open formats, searchable on demand when the auditor asks.",
+          "fr": "Conservez des données en pleine fidélité pendant des années, en formats ouverts, consultables à la demande quand l’auditeur les demande.",
+          "de": "Daten in voller Detailtiefe jahrelang in offenen Formaten aufbewahren, bei Bedarf durchsuchbar, wenn der Auditor fragt.",
+          "es": "Conserve datos con fidelidad completa durante años en formatos abiertos, consultables cuando el auditor los pida."
+        }
+      },
+      {
+        "id": "uc-siemmig",
+        "family": "detection",
+        "shown": false,
+        "level": "pipe",
+        "label": {
+          "en": "Migrate SIEM without re-onboarding sources",
+          "fr": "Migrer de SIEM sans réintégrer les sources",
+          "de": "SIEM migrieren, ohne Quellen neu anzubinden",
+          "es": "Migrar de SIEM sin reincorporar fuentes"
+        },
+        "desc": {
+          "en": "Send the same data to the old and the new SIEM in parallel, each in its own format, and switch when ready.",
+          "fr": "Envoyer les mêmes données à l’ancien et au nouveau SIEM en parallèle, chacun dans son format, et basculer quand vous êtes prêts.",
+          "de": "Dieselben Daten parallel an das alte und das neue SIEM senden, jeweils im eigenen Format, und umschalten, wenn Sie bereit sind.",
+          "es": "Envíe los mismos datos al SIEM antiguo y al nuevo en paralelo, cada uno en su formato, y cambie cuando esté listo."
+        }
+      },
+      {
+        "id": "uc-onboard",
+        "family": "detection",
+        "shown": false,
+        "level": "sources",
+        "label": {
+          "en": "Onboard new sources in days",
+          "fr": "Intégrer de nouvelles sources en quelques jours",
+          "de": "Neue Quellen in Tagen anbinden",
+          "es": "Incorporar nuevas fuentes en días"
+        },
+        "desc": {
+          "en": "Collect once at the edge, shape in the pipeline, deliver anywhere.",
+          "fr": "Collecter une fois à la source, mettre en forme dans le pipeline, livrer partout.",
+          "de": "Einmal an der Quelle erfassen, in der Pipeline aufbereiten, überallhin liefern.",
+          "es": "Recopile una vez en el origen, dé forma en el pipeline y entregue en cualquier destino."
+        }
+      },
+      {
+        "id": "uc-pii",
+        "family": "compliance",
+        "shown": false,
+        "level": "pipe",
+        "label": {
+          "en": "Mask sensitive data in flight",
+          "fr": "Masquer les données sensibles en transit",
+          "de": "Sensible Daten unterwegs maskieren",
+          "es": "Enmascarar datos sensibles en tránsito"
+        },
+        "desc": {
+          "en": "Find and mask personal data before it reaches any tool or region.",
+          "fr": "Trouver et masquer les données personnelles avant qu’elles n’atteignent un outil ou une région.",
+          "de": "Personenbezogene Daten finden und maskieren, bevor sie ein Tool oder eine Region erreichen.",
+          "es": "Detecte y enmascare los datos personales antes de que lleguen a cualquier herramienta o región."
+        }
+      },
+      {
+        "id": "uc-o11ycost",
+        "family": "compliance",
+        "shown": false,
+        "level": "pipe",
+        "label": {
+          "en": "Control observability spend",
+          "fr": "Maîtriser le coût de l’observabilité",
+          "de": "Observability-Kosten im Griff",
+          "es": "Controlar el gasto en observabilidad"
+        },
+        "desc": {
+          "en": "Send APM and log tools only what they need; keep the rest cheaply.",
+          "fr": "N’envoyer aux outils APM et journaux que ce dont ils ont besoin ; garder le reste à moindre coût.",
+          "de": "APM- und Log-Tools nur senden, was sie brauchen; den Rest günstig aufbewahren.",
+          "es": "Envíe a las herramientas de APM y de logs solo lo que necesitan; guarde el resto a bajo costo."
+        }
+      },
+      {
+        "id": "uc-sovereign",
+        "family": "compliance",
+        "shown": false,
+        "level": "stores",
+        "label": {
+          "en": "Data sovereignty and residency",
+          "fr": "Souveraineté et localisation des données",
+          "de": "Datensouveränität und -residenz",
+          "es": "Soberanía y residencia de datos"
+        },
+        "desc": {
+          "en": "Keep data in the country and the account you choose, in open formats.",
+          "fr": "Garder les données dans le pays et le compte de votre choix, en formats ouverts.",
+          "de": "Daten im Land und im Konto Ihrer Wahl halten, in offenen Formaten.",
+          "es": "Mantenga los datos en el país y la cuenta que elija, en formatos abiertos."
+        }
+      },
+      {
+        "id": "uc-nis2",
+        "family": "compliance",
+        "shown": false,
+        "level": "stores",
+        "label": {
+          "en": "NIS2 and DORA readiness",
+          "fr": "Préparation NIS2 et DORA",
+          "de": "Bereit für NIS2 und DORA",
+          "es": "Preparación para NIS2 y DORA"
+        },
+        "desc": {
+          "en": "Retain, protect and produce the evidence the regulations ask for.",
+          "fr": "Conserver, protéger et produire les preuves exigées par la réglementation.",
+          "de": "Die Nachweise aufbewahren, schützen und vorlegen, die die Regulierung verlangt.",
+          "es": "Conserve, proteja y presente las evidencias que exige la normativa."
+        }
+      },
+      {
+        "id": "uc-consolidate",
+        "family": "investigation",
+        "shown": false,
+        "level": "stores",
+        "label": {
+          "en": "Tool consolidation",
+          "fr": "Consolidation des outils",
+          "de": "Tool-Konsolidierung",
+          "es": "Consolidación de herramientas"
+        },
+        "desc": {
+          "en": "Retire overlapping tools without losing the data they held.",
+          "fr": "Retirer les outils redondants sans perdre les données qu’ils contenaient.",
+          "de": "Überlappende Tools ablösen, ohne die Daten zu verlieren, die sie enthielten.",
+          "es": "Retire herramientas redundantes sin perder los datos que contenían."
+        }
+      },
+      {
+        "id": "uc-hunt",
+        "family": "investigation",
+        "shown": false,
+        "level": "analysis",
+        "label": {
+          "en": "Threat hunting over years of data",
+          "fr": "Threat hunting sur des années de données",
+          "de": "Threat Hunting über Jahre an Daten",
+          "es": "Threat hunting sobre años de datos"
+        },
+        "desc": {
+          "en": "Search cold and hot data in place, without rehydration windows.",
+          "fr": "Interroger données chaudes et froides sur place, sans fenêtre de réhydratation.",
+          "de": "Kalte und heiße Daten vor Ort durchsuchen, ohne Rehydrierungsfenster.",
+          "es": "Consulte datos en caliente y en frío in situ, sin ventanas de rehidratación."
+        }
+      },
+      {
+        "id": "uc-ir",
+        "family": "response",
+        "shown": false,
+        "level": "analysis",
+        "label": {
+          "en": "Incident response with the full timeline",
+          "fr": "Réponse à incident avec la chronologie complète",
+          "de": "Incident Response mit vollständiger Zeitachse",
+          "es": "Respuesta a incidentes con la cronología completa"
+        },
+        "desc": {
+          "en": "Every source, every store, one query, while the incident is still live.",
+          "fr": "Toutes les sources, tous les stockages, une seule requête, pendant que l’incident est en cours.",
+          "de": "Jede Quelle, jeder Speicher, eine Abfrage – während der Vorfall noch läuft.",
+          "es": "Todas las fuentes, todos los almacenes, una sola consulta, mientras el incidente sigue activo."
+        }
+      },
+      {
+        "id": "uc-agentic",
+        "family": "response",
+        "shown": false,
+        "level": "top",
+        "label": {
+          "en": "Agentic SOC",
+          "fr": "SOC agentique",
+          "de": "Agentisches SOC",
+          "es": "SOC agéntico"
+        },
+        "desc": {
+          "en": "Agents triage and investigate on the same data as analysts; humans approve and act.",
+          "fr": "Les agents trient et enquêtent sur les mêmes données que les analystes ; les humains valident et agissent.",
+          "de": "Agenten sichten und untersuchen auf denselben Daten wie Analysten; Menschen genehmigen und handeln.",
+          "es": "Los agentes clasifican e investigan sobre los mismos datos que los analistas; las personas aprueban y actúan."
+        }
+      }
+    ]
+  }
+}

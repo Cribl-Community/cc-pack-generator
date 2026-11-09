@@ -341,5 +341,15 @@ export function applyDeterministicScore(
       scoreSource: 'raw-fidelity',
     };
   }
+  if (auth.scoreSource === 'csv-fidelity' && auth.splunkCsv?.applicable) {
+    return {
+      ...report,
+      score: auth.score,
+      band: auth.band,
+      findings: mergedFindings,
+      summary: `${auth.splunkCsv.reasons.join(' ')}${report.summary ? ` AI notes: ${report.summary}` : ''}`,
+      scoreSource: 'csv-fidelity',
+    };
+  }
   return { ...report, findings: mergedFindings, scoreSource: 'ai' };
 }

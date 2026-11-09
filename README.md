@@ -1,122 +1,165 @@
 # Cribl Pack Generator
 
-Build and deploy a Cribl Stream Pack from a sample of your logs. Pick a sourcetype, give the app some sample events, choose one or more destination schemas, and it deploys a pack with parsing, field mapping and destination shaping to your worker group.
+Build and deploy a Cribl Stream Pack from a sample of your logs: parsing, field mapping to your SIEM's schema, a route and your sample, deployed to a worker group and scored on it.
 
-- **Deterministic where it can be.** Known sourcetype and destination pairs are built from golden format specs, with no AI involved. Everything else falls back to AI mapping, checked against the same canonical field model.
-- **Scored on your worker group.** After a pipeline is published, the app runs your sample through it and scores the output by value coverage. A pipeline below the target is repaired automatically.
-- **Reusable.** A good pipeline is saved as a golden that you can reuse and import from a shared pool.
+## What this app does
+
+- **Builds packs.** Pick a sourcetype and give it sample events, and choose one or more destination formats. The app deploys a pack with a pipeline per format. Known source and format pairs come from tested golden specs with no AI. Anything else is mapped by AI and checked against the same field model.
+- **Scores them on your worker group.** It runs your sample through the deployed pipeline, scores the output by value coverage, and repairs a pipeline that scores below the target.
+- **Batch mode.** Builds up to 200 pipelines from a CSV and keeps going after you close the tab.
+- **Whiteboards & architecture** (optional, for Cribl and partner teams). A discovery board drawn with a prospect, an architecture drawing of the proposed Cribl deployment, and a demo environment built from them. See [Whiteboards and architecture](#whiteboards-and-architecture).
+
+**For** Stream administrators and pipeline builders onboarding a log source, and Cribl and partner engineers running discovery. **Runs on** Cribl.Cloud, or a self-managed Leader with App Platform enabled. It deploys to Stream worker groups (not Edge fleets) and optionally uses Cribl Search and Cribl Lake.
 
 ## When to use this app
 
-Use it when you onboard a new log source into Cribl Stream and want a working pack (parsing, field mapping to your SIEM's schema, and a route) without writing the pipeline by hand, or when you need many packs at once (batch mode). It is a starting point: review the pipeline it builds before you send production data through it.
+- You onboard a new log source and want a working pack without writing the pipeline by hand.
+- You need many packs at once (batch mode).
+- You run a discovery call and want the board, the proposed architecture and a demo in one place.
+
+It is a starting point: review the pipeline before production data goes through it.
 
 ## Before you install
 
-- A Cribl Cloud workspace (or a Leader) with App Platform enabled.
-- A Stream worker group to deploy to, and a Cribl role that can manage packs there.
-- For anything outside the golden specs: an AI provider, either your org's **Cribl AI Settings** or an API key for one of the providers below.
+- App Platform enabled, and a Cribl role that can manage packs on the target worker group. Optional features need more: Search for datasets and dashboards, Lake for score logging and demos.
+- For anything outside the golden specs: AI configured in **Settings → AI Settings** in Cribl. The app holds no AI key of its own.
+- No other accounts or services are needed.
 
 ## Installation
 
-1. In Cribl, open **Apps** and find **Cribl Pack Generator** in the app catalog. You can also use **Add App → Import from Git** with `https://github.com/Cribl-Community/cc-pack-generator` and the ref `latest`, or install the `.tgz` from the [latest release](https://github.com/Cribl-Community/cc-pack-generator/releases/latest) with **Import from File**.
-2. Review the API permissions the app asks for and install it.
+1. In Cribl, open **Apps → Cribl Marketplace** and install **Cribl Pack Generator**. Or use **Add App → Import from Git** with `https://github.com/Cribl-Community/cc-pack-generator` and ref `latest`, or **Import from File** with the `.tgz` from the [latest release](https://github.com/Cribl-Community/cc-pack-generator/releases/latest).
+2. Review the permissions it asks for (below) and install.
 3. Grant access under **Apps → Cribl Pack Generator → Settings → Members & Teams**.
-4. Open the app and, under **Settings**, choose an AI provider (see below).
 
 ## Configuration
 
-### AI provider
+No setting is needed to start: the golden path works straight away. Every setting is stored per app, so it applies to everyone who can open the app.
 
-The golden path needs no AI. For AI-assisted parsing, mapping and sample generation, choose a provider under **Settings**. **Cribl AI Settings** uses the AI provider your org already has configured in Cribl, with no key needed. You can also add an API key for Anthropic, OpenAI, Google Gemini, Mistral, Azure AI or AWS Bedrock.
-
-Choose a fast model. Every AI call has to answer within the platform proxy's 30-second limit, and this work is structured extraction rather than deep reasoning.
+| Setting | Where | Default |
+|---|---|---|
+| AI provider | Cribl **Settings → AI Settings** (outside the app) | Your org's provider. The installed app cannot use another one. Choose a fast model: every AI call must answer within the platform proxy's 30 s. |
+| Require sanitised samples before any AI call | **Samples → Sharing** | Off. Turn it on if raw events must never reach your AI provider. |
+| Golden thresholds, dropping null JSON fields | **Settings → Quality** | 80 per stage; off |
+| Shared golden pool | **Settings → Goldens** | The public pool (read-only) |
+| Whiteboards & demos | **Settings → Menu** | Hidden |
 
 ## How to use
 
-1. **Worker group**: choose the Stream worker group to deploy to.
-2. **Sourcetype**: pick one from the catalog or type your own. The app can detect it from your samples.
-3. **Samples**: upload a file, paste events, capture live from the worker group, or use a bundled sample. Real vendor logs are always preferred over AI-generated ones.
-4. **Destination format**: OCSF 1.9, CEF, Microsoft Sentinel (a specific native table), Splunk CIM, Elastic ECS, Sentinel ASIM, Google Chronicle UDM, Cortex XSIAM, CrowdStrike NG SIEM, Passthrough or clean JSON. Each format you pick gets its own pipeline.
-5. **Review**: check the destination shaping and the schema mapping.
-6. **Deploy**: the app creates the pack, pipelines, route and samples on your worker group.
+1. **Build pack flow:** choose the worker group, then the source (paste, upload, a worker-group sample, live capture, or a catalog sample; your own events give the most accurate pack). Then the destination formats, and review the mapping.
+2. **Build:** the app creates the pack, pipelines, route and sample, commits and deploys only its own changes, and scores the result.
+3. **Results:** shows whether the pack is live, the score per destination, and a link to open each pipeline in Stream.
 
-Your sample is included in the pack, so you can use it for preview and testing.
+First run: pick a worker group, choose **Check Point Firewall** under *Start from a catalog sample*, choose OCSF, and build. You get a deployed pack with a scored OCSF pipeline.
 
-### Batch mode
+**Batch mode:** upload a CSV with `sourcetype`, `pack_name`, `pipeline_name` and `dest_format` (optionally `route_name`, `filter`). Rows that share a pack deploy in order, then every pipeline is scored.
 
-Upload a CSV with the columns `sourcetype`, `pack_name`, `pipeline_name` and `dest_format`, and optionally `route_name` and `filter`. The app builds each row, deploys the rows that share a pack in order, and then scores every pipeline. Batch runs continue in a Backend Function, so closing the browser tab does not stop them.
+**Supported formats:** OCSF 1.9, CEF, Microsoft Sentinel native tables and ASIM, Splunk CIM 5.x, Elastic ECS 8.x, Google Chronicle UDM, Cortex XSIAM, CrowdStrike NG SIEM, passthrough and clean JSON.
 
-## Supported formats
+## Whiteboards and architecture
 
-| Format | Target |
-|---|---|
-| OCSF | Open Cybersecurity Schema Framework 1.9 |
-| CEF | ArcSight Common Event Format |
-| Microsoft Sentinel | Native tables (CommonSecurityLog, SecurityEvent, Syslog and 47 more) |
-| CIM | Splunk Common Information Model 5.x |
-| ECS | Elastic Common Schema 8.x |
-| ASIM | Microsoft Sentinel ASIM |
-| Chronicle UDM | Google Chronicle Unified Data Model |
-| Cortex XSIAM | Source-native passthrough with `__sourceIdentifier`, `__vendor` and `__product` |
-| CrowdStrike NG SIEM | The original event, for the connector's vendor parser |
-| Passthrough | The raw event, unchanged |
-| JSON | Clean, normalized JSON for Cribl Lake, S3 or Splunk HEC |
+Turn them on in **Settings → Menu**, then open **Whiteboards & demos** under *Tools*. There is one row per prospect.
+
+- **Whiteboard:** draw the prospect's estate (sources, tools, Cribl Lake, the Lakehouse Engine, Cribl Detect) on the Cribl platform picture. Type what hurts (**Pain**, or `/`) and the app finds the matching situation, what it becomes with Cribl and its business outcomes. **+ Security goals** and **+ Observability goals** record their initiatives. **Logo** looks the company up on Wikidata.
+- **Architecture:** the second tab. Draw the proposed deployment (leader, worker groups, Edge fleets, Lake, Search, Detect) or use **Draw it from the whiteboard**. Export it as PNG, PDF or SVG.
+- **Demo:** **Deploy demo** creates a demo environment from the board on a worker group: its own sources, destinations and Lake dataset, named per board, removed by demo cleanup.
+- **Moving a board:** **Export → JSON file** and **Import saved whiteboard** move a board, with its architecture, to another org.
+
+The full walkthrough is in the app under **Documentation → Whiteboards & demos**.
 
 ## Permissions and external access
 
-The app asks Cribl for these API permissions (`default/policies.yml`):
+Cribl API permissions (`config/policies.yml`). The test `tests/policy-coverage-test.mjs` checks both ways: every call is granted, and every grant has a caller. The only exceptions are reads on items the app writes, because the platform resolves a write against what the caller can read.
 
-- **Packs, pipelines, routes, samples and lookups** on a worker group: to create the pack, write its pipelines and route, and upload your sample and any reference lookups into it.
-- **Preview** on a pack: to run your sample through the deployed pipeline and score the output.
-- **Version commit and group deploy**: to commit and deploy what it created.
-- **Search datasets, datatypes and dashboards**: optional, when you send the output to Cribl Lake or Search.
-- **Backend schedules**: so a batch run continues after you close the tab.
-- **Cribl AI** (`/ai/q/agents/open_investigator`): only when you choose **Cribl AI Settings** as the provider.
+| Permission | Methods | Why |
+|---|---|---|
+| Packs (`/m/*/packs`, `/m/*/packs/*`) | GET, POST, PUT, DELETE | Upload, install and replace the generated pack. DELETE only removes a pack whose author is the Pack Generator, after the new one is uploaded. |
+| Pack pipelines, routes, preview, samples, lookups (`/m/*/p/*/…`) | GET, POST, PATCH, DELETE | Write the pipelines, route, sample and lookups, run the sample through them, and remove a pack sample. |
+| Group samples and live capture (`/m/*/system/samples…`, `/m/*/system/capture`) | GET, POST, PATCH, DELETE | Read and save worker-group samples, and capture live events. |
+| Sources, destinations and group routes (`/m/*/system/inputs…`, `/m/*/system/outputs…`, `/m/*/routes…`) | GET, POST, PATCH, DELETE | Only the optional datagen source and demo environments, which create, toggle and remove their own. |
+| Search datasets, datatypes and dashboards (`/m/*/search/…`) | GET, POST, PATCH | Optional, when the output goes to Search. |
+| Lake datasets (`/products/lake/lakes/*/datasets…`) | GET, POST, DELETE | Score logging and the demo's dataset. |
+| Version and deploy (`/version`, `/version/status`, `/version/commit`, `/master/groups/*`, `/master/groups/*/deploy`) | GET, POST, PATCH | Commit only the app's own changes, then deploy them. A deploy needs read access to its group. |
+| Groups and workers (`/master/groups`, `/master/workers`) | GET | List worker groups, and their workers for the architecture drawing. |
+| Backend schedules (`/backend-schedules…`) | POST, DELETE | Keep a batch running after the tab closes, and remove the schedule when it ends. |
+| Cribl AI (`/ai/q/agents/open_investigator`) | POST | Every AI step, through your org's AI Settings. |
 
-Delete permissions, and why:
+A generated pipeline uses only the 16 functions the generator builds. A golden or AI answer with any other function (`tee`, `redis`, `chain`, …) is refused before deploy.
 
-| Path | Why |
-|---|---|
-| `/m/*/packs/*` | Re-deploying a pack replaces it: the old pack with the same id is removed first. |
-| `/m/*/system/samples/*` | Replacing or removing a sample the app uploaded. |
-| `/backend-schedules/*` | Removing a batch run's schedule when the run finishes or you cancel it. |
+External hosts (`config/proxies.yml`), reached only through the Cribl platform proxy. All are GET only, path-limited, and send no credential:
 
-External hosts (`default/proxies.yml`), reached through the Cribl platform proxy:
+| Host | Paths | Why |
+|---|---|---|
+| `api.github.com`, `raw.githubusercontent.com` | The public golden and sample pools, and four public vendor-log repositories | Read shared goldens and sample sources |
+| `www.wikidata.org`, `commons.wikimedia.org` | `/w/api.php` | Look up a prospect's logo by name (whiteboard **Logo** only) |
+| `upload.wikimedia.org`, `thumb.wikimedia.org` | `/wikipedia/commons/…` | Download the chosen logo |
+| `icon.horse` | `/icon/` | A website's icon, when you type a website instead |
 
-- **AI providers**: `api.anthropic.com`, `api.openai.com`, `api.mistral.ai`, `generativelanguage.googleapis.com`, `models.inference.ai.azure.com`, `api.githubcopilot.com` and the AWS Bedrock regional endpoints. Each is used only if you choose it, and your API key is injected by the proxy from the app's encrypted store.
-- **`raw.githubusercontent.com` and `api.github.com`**: read-only, unauthenticated reads of the public shared goldens and sample pool.
+Wikidata and the icon service receive only the company name or website you type, and only when you open the logo dialog. There are no AI provider hosts: AI goes through Cribl.
 
 ## Data and storage
 
-- **On your worker group**: the packs, pipelines, routes, samples and lookups the app deploys. They are normal Cribl objects and stay if you uninstall the app.
-- **In the app's own KV store**: your settings, goldens and batch progress. API keys are written encrypted and can only be read by the platform proxy, not by the app.
-- **Sent to your AI provider**: when a step needs AI, the app sends sample events and field names to the provider you chose. Use the golden path or a sanitised sample if your events must not leave Cribl.
-- **Nothing is sent anywhere else.** Shared goldens are only read; publishing to the shared pool is a maintainer action outside the app.
+- **Your worker group** keeps what the app deploys: packs, pipelines, routes, samples, lookups, and demo sources, destinations and datasets. They are normal Cribl objects and stay if you uninstall the app.
+- **The app's KV store**, readable by anyone who can open the app:
+
+  | Keys | Holds | Removed when |
+  |---|---|---|
+  | `settings/app` | Settings | You change them |
+  | `wizard-draft/active` | The unfinished build, with its sample | The build finishes or you discard it |
+  | `batch-run/active`, `batch-run/background` | Batch progress, with its samples | You dismiss the run |
+  | `goldens/index`, `goldens/doc/*` | Saved and imported goldens | You delete them on the Goldens page |
+  | `sanitised-samples/overlay`, `datatype-parsers/overlay`, `vendor-fields/seen` | Sanitised samples, learned parsers and field names | You remove them under Samples |
+  | `whiteboards/index`, `whiteboards/doc/*`, `whiteboards/arch/*`, `whiteboards/library` | Boards, architecture drawings, your own catalogue entries | You delete the board |
+
+- **Secrets:** the app holds no AI key. A token field in **Settings** writes to the encrypted KV store, which is write-only: it is never read back to a browser.
+- **Nothing is sent elsewhere** except AI requests to your org's provider (next section) and the external reads listed above.
+
+## Responsible use of AI
+
+| | |
+|---|---|
+| Service | Cribl AI (`/ai/q/agents/open_investigator`), which uses the provider and model your admins chose in **Settings → AI Settings**. The app cannot use any other. |
+| Purpose | Parse and map sources that no golden covers, write a sample when you ask for one, repair a pipeline that scores low, suggest a sourcetype or destination format for an unmatched whiteboard row. |
+| Inputs | Your sample events, their field names, the sourcetype and destination schema. For a whiteboard row: only that row's label, never the prospect's name or other rows. |
+| Outputs | Pipeline functions, field mappings, sample events and suggestions. You review them before anything is deployed. They are stored only in the pack and in the app's KV. |
+| Retention, location, subprocessors | Those of the provider in your org's AI Settings, under your agreement with Cribl. The app adds no other processor. |
+| Training | The app sends nothing for model training or product improvement. |
+| Minimising data | The golden path uses no AI, and source detection tries the local recognisers first. **Require sanitised samples** (off by default, your choice) keeps raw events out of every AI call, including detection. The built-in sanitiser replaces hosts, users, addresses and secrets in your browser, with no AI. |
+
+## Security
+
+- **Access:** the app acts with the signed-in user's Cribl session and role, so it can do no more than that user. Who can open it is set in **Members & Teams**.
+- **Least privilege:** the grants above, tested both ways.
+- **Secrets:** none are held in the browser or in the bundle; typed tokens go to encrypted, write-only KV.
+- **Known vulnerabilities:** none open. `npm audit --omit=dev` reports 0 for the shipped dependencies.
+- **Report a vulnerability** privately through [**Security → Report a vulnerability**](https://github.com/Cribl-Community/cc-pack-generator/security/advisories/new). Fix targets: Critical 10 days, High 4 weeks, Medium 12 weeks, Low 25 weeks.
 
 ## Support
 
-Open an issue in [this repository](https://github.com/Cribl-Community/cc-pack-generator/issues). It is maintained by Wilfred van der Linde (Cribl Solutions Engineering), who aims to fix critical security issues within 10 days and high ones within 4 weeks.
+- Issues and questions: [GitHub Issues](https://github.com/Cribl-Community/cc-pack-generator/issues). Security reports: see [Security](#security).
+- Critical issues get an answer within 24 hours, Monday to Friday, during business hours (CET). Critical and high-severity bugs are fixed first.
+- Maintained by Wilfred van der Linde with Simon Duchene and Shailendra Sadh (Cribl Solutions Engineering).
 
 ## Known limitations and troubleshooting
 
-- Every AI request must answer within the platform proxy's 30-second limit.
-- The score measures value coverage on your sample, so a small or unrepresentative sample gives a misleading score.
+- The score measures value coverage on your sample. A small or unrepresentative sample gives a misleading score.
+- Background batch rows run within the platform's 300 s Backend Function limit. Each tick stops starting new stages after 280 s, because a Cribl AI call can take 60 s or more. This is above the 80 % guideline, on purpose. A tick checkpoints after every stage, so a stage that runs out of time resumes on the next tick.
 - Publishing goldens to the shared pool only works when the app runs standalone.
 
 | Symptom | Fix |
 |---|---|
-| `Request timeout` on AI work | The platform proxy stops any request after 30 seconds. Choose a faster model. |
-| Deploy returns 403 | Check that your Cribl role can manage packs on the target worker group. |
-| An empty pipeline after deploy | Deploy again. The app re-applies the functions when a pack import comes up empty. |
-| Score 0 with every event dropped | A filter or post-processing rule dropped every event. Check the pipeline's filters against your sample. |
-| Golden publishing is unavailable | Publishing needs a server-side token, so it only works when the app runs standalone. Importing goldens works everywhere. |
+| `Request timeout` on an AI step | The platform proxy stops a request after 30 s. Choose a faster model. |
+| Deploy returns 403 | Your role cannot manage packs on that worker group. |
+| An empty pipeline after deploy | Deploy again: the app re-applies the functions when an import comes up empty. |
+| Score 0, every event dropped | A filter dropped every event. Check the pipeline's filters against your sample. |
+| No logo results on a whiteboard | An admin removed the Wikidata or Wikimedia hosts from the app's proxy list. Type a website or upload an image. |
 
 ## Release notes
 
-- **1.0.309**: the home banner no longer offers shared goldens this install already holds, so "Import all" stops reporting "already have this golden".
-- **1.0.307**: sanitising a sample never renames a JSON field, only values. When a replacement would change a sample's structure, the message names the line, what changes there and the replacement to untick.
-- **1.0.304**: the Cribl-internal AI provider is no longer offered in this build; README covers permissions, data and support.
-- **1.0.303**: first release in the Cribl app catalog. Shared goldens whose names contain `@` or `#` import inside Cribl.
+- **1.0.326:** Whiteboards & demos and the Architecture drawing ship in the public build (hidden until you turn them on); a new whiteboard opens without the People row, and names the prospect's estate *Solution first* and *Platform first*. Check Point and other CEF events exported as JSON are recognised offline. Certificate names (`CN=…,O=…`) are sanitised part by part. A test now checks that every permission has a caller, and the product tags now include Search and Lake. This README documents every external host, KV key and AI input.
+- **1.0.310:** every Cribl call is granted. A deploy commits only the app's own changes and never deletes a pack the Pack Generator did not make. Pipelines are limited to the generator's own functions. AI goes through Cribl AI Settings only.
+- **1.0.309:** the home banner no longer offers shared goldens this install already has.
+- **1.0.307:** sanitising never renames a JSON field. A replacement that would change a sample's structure names the line and the replacement to untick.
+- **1.0.303:** first release in the Cribl app catalog.
 
 ## Running it locally
 
@@ -125,18 +168,12 @@ npm ci
 npm run dev
 ```
 
-Then open http://localhost:5173. Standalone mode reads Cribl Cloud API credentials (`CRIBL_ORG`, `CRIBL_CLIENT_ID`, `CRIBL_CLIENT_SECRET`) and an AI endpoint from `.env`. See `.env.example`.
+Open http://localhost:5173. Standalone mode reads `CRIBL_ORG`, `CRIBL_CLIENT_ID`, `CRIBL_CLIENT_SECRET` and an AI endpoint from `.env` (see `.env.example`). `npm run package -- --version X.Y.Z` builds `build/cc-pack-generator-X.Y.Z.tgz`.
 
-`npm run package -- --version X.Y.Z` builds `build/cc-pack-generator-X.Y.Z.tgz`, which you can install with **Import from File**.
+## Contributing, licence, authors
 
-## Contributing
+Issues and pull requests are welcome; see [CONTRIBUTING.md](CONTRIBUTING.md). This repository is generated from the development repository, so a maintainer ports an accepted change and it ships in the next release. `npm test` runs the bundled tests.
 
-Issues and pull requests are welcome here. This repository is generated from the Pack Generator's development repository, so a maintainer ports an accepted change there and it ships in the next release. See [CONTRIBUTING.md](CONTRIBUTING.md). `npm test` runs the bundled tests.
+Apache-2.0. The bundled secret-detection rules are MIT-licensed (`config/bundled-secret-rules-NOTICE`). The sample pool's terms are in `config/samples-pool-NOTICE`.
 
-## Licence
-
-Apache-2.0. The bundled secret-detection rules are MIT-licensed; see `config/bundled-secret-rules-NOTICE`. The shared sample pool's terms are in `config/samples-pool-NOTICE`.
-
-## Authors
-
-Built together by Wilfred van der Linde, Simon Duchene and Shailendra Sadh, Cribl Solutions Engineering.
+Built by Wilfred van der Linde, Simon Duchene and Shailendra Sadh, Cribl Solutions Engineering.

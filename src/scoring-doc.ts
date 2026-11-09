@@ -320,7 +320,7 @@ export const SCORING_DOC_HTML = `<!DOCTYPE html>
     <p>One compute (<code>runSanitisation</code>) replaces values, checks the wire format survived, re-parses before and after to prove identities changed, and re-verifies against the source parser. Each caller applies its own policy:</p>
     <ul>
       <li><b>Pack wizard — advisory.</b> A broken wire format refuses Apply: a JSON line that no longer parses or changed its field names, or a delimiter/whitespace boundary that moved. The banner says which of those happened, the entries causing it are marked red, and the banner clears as soon as they are unticked. A parser that reads the result slightly less cleanly only raises a warning.</li>
-      <li><b>Sample library — strict.</b> <code>applyAndVerifySanitisation</code> rejects the save if nothing changed, the structure broke, identity coverage is unproven, or the parser regressed.</li>
+      <li><b>Sample library — strict.</b> <code>applyAndVerifySanitisation</code> rejects the save if nothing changed, the structure broke, identity coverage is unproven, any value you chose to replace is still anywhere in the text, or the parser regressed. The pack wizard shows that last case as a warning.</li>
     </ul>
     <p>Only a <b>regression</b> counts: the original parsed and the sanitised copy does not. Lines the source's own parser never read (scanner probes, TLS on the HTTP port) are not blamed on the sanitiser.</p>
 
@@ -336,9 +336,9 @@ export const SCORING_DOC_HTML = `<!DOCTYPE html>
 
     <h2><span class="d"></span>Four properties of the replacement</h2>
     <ul>
-      <li><b>Consistent</b> — one alias per distinct value, everywhere.</li>
+      <li><b>Consistent</b> — one alias per distinct value, everywhere. Host, user, email and domain names match in any case (<code>FW-ACME01</code> and <code>fw-acme01</code> get the same alias); a URL-encoded mailbox (<code>jsmith%40acme.com</code>) is replaced as one.</li>
       <li><b>Class-preserving</b> — private addresses stay private; public ones move to RFC 5737 documentation ranges.</li>
-      <li><b>Shape-preserving</b> — label counts, <code>DOMAIN\\user</code>, delimiters, columns and JSON keys survive; a hex serial stays hex, ten digits stay ten digits.</li>
+      <li><b>Shape-preserving</b> — label counts, <code>DOMAIN\\user</code>, delimiters, columns and JSON keys survive; a hex serial stays hex, ten digits stay ten digits. The one JSON key that is replaced is a key that is, as a whole, an email, IP or MAC address — a map keyed by mailbox is data, not schema. A user or host name used as a key is left alone, because <code>"admin": true</code> is a field name too.</li>
       <li><b>Collision-free</b> — no alias already appears in the sample.</li>
     </ul>
     <p><b>Credentials</b> lead the review list in their own colour and are scrambled character-for-character (length, delimiters and scheme survive). The warning says to treat the original as exposed and rotate it.</p>
@@ -535,6 +535,14 @@ export const SCORING_DOC_HTML = `<!DOCTYPE html>
 
     <div class="note" id="fmt-flow-only"><b>Destinations only the Build pack flow offers.</b> Its picker lists the Cribl Lake options first (OCSF 1.9, Passthrough, <b>Raw + extracted fields</b>), then the analytics tools alphabetically. <b>Raw + extracted fields</b> keeps <code>_raw</code> and ships every extracted field top-level beside it (one Parquet column per field in the Lake); it has no schema, so the <b>mapping card shows n/a</b> and it uses the raw/JSON extraction class. <b>Splunk raw</b> and <b>Elastic integration</b> build as Passthrough, <b>Splunk JSON</b> and <b>Elastic JSON</b> as Clean JSON, each in its own pipeline. <b>Elastic integration</b> sends <code>message</code> = the original line, <code>_dataId</code> = the source's canonical name (and <code>input.type: log</code> where the data stream needs it) for the Elastic <code>cribl</code> integration's reroute; sources only Elastic Agent can parse get no <code>_dataId</code> and the card recommends ECS. <b>Google SecOps raw (log type)</b> sends <code>_raw</code> unchanged with <code>__logType</code> from a committed table of Google's default parsers — no entry, no label — and recommends Chronicle UDM when Google's parser does not accept the sample's format. These raw cards score n/a.</div>
 
+    <div class="note" id="fmt-splunk-csv"><b>Splunk CSV (licence-optimized) — Build pack flow only.</b> A <b>format optimization</b> for key=value sources sent to Splunk, which bills the <code>_raw</code> it indexes. Each event becomes one CSV row: known keys are columns, every other pair goes into a last <code>extended</code> key=value column, so <b>no value is dropped</b> (about half the bytes on FortiGate). Splunk reads it back with a small search-head app (<code>props.conf</code> + <code>transforms.conf</code>) that the pack README carries; field names stay the vendor's, so the TA's aliases still apply. Offered in the Splunk family next to Raw, and marked <i>Optimized</i> (never <i>Recommended</i>: the customer makes the cost call) when it is lossless on the sample and saves at least 20%.
+    <ul>
+      <li><b>Three column lists per log type, graded.</b> The curated contract of a published Cribl pack (FortiGate: <code>cribl-fortinet-fortigate-firewall</code>, five log types), a list <b>learned from the sample</b> (a key becomes a column when that is cheaper than its <code>key=value</code>), and the two <b>mixed</b> (the curated columns the events use, plus the learned extras). Fidelity decides first, then bytes. A learned list is graded on sample events it was not learned from; a tie keeps the curated contract, whose Splunk app already exists. When a learned layout wins, the Splunk app gets its own name (<code>…-pg</code>) so it never clashes with the vendor's.</li>
+      <li><b>Never lossy by construction.</b> A value holding a double quote stays out of the columns (Splunk's DELIMS cannot read it); a log type no layout covers, or a line with no pairs, is sent unchanged. The syslog PRI is removed, as Splunk's syslog input does; header text is kept.</li>
+      <li><b>Grouped pipeline:</b> read the line → field cleanup (empty / N/A / null pairs, on) → parse → filter examples (the source's noise drops, all <b>off</b>) → CSV format.</li>
+    </ul>
+    <b>How it scores:</b> extraction and mapping are n/a; the Optimization card carries the overall score — the share of sample values that decode back out of the delivered rows under the same key, capped by the share of covered lines that really became CSV. Bytes saved are reported beside it, never in it. Cleaned placeholders are not loss. A re-score on a shorter sample grades learned columns by value, so a correct pipeline is never read as lossy. No golden is stored: the build is deterministic.</div>
+
     <div class="note"><b>There is no "Custom / Other" destination.</b> A free-text schema could not be verified (no spec, no column list, no validator), so it was removed. Pick the closest real tile — Sentinel → CommonSecurityLog has a hand-verified golden — and adjust the deployed pipeline.</div>
   </section>
 
@@ -669,6 +677,7 @@ export const SCORING_DOC_HTML = `<!DOCTYPE html>
     <div class="chap-h"><div class="chap-t">Release notes</div></div>
     <p>Rule changes described above, newest first. A pack built before a change keeps its old behaviour until it is rebuilt.</p>
     <ul class="rn">
+      <li><b>Splunk CSV</b> destination card: lossless CSV re-encoding of key=value sources (curated Cribl pack columns, learned columns, or a graded mix), with the Splunk app in the pack README — build 978.</li>
       <li>Mapping goldens are stored under the vendor sourcetype, not a format label. The two generic JSON mapping goldens were removed — build 907.</li>
       <li>Two documents: a User guide and this Technical reference; contents links scroll reliably in every browser — build 900.</li>
       <li>OCSF Authorize Session (3003) is a target class; Improve honours explicit class guidance (<code>class_uid=3003</code>); sanitised samples listed in Samples → Library; the wizard names the wire-format break that blocks Apply; keep-raw OCSF pipelines no longer score extraction 0; OCSF <code>status</code> is the caption of <code>status_id</code> — build 896–900.</li>
