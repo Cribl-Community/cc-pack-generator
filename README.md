@@ -109,6 +109,7 @@ Wikidata and the icon service receive only the company name or website you type,
   | `goldens/index`, `goldens/doc/*` | Saved and imported goldens | You delete them on the Goldens page |
   | `sanitised-samples/overlay`, `datatype-parsers/overlay`, `vendor-fields/seen` | Sanitised samples, learned parsers and field names seen on your builds (never shared) | You remove them under Samples |
   | `vendor-fields/pool` | Reviewed vendor field lists imported from the shared pool | A newer import replaces them |
+  | `batch-run/metrics` | Run time and peak memory of the last 500 background batch steps (no event data) | Oldest entries roll off |
   | `whiteboards/index`, `whiteboards/doc/*`, `whiteboards/arch/*`, `whiteboards/library` | Boards, architecture drawings, your own catalogue entries | You delete the board |
 
 - **Secrets:** the app holds no AI key. A token field in **Settings** writes to the encrypted KV store, which is write-only: it is never read back to a browser.
@@ -143,7 +144,7 @@ Wikidata and the icon service receive only the company name or website you type,
 ## Known limitations and troubleshooting
 
 - The score measures value coverage on your sample. A small or unrepresentative sample gives a misleading score.
-- Background batch rows run within the platform's 300 s Backend Function limit. Each tick stops starting new stages after 280 s, because a Cribl AI call can take 60 s or more. This is above the 80 % guideline, on purpose. A tick checkpoints after every stage, so a stage that runs out of time resumes on the next tick.
+- Background batch rows run in a Backend Function declared with a 600 s timeout and 256 MB. Measured on two batches (10 and 40 OCSF pipelines, 137 invocations, 2026-11-10): p95 run time 160 s (27 % of the timeout), longest 239 s, peak memory 140 MB (55 %). Each run measures itself (`batch-run/metrics` in the app's KV, timings only); a stage that runs out of time is checkpointed and resumes on the next tick.
 - Publishing goldens to the shared pool only works when the app runs standalone.
 
 | Symptom | Fix |
@@ -156,7 +157,7 @@ Wikidata and the icon service receive only the company name or website you type,
 
 ## Release notes
 
-- **Next release:** reviewed vendor field lists come from the shared pool like the goldens (Home offers them; **Settings → Goldens → Vendor field lists**). Only lists checked against the vendor documentation are offered, and field names seen on your builds are never shared.
+- **1.0.335:** the background batch function may run 600 s (a heavy OCSF mapping needed more than 300 s), and it records its own run time and memory; measured p95 160 s and peak 140 MB on two test batches. *Check what we can demo* keeps **Continue** and the source list's **Done** on screen. Reviewed vendor field lists come from the shared pool like the goldens (Home offers them; **Settings → Goldens → Vendor field lists**). Only lists checked against the vendor documentation are offered, and field names seen on your builds are never shared.
 - **1.0.326:** Whiteboards & demos and the Architecture drawing ship in the public build (hidden until you turn them on); a new whiteboard opens without the People row, and names the prospect's estate *Solution first* and *Platform first*. Check Point and other CEF events exported as JSON are recognised offline. Certificate names (`CN=…,O=…`) are sanitised part by part. A test now checks that every permission has a caller, and the product tags now include Search and Lake. This README documents every external host, KV key and AI input.
 - **1.0.310:** every Cribl call is granted. A deploy commits only the app's own changes and never deletes a pack the Pack Generator did not make. Pipelines are limited to the generator's own functions. AI goes through Cribl AI Settings only.
 - **1.0.309:** the home banner no longer offers shared goldens this install already has.

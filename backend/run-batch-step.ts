@@ -441,7 +441,7 @@ async function runQualityStage(request: QualityStageRequest, deadlineMs = BACKEN
 
 function makeDeps(): BackgroundRunnerDeps {
   // One deadline for the whole invocation. A follow-up stage must not get a
-  // fresh 280s, or the platform's 300s kill lands in the middle of it.
+  // fresh deadline, or the platform's kill (config/backend.yml timeout) lands in the middle of it.
   const continueUntilMs = Date.now() + BACKEND_STAGE_DEADLINE_MS;
   const remaining = () => Math.max(1, continueUntilMs - Date.now());
   return {

@@ -38,9 +38,11 @@ export const IFRAME_SAFE_CALL_MS = 22_000;
  * and that took up to 38.6 s on an OCSF mapping prompt, with a whole mapping
  * (format research + mapping) at ~87 s (measured 2026-10-02). At 120 s neither
  * the 20 s per-request allowance nor the stage deadline could hold that.
+ * 600 s since build 1025: a heavy mapping (cisco_asa → OCSF network, no golden) needed more than
+ * the ~250 s a 300 s ceiling leaves a stage, and timed out twice in a measured batch (2026-11-10).
  * Must equal `timeout:` in config/backend.yml (a test enforces it).
  */
-export const BACKEND_FUNCTION_CEILING_MS = 300_000;
+export const BACKEND_FUNCTION_CEILING_MS = 600_000;
 
 /**
  * What must still be affordable after the last AI call returns: writing the row

@@ -6,10 +6,11 @@
 # bundles every endpoint declared here into `default/backend-build/<name>.js`
 # and ships a copy of this manifest with each `script:` rewritten to that path.
 #
-# `timeout: 300` (build 842; was 120). The platform max is 900 s since
+# `timeout: 600` (build 1025; 300 since build 842, 120 before). The platform max is 900 s since
 # CRIBL-44805 ("Limits and Quotas for Cribl Apps Platform": endpoint timeout
-# default 30 s, max 900 s). 300 s is what the Cribl AI Settings provider needs:
-# one OCSF mapping through its agent measured ~87 s (2026-10-02). It must equal
+# default 30 s, max 900 s). 300 s fitted one OCSF mapping through the Cribl AI Settings agent
+# (~87 s, 2026-10-02), but not a heavy source: cisco_asa → OCSF network timed out twice at
+# 234 s and 239 s in a measured batch (2026-11-10), so 600 s. It must equal
 # BACKEND_FUNCTION_CEILING_MS in src/ai-budget.ts, from which the stage deadline,
 # the per-request AI timeout and the lease TTL are all derived, so a stage
 # aborts and checkpoints rather than being killed mid-write.
@@ -30,5 +31,5 @@ endpoints:
       here, through the run's own non-secret provider/model snapshot (credentials
       stay in the platform's proxy injection). Direct AWS Bedrock is excluded:
       its SigV4 signing keys live in the browser, which this function has none of.
-    timeout: 300
+    timeout: 600
     memory: 256
