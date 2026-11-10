@@ -1,0 +1,15 @@
+var e=[{_time:1653670939,cribl_breaker:`Break on newlines`,_raw:`05/27/2022 10:32:19 PM
+LogName=Application
+SourceName=Microsoft-Windows-User Profile Service
+EventCode=1531
+EventType=4
+Type=Information
+ComputerName=myhost.acme.com
+User=NOT_TRANSLATED
+Sid=S-1-5-18
+SidType=0
+TaskCategory=The operation completed successfully.
+OpCode=Info
+RecordNumber=4219923
+Keywords=None
+Message=The User Profile Service has started successfully.`}];export{e as default};

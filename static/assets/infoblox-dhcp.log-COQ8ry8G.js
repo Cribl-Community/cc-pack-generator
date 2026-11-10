@@ -1,0 +1,1 @@
+var e=[{_raw:`Sep 4 09:23:44 10.34.6.28 dhcpd[20310]: DHCPACK on 70.1.20.250 to fc:5c:fc:5f:10:85 via eth1 relay 10.120.20.66 lease-duration 600`,_time:1630772624,cribl_breaker:`Break on newlines`}];export{e as default};
