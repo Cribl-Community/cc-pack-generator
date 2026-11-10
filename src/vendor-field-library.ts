@@ -107,6 +107,78 @@ export async function loadSeenFields(): Promise<SeenFields> {
   return parseSeen(safeGetItem(SEEN_LS_KEY));
 }
 
+// --- Reviewed entries imported from the shared pool -------------------------------------------
+//
+// The shared vendor-field pool (src/vendor-field-pool.ts, next to the shared goldens) carries only
+// REVIEWED entries: `closed`, with reviewedBy and reviewedAt. An import stores them per install,
+// and every reader sees the bundled library with them on top. `seen` is never part of it.
+
+export const POOL_KV_KEY = 'vendor-fields/pool';
+export const POOL_LS_KEY = 'vendor-fields-pool';
+
+const isText = (v: unknown, max = 500): v is string => typeof v === 'string' && v.trim().length > 0 && v.length <= max;
+
+/** Only a reviewed entry passes: closed, reviewer and date set, field names well formed. */
+export function sanitizeReviewedEntry(raw: unknown): VendorFieldEntry | null {
+  const e = raw as Partial<VendorFieldEntry> | null;
+  if (!e || e.status !== 'closed' || !isText(e.reviewedBy, 200) || !isText(e.reviewedAt, 40)) return null;
+  if (!Array.isArray(e.fields) || !e.fields.length) return null;
+  const fields = e.fields.filter((f): f is string => typeof f === 'string' && NAME_RE.test(f));
+  if (fields.length !== e.fields.length) return null;   // one malformed name rejects the entry, not just the name
+  const strs = (v: unknown) => (Array.isArray(v) ? v.filter((x): x is string => isText(x, 500)) : []);
+  return {
+    vendor: isText(e.vendor, 200) ? e.vendor : '', product: isText(e.product, 200) ? e.product : '',
+    ...(isText(e.version, 200) ? { version: e.version } : {}),
+    status: 'closed', reviewedBy: e.reviewedBy, reviewedAt: e.reviewedAt,
+    docs: strs(e.docs).filter(d => /^https:\/\//.test(d)), ...(Array.isArray(e.aliases) ? { aliases: strs(e.aliases) } : {}),
+    fields, ...(isText(e.notes, 2000) ? { notes: e.notes } : {}),
+  };
+}
+
+/** The reviewed entries in a stored or published document, keyed by normalized source type. */
+export function parseReviewedEntries(value: unknown): Record<string, VendorFieldEntry> {
+  let c: any = value;
+  for (let i = 0; i < 3 && typeof c === 'string'; i++) { try { c = JSON.parse(c); } catch { c = null; } }
+  c = c?.items?.[0]?.value ?? c;
+  if (typeof c === 'string') { try { c = JSON.parse(c); } catch { c = null; } }
+  const out: Record<string, VendorFieldEntry> = {};
+  for (const [k, v] of Object.entries(c && typeof c.entries === 'object' && c.entries ? c.entries : {})) {
+    const key = normalizeSourcetype(k), entry = sanitizeReviewedEntry(v);
+    if (key && entry) out[key] = entry;
+  }
+  return out;
+}
+
+/** The bundled library with imported reviewed entries on top (an imported entry replaces the bundled one). */
+export function mergeLibrary(base: VendorFieldLibrary, imported: Record<string, VendorFieldEntry>): VendorFieldLibrary {
+  if (!Object.keys(imported).length) return base;
+  return { ...base, entries: { ...base.entries, ...imported } };
+}
+
+export async function loadImportedEntries(): Promise<Record<string, VendorFieldEntry>> {
+  if (getRunMode() !== 'standalone') {
+    try {
+      const resp = await fetch(`${apiBase()}/kvstore/${POOL_KV_KEY}`);
+      if (resp.ok) return parseReviewedEntries(await resp.text());
+    } catch { /* fall back to the browser copy */ }
+  }
+  return parseReviewedEntries(safeGetItem(POOL_LS_KEY));
+}
+
+export async function saveImportedEntries(entries: Record<string, VendorFieldEntry>, now = new Date().toISOString()): Promise<void> {
+  const body = JSON.stringify({ importedAt: now, entries });
+  safeSetItem(POOL_LS_KEY, body);
+  if (getRunMode() !== 'standalone') {
+    const resp = await fetch(`${apiBase()}/kvstore/${POOL_KV_KEY}`, { method: 'PUT', headers: { 'Content-Type': 'text/plain' }, body });
+    if (!resp.ok) throw new Error(`Saving the vendor field lists failed (${resp.status}).`);
+  }
+}
+
+/** The library every reader uses: bundled + imported reviewed entries. */
+export async function loadLibrary(): Promise<VendorFieldLibrary> {
+  try { return mergeLibrary(BUNDLED_LIBRARY, await loadImportedEntries()); } catch { return BUNDLED_LIBRARY; }
+}
+
 /** Pure: `seen` with one build's field names added for `key`. */
 export function addSeen(seen: SeenFields, key: string, names: string[], now = new Date().toISOString()): SeenFields {
   const cur = { ...(seen.sourcetypes[key] || {}) };
@@ -166,9 +238,10 @@ export async function libraryCleanOptions(sourcetype: string, seenNow: string[] 
   confirmed: string[];
   known: string[];
 } | null> {
-  const hit = findEntry(BUNDLED_LIBRARY, sourcetype);
+  const lib = await loadLibrary();
+  const hit = findEntry(lib, sourcetype);
   const seen = await loadSeenFields();
-  const state = libraryState(BUNDLED_LIBRARY, addSeen(seen, hit?.key ?? '', seenNow), sourcetype);
+  const state = libraryState(lib, addSeen(seen, hit?.key ?? '', seenNow), sourcetype);
   if (!state) return null;
   return { key: state.key, status: state.status, complete: state.complete, confirmed: state.confirmed, known: state.known };
 }

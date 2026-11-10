@@ -4,7 +4,8 @@
  * (in the board's own handwriting face) with what the app will build. The rules live
  * in src/discovery-validation.ts; this file is the screen.
  */
-import { useEffect, useMemo, useReducer, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useMemo, useReducer, useRef, useState } from 'react';
+import { placePicker } from './picker-placement';
 import { extractIntake } from './discovery-intake';
 import { demoFormatOptions, destFormatChoices, type DestFormatGroup } from './discovery-match';
 import {
@@ -60,9 +61,21 @@ function SourcePicker({ row, onAdd, onClose }: { row: SourceRow; onAdd: (st: str
     return searchSupportedSourcetypes(q, 12).map(r => ({ name: r.name, description: r.description, sample: undefined as undefined | 'ready' | 'ai' }));
   }, [q, row.match.candidates]);
   const ref = useRef<HTMLInputElement>(null);
-  useEffect(() => { ref.current?.focus(); }, []);
+  const box = useRef<HTMLDivElement>(null);
+  // Fit the whole picker on screen, its Done included: below the row when there is room above the
+  // sticky bar, otherwise above the row, with a max-height for the space it has (picker-placement.ts).
+  // Re-measured when the results change or the frame resizes.
+  useLayoutEffect(() => {
+    const el = box.current, anchor = el?.offsetParent;
+    if (!el || !anchor) return;
+    const place = () => placePicker(el, anchor, document.querySelector('.wbv-dock'));
+    place();
+    window.addEventListener('resize', place);
+    return () => window.removeEventListener('resize', place);
+  }, [results.length]);
+  useEffect(() => { ref.current?.focus({ preventScroll: true }); }, []);
   return (
-    <div className="wbv-picker" role="dialog" aria-label={`Choose sources for ${row.label}`} onKeyDown={e => { if (e.key === 'Escape') onClose(); }}>
+    <div ref={box} className="wbv-picker" role="dialog" aria-label={`Choose sources for ${row.label}`} onKeyDown={e => { if (e.key === 'Escape') onClose(); }}>
       <input ref={ref} type="search" value={q} placeholder="Search every supported source" aria-label="Search sources" onChange={e => setQ(e.target.value)} />
       {results.length === 0 && <p className="wbv-empty">No supported source matches “{q}”.</p>}
       {results.map(r => {

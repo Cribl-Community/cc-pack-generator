@@ -40,7 +40,7 @@ No setting is needed to start: the golden path works straight away. Every settin
 | AI provider | Cribl **Settings → AI Settings** (outside the app) | Your org's provider. The installed app cannot use another one. Choose a fast model: every AI call must answer within the platform proxy's 30 s. |
 | Require sanitised samples before any AI call | **Samples → Sharing** | Off. Turn it on if raw events must never reach your AI provider. |
 | Golden thresholds, dropping null JSON fields | **Settings → Quality** | 80 per stage; off |
-| Shared golden pool | **Settings → Goldens** | The public pool (read-only) |
+| Shared golden pool and reviewed vendor field lists | **Settings → Goldens** | The public pool (read-only) |
 | Whiteboards & demos | **Settings → Menu** | Hidden |
 
 ## How to use
@@ -107,7 +107,8 @@ Wikidata and the icon service receive only the company name or website you type,
   | `wizard-draft/active` | The unfinished build, with its sample | The build finishes or you discard it |
   | `batch-run/active`, `batch-run/background` | Batch progress, with its samples | You dismiss the run |
   | `goldens/index`, `goldens/doc/*` | Saved and imported goldens | You delete them on the Goldens page |
-  | `sanitised-samples/overlay`, `datatype-parsers/overlay`, `vendor-fields/seen` | Sanitised samples, learned parsers and field names | You remove them under Samples |
+  | `sanitised-samples/overlay`, `datatype-parsers/overlay`, `vendor-fields/seen` | Sanitised samples, learned parsers and field names seen on your builds (never shared) | You remove them under Samples |
+  | `vendor-fields/pool` | Reviewed vendor field lists imported from the shared pool | A newer import replaces them |
   | `whiteboards/index`, `whiteboards/doc/*`, `whiteboards/arch/*`, `whiteboards/library` | Boards, architecture drawings, your own catalogue entries | You delete the board |
 
 - **Secrets:** the app holds no AI key. A token field in **Settings** writes to the encrypted KV store, which is write-only: it is never read back to a browser.
@@ -155,6 +156,7 @@ Wikidata and the icon service receive only the company name or website you type,
 
 ## Release notes
 
+- **Next release:** reviewed vendor field lists come from the shared pool like the goldens (Home offers them; **Settings → Goldens → Vendor field lists**). Only lists checked against the vendor documentation are offered, and field names seen on your builds are never shared.
 - **1.0.326:** Whiteboards & demos and the Architecture drawing ship in the public build (hidden until you turn them on); a new whiteboard opens without the People row, and names the prospect's estate *Solution first* and *Platform first*. Check Point and other CEF events exported as JSON are recognised offline. Certificate names (`CN=…,O=…`) are sanitised part by part. A test now checks that every permission has a caller, and the product tags now include Search and Lake. This README documents every external host, KV key and AI input.
 - **1.0.310:** every Cribl call is granted. A deploy commits only the app's own changes and never deletes a pack the Pack Generator did not make. Pipelines are limited to the generator's own functions. AI goes through Cribl AI Settings only.
 - **1.0.309:** the home banner no longer offers shared goldens this install already has.

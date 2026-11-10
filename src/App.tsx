@@ -40,6 +40,7 @@ import {
 import { buildCounts, foregroundRail, isSettled, needsYou, packCards, timedRows } from './batch-build-view';
 import { actionTally, CONFLICT_ACTIONS, packHint, packScore, scoreTone, type ConflictAction, type ConflictPipe } from './batch-confirm-view';
 import { goldenImportSummary, goldenUpdateNotice, leaveDecision } from './golden-availability';
+import { fetchVendorFieldOffers, importVendorFieldOffers, vendorPoolNotice, type VendorFieldOffer } from './vendor-field-pool';
 import { canConfirmInline, checkTiles, preflightBusyView, decisionQueue, explainCheckRow, scopedQueue, selectionAfterRemove, sampleActionLabel, sampleNote, stepperFor, type CheckRowFacts, type Rich } from './batch-check-view';
 import { forecastSamples, sampleForecastIsWeak, sampleForecastLabel, type StoreLookup } from './sample-forecast';
 import { estimateBatch, loadRowTimings, measuredTimeLeft, recordBatchTimings, rowBuildPath, saveRowTimings, formatDuration, formatRoughRange } from './batch-estimate';
@@ -1601,6 +1602,10 @@ function App() {
   const [credTestMsg, setCredTestMsg] = useState('');
   const [credBusy, setCredBusy] = useState(false);
   const [availableGoldens, setAvailableGoldens] = useState<AvailableGolden[]>([]);
+  // Reviewed vendor field lists in the shared pool that this install does not have yet (vendor-field-pool.ts).
+  const [vendorOffers, setVendorOffers] = useState<VendorFieldOffer[]>([]);
+  const [vendorImporting, setVendorImporting] = useState(false);
+  const [vendorImportMsg, setVendorImportMsg] = useState<{ tone: 'ok' | 'error'; text: string } | null>(null);
   const [goldenImporting, setGoldenImporting] = useState(false);
   const [goldenImportMsg, setGoldenImportMsg] = useState<null | { tone: 'ok' | 'warn' | 'error'; text: string }>(null);
   // Local goldens that are new to / beat the shared pool (reverse of import).
@@ -2662,6 +2667,22 @@ function App() {
   };
   // Idle-deferred: two network round trips feeding the import/publish badges.
   useEffect(() => { whenIdle(() => void refreshAvailableGoldens()); /* eslint-disable-next-line react-hooks/exhaustive-deps */ }, []);
+  // The shared vendor-field pool sits next to the goldens (same repository and branch): reviewed lists only.
+  const refreshVendorOffers = async () => {
+    const q = loadQualitySettings();
+    setVendorOffers((await fetchVendorFieldOffers(q.goldenRepo, q.goldenBranch)).offers);
+  };
+  useEffect(() => { whenIdle(() => void refreshVendorOffers()); /* eslint-disable-next-line react-hooks/exhaustive-deps */ }, []);
+  const importVendorOffers = async () => {
+    setVendorImporting(true);
+    try {
+      const n = await importVendorFieldOffers(vendorOffers);
+      setVendorImportMsg({ tone: 'ok', text: `Imported ${n} reviewed vendor field ${n === 1 ? 'list' : 'lists'}. Performance mode uses them from the next build.` });
+      await refreshVendorOffers();
+    } catch (e) {
+      setVendorImportMsg({ tone: 'error', text: `Import failed — ${e instanceof Error ? e.message : String(e)}` });
+    } finally { setVendorImporting(false); }
+  };
   // One import-all for Settings → Goldens and the home-screen notice.
   const importAllGoldens = async () => {
     setGoldenImporting(true);
@@ -8190,6 +8211,29 @@ function App() {
                 {goldenImportMsg && <div className={`ai-banner ${goldenImportMsg.tone === 'ok' ? 'ai-banner-ok' : 'ai-banner-error'} pg-golden-import-msg`} role={goldenImportMsg.tone === 'ok' ? 'status' : 'alert'}><span>{goldenImportMsg.text}</span><button onClick={() => setGoldenImportMsg(null)} aria-label="Dismiss">✕</button></div>}
           </div>
         )}
+              <h4 className="tp-sec">Vendor field lists</h4>
+              <p className="field-hint" style={{ marginTop: 0 }}>
+                Reviewed field lists per source type, from the same shared pool as the goldens. Only lists someone checked against the vendor documentation are offered. The field names your builds see stay on this install and are never shared.
+              </p>
+              {vendorOffers.length === 0
+                ? <p className="dt-empty">✓ Nothing new: every reviewed list in the pool is already here.</p>
+                : vendorOffers.map(o => (
+                  <div key={o.key} className="dt-section" style={{ marginBottom: 8 }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
+                      <code className="dt-chip dt-new">{o.key}</code>
+                      <span style={{ fontSize: 12, fontWeight: 600, color: o.status === 'update' ? '#d46b08' : '#389e0d' }}>
+                        {o.status === 'new' ? 'new' : o.status === 'reviewed' ? 'reviewed (ours is still open)' : `newer review (ours: ${o.localReviewedAt || 'n/a'})`}
+                      </span>
+                      <span className="field-hint" style={{ margin: 0 }}>{o.entry.fields.length} fields · reviewed {o.entry.reviewedAt} by {o.entry.reviewedBy}{o.entry.version ? ` · ${o.entry.version}` : ''}</span>
+                    </div>
+                  </div>
+                ))}
+              {vendorOffers.length > 0 && (
+                <div className="tp-actions">
+                  <button className="btn-primary" disabled={vendorImporting} onClick={() => void importVendorOffers()}>{vendorImporting ? 'Importing…' : `Import all (${vendorOffers.length})`}</button>
+                </div>
+              )}
+              {vendorImportMsg && <div className={`ai-banner ${vendorImportMsg.tone === 'ok' ? 'ai-banner-ok' : 'ai-banner-error'}`} role={vendorImportMsg.tone === 'ok' ? 'status' : 'alert'}><span>{vendorImportMsg.text}</span><button onClick={() => setVendorImportMsg(null)} aria-label="Dismiss">✕</button></div>}
       </>);
     } else {
       const t: SamplesTab = toolPage.tab;
@@ -8857,6 +8901,16 @@ function App() {
               </div>
             )}
             {goldenImportMsg && <div className={`ai-banner ${goldenImportMsg.tone === 'ok' ? 'ai-banner-ok' : 'ai-banner-error'} pg-golden-import-msg`} role={goldenImportMsg.tone === 'ok' ? 'status' : 'alert'}><span>{goldenImportMsg.text}</span><button onClick={() => setGoldenImportMsg(null)} aria-label="Dismiss">✕</button></div>}
+            {vendorPoolNotice(vendorOffers) && (
+              <div className="ai-banner ai-banner-ok pg-vendor-notice" role="status">
+                <span>⬇ <b>Reviewed vendor field lists to import.</b> {vendorPoolNotice(vendorOffers)} Performance mode can then remove more fallbacks safely.</span>
+                <button className="banner-primary" disabled={vendorImporting} onClick={() => void importVendorOffers()}>
+                  {vendorImporting ? 'Importing…' : `Import all (${vendorOffers.length})`}
+                </button>
+                <button onClick={() => openTool({ area: 'settings', tab: 'goldens' })}>Review</button>
+              </div>
+            )}
+            {vendorImportMsg && <div className={`ai-banner ${vendorImportMsg.tone === 'ok' ? 'ai-banner-ok' : 'ai-banner-error'}`} role={vendorImportMsg.tone === 'ok' ? 'status' : 'alert'}><span>{vendorImportMsg.text}</span><button onClick={() => setVendorImportMsg(null)} aria-label="Dismiss">✕</button></div>}
             <div className="mode-grid pg-mode-grid">
               {MENU_MODES.map(m => (
                 <button key={m.id} type="button" className="mode-card pg-mode-card" onClick={() => { if (m.id === 'batch') void chooseBatch(); else startMode(m.id); }}>

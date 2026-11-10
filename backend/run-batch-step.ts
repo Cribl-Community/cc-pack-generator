@@ -43,6 +43,7 @@ import {
   type StageRequest,
 } from './background-runner';
 import { backgroundBatchStore } from '../src/background-batch-store';
+import { recordMetric, startMeter, type InvocationMetric } from './invocation-metrics';
 import { backgroundScheduleId, type BackgroundAiSnapshot } from '../src/background-batch';
 import { aiSamples, backgroundBatchSchedulePayload, commitDeploy, criblQualityOperations, getApiBase, logPipelineScore } from '../src/api';
 import {
@@ -491,13 +492,29 @@ export const STATUS_CODES: Record<string, number> = {
 };
 
 export async function onRequest(request: Request): Promise<Response> {
+  // Run time and peak memory of every invocation (certification: p95 ≤ 80 % of the declared
+  // timeout and memory). See backend/invocation-metrics.ts; `npm run backend:metrics` reads them.
+  const startedAt = new Date().toISOString();
+  const meter = startMeter();
+  const peek = await request.clone().json().catch(() => null) as { action?: string } | null;
+  let response: Response;
   try {
-    return await handleRequest(request);
+    response = await handleRequest(request);
   } catch (error) {
     const message = sanitizeRunnerMessage(error instanceof Error ? error.message : error);
     console.error('[runBatchStep] unhandled error', message);
-    return json({ ok: false, error: message }, 500);
+    response = json({ ok: false, error: message }, 500);
   }
+  const outcome = await response.clone().json().catch(() => null) as { status?: string; ok?: boolean } | null;
+  const metric: InvocationMetric = {
+    at: startedAt,
+    action: peek?.action === 'kickoff' ? 'kickoff' : 'tick',
+    status: typeof outcome?.status === 'string' ? outcome.status : outcome?.ok ? 'ok' : `http-${response.status}`,
+    ...meter.stop(),
+  };
+  console.log('[runBatchStep] metrics', JSON.stringify(metric));
+  await recordMetric(metric);
+  return response;
 }
 
 async function handleRequest(request: Request): Promise<Response> {

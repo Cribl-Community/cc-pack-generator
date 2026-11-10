@@ -10,7 +10,7 @@ import { commitDeploy, getPackPipeline, patchPipeline, previewInlinePipeline, ty
 import type { PipelineFunction } from './pack-builder';
 import { compilePipelineForPerformance, comparePipelineOutputs, type PerfCompileResult } from './perf-compile';
 import { cleanPipeline, NATIVE_MARKER, type NativeCleanStats } from './perf-native';
-import { addSeen, BUNDLED_LIBRARY, findEntry, libraryState, loadSeenFields, type LibraryState } from './vendor-field-library';
+import { addSeen, BUNDLED_LIBRARY, findEntry, libraryState, loadLibrary, loadSeenFields, type LibraryState } from './vendor-field-library';
 
 export interface PerfModeTarget {
   workerGroup: string; packId: string; pipelineId: string; sampleName: string;
@@ -51,8 +51,10 @@ export async function checkPerformanceMode(t: PerfModeTarget): Promise<PerfModeC
     return { status: 'not-applicable', reason: 'This pipeline already runs in performance mode.' };
   }
   const base = { workerGroup: t.workerGroup, packId: t.packId, sampleName: t.sampleName };
+  // The bundled library with any reviewed entries imported from the shared pool on top.
+  const lib = t.useLibrary ? await loadLibrary() : BUNDLED_LIBRARY;
   const library = t.useLibrary
-    ? libraryState(BUNDLED_LIBRARY, addSeen(await loadSeenFields(), findEntry(BUNDLED_LIBRARY, t.sourcetype)?.key ?? '', t.seenNow || []), t.sourcetype)
+    ? libraryState(lib, addSeen(await loadSeenFields(), findEntry(lib, t.sourcetype)?.key ?? '', t.seenNow || []), t.sourcetype)
     : null;
   const native = cleanPipeline(functions, { complete: library?.complete ?? null, confirmed: library?.confirmed ?? null, known: library?.known ?? null });
   const compiled = t.allowCode ? compilePipelineForPerformance(native.functions) : null;
@@ -60,7 +62,7 @@ export async function checkPerformanceMode(t: PerfModeTarget): Promise<PerfModeC
   if (!changed) return { status: 'not-applicable', reason: 'No evals to merge and no fallback the vendor field library proves unused: the pipeline stays as generated.', library, neverSeen: native.stats.neverSeen };
   const removed = native.stats.prunedOperands
     ? ` ${native.stats.prunedOperands} fallbacks removed using the vendor field library entry ${library!.key}`
-      + ` (${library!.status === 'closed' ? `closed, reviewed ${library!.entry.reviewedAt || 'n/a'}` : `${library!.status}: around confirmed fields only`}, library v${BUNDLED_LIBRARY.version}): ${native.stats.prunedFields.join(', ').slice(0, 1500)}.`
+      + ` (${library!.status === 'closed' ? `closed, reviewed ${library!.entry.reviewedAt || 'n/a'}${library!.entry.reviewedBy ? ` by ${library!.entry.reviewedBy}` : ''}` : `${library!.status}: around confirmed fields only`}, library v${lib.version}): ${native.stats.prunedFields.join(', ').slice(0, 1500)}.`
     : ' No fallbacks removed.';
   const marker: PipelineFunction = {
     id: 'comment',
