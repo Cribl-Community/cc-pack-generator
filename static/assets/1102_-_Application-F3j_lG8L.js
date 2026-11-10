@@ -1,0 +1,12 @@
+var e=[{_time:1653641046,cribl_breaker:`Break on newlines`,_raw:`05/27/2022 02:14:06 PM
+LogName=Application
+SourceName=MetaFrameEvents
+EventCode=1102
+EventType=3
+Type=Warning
+ComputerName=myhost.acme.com
+TaskCategory=Printer Management
+OpCode=None
+RecordNumber=1168394
+Keywords=Classic
+Message=Client printer auto-creation failed.  The driver could not be installed. Possible reasons for the failure: The driver is not in the list of drivers on the server. The driver cannot be located. The driver has not been mapped. The driver is a V4 driver. Client name: (ABCDFRCOL0133) Printer: (DCQUALITY on abcddfrcol0003 (from ABCDFRCOL0133) in session 24) Printer driver: (HP UNIVERSAL PRINTING PCL 6 (V5.9.0))`}];export{e as default};
