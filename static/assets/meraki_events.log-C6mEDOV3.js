@@ -1,0 +1,1 @@
+var e=[{_raw:`<134>1 1749587373.145732434 hostxyz events Port 23 changed STP role from disabled to designated`,_time:1749587373,host:`10.8.1.21`,cribl_breaker:`ndjson`}];export{e as default};

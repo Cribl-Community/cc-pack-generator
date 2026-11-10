@@ -1,0 +1,1 @@
+var e=[{_raw:`Sep 4 10:53:30 10.34.6.32 cloud_api[5354]: [admin]: Login_Allowed - - to=Serial\\040Console apparently_via=Remote ip=10.120.20.66 auth=Local group=.admin-group`,_time:1630778010,cribl_breaker:`Break on newlines`}];export{e as default};
