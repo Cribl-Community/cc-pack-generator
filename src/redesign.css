@@ -318,7 +318,11 @@
 
 /* Mode cards (home + Add/Improve fork) */
 .pg-shell .mode-grid { gap: 14px; }
-.pg-mode-grid { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+/* The four mode tiles (Goatpedia library is the fourth): one row on a wide screen, two by
+   two when narrower, so a tile is never left alone on a row; one column on a phone. */
+.pg-mode-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+@media (max-width: 1199px) { .pg-mode-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px) { .pg-mode-grid { grid-template-columns: 1fr; } }
 .pg-shell .mode-card {
   border: 1.5px solid var(--pg-line);
   border-radius: var(--pg-radius-card);

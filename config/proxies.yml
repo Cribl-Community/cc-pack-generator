@@ -26,6 +26,18 @@ raw.githubusercontent.com:
       - "/kaus33k/okta-sample-system-logs/"
       - "/Grishmbasnet515/ai-cloud-log-threat-detector/"
 
+# The Goatpedia library (Goatpedia library screen, src/goatpedia.ts): library.json as GitHub
+# Pages publishes it from wvdlinde-cribl/goatpedia. Read-only public JSON, no credential.
+# Fetched fresh each time the screen opens, so it follows the repository.
+wvdlinde-cribl.github.io:
+  timeout: 60000
+  paths:
+    allowlist:
+      - "/goatpedia/"
+  headers:
+    allowlist:
+      - accept
+
 # Prospect logos for the discovery whiteboard (src/whiteboard/logo-search.ts). Wikidata names a
 # company's official logo (a Wikimedia Commons file) and website; Commons renders the file as a
 # small PNG; icon.horse serves a website's own icon. Public and anonymous: no credential is

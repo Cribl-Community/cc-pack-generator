@@ -7,6 +7,7 @@ Build and deploy a Cribl Stream Pack from a sample of your logs: parsing, field 
 - **Builds packs.** Pick a sourcetype and give it sample events, and choose one or more destination formats. The app deploys a pack with a pipeline per format. Known source and format pairs come from tested golden specs with no AI. Anything else is mapped by AI and checked against the same field model.
 - **Scores them on your worker group.** It runs your sample through the deployed pipeline, scores the output by value coverage, and repairs a pipeline that scores below the target.
 - **Batch mode.** Builds up to 200 pipelines from a CSV and keeps going after you close the tab.
+- **Goatpedia library.** A fourth home tile opens the public [Goatpedia](https://wvdlinde-cribl.github.io/goatpedia/) device library: how each device works, its logs and sample events, CVEs, detections, and optimizations with the exact Cribl Stream functions, checked in Cribl. **Build a pack** on any article starts the Build pack flow.
 - **Whiteboards & architecture** (optional, for Cribl and partner teams). A discovery board drawn with a prospect, an architecture drawing of the proposed Cribl deployment, and a demo environment built from them. See [Whiteboards and architecture](#whiteboards-and-architecture).
 
 **For** Stream administrators and pipeline builders onboarding a log source, and Cribl and partner engineers running discovery. **Runs on** Cribl.Cloud, or a self-managed Leader with App Platform enabled. It deploys to Stream worker groups (not Edge fleets) and optionally uses Cribl Search and Cribl Lake.
@@ -90,6 +91,7 @@ External hosts (`config/proxies.yml`), reached only through the Cribl platform p
 | Host | Paths | Why |
 |---|---|---|
 | `api.github.com`, `raw.githubusercontent.com` | The public golden and sample pools, and four public vendor-log repositories | Read shared goldens and sample sources |
+| `wvdlinde-cribl.github.io` | `/goatpedia/` | Read the public Goatpedia library (**Goatpedia library** screen only) |
 | `www.wikidata.org`, `commons.wikimedia.org` | `/w/api.php` | Look up a prospect's logo by name (whiteboard **Logo** only) |
 | `upload.wikimedia.org`, `thumb.wikimedia.org` | `/wikipedia/commons/…` | Download the chosen logo |
 | `icon.horse` | `/icon/` | A website's icon, when you type a website instead |
@@ -157,6 +159,7 @@ Wikidata and the icon service receive only the company name or website you type,
 
 ## Release notes
 
+- **1.0.336:** the **Goatpedia library** home tile: browse the public device library (paged, with vendor logos), read an article, and start **Build a pack** from it. Its Optimize tab shows the Cribl Stream pipeline for each optimization, with the result of the check in Cribl, *Copy pipeline JSON* and *Copy functions only*. Whiteboards get a full-screen button next to the language picker. The sanitiser's offer and the coverage check at Apply now use the same rules, so a sample you did not change no longer shows a value as "still showing through", and a ticked composite value also masks its parts. Two catalog samples are corrected (Subject Interface Package, Splunk Stream IP).
 - **1.0.335:** the background batch function may run 600 s (a heavy OCSF mapping needed more than 300 s), and it records its own run time and memory; measured p95 160 s and peak 140 MB on two test batches. *Check what we can demo* keeps **Continue** and the source list's **Done** on screen. Reviewed vendor field lists come from the shared pool like the goldens (Home offers them; **Settings → Goldens → Vendor field lists**). Only lists checked against the vendor documentation are offered, and field names seen on your builds are never shared.
 - **1.0.326:** Whiteboards & demos and the Architecture drawing ship in the public build (hidden until you turn them on); a new whiteboard opens without the People row, and names the prospect's estate *Solution first* and *Platform first*. Check Point and other CEF events exported as JSON are recognised offline. Certificate names (`CN=…,O=…`) are sanitised part by part. A test now checks that every permission has a caller, and the product tags now include Search and Lake. This README documents every external host, KV key and AI input.
 - **1.0.310:** every Cribl call is granted. A deploy commits only the app's own changes and never deletes a pack the Pack Generator did not make. Pipelines are limited to the generator's own functions. AI goes through Cribl AI Settings only.

@@ -55,14 +55,16 @@ export const USER_GUIDE_HTML = `<!DOCTYPE html>
     <div class="chap-h"><div class="chap-n">1</div><div class="chap-t">What Pack Generator does</div></div>
     <p>Pack Generator turns a sample of your log events into a working Cribl Stream pack. You give it events, it works out what the source is, and it builds a pipeline that parses the events and reshapes them for the destination you choose — OCSF, Splunk CIM, Elastic ECS, Microsoft Sentinel and more. It then tests the pipeline on your sample and gives it a score, so you can see how much of your data arrives.</p>
     <p>It uses proven, stored pipelines (<i>goldens</i>) and Cribl's own parsers first. AI is only used where nothing proven fits. AI drafts, you decide: inspect the pipeline steps, check the field mappings and test with real data before you use a pack in production.</p>
-    <h2><span class="d"></span>The three modes</h2>
+    <h2><span class="d"></span>The modes</h2>
     <p>Pick a mode on <span class="ui">⌂ Home</span> or under <b>Modes</b> in the left rail.</p>
     <table>
       <tr><th>Mode</th><th>Use it to</th></tr>
       <tr><td><b>Build pack flow</b></td><td>Build a new pack for one source and one or more destinations. When OCSF is a destination it can also build post-processing packs for other SIEMs in the same run.</td></tr>
       <tr><td><b>Modify existing pack</b></td><td>Add a pipeline to a pack you already deployed, or improve one of its pipelines.</td></tr>
       <tr><td><b>Batch create</b></td><td>Build many packs and pipelines from one CSV or JSON file, up to 200 pipelines.</td></tr>
+      <tr><td><b>Goatpedia library</b></td><td>Look up a log source before you build: how the device works, where it sits in the network, the logs it produces with sample events, known CVEs, detections and optimizations. <span class="ui">⇶ Build a pack</span>, on every tab of an article, starts <b>Build pack flow</b> at its first step.</td></tr>
     </table>
+    <p>The Goatpedia library is read from the public Goatpedia site each time you open it, so it always shows the latest articles. Inside Cribl it needs the app's access to <code>wvdlinde-cribl.github.io</code>; when that is blocked the screen says so and offers <b>Retry</b>.</p>
     <p>Under <b>Tools</b> in the rail you find <b>Samples</b>, <b>Settings</b> and <b>Documentation</b> (this guide and the technical reference). Cribl and partner teams also get <b>Whiteboards &amp; demos</b> there, for discovery boards and the <b>Demo environment</b> built from them (see <a href="#whiteboards">Whiteboards &amp; demos</a>). The chevron next to the logo folds the rail to icons and back; on a narrow window the rail shows icons only.</p>
   </section>
 
@@ -225,7 +227,7 @@ export const USER_GUIDE_HTML = `<!DOCTYPE html>
       <li>Arrows join one item to another: a source, a destination, a person, an agent. They always leave from the top or the bottom of an item, never its side. Drag from one item to another to draw one, at any time. Click an arrow to label it, colour it, bend it left or right by its middle handle, or delete it. Drag a box on an empty part of the board to select every arrow it touches, then press Delete (or <span class="ui">×</span>) to remove them all; <span class="ui">Undo</span> brings them back.</li>
       <li><span class="ui">Clean</span>, the default on a new board, draws one wide arrow from layer to layer: from the data sources to the data stores, or, with the pipeline shown, into the pipeline and out again with one arrow into each store family: point tools, Cribl and platforms. The flow reads at first glance; switch to <span class="ui">Auto</span> when you want it item by item.</li>
       <li>With <span class="ui">Auto</span>, the board draws the arrows of each story step for you. Before the pipeline, each source curves to its tools. Show the pipeline and the lines end in Stream and start again from Stream to every destination. Unified search and Unified AI do the same through Search and MCP. Hide the pipeline and the lines curve again. These arrows are like the ones you draw: delete the ones that don't fit, edit them, or draw more. A deleted one stays deleted on that board; draw it again to bring it back. <span class="ui">Manual</span> shows only the arrows you drew.</li>
-      <li>P on the board fills the screen with it, without its editing controls, fitted under the prospect's name. <span class="ui">Exit presentation</span> or Esc brings you back; the board's own Fit setting is left as it was.</li>
+      <li>The full-screen button (⛶) next to the language or P on the board fills the screen with it, without its editing controls, fitted under the prospect's name. <span class="ui">Exit presentation</span> or Esc brings you back; the board's own Fit setting is left as it was.</li>
       <li>The board is the same whiteboard SEs use on calls: its themes and keyboard shortcuts work while you are on the board.</li>
       <li>Every change is saved automatically. The header says <b>Saved</b>; if a save fails it says <b>Not saved</b> with the reason and a <span class="ui">Retry</span>, and the board keeps your changes while it tries again.</li>
       <li>Your own entries and your Configure choices are shared by all your boards. Each board keeps its own prospect, logo, items, selections and arrows.</li>

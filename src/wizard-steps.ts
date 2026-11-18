@@ -2,7 +2,7 @@
 // cards and the step pills all read from here, so a mode's pills can never
 // disagree with the screens it actually walks through. Pure data, no React.
 
-export type WizardMode = 'add-pipeline' | 'batch' | 'demo' | 'experiment' | 'post-process' | 'flow';
+export type WizardMode = 'add-pipeline' | 'batch' | 'demo' | 'experiment' | 'post-process' | 'flow' | 'goatpedia';
 
 export interface WizardModeInfo {
   id: WizardMode;
@@ -27,6 +27,10 @@ export const WIZARD_MODES: WizardModeInfo[] = [
     desc: 'Add a new pipeline or improve an existing pipeline in a pack already deployed in your environment.' },
   { id: 'batch', icon: '☰', name: 'Batch create', title: 'Batch create',
     desc: 'Upload a CSV or JSON file of up to 200 pipelines and build them in one go.' },
+  // A library to look a source up in, not a wizard: no steps. "Build a pack" on an
+  // article starts Build pack flow (src/GoatpediaPage.tsx).
+  { id: 'goatpedia', icon: '🐐', name: 'Goatpedia library', title: 'Start from the Goatpedia library',
+    desc: 'Look up a log source: how the device works, the logs it produces, samples, detections and savings. Then build its pack in one click.' },
   // Off the menu since build 951: customers build packs, and Cribl and partner teams start a
   // demo from Tools › Whiteboards & demos (a board's Deploy demo, or New demo by hand).
   { id: 'demo', icon: '◎', name: 'Demo environment', title: 'Create/Clean demo environment', hidden: true,
@@ -80,6 +84,8 @@ export function wizardSteps(mode: WizardMode, ctx: WizardStepContext): WizardSte
           ['demo-deploying', 'Build'], ['demo-done', 'Live']];
     case 'post-process':
       return [['select-group', 'Group'], ['name', 'Name'], ['pp-formats', 'Formats'], ['deploying', 'Deploy'], ['done', 'Done']];
+    case 'goatpedia':
+      return [];
   }
 }
 

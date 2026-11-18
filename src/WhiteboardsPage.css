@@ -146,6 +146,11 @@
 .wb-langpop { min-width: 150px; }
 .wb-langpop button { display: flex; align-items: baseline; gap: 10px; }
 .wb-langpop b { min-width: 22px; font-size: 12px; letter-spacing: .03em; }
+/* full screen: an icon-only round button beside the language pill */
+.wb-fsbtn { display: inline-grid; place-items: center; width: 30px; height: 30px; padding: 0; border: 1px solid var(--pg-line2); background: #fff; color: var(--pg-ink); border-radius: 999px; cursor: pointer; }
+.wb-fsbtn:hover:not(:disabled) { border-color: var(--pg-ink); }
+.wb-fsbtn:disabled { cursor: default; opacity: .6; }
+.wb-fsbtn:focus-visible { outline: none; box-shadow: var(--pg-ring); }
 .wb-fs { display: inline-flex; align-items: center; gap: 7px; }
 .wb-fs kbd { font: 600 10.5px/1 ui-monospace, 'SF Mono', Menlo, monospace; border: 1px solid var(--pg-line2); border-radius: 4px; padding: 2px 4px; color: var(--pg-muted); }
 /* full screen: the browser's (the element is :fullscreen) or, when the frame refuses it, covering the app */

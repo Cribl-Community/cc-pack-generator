@@ -235,6 +235,7 @@ import {
   type PackModeDraft, type SerializeWizardDraftInput, type WizardDraftDocument,
 } from './wizard-draft';
 import { useWizardHistoryGuard } from './wizard-history';
+import GoatpediaPage from './GoatpediaPage';
 import { EMPTY_FLOW_PP, flowBuildFormat, flowDestOptions, flowReductionToggles, flowSummary, ppEffectiveFormat, ppOutputLabel, ppOutputsToBuild, ppPackIdFor, type FlowPpState, type FlowPpOutput, flowBlockedReason, flowPackCheck, ppPackCheck, FLOW_ROUTE_FILTER, flowPackId, flowDefaultPackName, flowSourceLabel, ppPackNameFor, flowFormatInfo, flowBuildPercent, flowBuildCounts, type FlowLiveFormat, type FlowLivePp, type FlowBuildPhase, flowModelPick, flowCreep, flowRunningActivity, upstreamSampleEvents } from './flow-builder';
 import {
   DEMO_EVENTS_PER_SEC, DEMO_LAKE_OUTPUT, DEMO_MAX_FORMATS, DEMO_MAX_SOURCES, DEMO_OCSF_REPLAY_ID, demoCleanupSelection, demoNamespacesIn, demoDefaultCells, demoEventsPerSecond, demoMergeCells, demoNames, demoNsOfRoute, demoTargets,
@@ -686,8 +687,8 @@ void ValidationPanel;
 // 'flow' = "Build pack flow (including post-processing)": a copy of the
 // 'experiment' (Create new pack) wizard whose destination step is the bottom-up
 // flow canvas, and whose build also creates the post-processing packs.
-type PackMode = 'add-pipeline' | 'batch' | 'demo' | 'experiment' | 'post-process' | 'flow';
-type Step = 'mode' | 'select-group' | 'select-pack' | 'select-action' | 'select-pipeline' | 'optimize-goals' | 'optimize-sample' | 'optimize-running' | 'optimize-done' | 'name' | 'source' | 'destination' | 'ai-analysis' | 'options' | 'review' | 'deploying' | 'done' | 'batch-upload' | 'batch-preflight' | 'batch-running' | 'batch-done' | 'batch-bg-running' | 'demo-group' | 'demo-sources' | 'demo-destinations' | 'demo-routing' | 'demo-deploying' | 'demo-done' | 'demo-cleanup' | 'demo-cleanup-done' | 'experiment-setup' | 'experiment-running' | 'experiment-done' | 'pp-formats';
+type PackMode = 'add-pipeline' | 'batch' | 'demo' | 'experiment' | 'post-process' | 'flow' | 'goatpedia';
+type Step = 'mode' | 'select-group' | 'select-pack' | 'select-action' | 'select-pipeline' | 'optimize-goals' | 'optimize-sample' | 'optimize-running' | 'optimize-done' | 'name' | 'source' | 'destination' | 'ai-analysis' | 'options' | 'review' | 'deploying' | 'done' | 'batch-upload' | 'batch-preflight' | 'batch-running' | 'batch-done' | 'batch-bg-running' | 'demo-group' | 'demo-sources' | 'demo-destinations' | 'demo-routing' | 'demo-deploying' | 'demo-done' | 'demo-cleanup' | 'demo-cleanup-done' | 'experiment-setup' | 'experiment-running' | 'experiment-done' | 'pp-formats' | 'goatpedia';
 
 // One selected source in the demo builder.
 // DemoSource / DemoResult live in src/demo-deploy.ts with the deployer.
@@ -7730,7 +7731,8 @@ function App() {
   const currentStepLabel = wizardStepList.find(w => w[0] === step)?.[1] || '';
   // A background batch keeps running server-side, so leaving its status screen is safe.
   const railLocked = isBusyStep(step) && step !== 'batch-bg-running';
-  const RESULT_STEPS: Step[] = ['experiment-done', 'done', 'batch-done', 'demo-done', 'demo-cleanup-done', 'optimize-done', 'batch-bg-running'];
+  // Steps that are safe to leave without asking: nothing in progress would be lost.
+  const RESULT_STEPS: Step[] = ['experiment-done', 'done', 'batch-done', 'demo-done', 'demo-cleanup-done', 'optimize-done', 'batch-bg-running', 'goatpedia'];
   // Leaving a run asks in the app (leaveAsk), never window.confirm: the sandboxed
   // iframe can ignore it, and it then returns false — Home did nothing.
   const [leaveAsk, setLeaveAsk] = useState<null | (() => void)>(null);
@@ -7865,7 +7867,7 @@ function App() {
       setPackMode(m);
       if (m === 'add-pipeline') setAddImproveAction(null);
       if (m === 'batch') setBatchBackground(!!opts?.background);
-      setStep(m === 'batch' ? 'batch-upload' : m === 'demo' ? 'demo-group' : 'select-group');
+      setStep(m === 'batch' ? 'batch-upload' : m === 'demo' ? 'demo-group' : m === 'goatpedia' ? 'goatpedia' : 'select-group');
     });
   };
   // Batch create stops here when a run is still open, before any file or group
@@ -8923,6 +8925,11 @@ function App() {
             </div>
           </div>
         );
+
+      // Goatpedia library: browse and read; "Build a pack" starts Build pack flow
+      // at its first step, the same as the Build pack flow tile.
+      case 'goatpedia':
+        return <GoatpediaPage onBuildPack={() => startMode('flow')} />;
 
       case 'select-group': {
         const selectedGroupBlock = selectedGroup ? groupPickBlock({

@@ -272,6 +272,12 @@ function BoardEditor({ id, onBack, onToast, onGenerate, startIn }: { id: string;
             </span>
             <span className="wb-grow" />
             {!isArch && <LanguagePicker lang={lang} disabled={!ready} onPick={(l) => { setLang(l); connRef.current?.setLang(l); }} />}
+            {!isArch && (
+              <button type="button" className="wb-fsbtn" disabled={!ready} onClick={() => void enterFull()}
+                aria-label="Full screen" title="Full screen, without the editing controls (P). Esc comes back">
+                <FullScreenIcon />
+              </button>
+            )}
             {isArch
               ? <PopMenu label={exporting ? `Exporting ${exporting.toUpperCase()}…` : 'Export'} disabled={!!exporting} buttonClass="btn-secondary"
                 items={[
