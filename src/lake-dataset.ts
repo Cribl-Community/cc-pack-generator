@@ -13,7 +13,7 @@ export const DEMO_LAKE_RETENTION_DAYS = 30;
 export const LAKE_RETENTION_MIN_DAYS = 1;
 export const LAKE_RETENTION_MAX_DAYS = 3650;
 /** No prospect name: the description is visible to everyone in the org (spec R13). */
-export const DEMO_LAKE_DESCRIPTION = 'Demo dataset (Pack Generator)';
+export const DEMO_LAKE_DESCRIPTION = 'Demo dataset (360 Workbench)';
 
 /** `Acme Bank & Co` → `demo_acme_bank_co`. The SE sees and can edit it before deploy. */
 export function defaultLakeDatasetId(prospect: string): string {

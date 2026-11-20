@@ -230,7 +230,7 @@ export default function AiSettingsModal({ open, onClose, embedded, onSaved }: Pr
         <div className="modal-body">
           {locked ? (
             <p className="field-hint" style={{ margin: '0 0 12px', color: '#595959' }}>
-              Inside Cribl, Pack Generator uses this org's AI Settings. To change the provider or model, ask a Cribl admin to update Settings → AI Settings. These settings can only be changed when the app runs on localhost.
+              Inside Cribl, 360 Workbench uses this org's AI Settings. To change the provider or model, ask a Cribl admin to update Settings → AI Settings. These settings can only be changed when the app runs on localhost.
             </p>
           ) : getRunMode() === 'iframe' && (
             <p className="field-hint" style={{ margin: '0 0 12px', color: '#595959' }}>

@@ -29,7 +29,7 @@ export function disallowedFunctions(functions: unknown): string[] {
 export class DisallowedFunctionError extends Error {
   readonly functions: string[];
   constructor(functions: string[], where: string) {
-    super(`${where} uses ${functions.length === 1 ? 'a function' : 'functions'} the Pack Generator never builds (${functions.join(', ')}), so it is not deployed.`);
+    super(`${where} uses ${functions.length === 1 ? 'a function' : 'functions'} that 360 Workbench does not build (${functions.join(', ')}), so it is not deployed.`);
     this.name = 'DisallowedFunctionError';
     this.functions = functions;
   }

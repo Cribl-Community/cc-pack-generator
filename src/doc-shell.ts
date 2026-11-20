@@ -153,7 +153,7 @@ export function docScript(downloadName: string): string {
             return;
           } catch (err) { /* fall through to the hint */ }
         }
-        say('Open it from Pack Generator: left rail → Documentation.');
+        say('Open it from 360 Workbench: left rail → Documentation.');
         return;
       }
       var href = a.getAttribute('href') || '';

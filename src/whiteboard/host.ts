@@ -15,7 +15,7 @@
  *   app → board  wb:init {lib, meet, mode}     sent on every wb:ready (a reloaded frame re-asks); mode is 'board'
  *                wb:export {id, kind}          png | pdf, rendered by the board itself
  *                wb:fit {on}                   fit the board to its frame, not saved
- *                wb:present {on}               the app is presenting: the board hides its edit controls
+ *                wb:present {on}               the app is full screen: the board fits under its title, still editable
  *                wb:lang {lang}                the header's language picker (the board keeps it in the SE's library)
  *                wb:set-logo {logo}            the logo the SE picked, as an image data URL ('' removes it)
  *

@@ -1,4 +1,4 @@
-// The User guide: a self-contained HTML page that explains how to USE Pack Generator,
+// The User guide: a self-contained HTML page that explains how to USE 360 Workbench,
 // for customers and SEs. Plain language, real UI labels, no build numbers or internal
 // names — how the results are produced lives in the Technical reference
 // (src/scoring-doc.ts). Both share src/doc-shell.ts and open in a new tab from the
@@ -15,13 +15,13 @@ const tech = (text: string, hash = '') => docLink('technical', text, hash);
 
 export const USER_GUIDE_HTML = `<!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Pack Generator — User guide</title>
+<title>360 Workbench — User guide</title>
 <style>${DOC_STYLE}</style></head><body>
 <div class="page">
   <header>
     <div>
-      <h1>Pack Generator — <span>User guide</span></h1>
-      <div class="sub">How to build, improve and demo Cribl Stream packs with Pack Generator, step by step.</div>
+      <h1>360 Workbench — <span>User guide</span></h1>
+      <div class="sub">How to build, improve and demo Cribl Stream packs with 360 Workbench, step by step.</div>
     </div>
     <div class="tools" id="tools">
       <button type="button" id="dl">⤓ Download</button>
@@ -34,7 +34,7 @@ export const USER_GUIDE_HTML = `<!DOCTYPE html>
   <div class="toc" id="contents">
     <b>Contents</b>
     <ol>
-      <li><a href="#what">What Pack Generator does</a></li>
+      <li><a href="#what">What 360 Workbench does</a></li>
       <li><a href="#before">Before you start</a></li>
       <li><a href="#quick">Quick start</a></li>
       <li><a href="#build">Building a pack</a></li>
@@ -52,11 +52,11 @@ export const USER_GUIDE_HTML = `<!DOCTYPE html>
   </div>
 
   <section class="chap" id="what">
-    <div class="chap-h"><div class="chap-n">1</div><div class="chap-t">What Pack Generator does</div></div>
-    <p>Pack Generator turns a sample of your log events into a working Cribl Stream pack. You give it events, it works out what the source is, and it builds a pipeline that parses the events and reshapes them for the destination you choose — OCSF, Splunk CIM, Elastic ECS, Microsoft Sentinel and more. It then tests the pipeline on your sample and gives it a score, so you can see how much of your data arrives.</p>
+    <div class="chap-h"><div class="chap-n">1</div><div class="chap-t">What 360 Workbench does</div></div>
+    <p>360 Workbench turns a sample of your log events into a working Cribl Stream pack. You give it events, it works out what the source is, and it builds a pipeline that parses the events and reshapes them for the destination you choose — OCSF, Splunk CIM, Elastic ECS, Microsoft Sentinel and more. It then tests the pipeline on your sample and gives it a score, so you can see how much of your data arrives.</p>
     <p>It uses proven, stored pipelines (<i>goldens</i>) and Cribl's own parsers first. AI is only used where nothing proven fits. AI drafts, you decide: inspect the pipeline steps, check the field mappings and test with real data before you use a pack in production.</p>
     <h2><span class="d"></span>The modes</h2>
-    <p>Pick a mode on <span class="ui">⌂ Home</span> or under <b>Modes</b> in the left rail.</p>
+    <p>Pick a mode on <span class="ui">⌂ Home</span>. The left rail groups the same work under <b>I want to…</b> and starts folded to icons; the chevron next to the logo opens it. One group is open at a time: <b>Learn a source</b> (look a source up, or anonymize a sample), <b>Build packs</b> (one pack, or many from a file), <b>Improve a pack</b> (raise a score, or add a destination) and <b>Draw &amp; demo</b> (a whiteboard, an architecture, or a demo).</p>
     <table>
       <tr><th>Mode</th><th>Use it to</th></tr>
       <tr><td><b>Build pack flow</b></td><td>Build a new pack for one source and one or more destinations. When OCSF is a destination it can also build post-processing packs for other SIEMs in the same run.</td></tr>
@@ -65,7 +65,7 @@ export const USER_GUIDE_HTML = `<!DOCTYPE html>
       <tr><td><b>Goatpedia library</b></td><td>Look up a log source before you build: how the device works, where it sits in the network, the logs it produces with sample events, known CVEs, detections and optimizations. <span class="ui">⇶ Build a pack</span>, on every tab of an article, starts <b>Build pack flow</b> at its first step.</td></tr>
     </table>
     <p>The Goatpedia library is read from the public Goatpedia site each time you open it, so it always shows the latest articles. Inside Cribl it needs the app's access to <code>wvdlinde-cribl.github.io</code>; when that is blocked the screen says so and offers <b>Retry</b>.</p>
-    <p>Under <b>Tools</b> in the rail you find <b>Samples</b>, <b>Settings</b> and <b>Documentation</b> (this guide and the technical reference). Cribl and partner teams also get <b>Whiteboards &amp; demos</b> there, for discovery boards and the <b>Demo environment</b> built from them (see <a href="#whiteboards">Whiteboards &amp; demos</a>). The chevron next to the logo folds the rail to icons and back; on a narrow window the rail shows icons only.</p>
+    <p><b>Anonymize my sample</b> is under <b>Learn a source</b>; that is the <b>Samples</b> tool (sanitize, review, library, sharing). Under <b>Tools</b> you find <b>Settings</b> and <b>Documentation</b> (this guide and the technical reference). <b>Draw &amp; demo</b> is the <b>Whiteboards &amp; demos</b> area: discovery boards, the architecture drawn on them, and the <b>Demo environment</b> built from them (see <a href="#whiteboards">Whiteboards &amp; demos</a>). It is on unless Settings → Menu turns it off. On a narrow window the rail shows icons only.</p>
   </section>
 
   <section class="chap" id="before">
@@ -73,9 +73,9 @@ export const USER_GUIDE_HTML = `<!DOCTYPE html>
     <ol class="steps">
       <li><b>Set up an AI provider.</b> Open <span class="ui">Settings → AI</span>, choose a <b>Provider</b> and enter its key, then click <span class="ui">Test Connection</span>. Inside Cribl, <b>Cribl AI Settings (this org)</b> uses your organization's own AI configuration and needs no key. You can still build without AI — proven pipelines and Cribl parsers work without it — but sources nobody has seen before need it.</li>
       <li><b>Have a worker group ready.</b> Every mode starts by picking a Stream worker group (or Edge fleet). Demos, background batches and Cribl AI need a group with at least one connected worker.</li>
-      <li><b>Check your permissions.</b> Pack Generator creates packs, pipelines, routes and samples in the group, and commits and deploys. You need a Cribl role that allows that in the group you pick.</li>
+      <li><b>Check your permissions.</b> 360 Workbench creates packs, pipelines, routes and samples in the group, and commits and deploys. You need a Cribl role that allows that in the group you pick.</li>
     </ol>
-    <div class="tip"><b>Settings are shared.</b> Settings are stored in the app inside your Cribl organization, so everyone who opens Pack Generator sees the same provider, thresholds and options. API keys are stored encrypted, are never shown again after you save them, and are added to AI requests by Cribl. Enter a key once and it works for everyone.</div>
+    <div class="tip"><b>Settings are shared.</b> Settings are stored in the app inside your Cribl organization, so everyone who opens 360 Workbench sees the same provider, thresholds and options. API keys are stored encrypted, are never shown again after you save them, and are added to AI requests by Cribl. Enter a key once and it works for everyone.</div>
   </section>
 
   <section class="chap" id="quick">
@@ -87,14 +87,14 @@ export const USER_GUIDE_HTML = `<!DOCTYPE html>
       <li>Click <span class="ui">Build pack</span>. Each stage card fills in with a score as it builds. Then commit and deploy.</li>
       <li>Read the result on <b>Results</b>: it opens with whether the pack is live, <span class="ui">Open pack in Stream</span> and one row per destination with its score and <span class="ui">Open pipeline</span>. The <b>Extraction inspector</b> below shows what was extracted and mapped. Click <span class="ui">⬇ Download report</span> to keep it.</li>
     </ol>
-    <p>If you refresh or close the tab before the build finishes, Pack Generator saves your choices. On <b>Home</b>, use <span class="ui">Resume</span> on the draft banner to continue, or <span class="ui">Discard</span> to clear it. A build that was running when you left is not restarted automatically — review and click <span class="ui">Build pack</span> again. The browser <b>Back</b> button from the wizard returns to Home inside the app.</p>
+    <p>If you refresh or close the tab before the build finishes, 360 Workbench saves your choices. On <b>Home</b>, use <span class="ui">Resume</span> on the draft banner to continue, or <span class="ui">Discard</span> to clear it. A build that was running when you left is not restarted automatically — review and click <span class="ui">Build pack</span> again. The browser <b>Back</b> button from the wizard returns to Home inside the app.</p>
   </section>
 
   <section class="chap" id="build">
     <div class="chap-h"><div class="chap-n">4</div><div class="chap-t">Building a pack</div></div>
     <h2><span class="d"></span>Source and sourcetype</h2>
     <p>The page opens on <b>Use events from your feed</b>, because the pack is built and scored on the sample: your own events give the most accurate pack. Paste 20 to 200 lines into the box or drop a file on it; the buttons under it pick a sample saved in your worker group, capture live traffic or upload a file. The panel beside the box, <b>How close is the sample to your feed?</b>, and the meter in the bottom bar show what you are building on: your own events, a real vendor sample, or an AI-written one.</p>
-    <p>Below it, <b>Start from a catalog sample</b> has a search box over every source Pack Generator knows: a few popular ones shown before you type, the supported catalog and every source with real sample events. Each row says what you get: <b>real sample</b> (real vendor events), <b>golden parser</b> (a proven pipeline, no AI) or <b>AI sample</b>. When nothing matches, the <span class="ui">Generate an AI sample</span> row builds for the name you typed. The button at the bottom always says what it will do next: <span class="ui">Load sample and continue</span>, <span class="ui">Generate sample</span> or <span class="ui">Next: Flow</span>. Generated events are never moved past without you: review them, then click <span class="ui">Next: Flow</span>. <span class="ui">Restart</span> is in the top bar. A catalog sample shows a warning that it is not your feed: fields only your feed sends will not be parsed, and the score measures that sample. <span class="ui">Paste my own events instead</span> (or <span class="ui">Use my own events</span> in the bottom bar) takes you back to the paste box.</p>
+    <p>Below it, <b>Start from a catalog sample</b> has a search box over every source 360 Workbench knows: a few popular ones shown before you type, the supported catalog and every source with real sample events. Each row says what you get: <b>real sample</b> (real vendor events), <b>golden parser</b> (a proven pipeline, no AI) or <b>AI sample</b>. When nothing matches, the <span class="ui">Generate an AI sample</span> row builds for the name you typed. The button at the bottom always says what it will do next: <span class="ui">Load sample and continue</span>, <span class="ui">Generate sample</span> or <span class="ui">Next: Flow</span>. Generated events are never moved past without you: review them, then click <span class="ui">Next: Flow</span>. <span class="ui">Restart</span> is in the top bar. A catalog sample shows a warning that it is not your feed: fields only your feed sends will not be parsed, and the score measures that sample. <span class="ui">Paste my own events instead</span> (or <span class="ui">Use my own events</span> in the bottom bar) takes you back to the paste box.</p>
     <p>With your own events, give the events first; the sourcetype is detected from them. If the detection is wrong, type the correct name under <b>Not right? Enter the correct sourcetype</b> and click <span class="ui">Use this</span>. If nothing is detected, enter it under <b>Enter the sourcetype manually</b> and click <span class="ui">Confirm</span>. Close matches are suggested as you confirm; a ★ means a proven pipeline exists for it.</p>
     <p>Some sources ship in several formats (for example key=value, JSON or CEF). When you generate events instead of loading real ones, you are asked <b>Which format does your data use?</b> — pick the one your feed really emits.</p>
     <p><b>Allow Code functions</b> (under <b>Build options</b>) is off by default. Leave it off unless you are happy to deploy Code functions.</p>
@@ -122,7 +122,7 @@ export const USER_GUIDE_HTML = `<!DOCTYPE html>
   <section class="chap" id="samples">
     <div class="chap-h"><div class="chap-n">5</div><div class="chap-t">Samples</div></div>
     <h2><span class="d"></span>Where samples come from</h2>
-    <p>Pack Generator always prefers real logs: your own events first, then real reference logs and vendor test data, and AI-generated events only when nothing real exists. A short real sample is topped up with generated events that copy its exact shape; the extra events are only used for that build.</p>
+    <p>360 Workbench always prefers real logs: your own events first, then real reference logs and vendor test data, and AI-generated events only when nothing real exists. A short real sample is topped up with generated events that copy its exact shape; the extra events are only used for that build.</p>
     <h2><span class="d"></span>Adding your own</h2>
     <ul>
       <li><span class="ui">Upload file</span> — a .log, .txt, .json, .ndjson, .csv or .xml file, one event per line. It stays in your browser.</li>
@@ -134,9 +134,9 @@ export const USER_GUIDE_HTML = `<!DOCTYPE html>
     <p>Your own events are real data. The Sanitizer replaces hostnames, user names, IP addresses, credentials and other identities with consistent stand-ins, while keeping the events parseable. Everything happens in your browser: no upload and no AI call. Open it from <span class="ui">Samples → Sanitize</span> (<span class="ui">Sanitize a sample</span>) or with <span class="ui">Sanitize sample</span> on the source step.</p>
     <ol class="steps">
       <li><b>Events</b> — choose <span class="ui">Upload file</span>, <span class="ui">Group sample</span>, <span class="ui">Paste events</span> or <span class="ui">Live capture</span>. Live capture shows events as they arrive; click <span class="ui">Stop</span> when you have enough. Click <span class="ui">Identify source</span>.</li>
-      <li><b>Source</b> — confirm the sourcetype. The detected sourcetype is shown as in the Pack Generator: the name, its confidence and why it was chosen; type another name under <i>Not right?</i> to override it. The page says how many lines the source's parser reads. If no parser recognises it, values are only found by their shape and the save may be blocked.</li>
+      <li><b>Source</b> — confirm the sourcetype. The detected sourcetype is shown as in the 360 Workbench: the name, its confidence and why it was chosen; type another name under <i>Not right?</i> to override it. The page says how many lines the source's parser reads. If no parser recognises it, values are only found by their shape and the save may be blocked.</li>
       <li><b>Sanitize</b> — review the replacements (see below), then click <span class="ui">Apply and verify</span>.</li>
-      <li><b>Save</b> — choose where the sanitised copy goes: <span class="ui">Add to library</span> (reusable by Pack Generator), <span class="ui">Upload to worker group</span> (also usable by Stream itself), <span class="ui">⤓ Download .log</span>, or the shared pool where that is set up. You can also download a report and an evidence file. Inside Cribl, if the sample could only be saved in this browser, you see a warning instead of a tick — download it so it is not lost.</li>
+      <li><b>Save</b> — choose where the sanitised copy goes: <span class="ui">Add to library</span> (reusable by 360 Workbench), <span class="ui">Upload to worker group</span> (also usable by Stream itself), <span class="ui">⤓ Download .log</span>, or the shared pool where that is set up. You can also download a report and an evidence file. Inside Cribl, if the sample could only be saved in this browser, you see a warning instead of a tick — download it so it is not lost.</li>
     </ol>
     <h3>Reviewing replacements</h3>
     <ul>
@@ -216,7 +216,7 @@ export const USER_GUIDE_HTML = `<!DOCTYPE html>
     <p>It is for Cribl and partner teams, so it stays hidden until you turn it on: the <b>Whiteboards &amp; demos</b> switch in <span class="ui">Settings → Menu</span>. The switch applies at once.</p>
     <h2><span class="d"></span>Drawing and saving</h2>
     <ul>
-      <li><span class="ui">New whiteboard</span> asks how the board starts: <span class="ui">Start empty</span> (no sources and no destinations; each empty row shows <span class="ui">+ Add to …</span>) or <span class="ui">Start with the usual estate</span> (the common sources and destinations already drawn, to remove what the prospect doesn't run). An empty board has none of Cribl's own stores either (Cribl Lake, the Lakehouse Engine, Cribl Detect): add the ones the prospect needs with <span class="ui">+</span>. The usual estate starts with them. The <b>People</b> row (who uses the data: SOC analysts, threat hunters, SREs, developers) is hidden on a new board: <span class="ui">+ People</span> on the right of the board shows it, <span class="ui">− People</span> hides it again, and the board keeps your choice. Then type the prospect's name at the top and click <span class="ui">Logo</span> next to it: the app looks the company up by that name on Wikidata and shows its official logos, each with what Wikidata says the company is (so you pick the telecom Orange, not the town). Click one and it is on the board. Nothing is sent until you open that dialog. If the company is not there, type their website for its icon, or <span class="ui">Upload an image</span>.</li>
+      <li><span class="ui">New whiteboard</span> asks where the discovery starts. Both boards start empty (no sources and no destinations; each empty row shows <span class="ui">+ Add to …</span>): <span class="ui">Sources first</span> (bottom-up: the sources and destinations rows, for infrastructure and data teams) or <span class="ui">People first</span> (top-down: the people and destinations rows, for SOC, SRE and business owners). A new board has none of Cribl's own stores either (Cribl Lake, the Lakehouse Engine, Cribl Detect): add the ones the prospect needs with <span class="ui">+</span>. The <b>People</b> row (who uses the data: SOC analysts, threat hunters, SREs, developers) and the <b>Sources</b> row each have their own button on the right of the board: <span class="ui">+ People</span> / <span class="ui">+ Sources</span> shows the row, <span class="ui">− People</span> / <span class="ui">− Sources</span> hides it again, and the board keeps your choice. The Search layer shows <b>Cribl StreamAI</b>, the AI gateway, on its right with its logo. Then type the prospect's name at the top and click <span class="ui">Logo</span> next to it: the app looks the company up by that name on Wikidata and shows its official logos, each with what Wikidata says the company is (so you pick the telecom Orange, not the town). Click one and it is on the board. Nothing is sent until you open that dialog. If the company is not there, type their website for its icon, or <span class="ui">Upload an image</span>.</li>
       <li>To add something, press <span class="ui">+</span> on its row, pick a suggestion or type a new name, and press the <span class="ui">Add “…”</span> button under the fields (or Enter).</li>
       <li>Discovery happens on the board, while you draw. When the prospect says what hurts, press <span class="ui">Pain</span> (the search button) in the toolbox, or <span class="ui">/</span> on the board, and type their words: “our SIEM licence is too expensive” finds <b>Costly SIEM ingestion</b>. Each result shows what it becomes with Cribl, its positive business outcomes (each one <b>Operational</b>, <b>Financial</b> or <b>Strategic</b>). Enter or a click puts it on the board; on one that is already there it takes it off. Words that match nothing become your own situation, the way a new source is added from <span class="ui">+</span>: a form opens under the list for its positive business outcomes (<span class="ui">+ Outcome</span> adds another, each <b>Operational</b>, <b>Financial</b> or <b>Strategic</b>), the layer that solves it, where it lands and its kind. Press <span class="ui">Add “…”</span> (or Enter in any field); it goes on the board and stays in your library for every board.</li>
       <li>A picked situation is a red <b>pain</b> in the left lane, beside the part of the estate it hurts, with a red sticker there. When you show the Cribl layer that solves it (most often the pipeline; long investigations and short retention are solved by Search, AI agents stuck in silos by AI), the card turns green: its outcomes in bold and the pain struck through above them, so the prospect sees what was fixed. The × on a card takes it off the board. <span class="ui">$</span> in the toolbox hides the whole lane for a clearer drawing.</li>
@@ -227,7 +227,8 @@ export const USER_GUIDE_HTML = `<!DOCTYPE html>
       <li>Arrows join one item to another: a source, a destination, a person, an agent. They always leave from the top or the bottom of an item, never its side. Drag from one item to another to draw one, at any time. Click an arrow to label it, colour it, bend it left or right by its middle handle, or delete it. Drag a box on an empty part of the board to select every arrow it touches, then press Delete (or <span class="ui">×</span>) to remove them all; <span class="ui">Undo</span> brings them back.</li>
       <li><span class="ui">Clean</span>, the default on a new board, draws one wide arrow from layer to layer: from the data sources to the data stores, or, with the pipeline shown, into the pipeline and out again with one arrow into each store family: point tools, Cribl and platforms. The flow reads at first glance; switch to <span class="ui">Auto</span> when you want it item by item.</li>
       <li>With <span class="ui">Auto</span>, the board draws the arrows of each story step for you. Before the pipeline, each source curves to its tools. Show the pipeline and the lines end in Stream and start again from Stream to every destination. Unified search and Unified AI do the same through Search and MCP. Hide the pipeline and the lines curve again. These arrows are like the ones you draw: delete the ones that don't fit, edit them, or draw more. A deleted one stays deleted on that board; draw it again to bring it back. <span class="ui">Manual</span> shows only the arrows you drew.</li>
-      <li>The full-screen button (⛶) next to the language or P on the board fills the screen with it, without its editing controls, fitted under the prospect's name. <span class="ui">Exit presentation</span> or Esc brings you back; the board's own Fit setting is left as it was.</li>
+      <li>The full-screen button (⛶) next to the language or P on the board fills the screen with it, fitted under the prospect's name. The board stays editable there: add sources and challenges, draw and edit arrows, as on the page. <span class="ui">Exit full screen</span> or Esc brings you back; the board's own Fit setting is left as it was.</li>
+      <li><span class="ui">Configure and style</span> → <span class="ui">Advanced settings</span> → <span class="ui">Clean view</span> puts fewer words on the board: the story line under the title, the descriptions under the store columns and the captions under the consumers are hidden; every name stays. It is kept in your library, so it applies to all your boards, and exports look the same.</li>
       <li>The board is the same whiteboard SEs use on calls: its themes and keyboard shortcuts work while you are on the board.</li>
       <li>Every change is saved automatically. The header says <b>Saved</b>; if a save fails it says <b>Not saved</b> with the reason and a <span class="ui">Retry</span>, and the board keeps your changes while it tries again.</li>
       <li>Your own entries and your Configure choices are shared by all your boards. Each board keeps its own prospect, logo, items, selections and arrows.</li>
@@ -248,7 +249,7 @@ export const USER_GUIDE_HTML = `<!DOCTYPE html>
     <h2><span class="d"></span>Sharing with the prospect</h2>
     <p><span class="ui">Export</span> → <span class="ui">PNG image</span> or <span class="ui">PDF document</span> downloads the board as the prospect sees it, without the editing controls. It is in the board header; <span class="ui">Export PNG</span> and <span class="ui">Export PDF</span> are also under <span class="ui">More</span> on each row of the list, so you can export a board without opening it.</p>
     <h2><span class="d"></span>Deploying the demo</h2>
-    <p>When you know what to show, press <span class="ui">Deploy demo</span> on the board or on its row. Nothing is written to Cribl until the last step, <span class="ui">Deploy</span>. The check screen, <b>what we can demo</b>, puts each source and destination drawn on the board beside what Pack Generator will build:</p>
+    <p>When you know what to show, press <span class="ui">Deploy demo</span> on the board or on its row. Nothing is written to Cribl until the last step, <span class="ui">Deploy</span>. The check screen, <b>what we can demo</b>, puts each source and destination drawn on the board beside what 360 Workbench will build:</p>
     <ul>
       <li>Sources become sourcetypes, with <b>Sample ready</b> or <b>AI-generated at deploy</b> next to each. "Microsoft" or "Okta" offer the matching sources; <i>Syslog</i>, <i>Kafka</i> and other transports ask for the source behind them.</li>
       <li>Destinations become formats. Elastic becomes Elastic raw (the events as sent, for the Elastic integration to parse); ECS is one click away. A tool with no format of its own gets a suggestion you accept: Sekoia → Elastic ECS (Elasticsearch-compatible API), OpenSearch → Elastic JSON, QRadar → CEF. <span class="ui">Change format…</span> offers only that destination’s formats, as the pack flow does: Splunk shows CIM, JSON, Raw and CSV; Sentinel its native table or ASIM. A line nothing matched lists every format, by destination.</li>
@@ -270,12 +271,12 @@ export const USER_GUIDE_HTML = `<!DOCTYPE html>
     <p><span class="ui">Export</span> → <span class="ui">JSON file</span> in the board header (or <span class="ui">Export JSON</span> under <span class="ui">More</span> on its row) downloads the board. On the other org, open Whiteboards &amp; demos and use <span class="ui">Import saved whiteboard</span>. The board opens as it looked: the same sources, destinations, selections, arrows and logo, and your own entries on it are added to the library there. Its check against the app comes with it. Its demos do not, because they belong to this org's worker groups: generate the demo again there.</p>
     <h2><span class="d"></span>Boards you saved before</h2>
     <p><span class="ui">Import saved whiteboard</span> takes a <code>.html</code> file saved by the standalone whiteboard and makes it a board here. Your own entries from that file are added to your library; nothing you already have is changed. A library copied from <span class="ui">Configure</span> as JSON can be imported the same way.</p>
-    <p>Inside Cribl, boards are kept in the app's own storage on your Cribl organization. When you run Pack Generator locally, they are kept in your browser.</p>
+    <p>Inside Cribl, boards are kept in the app's own storage on your Cribl organization. When you run 360 Workbench locally, they are kept in your browser.</p>
   </section>
 
   <section class="chap" id="visualizer">
     <div class="chap-h"><div class="chap-n">11</div><div class="chap-t">Pipeline Visualizer</div></div>
-    <p><span class="ui">🔗 Open in Pipeline Visualizer</span> on a report draws the pipeline as a diagram. Pipeline Visualizer is a <b>separate Cribl app</b>, and Cribl does not let Pack Generator check whether it is installed. So clicking the link first shows a short note; click <span class="ui">Open Pipeline Visualizer</span> in it to go there. If the app is not installed, Cribl shows a “sufficient permissions” page — that means the app is missing, not that you lack rights. Ask your Cribl Solutions Engineer for the app, then install it under <b>App Platform → Add App</b>. The link only appears when Pack Generator runs inside Cribl.</p>
+    <p><span class="ui">🔗 Open in Pipeline Visualizer</span> on a report draws the pipeline as a diagram. Pipeline Visualizer is a <b>separate Cribl app</b>, and Cribl does not let 360 Workbench check whether it is installed. So clicking the link first shows a short note; click <span class="ui">Open Pipeline Visualizer</span> in it to go there. If the app is not installed, Cribl shows a “sufficient permissions” page — that means the app is missing, not that you lack rights. Ask your Cribl Solutions Engineer for the app, then install it under <b>App Platform → Add App</b>. The link only appears when 360 Workbench runs inside Cribl.</p>
   </section>
 
   <section class="chap" id="settings">
@@ -326,7 +327,7 @@ export const USER_GUIDE_HTML = `<!DOCTYPE html>
     </dl>
   </section>
 
-  <footer>Cribl Pack Generator · User guide. <b>Download</b> saves this page as one self-contained HTML file. For how results are produced, see the ${tech('Technical reference')}.</footer>
+  <footer>360 Workbench · User guide. <b>Download</b> saves this page as one self-contained HTML file. For how results are produced, see the ${tech('Technical reference')}.</footer>
 </div>
 <a class="totop" href="#contents">&uarr; Contents</a>
 <div class="toast" id="toast" role="status"></div>

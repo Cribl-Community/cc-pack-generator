@@ -662,7 +662,7 @@ async function callCriblAiWithRetry(system: string, userMsg: string): Promise<st
 
 async function callCriblAi(system: string, userMsg: string): Promise<string> {
   if (getRunMode() === 'standalone') {
-    throw new Error('Cribl AI Settings is only available when Pack Generator runs as an App inside Cribl.');
+    throw new Error('Cribl AI Settings is only available when 360 Workbench runs as an App inside Cribl.');
   }
   const sessionId = globalThis.crypto?.randomUUID?.() || `pack-generator-${Date.now()}-${Math.random().toString(36).slice(2)}`;
   const resp = await fetchWithTimeout(`${getApiBase()}${CRIBL_AI_AGENT_PATH}`, {
@@ -1120,7 +1120,7 @@ export async function analyzeBuildTrace(traceSummary: string, userComment: strin
 Answer in plain text (no JSON, no markdown headers) in 3 short sections:
 1. What the trace actually shows — cite specific stage scores, reasons, or events that support or contradict the reporter's comment.
 2. Likely root cause(s) of the quality problem, grounded ONLY in what appears in the trace (do not invent fields or events not mentioned).
-3. Concrete next steps in the Cribl Pack Generator app to improve it (e.g. re-run with a real/extended sample, add a static parser for this sourcetype, adjust the destination format mapping, check for a canonical field-name mismatch) — be specific to what the trace shows, not generic advice.
+3. Concrete next steps in 360 Workbench to improve it (e.g. re-run with a real/extended sample, add a static parser for this sourcetype, adjust the destination format mapping, check for a canonical field-name mismatch) — be specific to what the trace shows, not generic advice.
 
 Keep the whole answer under 300 words.`;
 

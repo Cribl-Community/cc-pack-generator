@@ -96,6 +96,9 @@
 .pg-nav.on { background: var(--pg-teal-tint); color: var(--pg-teal-text); }
 .pg-nav.on .ni { background: var(--pg-teal); color: #fff; }
 .pg-nav:disabled { opacity: 0.5; cursor: not-allowed; }
+.pg-caret { margin-left: auto; font-size: 10px; color: var(--pg-muted); }
+.pg-journey { position: relative; }
+.pg-sub { padding: 6px 10px 6px 46px; font-weight: 500; font-size: 12.5px; }
 .pg-nav .new, .pg-badge {
   margin-left: auto;
   font-size: 9px;
@@ -217,7 +220,8 @@
 .rail-collapsed .pg-rail { padding: 12px 8px; align-items: center; }
 .rail-collapsed .pg-brand { flex-direction: column; padding: 2px 0 10px; }
 .rail-collapsed .pg-collapse { margin-left: 0; }
-.rail-collapsed .pg-brand > div, .rail-collapsed .pg-rail-h, .rail-collapsed .pg-nav .new, .rail-collapsed .pg-tools .rt-label { display: none; }
+.rail-collapsed .pg-brand > div, .rail-collapsed .pg-rail-h, .rail-collapsed .pg-nav .new, .rail-collapsed .pg-tools .rt-label, .rail-collapsed .pg-sub, .rail-collapsed .pg-caret { display: none; }
+.rail-collapsed .pg-journey .ai-status-dot { position: absolute; top: 0; right: 0; transform: scale(0.8); }
 .rail-collapsed .pg-nav { font-size: 0; justify-content: center; padding: 6px; }
 .rail-collapsed .pg-nav .ni { font-size: 13px; }
 .rail-collapsed .pg-tools .settings-btn { justify-content: center; padding: 7px 6px; position: relative; }
@@ -231,7 +235,7 @@
 @media (max-width: 900px) {
   .app.pg-shell { --pg-rail: 64px; }
   .pg-rail { padding: 12px 8px; align-items: center; }
-  .pg-brand > div, .pg-rail-h, .pg-nav .new, .pg-tools .rt-label, .pg-collapse { display: none; }
+  .pg-brand > div, .pg-rail-h, .pg-nav .new, .pg-tools .rt-label, .pg-collapse, .pg-sub, .pg-caret { display: none; }
   .pg-brand { padding: 2px 0 12px; }
   .pg-nav { font-size: 0; justify-content: center; padding: 6px; }
   .pg-nav .ni { font-size: 13px; }
@@ -320,6 +324,27 @@
 .pg-shell .mode-grid { gap: 14px; }
 /* The four mode tiles (Goatpedia library is the fourth): one row on a wide screen, two by
    two when narrower, so a tile is never left alone on a row; one column on a phone. */
+.pg-home-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+@media (max-width: 800px) { .pg-home-grid { grid-template-columns: 1fr; } }
+.pg-home-card { position: relative; border: 1px solid var(--pg-line); border-radius: 14px; background: #fff; padding: 16px 16px 14px 18px; overflow: hidden; }
+.pg-home-card::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 5px; background: var(--c); }
+.pg-home-card.learn { --c: var(--pg-violet); --cs: var(--pg-violet-tint); }
+.pg-home-card.build { --c: var(--pg-teal); --cs: var(--pg-teal-tint); }
+.pg-home-card.improve { --c: var(--pg-amber-ink); --cs: var(--pg-amber-bg); }
+.pg-home-card.show { --c: var(--pg-red); --cs: #fff1f0; }
+.pg-home-tag { display: inline-block; font-size: 10px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; border-radius: 5px; padding: 2px 6px; }
+.pg-home-card.learn .pg-home-tag { color: var(--pg-violet); background: var(--pg-violet-tint); }
+.pg-home-card.build .pg-home-tag { color: var(--pg-teal-text); background: var(--pg-teal-tint2); }
+.pg-home-card.improve .pg-home-tag { color: var(--pg-amber-ink); background: var(--pg-amber-bg); }
+.pg-home-card.show .pg-home-tag { color: var(--pg-red); background: #fff1f0; }
+.pg-home-card h3 { margin: 8px 0 2px; font-size: 17px; }
+.pg-home-ex { margin: 0 0 10px; font-size: 12.5px; font-style: italic; color: var(--pg-body); }
+.pg-home-act { display: flex; align-items: center; gap: 8px; width: 100%; margin-top: 6px; padding: 8px 10px; border: 1px solid var(--pg-line); border-radius: 8px; background: #fff; font: inherit; text-align: left; cursor: pointer; }
+.pg-home-act:hover:not(:disabled) { border-color: var(--c); background: var(--cs); }
+.pg-home-act:disabled { opacity: 0.5; cursor: not-allowed; }
+.pg-home-act b { display: block; font-size: 13.5px; }
+.pg-home-act span span { display: block; font-size: 12px; color: var(--pg-body); font-weight: 400; }
+.pg-home-act .go { margin-left: auto; color: var(--c); font-weight: 700; }
 .pg-mode-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 @media (max-width: 1199px) { .pg-mode-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 640px) { .pg-mode-grid { grid-template-columns: 1fr; } }

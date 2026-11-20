@@ -53,6 +53,7 @@
       "revSearch": "Search",
       "revAi": "AI",
       "revPeople": "People",
+      "revSources": "Sources",
       "revShow": "Show {x}",
       "revHide": "Hide {x}",
       "clean": "Clean",
@@ -116,7 +117,11 @@
       "cfgOut0": "no outcome",
       "cfgOut1": "1 outcome",
       "cfgOutN": "{n} outcomes",
-      "cfgResetHelp": "Puts the built-in library back. Your own challenges, items and edits are deleted; theme, colours and language are kept."
+      "cfgResetHelp": "Puts the built-in library back. Your own challenges, items and edits are deleted; theme, colours and language are kept.",
+      "cfgAdvanced": "Advanced settings",
+      "cfgHelpAdv": "Choices kept in your library: they apply to every board.",
+      "cleanView": "Clean view",
+      "cleanViewHelp": "Fewer words on the board: hides the story line under the title, the descriptions under the store columns and the captions under the consumers. The names stay. Exports look the same."
     },
     "ui": {
       "criblK": "Cribl · platform first, solutions on top",
@@ -154,6 +159,7 @@
       "revSearch": "Recherche",
       "revAi": "IA",
       "revPeople": "Personnes",
+      "revSources": "Sources",
       "revShow": "Afficher {x}",
       "revHide": "Masquer {x}",
       "clean": "Épuré",
@@ -217,7 +223,11 @@
       "cfgOut0": "aucun résultat attendu",
       "cfgOut1": "1 résultat attendu",
       "cfgOutN": "{n} résultats attendus",
-      "cfgResetHelp": "Remet la bibliothèque par défaut. Vos défis, éléments et modifications sont supprimés ; le thème, les couleurs et la langue sont conservés."
+      "cfgResetHelp": "Remet la bibliothèque par défaut. Vos défis, éléments et modifications sont supprimés ; le thème, les couleurs et la langue sont conservés.",
+      "cfgAdvanced": "Paramètres avancés",
+      "cfgHelpAdv": "Des choix gardés dans votre bibliothèque : ils s’appliquent à tous vos tableaux.",
+      "cleanView": "Vue épurée",
+      "cleanViewHelp": "Moins de texte sur le schéma : masque le récit sous le titre, les descriptions sous les colonnes de stockage et les légendes sous les consommateurs. Les noms restent. Les exports sont identiques."
     },
     "ui": {
       "criblK": "Cribl · la plateforme d’abord, les solutions par-dessus",
@@ -234,6 +244,12 @@
       "criblP": "Gardez votre SIEM actuel, ou remplacez-le quand vous serez prêt. Collectez une fois en formats ouverts, et faites tourner les solutions de Cribl, d’un partenaire ou les vôtres sur les mêmes données.",
       "gPoint": "Solutions",
       "wayByoD": "Votre stockage, vos outils, vos modèles. Gardez les données en formats ouverts dans votre propre bucket et continuez d’alimenter le SIEM et les plateformes que vous utilisez déjà."
+    },
+    "items": {
+      "an-streamai": {
+        "l": "Passerelle IA",
+        "d": "Une passerelle gérée entre les applications IA et les modèles qui les servent. Elle envoie chaque requête au bon modèle, gère les clés client, montre l’usage et garde chaque requête IA comme télémétrie."
+      }
     }
   },
   "de": {
@@ -255,6 +271,7 @@
       "revSearch": "Suche",
       "revAi": "KI",
       "revPeople": "Personen",
+      "revSources": "Quellen",
       "revShow": "{x} anzeigen",
       "revHide": "{x} ausblenden",
       "clean": "Klar",
@@ -318,7 +335,11 @@
       "cfgOut0": "kein Ergebnis",
       "cfgOut1": "1 Ergebnis",
       "cfgOutN": "{n} Ergebnisse",
-      "cfgResetHelp": "Stellt die mitgelieferte Bibliothek wieder her. Eigene Herausforderungen, Elemente und Änderungen werden gelöscht; Design, Farben und Sprache bleiben."
+      "cfgResetHelp": "Stellt die mitgelieferte Bibliothek wieder her. Eigene Herausforderungen, Elemente und Änderungen werden gelöscht; Design, Farben und Sprache bleiben.",
+      "cfgAdvanced": "Erweiterte Einstellungen",
+      "cfgHelpAdv": "Einstellungen in Ihrer Bibliothek: Sie gelten für jedes Board.",
+      "cleanView": "Aufgeräumte Ansicht",
+      "cleanViewHelp": "Weniger Text auf dem Board: blendet die Story unter dem Titel, die Beschreibungen unter den Speicherspalten und die Untertitel unter den Konsumenten aus. Die Namen bleiben. Exporte sehen genauso aus."
     },
     "ui": {
       "title": "Cribl | Die KI-Plattform für Telemetrie",
@@ -821,6 +842,10 @@
       "an-mcp": {
         "d": "Die Schnittstelle, die Agenten tatsächlich nutzen. Stellt Suche, Kontext und Tools über ein einziges Protokoll bereit, sodass ein Agent die Datenschicht ohne individuelle Integration pro System erreicht."
       },
+      "an-streamai": {
+        "l": "KI-Gateway",
+        "d": "Ein verwaltetes Gateway zwischen KI-Anwendungen und den Modellen dahinter. Es leitet jede Anfrage an das passende Modell, verwaltet Client-Schlüssel, zeigt die Nutzung und bewahrt jede KI-Anfrage als Telemetrie auf."
+      },
       "an-dash": {
         "d": "Gemeinsame Ansichten über jeden Speicher, einmal erstellt und stets aktuell."
       },
@@ -933,6 +958,7 @@
       "revSearch": "Búsqueda",
       "revAi": "IA",
       "revPeople": "Personas",
+      "revSources": "Fuentes",
       "revShow": "Mostrar {x}",
       "revHide": "Ocultar {x}",
       "clean": "Limpio",
@@ -996,7 +1022,11 @@
       "cfgOut0": "sin resultado",
       "cfgOut1": "1 resultado",
       "cfgOutN": "{n} resultados",
-      "cfgResetHelp": "Restaura la biblioteca incluida. Se eliminan sus desafíos, elementos y cambios; se conservan el tema, los colores y el idioma."
+      "cfgResetHelp": "Restaura la biblioteca incluida. Se eliminan sus desafíos, elementos y cambios; se conservan el tema, los colores y el idioma.",
+      "cfgAdvanced": "Ajustes avanzados",
+      "cfgHelpAdv": "Opciones guardadas en tu biblioteca: se aplican a todos los diagramas.",
+      "cleanView": "Vista limpia",
+      "cleanViewHelp": "Menos texto en el diagrama: oculta el relato bajo el título, las descripciones bajo las columnas de almacenamiento y los subtítulos bajo los consumidores. Los nombres se quedan. Las exportaciones se ven igual."
     },
     "ui": {
       "title": "Cribl | La plataforma de IA para la telemetría",
@@ -1500,6 +1530,10 @@
       },
       "an-mcp": {
         "d": "La interfaz que realmente usan los agentes. Expone búsqueda, contexto y herramientas mediante un solo protocolo, para que un agente llegue a la capa de datos sin una integración a medida por sistema."
+      },
+      "an-streamai": {
+        "l": "Pasarela de IA",
+        "d": "Una pasarela gestionada entre las aplicaciones de IA y los modelos que las atienden. Envía cada solicitud al modelo adecuado, gestiona las claves de cliente, muestra el uso y conserva cada solicitud de IA como telemetría."
       },
       "an-dash": {
         "d": "Vistas compartidas sobre cualquier almacén, construidas una vez y siempre actualizadas."

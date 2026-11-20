@@ -281,7 +281,7 @@ export function buildSanitisedSampleReportHtml(doc: SanitisedSampleDoc): string 
 <body>
   <div class="toolbar"><button onclick="window.print()">Print / Save as PDF</button></div>
   <div class="sheet">
-    <p class="eyebrow">Cribl Pack Generator — Sanitised sample evidence</p>
+    <p class="eyebrow">360 Workbench — Sanitised sample evidence</p>
     <h1>${esc(doc.sourcetype)} <span class="badge ${verdictClass}">${esc(doc.verification.verdict)}</span></h1>
     <p class="note">This report contains only sanitised events and the sanitisation evidence. The original values and the original→alias map are never recorded.</p>
     <table><tbody>

@@ -1,4 +1,4 @@
-# Cribl Pack Generator
+# 360 Workbench
 
 Build and deploy a Cribl Stream Pack from a sample of your logs: parsing, field mapping to your SIEM's schema, a route and your sample, deployed to a worker group and scored on it.
 
@@ -28,9 +28,9 @@ It is a starting point: review the pipeline before production data goes through 
 
 ## Installation
 
-1. In Cribl, open **Apps → Cribl Marketplace** and install **Cribl Pack Generator**. Or use **Add App → Import from Git** with `https://github.com/Cribl-Community/cc-pack-generator` and ref `latest`, or **Import from File** with the `.tgz` from the [latest release](https://github.com/Cribl-Community/cc-pack-generator/releases/latest).
+1. In Cribl, open **Apps → Cribl Marketplace** and install **360 Workbench**. Or use **Add App → Import from Git** with `https://github.com/Cribl-Community/cc-pack-generator` and ref `latest`, or **Import from File** with the `.tgz` from the [latest release](https://github.com/Cribl-Community/cc-pack-generator/releases/latest).
 2. Review the permissions it asks for (below) and install.
-3. Grant access under **Apps → Cribl Pack Generator → Settings → Members & Teams**.
+3. Grant access under **Apps → 360 Workbench → Settings → Members & Teams**.
 
 ## Configuration
 
@@ -73,7 +73,7 @@ Cribl API permissions (`config/policies.yml`). The test `tests/policy-coverage-t
 
 | Permission | Methods | Why |
 |---|---|---|
-| Packs (`/m/*/packs`, `/m/*/packs/*`) | GET, POST, PUT, DELETE | Upload, install and replace the generated pack. DELETE only removes a pack whose author is the Pack Generator, after the new one is uploaded. |
+| Packs (`/m/*/packs`, `/m/*/packs/*`) | GET, POST, PUT, DELETE | Upload, install and replace the generated pack. DELETE only removes a pack whose author is 360 Workbench, after the new one is uploaded. |
 | Pack pipelines, routes, preview, samples, lookups (`/m/*/p/*/…`) | GET, POST, PATCH, DELETE | Write the pipelines, route, sample and lookups, run the sample through them, and remove a pack sample. |
 | Group samples and live capture (`/m/*/system/samples…`, `/m/*/system/capture`) | GET, POST, PATCH, DELETE | Read and save worker-group samples, and capture live events. |
 | Sources, destinations and group routes (`/m/*/system/inputs…`, `/m/*/system/outputs…`, `/m/*/routes…`) | GET, POST, PATCH, DELETE | Only the optional datagen source and demo environments, which create, toggle and remove their own. |
@@ -95,6 +95,7 @@ External hosts (`config/proxies.yml`), reached only through the Cribl platform p
 | `www.wikidata.org`, `commons.wikimedia.org` | `/w/api.php` | Look up a prospect's logo by name (whiteboard **Logo** only) |
 | `upload.wikimedia.org`, `thumb.wikimedia.org` | `/wikipedia/commons/…` | Download the chosen logo |
 | `icon.horse` | `/icon/` | A website's icon, when you type a website instead |
+| `marketplace.cribl.io` | `/api/v1/apps/dispensary` | Check whether a newer approved version of this app is in the Cribl Marketplace, to offer the upgrade |
 
 Wikidata and the icon service receive only the company name or website you type, and only when you open the logo dialog. There are no AI provider hosts: AI goes through Cribl.
 
@@ -162,7 +163,7 @@ Wikidata and the icon service receive only the company name or website you type,
 - **1.0.336:** the **Goatpedia library** home tile: browse the public device library (paged, with vendor logos), read an article, and start **Build a pack** from it. Its Optimize tab shows the Cribl Stream pipeline for each optimization, with the result of the check in Cribl, *Copy pipeline JSON* and *Copy functions only*. Whiteboards get a full-screen button next to the language picker. The sanitiser's offer and the coverage check at Apply now use the same rules, so a sample you did not change no longer shows a value as "still showing through", and a ticked composite value also masks its parts. Two catalog samples are corrected (Subject Interface Package, Splunk Stream IP).
 - **1.0.335:** the background batch function may run 600 s (a heavy OCSF mapping needed more than 300 s), and it records its own run time and memory; measured p95 160 s and peak 140 MB on two test batches. *Check what we can demo* keeps **Continue** and the source list's **Done** on screen. Reviewed vendor field lists come from the shared pool like the goldens (Home offers them; **Settings → Goldens → Vendor field lists**). Only lists checked against the vendor documentation are offered, and field names seen on your builds are never shared.
 - **1.0.326:** Whiteboards & demos and the Architecture drawing ship in the public build (hidden until you turn them on); a new whiteboard opens without the People row, and names the prospect's estate *Solution first* and *Platform first*. Check Point and other CEF events exported as JSON are recognised offline. Certificate names (`CN=…,O=…`) are sanitised part by part. A test now checks that every permission has a caller, and the product tags now include Search and Lake. This README documents every external host, KV key and AI input.
-- **1.0.310:** every Cribl call is granted. A deploy commits only the app's own changes and never deletes a pack the Pack Generator did not make. Pipelines are limited to the generator's own functions. AI goes through Cribl AI Settings only.
+- **1.0.310:** every Cribl call is granted. A deploy commits only the app's own changes and never deletes a pack 360 Workbench did not make. Pipelines are limited to the generator's own functions. AI goes through Cribl AI Settings only.
 - **1.0.309:** the home banner no longer offers shared goldens this install already has.
 - **1.0.307:** sanitising never renames a JSON field. A replacement that would change a sample's structure names the line and the replacement to untick.
 - **1.0.303:** first release in the Cribl app catalog.

@@ -2,6 +2,7 @@
 
 declare const BUILD_NUMBER: number;
 declare const APP_VERSION: string;
+declare const APP_ID: string;
 
 interface ImportMetaEnv {
   readonly VITE_GOLDEN_REPO?: string;

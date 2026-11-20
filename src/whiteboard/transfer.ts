@@ -78,7 +78,7 @@ export function readBoardFile(name: string, data: Record<string, any>):
   | { ok: true; meet: WhiteboardMeetV5; lib: WhiteboardLibV5; validation?: DiscoveryValidation; createdAt?: string; architecture?: ArchDoc }
   | { ok: false; message: string } {
   if (data.v !== BOARD_FILE_VERSION) {
-    return { ok: false, message: `${name} was exported by a newer Pack Generator (file version ${data.v}). Update this app, then import it again.` };
+    return { ok: false, message: `${name} was exported by a newer version of 360 Workbench (file version ${data.v}). Update this app, then import it again.` };
   }
   const board = data.board;
   if (!isObj(board) || !isObj(board.meet) || typeof board.meet.prospect !== 'string') {

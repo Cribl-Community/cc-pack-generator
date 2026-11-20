@@ -16,7 +16,10 @@
     "P12 stores",
     "P13 reveal",
     "P14 value",
-    "P15 configure"
+    "P15 configure",
+    "P16 full",
+    "P17 clean",
+    "P18 streamai"
   ],
   "libs": {
     "html-to-image": "1.11.13",
@@ -24,7 +27,8 @@
   },
   "content": {
     "discovery": "bd15c0b6de6840c6d8783a832c9442a57890d6e066d5952351dc7d5ea1cbf4e8",
-    "i18n": "6f0aaba490bf0862c9f67b4b1b396e57e295c0a331e2e438091e97f0b69acb90",
+    "i18n": "7a53e5906affd73fba4050d4731e5b60c6a4c164f587bf51f6a87c92c029ff99",
+    "marks": "f093596227945f90bda9e9ed07d3f65fd4b0877709f903d48c17cab89a66e240",
     "languages": [
       "en",
       "fr",
@@ -36,5 +40,5 @@
     "lib": "cribl-canvas:lib:v5",
     "meet": "cribl-canvas:meet:v5"
   },
-  "vendoredAt": "2026-11-10T11:29:23.977Z"
+  "vendoredAt": "2026-11-19T18:42:17.529Z"
 }

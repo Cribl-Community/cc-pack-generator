@@ -725,7 +725,7 @@ const autoRestartPlugin = () => ({
   },
 });
 
-const pkg = JSON.parse(readFileSync(join(process.cwd(), 'package.json'), 'utf-8')) as { buildNumber?: number; version?: string };
+const pkg = JSON.parse(readFileSync(join(process.cwd(), 'package.json'), 'utf-8')) as { name?: string; buildNumber?: number; version?: string };
 
 // Emit a tiny version.json next to the static bundle, and serve it in dev, so a
 // running tab can detect when the DEPLOYED build is newer than the one it
@@ -792,6 +792,9 @@ export default defineConfig({
   define: {
     BUILD_NUMBER: JSON.stringify(pkg.buildNumber || 0),
     APP_VERSION: JSON.stringify(pkg.version || '0.0.0'),
+    // The package name: `cc-pack-generator` in the catalog build, `pack-generator` here. Gates the
+    // Marketplace update check (src/marketplace-update.ts) to catalog installs.
+    APP_ID: JSON.stringify(pkg.name || ''),
   },
   server: {
     // Bind IPv4 + IPv6. Default Vite can end up on [::1] only, which breaks

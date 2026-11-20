@@ -134,6 +134,23 @@ export function blankMeet(lib: WhiteboardLibV5 | null | undefined, today = new D
   return meet;
 }
 
+/**
+ * How a new board starts (user, 2026-11-19). Both are empty (`blankMeet`); they differ in the rows shown.
+ * Bottom-up starts from the data: the sources and the destinations (the board's opening view).
+ * Top-down starts from who uses it: the people and the destinations, with the sources row hidden
+ * (board P13's tier, kept in the view); the + Sources on the right of the board brings it in.
+ */
+export type BoardStart = 'bottom-up' | 'top-down';
+export const BOARD_STARTS: readonly BoardStart[] = ['bottom-up', 'top-down'];
+/** The view a top-down board opens on: the keys the board's `applyState` reads (OPENING). */
+export const TOP_DOWN_VIEW: Readonly<Record<string, string>> = { people: 'on', sources: 'off' };
+
+export function startMeet(lib: WhiteboardLibV5 | null | undefined, start: BoardStart, today = new Date()): WhiteboardMeetV5 {
+  const meet = blankMeet(lib, today);
+  if (start === 'top-down') meet.view = { ...meet.view, ...TOP_DOWN_VIEW };
+  return meet;
+}
+
 /** A meeting the board accepts as new: the shape of its own `freshMeet()`. */
 export function emptyMeet(today = new Date()): WhiteboardMeetV5 {
   const d = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;

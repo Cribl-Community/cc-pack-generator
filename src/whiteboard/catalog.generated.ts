@@ -583,6 +583,14 @@ export const BOARD_DEFAULTS: Record<string, BoardCatalogItem[]> = {
       "desc": "The interface agents actually use. Exposes search, context, and tooling over one protocol so an agent can reach the data layer without a bespoke integration per system."
     },
     {
+      "id": "an-streamai",
+      "label": "AI gateway",
+      "cribl": "Cribl StreamAI",
+      "mark": "mk-streamai",
+      "always": true,
+      "desc": "One managed gateway between AI apps and the models behind them. Routes each request to the right model for the job, manages client keys, shows usage, and keeps every AI request as telemetry."
+    },
+    {
       "id": "an-dash",
       "sg": 1,
       "label": "Dashboards",
@@ -3725,6 +3733,10 @@ export const BOARD_FR_ITEMS: Record<string, BoardCatalogFr> = {
     "d": "Des alertes bruyantes et non enrichies noient celles qui comptent et épuisent l’équipe.",
     "b": "Trop d’alertes"
   },
+  "an-streamai": {
+    "l": "Passerelle IA",
+    "d": "Une passerelle gérée entre les applications IA et les modèles qui les servent. Elle envoie chaque requête au bon modèle, gère les clés client, montre l’usage et garde chaque requête IA comme télémétrie."
+  },
   "pa-backlog": {
     "l": "Backlog: données en attente d'intégration",
     "d": "Les sources demandées par les métiers attendent encore dans la file. Chacune est un projet, et le retard grandit plus vite que l’équipe ne les intègre.",
@@ -4199,6 +4211,10 @@ export const BOARD_ITEM_I18N: Record<string, Record<string, BoardCatalogFr>> = {
     },
     "an-mcp": {
       "d": "Die Schnittstelle, die Agenten tatsächlich nutzen. Stellt Suche, Kontext und Tools über ein einziges Protokoll bereit, sodass ein Agent die Datenschicht ohne individuelle Integration pro System erreicht."
+    },
+    "an-streamai": {
+      "l": "KI-Gateway",
+      "d": "Ein verwaltetes Gateway zwischen KI-Anwendungen und den Modellen dahinter. Es leitet jede Anfrage an das passende Modell, verwaltet Client-Schlüssel, zeigt die Nutzung und bewahrt jede KI-Anfrage als Telemetrie auf."
     },
     "an-dash": {
       "d": "Gemeinsame Ansichten über jeden Speicher, einmal erstellt und stets aktuell."
@@ -4858,6 +4874,10 @@ export const BOARD_ITEM_I18N: Record<string, Record<string, BoardCatalogFr>> = {
     },
     "an-mcp": {
       "d": "La interfaz que realmente usan los agentes. Expone búsqueda, contexto y herramientas mediante un solo protocolo, para que un agente llegue a la capa de datos sin una integración a medida por sistema."
+    },
+    "an-streamai": {
+      "l": "Pasarela de IA",
+      "d": "Una pasarela gestionada entre las aplicaciones de IA y los modelos que las atienden. Envía cada solicitud al modelo adecuado, gestiona las claves de cliente, muestra el uso y conserva cada solicitud de IA como telemetría."
     },
     "an-dash": {
       "d": "Vistas compartidas sobre cualquier almacén, construidas una vez y siempre actualizadas."

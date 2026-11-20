@@ -174,11 +174,12 @@
 .wb-start b { color: var(--pg-ink); font-size: 14.5px; font-weight: 600; }
 .wb-start span { line-height: 1.45; }
 .wb-start small { margin-top: auto; padding-top: 4px; color: var(--pg-teal-text); font-size: 12px; font-weight: 600; }
-/* the two thumbnails: three rails, empty (dashed +) or filled (chips) */
-.wb-start-art { display: grid; gap: 5px; width: 100%; height: 64px; padding: 8px; border-radius: 9px; background: var(--pg-page); margin-bottom: 4px; }
-.wb-start-art i { display: block; border-radius: 5px; }
-.wb-start-art.empty i { border: 1.5px dashed #b9c3cf; }
-.wb-start-art.usual i { background: repeating-linear-gradient(90deg, #fff 0 22%, transparent 22% 26%); border: 1px solid var(--pg-line2); }
+/* the two thumbnails: the people, destinations and sources rows, top to bottom. Both empty (dashed);
+   the row the discovery starts from is lit, a row the board starts without is faint */
+.wb-start-art { display: grid; grid-template-rows: repeat(3, 1fr); gap: 5px; width: 100%; height: 76px; padding: 8px; border-radius: 9px; background: var(--pg-page); margin-bottom: 4px; line-height: 1; }
+.wb-start-art i { display: flex; align-items: center; justify-content: center; border-radius: 5px; border: 1.5px dashed #b9c3cf; font-style: normal; font-size: 10px; font-weight: 600; letter-spacing: .02em; color: #7a8796; }
+.wb-start-art i.from { border-color: var(--pg-teal); background: var(--pg-teal-tint); color: var(--pg-teal-text); }
+.wb-start-art i.off { border-color: transparent; background: repeating-linear-gradient(90deg, #e3e8ee 0 6px, transparent 6px 10px) center / 100% 1.5px no-repeat; }
 @media (max-width: 640px) { .wb-starts { grid-template-columns: 1fr; } }
 
 .wb-toast { position: fixed; left: 50%; bottom: 22px; transform: translateX(-50%); z-index: 80; display: flex; align-items: center; gap: 14px; background: var(--pg-ink); color: #fff; padding: 10px 12px 10px 16px; border-radius: 10px; font-size: 13px; box-shadow: 0 14px 36px -16px rgba(26, 26, 46, .5); max-width: min(720px, calc(100vw - 40px)); }

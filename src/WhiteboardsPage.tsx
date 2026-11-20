@@ -19,7 +19,7 @@ import type { BoardSketch, WhiteboardDoc, WhiteboardIndexEntry, WhiteboardLibV5,
 import {
   BOARD_SORTS, createdAtOf, createdLabel, discoveryLabel, displayName, editedLabel, filterBoards, initials, sketchOf, summaryLabel, thumbColumns, tileColour, type BoardSort,
 } from './whiteboard/list-view';
-import { blankMeet, emptyMeet, liveItems, DESTINATION_GROUPS } from './whiteboard/board-model';
+import { startMeet, type BoardStart } from './whiteboard/board-model';
 import { BOARD_LANGUAGES } from './whiteboard/catalog.generated';
 import DiscoveryValidate from './DiscoveryValidate';
 import type { DemoSeed } from './discovery-demo-seed';
@@ -34,7 +34,7 @@ import './WhiteboardsPage.css';
 
 const UNDO_MS = 8000;
 
-/** Download one board as JSON, to import it in Pack Generator on another Cribl org. Returns the file name. */
+/** Download one board as JSON, to import it in 360 Workbench on another Cribl org. Returns the file name. */
 function downloadBoardJson(doc: WhiteboardDoc, lib: WhiteboardLibV5 | null, arch: ArchDoc | null): string {
   const name = `${exportFileBase(doc.meet.prospect || '')}.json`;
   downloadBlob(name, new Blob([JSON.stringify(boardFile(doc, lib, new Date(), arch), null, 2)], { type: 'application/json' }));
@@ -44,11 +44,10 @@ function downloadBoardJson(doc: WhiteboardDoc, lib: WhiteboardLibV5 | null, arch
 // Remembered while the app is open (never stored): the list order and how the last board started.
 // Revealed names are deliberately NOT remembered — the list opens with names hidden every time.
 let rememberedSort: BoardSort = 'updated';
-let rememberedStart: BoardStart = 'empty';
+let rememberedStart: BoardStart = 'bottom-up';
 // Whiteboard (the drawing, discovery included) or Architecture: boards open on the last one used.
 type EditorView = 'board' | 'arch';
 let rememberedMode: EditorView = 'board';
-type BoardStart = 'empty' | 'usual';
 
 function SaveIndicator({ status, onRetry }: { status: SaveStatus | null; onRetry: () => void }) {
   if (!status) return null;
@@ -183,8 +182,8 @@ function BoardEditor({ id, onBack, onToast, onGenerate, startIn }: { id: string;
     if (m === 'board' && fromArch) requestAnimationFrame(() => { try { frameRef.current?.contentWindow?.dispatchEvent(new Event('resize')); } catch { /* not reachable */ } });
   }, []);
 
-  // Present: the browser's full screen when the frame allows it, else the editor covers the app's
-  // pane. Either way the board hides its edit controls and fits under its title (wb:present), and
+  // Full screen: the browser's when the frame allows it, else the editor covers the app's pane.
+  // Either way the board fits under its title and stays editable (wb:present; the board's P16), and
   // nothing of that is saved as the SE's view.
   const fullRef = useRef(false);
   const leaveFull = useCallback(() => {
@@ -261,7 +260,7 @@ function BoardEditor({ id, onBack, onToast, onGenerate, startIn }: { id: string;
         <span className="wb-grow" />
         {full ? (
           <button type="button" className="btn-secondary wb-fs" onClick={leaveFull}>
-            <FullScreenIcon exit /> Exit presentation <kbd>Esc</kbd>
+            <FullScreenIcon exit /> Exit full screen <kbd>Esc</kbd>
           </button>
         ) : (
           <>
@@ -274,7 +273,7 @@ function BoardEditor({ id, onBack, onToast, onGenerate, startIn }: { id: string;
             {!isArch && <LanguagePicker lang={lang} disabled={!ready} onPick={(l) => { setLang(l); connRef.current?.setLang(l); }} />}
             {!isArch && (
               <button type="button" className="wb-fsbtn" disabled={!ready} onClick={() => void enterFull()}
-                aria-label="Full screen" title="Full screen, without the editing controls (P). Esc comes back">
+                aria-label="Full screen" title="Full screen (P): the board stays editable. Esc comes back">
                 <FullScreenIcon />
               </button>
             )}
@@ -438,14 +437,6 @@ function RowMenu({ name, onExport, onExportJson, onDuplicate, onDelete }: {
   ]} />;
 }
 
-/** Labels of what a board would start with, from the SE's own library (the board's defaults merged in). */
-function usualEstate(lib: WhiteboardLibV5 | null) {
-  const meet = emptyMeet();
-  const sources = liveItems(lib, meet, 'sources').map(i => i.label || '').filter(Boolean);
-  const stores = DESTINATION_GROUPS.flatMap(g => liveItems(lib, meet, g)).filter(i => !i.isCribl).map(i => i.label || '').filter(Boolean);
-  return { sources, stores };
-}
-
 /**
  * The prospect's logo, found by name (Wikidata's official logo, else the website's icon), picked in
  * one click. The search runs when the dialog opens with a name and on Search; nothing else is sent.
@@ -554,18 +545,29 @@ function LogoDialog({ prospect, hasLogo, lang, onPick, onClose }: {
   );
 }
 
-/** How a new board starts: with nothing of the prospect's estate, or with the usual one. */
-function NewBoardDialog({ lib, onPick, onClose }: { lib: WhiteboardLibV5 | null | undefined; onPick: (start: BoardStart) => void; onClose: () => void }) {
+/** The rows of a start's picture, top to bottom: the people, the destinations, the sources. The row the
+ *  discovery starts from is lit; a row the board starts without is drawn faint. */
+function StartArt({ start }: { start: BoardStart }) {
+  const rows: Array<{ label: string; state: 'from' | 'on' | 'off' }> = start === 'top-down'
+    ? [{ label: 'People', state: 'from' }, { label: 'Destinations', state: 'on' }, { label: 'Sources', state: 'off' }]
+    : [{ label: 'People', state: 'off' }, { label: 'Destinations', state: 'on' }, { label: 'Sources', state: 'from' }];
+  return (
+    <span className={`wb-start-art ${start}`} aria-hidden="true">
+      {rows.map(r => <i key={r.label} className={r.state}>{r.state === 'off' ? null : r.label}</i>)}
+    </span>
+  );
+}
+
+/** How a new board starts: both empty, from the sources (bottom-up) or from the people (top-down). */
+function NewBoardDialog({ onPick, onClose }: { onPick: (start: BoardStart) => void; onClose: () => void }) {
   const firstRef = useRef<HTMLButtonElement>(null);
   const lastRef = useRef<HTMLButtonElement>(null);
   useEffect(() => {
-    (rememberedStart === 'usual' ? lastRef : firstRef).current?.focus();
+    (rememberedStart === 'top-down' ? lastRef : firstRef).current?.focus();
     const esc = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose(); };
     document.addEventListener('keydown', esc);
     return () => document.removeEventListener('keydown', esc);
   }, [onClose]);
-  const estate = lib === undefined ? null : usualEstate(lib);
-  const sample = (xs: string[]) => xs.length > 4 ? `${xs.slice(0, 3).join(', ')} and ${xs.length - 3} more` : xs.join(', ');
   return (
     <div className="wb-modal-back" onMouseDown={(e) => { if (e.target === e.currentTarget) onClose(); }}>
       <div className="wb-modal" role="dialog" aria-modal="true" aria-labelledby="wb-new-title">
@@ -573,23 +575,19 @@ function NewBoardDialog({ lib, onPick, onClose }: { lib: WhiteboardLibV5 | null 
           <h3 id="wb-new-title">New whiteboard</h3>
           <button type="button" className="wb-x" aria-label="Close" onClick={onClose}>×</button>
         </div>
-        <p className="wb-modal-sub">How should the board start? You can add and remove anything on it later.</p>
+        <p className="wb-modal-sub">Where should the discovery start? Both boards start empty: draw what the prospect tells you with the + on each row.</p>
         <div className="wb-starts">
-          <button type="button" ref={firstRef} className="wb-start" onClick={() => onPick('empty')}>
-            <span className="wb-start-art empty" aria-hidden="true"><i /><i /><i /></span>
-            <b>Start empty</b>
-            <span>No sources and no destinations. Draw only what the prospect tells you, with the + on each row.</span>
-            <small>Best for a first discovery call</small>
+          <button type="button" ref={firstRef} className="wb-start" onClick={() => onPick('bottom-up')}>
+            <StartArt start="bottom-up" />
+            <b>Sources first</b>
+            <span>Start from the data: the sources and the destinations are on the board. Show the people later with + People.</span>
+            <small>Bottom-up · for infrastructure and data teams</small>
           </button>
-          <button type="button" ref={lastRef} className="wb-start" onClick={() => onPick('usual')}>
-            <span className="wb-start-art usual" aria-hidden="true"><i /><i /><i /></span>
-            <b>Start with the usual estate</b>
-            <span>
-              {estate
-                ? <>{estate.sources.length} sources and {estate.stores.length} destinations already on the board{estate.sources.length ? <> ({sample(estate.sources)})</> : null}. Remove what they don't run.</>
-                : <>Common sources and destinations already on the board. Remove what they don't run.</>}
-            </span>
-            <small>Best when you already know the estate</small>
+          <button type="button" ref={lastRef} className="wb-start" onClick={() => onPick('top-down')}>
+            <StartArt start="top-down" />
+            <b>People first</b>
+            <span>Start from who uses the data: the people and the destinations are on the board. Show the sources later with + Sources.</span>
+            <small>Top-down · for SOC, SRE and business owners</small>
           </button>
         </div>
       </div>
@@ -635,8 +633,7 @@ export default function WhiteboardsPage({ onGenerateDemo, onNewDemo, initialBoar
   // Prospect names start hidden every time the list opens: a screen shared on a call shows no customers.
   const [reveal, setReveal] = useState(false);
   const shownName = (name: string) => displayName(name, reveal);
-  // null = closed; lib undefined = still loading, null = the SE has no library yet (board defaults)
-  const [newDialog, setNewDialog] = useState<{ lib: WhiteboardLibV5 | null | undefined } | null>(null);
+  const [newDialog, setNewDialog] = useState(false);
   const [view, setView] = useState<{ id: string; mode: 'board' | 'validate'; startIn?: EditorView } | null>(initialBoardId ? { id: initialBoardId, mode: 'board' } : null);
   const openId = view?.id ?? null;
   const setOpenId = (id: string | null, startIn?: EditorView) => setView(id ? { id, mode: 'board', ...(startIn ? { startIn } : {}) } : null);
@@ -675,16 +672,13 @@ export default function WhiteboardsPage({ onGenerateDemo, onNewDemo, initialBoar
 
   const report = (r: SaveResult, okMsg?: string) => { if (!r.ok) showToast(`Not saved: ${r.message}`); else if (okMsg) showToast(okMsg); return r.ok; };
 
-  const openNewDialog = () => {
-    setNewDialog({ lib: undefined });
-    void loadLibrary().then(lib => setNewDialog(d => (d ? { lib } : d))).catch(() => setNewDialog(d => (d ? { lib: null } : d)));
-  };
+  const openNewDialog = () => setNewDialog(true);
 
   const create = async (start: BoardStart) => {
     rememberedStart = start;
-    setNewDialog(null);
+    setNewDialog(false);
     const lib = await loadLibrary();
-    const doc = newBoardDoc(new Date(), start === 'empty' ? blankMeet(lib) : undefined);
+    const doc = newBoardDoc(new Date(), startMeet(lib, start));
     if (report(await saveBoard(doc, lib))) setOpenId(doc.id);
   };
 
@@ -797,7 +791,7 @@ export default function WhiteboardsPage({ onGenerateDemo, onNewDemo, initialBoar
       onExportJson={(row) => void exportRowJson(row)}>
       <input ref={fileRef} type="file" accept=".html,.htm,.json" hidden
         onChange={(e) => { const f = e.target.files?.[0]; e.target.value = ''; if (f) void importFile(f); }} />
-      {newDialog && <NewBoardDialog lib={newDialog.lib} onPick={(s) => void create(s)} onClose={() => setNewDialog(null)} />}
+      {newDialog && <NewBoardDialog onPick={(s) => void create(s)} onClose={() => setNewDialog(false)} />}
       {toastEl}
     </BoardList>
   );
@@ -940,7 +934,7 @@ function BoardList({ rows, listError, query, setQuery, sort, setSort, reveal, se
         </div>
         <div className="wb-actions">
           <button type="button" className="btn-secondary" onClick={pickFile}
-            title="A board exported as JSON from Pack Generator on another Cribl org, a board saved as .html by the standalone whiteboard, or a library .json">Import saved whiteboard</button>
+            title="A board exported as JSON from 360 Workbench on another Cribl org, a board saved as .html by the standalone whiteboard, or a library .json">Import saved whiteboard</button>
           <button type="button" className="btn-primary" onClick={openNewDialog}>New whiteboard</button>
         </div>
       </div>

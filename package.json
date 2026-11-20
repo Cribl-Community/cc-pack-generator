@@ -1,8 +1,8 @@
 {
   "name": "cc-pack-generator",
   "private": true,
-  "version": "1.0.336",
-  "buildNumber": 1033,
+  "version": "1.0.337",
+  "buildNumber": 1039,
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -33,8 +33,8 @@
     "typescript": "~6.0.2",
     "vite": "^8.1.0"
   },
-  "displayName": "Cribl Pack Generator",
-  "description": "AI-powered wizard that creates and deploys Cribl Stream Packs. Select a sourcetype, provide sample events, pick a destination schema (OCSF, CIM, ECS, ASIM, Chronicle, CEF, JSON), and deploy a complete pipeline with parsing, noise reduction, and field mapping — all in one click.",
+  "displayName": "360 Workbench",
+  "description": "Your one-stop workbench for onboarding a new data source into Cribl, from first look to deployable pack. Run Discovery, design the Architecture, look up any device or log source in Goatpedia, sanitize samples so sensitive data stays private, then build a validated Stream pack.",
   "author": "Wilfred van der Linde - wlinde@cribl.io",
   "contributors": [
     "Simon Duchene - sduchene@cribl.io",

@@ -211,7 +211,7 @@ export async function runDemoDeploy(input: DemoDeployInput, deps: DemoDeployDeps
     }
     const prep = await resolveSourceExtraction(st, sampleEvents, dlog);
     const packageJson = {
-      version: '1.0.0', author: 'Cribl Pack Generator (demo)', tags: { streamtags: [] }, exports: [],
+      version: '1.0.0', author: '360 Workbench (demo)', tags: { streamtags: [] }, exports: [],
       displayName: `[DEMO] ${st}`, name: pk.packId,
       description: `[DEMO] ${st} to ${pk.pipelines.map(pl => fmtLabel(pl.fmt)).join(', ')} — one pipeline per format, picked by the demo lane datagen.`,
     };

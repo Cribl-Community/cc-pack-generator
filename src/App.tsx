@@ -228,7 +228,7 @@ import { isSentinelIngestionTable, resolveSentinelTable, sentinelDestinationSugg
 import { cimModelSuggestions, cimModelPickerOptions, resolveCimModel } from './cim-knowledge';
 import AiSettingsModal from './AiSettings';
 import FlowDestination from './FlowDestination';
-import { WIZARD_MODES, MENU_MODES, wizardSteps, canJumpToStep, isBusyStep, type WizardMode } from './wizard-steps';
+import { WIZARD_MODES, RAIL_JOURNEYS, wizardSteps, canJumpToStep, isBusyStep, type WizardMode, type RailAction, type RailJourneyAction } from './wizard-steps';
 import {
   captureWizardDraftBeforeUnload, clearWizardDraft, isPackBuildDraftMode, loadWizardDraft,
   saveWizardDraft, serializeWizardDraft, shouldPersistWizardDraft, wizardDraftLabel,
@@ -254,6 +254,7 @@ import { SanitizeWizard, type LibrarySample, type SamplePick } from './sanitize-
 import { ScoringReport, buildBatchReportHtml, downloadHtmlFile, type BatchReportPack, type ReportFormatVM, type ReportStageSource } from './ScoringReport';
 import { buildImproveReportHtml, improveReportFilename, type ImproveReportRow } from './improve-report';
 import { cachedVisualizerAvailability, criblInstanceBaseUrl, pipelineVisualizerUrl, probePipelineVisualizer } from './pipeline-visualizer-link';
+import { checkMarketplaceUpdate, marketplaceUpdateLinks, shouldCheckMarketplace, type MarketplaceUpdate } from './marketplace-update';
 import { buildSourceCorpus, searchSources, aiFallbackName, sampleFit, SAMPLE_FIT_INFO, OWN_EVENT_MODES, type SourceEntry, type SampleFit } from './source-search';
 import { streamPackUrl, streamPipelineUrl } from './cribl-ui-links';
 import { PipelineVisualizerLink } from './PipelineVisualizerLink';
@@ -2364,6 +2365,25 @@ function App() {
     return () => { stop = true; clearInterval(id); };
   }, []);
 
+  // Marketplace update popup: a catalog install (`cc-…`, in the Cribl frame) asks the public
+  // catalog once shortly after load and then every 6 h, and offers the upgrade when an APPROVED
+  // version is newer than this build. A failed check shows nothing. "Later" hides it for this
+  // page load only — the frame has no storage, and App KV is shared by every user of the app,
+  // so a KV "dismissed" would hide it for everyone. Spike: docs/specs/2026-11-19-marketplace-update-popup-spike.md.
+  const [marketUpdate, setMarketUpdate] = useState<MarketplaceUpdate | null>(null);
+  const [marketUpdateHidden, setMarketUpdateHidden] = useState(false);
+  useEffect(() => {
+    if (!shouldCheckMarketplace(APP_ID, getRunMode())) return;
+    let stop = false;
+    const check = async () => {
+      const u = await checkMarketplaceUpdate({ appId: APP_ID, installed: APP_VERSION, criblApiBase: window.CRIBL_API_URL });
+      if (!stop && u) setMarketUpdate(u);
+    };
+    const first = setTimeout(() => { void check(); }, 5_000);
+    const id = setInterval(() => { void check(); }, 6 * 60 * 60 * 1000);
+    return () => { stop = true; clearTimeout(first); clearInterval(id); };
+  }, []);
+
   // Re-hydrate quality settings form once platform settings load (iframe persistence)
   useEffect(() => {
     (async () => {
@@ -2372,12 +2392,11 @@ function App() {
     })();
   }, []);
 
-  // Whiteboards & demos is for Cribl and partner teams, not customers: hidden until the
-  // switch in Settings › Menu turns it on, on every install.
-  const [wbDemosOn, setWbDemosOn] = useState(() => loadQualitySettings().whiteboardsDemos === true);
+  // Draw & demo is on unless Settings › Menu has turned it off. A stored false stays off.
+  const [wbDemosOn, setWbDemosOn] = useState(() => loadQualitySettings().whiteboardsDemos !== false);
   useEffect(() => {
     let cancelled = false;
-    void loadQualitySettingsAsync().then(q => { if (!cancelled) setWbDemosOn(q.whiteboardsDemos === true); });
+    void loadQualitySettingsAsync().then(q => { if (!cancelled) setWbDemosOn(q.whiteboardsDemos !== false); });
     return () => { cancelled = true; };
   }, []);
   // The switch applies at once: it needs no Save, and leaves the rest of the Settings form as it is.
@@ -2387,8 +2406,22 @@ function App() {
     setWbDemosOn(on);
   };
 
-  // The left rail folds to icons; remembered on this browser.
-  const [railCollapsed, setRailCollapsed] = useState(() => safeGetItem('pg-rail-collapsed') === '1');
+  // The left rail starts folded to icons. Opening it is remembered on this browser ('0').
+  const [railCollapsed, setRailCollapsed] = useState(() => safeGetItem('pg-rail-collapsed') !== '0');
+  // Which journey is open in the accordion. A navigation into a journey opens that one.
+  const [railJourney, setRailJourney] = useState<string | null>(null);
+  useEffect(() => {
+    const id = toolPage?.area === 'samples' ? 'learn'
+      : toolPage?.area === 'whiteboards' ? 'show'
+      : toolPage ? null
+      : step === 'mode' ? null
+      : packMode === 'goatpedia' ? 'learn'
+      : packMode === 'flow' || packMode === 'batch' ? 'build'
+      : packMode === 'add-pipeline' ? 'improve'
+      : packMode === 'demo' ? 'show'
+      : null;
+    if (id) setRailJourney(id);
+  }, [toolPage, step, packMode]);
   // An open whiteboard folds the rail for room; leaving the board gives back what it was. Not remembered:
   // the SE's own choice (toggleRail) is, and a toggle while on a board is kept when it closes.
   const railRef = useRef(railCollapsed);
@@ -3706,7 +3739,7 @@ function App() {
       const flowName = packMode === 'flow' ? state.packName.trim() : '';
       const expDisplayName = (flowName || state.displayName || state.packName || packId).trim();
       const expPackageJson = {
-        version: '1.0.0', author: 'Cribl Pack Generator (3-stage experiment)',
+        version: '1.0.0', author: '360 Workbench (3-stage experiment)',
         tags: { streamtags: [] }, exports: [],
         displayName: expDisplayName, name: packId,
         description: flowName || state.description?.trim() || `Staged pipeline: extract ${stLabel} events, map to ${destFormat.toUpperCase()}, and apply destination output shaping.`,
@@ -6339,7 +6372,7 @@ function App() {
       const built = await buildStagedPipeline({
         sourcetype: canonicalSourcetype, outputSourcetype: row.outputSourcetype || row.sourcetype, destFormat: destFmt, sampleEvents,
         group: workerGroup, packId, pipelineId: row.pipeline_name,
-        packageJson: { version: '1.0.0', author: 'Cribl Pack Generator (batch)', tags: { streamtags: [] }, exports: [], displayName: row.pack_name, name: packId, description: `${canonicalSourcetype} to ${destFmt.toUpperCase()} (3-stage).` },
+        packageJson: { version: '1.0.0', author: '360 Workbench (batch)', tags: { streamtags: [] }, exports: [], displayName: row.pack_name, name: packId, description: `${canonicalSourcetype} to ${destFmt.toUpperCase()} (3-stage).` },
         reductionToggles: { drop_noise: false, remove_null_fields: true, compact_output: false, field_cleanup: true },
         thresholds: rerunThresholds, shareOn: rerunShareOn, mode, routeFilter, origin: 'batch', log: rlog, logScore: maybeLogScore,
         sampleTier: rerunTier, sampleReason: `via ${rerunTier} (rerun)`, sampleSourceMode: rerunSourceMode,
@@ -6983,7 +7016,7 @@ function App() {
         // new pack). Deferred: the pack is created/patched but not committed —
         // one group commit+deploy runs after all rows (Phase 1b below).
         const batchPackageJson = {
-          version: '1.0.0', author: 'Cribl Pack Generator (batch)', tags: { streamtags: [] }, exports: [],
+          version: '1.0.0', author: '360 Workbench (batch)', tags: { streamtags: [] }, exports: [],
           displayName: row.pack_name, name: packId,
           description: `${canonicalSourcetype} to ${destFmt.toUpperCase()} (3-stage).`,
         };
@@ -7860,12 +7893,12 @@ function App() {
     });
   };
   // Start a mode straight from the rail or a home card: same entry steps as the old home Next button.
-  const startMode = (m: WizardMode, opts?: { background?: boolean }) => {
+  const startMode = (m: WizardMode, opts?: { background?: boolean; improve?: 'add' | 'optimize' }) => {
     guardLeave(() => {
       closeTool();
       if (step !== 'mode') resetAll();
       setPackMode(m);
-      if (m === 'add-pipeline') setAddImproveAction(null);
+      if (m === 'add-pipeline') setAddImproveAction(opts?.improve ?? null);
       if (m === 'batch') setBatchBackground(!!opts?.background);
       setStep(m === 'batch' ? 'batch-upload' : m === 'demo' ? 'demo-group' : m === 'goatpedia' ? 'goatpedia' : 'select-group');
     });
@@ -7893,6 +7926,25 @@ function App() {
     }
     setBatchOpenRunNotice('');
     startMode('batch', { background: backgroundBatchSupported() });
+  };
+
+  const runRailAction = (action: RailAction) => {
+    if (action.kind === 'tool') {
+      if (action.area === 'samples') openTool({ area: 'samples', tab: 'sanitize' });
+      else openTool({ area: 'whiteboards', tab: 'boards' });
+      return;
+    }
+    if (action.mode === 'batch') { void chooseBatch(); return; }
+    startMode(action.mode, action.improve ? { improve: action.improve } : undefined);
+  };
+  const railActionOn = (item: RailJourneyAction): boolean => {
+    const action = item.action;
+    if (action.kind === 'tool') {
+      if (action.area === 'samples') return toolPage?.area === 'samples';
+      return item.id === 'board' && toolPage?.area === 'whiteboards';
+    }
+    if (toolPage || step === 'mode' || packMode !== action.mode) return false;
+    return action.improve ? addImproveAction === action.improve : true;
   };
 
 
@@ -8075,13 +8127,13 @@ function App() {
       else if (t === 'menu') pane = (<>
               <div className="field-group">
                 <div className="pg-switch-row">
-                  <button type="button" role="switch" id="set-wb-demos" className="pg-switch" aria-checked={qForm.whiteboardsDemos === true}
-                    onClick={() => setWhiteboardsDemos(qForm.whiteboardsDemos !== true)}><span className="pg-switch-knob" /></button>
+                  <button type="button" role="switch" id="set-wb-demos" className="pg-switch" aria-checked={qForm.whiteboardsDemos !== false}
+                    onClick={() => setWhiteboardsDemos(qForm.whiteboardsDemos === false)}><span className="pg-switch-knob" /></button>
                   <label htmlFor="set-wb-demos" className="field-label" style={{ margin: 0, cursor: 'pointer' }}>Whiteboards &amp; demos</label>
                 </div>
                 <p className="field-hint" style={{ marginTop: 6 }}>
-                  For Cribl and partner teams: discovery whiteboards, and the demo environments built from them, under
-                  Tools in the rail. Hidden until you turn it on here; it applies at once.
+                  Draw &amp; demo in the left menu: discovery whiteboards, the architecture drawn on them, and the demo
+                  environments built from them. On unless you turn it off here; it applies at once.
                 </p>
               </div>
       </>);
@@ -8872,12 +8924,12 @@ function App() {
       case 'mode':
         return (
           <div className="step">
-            <header className="pg-hero" aria-label="Cribl Pack Generator">
+            <header className="pg-hero" aria-label="360 Workbench">
               <div className="pg-hero-main">
                 <img src={goatImg} alt="Cribl Goat" className="pg-hero-goat" />
                 <div>
                   <span className="bx-pill teal">✦ AI-powered</span>
-                  <h1 className="pg-hero-title">Cribl Pack Generator</h1>
+                  <h1 className="pg-hero-title">360 Workbench</h1>
                   <p className="pg-hero-sub">Build, configure and deploy Stream packs in minutes, guided by AI at every step.</p>
                 </div>
               </div>
@@ -8891,8 +8943,8 @@ function App() {
               </aside>
             </header>
 
-            <h2>What would you like to do?</h2>
-            <p className="step-desc">Pick a mode to start. You can switch mode any time from the left rail.</p>
+            <h2>What do you want to do today?</h2>
+            <p className="step-desc">Pick a goal. The app walks you through the rest, and AI drafts everything for you to check.</p>
             {goldenUpdateNotice(availableGoldens) && (
               <div className="ai-banner ai-banner-ok pg-golden-notice" role="status">
                 <span>⬇ <b>Newer goldens to import.</b> {goldenUpdateNotice(availableGoldens)} Import them so every build starts from the best tested pipeline.</span>
@@ -8913,14 +8965,20 @@ function App() {
               </div>
             )}
             {vendorImportMsg && <div className={`ai-banner ${vendorImportMsg.tone === 'ok' ? 'ai-banner-ok' : 'ai-banner-error'}`} role={vendorImportMsg.tone === 'ok' ? 'status' : 'alert'}><span>{vendorImportMsg.text}</span><button onClick={() => setVendorImportMsg(null)} aria-label="Dismiss">✕</button></div>}
-            <div className="mode-grid pg-mode-grid">
-              {MENU_MODES.map(m => (
-                <button key={m.id} type="button" className="mode-card pg-mode-card" onClick={() => { if (m.id === 'batch') void chooseBatch(); else startMode(m.id); }}>
-                  <span className="ic" aria-hidden="true">{m.icon}</span>
-                  <strong>{m.title}{m.badge && <span className="pg-badge">{m.badge}</span>}</strong>
-                  <span>{m.desc}</span>
-                  <span className="go">Start →</span>
-                </button>
+            <div className="pg-home-grid">
+              {RAIL_JOURNEYS.filter(j => j.id !== 'show' || wbDemosOn).map(j => (
+                <section key={j.id} className={`pg-home-card ${j.id}`}>
+                  <span className="pg-home-tag">{j.tag}</span>
+                  <h3>{j.home}</h3>
+                  <p className="pg-home-ex">{j.example}</p>
+                  {j.actions.map(item => (
+                    <button key={item.id} type="button" className="pg-home-act" disabled={railLocked && item.action.kind === 'mode'}
+                      onClick={() => runRailAction(item.action)}>
+                      <span><b>{item.label}</b><span>{item.hint}</span></span>
+                      <span className="go" aria-hidden="true">→</span>
+                    </button>
+                  ))}
+                </section>
               ))}
             </div>
           </div>
@@ -14469,7 +14527,7 @@ fortinet_fortigate,FortiGate CEF,fgt_cef_to_ocsf,ocsf,,`}</pre>
       <aside className="pg-rail" aria-label="Modes and tools">
         <div className="pg-brand">
           <PackGeneratorLogo />
-          <div><b>Pack Generator</b><small className="build-number">build {BUILD_NUMBER}</small></div>
+          <div><b>360 Workbench</b><small className="build-number">build {BUILD_NUMBER}</small></div>
           <button type="button" className="pg-collapse" onClick={toggleRail} aria-expanded={!railCollapsed}
             aria-label={railCollapsed ? 'Expand the menu' : 'Collapse the menu'} title={railCollapsed ? 'Expand the menu' : 'Collapse the menu'}>
             <svg viewBox="0 0 12 12" width="12" height="12" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -14480,40 +14538,44 @@ fortinet_fortigate,FortiGate CEF,fgt_cef_to_ocsf,ocsf,,`}</pre>
         <button type="button" className={`pg-nav${step === 'mode' && !toolPage ? ' on' : ''}`} onClick={goHome} disabled={railLocked} title="Home">
           <span className="ni" aria-hidden="true">⌂</span>Home
         </button>
-        <div className="pg-rail-h">Modes</div>
-        {MENU_MODES.map(m => (
-          <button key={m.id} type="button" className={`pg-nav${!toolPage && step !== 'mode' && packMode === m.id ? ' on' : ''}`}
-            title={railLocked ? 'Wait for the current build to finish' : m.title} disabled={railLocked} onClick={() => { if (m.id === 'batch') void chooseBatch(); else startMode(m.id); }}>
-            <span className="ni" aria-hidden="true">{m.icon}</span>{m.name}{m.badge && <span className="new">{m.badge}</span>}
-          </button>
-        ))}
-        <div className="pg-spacer" />
-        <div className="pg-rail-h">Tools</div>
-            <div className="header-actions pg-tools">
-              {/* Sample library — open in BOTH run modes since build 566: sanitising is
-                  browser-only work. The staged-count badge is standalone's alone — in the
-                  iframe there is no queue to count. */}
-              {/* Whiteboards & demos — discovery boards and the demos built from them; for Cribl and
-                  partner teams, so only when Settings › Menu has it on (wbDemosOn). Both run modes. */}
-              {wbDemosOn && (
-              <button className={`settings-btn${toolPage?.area === 'whiteboards' ? ' on' : ''}`} onClick={() => openTool({ area: 'whiteboards', tab: 'boards' })}
-                title="Whiteboards & demos — one discovery board per prospect, and the demos built from it: stop or destroy one while the others run">
-                <svg viewBox="0 0 20 20" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><rect x="2.5" y="3.5" width="15" height="11" rx="2"/><path d="M6 11c1.6-3 3.4 1 5-2s2.4-1 3-1.5"/><path d="M7 17.5l3-3 3 3"/></svg><span className="rt-label">Whiteboards &amp; demos</span>
-              </button>
-              )}
-              <button className={`settings-btn${toolPage?.area === 'samples' ? ' on' : ''}`} onClick={() => openTool({ area: 'samples', tab: 'sanitize' })}
-                title={getRunMode() !== 'standalone'
-                  ? 'Samples — sanitize a sample and keep it as a validated one'
-                  : sampleLibSummary
-                    ? `Samples — ${sampleLibSummary.staged} staged for review, ${sampleLibSummary.library} committed`
-                    + (sampleLibSummary.shadowed ? `, ${sampleLibSummary.shadowed} shadowed by a real vendor log` : '')
-                    + (sampleLibSummary.probes ? `, ${sampleLibSummary.probes} test artifact(s) not counted` : '')
-                    : 'Samples — could not read the staging queue'}>
-                <svg viewBox="0 0 20 20" width="18" height="18" fill="currentColor"><path d="M4 2h3v16H4V2zm4.5 0h3v16h-3V2zM14 2.4l2.9 15.7-2.9.5L11.1 3 14 2.4z"/></svg><span className="rt-label">Samples</span>
-                {getRunMode() === 'standalone' && sampleLibSummary && sampleLibSummary.staged > 0 && (
+        <div className="pg-rail-h">I want to…</div>
+        {RAIL_JOURNEYS.filter(j => j.id !== 'show' || wbDemosOn).map(j => {
+          const open = railJourney === j.id;
+          const sampleTitle = getRunMode() !== 'standalone'
+            ? 'Anonymize my sample and keep it as a validated one'
+            : sampleLibSummary
+              ? `Anonymize my sample — ${sampleLibSummary.staged} staged for review, ${sampleLibSummary.library} committed`
+                + (sampleLibSummary.shadowed ? `, ${sampleLibSummary.shadowed} shadowed by a real vendor log` : '')
+                + (sampleLibSummary.probes ? `, ${sampleLibSummary.probes} test artifact(s) not counted` : '')
+              : 'Anonymize my sample — could not read the staging queue';
+          return (
+            <div key={j.id} className="pg-journey">
+              <button type="button" className={`pg-nav${open ? ' on' : ''}`} aria-expanded={railCollapsed ? false : open}
+                title={railCollapsed ? j.name : undefined}
+                onClick={() => {
+                  if (railCollapsed) { toggleRail(); setRailJourney(j.id); return; }
+                  setRailJourney(open ? null : j.id);
+                }}>
+                <span className="ni" aria-hidden="true">{j.icon}</span>{j.name}
+                <span className="pg-caret" aria-hidden="true">{open ? '▾' : '▸'}</span>
+                {j.id === 'learn' && getRunMode() === 'standalone' && sampleLibSummary && sampleLibSummary.staged > 0 && (
                   <span className="ai-status-dot dot-count">{sampleLibSummary.staged}</span>
                 )}
               </button>
+              {open && j.actions.map(item => (
+                <button key={item.id} type="button" className={`pg-nav pg-sub${railActionOn(item) ? ' on' : ''}`}
+                  title={item.id === 'anonymize' ? sampleTitle : item.id === 'arch' ? 'Open whiteboards, then Draw it on a board' : item.label}
+                  disabled={railLocked && item.action.kind === 'mode'}
+                  onClick={() => runRailAction(item.action)}>
+                  {item.label}
+                </button>
+              ))}
+            </div>
+          );
+        })}
+        <div className="pg-spacer" />
+        <div className="pg-rail-h">Tools</div>
+            <div className="header-actions pg-tools">
               {(() => {
                 const health = settingsHealth(aiStatus, lakeExportActive, getRunMode());
                 return (
@@ -14572,6 +14634,21 @@ fortinet_fortigate,FortiGate CEF,fgt_cef_to_ocsf,ocsf,,`}</pre>
             <button onClick={() => window.location.reload()}>Reload</button>
           </div>
         )}
+        {marketUpdate && !marketUpdateHidden && (() => {
+          const links = marketplaceUpdateLinks(criblInstanceBaseUrl(), marketUpdate.appId);
+          return (
+            <div className="market-update-popup" role="dialog" aria-live="polite" aria-labelledby="market-update-title">
+              <b id="market-update-title">New version available</b>
+              <p>{marketUpdate.displayName} <b>{marketUpdate.latest}</b> is in the Cribl Marketplace. You are running {marketUpdate.installed}.</p>
+              <p className="market-update-note">An Organization administrator upgrades it from <b>Apps → Installed → ⋯ → Upgrade</b>. Your settings and saved data are kept.</p>
+              <div className="market-update-actions">
+                {links.installedApps && <a className="market-update-primary" href={links.installedApps} target="_blank" rel="noopener noreferrer">Open Apps to update</a>}
+                <a href={links.listing} target="_blank" rel="noopener noreferrer">What's new</a>
+                <button type="button" onClick={() => setMarketUpdateHidden(true)}>Later</button>
+              </div>
+            </div>
+          );
+        })()}
       </header>
       {!toolPage && step !== 'mode' && wizardStepList.length > 0 && (
         <nav className="pg-stepbar" aria-label="Steps">

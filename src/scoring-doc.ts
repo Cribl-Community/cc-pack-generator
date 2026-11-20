@@ -1,4 +1,4 @@
-// The Technical reference: self-contained HTML explaining HOW Pack Generator onboards
+// The Technical reference: self-contained HTML explaining HOW 360 Workbench onboards
 // a source and scores the result. Its companion is the User guide (src/user-guide.ts),
 // which explains how to use the app. Both share src/doc-shell.ts (style, inline script,
 // cross-links) and open in a new tab via a Blob URL from openAppDoc in App.tsx, so they
@@ -165,12 +165,12 @@ const CEF_EXTENSIONS = (((goldenFormatsData as any).formats || {}).cef?.extensio
 
 export const SCORING_DOC_HTML = `<!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Pack Generator — Technical reference</title>
+<title>360 Workbench — Technical reference</title>
 <style>${DOC_STYLE}</style></head><body>
 <div class="page">
   <header>
     <div>
-      <h1>Pack Generator — <span>Technical reference</span></h1>
+      <h1>360 Workbench — <span>Technical reference</span></h1>
       <div class="sub">How a source becomes a scored pipeline: recognition, samples, sanitising, the candidate sequence, mapping per format, and how every score is calculated.</div>
     </div>
     <div class="tools" id="tools">
@@ -179,7 +179,7 @@ export const SCORING_DOC_HTML = `<!DOCTYPE html>
     </div>
     <div class="badge">Technical</div>
   </header>
-  <p class="xref">New to Pack Generator? The ${docLink('guide', 'User guide')} explains how to use each mode and tool, step by step. This document explains how the results are produced.</p>
+  <p class="xref">New to 360 Workbench? The ${docLink('guide', 'User guide')} explains how to use each mode and tool, step by step. This document explains how the results are produced.</p>
 
   <div class="toc" id="contents">
     <b>Contents</b>
@@ -712,7 +712,7 @@ export const SCORING_DOC_HTML = `<!DOCTYPE html>
     </ul>
   </section>
 
-  <footer>Cribl Pack Generator${BUILD ? ` · build ${BUILD}` : ''} · Technical reference. Mirrors the deterministic logic in the app; stats are computed live from the bundled config. <b>Download</b> saves this page as one self-contained HTML file. See also the ${docLink('guide', 'User guide')}.</footer>
+  <footer>360 Workbench${BUILD ? ` · build ${BUILD}` : ''} · Technical reference. Mirrors the deterministic logic in the app; stats are computed live from the bundled config. <b>Download</b> saves this page as one self-contained HTML file. See also the ${docLink('guide', 'User guide')}.</footer>
 </div>
 <a class="totop" href="#contents">&uarr; Contents</a>
 <div class="toast" id="toast" role="status"></div>

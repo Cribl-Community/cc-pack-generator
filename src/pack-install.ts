@@ -41,11 +41,11 @@ export const PACK_INSTALL_RETRY_WAIT_MS = 2000;
 export const RETRYABLE_PACK_INSTALL = /REST_list|Pack Id conflicts/i;
 
 /** The `author` every generated pack carries (src/pack-builder.ts), including older builds' wording. */
-export const GENERATED_PACK_AUTHOR = /^Cribl Pack Generator\b/;
+export const GENERATED_PACK_AUTHOR = /^(?:Cribl Pack Generator|360 Workbench)\b/;
 
 export class ForeignPackError extends Error {
   constructor(packId: string, author: string | null) {
-    super(`A pack named "${packId}" already exists on this worker group and was not made by the Pack Generator${author ? ` (author: ${author})` : ''}, so it is not replaced. Choose another pack name.`);
+    super(`A pack named "${packId}" already exists on this worker group and was not made by 360 Workbench${author ? ` (author: ${author})` : ''}, so it is not replaced. Choose another pack name.`);
     this.name = 'ForeignPackError';
   }
 }

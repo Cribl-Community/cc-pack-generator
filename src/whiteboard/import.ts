@@ -62,7 +62,7 @@ export function parseWhiteboardFile(name: string, text: string): ImportResult {
   if (isObj(data) && isObj(data.sources) && Array.isArray(data.sources.items)) {
     return { kind: 'error', message: `${name} is a v4.3 configuration. Open any whiteboard, go to Configure and paste it into "Apply pasted JSON" — the board converts it.` };
   }
-  return { kind: 'error', message: `${name} is JSON but neither a whiteboard exported from Pack Generator nor a whiteboard library (expected "v": 5 and "groups").` };
+  return { kind: 'error', message: `${name} is JSON but neither a whiteboard exported from 360 Workbench nor a whiteboard library (expected "v": 5 and "groups").` };
 }
 
 /**

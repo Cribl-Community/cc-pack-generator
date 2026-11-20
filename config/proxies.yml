@@ -26,6 +26,18 @@ raw.githubusercontent.com:
       - "/kaus33k/okta-sample-system-logs/"
       - "/Grishmbasnet515/ai-cloud-log-threat-detector/"
 
+# The Cribl Marketplace catalog (src/marketplace-update.ts): the public list of approved app
+# versions, read once per session so a catalog install can offer "a newer version is available".
+# Anonymous, read-only, no credential; only this one path.
+marketplace.cribl.io:
+  timeout: 15000
+  paths:
+    allowlist:
+      - "/api/v1/apps/dispensary"
+  headers:
+    allowlist:
+      - accept
+
 # The Goatpedia library (Goatpedia library screen, src/goatpedia.ts): library.json as GitHub
 # Pages publishes it from wvdlinde-cribl/goatpedia. Read-only public JSON, no credential.
 # Fetched fresh each time the screen opens, so it follows the repository.

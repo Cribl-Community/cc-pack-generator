@@ -35,6 +35,8 @@ export interface WhiteboardLibV5 {
   saveFormats?: Record<string, boolean>;
   /** Set by the board once its built-in people profiles start off (P13); a library without it is switched over once. */
   peopleEmpty?: number;
+  /** The clean view (board P17, Configure → Advanced settings): fewer words on every board. */
+  clean?: boolean;
   /** Added by the app (v5 ignores unknown keys): what this SE chose last time for the same words. */
   discoveryAliases?: DiscoveryAliases;
   [k: string]: unknown;
