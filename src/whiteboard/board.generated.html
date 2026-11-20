@@ -2181,6 +2181,7 @@ function(t){t.__bidiEngine__=t.prototype.__bidiEngine__=function(t){var r,n,i,a,
     return ((LIB.groups[g]||{}).items||[]).map(li=>{const d=BUILTIN[li.id]; return d?Object.assign({},d,li,{_b:d}):Object.assign({},li);});
   }
   const libItem=(g,id)=>((LIB.groups[g]||{}).items||[]).find(x=>x.id===id);
+  function detectWaits(g,it){return !!MEET.detectWithPipe&&g==='point'&&it.id==='pt-detect'&&st('pipe')!=='after';}
   function isShown(g,it){
     if(MEET.detectWithPipe&&g==='point'&&it.id==='pt-detect'&&st('pipe')!=='after') return false;
     const k=g+':'+it.id; return (k in MEET.shown)?MEET.shown[k]:it.on!==false;}
@@ -3110,7 +3111,7 @@ function(t){t.__bidiEngine__=t.prototype.__bidiEngine__=function(t){var r,n,i,a,
   function renderPop(){
     const q=norm(popQ.value), raw=popQ.value.trim();
     const all=items(P.g).filter(it=>P.g==='usecases'?famOf(it.family)===P.fam:(P.g!=='pains'||!P.fam||paFam(it)===P.fam));
-    const cand=all.filter(it=>!isShown(P.g,it)&&(!q||norm(txt(it,'label')+' '+txt(it,'cribl')).includes(q)));
+    const cand=all.filter(it=>!isShown(P.g,it)&&!detectWaits(P.g,it)&&(!q||norm(txt(it,'label')+' '+txt(it,'cribl')).includes(q)));
     const exact=raw&&all.some(it=>norm(txt(it,'label'))===q);
     const mine=cand.filter(it=>it.custom), sugg=cand.filter(it=>!it.custom);
     P.opts=[...mine.map(it=>({it})),...sugg.map(it=>({it}))];

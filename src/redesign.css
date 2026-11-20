@@ -326,25 +326,22 @@
    two when narrower, so a tile is never left alone on a row; one column on a phone. */
 .pg-home-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
 @media (max-width: 800px) { .pg-home-grid { grid-template-columns: 1fr; } }
-.pg-home-card { position: relative; border: 1px solid var(--pg-line); border-radius: 14px; background: #fff; padding: 16px 16px 14px 18px; overflow: hidden; }
-.pg-home-card::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 5px; background: var(--c); }
-.pg-home-card.learn { --c: var(--pg-violet); --cs: var(--pg-violet-tint); }
-.pg-home-card.build { --c: var(--pg-teal); --cs: var(--pg-teal-tint); }
-.pg-home-card.improve { --c: var(--pg-amber-ink); --cs: var(--pg-amber-bg); }
-.pg-home-card.show { --c: var(--pg-red); --cs: #fff1f0; }
-.pg-home-tag { display: inline-block; font-size: 10px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; border-radius: 5px; padding: 2px 6px; }
-.pg-home-card.learn .pg-home-tag { color: var(--pg-violet); background: var(--pg-violet-tint); }
-.pg-home-card.build .pg-home-tag { color: var(--pg-teal-text); background: var(--pg-teal-tint2); }
-.pg-home-card.improve .pg-home-tag { color: var(--pg-amber-ink); background: var(--pg-amber-bg); }
-.pg-home-card.show .pg-home-tag { color: var(--pg-red); background: #fff1f0; }
-.pg-home-card h3 { margin: 8px 0 2px; font-size: 17px; }
-.pg-home-ex { margin: 0 0 10px; font-size: 12.5px; font-style: italic; color: var(--pg-body); }
-.pg-home-act { display: flex; align-items: center; gap: 8px; width: 100%; margin-top: 6px; padding: 8px 10px; border: 1px solid var(--pg-line); border-radius: 8px; background: #fff; font: inherit; text-align: left; cursor: pointer; }
-.pg-home-act:hover:not(:disabled) { border-color: var(--c); background: var(--cs); }
+/* Home goal cards (build 1040, option 4 of docs/home-cards-neutral-options.html):
+   one teal family like the header (soft teal gradient on top, the journey
+   icon in a tinted square beside the title, light-grey actions that turn teal
+   on hover). Option C of docs/start-screen-less-text-v2.html: one short quoted
+   example, short hints, no tag. */
+.pg-home-card { position: relative; border: 1px solid var(--pg-line); border-radius: 14px; background: linear-gradient(180deg, var(--pg-teal-tint) 0%, #fff 90px); padding: 16px 16px 14px 18px; overflow: hidden; }
+.pg-home-top { display: flex; align-items: center; gap: 10px; margin-bottom: 4px; }
+.pg-home-ico { width: 30px; height: 30px; border-radius: 8px; display: grid; place-items: center; font-size: 15px; background: var(--pg-teal-tint2); color: var(--pg-teal-text); flex: none; }
+.pg-home-card h3 { margin: 0; font-size: 16px; }
+.pg-home-ex { margin: 0 0 8px; font-size: 12.5px; font-style: italic; color: var(--pg-muted); }
+.pg-home-act { display: flex; align-items: center; gap: 8px; width: 100%; margin-top: 6px; padding: 8px 10px; border: 1px solid var(--pg-line); border-radius: 8px; background: #fafbfc; font: inherit; text-align: left; cursor: pointer; }
+.pg-home-act:hover:not(:disabled) { border-color: var(--pg-teal); background: var(--pg-teal-tint2); }
 .pg-home-act:disabled { opacity: 0.5; cursor: not-allowed; }
 .pg-home-act b { display: block; font-size: 13.5px; }
-.pg-home-act span span { display: block; font-size: 12px; color: var(--pg-body); font-weight: 400; }
-.pg-home-act .go { margin-left: auto; color: var(--c); font-weight: 700; }
+.pg-home-act span span { display: block; font-size: 11.5px; color: var(--pg-muted); font-weight: 400; }
+.pg-home-act .go { margin-left: auto; color: var(--pg-teal-text); font-weight: 700; }
 .pg-mode-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 @media (max-width: 1199px) { .pg-mode-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 640px) { .pg-mode-grid { grid-template-columns: 1fr; } }
@@ -818,22 +815,24 @@
   .tp-pane { padding: 16px; }
 }
 
-/* Start screen header (docs/header-redesign-options.html, option B): the
-   same white card as the batch screens, with the AI disclaimer as a short
-   "you stay in control" checklist on the right. */
-.pg-hero { display: grid; grid-template-columns: 1fr minmax(300px, 380px); background: #fff; border: 1px solid var(--pg-line); border-radius: var(--pg-radius-card); overflow: hidden; margin-bottom: 24px; }
-.pg-hero-main { display: flex; align-items: center; gap: 16px; padding: 20px 22px; min-width: 0; }
-.pg-hero-goat { width: 64px; height: 64px; object-fit: contain; flex: none; }
-.pg-hero .pg-hero-title { margin: 4px 0 2px; font-size: 21px; font-weight: 700; color: var(--pg-ink); line-height: 1.25; }
+/* Start screen header (build 1040, option B of docs/header-redesign-options-v2.html):
+   name and pitch on a soft teal panel, the onboarding journey as five plain
+   labels on the right. No buttons: the actions live in the menu below. */
+.pg-hero { display: grid; grid-template-columns: minmax(300px, 1fr) 1.3fr; background: #fff; border: 1px solid var(--pg-line); border-radius: var(--pg-radius-card); overflow: hidden; margin-bottom: 24px; }
+.pg-hero-main { display: flex; align-items: center; gap: 16px; padding: 20px 22px; min-width: 0; background: linear-gradient(135deg, var(--pg-teal-tint) 0%, #fff 70%); border-right: 1px solid var(--pg-line); }
+.pg-hero-goat { width: 88px; height: 88px; object-fit: contain; flex: none; }
+.pg-hero .pg-hero-title { margin: 0 0 2px; font-size: 21px; font-weight: 700; color: var(--pg-ink); line-height: 1.25; }
 .pg-hero .pg-hero-sub { margin: 0; color: var(--pg-body); font-size: 12.5px; }
-.pg-hero-control { background: #fafbfc; border-left: 1px solid var(--pg-line); padding: 14px 18px; display: flex; flex-direction: column; justify-content: center; }
-.pg-hero-control h4 { margin: 0 0 8px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--pg-muted); }
-.pg-hero-control ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 5px; }
-.pg-hero-control li { display: flex; gap: 8px; font-size: 12.5px; color: var(--pg-body); }
-.pg-hero-control li i { font-style: normal; width: 16px; height: 16px; border-radius: 50%; background: var(--pg-teal-tint2); color: var(--pg-teal-text); display: grid; place-items: center; font-size: 10px; font-weight: 800; flex: none; margin-top: 1px; }
-@media (max-width: 900px) {
+.pg-hero-flow { list-style: none; margin: 0; padding: 12px; display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); align-content: center; align-items: center; }
+.pg-hero-flow li { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 4px 8px; min-width: 0; }
+.pg-hero-flow li + li { border-left: 1px solid var(--pg-line); }
+.pg-hero-flow .ico { width: 30px; height: 30px; border-radius: 8px; display: grid; place-items: center; font-size: 15px; background: var(--pg-teal-tint2); color: var(--pg-teal-text); }
+.pg-hero-flow b { font-size: 12.5px; color: var(--pg-ink); }
+@media (max-width: 1100px) {
   .pg-hero { grid-template-columns: 1fr; }
-  .pg-hero-control { border-left: none; border-top: 1px solid var(--pg-line); }
+  .pg-hero-main { border-right: none; border-bottom: 1px solid var(--pg-line); }
+  .pg-hero-flow { grid-auto-flow: row; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); row-gap: 10px; }
+  .pg-hero-flow li + li { border-left: none; }
 }
 
 /* ── Source step: one search, dense results (build 995) ──────────────── */

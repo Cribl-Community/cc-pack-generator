@@ -52,20 +52,16 @@ export type RailAction =
 export interface RailJourneyAction {
   id: string;
   label: string;
-  /** One line under the label on the home card. */
-  hint: string;
+  /** A few words under the label on the home card; omitted where the label says it all. */
+  hint?: string;
   action: RailAction;
 }
 
 export interface RailJourney {
   id: 'learn' | 'build' | 'improve' | 'show';
-  /** Label on the accordion row. */
+  /** Label on the accordion row and the home card title. */
   name: string;
-  /** Short mark on the home card: Learn, Build, Improve, Show. */
-  tag: string;
-  /** The goal, as the home card heading. */
-  home: string;
-  /** An example of what someone might say. */
+  /** A short example of what someone might say, quoted on the home card. */
   example: string;
   icon: string;
   actions: RailJourneyAction[];
@@ -76,23 +72,37 @@ export interface RailJourney {
  * omitted when Settings › Menu has whiteboards off.
  */
 export const RAIL_JOURNEYS: RailJourney[] = [
-  { id: 'learn', name: 'Learn a source', tag: 'Learn', home: 'I need info on a source', example: 'What does a Palo Alto TRAFFIC log contain, and what can I drop?', icon: '🐐', actions: [
-    { id: 'lookup', label: 'Look up a source', hint: 'How it works, its logs, sample events, detections, savings', action: { kind: 'mode', mode: 'goatpedia' } },
-    { id: 'anonymize', label: 'Anonymize my sample', hint: 'Strip names, addresses and secrets before you share it', action: { kind: 'tool', area: 'samples', tab: 'sanitize' } },
+  { id: 'learn', name: 'Learn a source', example: 'What does a Palo Alto TRAFFIC log contain?', icon: '🐐', actions: [
+    { id: 'lookup', label: 'Look up a source', hint: 'How it works, its logs, sample events', action: { kind: 'mode', mode: 'goatpedia' } },
+    { id: 'anonymize', label: 'Anonymize my sample', hint: 'Strip secrets before you share it', action: { kind: 'tool', area: 'samples', tab: 'sanitize' } },
   ] },
-  { id: 'build', name: 'Build packs', tag: 'Build', home: 'I want to build one or more packs', example: 'Send FortiGate logs to Splunk CIM and Sentinel.', icon: '⇶', actions: [
-    { id: 'one', label: 'Build a pack', hint: 'One source to one or more destinations', action: { kind: 'mode', mode: 'flow' } },
-    { id: 'many', label: 'Build many packs', hint: 'Upload a CSV or JSON list, up to 200', action: { kind: 'mode', mode: 'batch' } },
+  { id: 'build', name: 'Build packs', example: 'Send FortiGate logs to Splunk CIM and Sentinel.', icon: '⇶', actions: [
+    { id: 'one', label: 'Build a pack', hint: 'One source, one or more destinations', action: { kind: 'mode', mode: 'flow' } },
+    { id: 'many', label: 'Build many packs', hint: 'From a CSV or JSON list', action: { kind: 'mode', mode: 'batch' } },
   ] },
-  { id: 'improve', name: 'Improve a pack', tag: 'Improve', home: 'I want to improve a pack', example: 'My Okta pack scores 64. Make it better.', icon: '↗', actions: [
-    { id: 'score', label: "Raise a pack's score", hint: 'Score the live pipeline, repair what is lost', action: { kind: 'mode', mode: 'add-pipeline', improve: 'optimize' } },
-    { id: 'dest', label: 'Add a destination or pipeline', hint: 'To a pack already deployed', action: { kind: 'mode', mode: 'add-pipeline', improve: 'add' } },
+  { id: 'improve', name: 'Improve a pack', example: 'My Okta pack scores 64. Make it better.', icon: '↗', actions: [
+    { id: 'score', label: "Raise a pack's score", hint: 'Repair what is lost', action: { kind: 'mode', mode: 'add-pipeline', improve: 'optimize' } },
+    { id: 'dest', label: 'Add a destination or pipeline', hint: 'To a deployed pack', action: { kind: 'mode', mode: 'add-pipeline', improve: 'add' } },
   ] },
-  { id: 'show', name: 'Draw & demo', tag: 'Show', home: 'I want to draw and demo', example: "Map Acme's estate and show them a live demo tomorrow.", icon: '✎', actions: [
-    { id: 'board', label: 'Draw a whiteboard', hint: 'Discovery board: sources, challenges, outcomes', action: { kind: 'tool', area: 'whiteboards', tab: 'boards' } },
-    { id: 'arch', label: 'Draw an architecture', hint: 'Sources, Cribl, destinations', action: { kind: 'tool', area: 'whiteboards', tab: 'boards' } },
-    { id: 'demo', label: 'Run a demo', hint: 'From a board, or by hand', action: { kind: 'mode', mode: 'demo' } },
+  { id: 'show', name: 'Draw & demo', example: "Map Acme's estate and demo it tomorrow.", icon: '✎', actions: [
+    { id: 'board', label: 'Draw a whiteboard', action: { kind: 'tool', area: 'whiteboards', tab: 'boards' } },
+    { id: 'arch', label: 'Draw an architecture', action: { kind: 'tool', area: 'whiteboards', tab: 'boards' } },
+    { id: 'demo', label: 'Run a demo', action: { kind: 'mode', mode: 'demo' } },
   ] },
+];
+
+/**
+ * The start-screen header: the workbench's tools as five labels (not buttons;
+ * the actions live in the cards and the menu). Architect and Demo belong to
+ * Draw & demo, so they hide when Settings › Menu has whiteboards off.
+ */
+export interface HeroStep { id: string; label: string; icon: string; whiteboard?: boolean }
+export const HERO_FLOW: HeroStep[] = [
+  { id: 'architect', label: 'Architect', icon: '⬡', whiteboard: true },
+  { id: 'goatpedia', label: 'Goatpedia', icon: '🐐' },
+  { id: 'sanitize', label: 'Sanitize', icon: '🛡' },
+  { id: 'build', label: 'Build', icon: '⇶' },
+  { id: 'demo', label: 'Demo', icon: '▶', whiteboard: true },
 ];
 
 export interface WizardStepContext {

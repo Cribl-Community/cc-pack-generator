@@ -228,7 +228,7 @@ import { isSentinelIngestionTable, resolveSentinelTable, sentinelDestinationSugg
 import { cimModelSuggestions, cimModelPickerOptions, resolveCimModel } from './cim-knowledge';
 import AiSettingsModal from './AiSettings';
 import FlowDestination from './FlowDestination';
-import { WIZARD_MODES, RAIL_JOURNEYS, wizardSteps, canJumpToStep, isBusyStep, type WizardMode, type RailAction, type RailJourneyAction } from './wizard-steps';
+import { WIZARD_MODES, RAIL_JOURNEYS, HERO_FLOW, wizardSteps, canJumpToStep, isBusyStep, type WizardMode, type RailAction, type RailJourneyAction } from './wizard-steps';
 import {
   captureWizardDraftBeforeUnload, clearWizardDraft, isPackBuildDraftMode, loadWizardDraft,
   saveWizardDraft, serializeWizardDraft, shouldPersistWizardDraft, wizardDraftLabel,
@@ -8928,23 +8928,21 @@ function App() {
               <div className="pg-hero-main">
                 <img src={goatImg} alt="Cribl Goat" className="pg-hero-goat" />
                 <div>
-                  <span className="bx-pill teal">✦ AI-powered</span>
                   <h1 className="pg-hero-title">360 Workbench</h1>
-                  <p className="pg-hero-sub">Build, configure and deploy Stream packs in minutes, guided by AI at every step.</p>
+                  <p className="pg-hero-sub">From first look to deployable pack: onboard any data source into Cribl.</p>
                 </div>
               </div>
-              <aside className="pg-hero-control" aria-label="AI drafts, you decide">
-                <h4>AI drafts, you decide · before production</h4>
-                <ul>
-                  <li><i aria-hidden="true">✓</i>Inspect the pipeline steps</li>
-                  <li><i aria-hidden="true">✓</i>Verify the field mappings</li>
-                  <li><i aria-hidden="true">✓</i>Test with real data</li>
-                </ul>
-              </aside>
+              <ul className="pg-hero-flow" aria-label="Onboarding journey">
+                {HERO_FLOW.filter(s => !s.whiteboard || wbDemosOn).map(s => (
+                  <li key={s.id}>
+                    <span className="ico" aria-hidden="true">{s.icon}</span>
+                    <b>{s.label}</b>
+                  </li>
+                ))}
+              </ul>
             </header>
 
             <h2>What do you want to do today?</h2>
-            <p className="step-desc">Pick a goal. The app walks you through the rest, and AI drafts everything for you to check.</p>
             {goldenUpdateNotice(availableGoldens) && (
               <div className="ai-banner ai-banner-ok pg-golden-notice" role="status">
                 <span>⬇ <b>Newer goldens to import.</b> {goldenUpdateNotice(availableGoldens)} Import them so every build starts from the best tested pipeline.</span>
@@ -8968,13 +8966,15 @@ function App() {
             <div className="pg-home-grid">
               {RAIL_JOURNEYS.filter(j => j.id !== 'show' || wbDemosOn).map(j => (
                 <section key={j.id} className={`pg-home-card ${j.id}`}>
-                  <span className="pg-home-tag">{j.tag}</span>
-                  <h3>{j.home}</h3>
-                  <p className="pg-home-ex">{j.example}</p>
+                  <div className="pg-home-top">
+                    <span className="pg-home-ico" aria-hidden="true">{j.icon}</span>
+                    <h3>{j.name}</h3>
+                  </div>
+                  <p className="pg-home-ex">“{j.example}”</p>
                   {j.actions.map(item => (
                     <button key={item.id} type="button" className="pg-home-act" disabled={railLocked && item.action.kind === 'mode'}
                       onClick={() => runRailAction(item.action)}>
-                      <span><b>{item.label}</b><span>{item.hint}</span></span>
+                      <span><b>{item.label}</b>{item.hint && <span>{item.hint}</span>}</span>
                       <span className="go" aria-hidden="true">→</span>
                     </button>
                   ))}
