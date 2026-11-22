@@ -1,0 +1,1 @@
+var e=[{_raw:`<134>1 1749587372.966807768 hostxyz vpn_firewall src=10.3.150.9 dst=172.16.225.209 mac=70:6E:6D:ED:B7:C2 protocol=tcp sport=54288 dport=7563 pattern: 0 all`,_time:1749587372,host:`10.3.254.38`,cribl_breaker:`ndjson`}];export{e as default};
