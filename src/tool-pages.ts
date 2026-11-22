@@ -25,7 +25,7 @@ export interface ToolTab<T extends string = string> {
 export const TOOL_AREAS: Record<ToolArea, { title: string; desc: string }> = {
   settings: { title: 'Settings', desc: 'AI provider, connections, quality thresholds, shared goldens, Search datatypes and optional tools.' },
   samples: { title: 'Samples', desc: 'Sanitize real events, review generated samples, and choose how sanitised samples are shared.' },
-  whiteboards: { title: 'Whiteboards & demos', desc: 'One row per prospect: the discovery board and every demo built from it. Stop or destroy one demo while the others keep running.' },
+  whiteboards: { title: 'Whiteboard, Architecture & Demos', desc: 'One row per prospect: the discovery board, its architecture and every demo built from it. Stop or destroy one demo while the others keep running.' },
 };
 
 export const SETTINGS_TABS: ToolTab<SettingsTab>[] = [

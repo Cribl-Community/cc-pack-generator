@@ -121,3 +121,10 @@ export function drawFromBoard(a: Arch, b: BoardIntake): string {
   ];
   return `Drawn from the whiteboard: ${listing(took)}. Change anything here; the whiteboard stays as it is.${b.notDrawn.length ? ` Not drawn: ${listing(b.notDrawn)}.` : ''}`;
 }
+
+/** "Draw it from the whiteboard" only means something once the board has a source or a destination. */
+export function boardHasIntake(lib: WhiteboardLibV5 | null | undefined, meet: WhiteboardMeetV5 | null | undefined): boolean {
+  if (!meet) return false;
+  const intake = boardIntake(lib, meet);
+  return intake.sources.length > 0 || intake.destinations.length > 0 || intake.edge;
+}

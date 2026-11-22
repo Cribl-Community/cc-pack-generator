@@ -47,7 +47,8 @@ export const MENU_MODES: WizardModeInfo[] = WIZARD_MODES.filter(m => !m.hidden);
 export type RailAction =
   | { kind: 'mode'; mode: WizardMode; improve?: 'add' | 'optimize' }
   | { kind: 'tool'; area: 'samples'; tab: 'sanitize' }
-  | { kind: 'tool'; area: 'whiteboards'; tab: 'boards' };
+  // newIn: start a new board straight away, open on that view (Draw an architecture).
+  | { kind: 'tool'; area: 'whiteboards'; tab: 'boards'; newIn?: 'arch' };
 
 export interface RailJourneyAction {
   id: string;
@@ -86,7 +87,7 @@ export const RAIL_JOURNEYS: RailJourney[] = [
   ] },
   { id: 'show', name: 'Draw & demo', example: "Map Acme's estate and demo it tomorrow.", icon: '✎', actions: [
     { id: 'board', label: 'Draw a whiteboard', action: { kind: 'tool', area: 'whiteboards', tab: 'boards' } },
-    { id: 'arch', label: 'Draw an architecture', action: { kind: 'tool', area: 'whiteboards', tab: 'boards' } },
+    { id: 'arch', label: 'Draw an architecture', action: { kind: 'tool', area: 'whiteboards', tab: 'boards', newIn: 'arch' } },
     { id: 'demo', label: 'Run a demo', action: { kind: 'mode', mode: 'demo' } },
   ] },
 ];

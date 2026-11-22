@@ -2112,6 +2112,8 @@ function App() {
   const [demoBoardRows, setDemoBoardRows] = useState<WhiteboardIndexEntry[]>([]);
   const [demoCleanupLake, setDemoCleanupLake] = useState<{ id: string; remove: boolean } | null>(null);
   const [wbOpenBoardId, setWbOpenBoardId] = useState<string | null>(null);
+  // Draw an architecture: the whiteboards page starts a new board open on Architecture.
+  const [wbNewIn, setWbNewIn] = useState<'arch' | null>(null);
   const [demoCreateDashboard, setDemoCreateDashboard] = useState(false);
   const [demoDashboardDatasets, setDemoDashboardDatasets] = useState<SearchDataset[]>([]);
   const [demoDashboardDataset, setDemoDashboardDataset] = useState('');
@@ -7931,7 +7933,7 @@ function App() {
   const runRailAction = (action: RailAction) => {
     if (action.kind === 'tool') {
       if (action.area === 'samples') openTool({ area: 'samples', tab: 'sanitize' });
-      else openTool({ area: 'whiteboards', tab: 'boards' });
+      else { setWbNewIn(action.newIn ?? null); openTool({ area: 'whiteboards', tab: 'boards' }); }
       return;
     }
     if (action.mode === 'batch') { void chooseBatch(); return; }
@@ -7958,7 +7960,8 @@ function App() {
     // Whiteboards is one full-width page (the list, which opens a board) — no tab column.
     if (toolPage.area === 'whiteboards') {
       return <WhiteboardsPage onGenerateDemo={startDemoFromSeed} onNewDemo={() => startMode('demo')} onBoardOpen={onWhiteboardOpen}
-        initialBoardId={wbOpenBoardId} onInitialBoardOpened={() => setWbOpenBoardId(null)} />;
+        initialBoardId={wbOpenBoardId} onInitialBoardOpened={() => setWbOpenBoardId(null)}
+        initialNew={wbNewIn} onInitialNewOpened={() => setWbNewIn(null)} />;
     }
     const tabDot = (id: string): 'ok' | 'error' | 'checking' | null =>
       id === 'ai' ? aiStatus
@@ -8129,7 +8132,7 @@ function App() {
                 <div className="pg-switch-row">
                   <button type="button" role="switch" id="set-wb-demos" className="pg-switch" aria-checked={qForm.whiteboardsDemos !== false}
                     onClick={() => setWhiteboardsDemos(qForm.whiteboardsDemos === false)}><span className="pg-switch-knob" /></button>
-                  <label htmlFor="set-wb-demos" className="field-label" style={{ margin: 0, cursor: 'pointer' }}>Whiteboards &amp; demos</label>
+                  <label htmlFor="set-wb-demos" className="field-label" style={{ margin: 0, cursor: 'pointer' }}>Whiteboard, Architecture &amp; Demos</label>
                 </div>
                 <p className="field-hint" style={{ marginTop: 6 }}>
                   Draw &amp; demo in the left menu: discovery whiteboards, the architecture drawn on them, and the demo
@@ -14778,10 +14781,10 @@ fortinet_fortigate,FortiGate CEF,fgt_cef_to_ocsf,ocsf,,`}</pre>
             <button type="button" className="wb-link" onClick={() => { setWbOpenBoardId(demoOrigin.boardId); openTool({ area: 'whiteboards', tab: 'boards' }); }}>Back to the whiteboard</button>
           </div>
         )}
-        {/* A demo made by hand starts from the Whiteboards & demos list: the way back to it. */}
+        {/* A demo made by hand starts from the Whiteboard, Architecture & Demos list: the way back to it. */}
         {!demoOrigin && step.startsWith('demo-') && (
           <div className="wb-demo-back">
-            <button type="button" className="btn-secondary" onClick={() => openTool({ area: 'whiteboards', tab: 'boards' })}>← Whiteboards &amp; demos</button>
+            <button type="button" className="btn-secondary" onClick={() => openTool({ area: 'whiteboards', tab: 'boards' })}>← Whiteboard, Architecture &amp; Demos</button>
           </div>
         )}
         {renderStep()}

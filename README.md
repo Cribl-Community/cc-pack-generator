@@ -42,7 +42,7 @@ No setting is needed to start: the golden path works straight away. Every settin
 | Require sanitised samples before any AI call | **Samples → Sharing** | Off. Turn it on if raw events must never reach your AI provider. |
 | Golden thresholds, dropping null JSON fields | **Settings → Quality** | 80 per stage; off |
 | Shared golden pool and reviewed vendor field lists | **Settings → Goldens** | The public pool (read-only) |
-| Whiteboards & demos | **Settings → Menu** | Hidden |
+| Whiteboard, Architecture & Demos | **Settings → Menu** | Hidden |
 
 ## How to use
 
@@ -58,14 +58,14 @@ First run: pick a worker group, choose **Check Point Firewall** under *Start fro
 
 ## Whiteboards and architecture
 
-Turn them on in **Settings → Menu**, then open **Whiteboards & demos** under *Tools*. There is one row per prospect.
+Turn them on in **Settings → Menu**, then open **Whiteboard, Architecture & Demos** under *Tools*. There is one row per prospect.
 
 - **Whiteboard:** draw the prospect's estate (sources, tools, Cribl Lake, the Lakehouse Engine, Cribl Detect) on the Cribl platform picture. Type what hurts (**Pain**, or `/`) and the app finds the matching situation, what it becomes with Cribl and its business outcomes. **+ Security goals** and **+ Observability goals** record their initiatives. **Logo** looks the company up on Wikidata.
 - **Architecture:** the second tab. Draw the proposed deployment (leader, worker groups, Edge fleets, Lake, Search, Detect) or use **Draw it from the whiteboard**. Export it as PNG, PDF or SVG.
 - **Demo:** **Deploy demo** creates a demo environment from the board on a worker group: its own sources, destinations and Lake dataset, named per board, removed by demo cleanup.
 - **Moving a board:** **Export → JSON file** and **Import saved whiteboard** move a board, with its architecture, to another org.
 
-The full walkthrough is in the app under **Documentation → Whiteboards & demos**.
+The full walkthrough is in the app under **Documentation → Whiteboard, Architecture & Demos**.
 
 ## Permissions and external access
 

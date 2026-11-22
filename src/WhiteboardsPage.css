@@ -128,12 +128,18 @@
 .wb-save.ok { color: var(--pg-green); }
 .wb-save.bad { color: var(--pg-red); }
 .wb-save .wb-link { padding: 0 2px; }
+/* The board's frame, and the start question over a board New just made. */
+.wb-stage { flex: 1; display: flex; position: relative; min-height: 0; }
+.wb-stage[hidden] { display: none; }
+.wb-chooser-back { position: absolute; inset: 0; z-index: 5; display: grid; place-items: center; padding: 20px; background: rgba(245, 247, 249, .72); border-radius: 0 0 var(--pg-radius-card) var(--pg-radius-card); }
+.wb-chooser { box-shadow: 0 18px 48px -20px rgba(26, 26, 46, .45); border: 1px solid var(--pg-line2); }
+.wb-chooser h3 { margin: 0; font-size: 17px; font-weight: 600; color: var(--pg-ink); }
 .wb-frame { flex: 1; width: 100%; border: 1px solid var(--pg-line2); border-top: none; border-radius: 0 0 var(--pg-radius-card) var(--pg-radius-card); background: #fff; }
 /* labels stay on one line; a narrow pane wraps the row instead */
 .wb-edhead button, .wb-crumb { white-space: nowrap; }
 /* Discover | Whiteboard: what the board shows */
 .wb-modes { display: inline-flex; gap: 2px; padding: 3px; border-radius: 999px; background: var(--pg-page); border: 1px solid var(--pg-line2); }
-.wb-modes button { border: none; background: none; font: inherit; font-size: 12.5px; font-weight: 600; color: var(--pg-muted); padding: 5px 14px; border-radius: 999px; cursor: pointer; }
+.wb-modes button { border: none; background: none; font: inherit; font-size: 13.5px; font-weight: 600; color: var(--pg-muted); padding: 6px 18px; border-radius: 999px; cursor: pointer; }
 .wb-modes button:hover:not(:disabled) { color: var(--pg-ink); }
 .wb-modes button[aria-pressed="true"] { background: #fff; color: var(--pg-ink); box-shadow: 0 1px 3px rgba(26, 26, 46, .16); }
 .wb-modes button:disabled { cursor: default; opacity: .6; }

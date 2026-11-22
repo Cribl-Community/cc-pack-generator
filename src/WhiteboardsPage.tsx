@@ -28,7 +28,7 @@ import { DEMO_STATE_LABEL, demoFlowLabel, type LiveDemo } from './demo-control';
 import ArchitectureBoard, { type ArchBoardHandle } from './architecture/ArchitectureBoard';
 import type { ArchExportKind } from './architecture/export';
 import type { ArchDoc } from './architecture/model';
-import { boardIntake } from './architecture/from-board';
+import { boardHasIntake, boardIntake } from './architecture/from-board';
 import { fetchImageDataUrl, scaleLogo, searchLogos, siteIconCandidate, type LogoCandidate } from './whiteboard/logo-search';
 import './WhiteboardsPage.css';
 
@@ -62,7 +62,11 @@ function SaveIndicator({ status, onRetry }: { status: SaveStatus | null; onRetry
 
 // --- the board ----------------------------------------------------------------
 
-function BoardEditor({ id, onBack, onToast, onGenerate, startIn }: { id: string; onBack: () => void; onToast: (msg: string) => void; onGenerate?: () => void; startIn?: EditorView }) {
+/** A board made by New that has no start yet: the Whiteboard view asks Sources first / People first
+ *  over the board (the Architecture view does not need it). Leaving it untouched discards it. */
+interface FreshBoard { onPick: (start: BoardStart) => void }
+
+function BoardEditor({ id, onBack, onToast, onGenerate, startIn, fresh }: { id: string; onBack: (discard?: boolean) => void; onToast: (msg: string) => void; onGenerate?: () => void; startIn?: EditorView; fresh?: FreshBoard }) {
   const editorRef = useRef<HTMLDivElement>(null);
   const frameRef = useRef<HTMLIFrameElement>(null);
   const docRef = useRef<WhiteboardDoc | null>(null);
@@ -171,7 +175,7 @@ function BoardEditor({ id, onBack, onToast, onGenerate, startIn }: { id: string;
     if (unsaved && !window.confirm('This whiteboard has changes that are not saved. Leave anyway?')) return;
     next();
   }, [boardSaver, libSaver, archSaver]);
-  const leave = useCallback(() => leaveTo(onBack), [leaveTo, onBack]);
+  const leave = useCallback(() => leaveTo(() => onBack(!!fresh && !(archDocRef.current?.nodes.length))), [leaveTo, onBack, fresh]);
 
   const changeMode = useCallback((m: EditorView) => {
     const fromArch = modeRef.current === 'arch';
@@ -254,7 +258,7 @@ function BoardEditor({ id, onBack, onToast, onGenerate, startIn }: { id: string;
   return (
     <div className={`wb-editor${full ? ' is-full' : ''}`} ref={editorRef}>
       <div className="wb-edhead">
-        {!full && <button type="button" className="wb-back" onClick={() => void leave()}>← Whiteboards &amp; demos</button>}
+        {!full && <button type="button" className="wb-back" onClick={() => void leave()}>← Whiteboard, Architecture &amp; Demos</button>}
         <span className="wb-crumb">{!full && '/ '}<b>{prospect || 'Untitled prospect'}</b></span>
         <SaveIndicator status={status} onRetry={retry} />
         <span className="wb-grow" />
@@ -299,10 +303,13 @@ function BoardEditor({ id, onBack, onToast, onGenerate, startIn }: { id: string;
         ? <p className="wb-error" role="alert">{loadError}</p>
         : html
           ? <>
-            <iframe ref={frameRef} className="wb-frame" hidden={isArch} title={`Whiteboard: ${prospect || 'untitled prospect'}`} srcDoc={html} allow="fullscreen; clipboard-write" />
+            <div className="wb-stage" hidden={isArch}>
+              <iframe ref={frameRef} className="wb-frame" title={`Whiteboard: ${prospect || 'untitled prospect'}`} srcDoc={html} allow="fullscreen; clipboard-write" />
+              {fresh && <StartChooser onPick={fresh.onPick} />}
+            </div>
             {isArch && archLoaded && (
               <ArchitectureBoard ref={archRef} initial={archDocRef.current} prospect={prospect} logo={logo} onToast={onToast}
-                fromBoard={() => (docRef.current ? boardIntake(libRef.current, docRef.current.meet) : null)}
+                fromBoard={boardHasIntake(libRef.current, docRef.current?.meet) ? () => (docRef.current ? boardIntake(libRef.current, docRef.current.meet) : null) : undefined}
                 onChange={(d) => { archDocRef.current = d; archSaver.push(d); }} />
             )}
           </>
@@ -558,24 +565,17 @@ function StartArt({ start }: { start: BoardStart }) {
   );
 }
 
-/** How a new board starts: both empty, from the sources (bottom-up) or from the people (top-down). */
-function NewBoardDialog({ onPick, onClose }: { onPick: (start: BoardStart) => void; onClose: () => void }) {
+/** How a new board starts, asked over the board itself: both empty, from the sources (bottom-up) or
+ *  from the people (top-down). The switch above stays live, so Architecture needs no answer. */
+function StartChooser({ onPick }: { onPick: (start: BoardStart) => void }) {
   const firstRef = useRef<HTMLButtonElement>(null);
   const lastRef = useRef<HTMLButtonElement>(null);
-  useEffect(() => {
-    (rememberedStart === 'top-down' ? lastRef : firstRef).current?.focus();
-    const esc = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose(); };
-    document.addEventListener('keydown', esc);
-    return () => document.removeEventListener('keydown', esc);
-  }, [onClose]);
+  useEffect(() => { (rememberedStart === 'top-down' ? lastRef : firstRef).current?.focus(); }, []);
   return (
-    <div className="wb-modal-back" onMouseDown={(e) => { if (e.target === e.currentTarget) onClose(); }}>
-      <div className="wb-modal" role="dialog" aria-modal="true" aria-labelledby="wb-new-title">
-        <div className="wb-modal-head">
-          <h3 id="wb-new-title">New whiteboard</h3>
-          <button type="button" className="wb-x" aria-label="Close" onClick={onClose}>×</button>
-        </div>
-        <p className="wb-modal-sub">Where should the discovery start? Both boards start empty: draw what the prospect tells you with the + on each row.</p>
+    <div className="wb-chooser-back">
+      <div className="wb-modal wb-chooser" role="dialog" aria-labelledby="wb-new-title">
+        <h3 id="wb-new-title">How do you want to start?</h3>
+        <p className="wb-modal-sub">Both boards start empty: draw what the prospect tells you with the + on each row. For the Cribl deployment only, switch to <b>Architecture</b> above.</p>
         <div className="wb-starts">
           <button type="button" ref={firstRef} className="wb-start" onClick={() => onPick('bottom-up')}>
             <StartArt start="bottom-up" />
@@ -614,7 +614,7 @@ function ValidateLoader({ id, onBack, onContinue, onToast }: { id: string; onBac
   return <DiscoveryValidate board={data.doc} lib={data.lib} onBack={onBack} onContinue={onContinue} onToast={onToast} />;
 }
 
-export default function WhiteboardsPage({ onGenerateDemo, onNewDemo, initialBoardId, onInitialBoardOpened, onBoardOpen }: {
+export default function WhiteboardsPage({ onGenerateDemo, onNewDemo, initialBoardId, onInitialBoardOpened, onBoardOpen, initialNew, onInitialNewOpened }: {
   /** Fill Demo mode from a validated board (App.startDemoFromSeed). Absent = no Generate. */
   onGenerateDemo?: (seed: DemoSeed) => void;
   /** Open Demo environment empty: a demo made by hand, not from a board. */
@@ -624,6 +624,9 @@ export default function WhiteboardsPage({ onGenerateDemo, onNewDemo, initialBoar
   onInitialBoardOpened?: () => void;
   /** A board opened (true) or closed (false): the app folds its rail while one is open. */
   onBoardOpen?: (open: boolean) => void;
+  /** Start a new board straight away, open on this view (the menu's Draw an architecture). */
+  initialNew?: EditorView | null;
+  onInitialNewOpened?: () => void;
 }) {
   const [rows, setRows] = useState<WhiteboardIndexEntry[] | null>(null);
   const [listError, setListError] = useState('');
@@ -633,8 +636,8 @@ export default function WhiteboardsPage({ onGenerateDemo, onNewDemo, initialBoar
   // Prospect names start hidden every time the list opens: a screen shared on a call shows no customers.
   const [reveal, setReveal] = useState(false);
   const shownName = (name: string) => displayName(name, reveal);
-  const [newDialog, setNewDialog] = useState(false);
-  const [view, setView] = useState<{ id: string; mode: 'board' | 'validate'; startIn?: EditorView } | null>(initialBoardId ? { id: initialBoardId, mode: 'board' } : null);
+  // fresh: made by New and still without a start; rev remounts the editor once the start is picked.
+  const [view, setView] = useState<{ id: string; mode: 'board' | 'validate'; startIn?: EditorView; fresh?: boolean; rev?: number } | null>(initialBoardId ? { id: initialBoardId, mode: 'board' } : null);
   const openId = view?.id ?? null;
   const setOpenId = (id: string | null, startIn?: EditorView) => setView(id ? { id, mode: 'board', ...(startIn ? { startIn } : {}) } : null);
   useEffect(() => { if (initialBoardId) onInitialBoardOpened?.(); }, [initialBoardId, onInitialBoardOpened]);
@@ -672,14 +675,36 @@ export default function WhiteboardsPage({ onGenerateDemo, onNewDemo, initialBoar
 
   const report = (r: SaveResult, okMsg?: string) => { if (!r.ok) showToast(`Not saved: ${r.message}`); else if (okMsg) showToast(okMsg); return r.ok; };
 
-  const openNewDialog = () => setNewDialog(true);
-
-  const create = async (start: BoardStart) => {
-    rememberedStart = start;
-    setNewDialog(false);
+  // New: the board is made at once with the last start, and opens on the Whiteboard (or on Architecture
+  // from the menu). The Whiteboard asks Sources first / People first over the board.
+  const createNew = async (startIn: EditorView = 'board') => {
     const lib = await loadLibrary();
-    const doc = newBoardDoc(new Date(), startMeet(lib, start));
-    if (report(await saveBoard(doc, lib))) setOpenId(doc.id);
+    const doc = newBoardDoc(new Date(), startMeet(lib, rememberedStart));
+    if (report(await saveBoard(doc, lib))) setView({ id: doc.id, mode: 'board', startIn, fresh: true, rev: 0 });
+  };
+  const openNewDialog = () => void createNew('board');
+  const newOnce = useRef(false);
+  useEffect(() => {
+    if (!initialNew || newOnce.current) return;
+    newOnce.current = true;
+    onInitialNewOpened?.();
+    void createNew(initialNew);
+  }, [initialNew]);
+
+  /** The fresh board's start: its meeting is made again from that start (name and logo kept). */
+  const pickStart = async (id: string, start: BoardStart) => {
+    rememberedStart = start;
+    const [doc, lib] = await Promise.all([loadBoard(id), loadLibrary()]);
+    if (!doc) { showToast('That whiteboard could not be found.'); setView(null); return; }
+    const meet = { ...startMeet(lib, start), prospect: doc.meet.prospect, logo: doc.meet.logo };
+    if (!report(await saveBoard({ ...doc, meet, updatedAt: new Date().toISOString() }, lib))) return;
+    setView(v => v && v.id === id ? { ...v, fresh: false, startIn: 'board', rev: (v.rev ?? 0) + 1 } : v);
+  };
+
+  /** Back from a board. A fresh board left without a start and without an architecture is not kept. */
+  const closeBoard = async (id: string, discard?: boolean) => {
+    setView(null);
+    if (discard) { await deleteBoard(id); void refresh(); }
   };
 
   const duplicate = async (row: WhiteboardIndexEntry) => {
@@ -777,7 +802,8 @@ export default function WhiteboardsPage({ onGenerateDemo, onNewDemo, initialBoar
     return <>{<ValidateLoader id={view.id} onBack={() => setView({ id: view.id, mode: 'board' })} onContinue={onGenerateDemo} onToast={showToast} />}{toastEl}</>;
   }
   if (view) {
-    return <>{<BoardEditor id={view.id} startIn={view.startIn} onBack={() => setView(null)} onToast={showToast}
+    return <>{<BoardEditor key={`${view.id}:${view.rev ?? 0}`} id={view.id} startIn={view.startIn} onBack={(discard) => void closeBoard(view.id, discard)} onToast={showToast}
+      fresh={view.fresh ? { onPick: (start) => void pickStart(view.id, start) } : undefined}
       onGenerate={onGenerateDemo ? () => setView({ id: view.id, mode: 'validate' }) : undefined} />}{toastEl}</>;
   }
 
@@ -791,7 +817,6 @@ export default function WhiteboardsPage({ onGenerateDemo, onNewDemo, initialBoar
       onExportJson={(row) => void exportRowJson(row)}>
       <input ref={fileRef} type="file" accept=".html,.htm,.json" hidden
         onChange={(e) => { const f = e.target.files?.[0]; e.target.value = ''; if (f) void importFile(f); }} />
-      {newDialog && <NewBoardDialog onPick={(s) => void create(s)} onClose={() => setNewDialog(false)} />}
       {toastEl}
     </BoardList>
   );
@@ -929,13 +954,13 @@ function BoardList({ rows, listError, query, setQuery, sort, setSort, reveal, se
     <div className="wb-page">
       <div className="wb-head">
         <div>
-          <h2>Whiteboards &amp; demos</h2>
+          <h2>Whiteboard, Architecture &amp; Demos</h2>
           <p>Each prospect's discovery board, the architecture you drew after the call, and the demo built from them.</p>
         </div>
         <div className="wb-actions">
           <button type="button" className="btn-secondary" onClick={pickFile}
             title="A board exported as JSON from 360 Workbench on another Cribl org, a board saved as .html by the standalone whiteboard, or a library .json">Import saved whiteboard</button>
-          <button type="button" className="btn-primary" onClick={openNewDialog}>New whiteboard</button>
+          <button type="button" className="btn-primary" onClick={openNewDialog} title="A new prospect: the whiteboard, with the architecture one click away">New</button>
         </div>
       </div>
 
@@ -950,7 +975,7 @@ function BoardList({ rows, listError, query, setQuery, sort, setSort, reveal, se
           {demosOn && <div className="wb-toolbar"><span className="wb-grow" />{scanStatus}</div>}
           <div className="wb-empty">
             <p>No whiteboards yet. Start one before your next discovery call.</p>
-            <button type="button" className="btn-primary" onClick={openNewDialog}>New whiteboard</button>
+            <button type="button" className="btn-primary" onClick={openNewDialog} title="A new prospect: the whiteboard, with the architecture one click away">New</button>
           </div>
         </>) : (
           <>

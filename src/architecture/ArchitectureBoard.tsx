@@ -582,7 +582,7 @@ export default function ArchitectureBoard({ initial, prospect, logo = '', onChan
           <div className="arch-empty">
             <div className="arch-empty-box">
               <h2>Draw the architecture</h2>
-              <p>Drag parts from the left onto the canvas, or start from the whiteboard or a reference architecture and change it.</p>
+              <p>Drag parts from the left onto the canvas, or start from {fromBoard ? 'the whiteboard or ' : ''}a reference architecture and change it.</p>
               {fromBoard && (
                 <button type="button" className="btn-primary arch-fromboard" onClick={drawWhiteboard}>
                   Draw it from the whiteboard
