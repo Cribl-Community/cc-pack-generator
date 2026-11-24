@@ -2191,62 +2191,6 @@ export async function analyzeBuildTrace(traceSummary: string, comment: string): 
   return analyzeBuildTraceClient(traceSummary, comment);
 }
 
-export async function fetchPublicSamples(url: string, format: string, maxEvents = 100): Promise<{ events: string[]; count: number }> {
-  if (shouldUseBackendProxy()) {
-    const resp = await proxyFetch('/api/pack-generator/fetch-public-samples', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ url, format, maxEvents }),
-    });
-    if (!resp.ok) throw new Error('Failed to fetch public samples');
-    return resp.json();
-  }
-  // In iframe mode, fetch via platform proxy (the URL is external)
-  const resp = await fetch(url);
-  if (!resp.ok) throw new Error(`Failed to fetch: ${resp.status}`);
-  const text = await resp.text();
-  let events: string[];
-  if (format === 'json') {
-    try {
-      const parsed = JSON.parse(text);
-      if (Array.isArray(parsed)) {
-        events = eventsToLines(parsed);
-      } else {
-        events = text.trim().split('\n').filter(Boolean);
-      }
-    } catch {
-      events = text.trim().split('\n').filter(Boolean);
-    }
-  } else {
-    events = text.trim().split('\n').filter(Boolean);
-  }
-  return { events: events.slice(0, maxEvents), count: Math.min(events.length, maxEvents) };
-}
-
-export async function fetchHybridSamples(url: string, format: string, sourcetype: string, count = 100): Promise<GeneratedSampleResult> {
-  if (shouldUseBackendProxy()) {
-    const resp = await proxyFetch('/api/pack-generator/hybrid-samples', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ url, format, sourcetype, count }),
-    });
-    if (!resp.ok) throw new Error('Hybrid sample generation failed');
-    return resp.json();
-  }
-  // In iframe mode: fetch seed then use AI client to augment
-  const cacheKey = generatedSampleCacheKey('hybrid', sourcetype, count, 'hybrid', `${format}:${url}`);
-  const cached = await loadGeneratedSample(cacheKey, sourcetype);
-  if (cached) return cached;
-  const seedResult = await fetchPublicSamples(url, format, 10);
-  const { aiGenerateSamples } = await import('./ai-client');
-  const aiResult = await aiGenerateSamples(sourcetype, count);
-  // For true hybrid in iframe, we'd need to pass seed to AI — for now just combine
-  const combined = [...seedResult.events.slice(0, 20), ...aiResult.events];
-  const result = { events: combined.slice(0, count), count: Math.min(combined.length, count) };
-  await saveGeneratedSample(cacheKey, sourcetype, result);
-  return result;
-}
-
 export async function detectSourcetypeApi(sampleEvents: string): Promise<{ sourcetype: string; confidence: string; reason: string }> {
   if (shouldUseBackendProxy()) {
     try {

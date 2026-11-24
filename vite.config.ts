@@ -26,7 +26,6 @@ import { handleGetCreds, handleTestCreds, handleSaveCreds } from './scripts/crib
 // @ts-ignore
 import { handleLiveCapture, handleListInputs, handleListSamples, handleDownloadSample, handleUploadGroupSample, handleDeleteGroupSample, handleGetPackSample, handleUploadPackSample, handleDeletePackSample } from './scripts/live-capture.mjs'
 // @ts-ignore
-import { handleFetchPublicSamples, handleHybridSamples } from './scripts/fetch-samples.mjs'
 // @ts-ignore
 import { handleDebugSample } from './scripts/debug-sample-api.mjs'
 // @ts-ignore
@@ -422,22 +421,6 @@ export const deployApiPlugin = () => ({
         void handleUploadPackSample(req, res)
       } else if (req.method === 'DELETE') {
         void handleDeletePackSample(req, res)
-      } else {
-        res.statusCode = 405
-        res.end('Method not allowed')
-      }
-    })
-    server.middlewares.use('/api/pack-generator/fetch-public-samples', (req: IncomingMessage, res: ServerResponse) => {
-      if (req.method === 'POST') {
-        void handleFetchPublicSamples(req, res)
-      } else {
-        res.statusCode = 405
-        res.end('Method not allowed')
-      }
-    })
-    server.middlewares.use('/api/pack-generator/hybrid-samples', (req: IncomingMessage, res: ServerResponse) => {
-      if (req.method === 'POST') {
-        void handleHybridSamples(req, res)
       } else {
         res.statusCode = 405
         res.end('Method not allowed')

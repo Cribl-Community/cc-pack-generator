@@ -13,18 +13,14 @@ api.github.com:
       - "/repos/wvdlinde-cribl/cribl-pack-goldens/"
       - "/repos/wvdlinde-cribl/cribl-pack-samples/"
 
-# The shared goldens, the samples pool, and the public vendor sample logs offered as
-# Sample sources (src/sample-sources.ts).
+# The shared goldens and the samples pool. The app reads no third-party repository: real
+# vendor samples are mirrored into the samples pool with their licence, never fetched live.
 raw.githubusercontent.com:
   timeout: 30000
   paths:
     allowlist:
       - "/wvdlinde-cribl/cribl-pack-goldens/"
       - "/wvdlinde-cribl/cribl-pack-samples/"
-      - "/sbousseaden/EVTX-ATTACK-SAMPLES/"
-      - "/logpai/loghub/"
-      - "/kaus33k/okta-sample-system-logs/"
-      - "/Grishmbasnet515/ai-cloud-log-threat-detector/"
 
 # The Cribl Marketplace catalog (src/marketplace-update.ts): the public list of approved app
 # versions, read once per session so a catalog install can offer "a newer version is available".

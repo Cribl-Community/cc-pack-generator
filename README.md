@@ -90,7 +90,7 @@ External hosts (`config/proxies.yml`), reached only through the Cribl platform p
 
 | Host | Paths | Why |
 |---|---|---|
-| `api.github.com`, `raw.githubusercontent.com` | The public golden and sample pools, and four public vendor-log repositories | Read shared goldens and sample sources |
+| `api.github.com`, `raw.githubusercontent.com` | The public golden and sample pools only | Read shared goldens and real vendor samples |
 | `wvdlinde-cribl.github.io` | `/goatpedia/` | Read the public Goatpedia library (**Goatpedia library** screen only) |
 | `www.wikidata.org`, `commons.wikimedia.org` | `/w/api.php` | Look up a prospect's logo by name (whiteboard **Logo** only) |
 | `upload.wikimedia.org`, `thumb.wikimedia.org` | `/wikipedia/commons/…` | Download the chosen logo |

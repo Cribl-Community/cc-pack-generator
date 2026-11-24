@@ -4,7 +4,7 @@ import goatGrazeImg from './assets/cribl-goat-graze.webp';
 import type { WizardState, SourceMode, DestFormat } from './types';
 import { buildPack, toKebab, getPipelineId, getSampleName, getParserFieldNames, hasGoldenFormatPath, goldenPathMatchesSample, sampleFingerprint, fingerprintsMatch, scoreValueCoverage, scoreSchemaMappingFromExtraction, getBlockingContractErrors, canonicalizeSourcetype, getParserForSourcetype, getDatatypeParserFunctions, matchDatatypeParserBySample, matchGoldenSourceBySample, matchJsonSignature, matchWindowsEventXml, recommendDestFormatsForSample, asimSchemaOptions, ocsfSchemaOptions, concretizeAsimFormat, concretizeCimFormat, concretizeOcsfFormat, isCimFormat, isOcsfFormat, isOcsfScoredFormat, isCefFormat, cimModelForFormatKey, inferDataClass, describeSourcetype, recognizeSourcetype, recognizeCefSource, getSupportedSourcetypeCatalog, searchSupportedSourcetypes, getFamilyTokenVariants, getMultiFormatSpec, buildSampleGroundingContext, explainValueCoverageGaps, shapeMappedEventForDisplay, type MultiFormatSpec, type SampleGrounding, type ContractLintFinding, type CoverageGapDetail } from './pack-builder';
 import { generateSamples, hasBuiltInSamples, SOURCETYPES } from './ai-samples';
-import { listGroups, listPacks, listPackPipelines, getPackPipeline, getPackSample, uploadPackSample, liveCapture, downloadSample, listGroupAndPackSamples, downloadPackSample, isSanitisedLibrarySampleName, aiValidate, aiSamples, aiAdvise, aiMapping, aiParse, detectSourcetypeApi, deploy, aiAvailable, fetchPublicSamples, fetchHybridSamples, validatePipeline, previewPipeline, previewPipelineProfile, repairPipeline, getGoldenPipeline, getGoldenPart, fetchReferenceAvailability, fetchReferenceSample, extendResolvedSample, fetchReferenceLookups, healLookup, auditDatatypes, ensureDatatypeOverlay, logPipelineScore, checkLakeExportHealth, checkAiHealth, repairQuality, fetchAvailableGoldens, importGoldens, sendLakeTestEvent, testGoldenAccess, testSanitisedSampleAccess, listWorkers, backgroundGroupBlockReason, listLakeDatasets, listSearchDatasets, listSearchDatatypes, deploySearchDatatype, attachSearchDatatypes, deploySearchDashboard, listOutputs, ensureLakeOutput, ensureLakeDataset, deleteLakeDataset, setMasterRoutes, createDemoDatagen, scanDemo, cleanupDemo, patchPipeline, commitDeploy, getCriblCreds, testCriblCreds, saveCriblCreds, getRunMode, fetchPushableGoldens, pushGoldens, fetchSampleLibrarySummary, saveBatchCheckpoint, loadBatchCheckpoint, clearBatchCheckpoint, analyzeBuildTrace, type PushableGolden, type AvailableGolden, type WorkerHealth, type LakeDataset, type SearchDataset, type SearchDatatype, type DemoScanResult, type DemoOutput, type BatchCheckpoint } from './api';
+import { listGroups, listPacks, listPackPipelines, getPackPipeline, getPackSample, uploadPackSample, liveCapture, downloadSample, listGroupAndPackSamples, downloadPackSample, isSanitisedLibrarySampleName, aiValidate, aiSamples, aiAdvise, aiMapping, aiParse, detectSourcetypeApi, deploy, aiAvailable, validatePipeline, previewPipeline, previewPipelineProfile, repairPipeline, getGoldenPipeline, getGoldenPart, fetchReferenceAvailability, fetchReferenceSample, extendResolvedSample, fetchReferenceLookups, healLookup, auditDatatypes, ensureDatatypeOverlay, logPipelineScore, checkLakeExportHealth, checkAiHealth, repairQuality, fetchAvailableGoldens, importGoldens, sendLakeTestEvent, testGoldenAccess, testSanitisedSampleAccess, listWorkers, backgroundGroupBlockReason, listLakeDatasets, listSearchDatasets, listSearchDatatypes, deploySearchDatatype, attachSearchDatatypes, deploySearchDashboard, listOutputs, ensureLakeOutput, ensureLakeDataset, deleteLakeDataset, setMasterRoutes, createDemoDatagen, scanDemo, cleanupDemo, patchPipeline, commitDeploy, getCriblCreds, testCriblCreds, saveCriblCreds, getRunMode, fetchPushableGoldens, pushGoldens, fetchSampleLibrarySummary, saveBatchCheckpoint, loadBatchCheckpoint, clearBatchCheckpoint, analyzeBuildTrace, type PushableGolden, type AvailableGolden, type WorkerHealth, type LakeDataset, type SearchDataset, type SearchDatatype, type DemoScanResult, type DemoOutput, type BatchCheckpoint } from './api';
 import { buildPostProcessFunctions, postProcessLookupsFor, postProcessSampleEvents, getPostProcessPair, postProcessSchemaOptions, POSTPROCESS_SOURCE_FORMATS, POSTPROCESS_DEST_FORMATS, isNoPairPostProcessDestination, postProcessFamilyOf } from './postprocess-builder';
 import { isRawPassthroughDestination } from './postprocess-optimization';
 import { parseOcsfGuidance } from './ocsf-schema';
@@ -223,7 +223,7 @@ import { loadSettingsAsync, loadQualitySettings, loadQualitySettingsAsync, saveQ
 import { buildNativeDashboard, buildVizlabDashboard, lakeDashboardSource, type DashboardStyle } from './dashboard-builder';
 import { buildSearchDatatype, inferSearchDatatypeFields } from './search-datatype-builder';
 import { sanitisedSampleRepoError } from './sanitised-sample-github';
-import { getAvailableSources, getPublicSource } from './sample-sources';
+import { getAvailableSources } from './sample-sources';
 import { isSentinelIngestionTable, resolveSentinelTable, sentinelDestinationSuggestions } from './sentinel-knowledge';
 import { cimModelSuggestions, cimModelPickerOptions, resolveCimModel } from './cim-knowledge';
 import AiSettingsModal from './AiSettings';
@@ -4196,30 +4196,10 @@ function App() {
     const grounding: SampleGrounding | undefined = buildSampleGroundingContext(recognitionMeta || undefined, st, confirmedFormat || undefined);
 
     try {
-      const source = getPublicSource(st, sampleSourceId);
       if (sampleSourceId === 'built-in') {
         const events = generateSamples(st);
         update({ sampleEvents: repairXmlEventBreaking(events) });
         onProgress('done', `Loaded ${events.split('\n').filter(Boolean).length} built-in events without AI.`);
-      } else if (sampleSourceId === 'hybrid' && source === undefined) {
-        const sources = getAvailableSources(st, hasBuiltInSamples(st));
-        const publicSource = sources.find(s => s.type === 'public');
-        if (publicSource?.url) {
-          onProgress('generating', `Fetching public samples and augmenting with AI...`);
-          const data = await fetchHybridSamples(publicSource.url, publicSource.format || 'text', st, sampleCount);
-          update({ sampleEvents: repairXmlEventBreaking(data.events.join('\n')) });
-          onProgress('done', data.cached
-            ? `Reused ${data.events.length} saved hybrid events.`
-            : `Loaded and saved ${data.events.length} events (hybrid public + AI).`);
-        } else {
-          const data = await aiSamples(st, sampleCount, generateMode, onProgress, grounding);
-          update({ sampleEvents: data.events.join('\n') });
-        }
-      } else if (source?.type === 'public' && source.url) {
-        onProgress('generating', `Fetching public sample dataset for ${st}...`);
-        const data = await fetchPublicSamples(source.url, source.format || 'text', sampleCount);
-        update({ sampleEvents: repairXmlEventBreaking(data.events.join('\n')) });
-        onProgress('done', `Loaded ${data.events.length} events from public dataset.`);
       } else {
         const data = await aiSamples(st, sampleCount, generateMode, onProgress, grounding);
         update({ sampleEvents: data.events.join('\n') });
@@ -10069,11 +10049,10 @@ function App() {
         const stPicked = state.sourceMode === 'ai-generate' && !!effectiveSourcetype && (!isCustomSourcetype || customConfirmed);
         const sampleBusy = samplesLoading || refSampleLoading;
         const needsFetch = stPicked && !state.sampleEvents.trim() && !!sampleSourceId;
-        const aiFetch = sampleSourceId === 'ai-generate' || sampleSourceId === 'hybrid';
+        const aiFetch = sampleSourceId === 'ai-generate';
         const andContinue = step === 'source' ? ' and continue' : '';
         const fetchLabel = sampleSourceId === 'reference' || sampleSourceId === 'built-in' ? `Load sample${andContinue}`
           : sampleSourceId === 'ai-generate' ? 'Generate sample'
-          : sampleSourceId === 'hybrid' ? 'Fetch and generate sample'
           : `Fetch sample${andContinue}`;
         const runFetch = () => {
           if (!needsFetch || sampleBusy) return;
@@ -11428,8 +11407,6 @@ function App() {
                 : state.sourceMode === 'live-capture' ? 'Live capture'
                 : sampleSourceId === 'reference' ? 'Reference sample (from pack)'
                 : sampleSourceId === 'built-in' ? 'Built-in sample (no AI)'
-                : sampleSourceId === 'hybrid' ? 'Hybrid: public + AI (quality sample)'
-                : (sampleSourceId && sampleSourceId !== 'ai-generate') ? 'Public dataset'
                 : 'AI-generated (quality sample)'
               }</code></div>
               <div className="review-item"><span>Sample in pack</span><code>Yes — included automatically</code></div>

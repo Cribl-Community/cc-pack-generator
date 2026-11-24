@@ -94,7 +94,7 @@ export async function fetchWithDeadline(
 // the standard one. Matched as substrings of the request path.
 const SLOW_PROXY_ENDPOINTS = [
   'ai-validate', 'ai-samples', 'ai-mapping', 'ai-parse', 'ai-advise',
-  'schematizer', 'hybrid-samples', 'fetch-public-samples',
+  'schematizer',
   'repair-pipeline', 'repair-quality', 'pre-deploy-validate', 'validate-pipeline',
   'deploy', 'commit-deploy',
 ];
