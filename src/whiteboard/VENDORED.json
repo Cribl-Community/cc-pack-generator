@@ -27,7 +27,7 @@
   },
   "content": {
     "discovery": "bd15c0b6de6840c6d8783a832c9442a57890d6e066d5952351dc7d5ea1cbf4e8",
-    "i18n": "7a53e5906affd73fba4050d4731e5b60c6a4c164f587bf51f6a87c92c029ff99",
+    "i18n": "b1da1f177c1d89f955ff272f517e7a9050dccbf18cf02a28737b797b4ef4f6ab",
     "marks": "f093596227945f90bda9e9ed07d3f65fd4b0877709f903d48c17cab89a66e240",
     "languages": [
       "en",
@@ -40,5 +40,5 @@
     "lib": "cribl-canvas:lib:v5",
     "meet": "cribl-canvas:meet:v5"
   },
-  "vendoredAt": "2026-11-20T15:31:16.762Z"
+  "vendoredAt": "2026-11-26T10:23:23.056Z"
 }

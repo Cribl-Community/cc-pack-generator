@@ -57,6 +57,8 @@ export interface WhiteboardMeetV5 {
   started: string;
   /** An empty start: Cribl Detect stays off until the pipeline (and the Cribl column) is shown. */
   detectWithPipe?: boolean;
+  /** The toolbox flag: 'on' shows the challenges the board solves green. Missing (a new board) is off: all red. */
+  check?: 'on' | 'off';
   [k: string]: unknown;
 }
 
